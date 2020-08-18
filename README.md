@@ -15,10 +15,10 @@ Todas las páginas tienen dentro de *base.html*:
     - **/noticias/** : (*noticias.html*) : avisos, noticias (registro histórico de noticias)
     - **/nosotros/** : (*empresa.html*) : reseña de la empresa, socios, patrocinadores
         - **/nosotros/personal/** : (*personal.html*) : personal, cumpleaños
-    - **/comunidad/** : (*comunidad.html*) : reseña de la zona
-        - **/comunidad/sangabriel/** : (*sangabriel.html*) : historia de San Gabriel
-        - **/comunidad/acosta/** : (*acosta.html*) : historia de Acosta
-        - **/comunidad/…**
+    - **/comunidades/** : (*comunidades.html*) : reseña de la zona
+        - **/comunidades/sangabriel/** : (*comunidad.html*) : historia de San Gabriel
+        - **/comunidades/acosta/** : (*comunidad.html*) : historia de Acosta
+        - **/comunidades/…**
     - **/contacto/** : (*contacto.html*) : correo y teléfono, formulario de contacto (varios opciones: objetos perdidos, para mejorar, denuncias, etc.)
 
 ## Apps
@@ -105,27 +105,24 @@ Todas las páginas tienen dentro de *base.html*:
 ## *Templates* para cada app
 
 - **Rutas**
-    - *rutas.html*
-        - *ruta.html*
+    - *index.html*: página principal del sitio
+    - *rutas.html*: lista de rutas
+        - *ruta.html*: descripción de cada ruta
         - *proximo_bus.html*
 
 - **Noticias**
-    - *noticias.html*
-    - *avisos.html*
-    - *noticias_banner.html*
+    - *noticias.html*: lista de noticias
     
 - **Empresa**
-    - *empresa.html*
-        - *personal.html*
+    - *empresa.html*: reseña de la empresa
+        - *personal.html*: lista de personal
 
 - **Información**
-    - *comunidad.html*
-        - *sangabriel.html*
-        - *acosta.html*
-    - *contacto.html*
-
+    - *comunidades.html*: reseña y lista de comunidades
+        - *comunidad.html*: descripción de cada comunidad
+    - *contacto.html*: información y formulario de contacto
 
 ## Notas mentales
 
-- En `views.py` se “inyectan” las variables de interés a la página que se quiere mostrar mediante el *context* (un diccionario) que se referencia como `{{ variable }}` dentro del *template*. Por tanto, operaciones especiales se crean en `views.py`.
+- En `views.py` se “inyectan” las variables de interés a la página que se quiere mostrar mediante el *context* (un diccionario) que se referencia como `{{ variable }}` o `{{ variable.atributo }}` dentro del *template*. Por tanto, operaciones especiales se crean en `views.py`.
 - Hay una relación casi 1:1:1 entre `urls` -> `views` -> `templates`. Una `url` para cada `view` que tiene un `template`, donde se utilizan variables que vienen de los `models`.
