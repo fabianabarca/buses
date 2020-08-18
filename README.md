@@ -7,10 +7,10 @@ Todas las páginas tienen dentro de *base.html*:
 
 ## Arquitectura de información (inventario de contenidos)
 
-- **/** : (*index.html*) : avisos, próximos buses, noticias (anuncios)
+- **/** : (*index.html*) : avisos, próximos buses, noticias, (publicidad)
     - **/rutas/** : (*rutas.html*) : lista de rutas de la empresa
-        - **/rutas/sangabriel/** : (*ruta.html*) : próximo bus, horario, precios, mapas, (anuncios)
-        - **/rutas/acosta/** : (*ruta.html*) : próximo bus, horario, precios, mapas, (anuncios)
+        - **/rutas/sangabriel/** : (*ruta.html*) : próximo bus, horario, precios, mapas, (publicidad)
+        - **/rutas/acosta/** : (*ruta.html*) : próximo bus, horario, precios, mapas, (publicidad)
         - **/rutas/…** : (*ruta.html*) : otras rutas
     - **/noticias/** : (*noticias.html*) : avisos, noticias (registro histórico de noticias)
     - **/nosotros/** : (*empresa.html*) : reseña de la empresa, socios, patrocinadores
@@ -27,6 +27,7 @@ Todas las páginas tienen dentro de *base.html*:
 - Empresa (Fabián)
 - Noticias (David)
 - Información (Fabián)
+- Publicidad (*futuro*)
 
 ## Modelos para cada app
 
@@ -114,7 +115,6 @@ Todas las páginas tienen dentro de *base.html*:
     - *index.html*: página principal del sitio
     - *rutas.html*: lista de rutas
         - *ruta.html*: descripción de cada ruta
-        - *proximo_bus.html*
 
 - **Noticias**
     - *noticias.html*: lista de noticias
@@ -130,6 +130,6 @@ Todas las páginas tienen dentro de *base.html*:
 
 ## Notas mentales
 
-- Es posible importar modelos desde otras apps. Por ejemplo, para agregar un aviso en otra app, se puede hacer en `models.py`: `from noticias.modelos import Aviso` y utilizarlo ahí y dentro de `views.py`.
+- Es posible importar modelos desde otras apps. Por ejemplo, para agregar un aviso en otra app, se puede hacer en `models.py` de rutas: `from noticias.modelos import Aviso` y utilizarlo ahí y dentro de `views.py`.
 - En `views.py` se “inyectan” las variables de interés a la página que se quiere mostrar mediante el *context* (un diccionario) que se referencia como `{{ variable }}` o `{{ variable.atributo }}` dentro del *template*. Por tanto, operaciones especiales se crean en `views.py`.
 - Hay una relación casi 1:1:1 entre `urls` -> `views` -> `templates`. Una `url` para cada `view` que tiene un `template`, donde se utilizan variables que vienen de los `models`.
