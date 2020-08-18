@@ -18,7 +18,7 @@ Todas las páginas tienen dentro de *base.html*:
     - **/comunidades/** : (*comunidades.html*) : reseña de la zona
         - **/comunidades/sangabriel/** : (*comunidad.html*) : historia de San Gabriel
         - **/comunidades/acosta/** : (*comunidad.html*) : historia de Acosta
-        - **/comunidades/…**
+        - **/comunidades/…** : (*comunidad.html*) : historia de otras comunidades
     - **/contacto/** : (*contacto.html*) : correo y teléfono, formulario de contacto (varios opciones: objetos perdidos, para mejorar, denuncias, etc.)
 
 ## Apps
@@ -47,9 +47,15 @@ Todas las páginas tienen dentro de *base.html*:
         - ligar a una noticia (opcional, crear noticia, ahí agregar documento)
 
 - **Información** —> páginas estáticas con información que generalmente no va a cambiar
-    - (`class`) **Contenido**: información general (para reseñas, historia, etc.)
+    - (`class`) **Contenido**: información genérica (para reseñas, comunidades, contacto)
         - título
         - contenido
+        - …
+    - (`class`) **Comunidad**: información de las comunidades
+        - nombre
+        - url
+        - historia
+        - foto
         - …
 
 - **Empresa** —> información y actores relacionados con la empresa
@@ -124,5 +130,6 @@ Todas las páginas tienen dentro de *base.html*:
 
 ## Notas mentales
 
+- Es posible importar modelos desde otras apps. Por ejemplo, para agregar un aviso en otra app, se puede hacer en `models.py`: `from noticias.modelos import Aviso` y utilizarlo ahí y dentro de `views.py`.
 - En `views.py` se “inyectan” las variables de interés a la página que se quiere mostrar mediante el *context* (un diccionario) que se referencia como `{{ variable }}` o `{{ variable.atributo }}` dentro del *template*. Por tanto, operaciones especiales se crean en `views.py`.
 - Hay una relación casi 1:1:1 entre `urls` -> `views` -> `templates`. Una `url` para cada `view` que tiene un `template`, donde se utilizan variables que vienen de los `models`.
