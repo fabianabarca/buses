@@ -27,7 +27,8 @@ Todas las páginas tienen dentro de *base.html*:
 - Rutas (Anyelo)
 - Empresa (Fabián)
 - Noticias (David)
-- Información (Fabián)
+- Comunidades (Fabián)
+- Contacto (Fabián)
 
 ## Modelos para cada app
 
