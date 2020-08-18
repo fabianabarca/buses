@@ -14,7 +14,7 @@ Todas las páginas tienen dentro de *base.html*:
         - **/rutas/…** : (*ruta.html*) : otras rutas
     - **/noticias/** : (*noticias.html*) : avisos, noticias (registro histórico de noticias)
     - **/nosotros/** : (*empresa.html*) : reseña de la empresa, socios, patrocinadores
-        - **/nosotros/personal/ : (*personal.html*) : personal, cumpleaños
+        - **/nosotros/personal/** : (*personal.html*) : personal, cumpleaños
     - **/comunidad/** : (*comunidad.html*) : reseña de la zona
         - **/comunidad/sangabriel/** : (*sangabriel.html*) : historia de San Gabriel
         - **/comunidad/acosta/** : (*acosta.html*) : historia de Acosta
@@ -28,7 +28,7 @@ Todas las páginas tienen dentro de *base.html*:
 - Noticias (David)
 - Información (Fabián)
 
-# Modelos para cada app
+## Modelos para cada app
 
 - **Noticias** —> informaciones temporales para desplegar en varias secciones
     - (clase) **Noticia**: noticias generales que se muestran en inicio y en sección noticias
@@ -127,5 +127,5 @@ Todas las páginas tienen dentro de *base.html*:
 
 ## Notas mentales
 
-- En views.py se “inyectan” las variables de interés a la página que se quiere mostrar mediante el “context” (un diccionario) que se referencia como {{ variable }} dentro del “template”. Por tanto, operaciones especiales se crean en views.py
-- Hay una relación casi 1:1:1 entre urls -> views -> templates. Una url para cada view que tiene un template.
+- En `views.py` se “inyectan” las variables de interés a la página que se quiere mostrar mediante el *context* (un diccionario) que se referencia como `{{ variable }}` dentro del *template*. Por tanto, operaciones especiales se crean en `views.py`.
+- Hay una relación casi 1:1:1 entre `urls` -> `views` -> `templates`. Una `url` para cada `view` que tiene un `template`, donde se utilizan variables que vienen de los `models`.
