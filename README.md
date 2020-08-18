@@ -23,11 +23,11 @@ Todas las páginas tienen dentro de *base.html*:
 
 ## Apps
 
+- Inicio (Fabián)
 - Rutas (Anyelo)
 - Empresa (Fabián)
 - Noticias (David)
 - Información (Fabián)
-- Publicidad (*futuro*)
 
 ## Modelos para cada app
 
