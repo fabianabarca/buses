@@ -23,12 +23,12 @@ Todas las páginas tienen dentro de *base.html*:
 
 ## Apps
 
-- Inicio (Fabián)
-- Rutas (Anyelo)
-- Empresa (Fabián)
-- Noticias (David)
-- Comunidades (Fabián)
-- Contacto (Fabián)
+- Inicio
+- Rutas
+- Empresa
+- Noticias
+- Comunidades
+- Contacto
 
 ## Modelos para cada app
 
@@ -48,11 +48,7 @@ Todas las páginas tienen dentro de *base.html*:
         - urgencia (1, 2, 3, asociado con íconos)
         - ligar a una noticia (opcional, crear noticia, ahí agregar documento)
 
-- **Información** —> páginas estáticas con información que generalmente no va a cambiar
-    - (`class`) **Contenido**: información genérica (para reseñas, comunidades, contacto)
-        - título
-        - contenido
-        - …
+- **Comunidades** —> páginas estáticas con reseñas de la comunidad que generalmente no va a cambiar
     - (`class`) **Comunidad**: información de las comunidades
         - nombre
         - url
@@ -72,6 +68,14 @@ Todas las páginas tienen dentro de *base.html*:
     - (`class`) **Socio**: descripción de todos los socios
         - …
     - (`class`) **Patrocinador**: descripción de todos los patrocinadores
+        - …
+
+- **Contacto** —> página de contacto con la empresa
+    - (`class`) **Formulario**: formulario de contacto
+        - nombre
+        - correo
+        - asunto
+        - texto
         - …
 
 - **Rutas** —> información del servicio según GTFS
@@ -112,8 +116,10 @@ Todas las páginas tienen dentro de *base.html*:
 
 ## *Templates* para cada app
 
-- **Rutas**
+- **Inicio**
     - *index.html*: página principal del sitio
+
+- **Rutas**
     - *rutas.html*: lista de rutas
         - *ruta.html*: descripción de cada ruta
 
@@ -124,9 +130,11 @@ Todas las páginas tienen dentro de *base.html*:
     - *empresa.html*: reseña de la empresa
         - *personal.html*: lista de personal
 
-- **Información**
+- **Comunidades**
     - *comunidades.html*: reseña y lista de comunidades
         - *comunidad.html*: descripción de cada comunidad
+
+- **Contacto**
     - *contacto.html*: información y formulario de contacto
 
 ## Notas mentales
