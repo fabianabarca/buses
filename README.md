@@ -142,3 +142,16 @@ Todas las páginas tienen dentro de *base.html*:
 - Es posible importar modelos desde otras apps. Por ejemplo, para agregar un aviso en otra app, se puede hacer en `models.py` de rutas: `from noticias.modelos import Aviso` y utilizarlo ahí y dentro de `views.py`.
 - En `views.py` se “inyectan” las variables de interés a la página que se quiere mostrar mediante el *context* (un diccionario) que se referencia como `{{ variable }}` o `{{ variable.atributo }}` dentro del *template*. Por tanto, operaciones especiales se crean en `views.py`.
 - Hay una relación casi 1:1:1 entre `urls` -> `views` -> `templates`. Una `url` para cada `view` que tiene un `template`, donde se utilizan variables que vienen de los `models`.
+
+## Tareas próximas
+
+- Migración o generación de contenidos
+- Creación del estilo CSS de un <div> contenedor de las rutas
+- Búsqueda de nueva plantilla con: menú superior fijo, cuadrícula para personal, banner para noticias, cuadros de avisos
+- Revisión de las recomendaciones WCAG 2.1
+- Preparación del hospedaje en AWS
+- Nuevo logo
+- Edición enriquecida de texto para `models.TextField()`
+- Contenido de comunidades
+- Formulario de contacto con correo electrónico (incluye determinación de tipos de dudas)
+- ...
