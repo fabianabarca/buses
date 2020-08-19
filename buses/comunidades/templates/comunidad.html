@@ -1,11 +1,13 @@
 {% extends 'base.html'%}
 
-{% block page_title %} Sobre (( comunidad )) | TSG {% endblock %}
+{% block page_title %} Sobre {{ comunidad.nombre }} | TSG {% endblock %}
 
 {% block content %}
 
-<h1>La comunidad (( comunidad ))</h1>
+<h1>La comunidad de {{ comunidad.nombre }}</h1>
 
-<p>Una reseña histórica</p>
+<h3>Una reseña histórica</h3>
+
+<p>{{ comunidad.resena }}</p>
 
 {% endblock %}
