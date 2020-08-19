@@ -13,7 +13,7 @@ Clases a crear
     - Feriado
     *****
     *****
-    - Zone  Para agregar tarifas
+    - Zone  Para agregar tarifas - ForeignKey en Stop
     - Fare  Para agregar tarifas
     - Shape Se usa como ForeignKey en Trip
 """
