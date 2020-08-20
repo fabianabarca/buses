@@ -1,10 +1,10 @@
 {% extends 'base.html'%}
 
-{% block page_title %} (( ruta )) | TSG {% endblock %}
+{% block page_title %} {{ route.short_name }} | TSG {% endblock %}
 
 {% block content %}
 
-<h1>Ruta (( ruta )) - San José</h1>
+<h1>Ruta {{ route.short_name }} - San José</h1>
 
 <p>Próximo bus</p>
 

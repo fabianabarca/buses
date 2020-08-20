@@ -123,7 +123,8 @@ class Route(models.Model):
                  (6, 'Gondola or Suspended cable car'),
                  (7, 'Funicular')),
         help_text='Type of transportation used on route')
-    url = models.URLField(
+    url = models.CharField(
+        max_length=32,
         blank=True, help_text="Web page about for the route")
     color = models.CharField(
         max_length=6, blank=True,
