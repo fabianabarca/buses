@@ -145,17 +145,18 @@ Todas las páginas tienen dentro de *base.html*:
 
 ## Tareas próximas
 
-- Migración o generación de contenidos
-- Creación del estilo CSS de un `<div>` contenedor de las rutas
-- Selección de colores por ruta
-- Búsqueda de nueva plantilla con: menú superior fijo, cuadrícula para personal, banner para noticias, cuadros de avisos
-- Revisión de las recomendaciones WCAG 2.1
-- Preparación del hospedaje en AWS
-- Nuevo logo
-- Edición enriquecida de texto para `models.TextField()`
-- Contenido de comunidades
-- Formulario de contacto con correo electrónico (incluye determinación de tipos de dudas)
-- Aplicación "próximo bus"
-- GTFS "alternativo" (primera versión)
+- Migración o generación de contenidos (Juan Manuel Chavarría, Luis Jiménez)
+- Creación del estilo CSS de un `<div>` contenedor de las rutas (María Paula)
+- Selección de colores por ruta (MP)
+- Búsqueda de nueva plantilla con: menú superior fijo, cuadrícula para personal, banner para noticias, cuadros de avisos (Peter, Caly) (ojalá que no sea Bootstrap)
+- Revisión de las recomendaciones WCAG 2.1 (Stacy)
+- Preparación del hospedaje en AWS (Luis Carlos, Santiago, Luis Guillermo)
+- Nuevo logo (JPL, LJ)
+- Edición enriquecida de texto para `models.TextField()` (Marisol)
+- Contenido de comunidades (José Pablo Laurent, LJ, Juan Manuel Chavarría) (San Gabriel, Acosta, Vuelta de Jorco, Tarbaca)
+- Formulario de contacto con correo electrónico (incluye determinación de tipos de dudas) (Jeancarlo)
+- Aplicación "próximo bus" (Anyelo)
+- GTFS "alternativo" (primera versión) (Anyelo)
 - Trabajar en los templates de los apps
+- Noticias y avisos (David Retana)
 - ...
