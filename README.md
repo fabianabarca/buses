@@ -146,7 +146,7 @@ Todas las páginas tienen dentro de *base.html*:
 ## Tareas próximas
 
 - Migración o generación de contenidos
-- Creación del estilo CSS de un <div> contenedor de las rutas
+- Creación del estilo CSS de un `<div>` contenedor de las rutas
 - Selección de colores por ruta
 - Búsqueda de nueva plantilla con: menú superior fijo, cuadrícula para personal, banner para noticias, cuadros de avisos
 - Revisión de las recomendaciones WCAG 2.1
@@ -157,4 +157,5 @@ Todas las páginas tienen dentro de *base.html*:
 - Formulario de contacto con correo electrónico (incluye determinación de tipos de dudas)
 - Aplicación "próximo bus"
 - GTFS "alternativo" (primera versión)
+- Trabajar en los templates de los apps
 - ...
