@@ -1,9 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
 
-def comunidades(request):
-    return render(request, 'comunidades.html')
+from .models import Comunidad
 
-def comunidad(request):
-    return render(request, 'comunidad.html')
+def comunidades(request):
+    comunidades = Comunidad.objects.all()
+    contexto = {
+        'comunidades': comunidades
+    }
+    return render(request, 'comunidades.html', contexto)
+
+def comunidad(request, url_comunidad):
+    comunidad = get_object_or_404(Comunidad, url=url_comunidad)
+    contexto = {
+        'comunidad': comunidad,
+    }
+    return render(request, 'comunidad.html', contexto)

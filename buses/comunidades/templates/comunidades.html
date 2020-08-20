@@ -6,6 +6,12 @@
 
 <h1>Comunidades del servicio de bus</h1>
 
-<p>Link de las comunidades</p>
+<h3>Lista de las comunidades</h3>
+
+<ul>
+    {% for comunidad in comunidades %}
+    <li><a href="{% url 'comunidades:comunidad' comunidad.url %}">{{ comunidad.nombre }}</a></li>
+    {% endfor %}
+</ul>
 
 {% endblock %}

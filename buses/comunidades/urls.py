@@ -2,8 +2,9 @@ from django.urls import path
 
 from . import views
 
+app_name = 'comunidades'
+
 urlpatterns = [
     path('', views.comunidades, name='comunidades'),
-    path('sangabriel/', views.comunidad, name='comunidad'),
-    path('acosta/', views.comunidad, name='comunidad'),
+    path('<url_comunidad>/', views.comunidad, name='comunidad'),
 ]

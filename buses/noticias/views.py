@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def noticias(request):
     return render(request, 'noticias.html')
+
+def noticia(request):
+    return render(request, 'noticia.html')
