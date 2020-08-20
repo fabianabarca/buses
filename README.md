@@ -152,7 +152,7 @@ Todas las páginas tienen dentro de *base.html*:
 - Revisión de las recomendaciones WCAG 2.1 - *Stacy*
 - Preparación del hospedaje en AWS - *Luis Carlos, Santiago, Luis Guillermo*
 - Nuevo logo - *José Pablo Laurent, Luis Jiménez*
-- Edición enriquecida de texto para `models.TextField()` (Marisol)
+- Edición enriquecida de texto para `models.TextField()` - *Marisol*
 - Contenido de comunidades (San Gabriel, Acosta, Vuelta de Jorco, Tarbaca) - *José Pablo Laurent, Luis Jiménez, Juan Manuel Chavarría*
 - Formulario de contacto con correo electrónico (incluye determinación de tipos de dudas) - *Jeancarlo*
 - Aplicación "próximo bus" - *Anyelo*
