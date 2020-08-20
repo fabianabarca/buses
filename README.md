@@ -146,17 +146,17 @@ Todas las páginas tienen dentro de *base.html*:
 ## Tareas próximas
 
 - [ ] Migración o generación de contenidos - *Juan Manuel Chavarría, Luis Jiménez*
-- [x] Creación del estilo CSS de un `<div>` contenedor de las rutas - *María Paula*
+- [ ] Creación del estilo CSS de un `<div>` contenedor de las rutas - *María Paula*
 - [ ] Selección de colores por ruta - *María Paula*
 - [ ] Búsqueda de nueva plantilla con: menú superior fijo, cuadrícula para personal, banner para noticias, cuadros de avisos (ojalá que no sea Bootstrap) - *Peter, Caly*
 - [ ] Revisión de las recomendaciones WCAG 2.1 - *Stacy*
-- [x] Preparación del hospedaje en AWS - *Luis Carlos, Santiago, Luis Guillermo*
+- [ ] Preparación del hospedaje en AWS - *Luis Carlos, Santiago, Luis Guillermo*
 - [ ] Nuevo logo - *José Pablo Laurent, Luis Jiménez*
 - [ ] Edición enriquecida de texto para `models.TextField()` - *Marisol*
-- Contenido de comunidades (San Gabriel, Acosta, Vuelta de Jorco, Tarbaca) - *José Pablo Laurent, Luis Jiménez, Juan Manuel Chavarría*
-- Formulario de contacto con correo electrónico (incluye determinación de tipos de dudas) - *Jeancarlo*
-- Aplicación "próximo bus" - *Anyelo*
-- GTFS "alternativo" (primera versión) - *Anyelo*
-- Trabajar en los templates de los apps - *Fabián*
-- Noticias y avisos - *David Retana*
-- ...
+- [ ] Contenido de comunidades (San Gabriel, Acosta, Vuelta de Jorco, Tarbaca) - *José Pablo Laurent, Luis Jiménez, Juan Manuel Chavarría*
+- [ ] Formulario de contacto con correo electrónico (incluye determinación de tipos de dudas) - *Jeancarlo*
+- [ ] Aplicación "próximo bus" - *Anyelo*
+- [ ] GTFS "alternativo" (primera versión) - *Anyelo*
+- [ ] Trabajar en los templates de los apps - *Fabián*
+- [ ] Noticias y avisos - *David Retana*
+- [ ] ...
