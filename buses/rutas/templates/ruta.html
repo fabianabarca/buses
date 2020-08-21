@@ -6,9 +6,26 @@
 
 <h1>Ruta {{ route.short_name }} - San José</h1>
 
+<h3>Hora Actual: {{ current_time }}</h3>
+
 <p>Próximo bus</p>
 
-<p>Horario</p>
+<p>Horario -  Salidas desde {{ stop.name }}</p>
+
+<!-- Tabla de horario -->
+<table align="center">
+    <tr>
+        <th>{{ route.short_name }}</th>
+        <th>San Jose</th>
+    </tr>
+    {% for time in stop_times %}
+    <tr>
+        <td>{{ time.departure_time }}</td>
+        <td>N/A</td>
+    </tr>
+    {% endfor %}
+</table>
+
 
 <p>Mapa</p>
 
