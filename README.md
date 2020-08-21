@@ -150,7 +150,7 @@ Todas las páginas tienen dentro de *base.html*:
 - [ ] Selección de colores por ruta - *María Paula*
 - [ ] Búsqueda de nueva plantilla con: menú superior fijo, cuadrícula para personal, banner para noticias, cuadros de avisos (ojalá que no sea Bootstrap) - *Peter, Caly*
 - [ ] Revisión de las recomendaciones WCAG 2.1 - *Stacy*
-- [ ] Preparación del hospedaje en AWS - *Luis Carlos, Santiago, Luis Guillermo*
+- [ ] Preparación del hospedaje en AWS - *Luis Carlos, Santiago, Luis Guillermo, Marisol*
 - [ ] Nuevo logo - *José Pablo Laurent, Luis Jiménez*
 - [ ] Edición enriquecida de texto para `models.TextField()` - *Marisol*
 - [ ] Contenido de comunidades (San Gabriel, Acosta, Vuelta de Jorco, Tarbaca) - *José Pablo Laurent, Luis Jiménez, Juan Manuel Chavarría*
