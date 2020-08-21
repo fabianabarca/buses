@@ -18,12 +18,20 @@
         <th>{{ route.short_name }}</th>
         <th>San Jose</th>
     </tr>
-    {% for time in stop_times %}
+    {% for timeRoute, timeSJ in stop_times_list %}
     <tr>
-        <td>{{ time.departure_time }}</td>
-        <td>N/A</td>
+        <td>{{ timeRoute.departure_time }}</td>
+        <td>{{ timeSJ.departure_time }}</td>
     </tr>
     {% endfor %}
+    <!-- Add last row that only has stop time from "San José" departure -->
+    <!-- Only in the case for "San Gabriel" -->
+    {% if route.short_name == "San Gabriel" %}
+    <tr>
+        <td>N/A</td>
+        <td>{{ stop_times_SJ_last.departure_time }}</td>
+    </tr>
+    {% endif %}
 </table>
 
 
