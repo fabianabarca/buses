@@ -14,8 +14,6 @@ def ruta(request, url_ruta):
 
     stop_times = StopTime.objects.filter(trip=trip[0])
 
-    print("STOP TIMES = ", stop_times)
-
     # Get current time to display it in the template
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
