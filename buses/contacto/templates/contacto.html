@@ -4,10 +4,25 @@
 
 {% block content %}
 
-<h1>Información de contacto</h1>
+<h1>{{ empresa.name }}</h1>
 
-<p>Correo, teléfono, dirección</p>
+<h2>Información de contacto</h2>
 
-<p>Formulario de contacto</p>
+<ul>
+    <li>Correo: <a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a></li>
+    <li>Teléfono: <a href="tel:{{ empresa.phone }}">{{ empresa.phone }}</a></li>
+    <li>Dirección: Barrio María Auxiliadora, San Ignacio de Acosta (<a href="https://www.waze.com/ul?ll=9.79447088%2C-84.16395520&navigate=yes&zoom=17">Waze</a>)</li>
+</ul>
+
+<h2>Formulario de contacto</h2>
+
+<h2>Preguntas frecuentes</h2>
+
+{% for pregunta in preguntas %}
+
+<h4>{{ pregunta.pregunta }}</h4>
+<p>{{ pregunta.respuesta }}</p>
+
+{% endfor %}
 
 {% endblock %}
