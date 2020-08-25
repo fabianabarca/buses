@@ -1,6 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
 
+from rutas.models import Ruta
+
 def index(request):
-    return render(request, 'index.html')
+    rutas = Ruta.objects.all()
+    contexto = {
+        'rutas': rutas,
+    }
+    return render(request, 'index.html', contexto)

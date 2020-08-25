@@ -10,6 +10,12 @@
 
 <p>Aquí va el próximo bus</p>
 
+<p>Hora de ingreso: {% now "H:i" %}</p>
+
+{% for ruta in rutas %}
+<p>{{ ruta.route_short_name }}</p>
+{% endfor %}
+
 <p>Aquí van las noticias (banner)</p>
 
 {% endblock %}
