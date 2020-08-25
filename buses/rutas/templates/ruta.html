@@ -6,21 +6,46 @@
 
 <h1>Ruta {{ route.short_name }} - San José</h1>
 
-<h3>Hora Actual: {{ current_time }}</h3>
+<h2>Hora Actual: {{ current_time }}</h2>
 
-<p>Próximo bus</p>
+<h3>Próximo bus</h3>
+<!-- Tabla de Próximo Bus -->
+<table align="center">
+    <tr>
+        <th>Próximo bus saliendo de {{ route.short_name }}</th>
+        <th> | </th>
+        <th>Próximo bus saliendo de San José</th>
+    </tr>
+    <tr>
+        <td>{{ bus_listRoute.0 }}</td>
+        <td> | </td>
+        <td>{{ bus_listSJ.0 }}</td>
+    </tr>
+    <tr>
+        <td>{{ bus_listRoute.1 }}</td>
+        <td> | </td>
+        <td>{{ bus_listSJ.1 }}</td>
+    </tr>
+    <tr>
+        <td>{{ bus_listRoute.2 }}</td>
+        <td> | </td>
+        <td>{{ bus_listSJ.2 }}</td>
+    </tr>
+</table>
 
-<p>Horario -  Salidas desde {{ stop.name }}</p>
+<h3>Horario -  Salidas desde {{ stop.name }}</h3>
 
 <!-- Tabla de horario -->
 <table align="center">
     <tr>
         <th>{{ route.short_name }}</th>
+        <th> | </th>
         <th>San Jose</th>
     </tr>
     {% for timeRoute, timeSJ in stop_times_list %}
     <tr>
         <td>{{ timeRoute.departure_time }}</td>
+        <td> | </td>
         <td>{{ timeSJ.departure_time }}</td>
     </tr>
     {% endfor %}
@@ -35,6 +60,6 @@
 </table>
 
 
-<p>Mapa</p>
+<h3>Mapa</h3>
 
 {% endblock %}
