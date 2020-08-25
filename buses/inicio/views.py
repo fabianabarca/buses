@@ -5,8 +5,8 @@ from django.shortcuts import get_object_or_404, render
 from rutas.models import Route
 
 def index(request):
-    # rutas = Ruta.objects.all()
+    rutas = Route.objects.all()
     contexto = {
-        # 'rutas': rutas,
+        'rutas': rutas,
     }
     return render(request, 'index.html', contexto)
