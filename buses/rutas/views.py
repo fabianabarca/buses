@@ -94,7 +94,6 @@ def nextBuses(stop_times, current_time):
         if current_time.hour == item.departure_time.hour:
             print(current_time.minute)
             if current_time.minute < item.departure_time.minute:
-                print("\n\n 1ro \n\n")
                 try:
                     bus_list = []
                     bus_list.append(item.departure_time)
@@ -104,7 +103,6 @@ def nextBuses(stop_times, current_time):
                 except:
                     break
             else:
-                print("\n\n 2do \n\n")
                 try:
                     # next(iterator)
                     bus_list = []
@@ -115,7 +113,6 @@ def nextBuses(stop_times, current_time):
                 except:
                     break
         elif current_time.hour + 1 == item.departure_time.hour:
-            print("\n\n 3ro \n\n")
             try:
                 bus_list = []
                 bus_list.append(item.departure_time)
