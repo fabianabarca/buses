@@ -106,7 +106,7 @@ def nextBuses(stop_times, current_time):
             else:
                 print("\n\n 2do \n\n")
                 try:
-                    next(iterator)
+                    # next(iterator)
                     bus_list = []
                     bus_list.append(next(iterator).departure_time)
                     bus_list.append(next(iterator).departure_time)
