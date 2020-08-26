@@ -4,7 +4,45 @@ from datetime import datetime # For current time
 
 """ Function to execute when user goes to /rutas """
 def rutas(request):
-    return render(request, 'rutas.html')
+    # Get current time to display it in the template
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+
+    # Get the route depending on the url
+    # routes = Route.objects.all()
+
+    # Get the stop object that is the "Terminal" in San Gabriel
+    # stop = get_object_or_404(Stop, stop_id="terminal")
+
+    # Get the trip for this route
+    trips = []
+
+    # for route in routes:
+    #     trips.append(Trip.objects.filter(route=route))
+
+    # print(trips)
+
+    # Get the Stop Times for this trip
+    # In this version there are only DEPARTURE TIMES FROM THE "TERMINAL" AND FROM SAN JOSE
+    # stop_times_Route = StopTime.objects.filter(trip=trips[0]) # Stop times for this Route departures ("San Gabriel" or "Acosta")
+    # stop_times_SJ = StopTime.objects.filter(trip=trips[1]) # Stop times for "San José" departures
+
+    # print(stop_times_Route)
+
+    # stop_times_list = zip(stop_times_Route, stop_times_SJ) # Make a list of tuples in order to display the two stop times in the schedule row
+    
+    # Get the next 3 buses list from the Route to San Jose
+    # bus_listRoute = nextBuses(stop_times_Route, now)
+    # Get the next 3 buses list from San Jose to the Route
+    # bus_listSJ = nextBuses(stop_times_SJ, now)
+
+    context = {
+        'current_time': current_time,
+        # 'bus_listRoute': bus_listRoute, # Next 3 buses
+        # 'bus_listSJ': bus_listSJ, # Next 3 buses
+    }
+
+    return render(request, 'rutas.html', context)
 
 """ Function to execute when user goes to specific Route (E.g. /rutas/sangabriel o /rutas/acosta) """
 def ruta(request, url_ruta):
@@ -54,25 +92,36 @@ def nextBuses(stop_times, current_time):
     next(iterator)  # Get the first element in the list (to get next elements in the for cycle)
     for item in stop_times_list:
         if current_time.hour == item.departure_time.hour:
+            print(current_time.minute)
             if current_time.minute < item.departure_time.minute:
+                print("\n\n 1ro \n\n")
                 try:
+                    bus_list = []
                     bus_list.append(item.departure_time)
                     bus_list.append(next(iterator).departure_time)
                     bus_list.append(next(iterator).departure_time)
+                    return bus_list
                 except:
                     break
             else:
+                print("\n\n 2do \n\n")
                 try:
+                    next(iterator)
+                    bus_list = []
                     bus_list.append(next(iterator).departure_time)
                     bus_list.append(next(iterator).departure_time)
                     bus_list.append(next(iterator).departure_time)
+                    return bus_list
                 except:
                     break
         elif current_time.hour + 1 == item.departure_time.hour:
+            print("\n\n 3ro \n\n")
             try:
+                bus_list = []
                 bus_list.append(item.departure_time)
                 bus_list.append(next(iterator).departure_time)
                 bus_list.append(next(iterator).departure_time)
+                return bus_list
             except:
                 break
         else:
