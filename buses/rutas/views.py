@@ -68,13 +68,15 @@ def nextBuses(stop_times, current_time):
                     bus_list.append(next(iterator).departure_time)
                 except:
                     break
-        if current_time.hour + 1 == item.departure_time.hour:
+        elif current_time.hour + 1 == item.departure_time.hour:
             try:
                 bus_list.append(item.departure_time)
                 bus_list.append(next(iterator).departure_time)
                 bus_list.append(next(iterator).departure_time)
             except:
                 break
+        else:
+            bus_list.append(item.departure_time)
         try:
             next(iterator)
         except:
