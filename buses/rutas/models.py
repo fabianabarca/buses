@@ -269,7 +269,7 @@ class Calendar(models.Model):
         help_text='Service start date')
 
 class CalendarDates(models.Model):
-    """Calendar with service disponibility for one or more routes 
+    """Calendar without service disponibility for one or more routes 
     This implements trips.txt in the GTFS feed
     """
     service_id = models.ForeignKey('Calendar', on_delete=models.CASCADE)
