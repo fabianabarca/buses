@@ -1,12 +1,14 @@
 {% extends 'base.html'%}
 
+
+
 {% block page_title %} {{ route.short_name }} | TSG {% endblock %}
 
 {% block content %}
 
 <h1>Ruta {{ route.short_name }} - San José</h1>
-
-<h2>Hora Actual: {{ current_time }}</h2>
+<h2>Hora Actual</h2>
+<h2 id="DigitalCLOCK"></h2>
 
 <h3>Próximo bus</h3>
 <!-- Tabla de Próximo Bus -->
@@ -62,5 +64,38 @@
 
 
 <h3>Mapa</h3>
+
+<script>
+    function showTime(){
+        let date = new Date();
+        let h = date.getHours(); 
+        let m = date.getMinutes(); 
+        let s = date.getSeconds(); 
+        let session = "AM";
+        
+        if(h == 0){
+            h = 12;
+        }        
+        else if(h > 12){
+            h = h - 12;
+            session = "PM";
+        }
+
+        if(m == 00 && m == 15 && m == 30 && m == 45 && s == 00){
+            location.reload(); // Recargar la página en estos minutos a cualquier hora
+        } 
+        
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+        
+        let time = h + ":" + m + ":" + s + " " + session;
+        document.getElementById("DigitalCLOCK").innerText = time;
+        // document.getElementById("DigitalCLOCK").textContent = time;
+        setTimeout(showTime, 1000);
+    }
+    
+    showTime();
+</script>
 
 {% endblock %}
