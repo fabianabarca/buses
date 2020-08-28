@@ -29,7 +29,7 @@ def contacto(request):
 
     empresa = get_object_or_404(Agency, agency_id=1234)
     preguntas = Pregunta.objects.all()
-    notificacion = "Listo!, gracias por su mensaje" # FIXME: agregar modelo a la base de datos
+    notificacion = "Listo! gracias por su mensaje" # FIXME: agregar mensaje de confirmación
     contexto = {
         'empresa': empresa,
         'preguntas': preguntas,
