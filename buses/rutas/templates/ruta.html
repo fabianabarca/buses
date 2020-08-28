@@ -81,7 +81,7 @@
             session = "PM";
         }
 
-        if(m == 00 && m == 15 && m == 30 && m == 45 && s == 00){
+        if((m == 00 || m == 15 || m == 30 || m == 45) && s == 00){
             location.reload(); // Recargar la página en estos minutos a cualquier hora
         } 
         
