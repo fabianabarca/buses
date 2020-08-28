@@ -11,6 +11,7 @@ asuntos = [
 ]
 
 class Formulario(forms.Form):
+    nombre = forms.CharField(required=True)
     email = forms.EmailField(required=True)
     asunto = forms.CharField(required=True,
                              label='¿Cuál es el motivo de consulta?',

@@ -18,13 +18,16 @@ def contacto(request):
     else:
         formulario = Formulario(request.POST)
         if formulario.is_valid():
+            nombre = formulario.cleaned_data['nombre']
             email = formulario.cleaned_data['email']
             asunto = formulario.cleaned_data['asunto']
             mensaje = formulario.cleaned_data['mensaje']
-            # try: # FIXME: implementar correctamente la configuración de SMTP
-            #     send_mail(asunto, mensaje, email, ['admin@tsgcr.com'])
-            # except BadHeaderError:
-            #     return HttpResponse('Invalid header found.')
+            mensaje = mensaje + "\nEnviado por el usuario: " +\
+                nombre + " [" + email + ']'
+            try: # FIXME: implementar correctamente la configuración de SMTP usando correo del administrador que está en base de datos
+                send_mail(asunto, mensaje, email, ['tsgdumbacc@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Configuración de correo inválida.')
             enviado = True
 
     empresa = get_object_or_404(Agency, agency_id=1234)
