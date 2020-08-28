@@ -9,25 +9,49 @@ def rutas(request):
     current_time = now.strftime("%H:%M:%S")
 
     # Get the route depending on the url
-    # routes = Route.objects.all()
+    routes = Route.objects.all()
 
     # Get the stop object that is the "Terminal" in San Gabriel
-    # stop = get_object_or_404(Stop, stop_id="terminal")
+    stop = get_object_or_404(Stop, stop_id="terminal")
 
     # Get the trip for this route
     trips = []
 
-    # for route in routes:
-    #     trips.append(Trip.objects.filter(route=route))
+    for route in routes:
+        trips.append(Trip.objects.filter(route=route))
 
-    # print(trips)
-
-    # Get the Stop Times for this trip
+    # Get the Stop Times for the trips
     # In this version there are only DEPARTURE TIMES FROM THE "TERMINAL" AND FROM SAN JOSE
     # stop_times_Route = StopTime.objects.filter(trip=trips[0]) # Stop times for this Route departures ("San Gabriel" or "Acosta")
     # stop_times_SJ = StopTime.objects.filter(trip=trips[1]) # Stop times for "San José" departures
 
-    # print(stop_times_Route)
+    stop_times_Route = []
+    stop_times_SJ = []
+
+    for item in trips:
+        for trip in item:
+            # print(trip.trip_id)
+            # print(trip.short_name)
+            if trip.trip_id == "trip1" or trip.trip_id == "trip2":
+                stop_times_Route.append(StopTime.objects.filter(trip=trip))
+            elif trip.trip_id == "trip3" or trip.trip_id == "trip4":
+                stop_times_SJ.append(StopTime.objects.filter(trip=trip))
+
+    # print("\n\nstop_times_Route: ", stop_times_Route)
+    # print("\n\nstop_times_SJ: ", stop_times_SJ)
+
+    bus_list = []
+    # bus_listSJ = []
+
+    for stop_times in stop_times_Route:
+        # for stop_time in item:
+        #     print(stop_time.trip.route.route_id)
+        bus_list.append(nextBuses(stop_times, now))
+    
+    for stop_times in stop_times_SJ:
+        bus_list.append(nextBuses(stop_times, now))
+
+    # print("\nBUS LIST", bus_list)
 
     # stop_times_list = zip(stop_times_Route, stop_times_SJ) # Make a list of tuples in order to display the two stop times in the schedule row
     
@@ -72,10 +96,10 @@ def ruta(request, url_ruta):
     bus_listSJ = nextBuses(stop_times_SJ, now)
 
     context = {
-        'route': route,
-        'current_time': current_time,
-        'stop': stop,
-        'stop_times_list': stop_times_list,
+        'route': route, # Route object
+        'current_time': current_time, # Current time
+        'stop': stop, # Route stop object ("terminal")
+        'stop_times_list': stop_times_list, # Route stop time list (to SJ and from SJ)
         'stop_times_SJ_last': stop_times_SJ.last(), # To send the last departure from "San José" in the cases that the last row of the schedule have only a stop time for "San José"
         'bus_listRoute': bus_listRoute, # Next 3 buses
         'bus_listSJ': bus_listSJ, # Next 3 buses
@@ -92,7 +116,6 @@ def nextBuses(stop_times, current_time):
     next(iterator)  # Get the first element in the list (to get next elements in the for cycle)
     for item in stop_times_list:
         if current_time.hour == item.departure_time.hour:
-            print(current_time.minute)
             if current_time.minute < item.departure_time.minute:
                 try:
                     bus_list = []
