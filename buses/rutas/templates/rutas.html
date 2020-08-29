@@ -15,6 +15,8 @@
 
 <p><a href="/rutas/acosta">Acosta</a></p>
 
+<!-- NOTA: ESTE CODIGO JavaScript DEBE COLOCARSE EN ALGUN ARCHIVO .js 
+    EN LA CARPETA DE LOS ARCHIVOS ESTÁTICOS -->
 <script>
     function showTime(){
         let date = new Date();
@@ -30,10 +32,6 @@
             h = h - 12;
             session = "PM";
         }
-
-        if((m == 00 || m == 15 || m == 30 || m == 45) && s == 00){
-            location.reload(); // Recargar la página en estos minutos a cualquier hora
-        } 
         
         h = (h < 10) ? "0" + h : h;
         m = (m < 10) ? "0" + m : m;

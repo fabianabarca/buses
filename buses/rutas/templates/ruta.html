@@ -65,6 +65,8 @@
 
 <h3>Mapa</h3>
 
+<!-- NOTA: ESTE CODIGO JavaScript DEBE COLOCARSE EN ALGUN ARCHIVO .js 
+    EN LA CARPETA DE LOS ARCHIVOS ESTÁTICOS -->
 <script>
     function showTime(){
         let date = new Date();
@@ -82,7 +84,9 @@
         }
 
         if((m == 00 || m == 15 || m == 30 || m == 45) && s == 00){
-            location.reload(); // Recargar la página en estos minutos a cualquier hora
+            location.reload();  // Recargar la página en estos minutos a cualquier hora
+                                // y así tener los datos actualizados
+                                // Mejor cambiarlo a algo como AJAX para no recargar toda la página 
         } 
         
         h = (h < 10) ? "0" + h : h;
