@@ -7,7 +7,7 @@
 <h1>Lista de rutas de la empresa</h1>
 
 <h2>Hora Actual</h2>
-<h2 id="DigitalCLOCK"></h2>
+<h2 id="DigitalCLOCK" onload="showTime()"></h2>
 
 <h3>Próximo bus de {{ routes.0.short_name }}</h3>
 <!-- Tabla de Próximo Bus -->
@@ -87,7 +87,6 @@
         
         let time = h + ":" + m + ":" + s + " " + session;
         document.getElementById("DigitalCLOCK").innerText = time;
-        // document.getElementById("DigitalCLOCK").textContent = time;
         setTimeout(showTime, 1000);
     }
     
