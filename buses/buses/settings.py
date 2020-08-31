@@ -124,3 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/web/'
+
+#Url pública donde se almacenan las imágenes de noticias
+MEDIA_URL = '/media/'
+
+#Url donde buscar los archivos multimedia
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
