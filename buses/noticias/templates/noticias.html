@@ -21,7 +21,11 @@
 <div style="background-color: white;"><p>
     <h2 style="color:blue;">{{noticia.titulo}}</h2>
     <h3 style="color:black;">{{noticia.descripcion_Corta}}</h3>
+
+    {% if noticia.imagen_Noticia %}
     <p><img src="{{noticia.imagen_Noticia.url}}"></p> 
+    {% endif %}
+
     <p style="color:black;">{{noticia.descripcion_Larga}}</p>
 </p></div> 
 {% endfor %}
