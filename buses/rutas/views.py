@@ -6,13 +6,9 @@ from datetime import datetime # For current time
 def rutas(request):
     # Get current time to pass it to nextBuses()
     now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
 
     # Get all the the routes
     routes = Route.objects.all()
-
-    # Get the stop object that is the "Terminal" in San Gabriel
-    # stop = get_object_or_404(Stop, stop_id="terminal")
 
     # Store all the trips
     trips = []
@@ -26,6 +22,7 @@ def rutas(request):
     stop_times_SJ_SG = [] # Stop times from SJ to San Gabriel
     stop_times_SJ_Aco = [] # Stop times from SJ to Acosta
 
+    # Fill each stop_times list with its data
     for item in trips:
         for trip in item:
             stop_times_Temp = [] # Temporal list
@@ -44,24 +41,28 @@ def rutas(request):
     next_bus_list_SJ_SG = []
     next_bus_list_SJ_Aco = []
 
+    # Fill the next 3 buses from SG to SJ
     for stop_times in stop_times_SG:
         next_bus_list_SG = (nextBuses(stop_times, now))
     
+    # Fill the next 3 buses from Acosta to SJ
     for stop_times in stop_times_Aco:
         next_bus_list_Aco = (nextBuses(stop_times, now))
 
+    # Fill the next 3 buses from SJ to SG
     for stop_times in stop_times_SJ_SG:
         next_bus_list_SJ_SG = (nextBuses(stop_times, now))
 
+    # Fill the next 3 buses from SJ to Acosta
     for stop_times in stop_times_SJ_Aco:
         next_bus_list_SJ_Aco = (nextBuses(stop_times, now))
 
     context = {
         'routes': routes, # List of routes
-        'next_bus_list_SG': next_bus_list_SG,
-        'next_bus_list_Aco': next_bus_list_Aco,
-        'next_bus_list_SJ_SG': next_bus_list_SJ_SG,
-        'next_bus_list_SJ_Aco': next_bus_list_SJ_Aco,
+        'next_bus_list_SG': next_bus_list_SG, # Next 3 buses from SG to SJ
+        'next_bus_list_Aco': next_bus_list_Aco, # Next 3 buses from Acosta to SJ
+        'next_bus_list_SJ_SG': next_bus_list_SJ_SG, # Next 3 buses from SJ to SG
+        'next_bus_list_SJ_Aco': next_bus_list_SJ_Aco, # Next 3 buses SJ to Acosta
         
     }
 
@@ -73,7 +74,7 @@ def ruta(request, url_ruta):
     route = get_object_or_404(Route, url=url_ruta)
 
     # Get the stop object that is the "Terminal" in San Gabriel
-    stop = get_object_or_404(Stop, stop_id="terminal")
+    stop = get_object_or_404(Stop, stop_id="terminal") # Al asignar los IDs cambiar por el ID a usar para la terminal
 
     # Get the trip for this route
     trip = Trip.objects.filter(route=route)
@@ -99,8 +100,8 @@ def ruta(request, url_ruta):
         'stop': stop, # Route stop object ("terminal")
         'stop_times_list': stop_times_list, # Route stop time list (to SJ and from SJ)
         'stop_times_SJ_last': stop_times_SJ.last(), # To send the last departure from "San José" in the cases that the last row of the schedule have only a stop time for "San José"
-        'bus_listRoute': bus_listRoute, # Next 3 buses
-        'bus_listSJ': bus_listSJ, # Next 3 buses
+        'bus_listRoute': bus_listRoute, # Next 3 buses from the Route to SJ
+        'bus_listSJ': bus_listSJ, # Next 3 buses from SJ to the Route
     }
 
     return render(request, 'ruta.html', context)
