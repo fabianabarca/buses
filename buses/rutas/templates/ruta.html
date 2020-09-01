@@ -4,16 +4,13 @@
 
 {% block content %}
 
-<!-- OPCION 2 MAPAS estilos para los mapas de leaflet -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"> -->
+<!-- Estilos necesarios para el mapa de leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
 
-<!-- estilo del canvas del mapa -->
+<!-- Estilo para el div del mapa -->
 <style>
     .map {
-        width: 50%;
-        height: 300px;
-        margin-left: auto;
-        margin-right: auto;
+        width: 75%;
     }
 </style>
 
@@ -73,18 +70,17 @@
     {% endif %}
 </table>
 
-
 <h3>Mapa</h3>
-<!-- en este div es en el cual se va a posicionar el objeto mapa -->
-<div id="map" class="map"></div>
 
-<!-- OPCION 2 MAPAS -->
-<!-- <div id="map" class="map map-home" style="margin:12px 0 12px 0;height:400px;"></div> -->
+<!-- div para el mapa -->
+<div id="map" class="map map-home" style="margin:12px 0 12px 0;height:400px;"></div>
 
-<!-- importar la biblioteca de OpenLayers para generar el objeto mapa de interés -->
-<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+<!-- Scripts necesarios para el mapa de leaflet -->
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>	 
 
-<!-- OPCION 2 MAPAS -->
-<!-- <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>	  -->
+<script type=”text/javscript”>
+    let terminal_coordinates = “{{ terminal_coordinates }}”;
+    let SJ_coordinates = “{{ SJ_coordinates }}”;
+</script>
 
 {% endblock %}

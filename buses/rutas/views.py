@@ -25,8 +25,6 @@ def rutas(request):
     # Fill each stop_times list with its data
     for item in trips:
         for trip in item:
-            stop_times_Temp = [] # Temporal list
-
             if trip.trip_id == "trip1" :
                 stop_times_SG.append(StopTime.objects.filter(trip=trip))
             elif trip.trip_id == "trip2":
@@ -95,6 +93,18 @@ def ruta(request, url_ruta):
     # Get the next 3 buses list from San Jose to the Route
     bus_listSJ = nextBuses(stop_times_SJ, now)
 
+    # Get all the the stops to send theit Coordinates
+    # in order to fill the map
+    stops = Stop.objects.all()
+
+    terminal_coordinates = []
+    terminal_coordinates.append(stops[0].stop_lat)
+    terminal_coordinates.append(stops[0].stop_lon)
+
+    SJ_coordinates = []
+    SJ_coordinates.append(stops[1].stop_lat)
+    SJ_coordinates.append(stops[1].stop_lon)
+
     context = {
         'route': route, # Route object
         'stop': stop, # Route stop object ("terminal")
@@ -102,6 +112,8 @@ def ruta(request, url_ruta):
         'stop_times_SJ_last': stop_times_SJ.last(), # To send the last departure from "San José" in the cases that the last row of the schedule have only a stop time for "San José"
         'bus_listRoute': bus_listRoute, # Next 3 buses from the Route to SJ
         'bus_listSJ': bus_listSJ, # Next 3 buses from SJ to the Route
+        'terminal_coordinates': terminal_coordinates,
+        'SJ_coordinates': SJ_coordinates,
     }
 
     return render(request, 'ruta.html', context)
