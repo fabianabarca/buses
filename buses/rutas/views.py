@@ -11,8 +11,6 @@ def rutas(request):
     # Get all the the routes
     routes = Route.objects.all()
 
-    print(routes)
-
     # Get the stop object that is the "Terminal" in San Gabriel
     # stop = get_object_or_404(Stop, stop_id="terminal")
 
