@@ -7,13 +7,6 @@
 <!-- Estilos necesarios para el mapa de leaflet -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
 
-<!-- Estilo para el div del mapa -->
-<style>
-    .map {
-        width: 75%;
-    }
-</style>
-
 <h1>Ruta {{ route.short_name }} - San José</h1>
 <h2>Hora Actual</h2>
 <h2 id="DigitalCLOCK" onload="showTime()"></h2>
@@ -54,9 +47,9 @@
     </tr>
     {% for timeRoute, timeSJ in stop_times_list %}
     <tr>
-        <td>{{ timeRoute.departure_time }}</td>
+        <td>{{ timeRoute }}</td>
         <td> | </td>
-        <td>{{ timeSJ.departure_time }}</td>
+        <td>{{ timeSJ }}</td>
     </tr>
     {% endfor %}
     <!-- Add last row that only has stop time from "San José" departure -->
@@ -65,7 +58,7 @@
     <tr>
         <td>N/A</td>
         <td> | </td>
-        <td>{{ stop_times_SJ_last.departure_time }}</td>
+        <td>{{ stop_times_SJ_last }}</td>
     </tr>
     {% endif %}
 </table>
@@ -73,7 +66,7 @@
 <h3>Mapa</h3>
 
 <!-- div para el mapa -->
-<div id="map" class="map map-home" style="margin:12px 0 12px 0;height:400px;"></div>
+<div id="map" class="map map-home" style="margin:auto; height:400px; width: 75%;"></div>
 
 <!-- Scripts necesarios para el mapa de leaflet -->
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>	 

@@ -82,38 +82,35 @@ def ruta(request, url_ruta):
     stop_times_Route = StopTime.objects.filter(trip=trip[0]) # Stop times for this Route departures ("San Gabriel" or "Acosta")
     stop_times_SJ = StopTime.objects.filter(trip=trip[1]) # Stop times for "San José" departures
 
-    stop_times_list = zip(stop_times_Route, stop_times_SJ) # Make a list of tuples in order to display the two stop times in the schedule row
+    # Change from datetime to string
+    # This is for displaying the times in AM/PM format
+    string_stop_times_Route = []
+    for stop_time in stop_times_Route:
+        string_stop_times_Route.append(stop_time.departure_time.strftime("%I:%M %p"))
 
-    # Get current time to display it in the template
+    # Change from datetime to string
+    # This is for displaying the times in AM/PM format
+    string_stop_times_SJ = []
+    for stop_time in stop_times_SJ:
+        string_stop_times_SJ.append(stop_time.departure_time.strftime("%I:%M %p"))
+
+    stop_times_list = zip(string_stop_times_Route, string_stop_times_SJ) # Make a list of tuples in order to display the two stop times in the schedule row
+
+    # Get current time to pass it to nextBuses()
     now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
     
     # Get the next 3 buses list from the Route to San Jose
     bus_listRoute = nextBuses(stop_times_Route, now)
     # Get the next 3 buses list from San Jose to the Route
     bus_listSJ = nextBuses(stop_times_SJ, now)
 
-    # Get all the the stops to send theit Coordinates
-    # in order to fill the map
-    stops = Stop.objects.all()
-
-    terminal_coordinates = []
-    terminal_coordinates.append(stops[0].stop_lat)
-    terminal_coordinates.append(stops[0].stop_lon)
-
-    SJ_coordinates = []
-    SJ_coordinates.append(stops[1].stop_lat)
-    SJ_coordinates.append(stops[1].stop_lon)
-
     context = {
         'route': route, # Route object
         'stop': stop, # Route stop object ("terminal")
         'stop_times_list': stop_times_list, # Route stop time list (to SJ and from SJ)
-        'stop_times_SJ_last': stop_times_SJ.last(), # To send the last departure from "San José" in the cases that the last row of the schedule have only a stop time for "San José"
+        'stop_times_SJ_last': stop_times_SJ.last().departure_time.strftime("%I:%M %p"), # To send the last departure from "San José" in the cases that the last row of the schedule have only a stop time for "San José"
         'bus_listRoute': bus_listRoute, # Next 3 buses from the Route to SJ
         'bus_listSJ': bus_listSJ, # Next 3 buses from SJ to the Route
-        'terminal_coordinates': terminal_coordinates,
-        'SJ_coordinates': SJ_coordinates,
     }
 
     return render(request, 'ruta.html', context)
@@ -126,37 +123,57 @@ def nextBuses(stop_times, current_time):
     iterator = iter(stop_times_list) # Get an iterator for the stop_times_list
     next(iterator)  # Get the first element in the list (to get next elements in the for cycle)
     for item in stop_times_list:
+
+        # Change from datetime to string
+        # This is for displaying the times in AM/PM format
+        time1_string = item.departure_time.strftime("%I:%M %p")
+
         if current_time.hour == item.departure_time.hour:
             if current_time.minute < item.departure_time.minute:
                 try:
+                    # Change from datetime to string for the next 2 buses
+                    # This is for displaying the times in AM/PM format
+                    time2_string = next(iterator).departure_time.strftime("%I:%M %p")
+                    time3_string = next(iterator).departure_time.strftime("%I:%M %p")
+                    
                     bus_list = []
-                    bus_list.append(item.departure_time)
-                    bus_list.append(next(iterator).departure_time)
-                    bus_list.append(next(iterator).departure_time)
+                    bus_list.append(time1_string)
+                    bus_list.append(time2_string)
+                    bus_list.append(time3_string)
                     return bus_list
                 except:
                     break
             else:
                 try:
-                    # next(iterator)
+                    # Change from datetime to string for the next 3 buses
+                    # This is for displaying the times in AM/PM format
+                    time1_string = next(iterator).departure_time.strftime("%I:%M %p")
+                    time2_string = next(iterator).departure_time.strftime("%I:%M %p")
+                    time3_string = next(iterator).departure_time.strftime("%I:%M %p")
+
                     bus_list = []
-                    bus_list.append(next(iterator).departure_time)
-                    bus_list.append(next(iterator).departure_time)
-                    bus_list.append(next(iterator).departure_time)
+                    bus_list.append(time1_string)
+                    bus_list.append(time2_string)
+                    bus_list.append(time3_string)
                     return bus_list
                 except:
                     break
         elif current_time.hour + 1 == item.departure_time.hour:
             try:
+                # Change from datetime to string for the next 2 buses
+                # This is for displaying the times in AM/PM format
+                time2_string = next(iterator).departure_time.strftime("%I:%M %p")
+                time3_string = next(iterator).departure_time.strftime("%I:%M %p")
+
                 bus_list = []
-                bus_list.append(item.departure_time)
-                bus_list.append(next(iterator).departure_time)
-                bus_list.append(next(iterator).departure_time)
+                bus_list.append(time1_string)
+                bus_list.append(time2_string)
+                bus_list.append(time3_string)
                 return bus_list
             except:
                 break
         else:
-            bus_list.append(item.departure_time)
+            bus_list.append(time1_string)
         try:
             next(iterator)
         except:
