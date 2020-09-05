@@ -42,18 +42,26 @@ def rutas(request):
     # Fill the next 3 buses from SG to SJ
     for stop_times in stop_times_SG:
         next_bus_list_SG = (nextBuses(stop_times, now))
+
+    # print(next_bus_list_SG)
     
     # Fill the next 3 buses from Acosta to SJ
     for stop_times in stop_times_Aco:
         next_bus_list_Aco = (nextBuses(stop_times, now))
 
+    # print(next_bus_list_Aco)
+
     # Fill the next 3 buses from SJ to SG
     for stop_times in stop_times_SJ_SG:
         next_bus_list_SJ_SG = (nextBuses(stop_times, now))
 
+    # print(next_bus_list_SJ_SG)
+
     # Fill the next 3 buses from SJ to Acosta
     for stop_times in stop_times_SJ_Aco:
         next_bus_list_SJ_Aco = (nextBuses(stop_times, now))
+
+    # print(next_bus_list_SJ_Aco)
 
     context = {
         'routes': routes, # List of routes
@@ -119,59 +127,46 @@ def ruta(request, url_ruta):
 def nextBuses(stop_times, current_time):
     bus_list = [] # List to return with the next buses
 
-    stop_times_list = list(stop_times) # Convert the scehule given to a list
+    stop_times_list = list(stop_times) # Convert the scehdule given to a list
     iterator = iter(stop_times_list) # Get an iterator for the stop_times_list
     next(iterator)  # Get the first element in the list (to get next elements in the for cycle)
-    for item in stop_times_list:
 
+    for item in stop_times_list:
         # Change from datetime to string
         # This is for displaying the times in AM/PM format
         time1_string = item.departure_time.strftime("%I:%M %p")
 
         if current_time.hour == item.departure_time.hour:
             if current_time.minute < item.departure_time.minute:
+                bus_list = []
+                bus_list.append(time1_string)
                 try:
                     # Change from datetime to string for the next 2 buses
                     # This is for displaying the times in AM/PM format
                     time2_string = next(iterator).departure_time.strftime("%I:%M %p")
-                    time3_string = next(iterator).departure_time.strftime("%I:%M %p")
-                    
-                    bus_list = []
-                    bus_list.append(time1_string)
                     bus_list.append(time2_string)
-                    bus_list.append(time3_string)
-                    return bus_list
-                except:
-                    break
-            else:
-                try:
-                    # Change from datetime to string for the next 3 buses
-                    # This is for displaying the times in AM/PM format
-                    time1_string = next(iterator).departure_time.strftime("%I:%M %p")
-                    time2_string = next(iterator).departure_time.strftime("%I:%M %p")
-                    time3_string = next(iterator).departure_time.strftime("%I:%M %p")
 
-                    bus_list = []
-                    bus_list.append(time1_string)
-                    bus_list.append(time2_string)
+                    time3_string = next(iterator).departure_time.strftime("%I:%M %p")
                     bus_list.append(time3_string)
-                    return bus_list
                 except:
                     break
-        elif current_time.hour + 1 == item.departure_time.hour:
+                return bus_list
+
+        elif current_time.hour <= item.departure_time.hour:
+            bus_list = []
+            bus_list.append(time1_string)
             try:
                 # Change from datetime to string for the next 2 buses
                 # This is for displaying the times in AM/PM format
                 time2_string = next(iterator).departure_time.strftime("%I:%M %p")
-                time3_string = next(iterator).departure_time.strftime("%I:%M %p")
-
-                bus_list = []
-                bus_list.append(time1_string)
                 bus_list.append(time2_string)
+
+                time3_string = next(iterator).departure_time.strftime("%I:%M %p")
                 bus_list.append(time3_string)
-                return bus_list
             except:
                 break
+            return bus_list
+        
         else:
             bus_list.append(time1_string)
         try:
