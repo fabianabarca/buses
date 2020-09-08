@@ -1,4 +1,4 @@
-{% extends 'base.html'%}
+OB{% extends 'base.html'%}
 
 {% block page_title %} Contacto | TSG {% endblock %}
 
@@ -14,7 +14,18 @@
     <li>Dirección: Barrio María Auxiliadora, San Ignacio de Acosta (<a href="https://www.waze.com/ul?ll=9.79447088%2C-84.16395520&navigate=yes&zoom=17">Waze</a>)</li>
 </ul>
 
-<h2>Formulario de contacto</h2>
+{% if enviado %}
+{{ notificacion }}
+{% else %}
+<h1>Contáctenos</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ formulario.as_p }}
+  <div class="form-actions">
+    <button type="submit">Send</button>
+  </div>
+</form>
+{% endif %}
 
 <h2>Preguntas frecuentes</h2>
 

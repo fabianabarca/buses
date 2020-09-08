@@ -6,8 +6,16 @@
 
 <h1>Reseña de la empresa</h1>
 
+{% for nota in empresa %}
+
+<h2>{{ nota.titulo }}</h2>
+
+<p>{{ nota.contenido|safe }}</p>
+
+{% endfor %}
+
 <p>Link al personal</p>
 
-<p><a href="/personal/">Personal</a></p>
+<p><a href="/nosotros/personal/">Personal</a></p>
 
 {% endblock %}

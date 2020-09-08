@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{% block page_title %} Personal | TSG {% endblock %}
+
+{% block content %}
+
+<h1>Lista del personal</h1>
+
+<p>Información de un único funcionario</p>
+
+<img width="150" height="150" src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}"
+     class="attachment-thumbnail"
+     alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}" /></a>
+
+<br>
+Mi nombre es {{ funcionario.nombre }} mi cargo es {{ funcionario.cargo }}
+
+{% endblock %}
