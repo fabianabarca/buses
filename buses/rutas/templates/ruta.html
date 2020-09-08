@@ -1,15 +1,79 @@
 {% extends 'base.html'%}
 
-{% block page_title %} (( ruta )) | TSG {% endblock %}
+{% block page_title %} {{ route.short_name }} | TSG {% endblock %}
 
 {% block content %}
 
-<h1>Ruta (( ruta )) - San José</h1>
+<!-- Estilos necesarios para el mapa de leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
 
-<p>Próximo bus</p>
+<h1>Ruta {{ route.short_name }} - San José</h1>
+<h2>Hora Actual</h2>
+<h2 id="DigitalCLOCK" onload="showTime()"></h2>
 
-<p>Horario</p>
+<h3>Próximo bus</h3>
+<!-- Tabla de Próximo Bus -->
+<table align="center">
+    <tr>
+        <th>Próximo bus saliendo de {{ route.short_name }}</th>
+        <th> | </th>
+        <th>Próximo bus saliendo de San José</th>
+    </tr>
+    <tr>
+        <td>{{ bus_listRoute.0 }}</td>
+        <td> | </td>
+        <td>{{ bus_listSJ.0 }}</td>
+    </tr>
+    <tr>
+        <td>{{ bus_listRoute.1 }}</td>
+        <td> | </td>
+        <td>{{ bus_listSJ.1 }}</td>
+    </tr>
+    <tr>
+        <td>{{ bus_listRoute.2 }}</td>
+        <td> | </td>
+        <td>{{ bus_listSJ.2 }}</td>
+    </tr>
+</table>
 
-<p>Mapa</p>
+<h3>Horario -  Salidas desde {{ stop.name }}</h3>
+
+<!-- Tabla de horario -->
+<table align="center">
+    <tr>
+        <th>{{ route.short_name }}</th>
+        <th> | </th>
+        <th>San Jose</th>
+    </tr>
+    {% for timeRoute, timeSJ in stop_times_list %}
+    <tr>
+        <td>{{ timeRoute }}</td>
+        <td> | </td>
+        <td>{{ timeSJ }}</td>
+    </tr>
+    {% endfor %}
+    <!-- Add last row that only has stop time from "San José" departure -->
+    <!-- Only in the case for "San Gabriel" -->
+    {% if route.short_name == "San Gabriel" %}
+    <tr>
+        <td>N/A</td>
+        <td> | </td>
+        <td>{{ stop_times_SJ_last }}</td>
+    </tr>
+    {% endif %}
+</table>
+
+<h3>Mapa</h3>
+
+<!-- div para el mapa -->
+<div id="map" class="map map-home" style="margin:auto; height:400px; width: 75%;"></div>
+
+<!-- Scripts necesarios para el mapa de leaflet -->
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>	 
+
+<script type=”text/javscript”>
+    let terminal_coordinates = “{{ terminal_coordinates }}”;
+    let SJ_coordinates = “{{ SJ_coordinates }}”;
+</script>
 
 {% endblock %}
