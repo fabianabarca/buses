@@ -6,8 +6,36 @@
 
 <h1>Lista de avisos y noticias</h1>
 
-<p>Avisos urgentes</p>
+<h1>Avisos urgentes</h1>
 
-<p>Noticias generales</p>
+    {% for aviso  in todosAvisos %}
+    <div style="background-color: white;"><p>
+        <h2 style="color:red;">{{aviso.titulo}}</h2>
+        <h3 style="color:black;">{{aviso.descripcion}}</h3>
+    </p></div> 
+    {% endfor %}
+
+<h1>Noticias generales</h1>
+
+{% for noticia  in todasNoticias %}
+<div style="background-color: white;"><p>
+    <h2 style="color:blue;">{{noticia.titulo}}</h2>
+    <h3 style="color:black;">{{noticia.descripcion_Corta}}</h3>
+
+    {% if noticia.imagen_Noticia %}
+    <p><img src="{{noticia.imagen_Noticia.url}}"></p> 
+    {% endif %}
+
+    <p style="color:black;">{{noticia.descripcion_Larga}}</p>
+</p></div> 
+{% endfor %}
+
+<form action="/noticias/busqueda/" method="GET">
+
+    <input type="text" name='elemento_Busqueda'>
+
+    <input type="submit" value="Buscar">
+
+</form>
 
 {% endblock %}
