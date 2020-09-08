@@ -129,6 +129,12 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+#Url pública donde se almacenan las imágenes de noticias
+MEDIA_URL = '/media/'
+
+#Url donde buscar los archivos multimedia
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Email configuration:
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
