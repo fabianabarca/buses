@@ -152,7 +152,7 @@ class Trip(models.Model):
     direction = models.CharField(
         max_length=1, blank=True,
         choices=(('0', '0'), ('1', '1')),
-        help_text="Direction for bi-directional routes.")
+        help_text="Dirección para rutas en dos sentidos.")
     # block = models.ForeignKey(
     #     'Block', null=True, blank=True, on_delete=models.SET_NULL,
     #     help_text="Block of sequential trips that this trip belongs to.")
