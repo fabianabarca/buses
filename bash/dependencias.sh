@@ -5,6 +5,7 @@ DEPENDENCIAS=(
     django
     gunicorn
     django-ckeditor
+    pillow
 )
 
 # Comprobar o instalar dependencia
