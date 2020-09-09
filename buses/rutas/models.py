@@ -38,11 +38,12 @@ class Agency(models.Model):
     phone = models.CharField(
         max_length=255, blank=True,
         help_text="Voice telephone number")
-    
     fare_url = models.URLField(
         blank=True, help_text="URL for purchasing tickets online")
-
     email = models.EmailField(max_length=254,  blank=True, help_text="Customer Service email")
+
+    def __str__(self):
+        return self.name
 
 class Stop(models.Model):
     """A stop or station
@@ -90,12 +91,14 @@ class Stop(models.Model):
             ('1', 'Some wheelchair boarding'),
             ('2', 'No wheelchair boarding')),
         help_text='Is wheelchair boarding possible?')
+    
+    def __str__(self):
+        return self.name
 
 class Route(models.Model):
     """A transit route
     Maps to route.txt in the GTFS feed.
     """
-
     route_id = models.CharField(
         max_length=255, db_index=True,
         help_text="Unique identifier for route.")
@@ -132,6 +135,9 @@ class Route(models.Model):
     text_color = models.CharField(
         max_length=6, blank=True,
         help_text="Color of route text in hex")
+    
+    def __str__(self):
+        return self.long_name
 
 class Trip(models.Model):
     """A trip along a route

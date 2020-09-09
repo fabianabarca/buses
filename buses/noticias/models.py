@@ -3,29 +3,29 @@ from django.db import models
 # Create your models here.
 
 class Noticia(models.Model):
-   titulo=models.CharField(
+   titulo = models.CharField(
       max_length=30,
       help_text='Título de la noticia'
    )
-   fecha_publicacion=models.DateField(
+   fecha_publicacion = models.DateField(
       help_text="Fecha de publicación"
    )
-   descripcion_Corta=models.CharField(
+   descripcion_Corta = models.CharField(
       max_length=500,
       help_text="Descripción corta de la noticia"
    )
-   descripcion_Larga=models.TextField(
+   descripcion_Larga = models.TextField(
       max_length=50000,
       help_text="Descripción completa de la noticia"
    )
 
-   imagen_Noticia=models.ImageField(
+   imagen_Noticia = models.ImageField(
       upload_to='noticias',
       blank=True
    )
 
-   fecha_expiracion=models.DateField(
-      help_text="Fecha de expiracion de publicación"
+   fecha_expiracion = models.DateField(
+      help_text="Fecha de expiración de publicación"
    )
 
    def __str__(self):

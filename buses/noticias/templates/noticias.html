@@ -8,7 +8,7 @@
 
 <h1>Avisos urgentes</h1>
 
-    {% for aviso  in todosAvisos %}
+    {% for aviso  in todos_avisos %}
     <div style="background-color: white;"><p>
         <h2 style="color:red;">{{aviso.titulo}}</h2>
         <h3 style="color:black;">{{aviso.descripcion}}</h3>
@@ -17,16 +17,16 @@
 
 <h1>Noticias generales</h1>
 
-{% for noticia  in todasNoticias %}
+{% for noticia  in todas_noticias %}
 <div style="background-color: white;"><p>
-    <h2 style="color:blue;">{{noticia.titulo}}</h2>
-    <h3 style="color:black;">{{noticia.descripcion_Corta}}</h3>
+    <h2>{{noticia.titulo}}</h2>
+    <h3>{{noticia.descripcion_Corta}}</h3>
 
     {% if noticia.imagen_Noticia %}
     <p><img src="{{noticia.imagen_Noticia.url}}"></p> 
     {% endif %}
 
-    <p style="color:black;">{{noticia.descripcion_Larga}}</p>
+    <p>{{noticia.descripcion_Larga}}</p>
 </p></div> 
 {% endfor %}
 

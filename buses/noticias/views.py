@@ -6,10 +6,10 @@ from noticias.models import Noticia,Aviso
 def noticias(request):
 
     #Para cargar todas las noticias y avisos
-    todasNoticias=Noticia.objects.all()
-    todosAvisos=Aviso.objects.all()
+    todas_noticias = Noticia.objects.all()
+    todos_avisos = Aviso.objects.all()
 
-    return render(request, 'noticias.html',{'todasNoticias':todasNoticias, 'todosAvisos':todosAvisos})
+    return render(request, 'noticias.html',{'todas_noticias':todas_noticias, 'todos_avisos':todos_avisos})
 
 def noticia(request):
     return render(request, 'noticia.html')
