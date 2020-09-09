@@ -1,0 +1,109 @@
+#!/bin/bash
+## Configuración básica para montar el sitio en un servidor Ubuntu 18.04, DigitalOcean
+
+if [[ "$( dirname $0 )" != '.' ]]
+then
+    echo "Ejecute este script en la raíz del proyecto con:
+         ./config"
+    exit 1
+fi
+
+# Configuración de riesgo, introduce varios ficheros al sistema
+if [[ "$1" == 'install' ]]
+then
+    set -e
+    cp gnicorn.service /etc/systemd/system/gunicorn.service
+    cp web-buses.nginx-config /etc/nginx/sites-available/web-buses
+
+    # Probar la configuración
+    nginx -t
+    ln -s /etc/nginx/sites-available/web-buses /etc/nginx/sites-enabled
+
+    systemctl enable gunicorn.service
+    systemctl start gunicorn.service
+
+    systemctl start nginx
+fi
+
+# Configuración sin riesgo, no introduce ficheros en el sistema por parte del proyecto
+if [ "$VIRTUAL_ENV" ] && [ $USER != 'root' ]
+then
+    # Configuración dentro del ambiente virtual de Python3
+    ./bash/dependencias.sh # Instalar Django y complementos
+
+    echo "[Unit]
+Description=Gunicorn daemon server:$PWD
+After=network.target
+
+[Service]
+User=$USER
+Group=www-data
+WorkingDirectory=$PWD/buses
+ExecStart=$VIRTUAL_ENV/bin/gunicorn --access-logfile - --workers 3 --bind unix:$PWD/web-buses.sock buses.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+" > gunicorn.service
+
+    echo "server {
+    listen 80;
+    server_name 161.35.54.122;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+root $PWD/buses;
+}
+
+    location / {
+include proxy_params;
+        proxy_pass http://unix:$PWD/web-buses.sock;
+}
+
+}" > web-buses.nginx-config
+
+elif [ "$VIRTUAL_ENV" ] && [ $USER == 'root' ]
+then
+    echo "No ejecute este script con SUDO dentro del ambiente virtual"
+
+elif [[ $USER == 'root' ]] && [ "0$VIRTUAL_ENV" == '0' ]
+then
+     # Instalar las dependencias del sistema:
+     { python3 --version && pip3 --version && nginx -v ; } || {
+         # Se actualiza el sistema
+         apt update
+         apt upgrade
+
+         # Se instala Python3 en el sistema
+         apt install -y python3 python3-pip
+
+         # Instalar el web-service
+         apt install -y nginx
+         systemctl stop nginx.service
+     }
+
+     # Instalación de virtualenv
+     pip3 install virtualenv
+
+else
+    virtualenv --version || {
+        echo "
+        Ejecute el siguiente comando para instalar las dependencias:
+                $ sudo ./config
+"
+    }
+    if test -d venv_server
+    then
+        :
+    else
+        virtualenv venv_server
+        echo "
+        Utilice el siguiente comando para acceder al ambiente virtual
+        agregar el mismo al final de la configuración ~/.bashrc para
+        ejecutarlo siempre por defecto al ingresar al servidor.
+             $ source $PWD/venv_server/bin/activate"
+    fi
+    source ./venv_server/bin/activate
+    $0 # Ejecuta la configuración dentro del ambiente virtual
+fi
+
+exit 0

@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Instalar las dependencias del proyecto
+# Lista de dependencias Python3 del ambiente virtual del proyecto
 DEPENDENCIAS=(
+    django
+    gunicorn
     django-ckeditor
 )
 
@@ -10,7 +12,7 @@ function python_dep ()
 {
     # $1: Dependecia
     # Comprueba si la dependencia está instalada
-    grep -c "$1" <<< "$( pip list | cut -f 1 -d ' ' )" &>/dev/null
+    grep --ignore-case -c "$1" <<< "$( pip list | cut -f 1 -d ' ' )" &>/dev/null
     if (( $? ))
     then
         echo "Instalar la dependencia $1"

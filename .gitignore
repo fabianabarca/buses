@@ -7,3 +7,4 @@ migrations*
 *.jpg
 *.zip
 *.tar.*
+venv_server*
