@@ -80,7 +80,8 @@ def ruta(request, url_ruta):
     route = get_object_or_404(Route, url=url_ruta)
 
     # Get the stop object that is the "Terminal" in San Gabriel
-    stop = get_object_or_404(Stop, stop_id="terminal") # Al asignar los IDs cambiar por el ID a usar para la terminal
+    # stop = get_object_or_404(Stop, stop_id="terminal") # Al asignar los IDs cambiar por el ID a usar para la terminal
+    stop = Stop.objects.filter(stop_id="terminal")
 
     # Get the trip for this route
     trip = Trip.objects.filter(route=route)
