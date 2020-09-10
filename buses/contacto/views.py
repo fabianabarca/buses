@@ -23,16 +23,16 @@ def contacto(request):
             asunto = formulario.cleaned_data['asunto']
             mensaje = formulario.cleaned_data['mensaje']
             mensaje = mensaje + "\nEnviado por el usuario: " +\
-                nombre + " [" + email + ']'
+                nombre + '[' + email + ']'
             try: # FIXME: implementar correctamente la configuración de SMTP usando correo del administrador que está en base de datos
                 send_mail(asunto, mensaje, email, ['tsgdumbacc@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Configuración de correo inválida.')
             enviado = True
 
-    empresa = get_object_or_404(Agency, agency_id=1234)
+    empresa = get_object_or_404(Agency, agency_id='TSG')
     preguntas = Pregunta.objects.all()
-    notificacion = "Listo! gracias por su mensaje" # FIXME: agregar mensaje de confirmación
+    notificacion = "¡Listo! gracias por su mensaje" # FIXME: agregar mensaje de confirmación
     contexto = {
         'empresa': empresa,
         'preguntas': preguntas,

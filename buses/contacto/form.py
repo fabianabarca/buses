@@ -5,7 +5,7 @@ from django import forms
 asuntos = [
     ('horario', 'Consulta de horario'),
     ('perdidos', 'Objetos extraviados'),
-    ('sujerencia', 'Sujerencias'),
+    ('sugerencia', 'Sugerencias'),
     ('queja', 'Denuncias'),
     ('otro', 'Otros')
 ]

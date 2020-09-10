@@ -6,9 +6,11 @@ from ckeditor.fields import RichTextField
 class Comunidad(models.Model):
     nombre = models.CharField(max_length=32)
     resena = RichTextField(blank=True, null=True)
-    url = models.CharField(max_length=32)
+    imagen = models.ImageField(default=None)
+    url = models.CharField(max_length=32, 
+                help_text="Identificador en la URL, ejemplo: sangabriel")
     poblacion = models.PositiveIntegerField(default=0)
-    area = models.PositiveIntegerField(default=0)
+    area = models.DecimalField(default=0, max_digits=6, decimal_places=2)
     codigo_postal = models.PositiveIntegerField(default=0)
 
     def __str__(self):

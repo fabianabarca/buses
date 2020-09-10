@@ -1,4 +1,4 @@
-OB{% extends 'base.html'%}
+{% extends 'base.html'%}
 
 {% block page_title %} Contacto {% endblock %}
 
@@ -22,7 +22,7 @@ OB{% extends 'base.html'%}
   {% csrf_token %}
   {{ formulario.as_p }}
   <div class="form-actions">
-    <button type="submit">Send</button>
+    <button type="submit">Enviar</button>
   </div>
 </form>
 {% endif %}
