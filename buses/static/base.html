@@ -8,31 +8,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
-        <style> 
-            * {
-                font-family: 'Barlow', sans-serif;
-                text-align: center;
-                box-sizing: border-box;
-            }
-            li {
-                display: inline-block;
-                padding: .5em;
-            }
-            /* Cambio de div a .header para evitar problemas 
-            con el div del mapa en ruta.html */
-            .header {
-                margin: auto;
-                width: fit-content;
-                padding: 10px;
-                background-color: black;
-                color: white;
-                font-weight: 700;
-                font-size: larger;
-            } */
-            a {
-                text-decoration: none;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
         <title>{% block page_title %}{% endblock %}</title>
     </head>
     <body>

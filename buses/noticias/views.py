@@ -11,12 +11,12 @@ def noticias(request):
 
     return render(request, 'noticias.html',{'todas_noticias':todas_noticias, 'todos_avisos':todos_avisos})
 
-def noticia(request):
+def noticia(request):¿C
     return render(request, 'noticia.html')
 
 def busqueda(request):
 
-    elemento_Deseado=request.GET['elemento_Busqueda']
+    elemento_Deseado = request.GET['elemento_Busqueda']
 
     if elemento_Deseado:
         noticias_Relacionadas=Noticia.objects.filter(titulo__icontains=elemento_Deseado)

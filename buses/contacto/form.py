@@ -19,4 +19,4 @@ class Formulario(forms.Form):
     )
     mensaje = forms.CharField(widget=forms.Textarea, required=True)
 
-#    TODO: agregar la lísta de asuntos recurrentes
+#    TODO: agregar la lista de asuntos recurrentes

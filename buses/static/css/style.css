@@ -1,0 +1,23 @@
+* {
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+}
+li {
+    display: inline-block;
+    padding: .5em;
+}
+/* Cambio de div a .header para evitar problemas 
+con el div del mapa en ruta.html */
+.header {
+    margin: auto;
+    width: fit-content;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    font-size: larger;
+} */
+a {
+    text-decoration: none;
+}
