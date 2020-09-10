@@ -4,25 +4,24 @@
 
 {% block content %}
 
-<h1>{{ empresa.name }}</h1>
-
-<h2>Información de contacto</h2>
+{% block h1 %} Información de contacto {% endblock %}
 
 <ul>
-    <li>Correo: <a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a></li>
-    <li>Teléfono: <a href="tel:{{ empresa.phone }}">{{ empresa.phone }}</a></li>
-    <li>Dirección: Barrio María Auxiliadora, San Ignacio de Acosta (<a href="https://www.waze.com/ul?ll=9.79447088%2C-84.16395520&navigate=yes&zoom=17">Waze</a>)</li>
+    <li><i class="fas fa-envelope"></i> <strong>Correo</strong>: <a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a></li>
+    <li><i class="fas fa-phone"></i> <strong>Teléfono</strong>: <a href="tel:{{ empresa.phone }}">{{ empresa.phone }}</a></li>
+    <li><i class="fas fa-map-marked"></i> <strong>Dirección</strong>: Barrio María Auxiliadora, San Ignacio de Acosta (<a href="https://www.waze.com/ul?ll=9.79447088%2C-84.16395520&navigate=yes&zoom=17">Waze</a>)</li>
 </ul>
 
 {% if enviado %}
 {{ notificacion }}
 {% else %}
-<h1>Contáctenos</h1>
-<form method="post">
+
+<form method="post" class="w3-container w3-card-4">
+  <h1>Contáctenos</h1>
   {% csrf_token %}
   {{ formulario.as_p }}
   <div class="form-actions">
-    <button type="submit">Enviar</button>
+    <button type="submit" class="w3-button w3-block w3-left-align">Enviar</button>
   </div>
 </form>
 {% endif %}
@@ -31,8 +30,12 @@
 
 {% for pregunta in preguntas %}
 
-<h4>{{ pregunta.pregunta }}</h4>
-<p>{{ pregunta.respuesta }}</p>
+<button onclick="myAccFunc('{{ forloop.counter0 }}')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">{{ pregunta.pregunta }}</button>
+<div id="{{ forloop.counter0 }}" class="w3-hide">
+  <div class="w3-container">
+    <p>{{ pregunta.respuesta }}</p>
+  </div>
+</div>
 
 {% endfor %}
 

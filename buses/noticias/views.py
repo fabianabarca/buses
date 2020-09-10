@@ -11,7 +11,7 @@ def noticias(request):
 
     return render(request, 'noticias.html',{'todas_noticias':todas_noticias, 'todos_avisos':todos_avisos})
 
-def noticia(request):¿C
+def noticia(request):
     return render(request, 'noticia.html')
 
 def busqueda(request):

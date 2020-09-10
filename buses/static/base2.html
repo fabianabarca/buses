@@ -1,0 +1,43 @@
+{% load static %}
+
+<!-- Documento base HTML para todas las páginas del sitio -->
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/stylish.css' %}">
+        <title>{% block page_title %}{% endblock %} - TSG</title>
+    </head>
+    <body>
+        <header>
+            <!-- Cambio a clase header para evitar problemas  -->
+            <!-- con el div del mapa en ruta.html -->
+            <div class="header">
+                TSG
+            </div>
+        </header>
+        
+        {% block content %}
+            
+            <!-- Aquí el contenido de cada página -->
+
+        {% endblock %}
+        
+        <footer>
+            <hr>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/rutas/">Rutas</a></li>
+                <li><a href="/noticias/">Noticias</a></li>
+                <li><a href="/comunidades/">Comunidades</a></li>
+                <li><a href="/nosotros/">Nosotros</a></li>
+                <li><a href="/contacto/">Contacto</a></li>
+            </ul>
+        </footer>
+        <script src="{% static 'js/hora_actual.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
+    </body>
+</html>

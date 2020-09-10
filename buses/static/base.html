@@ -7,16 +7,50 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-        <title>{% block page_title %}{% endblock %}</title>
+		<link href="https://fonts.googleapis.com/css2?family=OpenSans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/stylish.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/color.css' %}">
+        <script src="https://kit.fontawesome.com/1ae7c4e024.js" crossorigin="anonymous"></script>
+        <title>{% block page_title %}{% endblock %} - TSG</title>
     </head>
     <body>
-        <header>
-            <!-- Cambio a clase header para evitar problemas  -->
-            <!-- con el div del mapa en ruta.html -->
-            <div class="header">
-                TSG
+        <!-- Navegación -->
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-card" id="myNavbar">
+              <a href="/" class="w3-bar-item w3-button w3-wide">TSG</a>
+              <!-- Right-sided navbar links -->
+              <div class="w3-right w3-hide-small">
+                <a href="/rutas/" class="w3-bar-item w3-button"><i class="fas fa-bus"></i> Rutas</a>
+                <a href="/noticias/" class="w3-bar-item w3-button"><i class="fa fa-newspaper"></i> Noticias</a>
+                <a href="/comunidades/" class="w3-bar-item w3-button"><i class="fa fa-school"></i> Comunidades</a>
+                <a href="/nosotros/" class="w3-bar-item w3-button"><i class="fa fa-user-friends"></i> Nosotros</a>
+                <a href="/contacto/" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contacto</a>
+              </div>
+              <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+          
+              <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Sidebar on small screens when clicking the menu icon -->
+          <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Cerrar</a>
+            <a href="/rutas/" class="w3-bar-item w3-button"><i class="fas fa-bus"></i> Rutas</a>
+            <a href="/noticias/" class="w3-bar-item w3-button"><i class="fa fa-newspaper"></i> Noticias</a>
+            <a href="/comunidades/" class="w3-bar-item w3-button"><i class="fa fa-school"></i> Comunidades</a>
+            <a href="/nosotros/" class="w3-bar-item w3-button"><i class="fa fa-user-friends"></i> Nosotros</a>
+            <a href="/contacto/" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contacto</a>
+          </nav>
+        
+        
+        <!-- Encabezado -->
+        <header class="bgimg-1 w3-container w3-theme w3-padding" id="myHeader">
+            <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+            <div class="w3-center">
+                <h4>Transportes San Gabriel</h4>
+                <h1 class="w3-xxxlarge w3-animate-bottom">{% block h1 %}{% endblock %}</h1>
             </div>
         </header>
         
@@ -26,18 +60,27 @@
 
         {% endblock %}
         
-        <footer>
-            <hr>
+        <!-- Pie de página -->
+        
+        <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+            <span class="w3-text w3-theme-light w3-padding">Subir</span>    
+            <a class="w3-text-black" href="#myHeader"><span class="w3-xlarge">
+            <i class="fa fa-chevron-circle-up"></i></span></a>
+        </div>
+            
+        <footer class="w3-container w3-grey w3-padding-16">
+            <h3>Contacto</h3>
             <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/rutas/">Rutas</a></li>
-                <li><a href="/noticias/">Noticias</a></li>
-                <li><a href="/comunidades/">Comunidades</a></li>
-                <li><a href="/nosotros/">Nosotros</a></li>
-                <li><a href="/contacto/">Contacto</a></li>
+                <li><i class="fas fa-envelope"></i> <strong>Correo</strong>: <a href="mailto:transgabriel@racsa.co.cr">transgabriel@racsa.co.cr</a></li>
+                <li><i class="fas fa-phone"></i> <strong>Teléfono</strong>: <a href="tel:+506-2410-0330">2410-0330</a></li>
+                <li><i class="fas fa-map-marked"></i> <strong>Dirección</strong>: Barrio María Auxiliadora, San Ignacio de Acosta (<a href="https://www.waze.com/ul?ll=9.79447088%2C-84.16395520&navigate=yes&zoom=17">Waze</a>)</li>
             </ul>
         </footer>
+        
+        <!-- Archivos de JavaScript -->
+        
         <script src="{% static 'js/hora_actual.js' %}" type="text/javascript"></script>
         <script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/otros.js' %}" type="text/javascript"></script>
     </body>
 </html>

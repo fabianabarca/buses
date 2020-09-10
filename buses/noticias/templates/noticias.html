@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<h1>Lista de avisos y noticias</h1>
+{% block h1 %} Avisos y noticias {% endblock %}
 
 <h1>Avisos urgentes</h1>
 
@@ -23,7 +23,7 @@
     <h3>{{noticia.descripcion_Corta}}</h3>
 
     {% if noticia.imagen_Noticia %}
-    <p><img src="{{noticia.imagen_Noticia.url}}"></p> 
+    <p><img src="{{noticia.imagen_Noticia.url}}" width="150px"></p> 
     {% endif %}
 
     <p>{{noticia.descripcion_Larga}}</p>

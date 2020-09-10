@@ -1,54 +1,60 @@
 {% extends 'base.html'%}
 
-{% block page_title %} {{ route.short_name }} {% endblock %}
+{% block page_title %} Bus de {{ route.short_name }} {% endblock %}
 
 {% block content %}
 
 <!-- Estilos necesarios para el mapa de leaflet -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
 
-<h1>Ruta {{ route.short_name }} - San José</h1>
-<h2>Hora Actual</h2>
-<h2 id="DigitalCLOCK" onload="showTime()"></h2>
+{% block h1 %} Ruta {{ route.short_name }} - San José {% endblock %}
 
+
+<div class="w3-row-padding w3-center w3-margin-top">
+<h2><i class="fas fa-clock"></i> Hora actual</h2>
+<h2 id="DigitalCLOCK" onload="showTime()"></h2>
+</div>
+
+<!-- Próximo bus -->
+<div style="margin: auto; padding: 20px;" class="w3-responsive w3-card-4">
 <h3>Próximo bus</h3>
-<!-- Tabla de Próximo Bus -->
-<table align="center">
+<table class="w3-table w3-bordered">
+    <thead>
     <tr>
-        <th>Próximo bus saliendo de {{ route.short_name }}</th>
-        <th> | </th>
-        <th>Próximo bus saliendo de San José</th>
+        <th><i class="fas fa-bus"></i> {{ route.short_name }}</th>
+        <th><i class="fas fa-bus"></i> San José</th>
     </tr>
+    </thead>
     <tr>
-        <td>{{ bus_listRoute.0 }}</td>
-        <td> | </td>
-        <td>{{ bus_listSJ.0 }}</td>
+        <td class="w3-large">{{ bus_listRoute.0 }}</td>
+        <td class="w3-large">{{ bus_listSJ.0 }}</td>
     </tr>
     <tr>
         <td>{{ bus_listRoute.1 }}</td>
-        <td> | </td>
         <td>{{ bus_listSJ.1 }}</td>
     </tr>
     <tr>
         <td>{{ bus_listRoute.2 }}</td>
-        <td> | </td>
         <td>{{ bus_listSJ.2 }}</td>
     </tr>
 </table>
+</div>
+<!-- Fin de próximo bus -->
 
-<h3>Horario -  Salidas desde {{ stop.name }}</h3>
+<h3>Horario {{ route.short_name }}</h3>
 
 <!-- Tabla de horario -->
-<table align="center">
+
+<table class="w3-table w3-striped w3-bordered">
+    <thead>
     <tr>
         <th>{{ route.short_name }}</th>
-        <th> | </th>
-        <th>San Jose</th>
+        <th>San José</th>
     </tr>
+    </thead>
     {% for timeRoute, timeSJ in stop_times_list %}
     <tr>
         <td>{{ timeRoute }}</td>
-        <td> | </td>
         <td>{{ timeSJ }}</td>
     </tr>
     {% endfor %}
@@ -57,7 +63,6 @@
     {% if route.short_name == "San Gabriel" %}
     <tr>
         <td>N/A</td>
-        <td> | </td>
         <td>{{ stop_times_SJ_last }}</td>
     </tr>
     {% endif %}
@@ -66,7 +71,7 @@
 <h3>Mapa</h3>
 
 <!-- div para el mapa -->
-<div id="map" class="map map-home" style="margin:auto; height:400px; width: 75%;"></div>
+<div id="map" class="map map-home" style="margin:auto; height:400px; width: 50%;"></div>
 
 <!-- Scripts necesarios para el mapa de leaflet -->
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>	 

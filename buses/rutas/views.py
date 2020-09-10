@@ -95,13 +95,13 @@ def ruta(request, url_ruta):
     # This is for displaying the times in AM/PM format
     string_stop_times_Route = []
     for stop_time in stop_times_Route:
-        string_stop_times_Route.append(stop_time.departure_time.strftime("%I:%M %p"))
+        string_stop_times_Route.append(stop_time.departure_time.strftime("%-I:%M %p"))
 
     # Change from datetime to string
     # This is for displaying the times in AM/PM format
     string_stop_times_SJ = []
     for stop_time in stop_times_SJ:
-        string_stop_times_SJ.append(stop_time.departure_time.strftime("%I:%M %p"))
+        string_stop_times_SJ.append(stop_time.departure_time.strftime("%-I:%M %p"))
 
     stop_times_list = zip(string_stop_times_Route, string_stop_times_SJ) # Make a list of tuples in order to display the two stop times in the schedule row
 
@@ -117,7 +117,7 @@ def ruta(request, url_ruta):
         'route': route, # Route object
         'stop': stop, # Route stop object ("terminal")
         'stop_times_list': stop_times_list, # Route stop time list (to SJ and from SJ)
-        'stop_times_SJ_last': stop_times_SJ.last().departure_time.strftime("%I:%M %p"), # To send the last departure from "San José" in the cases that the last row of the schedule have only a stop time for "San José"
+        'stop_times_SJ_last': stop_times_SJ.last().departure_time.strftime("%-I:%M %p"), # To send the last departure from "San José" in the cases that the last row of the schedule have only a stop time for "San José"
         'bus_listRoute': bus_listRoute, # Next 3 buses from the Route to SJ
         'bus_listSJ': bus_listSJ, # Next 3 buses from SJ to the Route
     }
@@ -135,7 +135,7 @@ def nextBuses(stop_times, current_time):
     for item in stop_times_list:
         # Change from datetime to string
         # This is for displaying the times in AM/PM format
-        time1_string = item.departure_time.strftime("%I:%M %p")
+        time1_string = item.departure_time.strftime("%-I:%M %p")
 
         if current_time.hour == item.departure_time.hour:
             if current_time.minute < item.departure_time.minute:
@@ -144,10 +144,10 @@ def nextBuses(stop_times, current_time):
                 try:
                     # Change from datetime to string for the next 2 buses
                     # This is for displaying the times in AM/PM format
-                    time2_string = next(iterator).departure_time.strftime("%I:%M %p")
+                    time2_string = next(iterator).departure_time.strftime("%-I:%M %p")
                     bus_list.append(time2_string)
 
-                    time3_string = next(iterator).departure_time.strftime("%I:%M %p")
+                    time3_string = next(iterator).departure_time.strftime("%-I:%M %p")
                     bus_list.append(time3_string)
                 except:
                     break
@@ -159,10 +159,10 @@ def nextBuses(stop_times, current_time):
             try:
                 # Change from datetime to string for the next 2 buses
                 # This is for displaying the times in AM/PM format
-                time2_string = next(iterator).departure_time.strftime("%I:%M %p")
+                time2_string = next(iterator).departure_time.strftime("%-I:%M %p")
                 bus_list.append(time2_string)
 
-                time3_string = next(iterator).departure_time.strftime("%I:%M %p")
+                time3_string = next(iterator).departure_time.strftime("%-I:%M %p")
                 bus_list.append(time3_string)
             except:
                 break

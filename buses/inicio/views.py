@@ -6,7 +6,7 @@ from rutas.models import Route
 
 def index(request):
     rutas = Route.objects.all()
-    contexto = {
+    context = {
         'rutas': rutas,
     }
-    return render(request, 'index.html', contexto)
+    return render(request, 'index.html', context)
