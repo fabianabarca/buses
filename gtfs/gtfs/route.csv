@@ -1,0 +1,3 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+124,TSG,San Gabriel,San Gabriel - San José,"Esta ruta conecta a San Gabriel de Aserrí con San José centro, pasando por La Fila del Rosario, Tarbaca, Aserrí y Desamparados.",3,http://tsgcr.com/rutas/sangabriel,228B22,
+157,TSG,Acosta,Acosta - San José,"Esta ruta conecta a San Ignacio de Acosta con San José centro, pasando por Vuelta de Jorco, Tarbaca, Aserrí y Desamparados. Todos los buses llevan hacia el centro de San Ignacio de Acosta, sin embargo desde ahí la ruta tiene dos ramales: uno desde el centro hacia Turrujal, y otro desde el centro hacia San Luis (terminal de buses).",3,http://tsgcr.com/rutas/acosta,FFA500,

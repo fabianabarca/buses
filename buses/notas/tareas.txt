@@ -1,0 +1,29 @@
+Tareas para colaboradores
+- Pendiente
+# Terminado
+
+- Crear mapa con las comunidades marcadas
+- Tabla de datos generales de la empresa (desde GTFS y otros)
+- "Carousel" con fotografías de buses en "Nuestros buses"
+- "Grid" de "cards" con las fotos de personal
+- Hacer noticias en formato blog
+- Crear página de noticia individual (atención a URL)
+- Encontrar un menú principal
+- Incorporar las noticias en el "carousel"
+- Incorporar alerta como "carousel"
+- Crear "shape" para San Gabriel shape_id = 'sangabriel'
+- Crear "shape" para San Luis shape_id = 'sanluis' y Turrujal shape_id = 'turrujal'
+- Agregar los feriados del 2021 en calendar_dates y hacer los cambios
+- Crear modelo de tarifas FareRules en appRutas
+- Crear horarios = llenar tabla de trips.txt y stop_times.txt
+- Cómo hacer una migración de datos a la base de datos (https://stackoverflow.com/questions/51227687/django-2-0-populating-database-with-a-script/51227744#51227744)
+- Crear "abanico" de comunidades con "cards" en comunidades.html
+- Crear una sección "historias de buses"
+- Traducir las descripciones en models.py en appRutas
+- Traducir el help_text en models.py en appRutas
+- Establecer reglas y datos de tarifas u zonas (fare_attributes y fare_rules)
+- Hacer mapa de comunidades
+- Ampliar información sobre GTFS en Acerca de
+- Hacer diagrama de GTFS como base de datos relacional
+- Recopilar las preguntas frecuentes
+- Sección de noticias

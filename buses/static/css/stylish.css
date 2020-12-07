@@ -31,7 +31,7 @@ html {
 }
 
 body {
-	margin: 0
+	margin: 0;
 }
 
 article,
@@ -236,7 +236,7 @@ textarea {
 
 html,
 body {
-	font-family: Barlow, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	line-height: 1.5
 }
@@ -279,7 +279,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Barlow", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	margin: 10px 0
 }
@@ -934,6 +934,13 @@ a {
 	top: 0
 }
 
+.menu-superior {
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	top: 0;
+}
+
 .w3-bottom {
 	bottom: 0
 }
@@ -1184,12 +1191,12 @@ a {
 
 .w3-animate-right {
 	position: relative;
-	animation: animateright 0.4s
+	animation: animateright 0.6s
 }
 
 @keyframes animateright {
 	from {
-		right: -300px;
+		right: -900px;
 		opacity: 0
 	}
 	to {

@@ -1,0 +1,40 @@
+/* Estilo para los elementos del sitio de buses 
+
+Clases:
+
+<section>
+
+alertas
+bienvenida
+comunidades-mapa
+encabezado
+empresa-resena
+hora-actual
+menu-superior
+menu-inferior
+noticias
+pie-pagina
+portada
+proximo-bus
+ruta-horario
+ruta-mapa
+ruta-proximo-bus
+
+<div>
+
+noticias-desplegar
+noticia-detalle
+tabla-informacion
+
+<div> de posición y formato
+
+centrado
+
+*/
+
+.menu-superior {
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	top: 0;
+}

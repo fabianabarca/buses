@@ -1,18 +1,28 @@
 from django.shortcuts import render
-from noticias.models import Noticia,Aviso
+from noticias.models import Noticia, Aviso
 
 # Create your views here.
 
 def noticias(request):
 
-    #Para cargar todas las noticias y avisos
+    # Cargar todas las noticias y avisos
     todas_noticias = Noticia.objects.all()
     todos_avisos = Aviso.objects.all()
 
-    return render(request, 'noticias.html',{'todas_noticias':todas_noticias, 'todos_avisos':todos_avisos})
+    context = {
+        'todas_noticias': todas_noticias, 
+        'todos_avisos': todos_avisos
+    }
+
+    return render(request, 'noticias.html', context)
 
 def noticia(request):
     return render(request, 'noticia.html')
+
+def crear_url(noticia_titulo):
+    url = 42
+
+    return url
 
 def busqueda(request):
 

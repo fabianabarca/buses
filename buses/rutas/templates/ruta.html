@@ -1,84 +1,294 @@
 {% extends 'base.html'%}
 
-{% block page_title %} Bus de {{ route.short_name }} {% endblock %}
+{% block page_title %} Ruta de {{ route.short_name }} {% endblock %}
+
+{% block titulo %} Ruta de buses {{ route.long_name }} {% endblock %}
+
+{% block subtitulo %} 
+    <div class="container text-center">
+        <a class="btn btn-light" href="#horario" role="button">Horario</a>
+        <a class="btn btn-light" href="#informacion" role="button">Información</a>
+        <a class="btn btn-light" href="#tarifas" role="button">Tarifas</a>
+        <a class="btn btn-light" href="#mapa" role="button">Mapa</a>
+        <a class="btn btn-light" href="#paradas" role="button">Paradas</a>
+    </div>
+{% endblock %}
 
 {% block content %}
 
 <!-- Estilos necesarios para el mapa de leaflet -->
+
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
 
-{% block h1 %} Ruta {{ route.short_name }} - San José {% endblock %}
+<!-- Hora actual -->
 
+<section>
+    <p>
+        <div class="text-center">
+            <h1><span class="badge badge-dark" id="DigitalCLOCK" onload="showTime()"></span></h1>
+            <h5><span class="badge badge-light"><span class="text-capitalize">{{ fecha.0 }}</span> {{ fecha.1 }} de {{ fecha.2 }} de {{ fecha.3 }}</span></h5>           
+        </div>    
+    </p>
+</section>
 
-<div class="w3-row-padding w3-center w3-margin-top">
-<h2><i class="fas fa-clock"></i> Hora actual</h2>
-<h2 id="DigitalCLOCK" onload="showTime()"></h2>
-</div>
+<!-- Próximo bus-->
 
-<!-- Próximo bus -->
-<div style="margin: auto; padding: 20px;" class="w3-responsive w3-card-4">
-<h3>Próximo bus</h3>
-<table class="w3-table w3-bordered">
-    <thead>
-    <tr>
-        <th><i class="fas fa-bus"></i> {{ route.short_name }}</th>
-        <th><i class="fas fa-bus"></i> San José</th>
-    </tr>
-    </thead>
-    <tr>
-        <td class="w3-large">{{ bus_listRoute.0 }}</td>
-        <td class="w3-large">{{ bus_listSJ.0 }}</td>
-    </tr>
-    <tr>
-        <td>{{ bus_listRoute.1 }}</td>
-        <td>{{ bus_listSJ.1 }}</td>
-    </tr>
-    <tr>
-        <td>{{ bus_listRoute.2 }}</td>
-        <td>{{ bus_listSJ.2 }}</td>
-    </tr>
-</table>
-</div>
-<!-- Fin de próximo bus -->
-
-<h3>Horario {{ route.short_name }}</h3>
+<section class="row">
+    {% include "proximobus.html" %}
+</section>
 
 <!-- Tabla de horario -->
 
-<table class="w3-table w3-striped w3-bordered">
-    <thead>
-    <tr>
-        <th>{{ route.short_name }}</th>
-        <th>San José</th>
-    </tr>
-    </thead>
-    {% for timeRoute, timeSJ in stop_times_list %}
-    <tr>
-        <td>{{ timeRoute }}</td>
-        <td>{{ timeSJ }}</td>
-    </tr>
-    {% endfor %}
-    <!-- Add last row that only has stop time from "San José" departure -->
-    <!-- Only in the case for "San Gabriel" -->
-    {% if route.short_name == "San Gabriel" %}
-    <tr>
-        <td>N/A</td>
-        <td>{{ stop_times_SJ_last }}</td>
-    </tr>
-    {% endif %}
-</table>
+<section id="horario">
 
-<h3>Mapa</h3>
+    <hr>
 
-<!-- div para el mapa -->
-<div id="map" class="map map-home" style="margin:auto; height:400px; width: 50%;"></div>
+    <div class="row no-gutters">
+        <div class="col-md-auto">
+            <h2>Horario {{ route.long_name }}</h2>
+        </div>
+        <div class="col text-right align-self-center">
+            <small><i class="fas fa-database"></i> Datos de <a href="/acerca/#GTFS">GTFS</a></small>
+        </div>
+    </div>
 
-<!-- Scripts necesarios para el mapa de leaflet -->
-<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>	 
+    <p><strong>Nota</strong>: La hora indicada del viaje hacia San José es en la parada de {{ route.short_name }} centro. 
+        Los buses salen 15 minutos antes desde
+        {% if route.short_name == 'Acosta' %}
+            San Luis, Turrujal o Jorco, según se indica
+        {% else %}
+            Los Mangos
+        {% endif %}
+        (ver lista de <a href="#paradas">paradas autorizadas</a>).
+    </p>
 
-<script type=”text/javscript”>
-    let terminal_coordinates = “{{ terminal_coordinates }}”;
-    let SJ_coordinates = “{{ SJ_coordinates }}”;
-</script>
+    <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link {{ horario_activo.0 }}" id="entresemana-tab" data-toggle="tab" href="#entresemana" role="tab" aria-controls="entresemana" aria-selected="{{ horario_activo.3 }}">Lunes a viernes</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link {{ horario_activo.1 }}" id="sabado-tab" data-toggle="tab" href="#sabado" role="tab" aria-controls="sabado" aria-selected="{{ horario_activo.4 }}">Sábado</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link {{ horario_activo.2 }}" id="domingo-tab" data-toggle="tab" href="#domingo" role="tab" aria-controls="domingo" aria-selected="{{ horario_activo.5 }}">Domingo</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade {{ horario_activo.6 }}" id="entresemana" role="tabpanel" aria-labelledby="entresemana-tab">
+            <table class="table table-striped table-borderless text-center">
+                <thead>
+                <tr>
+                    <th>{{ route.short_name }}</th>
+                    <th>San José</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_entresemana %}
+                    <tr>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' or ramal_0 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_0 == 'desde_turrujal' or ramal_0 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' or ramal_0 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'desde_sanluis' or ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_1 == 'desde_turrujal' or ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'desde_jorco' or ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade {{ horario_activo.7 }}" id="sabado" role="tabpanel" aria-labelledby="sabado-tab">
+            <table class="table table-striped table-borderless text-center">
+                <thead>
+                <tr>
+                    <th>{{ route.short_name }}</th>
+                    <th>San José</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_sabado %}
+                    <tr>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' or ramal_0 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_0 == 'desde_turrujal' or ramal_0 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' or ramal_0 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'desde_sanluis' or ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_1 == 'desde_turrujal' or ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'desde_jorco' or ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade {{ horario_activo.8 }}" id="domingo" role="tabpanel" aria-labelledby="domingo-tab">
+            <table class="table table-striped table-borderless text-center">
+                <thead>
+                <tr>
+                    <th>{{ route.short_name }}</th>
+                    <th>San José</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_domingo %}
+                    <tr>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' or ramal_0 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_0 == 'desde_turrujal' or ramal_0 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' or ramal_0 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'desde_sanluis' or ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_1 == 'desde_turrujal' or ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'desde_jorco' or ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Lista de feriados -->
+    <div class="alert alert-info" role="alert">
+        <div class="d-flex justify-content-between">
+            <div>
+                <strong>Nota</strong>: Los feriados tienen horario de <strong>domingo</strong>.
+            </div>
+            <div>
+                <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#listaferiados" aria-expanded="false" aria-controls="listaferiados">
+                    Mostrar feriados
+                </button>
+            </div>
+        </div>
+
+        <div class="collapse" id="listaferiados">
+            <hr>
+            <p>
+                <ul>
+                    {% for feriado in feriados %}
+                    <li><strong>{{ feriado.holiday_name }}</strong> es feriado el <span class="text-lowercase">{{ feriado.date }}</span></li>
+                    {% endfor %}
+                </ul>
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<!-- Información de la ruta -->
+
+<section id="informacion">
+
+    <hr>
+    <h2>Información de la ruta {{ route.long_name }}</h2>
+    
+    <p class="lead">{{ route.desc }}</p>
+
+    <div class="card-deck text-center">
+        <div class="card">
+          <div class="card-header">Tarifa completa</div>
+          <div class="card-body">
+            <h1 class="display-4">&cent; 995</h1>
+            <a href="#tarifas" class="btn btn-secondary">Tabla de tarifas</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Distancia total</div>
+          <div class="card-body">
+            <h1 class="display-4">27 km</h1>
+            <a href="#mapa" class="btn btn-secondary">Mapa de ruta</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Paradas autorizadas</div>
+          <div class="card-body">
+            <h1 class="display-4">23</h1>
+            <a href="#paradas" class="btn btn-secondary">Lista de paradas autorizadas</a>
+          </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Tarifas -->
+
+<section id="tarifas">
+
+    <hr>
+    <h2>Tarifas</h2>
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+    </table>
+
+</section>
+
+<!-- Mapa de la ruta -->
+
+<section id="mapa">
+
+    <hr>
+    <h2>Mapa de la ruta</h2>
+
+    <!-- div para el mapa -->
+    <div id="map" class="map map-home" style="margin:auto; height:400px; max-width: 540px;"></div>
+
+    <!-- Scripts necesarios para el mapa de leaflet -->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>	 
+
+    <script type=”text/javscript”>
+        let terminal_coordinates = “{{ terminal_coordinates }}”;
+        let SJ_coordinates = “{{ SJ_coordinates }}”;
+    </script>
+
+</section>
+
+<!-- Paradas autorizadas -->
+
+<section id="paradas">
+
+    <hr>
+    <h2>Paradas autorizadas</h2>
+
+    <div class="card mb-3 mx-auto" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+        <img src="https://image.freepik.com/free-vector/pack-colorful-square-emoticons_23-2147589525.jpg" class="card-img" style="object-fit: cover;">
+        </div>
+        <div class="col-md-8">
+        <div class="card-body">
+            <h5 class="card-title">Terminal en San José</h5>
+            <p class="card-text">
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="far fa-map"></i></span>Calle <strong>7</strong>, entre avenidas <strong>10</strong> y <strong>12.</strong></li>
+                <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>200 metros sur de la esquina sureste del Parque de las Garantías Sociales.</li>
+                <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll=9.92929648%2C-84.07635212&navigate=yes&zoom=17">Dirección en Waze</a></li>
+            </ol>
+            </p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <p class="text-center">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#listaparadas" aria-expanded="false" aria-controls="listaparadas">
+          Mostrar todas las paradas
+        </button>
+    </p>
+    <div class="collapse" id="listaparadas">
+        <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+    </div>
+
+</section>
 
 {% endblock %}

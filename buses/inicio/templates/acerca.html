@@ -1,0 +1,65 @@
+{% extends 'base.html'%}
+
+{% block page_title %} Acerca de este sitio web {% endblock %}
+
+{% block titulo %} Acerca de este sitio web {% endblock %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body text-center lead">
+        Este sitio web fue creado en colaboración con el Trabajo Comunal Universitario TC-691 "Tropicalización de la Tecnología", coordinado desde la <a href="https://eie.ucr.ac.cr/">Escuela de Ingeniería Eléctrica</a> de la <a href="https://www.ucr.ac.cr/">Universidad de Costa Rica</a>.
+    </div>
+</div>
+
+<hr>
+<h2>Tecnologías</h2>
+
+
+<dl>
+    <dt><i class="fab fa-python"></i> Django</dt>
+    <dd><i><a href="https://www.djangoproject.com/">Framework</a></i> en Python para el <i>backend</i>.</dd>
+    <dt><i class="fab fa-bootstrap"></i> Bootstrap</dt>
+    <dd><i><a href="https://getbootstrap.com/">Framework</a></i> de HTML, CSS y JavaScript para el <i>frontend</i>.</dd>
+</dl>
+
+<p>
+    <i class="fab fa-github"></i> Proyecto disponible en <a href="https://github.com/fabianabarca/web-buses">GitHub</a>
+</p>
+
+<hr>
+<h2 id="GTFS">GTFS</h2>
+
+<p>
+    La especificación general de suministro de datos de transporte <a href="https://developers.google.com/transit/gtfs?hl=es">GTFS</a> (<i>General Transit Feed Specification</i>) es un estándar <i>de facto</i> a nivel global para la divulgación abierta de datos de servicio de transporte público.
+</p>
+
+<p class="text-center">
+    <button type="button" class="btn btn-primary" href="/gtfs/gtfs.zip">Descargar información GTFS</button>
+    <br>
+    <small><i class="fas fa-file-archive"></i> Archivo comprimido <code>.zip</code> de documentos <code>.txt</code> con formato de datos <code>.csv</code>.</small>
+</p>
+
+<p>
+    También disponible en <a href="https://transitfeeds.com/p/agence-metropolitaine-de-transport/129">OpenMobilityData</a>.
+</p>
+
+
+<hr>
+<h2>Colaboradores</h2>
+
+<h5>Transportes San Gabriel</h5>
+
+<ul>
+    <li>María Rodríguez Vargas - <i>Gerente general</i></li>
+    <li>José Vargas Rodríguez - <i>Asistente de gerencia</i></li>
+</ul>
+
+<h5>Universidad de Costa Rica</h5>
+
+<ul>
+    <li>María Rodríguez Vargas - <i>Escuela de Ingeniería Eléctrica</i></li>
+    <li>José Vargas Rodríguez - <i>Escuela de Ciencias de la Computación e Informática</i></li>
+</ul>
+
+{% endblock %}

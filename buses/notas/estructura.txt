@@ -1,0 +1,70 @@
+Estructura HTML de las plantillas del sitio
+
+- Plantilla global (base.html)
+    - <header>
+        - <section> Menú superior
+        - <section> Portada
+        - <section> Información de la página actual y rrss
+    - <main>
+        - <div> (Contenido de cada página)
+    - <footer>
+        - <section> Menú inferior
+        - <section> Información de contacto
+
+- Inicio (index.html)
+    - <section> Alertas
+    - <section> Bienvenida
+    - <section> Hora actual
+    - <section> Próximo bus
+        - <div> Próximo bus de ruta
+        - <div> Link a la página de ruta
+        - ...
+    - <section> Noticias
+
+- Rutas (rutas.html)
+    - <section> Alertas
+    - <section> Hora actual
+    - <section> Próximo bus
+        - <div> Próximo bus de ruta
+        - <div> Link a la página de ruta
+        - ...
+
+- Ruta (ruta.html)
+    - <section> Alertas
+    - <section> Hora actual
+    - <section> Próximo bus
+        - <div> Próximo bus de ruta
+    - <section> Horario
+    - <section> Información de la ruta
+    - <section> Mapa
+
+- Noticias (noticias.html)
+    - <section> Alertas
+    - <section> Noticias
+    - <section> Búsqueda de noticias
+
+- La noticia (noticia.html)
+    - <section> Noticia
+
+- Comunidades (comunidades.html)
+    - <section> Lista de comunidades
+    - <section> Mapa de las comunidades
+
+- La comunidad (comunidad.html)
+    - <section> Datos generales
+    - <section> Reseña
+
+- Nosotros (empresa.html)
+    - <section> Datos generales
+    - <section> Reseña
+    - <section> Fotografías
+    - <section> Link al personal
+
+- Personal (personal.html)
+    - <section> Lista de personal
+
+- Contacto (contacto.html)
+    - <section> Información de contacto
+    - <section> Formulario de contacto
+    - <section> Preguntas frecuentes
+

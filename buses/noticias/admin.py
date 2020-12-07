@@ -11,9 +11,9 @@ class AvisoAdmin(admin.ModelAdmin):
     search_fields=('titulo','descripcion')
 
 class NoticiaAdmin(admin.ModelAdmin):
-    list_display=('titulo','fecha_publicacion','descripcion_Corta')
+    list_display=('titulo','fecha_publicacion','descripcion_corta')
     list_filter=('fecha_publicacion',)
-    search_fields=('titulo','descripcion_Corta')
+    search_fields=('titulo','descripcion_corta')
 
 
 admin.site.register(Noticia, NoticiaAdmin)

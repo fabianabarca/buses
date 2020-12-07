@@ -4,83 +4,173 @@
 
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8">
+  
+  <head>
+
+    <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css2?family=OpenSans&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/stylish.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/color.css' %}">
-        <script src="https://kit.fontawesome.com/1ae7c4e024.js" crossorigin="anonymous"></script>
-        <title>{% block page_title %}{% endblock %} - TSG</title>
-    </head>
-    <body>
-        <!-- Navegación -->
-        <div class="w3-top">
-            <div class="w3-bar w3-white w3-card" id="myNavbar">
-              <a href="/" class="w3-bar-item w3-button w3-wide">TSG</a>
-              <!-- Right-sided navbar links -->
-              <div class="w3-right w3-hide-small">
-                <a href="/rutas/" class="w3-bar-item w3-button"><i class="fas fa-bus"></i> Rutas</a>
-                <a href="/noticias/" class="w3-bar-item w3-button"><i class="fa fa-newspaper"></i> Noticias</a>
-                <a href="/comunidades/" class="w3-bar-item w3-button"><i class="fa fa-school"></i> Comunidades</a>
-                <a href="/nosotros/" class="w3-bar-item w3-button"><i class="fa fa-user-friends"></i> Nosotros</a>
-                <a href="/contacto/" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contacto</a>
-              </div>
-              <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-          
-              <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-                <i class="fa fa-bars"></i>
-              </a>
+    
+    <!-- Título de la pestaña del navegador -->
+
+    <title>{% block page_title %}{% endblock %} - TSG</title>
+    
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- FontAwesome -->
+
+    <script src="https://kit.fontawesome.com/1ae7c4e024.js" crossorigin="anonymous"></script>
+
+  </head>
+  
+  <body>
+    
+    <!-- ENCABEZADO -->
+
+    <header>
+      
+      <!-- Barra superior de navegación (fija)  style="background-color: rgba(0, 0, 0, .85);"-->
+      
+      <section>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> 
+          <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand text-light" href="/">Transportes San Gabriel</a>
+            
+            <!-- Menú contraído -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="/rutas" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rutas</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="/rutas/acosta">Acosta</a>
+                    <a class="dropdown-item" href="/rutas/sangabriel">San Gabriel</a>
+                  </div>
+                </li>                
+                <li class="nav-item">
+                  <a class="nav-link" href="/noticias">Noticias</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/comunidades">Comunidades</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/contacto">Contacto</a>
+                </li>
+              </ul>
             </div>
           </div>
-          
-          <!-- Sidebar on small screens when clicking the menu icon -->
-          <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Cerrar</a>
-            <a href="/rutas/" class="w3-bar-item w3-button"><i class="fas fa-bus"></i> Rutas</a>
-            <a href="/noticias/" class="w3-bar-item w3-button"><i class="fa fa-newspaper"></i> Noticias</a>
-            <a href="/comunidades/" class="w3-bar-item w3-button"><i class="fa fa-school"></i> Comunidades</a>
-            <a href="/nosotros/" class="w3-bar-item w3-button"><i class="fa fa-user-friends"></i> Nosotros</a>
-            <a href="/contacto/" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contacto</a>
-          </nav>
-        
-        
-        <!-- Encabezado -->
-        <header class="bgimg-1 w3-container w3-theme w3-padding" id="myHeader">
-            <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
-            <div class="w3-center">
-                <h4>Transportes San Gabriel</h4>
-                <h1 class="w3-xxxlarge w3-animate-bottom">{% block h1 %}{% endblock %}</h1>
-            </div>
-        </header>
-        
-        {% block content %}
-            
-            <!-- Aquí el contenido de cada página -->
+        </nav>
 
-        {% endblock %}
-        
-        <!-- Pie de página -->
-        
-        <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
-            <span class="w3-text w3-theme-light w3-padding">Subir</span>    
-            <a class="w3-text-black" href="#myHeader"><span class="w3-xlarge">
-            <i class="fa fa-chevron-circle-up"></i></span></a>
+        <div class="bg-dark py-4 mb-4">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-lg-12">
+                <h1 class="text-white mt-5 mb-2">{% block titulo %}{% endblock %}</h1>
+                <p class="lead mb-5 text-white-50">{% block subtitulo %}{% endblock %}</p>
+              </div>
+            </div>
+          </div>
         </div>
-            
-        <footer class="w3-container w3-grey w3-padding-16">
-            <h3>Contacto</h3>
-            <ul>
-                <li><i class="fas fa-envelope"></i> <strong>Correo</strong>: <a href="mailto:transgabriel@racsa.co.cr">transgabriel@racsa.co.cr</a></li>
-                <li><i class="fas fa-phone"></i> <strong>Teléfono</strong>: <a href="tel:+506-2410-0330">2410-0330</a></li>
-                <li><i class="fas fa-map-marked"></i> <strong>Dirección</strong>: Barrio María Auxiliadora, San Ignacio de Acosta (<a href="https://www.waze.com/ul?ll=9.79447088%2C-84.16395520&navigate=yes&zoom=17">Waze</a>)</li>
-            </ul>
-        </footer>
+
+      </section>
+      
+      <!-- Portada 
+
+      <section> 
+        <div>
+          <h1>{% block h1 %}{% endblock %}</h1>
+        </div>
+      </section>-->
+
+      <!-- Barra de información de página actual 
+
+      <section>-->
+        <!-- Navegación ("breadcrumbs") 
+        <div>
+          
+        </div>-->
+        <!-- Redes sociales 
+        <div>
+          
+        </div>
+      </section>-->
+
+    </header>
         
-        <!-- Archivos de JavaScript -->
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main role="main" class="container">
+      
+      {% block content %}
+      <!-- Aquí el contenido de cada página -->
+      {% endblock %}
+      
+    </main>
+       
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="bd-footer container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <strong>Transportes San Gabriel</strong> <!--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>-->
+          <small class="d-block mb-3 text-muted">&copy; 2020</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Menú</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="/rutas/">Rutas</a></li>
+            <li><a class="text-muted" href="/noticias/">Noticias</a></li>
+            <li><a class="text-muted" href="/comunidades/">Comunidades</a></li>
+            <li><a class="text-muted" href="/nosotros/">Nosotros</a></li>
+            <li><a class="text-muted" href="/contacto/">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Contacto</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="tel:+506-2410-0330"><strong>Teléfono</strong> <br> 2410-0330</a></li>
+            <li><a class="text-muted" href="mailto:transgabriel@racsa.co.cr"><strong>Correo</strong> <br> transgabriel@racsa.co.cr</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Acerca de</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="/acerca/">Este sitio web</a></li>
+            <li><a class="text-muted" href="/nosotros/">Transportes San Gabriel</a></li>
+            <li><a class="text-muted" href="/nosotros/">Transportes San Gabriel</a></li>
+            <li><a class="text-muted" href="https://www.ctp.go.cr/">Consejo de Transporte Público</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>GTFS</h5>
+          <p class="text-muted text-small">
+            Esta página utiliza GTFS, un estándar de datos abiertos de transporte público... <a href="/acerca/#GTFS">más</a>
+          </p>
+        </div>
+      </div>
+    </footer>
         
-        <script src="{% static 'js/hora_actual.js' %}" type="text/javascript"></script>
-        <script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
-        <script src="{% static 'js/otros.js' %}" type="text/javascript"></script>
-    </body>
+    <!-- Archivos de JavaScript -->
+
+    <script src="{% static 'js/hora.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  
+  </body>
+
 </html>

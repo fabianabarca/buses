@@ -1,8 +1,9 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Route, Trip, Stop, StopTime
-from datetime import datetime # For current time
+from .models import Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate
+from datetime import datetime
+from itertools import zip_longest
 
-""" Function to execute when user goes to /rutas """
+''' Function to execute when user goes to /rutas '''
 def rutas(request):
     # Get current time to pass it to nextBuses()
     now = datetime.now()
@@ -63,115 +64,252 @@ def rutas(request):
 
     # print(next_bus_list_SJ_Aco)
 
+    # Fecha
+    ahora = datetime.now()
+    meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+    dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
+    dia = dias[ahora.weekday()]
+    fecha = ahora.day
+    mes = meses[ahora.month - 1]
+    ano = ahora.year
+
     context = {
         'routes': routes, # List of routes
         'next_bus_list_SG': next_bus_list_SG, # Next 3 buses from SG to SJ
         'next_bus_list_Aco': next_bus_list_Aco, # Next 3 buses from Acosta to SJ
         'next_bus_list_SJ_SG': next_bus_list_SJ_SG, # Next 3 buses from SJ to SG
         'next_bus_list_SJ_Aco': next_bus_list_SJ_Aco, # Next 3 buses SJ to Acosta
-        
+        'dia': dia,
+        'fecha': fecha,
+        'mes': mes,
+        'ano': ano,        
     }
 
     return render(request, 'rutas.html', context)
 
-""" Function to execute when user goes to specific Route (E.g. /rutas/sangabriel o /rutas/acosta) """
 def ruta(request, url_ruta):
-    # Get the route depending on the url
+    ''' Función para mostrar la información de cada ruta.
+    Opciones:
+    - San Gabriel
+    - Acosta con sus diferentes ramales
+    '''
+
+    # Obtener la información de la ruta consultada
+    ''' Valores:
+    route_id, agency, short_name, long_name, desc, 
+    route_type, url, color, text_color
+    '''
     route = get_object_or_404(Route, url=url_ruta)
 
-    # Get the stop object that is the "Terminal" in San Gabriel
-    # stop = get_object_or_404(Stop, stop_id="terminal") # Al asignar los IDs cambiar por el ID a usar para la terminal
-    stop = Stop.objects.filter(stop_id="terminal")
+    # Extraer los viajes asociados con esta ruta para cada servicio y en cada dirección
+    ''' Valores:
+    route, service,	trip_id, trip_headsign, trip_short_name, 
+    direction (0: hacia San José, 1: desde San José), shape, 
+    wheelchair_accessible, bikes_allowed
+    '''
+    trips_entresemana_0 = Trip.objects.filter(
+                route=route,
+                service=Calendar.objects.get(service_id='entresemana'),
+                direction='0')
+    trips_entresemana_1 = Trip.objects.filter(
+                route=route,
+                service=Calendar.objects.get(service_id='entresemana'),
+                direction='1')
+    trips_sabado_0 = Trip.objects.filter(
+                route=route,
+                service=Calendar.objects.get(service_id='sabado'),
+                direction='0')
+    trips_sabado_1 = Trip.objects.filter(
+                route=route,
+                service=Calendar.objects.get(service_id='sabado'),
+                direction='1')
+    trips_domingo_0 = Trip.objects.filter(
+                route=route,
+                service=Calendar.objects.get(service_id='domingo'),
+                direction='0')
+    trips_domingo_1 = Trip.objects.filter(
+                route=route,
+                service=Calendar.objects.get(service_id='domingo'),
+                direction='1')
 
-    # Get the trip for this route
-    trip = Trip.objects.filter(route=route)
-
-    # Get the Stop Times for this trip
-    # In this version there are only DEPARTURE TIMES FROM THE "TERMINAL" AND FROM SAN JOSE
-    stop_times_Route = StopTime.objects.filter(trip=trip[0]) # Stop times for this Route departures ("San Gabriel" or "Acosta")
-    stop_times_SJ = StopTime.objects.filter(trip=trip[1]) # Stop times for "San José" departures
-
-    # Change from datetime to string
-    # This is for displaying the times in AM/PM format
-    string_stop_times_Route = []
-    for stop_time in stop_times_Route:
-        string_stop_times_Route.append(stop_time.departure_time.strftime("%-I:%M %p"))
-
-    # Change from datetime to string
-    # This is for displaying the times in AM/PM format
-    string_stop_times_SJ = []
-    for stop_time in stop_times_SJ:
-        string_stop_times_SJ.append(stop_time.departure_time.strftime("%-I:%M %p"))
-
-    stop_times_list = zip(string_stop_times_Route, string_stop_times_SJ) # Make a list of tuples in order to display the two stop times in the schedule row
-
-    # Get current time to pass it to nextBuses()
-    now = datetime.now()
+    # Entre semana
     
-    # Get the next 3 buses list from the Route to San Jose
-    bus_listRoute = nextBuses(stop_times_Route, now)
-    # Get the next 3 buses list from San Jose to the Route
-    bus_listSJ = nextBuses(stop_times_SJ, now)
+    para_ordenar = []
+    for i in trips_entresemana_0:
+        viaje = StopTime.objects.get(trip=i)
+        para_ordenar.append([viaje.departure_time, str(i.shape)])
+    
+    para_ordenar.sort()
+    horario_entresemana_0 = [i[0] for i in para_ordenar]
+    ramales_entresemana_0 = [i[1] for i in para_ordenar]
+
+    para_ordenar = []
+    for i in trips_entresemana_1:
+        viaje = StopTime.objects.get(trip=i)
+        para_ordenar.append([viaje.departure_time, str(i.shape)])
+
+    para_ordenar.sort()
+    horario_entresemana_1 = [i[0] for i in para_ordenar]
+    ramales_entresemana_1 = [i[1] for i in para_ordenar]
+    
+    horario_entresemana = zip_longest(
+                          [i.strftime("%-I:%M %p") for i in horario_entresemana_0],
+                          ramales_entresemana_0,
+                          [i.strftime("%-I:%M %p") for i in horario_entresemana_1],
+                          ramales_entresemana_1,
+                          fillvalue='-')
+
+    # Sábado
+
+    para_ordenar = []
+    for i in trips_sabado_0:
+        viaje = StopTime.objects.get(trip=i)
+        para_ordenar.append([viaje.departure_time, str(i.shape)])
+
+    para_ordenar.sort()
+    horario_sabado_0 = [i[0] for i in para_ordenar]
+    ramales_sabado_0 = [i[1] for i in para_ordenar]
+
+    para_ordenar = []
+    for i in trips_sabado_1:
+        viaje = StopTime.objects.get(trip=i)
+        para_ordenar.append([viaje.departure_time, str(i.shape)])
+
+    para_ordenar.sort()
+    horario_sabado_1 = [i[0] for i in para_ordenar]
+    ramales_sabado_1 = [i[1] for i in para_ordenar]
+
+    horario_sabado = zip_longest(
+                        [i.strftime("%-I:%M %p") for i in horario_sabado_0], 
+                        ramales_sabado_0,
+                        [i.strftime("%-I:%M %p") for i in horario_sabado_1],
+                        ramales_sabado_1,
+                        fillvalue='-')
+
+   # Domingo
+
+    para_ordenar = []
+    for i in trips_domingo_0:
+        viaje = StopTime.objects.get(trip=i)
+        para_ordenar.append([viaje.departure_time, str(i.shape)])
+
+    para_ordenar.sort()
+    horario_domingo_0 = [i[0] for i in para_ordenar]
+    ramales_domingo_0 = [i[1] for i in para_ordenar]
+
+    para_ordenar = []
+    for i in trips_domingo_1:
+        viaje = StopTime.objects.get(trip=i)
+        para_ordenar.append([viaje.departure_time, str(i.shape)])
+
+    para_ordenar.sort()
+    horario_domingo_1 = [i[0] for i in para_ordenar]
+    ramales_domingo_1 = [i[1] for i in para_ordenar]
+
+    horario_domingo = zip_longest(
+                        [i.strftime("%-I:%M %p") for i in horario_domingo_0],
+                        ramales_domingo_0, 
+                        [i.strftime("%-I:%M %p") for i in horario_domingo_1],
+                        ramales_domingo_1,
+                        fillvalue='-')
+
+    # Momento actual
+
+    ahora = datetime.now()
+    # ahora = datetime(2020, 11, 21, 11, 32, 52, 978416)
+    meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+    dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
+    fecha = [dias[ahora.weekday()], ahora.day, meses[ahora.month - 1], ahora.year]
+
+    # Próximo bus
+    
+    if ahora.weekday() <= 4:
+        horario_0 = horario_entresemana_0
+        ramales_0 = ramales_entresemana_0
+        horario_1 = horario_entresemana_1
+        ramales_1 = ramales_entresemana_1
+        horario_activo = ['active', '', '', 'true', 'false', 'false', 'show active', '', '']
+    elif ahora.weekday() == 5:
+        horario_0 = horario_sabado_0
+        ramales_0 = ramales_sabado_0
+        horario_1 = horario_sabado_1
+        ramales_1 = ramales_sabado_1
+        horario_activo = ['', 'active', '', 'false', 'true', 'false', '', 'show active', '']
+    else:
+        horario_0 = horario_domingo_0
+        ramales_0 = ramales_domingo_0
+        horario_1 = horario_domingo_1
+        ramales_1 = ramales_domingo_1
+        horario_activo = ['', '', 'active', 'false', 'false', 'true', '', '', 'show active']
+
+    proximos_hacia_sanjose = [[i[0].strftime("%-I:%M %p"), str(i[1])] for i in proximo_bus(horario_0, ramales_0, ahora)]
+    proximos_desde_sanjose = [[i[0].strftime("%-I:%M %p"), str(i[1])] for i in proximo_bus(horario_1, ramales_1, ahora)]
+
+    # Feriados
+
+    feriados = CalendarDate.objects.filter(exception_type='1')
 
     context = {
-        'route': route, # Route object
-        'stop': stop, # Route stop object ("terminal")
-        'stop_times_list': stop_times_list, # Route stop time list (to SJ and from SJ)
-        'stop_times_SJ_last': stop_times_SJ.last().departure_time.strftime("%-I:%M %p"), # To send the last departure from "San José" in the cases that the last row of the schedule have only a stop time for "San José"
-        'bus_listRoute': bus_listRoute, # Next 3 buses from the Route to SJ
-        'bus_listSJ': bus_listSJ, # Next 3 buses from SJ to the Route
+        'route': route, 
+        'fecha': fecha,
+        'horario_entresemana': horario_entresemana,
+        'horario_sabado': horario_sabado,
+        'horario_domingo': horario_domingo,
+        'horario_activo': horario_activo,
+        'proximos_hacia_sanjose': proximos_hacia_sanjose,
+        'proximos_desde_sanjose': proximos_desde_sanjose,
+        'feriados': feriados,
     }
 
     return render(request, 'ruta.html', context)
 
-""" Function that calculates the next 3 buses based on the current time and return them in a list (list of datetimes) """
-def nextBuses(stop_times, current_time):
-    bus_list = [] # List to return with the next buses
+def proximo_bus(horario, ramales, ahora):
+    '''Regresa una lista (datetime) de las próximas tres horas
+    de salida a partir de ahora dado un horario específico
+    '''
+    
+    # Inicializar lista de próximos buses (horas de salida)
+    proximos = []
 
-    stop_times_list = list(stop_times) # Convert the scehdule given to a list
-    iterator = iter(stop_times_list) # Get an iterator for the stop_times_list
-    next(iterator)  # Get the first element in the list (to get next elements in the for cycle)
+    salidas = iter(horario)     # horas de salidas iterables
+    next(salidas)               # primera hora de salida
 
-    for item in stop_times_list:
-        # Change from datetime to string
-        # This is for displaying the times in AM/PM format
-        time1_string = item.departure_time.strftime("%-I:%M %p")
+    # Recorrer cada hora de salida del horario
+    for i, salida in enumerate(horario):
+        proximo_1 = salida
 
-        if current_time.hour == item.departure_time.hour:
-            if current_time.minute < item.departure_time.minute:
-                bus_list = []
-                bus_list.append(time1_string)
+        if ahora.hour == salida.hour:
+            if ahora.minute < salida.minute:
+                proximos.append([proximo_1, ramales[i]])
                 try:
-                    # Change from datetime to string for the next 2 buses
-                    # This is for displaying the times in AM/PM format
-                    time2_string = next(iterator).departure_time.strftime("%-I:%M %p")
-                    bus_list.append(time2_string)
+                    proximo_2 = next(salidas)
+                    proximos.append([proximo_2, ramales[i+1]])
 
-                    time3_string = next(iterator).departure_time.strftime("%-I:%M %p")
-                    bus_list.append(time3_string)
+                    proximo_3 = next(salidas)
+                    proximos.append([proximo_3, ramales[i+2]])
                 except:
                     break
-                return bus_list
-
-        elif current_time.hour <= item.departure_time.hour:
-            bus_list = []
-            bus_list.append(time1_string)
+                return proximos
+        
+        elif ahora.hour <= salida.hour:
+            proximos.append([proximo_1, ramales[i]])
             try:
-                # Change from datetime to string for the next 2 buses
-                # This is for displaying the times in AM/PM format
-                time2_string = next(iterator).departure_time.strftime("%-I:%M %p")
-                bus_list.append(time2_string)
+                proximo_2 = next(salidas)
+                proximos.append([proximo_2, ramales[i+1]])
 
-                time3_string = next(iterator).departure_time.strftime("%-I:%M %p")
-                bus_list.append(time3_string)
+                proximo_3 = next(salidas)
+                proximos.append([proximo_3, ramales[i+2]])
             except:
                 break
-            return bus_list
+            return proximos
         
-        else:
-            bus_list.append(time1_string)
         try:
-            next(iterator)
+            next(salidas)
         except:
             break
-    return bus_list
+    
+    return proximos
+
+def proximo_bus_widget(request, url_ruta):
+
+    return render(request, 'proximobus.html')

@@ -1,0 +1,50 @@
+[
+   {
+      "model":"comunidades.comunidad",
+      "pk":1,
+      "fields":{
+         "nombre":"San Gabriel de Aserr\u00ed",
+         "resena":"<p>En un lugar de La Mancha</p>",
+         "url":"sangabriel",
+         "poblacion":6,
+         "area":"0.05",
+         "codigo_postal":5
+      }
+   },
+   {
+      "model":"comunidades.comunidad",
+      "pk":2,
+      "fields":{
+         "nombre":"San Ignacio de Acosta",
+         "resena":"<p>Ahora s&iacute;</p>",
+         "url":"acosta",
+         "poblacion":1,
+         "area":"0.04",
+         "codigo_postal":2
+      }
+   },
+   {
+      "model":"comunidades.comunidad",
+      "pk":3,
+      "fields":{
+         "nombre":"Vuelta de Jorco de Aserr\u00ed",
+         "resena":"<p>Ahora s&iacute;, Vuelta de Jorco.</p>",
+         "url":"jorco",
+         "poblacion":3,
+         "area":"0.03",
+         "codigo_postal":5
+      }
+   },
+   {
+      "model":"comunidades.comunidad",
+      "pk":4,
+      "fields":{
+         "nombre":"Tarbaca de Aserr\u00ed",
+         "resena":"<p>Ahora viene Tarbaca.</p>",
+         "url":"tarbaca",
+         "poblacion":2,
+         "area":"0.07",
+         "codigo_postal":6
+      }
+   }
+]

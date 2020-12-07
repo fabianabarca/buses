@@ -2,20 +2,98 @@
 
 {% block page_title %} Nosotros {% endblock %}
 
+{% block titulo %} Nuestra empresa {% endblock %}
+
+{% block subtitulo %} 
+    <div class="container text-center">
+        <a class="btn btn-outline-light" href="#datos" role="button">Datos</a>
+        <a class="btn btn-outline-light" href="#resena" role="button">Reseña</a>
+        <a class="btn btn-outline-light" href="#buses" role="button">Buses</a>
+        <a class="btn btn-outline-light" href="#personal" role="button">Personal</a>
+    </div>
+{% endblock %}
+
 {% block content %}
 
-{% block h1 %} Reseña de la empresa {% endblock %}
+<!-- Datos generales -->
 
-{% for nota in empresa %}
+<section id="datos">
 
-<h2>{{ nota.titulo }}</h2>
+    <hr>
+    <h2>Datos generales</h2>
 
-<p>{{ nota.contenido|safe }}</p>
+    <table class="table table-borderless">
+        <tr>
+            <th class="text-right" scope="row">Colaboradores</th>
+            <td class="text-center"><i class="fas fa-users"></i></td>
+            <td>Entonces tas</td>
+        </tr>
+        <tr>
+            <th class="text-right" scope="row">Buses</th>
+            <td class="text-center"><i class="fas fa-bus"></i></td>
+            <td>Ahora sí</td>
+        </tr>
+        <tr>
+            <th class="text-right" scope="row">Ubicación</th>
+            <td class="text-center"><i class="fas fa-map-marked-alt"></i></td>
+            <td>Eso eso</td>
+        </tr>
+        <tr>
+            <th class="text-right" scope="row">Fundación</th>
+            <td class="text-center"><i class="fas fa-history"></i></td>
+            <td>2001</td>
+        </tr>
+    </table>
 
-{% endfor %}
+</section>
 
-<p>Link al personal</p>
+<!-- Reseña histórica -->
 
-<p><a href="/nosotros/personal/">Personal</a></p>
+<section id="resena">
+
+    <hr>
+    <h2>Una reseña</h2>
+    <p>{{ comunidad.resena|safe }}</p>
+
+    <h3>Misión</h3>
+
+    <h3>Visión</h3>
+
+</section>
+
+<!-- Buses -->
+
+<section id="buses">
+    
+    <!-- Carrousel de fotografías de buses (actuales e históricas) -->
+    
+    <hr>
+    <h2>Nuestros buses</h2>
+
+</section>
+
+<!-- Buses del pasado -->
+
+<section id="buses">
+    
+    <!-- Carrousel de fotografías de buses (actuales e históricas) -->
+    
+    <hr>
+    <h2>Buses del pasado</h2>
+
+</section>
+
+<!-- Personal -->
+
+<section id="personal">
+    
+    <hr>
+    <h2>Nuestro personal</h2>
+
+    <p>Una descripción del personal, pero las fotos y lo demás está en otra página (para mantener una pizca de privacidad).</p>
+
+    <p><a href="/nosotros/personal/">Personal</a></p>
+    
+</section>
 
 {% endblock %}

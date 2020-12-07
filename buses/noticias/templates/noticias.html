@@ -4,38 +4,71 @@
 
 {% block content %}
 
-{% block h1 %} Avisos y noticias {% endblock %}
+<!-- Alertas -->
 
-<h1>Avisos urgentes</h1>
+<section>
 
-    {% for aviso  in todos_avisos %}
-    <div style="background-color: white;"><p>
-        <h2 style="color:red;">{{aviso.titulo}}</h2>
-        <h3 style="color:black;">{{aviso.descripcion}}</h3>
-    </p></div> 
+    <!-- Alertas del formato GTFS Realtime 
+    <div>
+      <div>Íconos aquí (causa y efecto)</div>
+      <h3>header_text</h3> <p>description_text</p>
+    </div> -->
+    <!--
+    <h2>Alertas</h2>
+
+    {% for aviso in todos_avisos %}
+        <div style="background-color: white;">
+            <h2 style="color:red;">{{aviso.titulo}}</h2>
+            <p style="color:black;">{{aviso.descripcion}}</p>
+        </div> 
+    {% endfor %}-->
+
+</section>
+
+<!-- Búsqueda de noticias -->
+
+<section>
+    
+    <form action="/noticias/busqueda/" method="GET">
+        <input type="text" name='elemento_Busqueda'>
+        <input type="submit" value="Buscar">
+    </form>
+
+</section>
+
+<!-- Noticias -->
+
+<section>
+
+    <hr>
+    <h2>Noticias</h2>
+    
+    <div class="row row-cols-1 row-cols-md-2">
+    
+    {% for noticia in todas_noticias %}
+    <div class="col mb-4">
+    <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            {% if noticia.imagen_noticia %}
+            <img src="{{noticia.imagen_noticia.url}}" class="card-img img-fluid" alt="...">
+            {% endif %}
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{noticia.titulo}}</h5>
+              <p class="card-text">{{noticia.descripcion_corta}}</p>
+              <p class="card-text"><small class="text-muted"><a href="/{{noticia.url}}">Leer más...</a></small></p>
+            </div>
+          </div>
+        </div>
+    </div>    
+    </div>
+
     {% endfor %}
+    
+    </div>
 
-<h1>Noticias generales</h1>
-
-{% for noticia  in todas_noticias %}
-<div style="background-color: white;"><p>
-    <h2>{{noticia.titulo}}</h2>
-    <h3>{{noticia.descripcion_Corta}}</h3>
-
-    {% if noticia.imagen_Noticia %}
-    <p><img src="{{noticia.imagen_Noticia.url}}" width="150px"></p> 
-    {% endif %}
-
-    <p>{{noticia.descripcion_Larga}}</p>
-</p></div> 
-{% endfor %}
-
-<form action="/noticias/busqueda/" method="GET">
-
-    <input type="text" name='elemento_Busqueda'>
-
-    <input type="submit" value="Buscar">
-
-</form>
+</section>
 
 {% endblock %}

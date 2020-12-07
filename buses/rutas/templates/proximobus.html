@@ -1,0 +1,48 @@
+<div class="col-sm">
+    <div class="card text-center shadow p-3 mb-5 bg-white rounded mx-auto" style="max-width: 540px;">
+        <div class="card-body">
+            <h2 class="card-title">{{ route.short_name }} <br> <span class="badge badge-success">{{ route.route_id }}</span></h2>
+            <h3 class="card-subtitle text-muted">Próximos buses</h3>
+            <p>
+                <table class="table table-borderless">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th> {{ route.short_name }} <i class="fas fa-arrow-right"></i> San José</th>
+                            <th> San José <i class="fas fa-arrow-right"></i> {{ route.short_name }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% if proximos_hacia_sanjose %}
+                            <td class="font-weight-bold"><span class="align-middle">{{ proximos_hacia_sanjose.0.0 }}</span> {% if proximos_hacia_sanjose.0.1 == 'desde_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_hacia_sanjose.0.1 == 'desde_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_hacia_sanjose.0.1 == 'desde_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
+                            {% else %}
+                            <td class="font-weight-bold">No hay más buses hoy</td>
+                            {% endif %}
+                            {% if proximos_desde_sanjose %}
+                            <td class="font-weight-bold"><span class="align-middle">{{ proximos_desde_sanjose.0.0 }}</span> {% if proximos_desde_sanjose.0.1 == 'hacia_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_desde_sanjose.0.1 == 'hacia_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_desde_sanjose.0.1 == 'hacia_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
+                            {% else %}
+                            <td class="font-weight-bold">No hay más buses hoy</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle">{{ proximos_hacia_sanjose.1.0 }}</span> {% if proximos_hacia_sanjose.1.1 == 'desde_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_hacia_sanjose.1.1 == 'desde_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_hacia_sanjose.1.1 == 'desde_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
+                            <td><span class="align-middle">{{ proximos_desde_sanjose.1.0 }}</span> {% if proximos_desde_sanjose.1.1 == 'hacia_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_desde_sanjose.1.1 == 'hacia_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_desde_sanjose.1.1 == 'hacia_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle">{{ proximos_hacia_sanjose.2.0 }}</span> {% if proximos_hacia_sanjose.2.1 == 'desde_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_hacia_sanjose.2.1 == 'desde_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_hacia_sanjose.2.1 == 'desde_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
+                            <td><span class="align-middle">{{ proximos_desde_sanjose.2.0 }}</span> {% if proximos_desde_sanjose.2.1 == 'hacia_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_desde_sanjose.2.1 == 'hacia_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_desde_sanjose.2.1 == 'hacia_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            {% if route.short_name == 'Acosta' %}
+            <p class="small">
+                Ramales: <br>
+                <span class="badge badge-danger align-middle">SL</span> <span class="text-danger text-uppercase font-weight-bold align-middle">San Luis</span> &nbsp;
+                <span class="badge badge-warning align-middle">TU</span> <span class="text-warning text-uppercase font-weight-bold align-middle">Turrujal</span> &nbsp;
+                <span class="badge badge-info align-middle">JO</span> <span class="text-info text-uppercase font-weight-bold align-middle">Jorco</span>
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</div>

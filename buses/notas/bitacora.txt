@@ -1,0 +1,175 @@
+Bitácora
+- Pendiente
+# Terminado
+
+< Futuro próximo >
+- Cómo usar los colores de la ruta
+- Hacer base de datos de "trips" (y asociaciones) de ejemplo
+- Hacer base de datos de "fares" (y asociaciones) de ejemplo
+- Función para horario según service_id (entresemana, sabado, domingo)
+- Estudiar las alertas de GTFS
+- Asignar tareas a estudiantes de TCU
+- Hacer "growing-spinner" más pequeño, como segundero
+- Poner la cuenta regresiva de cada próximo bus
+- Dentro del horario de cada ruta, marcar (tipo badge) el próximo bus
+
+< 6 de diciembre de 2020 >
+# Hacer el sorting por horas del horario (por el caso de Acosta)
+# Revisar y corregir caso de que no hay mismo número de idas y vueltas (itertools)
+# Agregar nota de los '15 minutos antes' en ruta.html
+# Arreglar "Próximos buses" para el caso de Acosta
+- Pruebas básicas del {% include %}
+- Una explicación sobre los ramales de la ruta de Acosta
+- Una indicación básica del tiempo de viaje
+
+< 5 de diciembre de 2020 >
+# Poner carrousel en comunidades.html
+# Modificar los códigos de stops en Google Drive "GTFS stops"
+- Incorporar imagen al card en comunidades.html
+- Resolver asunto de URL de ruta (en GTFS debe quedar URL completa)
+
+< 4 de diciembre de 2020 >
+# Cambiar de posición el "Datos de GTFS"
+# Agregar nuevos campos a Comunidad: latitud, longitud, descripción corta
+# Modificar comunidades.html para incorporar la descripción
+- Tabla de tarifas
+- Rediseño del sub-menú de cada página
+- Colocar las paradas en ruta.html
+- Arreglar el Acerca de en footer (hacia/desde San Gabriel)
+- Trabajar en noticia.html
+
+< 3 de diciembre de 2020 >
+# Trabajar en página de noticias.html
+# Trabajar en página de comunidad.html
+# Agregar imagen al modelo de comunidad
+# Agregar holiday_name al modelo CalendarDate
+# Cambiar el primary_key de los modelos
+# Hacer bonita la tabla de datos generales de comunidad
+# Resolver lo de la coma del final
+
+< 22 de noviembre de 2020 >
+# Ajustar el hora.js
+
+< 17 de noviembre de 2020 >
+- Corregir posibilidad de idas != vueltas
+- Cómo cambiar colores en Bootstrap
+# Revisión general de formato
+# Crear datos de prueba
+# Crear mensajes de alerta de prueba
+# Quitar los segundos (porque son distractores)
+
+< 16 de noviembre de 2020 >
+# Ajustar proximo_bus()
+# Cambiar a formato AM/PM en el contexto
+# Rediseñar el widget de hora actual (versión badges)
+# Poner el horario de servicio (calendar) activo según el día
+# Hacer pruebas de proximo_bus() con datetime arbitrario
+# Poner "no hay más buses hoy" en proximo_bus()
+# Cambiar las horas del widget de próximo bus a AM/PM
+# Colocar fecha de nuevo
+# Crear el indicador de cada ramal en el horario
+
+< 15 de noviembre de 2020 >
+- Pensar en cómo seleccionar las paradas de cada ruta (__startswith)
+
+< 14 de noviembre de 2020 >
+# Cambiar los __str__() de los modelos de appRutas
+# Agregar __str__ de StopTime con self.trip
+# Modificar horarios de rutas para incluir servicios (entresemana, sabado, domingo)
+# Convertir la nota de feriados en una alerta de información
+# Crear una lista de feriados a partir de CalendarDates
+# Crear url y template para proximo_bus
+# Usar d-flex para alinear Nota y botón de feriados
+- Probar el <iframe> con lo anterior
+- Crear <iframe> con widget de hora actual
+- Ajustar def ruta en view.py
+- Cargar luego fixture con loaddata
+- Afinar página rutas.html
+- Crear nueva aplicación "Alertas"
+- Crear páginas sobre TCU, GTFS, Transporte Público, etc.
+- Poner un Favicon
+- Hacer que algunas secciones recurrentes (alertas, hora actual...) se llamen desde Django
+- Trabajar en formato de noticias.html
+
+< 4 de noviembre de 2020 >
+# Reiniciar base de datos
+# Agregar código en route_color
+# Agregar Shape en admin.py
+# Cambiar CalendarDate en admin.py
+# Llenar Trips de prueba (una ruta, un horario)
+# Llenar StipTimes de prueba (una ruta, un horario)
+# Crear fixture con dumpdata de prueba
+
+< 3 de noviembre de 2020 >
+# Crear tabla GTFS de ejemplo
+- Revisar los models.py de appRutas
+- Revisar los views.py de appRutas
+- Opción en "Alertas de servicio" de mostrarlas todas
+- Repaso de todas las páginas
+- Trabajar en el footer
+
+< 2 de noviembre de 2020 >
+# Dar formato a título <h1> de cada página
+# Colocar "portada" arriba con título y subtítulo
+# Poner id="" para las secciones en rutas.html
+# Poner id="" para las secciones en empresa.html
+# Hacer un enmarcado adecuado para la explicación de las comunidades
+# Crear comunidades (con información de mentiras)
+# Agregar "terminal en San José" en index.html (página de inicio)
+# Crear tarjeta de terminal de buses en San José
+# Ajustar "próximos buses" con max-width y centrado con mx-auto
+# Poner las alertas en un "carousel"
+# Llevar la tarjeta de dirección de terminal de San José a ruta(s).html
+# En "Alertas de servicio" poner un badge con la cantidad
+# Darle formato a "Alertas de servicio" con "button" e ícono
+
+< 1 de noviembre de 2020 >
+# Crear "cards" con información de ruta en ruta.html
+# Eliminar {{ h1 }} de templates
+# Revisión de secciones de cada template
+# Crear "card" con información de contacto en contacto.html
+# Cambiar los <h2> para que incluyan línea de separación
+# Incorporar el número de ruta
+# Arreglar temporalmente el menú superior (no fijo)
+# Agregar exception_type en calendar_dates en models.py de rutas
+# Determinar que "shape" es donde van los ramales
+# Agregar datos de "calendar" en documento de Drive
+# Agregar tabla de tarifas en rutas.html
+# Trabajar en tareas para colaboradores
+# Trabajar en GTFS
+
+< 31 de octubre de 2020 >
+# Dar formato a ruta.html
+# Agregar las direcciones de la terminal como listas con íconos
+# Cambiar de "tabs" a "pills fill" en horarios y agregar nota
+# Incorporar el ID (número) de ruta en widgets
+# Primera prueba de "carousel" de noticias con autoslide
+# Poner "navs" de distintos días en horarios
+# Centrar texto en la tabla de horarios
+# Poner fecha en widget "Ahora"
+# Crear código en Python para obtener fecha
+# Agregar "Próximos buses" en index.html
+# Poner "accordion" en preguntas frecuentes
+# Poner formato en formulario de contacto
+# Agregar en "Acerca de" GTFS, TCU, etc.
+# Actualizar el menú principal
+
+< 9 de octubre de 2020 >
+# Adoptar Bootstrap en lugar de Semantic UI
+
+< 5 de octubre de 2020 >
+# Crear este documento
+# Crear documento estructura.txt
+# Revisión estructura HTML de Inicio
+# Revisión estructura HTML de Rutas
+# Revisión estructura HTML de Noticias
+# Revisión estructura HTML de Comunidades
+# Revisión estructura HTML de Contacto
+# Crear copia de los "template"
+# Crear versiones "lean" de los "template"
+# Adoptar Semantic-UI
+# Darle estructura a las tablas con thead y tbody
+# Iniciar la gran migración a Semantic-UI
+
+< antes >
+# Adoptar estructura semántica

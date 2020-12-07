@@ -2,12 +2,54 @@
 
 {% block page_title %} Sobre {{ comunidad.nombre }} {% endblock %}
 
+{% block titulo %} {{ comunidad.nombre }} {% endblock %}
+
 {% block content %}
 
-{% block h1 %} La comunidad de {{ comunidad.nombre }} {% endblock %}
+<!-- Datos generales -->
 
-<h3>Una reseña histórica</h3>
+<section id="datos">
 
-<p>{{ comunidad.resena|safe }}</p>
+    <hr>
+    <h2>Datos generales</h2>
+
+    <table class="table table-borderless">
+        <tr>
+            <th class="text-right" scope="row">Población</th>
+            <td class="text-center"><i class="fas fa-users"></i></td>
+            <td>{{ comunidad.poblacion }} habitantes</td>
+        </tr>
+        <tr>
+            <th class="text-right" scope="row">Área</th>
+            <td class="text-center"><i class="fas fa-map"></i></td>
+            <td>{{ comunidad.area }} m<sup>2</sup></td>
+        </tr>
+        <tr>
+            <th class="text-right" scope="row">Código postal</th>
+            <td class="text-center"><i class="fas fa-envelope"></i></td>
+            <td>{{ comunidad.codigo_postal }}</td>
+        </tr>
+    </table>
+
+</section>
+
+<!-- Mapa -->
+
+<section id="mapa">
+
+    <h2 class="text-center">Mapa</h2>
+    <p class="text-center">Aquí va el mapa</p>
+
+</section>
+
+<!-- Reseña histórica -->
+
+<section id="resena">
+
+    <hr>
+    <h2>Una reseña histórica</h2>
+    <p>{{ comunidad.resena|safe }}</p>
+
+</section>
 
 {% endblock %}

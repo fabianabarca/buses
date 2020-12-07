@@ -4,24 +4,27 @@ from django.db import models
 
 """ 
 Clases a crear 
-    - Agencia
-    - Parada
-    - Ruta
-    - Viaje
-    - Horario
-    - Calendario
-    - Feriado
+    - Agencia (agency)
+    - Paradas (stops)
+    - Rutas (routes)
+    - Viajes (trips)
+    - Horario (stop_times)
+    - Calendario (calendar)
+    - Feriados (calendar_dates)
     *****
     *****
     - Zone  Para agregar tarifas - ForeignKey en Stop
     - Fare  Para agregar tarifas
     - Shape Se usa como ForeignKey en Trip
+
+Nota: todos deben tener el __str__()
 """
 class Agency(models.Model):
     """One or more transit agencies that provide the data in this feed.
     Maps to agency.txt in the GTFS feed.
     """
     agency_id = models.CharField(
+        primary_key=True,
         max_length=255, blank=True, db_index=True,
         help_text="Unique identifier for transit agency")
     name = models.CharField(
@@ -50,6 +53,7 @@ class Stop(models.Model):
     Maps to stops.txt in the GTFS feed.
     """    
     stop_id = models.CharField(
+        primary_key=True,
         max_length=255, db_index=True,
         help_text="Unique identifier for a stop or station.")
     code = models.CharField(
@@ -58,15 +62,18 @@ class Stop(models.Model):
     name = models.CharField(
         max_length=255,
         help_text="Name of stop in local vernacular.")
+    # tts_stop_name = models.CharField(
+    #     max_length=255,
+    #     help_text="Readable version of the name (no abbreviations).")
     desc = models.CharField(
         "description",
         max_length=255, blank=True,
         help_text='Description of a stop.')
-    stop_lat = models.DecimalField(
+    lat = models.DecimalField(
         max_digits=22,
         decimal_places=16,
         help_text='WGS 84 latitude of stop or station')
-    stop_lon = models.DecimalField(
+    lon = models.DecimalField(
         max_digits=22,
         decimal_places=16,
         help_text='WGS 84 longitude of stop or station')
@@ -93,14 +100,15 @@ class Stop(models.Model):
         help_text='Is wheelchair boarding possible?')
     
     def __str__(self):
-        return self.name
+        return self.stop_id
 
 class Route(models.Model):
     """A transit route
     Maps to route.txt in the GTFS feed.
     """
     route_id = models.CharField(
-        max_length=255, db_index=True,
+        primary_key=True,
+        max_length=64, db_index=True,
         help_text="Unique identifier for route.")
     agency = models.ForeignKey(
         'Agency', null=True, blank=True, on_delete=models.SET_NULL,
@@ -115,8 +123,9 @@ class Route(models.Model):
         "description",
         blank=True,
         help_text="Long description of a route")
-    rtype = models.IntegerField(
+    route_type = models.IntegerField(
         "route type",
+        default=3,
         choices=((0, 'Tram, Streetcar, or Light rail'),
                  (1, 'Subway or Metro'),
                  (2, 'Rail'),
@@ -144,9 +153,10 @@ class Trip(models.Model):
     This implements trips.txt in the GTFS feed
     """
     route = models.ForeignKey('Route', on_delete=models.CASCADE)
-    # service = models.ForeignKey(
-    #     'Service', null=True, blank=True, on_delete=models.SET_NULL)
+    service = models.ForeignKey(
+        'Calendar', null=True, blank=True, on_delete=models.SET_NULL)
     trip_id = models.CharField(
+        primary_key=True,
         max_length=255, db_index=True,
         help_text="Unique identifier for a trip.")
     headsign = models.CharField(
@@ -157,14 +167,14 @@ class Trip(models.Model):
         help_text="Short name used in schedules and signboards.")
     direction = models.CharField(
         max_length=1, blank=True,
-        choices=(('0', '0'), ('1', '1')),
+        choices=(('0', 'Hacia San José'), ('1', 'Desde San José')),
         help_text="Dirección para rutas en dos sentidos.")
     # block = models.ForeignKey(
     #     'Block', null=True, blank=True, on_delete=models.SET_NULL,
     #     help_text="Block of sequential trips that this trip belongs to.")
-    # shape = models.ForeignKey(
-    #     'Shape', null=True, blank=True, on_delete=models.SET_NULL,
-    #     help_text="Shape used for this trip")
+    shape = models.ForeignKey(
+        'Shape', null=True, blank=True, on_delete=models.SET_NULL,
+        help_text="Shape used for this trip")
     wheelchair_accessible = models.CharField(
         max_length=1, blank=True,
         choices=(
@@ -179,6 +189,9 @@ class Trip(models.Model):
             ('1', 'Some bicycle accommodation'),
             ('2', 'No bicycles allowed')),
         help_text='Are bicycles allowed?')
+    
+    def __str__(self):
+        return self.trip_id
 
 class StopTime(models.Model):
     """A specific stop on a route on a trip.
@@ -193,7 +206,7 @@ class StopTime(models.Model):
         auto_now=False, auto_now_add=False,
         default=None, null=True, blank=True,
         help_text='Departure time. Must be set for end stops of trip.')
-    stop_sequence = models.IntegerField()
+    stop_sequence = models.PositiveIntegerField()
     stop_headsign = models.CharField(
         max_length=255, blank=True,
         help_text="Sign text that identifies the stop for passengers")
@@ -211,83 +224,108 @@ class StopTime(models.Model):
                  ('2', 'Must phone agency to arrange drop off'),
                  ('3', 'Must coordinate with driver to arrange drop off')),
         help_text="How passengers are picked up")
-    shape_dist_traveled = models.FloatField(
-        "shape distance traveled",
-        null=True, blank=True,
-        help_text='Distance of stop from start of shape')
+    # shape_dist_traveled = models.FloatField(
+    #     "shape distance traveled",
+    #     null=True, blank=True,
+    #     help_text='Distance of stop from start of shape')
+    # timepoint = models.CharField(
+    #     max_length=1, blank=True, default=0,
+    #     choices=(('0', 'Hora aproximada'),
+    #              ('1', 'Hora exacta')),
+    #     help_text="Exactitud de la hora de llegada y salida")
+    
+    def __str__(self):
+        return str(self.trip)
 
 class Calendar(models.Model):
     """Calendar with service disponibility for one or more routes 
     This implements trips.txt in the GTFS feed
     """
     service_id = models.CharField(
+        primary_key=True,
         max_length=255, db_index=True,
         help_text="Unique identifier for a service calendar.")
     monday = models.CharField(
         max_length=1,
         choices=(
-            ('0', 'The service is available on mondays included in this period'),
-            ('1', 'The service is not available on mondays included in this period')),
-        help_text='Is the service available on mondays?')
+            ('1', 'El servicio sí está disponible los lunes incluidos en este período'),
+            ('0', 'El servcio no está disponible los lunes incluidos en este período')),
+        help_text='¿El servicio está disponible los lunes?')
     tuesday = models.CharField(
         max_length=1,
         choices=(
-            ('0', 'The service is available on tuesdays included in this period'),
-            ('1', 'The service is not available on tuesdays included in this period')),
-        help_text='Is the service available on tuesdays?')
+            ('1', 'El servicio sí está disponible los martes incluidos en este período'),
+            ('0', 'El servcio no está disponible los martes incluidos en este período')),
+        help_text='¿El servicio está disponible los martes?')
     wednesday = models.CharField(
         max_length=1,
         choices=(
-            ('0', 'The service is available on wednesdays included in this period'),
-            ('1', 'The service is not available on wednesdays included in this period')),
-        help_text='Is the service available on wednesdays?')    
+            ('1', 'El servicio sí está disponible los miércoles incluidos en este período'),
+            ('0', 'El servcio no está disponible los miércoles incluidos en este período')),
+        help_text='¿El servicio está disponible los miércoles?')    
     thursday = models.CharField(
         max_length=1,
         choices=(
-            ('0', 'The service is available on thursdays included in this period'),
-            ('1', 'The service is not available on thursdays included in this period')),
-        help_text='Is the service available on thursdays?')
+            ('1', 'El servicio sí está disponible los jueves incluidos en este período'),
+            ('0', 'El servcio no está disponible los jueves incluidos en este período')),
+        help_text='¿El servicio está disponible los jueves?')
     friday = models.CharField(
         max_length=1,
         choices=(
-            ('0', 'The service is available on fridays included in this period'),
-            ('1', 'The service is not available on fridays included in this period')),
-        help_text='Is the service available on fridays?')
+            ('1', 'El servicio sí está disponible los viernes incluidos en este período'),
+            ('0', 'El servcio no está disponible los viernes incluidos en este período')),
+        help_text='¿El servicio está disponible los viernes?')
     saturday = models.CharField(
         max_length=1,
         choices=(
-            ('0', 'The service is available on saturdays included in this period'),
-            ('1', 'The service is not available on saturdays included in this period')),
-        help_text='Is the service available on saturdays?')
+            ('1', 'El servicio sí está disponible los sábados incluidos en este período'),
+            ('0', 'El servcio no está disponible los sábados incluidos en este período')),
+        help_text='¿El servicio está disponible los sábados?')
     sunday = models.CharField(
         max_length=1,
         choices=(
-            ('0', 'The service is available on sundays included in this period'),
-            ('1', 'The service is not available on sundays included in this period')),
-        help_text='Is the service available on sundays?')
+            ('1', 'El servicio sí está disponible los domingos incluidos en este período'),
+            ('0', 'El servcio no está disponible los domingos incluidos en este período')),
+        help_text='¿El servicio está disponible los domingos?')
     start_date = models.DateField(
         auto_now=False, auto_now_add=False,
         default=None,
-        help_text='Service start date')
+        help_text='Inicio de la vigencia del horario')
     end_date = models.DateField(
         auto_now=False, auto_now_add=False,
         default=None,
-        help_text='Service start date')
+        help_text='Fin de la vigencia del horario')
+    
+    def __str__(self):
+        return self.service_id
 
-class CalendarDates(models.Model):
+class CalendarDate(models.Model):
     """Calendar without service disponibility for one or more routes 
-    This implements trips.txt in the GTFS feed
+    This implements calendar_dates.txt in the GTFS feed
     """
-    service_id = models.ForeignKey('Calendar', on_delete=models.CASCADE)
+    service = models.ForeignKey('Calendar', on_delete=models.CASCADE)
     date = models.DateField(
         auto_now=False, auto_now_add=False,
         default=None,
-        help_text='Service exception date')
+        help_text='Fecha en que se aplica el feriado')
+    exception_type = models.CharField(
+        max_length=1,
+        choices=(
+            ('1', 'El servicio ha sido agregado para la fecha especificada'),
+            ('2', 'El servicio ha sido removido de la fecha especificada')),
+        help_text='¿Agregar o remover servicio?')
+    holiday_name = models.CharField(
+        max_length=64,
+        help_text="Nombre oficial del feriado")
+
+    def __str__(self):
+        return self.holiday_name
 
 class Fare(models.Model):
     """A fare class"""
 
     fare_id = models.CharField(
+        primary_key=True,
         max_length=255, db_index=True,
         help_text="Unique identifier for a fare class")
     price = models.DecimalField(
@@ -295,7 +333,7 @@ class Fare(models.Model):
         help_text="Fare price, in units specified by currency_type")
     currency_type = models.CharField(
         max_length=3,
-        help_text="ISO 4217 alphabetical currency code")
+        help_text="ISO 4217 alphabetical currency code: CRC")
     payment_method = models.IntegerField(
         default=1,
         choices=((0, 'Fare is paid on board.'),
@@ -312,14 +350,21 @@ class Fare(models.Model):
         null=True, blank=True,
         help_text="Time in seconds until a ticket or transfer expires")
 
+    def __str__(self):
+        return self.fare_id
+
 class Zone(models.Model):
     """Represents a fare zone.
-    This data is not represented as a file in the GTFS.  It appears as an
+    This data is not represented as a file in the GTFS. It appears as an
     identifier in the fare_rules and the stop tables.
     """
     zone_id = models.CharField(
+        primary_key=True,
         max_length=63, db_index=True,
         help_text="Unique identifier for a zone.")
+
+    def __str__(self):
+        return self.zone_id
 
 # class Shape(models.Model):
 #     """The path the vehicle takes along the route.
@@ -331,3 +376,23 @@ class Zone(models.Model):
 #         null=True, blank=True,
 #         help_text='Geometry cache of ShapePoints')
 
+class Shape(models.Model):
+    """The path the vehicle takes along the route.
+    Implements shapes.txt."""
+    shape_id = models.CharField(
+        primary_key=True,
+        max_length=255, db_index=True,
+        help_text="Unique identifier for a shape.")
+    pt_lat = models.DecimalField(
+        max_digits=22,
+        decimal_places=16,
+        help_text='WGS 84 latitude of point of shape')
+    pt_lon = models.DecimalField(
+        max_digits=22,
+        decimal_places=16,
+        help_text='WGS 84 longitude of point of shape')
+    pt_sequence = models.PositiveIntegerField(
+        help_text='Sequence in which the shape points connect to form the shape')
+    
+    def __str__(self):
+        return self.shape_id

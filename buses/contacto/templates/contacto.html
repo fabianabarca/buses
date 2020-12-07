@@ -2,41 +2,127 @@
 
 {% block page_title %} Contacto {% endblock %}
 
+{% block titulo %} Contacto {% endblock %}
+
+{% block subtitulo %} 
+    <div class="container text-center">
+        <a class="btn btn-outline-light" href="#contacto" role="button">Datos</a>
+        <a class="btn btn-outline-light" href="#formulario" role="button">Formulario</a>
+        <a class="btn btn-outline-light" href="#preguntas" role="button">Preguntas</a>
+    </div>
+{% endblock %}
+
 {% block content %}
 
-{% block h1 %} Información de contacto {% endblock %}
+<!-- Información general (estática) -->
 
-<ul>
-    <li><i class="fas fa-envelope"></i> <strong>Correo</strong>: <a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a></li>
-    <li><i class="fas fa-phone"></i> <strong>Teléfono</strong>: <a href="tel:{{ empresa.phone }}">{{ empresa.phone }}</a></li>
-    <li><i class="fas fa-map-marked"></i> <strong>Dirección</strong>: Barrio María Auxiliadora, San Ignacio de Acosta (<a href="https://www.waze.com/ul?ll=9.79447088%2C-84.16395520&navigate=yes&zoom=17">Waze</a>)</li>
-</ul>
+<section id="contacto">
 
-{% if enviado %}
-{{ notificacion }}
-{% else %}
-
-<form method="post" class="w3-container w3-card-4">
-  <h1>Contáctenos</h1>
-  {% csrf_token %}
-  {{ formulario.as_p }}
-  <div class="form-actions">
-    <button type="submit" class="w3-button w3-block w3-left-align">Enviar</button>
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><i class="fas fa-phone"></i> Teléfono</h5>
+        <h2 class="card-text text-center"><a href="tel:{{ empresa.phone }}">{{ empresa.phone }}</a></h2>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><i class="fas fa-envelope"></i> Correo electrónico</h5>
+        <h4 class="card-text text-center"><a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a></h4>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><i class="fas fa-map"></i> Dirección</h5>
+        <p class="card-text"> <i class="fab fa-waze"></i> <a href="https://ul.waze.com/ul?ll=9.79478950%2C-84.16339517&navigate=yes&zoom=17">Barrio María Auxiliadora, San Luis de San Ignacio de Acosta</a></p>
+      </div>
+    </div>
   </div>
-</form>
-{% endif %}
 
-<h2>Preguntas frecuentes</h2>
+</section>
 
-{% for pregunta in preguntas %}
+<!-- Formulario de contacto -->
 
-<button onclick="myAccFunc('{{ forloop.counter0 }}')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">{{ pregunta.pregunta }}</button>
-<div id="{{ forloop.counter0 }}" class="w3-hide">
-  <div class="w3-container">
-    <p>{{ pregunta.respuesta }}</p>
+<section id="formulario">
+
+  <hr>
+  <h2>Formulario de contacto</h2>
+  
+  <p>Estamos para servirle con sus consultas por correo electrónico, llenando este formulario.</p>
+  <p><i class="fas fa-question-circle"></i> En la sección <a href="#preguntas">Preguntas frecuentes</a> puede encontrar la respuesta a preguntas comunes.</p>
+  <form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Nombre completo</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre completo">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Teléfono</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Teléfono">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Correo electrónico</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@dominio.com">
+      <small id="emailHelp" class="form-text text-muted">A este correo electrónico le llega la respuesta.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Motivo de contacto</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Sugerencias de mejora</option>
+        <option>Objetos perdidos</option>
+        <option>Información general</option>
+        <option>Reclamos por servicio</option>
+        <option>Otro</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Explicación</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Enviar</button>
+  </form>
+  
+    <!--
+    {% if enviado %}
+    {{ notificacion }}
+  
+    {% else %}
+    <form method="post">
+      {% csrf_token %}
+      {{ formulario.as_p }}
+      <div>
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  {% endif %}-->
+
+</section>
+
+<!-- Preguntas frecuentes -->
+
+<section id="preguntas">
+  
+  <hr>
+  <h2 id="preguntas">Preguntas frecuentes</h2>
+
+  <div class="accordion" id="preguntas">
+    {% for pregunta in preguntas %}
+    <div class="card">
+      <div class="card-header" id="preg{{ pregunta.id }}">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#resp{{ pregunta.id }}" aria-controls="resp{{ pregunta.id }}">
+            {{ pregunta.pregunta }}
+          </button>
+        </h2>
+      </div>
+      <div id="resp{{ pregunta.id }}" class="collapse" aria-labelledby="preg{{ pregunta.id }}" data-parent="#preguntas">
+        <div class="card-body">
+          {{ pregunta.respuesta }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
-</div>
 
-{% endfor %}
+</section>
 
 {% endblock %}
