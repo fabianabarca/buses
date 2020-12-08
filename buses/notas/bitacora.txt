@@ -13,6 +13,12 @@ Bitácora
 - Poner la cuenta regresiva de cada próximo bus
 - Dentro del horario de cada ruta, marcar (tipo badge) el próximo bus
 
+< 7 de diciembre de 2020 >
+# Hacer como quote la sugerencia de preguntas frecuentes en formulario de contacto
+# Crear explicación de los ramales de Acosta
+# Convertir a San&nbsp;José para evitar separación en "Próximos buses"
+# Hacer maqueta de formato de lista de paradas
+
 < 6 de diciembre de 2020 >
 # Hacer el sorting por horas del horario (por el caso de Acosta)
 # Revisar y corregir caso de que no hay mismo número de idas y vueltas (itertools)

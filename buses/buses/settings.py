@@ -124,10 +124,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-#Url pública donde se almacenan las imágenes de noticias
+# Url pública donde se almacenan las imágenes de noticias
 MEDIA_URL = '/media/'
 
-#Url donde buscar los archivos multimedia
+# Url donde buscar los archivos multimedia
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Email configuration:
