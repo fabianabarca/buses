@@ -26,24 +26,24 @@ class Agency(models.Model):
     agency_id = models.CharField(
         primary_key=True,
         max_length=255, blank=True, db_index=True,
-        help_text="Identificador único de la agencia de transportes")
+        help_text="Identificador único de la agencia de transportes.")
     name = models.CharField(
         max_length=255,
-        help_text="Nombre completo de la agencia de transportes")
+        help_text="Nombre completo de la agencia de transportes.")
     url = models.URLField(
-        blank=True, help_text="URL de la agencia de transportes")
+        blank=True, help_text="URL de la agencia de transportes.")
     timezone = models.CharField(
         max_length=255,
-        help_text="Zona horaria de la agencia de transportes")
+        help_text="Zona horaria de la agencia de transportes.")
     lang = models.CharField(
         max_length=2, blank=True,
-        help_text="ISO 639-1 código del lenguaje primario")
+        help_text="Código ISO 639-1 de idioma primario.")
     phone = models.CharField(
         max_length=255, blank=True,
-        help_text="Número de teléfono")
+        help_text="Número de teléfono.")
     fare_url = models.URLField(
-        blank=True, help_text="URL para la compra de tiquetes en línea")
-    email = models.EmailField(max_length=254,  blank=True, help_text="Customer Service email")
+        blank=True, help_text="URL para la compra de tiquetes en línea.")
+    email = models.EmailField(max_length=254,  blank=True, help_text="Correo electrónico de servicio al cliente.")
 
     def __str__(self):
         return self.name
@@ -58,7 +58,7 @@ class Stop(models.Model):
         help_text="Identificador único de una parada o estación.")
     code = models.CharField(
         max_length=255, blank=True,
-        help_text="Identificador único (texto pequeño o número) de pasajeros.")
+        help_text="Identificador único (texto corto o número) de pasajeros.")
     name = models.CharField(
         max_length=255,
         help_text="Nombre de la parada.")
@@ -72,31 +72,31 @@ class Stop(models.Model):
     lat = models.DecimalField(
         max_digits=22,
         decimal_places=16,
-        help_text='WGS 84 latitud de la parada o estación')
+        help_text='Latitud WGS 84 de la parada o estación.')
     lon = models.DecimalField(
         max_digits=22,
         decimal_places=16,
-        help_text='WGS 84 longitud de la parada o estación')
+        help_text='Longitud WGS 84 de la parada o estación.')
     zone = models.ForeignKey(
         'Zone', null=True, blank=True, on_delete=models.SET_NULL,
-        help_text="Fare zone for a stop ID.") # ¿a qué se refiere acá?
+        help_text="Zona tarifaria para esta parada.") 
     url = models.URLField(
-        blank=True, help_text="URL de la parada")
+        blank=True, help_text="URL de la parada.")
     location_type = models.CharField(
         max_length=1, blank=True, choices=(('0', 'Parada'), ('1', 'Estación')),
         help_text="¿Es una parada o una estación?")
     parent_station = models.ForeignKey(
         'Parada', null=True, blank=True, on_delete=models.SET_NULL,
-        help_text="La estación asociada con la parada")
+        help_text="La estación asociada con la parada.")
     timezone = models.CharField(
         max_length=255, blank=True,
-        help_text="Zona horaria para la parada")
+        help_text="Zona horaria para la parada.")
     wheelchair_boarding = models.CharField(
         max_length=1, blank=True,
         choices=(
-            ('0', 'No hay información'),
-            ('1', 'Algunas sillas de ruedas pueden subir'),
-            ('2', 'Las sillas de ruedas no pueden subir')),
+            ('0', 'No hay información.'),
+            ('1', 'Abordaje parcial de silla de ruedas.'),
+            ('2', 'Las sillas de ruedas no pueden subir.')),
         help_text='¿Es posible subir al transporte en silla de ruedas?')
     
     def __str__(self):
@@ -115,35 +115,35 @@ class Route(models.Model):
         help_text="Agencia de transportes de la ruta.")
     short_name = models.CharField(
         max_length=63,
-        help_text="Nombre corto de la ruta")
+        help_text="Nombre corto de la ruta.")
     long_name = models.CharField(
         max_length=255,
-        help_text="Nombre largo de la ruta")
+        help_text="Nombre largo de la ruta.")
     desc = models.TextField(
         "description",
         blank=True,
-        help_text="Descripción detallada de la ruta")
+        help_text="Descripción detallada de la ruta.")
     route_type = models.IntegerField(
         "route type",
         default=3,
-        choices=((0, 'Tranvía o tren ligero'),
-                 (1, 'Subterráneo o metro'),
-                 (2, 'Ferrocarril'),
-                 (3, 'Bus'),
-                 (4, 'Ferry'),
-                 (5, 'Teleférico'),
-                 (6, 'Gondola'),
-                 (7, 'Funicular')),
-        help_text='Medio de transporte usado en la ruta')
+        choices=((0, 'Tranvía o tren ligero.'),
+                 (1, 'Subterráneo o metro.'),
+                 (2, 'Ferrocarril.'),
+                 (3, 'Bus.'),
+                 (4, 'Ferry.'),
+                 (5, 'Teleférico.'),
+                 (6, 'Góndola.'),
+                 (7, 'Funicular.')),
+        help_text='Medio de transporte usado en la ruta.')
     url = models.CharField(
         max_length=32,
-        blank=True, help_text="Página web de la ruta")
+        blank=True, help_text="Página web de la ruta.")
     color = models.CharField(
         max_length=6, blank=True,
-        help_text="Color de la ruta en hexadecimal")
+        help_text="Color de la ruta en código hexadecimal.")
     text_color = models.CharField(
         max_length=6, blank=True,
-        help_text="Color del texto de ruta en hexadecimal")
+        help_text="Color del texto de ruta en código hexadecimal.")
     
     def __str__(self):
         return self.long_name
@@ -167,14 +167,14 @@ class Trip(models.Model):
         help_text="Nombre corto utilizado en horarios y letreros.")
     direction = models.CharField(
         max_length=1, blank=True,
-        choices=(('0', 'Hacia San José'), ('1', 'Desde San José')),
+        choices=(('0', 'Hacia San José.'), ('1', 'Desde San José.')),
         help_text="Dirección para rutas en dos sentidos.")
     # block = models.ForeignKey(
     #     'Block', null=True, blank=True, on_delete=models.SET_NULL,
     #     help_text="Block of sequential trips that this trip belongs to.")
     shape = models.ForeignKey(
         'Shape', null=True, blank=True, on_delete=models.SET_NULL,
-        help_text="Forma usada para el viaje.")
+        help_text="Forma de la ruta.")
     wheelchair_accessible = models.CharField(
         max_length=1, blank=True,
         choices=(
@@ -248,53 +248,53 @@ class Calendar(models.Model):
     monday = models.CharField(
         max_length=1,
         choices=(
-            ('1', 'El servicio sí está disponible los lunes incluidos en este período'),
-            ('0', 'El servcio no está disponible los lunes incluidos en este período')),
+            ('1', 'El servicio sí está disponible los lunes incluidos en este período.'),
+            ('0', 'El servcio no está disponible los lunes incluidos en este período.')),
         help_text='¿El servicio está disponible los lunes?')
     tuesday = models.CharField(
         max_length=1,
         choices=(
-            ('1', 'El servicio sí está disponible los martes incluidos en este período'),
-            ('0', 'El servcio no está disponible los martes incluidos en este período')),
+            ('1', 'El servicio sí está disponible los martes incluidos en este período.'),
+            ('0', 'El servcio no está disponible los martes incluidos en este período.')),
         help_text='¿El servicio está disponible los martes?')
     wednesday = models.CharField(
         max_length=1,
         choices=(
-            ('1', 'El servicio sí está disponible los miércoles incluidos en este período'),
-            ('0', 'El servcio no está disponible los miércoles incluidos en este período')),
+            ('1', 'El servicio sí está disponible los miércoles incluidos en este período.'),
+            ('0', 'El servcio no está disponible los miércoles incluidos en este período.')),
         help_text='¿El servicio está disponible los miércoles?')    
     thursday = models.CharField(
         max_length=1,
         choices=(
-            ('1', 'El servicio sí está disponible los jueves incluidos en este período'),
-            ('0', 'El servcio no está disponible los jueves incluidos en este período')),
+            ('1', 'El servicio sí está disponible los jueves incluidos en este período.'),
+            ('0', 'El servcio no está disponible los jueves incluidos en este período.')),
         help_text='¿El servicio está disponible los jueves?')
     friday = models.CharField(
         max_length=1,
         choices=(
-            ('1', 'El servicio sí está disponible los viernes incluidos en este período'),
-            ('0', 'El servcio no está disponible los viernes incluidos en este período')),
+            ('1', 'El servicio sí está disponible los viernes incluidos en este período.'),
+            ('0', 'El servcio no está disponible los viernes incluidos en este período.')),
         help_text='¿El servicio está disponible los viernes?')
     saturday = models.CharField(
         max_length=1,
         choices=(
-            ('1', 'El servicio sí está disponible los sábados incluidos en este período'),
-            ('0', 'El servcio no está disponible los sábados incluidos en este período')),
+            ('1', 'El servicio sí está disponible los sábados incluidos en este período.'),
+            ('0', 'El servcio no está disponible los sábados incluidos en este período.')),
         help_text='¿El servicio está disponible los sábados?')
     sunday = models.CharField(
         max_length=1,
         choices=(
-            ('1', 'El servicio sí está disponible los domingos incluidos en este período'),
-            ('0', 'El servcio no está disponible los domingos incluidos en este período')),
+            ('1', 'El servicio sí está disponible los domingos incluidos en este período.'),
+            ('0', 'El servcio no está disponible los domingos incluidos en este período.')),
         help_text='¿El servicio está disponible los domingos?')
     start_date = models.DateField(
         auto_now=False, auto_now_add=False,
         default=None,
-        help_text='Inicio de la vigencia del horario')
+        help_text='Inicio de la vigencia del horario.')
     end_date = models.DateField(
         auto_now=False, auto_now_add=False,
         default=None,
-        help_text='Fin de la vigencia del horario')
+        help_text='Fin de la vigencia del horario.')
     
     def __str__(self):
         return self.service_id
@@ -307,16 +307,16 @@ class CalendarDate(models.Model):
     date = models.DateField(
         auto_now=False, auto_now_add=False,
         default=None,
-        help_text='Fecha en que se aplica el feriado')
+        help_text='Fecha en que se aplica el feriado.')
     exception_type = models.CharField(
         max_length=1,
         choices=(
-            ('1', 'El servicio ha sido agregado para la fecha especificada'),
-            ('2', 'El servicio ha sido removido de la fecha especificada')),
+            ('1', 'El servicio ha sido agregado para la fecha especificada.'),
+            ('2', 'El servicio ha sido removido de la fecha especificada.')),
         help_text='¿Agregar o remover servicio?')
     holiday_name = models.CharField(
         max_length=64,
-        help_text="Nombre oficial del feriado")
+        help_text="Nombre oficial del feriado.")
 
     def __str__(self):
         return self.holiday_name
@@ -333,7 +333,7 @@ class Fare(models.Model):
         help_text="Precio de tarifa, en unidades especificadas en currency_type")
     currency_type = models.CharField(
         max_length=3,
-        help_text="ISO 4217 código alfabético de moneda: CRC")
+        help_text="Código ISO 4217, alfabético de moneda: CRC.")
     payment_method = models.IntegerField(
         default=1,
         choices=((0, 'La tarifa se paga abordo.'),
@@ -348,7 +348,7 @@ class Fare(models.Model):
         help_text="¿Se permiten las transferencias?")
     transfer_duration = models.IntegerField(
         null=True, blank=True,
-        help_text="Tiempo en segundos hasta que un tiquete o transferencia expira")
+        help_text="Tiempo en segundos hasta que un tiquete o transferencia expira.")
 
     def __str__(self):
         return self.fare_id
@@ -386,11 +386,11 @@ class Shape(models.Model):
     pt_lat = models.DecimalField(
         max_digits=22,
         decimal_places=16,
-        help_text='WGS 84 latitud de punto de la forma.')
+        help_text='Latitud WGS 84 de punto de la forma.')
     pt_lon = models.DecimalField(
         max_digits=22,
         decimal_places=16,
-        help_text='WGS 84 longitud de punto de la forma')
+        help_text='Longitud WGS 84 de punto de la forma.')
     pt_sequence = models.PositiveIntegerField(
         help_text='Secuencia en la que los puntos de la forma se conectan para crear la forma')
     
