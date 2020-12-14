@@ -5,6 +5,7 @@
 {% block titulo %} Ruta de buses {{ route.long_name }} {% endblock %}
 
 {% block subtitulo %} 
+<!--
     <div class="container text-center">
         <a class="btn btn-light" href="#horario" role="button">Horario</a>
         <a class="btn btn-light" href="#informacion" role="button">Información</a>
@@ -12,11 +13,31 @@
         <a class="btn btn-light" href="#mapa" role="button">Mapa</a>
         <a class="btn btn-light" href="#paradas" role="button">Paradas</a>
     </div>
+    <div class="btn-group btn-group-sm text-center" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Horario</button>
+        <button type="button" class="btn btn-secondary">Información</button>
+        <button type="button" class="btn btn-secondary">Tarifas</button>
+        <button type="button" class="btn btn-secondary">Mapa</button>
+        <button type="button" class="btn btn-secondary">Paradas</button>
+    </div>
+
+-->
 {% endblock %}
 
 {% load static %}
 
 {% block content %}
+
+<div class="text-center">
+    <div class="btn-group btn-group-sm text-center" role="group" aria-label="Basic example">
+        <a type="button" class="btn btn-info" href="#horario">Horario</a>
+        <a type="button" class="btn btn-info" href="#informacion">Información</a>
+        <a type="button" class="btn btn-info" href="#tarifas">Tarifas</a>
+        <a type="button" class="btn btn-info" href="#mapa">Mapa</a>
+        <a type="button" class="btn btn-info" href="#paradas">Paradas</a>
+    </div>
+</div>
+
 
 <!-- Estilos necesarios para el mapa de leaflet -->
 
@@ -74,16 +95,16 @@
         <div class="tab-pane fade {{ horario_activo.6 }}" id="entresemana" role="tabpanel" aria-labelledby="entresemana-tab">
             <table class="table table-striped table-borderless text-center">
                 <thead>
-                <tr>
-                    <th>{{ route.short_name }} <i class="fas fa-arrow-circle-right"></i> San&nbsp;José</th>
-                    <th>San José <i class="fas fa-arrow-circle-right"></i> {{ route.short_name }}</th>
-                </tr>
+                    <tr>
+                        <th>{{ route.short_name }} <i class="fas fa-arrow-circle-right"></i> San&nbsp;José</th>
+                        <th>San José <i class="fas fa-arrow-circle-right"></i> {{ route.short_name }}</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_entresemana %}
                     <tr>
-                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' or ramal_0 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_0 == 'desde_turrujal' or ramal_0 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' or ramal_0 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
-                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'desde_sanluis' or ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_1 == 'desde_turrujal' or ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'desde_jorco' or ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -92,16 +113,16 @@
         <div class="tab-pane fade {{ horario_activo.7 }}" id="sabado" role="tabpanel" aria-labelledby="sabado-tab">
             <table class="table table-striped table-borderless text-center">
                 <thead>
-                <tr>
-                    <th>{{ route.short_name }} <i class="fas fa-arrow-circle-right"></i> San&nbsp;José</th>
-                    <th>San José <i class="fas fa-arrow-circle-right"></i> {{ route.short_name }}</th>
-                </tr>
+                    <tr>
+                        <th>{{ route.short_name }} <i class="fas fa-arrow-circle-right"></i> San&nbsp;José</th>
+                        <th>San José <i class="fas fa-arrow-circle-right"></i> {{ route.short_name }}</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_sabado %}
                     <tr>
-                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' or ramal_0 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_0 == 'desde_turrujal' or ramal_0 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' or ramal_0 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
-                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'desde_sanluis' or ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_1 == 'desde_turrujal' or ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'desde_jorco' or ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -110,16 +131,16 @@
         <div class="tab-pane fade {{ horario_activo.8 }}" id="domingo" role="tabpanel" aria-labelledby="domingo-tab">
             <table class="table table-striped table-borderless text-center">
                 <thead>
-                <tr>
-                    <th>{{ route.short_name }} <i class="fas fa-arrow-circle-right"></i> San&nbsp;José</th>
-                    <th>San José <i class="fas fa-arrow-circle-right"></i> {{ route.short_name }}</th>
-                </tr>
+                    <tr>
+                        <th>{{ route.short_name }} <i class="fas fa-arrow-circle-right"></i> San&nbsp;José</th>
+                        <th>San José <i class="fas fa-arrow-circle-right"></i> {{ route.short_name }}</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_domingo %}
                     <tr>
-                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' or ramal_0 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_0 == 'desde_turrujal' or ramal_0 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' or ramal_0 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
-                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'desde_sanluis' or ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San Luis</span> {% elif ramal_1 == 'desde_turrujal' or ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'desde_jorco' or ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -128,9 +149,12 @@
     </div>
     
     <!-- "Datos de GTFS" -->
-    <div class="text-right">
-        <small><i class="fas fa-database"></i> Datos de <a href="/acerca/#GTFS">GTFS</a></small>
-    </div>
+    <p>
+        <div class="text-right">
+            <small><i class="fas fa-database"></i> Datos de <a href="/acerca/#GTFS">GTFS</a></small>
+        </div>
+    </p>
+    
  
     <!-- Nota sobre los ramales -->
     {% if route.short_name == 'Acosta' %}
@@ -155,7 +179,7 @@
     <div class="alert alert-info" role="alert">
         <div class="d-flex justify-content-between">
             <div>
-                <i class="fas fa-info-circle"></i>&nbsp; Los feriados tienen horario de <strong>domingo</strong>.
+                <i class="fas fa-info-circle"></i> Los feriados tienen horario de <strong>domingo</strong>.
             </div>
             <div>
                 <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#listaferiados" aria-expanded="false" aria-controls="listaferiados">
@@ -220,86 +244,7 @@
     <hr>
     <h2>Tarifas</h2>
 
-    <table class="table table-hover small">
-        <thead>
-          <tr>
-            <th scope="col">&cent; </th>
-            <th scope="col">LM</th>
-            <th scope="col">LF</th>
-            <th scope="col">TR</th>
-            <th scope="col">TA</th>
-            <th scope="col">CE</th>
-            <th scope="col">SJ</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">LM</th>
-            <td>515</td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-          </tr>
-          <tr>
-            <th scope="row">LF</th>
-            <td>515</td>
-            <td>515</td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-          </tr>
-          <tr>
-            <th scope="row">TR</th>
-            <td>515</td>
-            <td>515</td>
-            <td>515</td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-          </tr>
-          <tr>
-            <th scope="row">TA</th>
-            <td>880</td>
-            <td>515</td>
-            <td>515</td>
-            <td>515</td>
-            <td> </td>
-            <td> </td>
-          </tr>
-          <tr>
-            <th scope="row">CE</th>
-            <td>880</td>
-            <td>880</td>
-            <td>515</td>
-            <td>515</td>
-            <td>515</td>
-            <td> </td>
-          </tr>
-          <tr>
-            <th scope="row">SJ</th>
-            <td>990</td>
-            <td>880</td>
-            <td>515</td>
-            <td>515</td>
-            <td>515</td>
-            <td>515</td>
-          </tr>
-        </tbody>
-    </table>
-
-    <h5>Zonas</h5>
-
-    <ol class="fa-ul small">
-        <li><span class="fa-li"><strong>LM</strong></span>desde la terminal de Los Mangos hasta La Fila</li>
-        <li><span class="fa-li"><strong>LF</strong></span>desde La Fila hasta Tranquerillas</li>
-        <li><span class="fa-li"><strong>TR</strong></span>desde Tranquerillas hasta el cruce de Tarbaca</li>
-        <li><span class="fa-li"><strong>TA</strong></span>desde el cruce de Tarbaca hasta Cinco Esquinas</li>
-        <li><span class="fa-li"><strong>CE</strong></span>desde Cinco Esquinas hasta San José</li>
-        <li><span class="fa-li"><strong>SJ</strong></span>terminal de San José</li>
-    </ol>
+    {% include "tarifas.html" %}
 
 </section>
 

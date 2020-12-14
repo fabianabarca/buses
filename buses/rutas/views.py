@@ -3,7 +3,7 @@ from .models import Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate
 from datetime import datetime
 from itertools import zip_longest
 
-''' Function to execute when user goes to /rutas '''
+''' CHUECA Function to execute when user goes to /rutas '''
 def rutas(request):
     # Get current time to pass it to nextBuses()
     now = datetime.now()
@@ -87,6 +87,8 @@ def rutas(request):
 
     return render(request, 'rutas.html', context)
 
+# Esta sí es
+
 def ruta(request, url_ruta):
     ''' Función para mostrar la información de cada ruta.
     Opciones:
@@ -133,7 +135,7 @@ def ruta(request, url_ruta):
                 direction='1')
 
     # Entre semana
-    
+
     para_ordenar = []
     for i in trips_entresemana_0:
         viaje = StopTime.objects.get(trip=i)

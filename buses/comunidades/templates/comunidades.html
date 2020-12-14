@@ -4,17 +4,29 @@
 
 {% block titulo %} Comunidades {% endblock %}
 
-{% block subtitulo %} 
+{% block subtitulo %}
+<!--
     <div class="container text-center">
         <a class="btn btn-outline-light" href="#comunidades" role="button">Comunidades</a>
         <a class="btn btn-outline-light" href="#mapa" role="button">Mapa</a>
         <a class="btn btn-outline-light" href="#historias" role="button">Historias</a>
     </div>
+-->
 {% endblock %}
 
 {% load static %}
 
 {% block content %}
+
+<p>
+  <div class="text-center">
+    <div class="btn-group btn-group-sm text-center" role="group" aria-label="Basic example">
+      <a class="btn btn-info" href="#comunidades" type="button">Comunidades</a>
+      <a class="btn btn-info" href="#historias" type="button">Historias</a>
+    </div>
+  </div>
+</p>
+
 
 <div class="card">
     <div class="card-body text-center lead">

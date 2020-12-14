@@ -27,3 +27,6 @@ Tareas para colaboradores
 - Hacer diagrama de GTFS como base de datos relacional
 - Recopilar las preguntas frecuentes
 - Sección de noticias
+- Crear AJAX para recargar el widget "Próximos buses"
+- Hacer que el mapa sea de carga opcional
+- Hacer que la lista de paradas sea de carga opcional

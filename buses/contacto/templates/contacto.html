@@ -4,15 +4,26 @@
 
 {% block titulo %} Contacto {% endblock %}
 
-{% block subtitulo %} 
-    <div class="container text-center">
-        <a class="btn btn-outline-light" href="#contacto" role="button">Datos</a>
-        <a class="btn btn-outline-light" href="#formulario" role="button">Formulario</a>
-        <a class="btn btn-outline-light" href="#preguntas" role="button">Preguntas</a>
-    </div>
+{% block subtitulo %}
+<!--
+  <div class="container text-center">
+      <a class="btn btn-outline-light" href="#contacto" role="button">Datos</a>
+      <a class="btn btn-outline-light" href="#formulario" role="button">Formulario</a>
+      <a class="btn btn-outline-light" href="#preguntas" role="button">Preguntas</a>
+  </div>
+-->  
 {% endblock %}
 
 {% block content %}
+
+<p>
+  <div class="text-center">
+    <div class="btn-group btn-group-sm text-center" role="group" aria-label="Basic example">
+      <a class="btn btn-info" href="#formulario" type="button">Formulario</a>
+      <a class="btn btn-info" href="#preguntas" type="button">Preguntas</a>
+    </div>
+  </div>
+</p>
 
 <!-- Información general (estática) -->
 
