@@ -26,23 +26,23 @@ class Agency(models.Model):
     agency_id = models.CharField(
         primary_key=True,
         max_length=255, blank=True, db_index=True,
-        help_text="Unique identifier for transit agency")
+        help_text="Identificador único de la agencia de transportes")
     name = models.CharField(
         max_length=255,
-        help_text="Full name of the transit agency")
+        help_text="Nombre completo de la agencia de transportes")
     url = models.URLField(
-        blank=True, help_text="URL of the transit agency")
+        blank=True, help_text="URL de la agencia de transportes")
     timezone = models.CharField(
         max_length=255,
-        help_text="Timezone of the agency")
+        help_text="Zona horaria de la agencia de transportes")
     lang = models.CharField(
         max_length=2, blank=True,
-        help_text="ISO 639-1 code for the primary language")
+        help_text="ISO 639-1 código del lenguaje primario")
     phone = models.CharField(
         max_length=255, blank=True,
-        help_text="Voice telephone number")
+        help_text="Número de teléfono")
     fare_url = models.URLField(
-        blank=True, help_text="URL for purchasing tickets online")
+        blank=True, help_text="URL para la compra de tiquetes en línea")
     email = models.EmailField(max_length=254,  blank=True, help_text="Customer Service email")
 
     def __str__(self):
@@ -55,49 +55,49 @@ class Stop(models.Model):
     stop_id = models.CharField(
         primary_key=True,
         max_length=255, db_index=True,
-        help_text="Unique identifier for a stop or station.")
+        help_text="Identificador único de una parada o estación.")
     code = models.CharField(
         max_length=255, blank=True,
-        help_text="Uniquer identifier (short text or number) for passengers.")
+        help_text="Identificador único (texto pequeño o número) de pasajeros.")
     name = models.CharField(
         max_length=255,
-        help_text="Name of stop in local vernacular.")
+        help_text="Nombre de la parada.")
     # tts_stop_name = models.CharField(
     #     max_length=255,
     #     help_text="Readable version of the name (no abbreviations).")
     desc = models.CharField(
         "description",
         max_length=255, blank=True,
-        help_text='Description of a stop.')
+        help_text='Descripción de la parada.')
     lat = models.DecimalField(
         max_digits=22,
         decimal_places=16,
-        help_text='WGS 84 latitude of stop or station')
+        help_text='WGS 84 latitud de la parada o estación')
     lon = models.DecimalField(
         max_digits=22,
         decimal_places=16,
-        help_text='WGS 84 longitude of stop or station')
+        help_text='WGS 84 longitud de la parada o estación')
     zone = models.ForeignKey(
         'Zone', null=True, blank=True, on_delete=models.SET_NULL,
-        help_text="Fare zone for a stop ID.")
+        help_text="Fare zone for a stop ID.") # ¿a qué se refiere acá?
     url = models.URLField(
-        blank=True, help_text="URL for the stop")
+        blank=True, help_text="URL de la parada")
     location_type = models.CharField(
-        max_length=1, blank=True, choices=(('0', 'Stop'), ('1', 'Station')),
-        help_text="Is this a stop or station?")
+        max_length=1, blank=True, choices=(('0', 'Parada'), ('1', 'Estación')),
+        help_text="¿Es una parada o una estación?")
     parent_station = models.ForeignKey(
-        'Stop', null=True, blank=True, on_delete=models.SET_NULL,
-        help_text="The station associated with the stop")
+        'Parada', null=True, blank=True, on_delete=models.SET_NULL,
+        help_text="La estación asociada con la parada")
     timezone = models.CharField(
         max_length=255, blank=True,
-        help_text="Timezone of the stop")
+        help_text="Zona horaria para la parada")
     wheelchair_boarding = models.CharField(
         max_length=1, blank=True,
         choices=(
-            ('0', 'No information'),
-            ('1', 'Some wheelchair boarding'),
-            ('2', 'No wheelchair boarding')),
-        help_text='Is wheelchair boarding possible?')
+            ('0', 'No hay información'),
+            ('1', 'Algunas sillas de ruedas pueden subir'),
+            ('2', 'Las sillas de ruedas no pueden subir')),
+        help_text='¿Es posible subir al transporte en silla de ruedas?')
     
     def __str__(self):
         return self.stop_id
@@ -109,41 +109,41 @@ class Route(models.Model):
     route_id = models.CharField(
         primary_key=True,
         max_length=64, db_index=True,
-        help_text="Unique identifier for route.")
+        help_text="Identificador único de la ruta.")
     agency = models.ForeignKey(
         'Agency', null=True, blank=True, on_delete=models.SET_NULL,
-        help_text="Agency for this route.")
+        help_text="Agencia de transportes de la ruta.")
     short_name = models.CharField(
         max_length=63,
-        help_text="Short name of the route")
+        help_text="Nombre corto de la ruta")
     long_name = models.CharField(
         max_length=255,
-        help_text="Long name of the route")
+        help_text="Nombre largo de la ruta")
     desc = models.TextField(
         "description",
         blank=True,
-        help_text="Long description of a route")
+        help_text="Descripción detallada de la ruta")
     route_type = models.IntegerField(
         "route type",
         default=3,
-        choices=((0, 'Tram, Streetcar, or Light rail'),
-                 (1, 'Subway or Metro'),
-                 (2, 'Rail'),
+        choices=((0, 'Tranvía o tren ligero'),
+                 (1, 'Subterráneo o metro'),
+                 (2, 'Ferrocarril'),
                  (3, 'Bus'),
                  (4, 'Ferry'),
-                 (5, 'Cable car'),
-                 (6, 'Gondola or Suspended cable car'),
+                 (5, 'Teleférico'),
+                 (6, 'Gondola'),
                  (7, 'Funicular')),
-        help_text='Type of transportation used on route')
+        help_text='Medio de transporte usado en la ruta')
     url = models.CharField(
         max_length=32,
-        blank=True, help_text="Web page about for the route")
+        blank=True, help_text="Página web de la ruta")
     color = models.CharField(
         max_length=6, blank=True,
-        help_text="Color of route in hex")
+        help_text="Color de la ruta en hexadecimal")
     text_color = models.CharField(
         max_length=6, blank=True,
-        help_text="Color of route text in hex")
+        help_text="Color del texto de ruta en hexadecimal")
     
     def __str__(self):
         return self.long_name
@@ -158,13 +158,13 @@ class Trip(models.Model):
     trip_id = models.CharField(
         primary_key=True,
         max_length=255, db_index=True,
-        help_text="Unique identifier for a trip.")
+        help_text="Indentificador único de viaje.")
     headsign = models.CharField(
         max_length=255, blank=True,
-        help_text="Destination identification for passengers.")
+        help_text="Identificación de destino para pasajeros.")
     short_name = models.CharField(
         max_length=63, blank=True,
-        help_text="Short name used in schedules and signboards.")
+        help_text="Nombre corto utilizado en horarios y letreros.")
     direction = models.CharField(
         max_length=1, blank=True,
         choices=(('0', 'Hacia San José'), ('1', 'Desde San José')),
@@ -174,21 +174,21 @@ class Trip(models.Model):
     #     help_text="Block of sequential trips that this trip belongs to.")
     shape = models.ForeignKey(
         'Shape', null=True, blank=True, on_delete=models.SET_NULL,
-        help_text="Shape used for this trip")
+        help_text="Forma usada para el viaje.")
     wheelchair_accessible = models.CharField(
         max_length=1, blank=True,
         choices=(
-            ('0', 'No information'),
-            ('1', 'Some wheelchair accommodation'),
-            ('2', 'No wheelchair accommodation')),
-        help_text='Are there accommodations for riders with wheelchair?')
+            ('0', 'No hay información.'),
+            ('1', 'Hay espacio para el transporte de sillas de ruedas.'),
+            ('2', 'No hay espacio para el transporte de sillas de ruedas.')),
+        help_text='¿Hay espacio para el transporte de sillas de ruedas?')
     bikes_allowed = models.CharField(
         max_length=1, blank=True,
         choices=(
-            ('0', 'No information'),
-            ('1', 'Some bicycle accommodation'),
-            ('2', 'No bicycles allowed')),
-        help_text='Are bicycles allowed?')
+            ('0', 'No hay información.'),
+            ('1', 'Hay espacio para el transporte de bicicletas.'),
+            ('2', 'No hay espacio para el transporte de bicicletas.')),
+        help_text='¿Hay espacio para el transporte de bicicletas?')
     
     def __str__(self):
         return self.trip_id
@@ -201,29 +201,29 @@ class StopTime(models.Model):
     stop = models.ForeignKey('Stop', on_delete=models.CASCADE)
     arrival_time = models.TimeField(
         default=None, null=True, blank=True,
-        help_text="Arrival time. Must be set for end stops of trip.")
+        help_text="Hora de llegada. Debe configurarse para las últimas paradas del viaje.)
     departure_time = models.TimeField(  
         auto_now=False, auto_now_add=False,
         default=None, null=True, blank=True,
-        help_text='Departure time. Must be set for end stops of trip.')
+        help_text='Hora de salida. Debe configurarse para las últimas paradas del viaje.')
     stop_sequence = models.PositiveIntegerField()
     stop_headsign = models.CharField(
         max_length=255, blank=True,
-        help_text="Sign text that identifies the stop for passengers")
+        help_text="Texto de referencia que identifica la parada para los pasajeros.")
     pickup_type = models.CharField(
         max_length=1, blank=True,
-        choices=(('0', 'Regularly scheduled pickup'),
-                 ('1', 'No pickup available'),
-                 ('2', 'Must phone agency to arrange pickup'),
-                 ('3', 'Must coordinate with driver to arrange pickup')),
-        help_text="How passengers are picked up")
+        choices=(('0', 'Recogida programada regularmente.'),
+                 ('1', 'No hay recogida disponible.'),
+                 ('2', 'Debe llamar a la agencia para coordinar recogida.'),
+                 ('3', 'Debe coordinar con conductor para agendar recogida.')),
+        help_text="¿Cómo se recoge a los pasajeros?")
     drop_off_type = models.CharField(
         max_length=1, blank=True,
-        choices=(('0', 'Regularly scheduled drop off'),
-                 ('1', 'No drop off available'),
-                 ('2', 'Must phone agency to arrange drop off'),
-                 ('3', 'Must coordinate with driver to arrange drop off')),
-        help_text="How passengers are picked up")
+        choices=(('0', 'Llegadas programadas regularmente.'),
+                 ('1', 'No hay llegadas disponibles.'),
+                 ('2', 'Debe llamar a la agencia para coordinar llegada.'),
+                 ('3', 'Debe coordinar con el conductor para agendar la llegada.')),
+        help_text="¿Cómo se deja a los pasajeros en su destino?")
     # shape_dist_traveled = models.FloatField(
     #     "shape distance traveled",
     #     null=True, blank=True,
@@ -244,7 +244,7 @@ class Calendar(models.Model):
     service_id = models.CharField(
         primary_key=True,
         max_length=255, db_index=True,
-        help_text="Unique identifier for a service calendar.")
+        help_text="Indentificador único de un calendario.")
     monday = models.CharField(
         max_length=1,
         choices=(
@@ -327,28 +327,28 @@ class Fare(models.Model):
     fare_id = models.CharField(
         primary_key=True,
         max_length=255, db_index=True,
-        help_text="Unique identifier for a fare class")
+        help_text="Identificador único de la clase de tarifa.")
     price = models.DecimalField(
         max_digits=17, decimal_places=4,
-        help_text="Fare price, in units specified by currency_type")
+        help_text="Precio de tarifa, en unidades especificadas en currency_type")
     currency_type = models.CharField(
         max_length=3,
-        help_text="ISO 4217 alphabetical currency code: CRC")
+        help_text="ISO 4217 código alfabético de moneda: CRC")
     payment_method = models.IntegerField(
         default=1,
-        choices=((0, 'Fare is paid on board.'),
-                 (1, 'Fare must be paid before boarding.')),
-        help_text="When is the fare paid?")
+        choices=((0, 'La tarifa se paga abordo.'),
+                 (1, 'La tarifa se paga previo a subir al transporte.')),
+        help_text="¿Cuándo se paga la tarifa?")
     transfers = models.IntegerField(
         default=None, null=True, blank=True,
-        choices=((0, 'No transfers permitted on this fare.'),
-                 (1, 'Passenger may transfer once.'),
-                 (2, 'Passenger may transfer twice.'),
-                 (None, 'Unlimited transfers are permitted.')),
-        help_text="Are transfers permitted?")
+        choices=((0, 'No se permiten transferencias en esta tarifa.'),
+                 (1, 'Los pasajeros pueden transferir una vez.'),
+                 (2, 'Los pasajeros pueden transferir dos veces.'),
+                 (None, 'Se pueden realizar transferencias ilimitadas.')),
+        help_text="¿Se permiten las transferencias?")
     transfer_duration = models.IntegerField(
         null=True, blank=True,
-        help_text="Time in seconds until a ticket or transfer expires")
+        help_text="Tiempo en segundos hasta que un tiquete o transferencia expira")
 
     def __str__(self):
         return self.fare_id
@@ -361,7 +361,7 @@ class Zone(models.Model):
     zone_id = models.CharField(
         primary_key=True,
         max_length=63, db_index=True,
-        help_text="Unique identifier for a zone.")
+        help_text="Identificador único de una zona.")
 
     def __str__(self):
         return self.zone_id
@@ -382,17 +382,17 @@ class Shape(models.Model):
     shape_id = models.CharField(
         primary_key=True,
         max_length=255, db_index=True,
-        help_text="Unique identifier for a shape.")
+        help_text="Identificador único de una forma.")
     pt_lat = models.DecimalField(
         max_digits=22,
         decimal_places=16,
-        help_text='WGS 84 latitude of point of shape')
+        help_text='WGS 84 latitud de punto de la forma.')
     pt_lon = models.DecimalField(
         max_digits=22,
         decimal_places=16,
-        help_text='WGS 84 longitude of point of shape')
+        help_text='WGS 84 longitud de punto de la forma')
     pt_sequence = models.PositiveIntegerField(
-        help_text='Sequence in which the shape points connect to form the shape')
+        help_text='Secuencia en la que los puntos de la forma se conectan para crear la forma')
     
     def __str__(self):
         return self.shape_id
