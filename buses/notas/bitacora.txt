@@ -6,7 +6,6 @@ Bitácora
 - Cambiar el button group de la ruta y de nosotros y de todo lado
 - Que el mapa se "active" (cargue) con un click
 - Lista completa de paradas autorizadas y lista
-- Pasar la explicación de rutas para debajo de próximos buses
 - Arreglar pie de página
 - Arreglar encabezado
 - Habilitar formulario de contacto
@@ -33,8 +32,12 @@ Bitácora
 - Poner la cuenta regresiva de cada próximo bus
 - Dentro del horario de cada ruta, marcar (tipo badge) el próximo bus
 
-< 7 de febrero de 2021 >
+< 17 de febrero de 2021 >
 # Agregar desde_acosta como nueva trayectoria (shape)
+# Cambiar el template ruta.html para incluir esa posibilidad
+# Pasar la explicación de rutas para debajo de próximos buses
+# Poner "Lunes a viernes", "Sábado"... en <strong>
+# Crear modelo de Empresa y ajustar empresa.html (cambiar nombre)
 - Migrar contenido de "Acerca de nosotros" de página vieja
 
 < 8 de diciembre de 2020 >

@@ -37,22 +37,22 @@
         <tr>
             <th class="text-right" scope="row">Colaboradores</th>
             <td class="text-center"><i class="fas fa-users"></i></td>
-            <td>45</td>
+            <td>{{ empresa.colaboradores }}</td>
         </tr>
         <tr>
             <th class="text-right" scope="row">Buses</th>
             <td class="text-center"><i class="fas fa-bus"></i></td>
-            <td>Ahora sí</td>
+            <td>{{ empresa.buses }}</td>
         </tr>
         <tr>
             <th class="text-right" scope="row">Ubicación</th>
             <td class="text-center"><i class="fas fa-map-marked-alt"></i></td>
-            <td>Eso eso</td>
+            <td>{{ empresa.direccion }}</td>
         </tr>
         <tr>
             <th class="text-right" scope="row">Fundación</th>
             <td class="text-center"><i class="fas fa-history"></i></td>
-            <td>2001</td>
+            <td>{{ empresa.fundacion }}</td>
         </tr>
     </table>
 
@@ -63,8 +63,9 @@
 <section id="resena">
 
     <hr>
-    <h2>Una reseña</h2>
-    <p>{{ comunidad.resena|safe }}</p>
+    <h2>Reseña</h2>
+
+    <p>{{ empresa.resena|safe }}</p>
 
     <h3>Misión</h3>
 

@@ -1,16 +1,15 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Nota
+from .models import Empresa
+from .models import Funcionario
 
 # Create your views here.
 
-from .models import Funcionario
-
 def empresa(request):
-    empresa = Nota.objects.all()
+    empresa = get_object_or_404(Empresa, codigo='TSG')
     context = {
         'empresa': empresa
     }
-    return render(request, 'empresa.html', context)
+    return render(request, 'nosotros.html', context)
 
 def personal(request):
     funcionarios = Funcionario.objects.all()

@@ -59,6 +59,7 @@
 <section>
     {% include "proximobus.html" %}
 </section>
+ 
 
 <!-- Tabla de horario -->
 
@@ -66,6 +67,28 @@
 
     <hr>
     <h2>Horario {{ route.long_name }}</h2>
+
+    <!-- Nota sobre los ramales -->
+    {% if route.short_name == 'Acosta' %}
+    <p>
+        <ol class="fa-ul">
+            <li><span class="fa-li"><i class="fas fa-info-circle"></i></span>La ruta de Acosta tiene las siguientes trayectorias (ver <a href="#mapa">mapa de la ruta</a>):</li>
+        </ol>
+        <dl class="small">
+            <dt><span class="badge badge-secondary align-middle">AC</span> <span class="text-secondary text-uppercase font-weight-bold align-middle">Acosta</span></dt>
+            <dd>Sale desde el centro de San Ignacio de Acosta</dd>
+
+            <dt><span class="badge badge-danger align-middle">SL</span> <span class="text-danger text-uppercase font-weight-bold align-middle">San Luis</span></dt>
+            <dd>Sale desde o va hacia San Luis de Acosta y pasa por el centro de San Ignacio</dd>
+
+            <dt><span class="badge badge-warning align-middle">TU</span> <span class="text-warning text-uppercase font-weight-bold align-middle">Turrujal</span></dt>
+            <dd>Sale desde o va hacia Turrujal de Acosta y pasa por el centro de San Ignacio</dd>
+
+            <dt><span class="badge badge-info align-middle">JO</span> <span class="text-info text-uppercase font-weight-bold align-middle">Jorco</span></dt>
+            <dd>Sale desde Vuelta de Jorco de Aserrí hacia San José y <strong>no</strong> pasa por el centro de San Ignacio</dd>
+        </dl>
+    </p>
+    {% endif %}
 
     <!-- Nota sobre el horario de salida -->
     <ol class="fa-ul">
@@ -82,13 +105,13 @@
     <!-- Tabs con los horarios por día -->
     <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <a class="nav-link {{ horario_activo.0 }}" id="entresemana-tab" data-toggle="tab" href="#entresemana" role="tab" aria-controls="entresemana" aria-selected="{{ horario_activo.3 }}">Lunes a viernes</a>
+          <a class="nav-link {{ horario_activo.0 }}" id="entresemana-tab" data-toggle="tab" href="#entresemana" role="tab" aria-controls="entresemana" aria-selected="{{ horario_activo.3 }}"><strong>Lunes a viernes</strong></a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link {{ horario_activo.1 }}" id="sabado-tab" data-toggle="tab" href="#sabado" role="tab" aria-controls="sabado" aria-selected="{{ horario_activo.4 }}">Sábado</a>
+          <a class="nav-link {{ horario_activo.1 }}" id="sabado-tab" data-toggle="tab" href="#sabado" role="tab" aria-controls="sabado" aria-selected="{{ horario_activo.4 }}"><strong>Sábado</strong></a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link {{ horario_activo.2 }}" id="domingo-tab" data-toggle="tab" href="#domingo" role="tab" aria-controls="domingo" aria-selected="{{ horario_activo.5 }}">Domingo</a>
+          <a class="nav-link {{ horario_activo.2 }}" id="domingo-tab" data-toggle="tab" href="#domingo" role="tab" aria-controls="domingo" aria-selected="{{ horario_activo.5 }}"><strong>Domingo</strong></a>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -103,8 +126,8 @@
                 <tbody>
                     {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_entresemana %}
                     <tr>
-                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
-                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_0 == 'desde_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_1 == 'hacia_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -121,8 +144,8 @@
                 <tbody>
                     {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_sabado %}
                     <tr>
-                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
-                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_0 == 'desde_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_1 == 'hacia_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -139,8 +162,8 @@
                 <tbody>
                     {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_domingo %}
                     <tr>
-                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
-                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_0 == 'desde_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_1 == 'hacia_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -155,25 +178,6 @@
         </div>
     </p>
     
- 
-    <!-- Nota sobre los ramales -->
-    {% if route.short_name == 'Acosta' %}
-    <p>
-        <ol class="fa-ul">
-            <li><span class="fa-li"><i class="fas fa-info-circle"></i></span>La ruta de Acosta tiene tres ramales (ver <a href="#mapa">mapa de la ruta</a>):</li>
-        </ol>
-        <dl class="small">
-            <dt><span class="badge badge-danger align-middle">SL</span> <span class="text-danger text-uppercase font-weight-bold align-middle">San Luis</span></dt>
-            <dd>Sale desde o va hacia San Luis de Acosta y pasa por el centro de San Ignacio</dd>
-
-            <dt><span class="badge badge-warning align-middle">TU</span> <span class="text-warning text-uppercase font-weight-bold align-middle">Turrujal</span></dt>
-            <dd>Sale desde o va hacia Turrujal de Acosta y pasa por el centro de San Ignacio</dd>
-
-            <dt><span class="badge badge-info align-middle">JO</span> <span class="text-info text-uppercase font-weight-bold align-middle">Jorco</span></dt>
-            <dd>Sale desde Vuelta de Jorco de Aserrí hacia San José y <strong>no</strong> pasa por el centro de San Ignacio</dd>
-        </dl>
-    </p>
-    {% endif %}
 
     <!-- Lista de feriados -->
     <div class="alert alert-info" role="alert">
