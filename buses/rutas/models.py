@@ -86,7 +86,7 @@ class Stop(models.Model):
         max_length=1, blank=True, choices=(('0', 'Parada'), ('1', 'Estación')),
         help_text="¿Es una parada o una estación?")
     parent_station = models.ForeignKey(
-        'Parada', null=True, blank=True, on_delete=models.SET_NULL,
+        'Stop', null=True, blank=True, on_delete=models.SET_NULL,
         help_text="La estación asociada con la parada.")
     timezone = models.CharField(
         max_length=255, blank=True,

@@ -18,6 +18,9 @@ Bitácora
 - Agregar Monte Redondo
 - Hacer un mapeo de información de la página vieja a la actual
 - Clonar en otro lado. Hacer un branch release (release 1) checkout -p release 
+- En los feriados, poner el "i" en su propio div a la izquierda
+- Una indicación básica del tiempo de viaje
+- Imagen para la información de la terminal de San José
 
 < Futuro próximo >
 - Cómo usar los colores de la ruta
@@ -30,15 +33,16 @@ Bitácora
 - Poner la cuenta regresiva de cada próximo bus
 - Dentro del horario de cada ruta, marcar (tipo badge) el próximo bus
 
+< 7 de febrero de 2021 >
+# Agregar desde_acosta como nueva trayectoria (shape)
+- Migrar contenido de "Acerca de nosotros" de página vieja
+
 < 8 de diciembre de 2020 >
 # Cambiar la sugerencia de preguntas frecuentas a <ol class="fa-ul">
 # Cambiar de sub-menú
 # Cambiar San Luis por San&nbsp;Luis
 # Cambiar el "desde_" donde no corresponde
 # Corregir error en el llenado de horario
-- En los feriados, poner el "i" en su propio div a la izquierda
-- Una indicación básica del tiempo de viaje
-- Imagen para la información de la terminal de San José
 
 < 7 de diciembre de 2020 >
 # Hacer como quote la sugerencia de preguntas frecuentes en formulario de contacto
