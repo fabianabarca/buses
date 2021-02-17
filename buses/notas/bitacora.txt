@@ -2,6 +2,23 @@ Bitácora
 - Pendiente
 # Terminado
 
+< Para el MWE >
+- Cambiar el button group de la ruta y de nosotros y de todo lado
+- Que el mapa se "active" (cargue) con un click
+- Lista completa de paradas autorizadas y lista
+- Pasar la explicación de rutas para debajo de próximos buses
+- Arreglar pie de página
+- Arreglar encabezado
+- Habilitar formulario de contacto
+- Completar preguntas frecuentes
+- Versión mínima (sin buses, sin personal)
+- Eliminar Comunidades por ahora
+- Eliminar Noticias por ahora
+- Crear una versión mínima de Inicio
+- Agregar Monte Redondo
+- Hacer un mapeo de información de la página vieja a la actual
+- Clonar en otro lado. Hacer un branch release (release 1) checkout -p release 
+
 < Futuro próximo >
 - Cómo usar los colores de la ruta
 - Hacer base de datos de "trips" (y asociaciones) de ejemplo

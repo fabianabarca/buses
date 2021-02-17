@@ -86,7 +86,7 @@ class Stop(models.Model):
         max_length=1, blank=True, choices=(('0', 'Parada'), ('1', 'Estación')),
         help_text="¿Es una parada o una estación?")
     parent_station = models.ForeignKey(
-        'Parada', null=True, blank=True, on_delete=models.SET_NULL,
+        'Stop', null=True, blank=True, on_delete=models.SET_NULL,
         help_text="La estación asociada con la parada")
     timezone = models.CharField(
         max_length=255, blank=True,
@@ -201,7 +201,7 @@ class StopTime(models.Model):
     stop = models.ForeignKey('Stop', on_delete=models.CASCADE)
     arrival_time = models.TimeField(
         default=None, null=True, blank=True,
-        help_text="Hora de llegada. Debe configurarse para las últimas paradas del viaje.)
+        help_text="Hora de llegada. Debe configurarse para las últimas paradas del viaje.")
     departure_time = models.TimeField(  
         auto_now=False, auto_now_add=False,
         default=None, null=True, blank=True,

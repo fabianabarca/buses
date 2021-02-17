@@ -2,6 +2,9 @@ Tareas para colaboradores
 - Pendiente
 # Terminado
 
+- GTFS Estático en base de datos relacional
+- Asunto de mostrar precios a puro JavaScript bonito
+- Asunto "Próximos buses" a puro JavaScript
 - Crear mapa con las comunidades marcadas
 - Tabla de datos generales de la empresa (desde GTFS y otros)
 - "Carousel" con fotografías de buses en "Nuestros buses"
