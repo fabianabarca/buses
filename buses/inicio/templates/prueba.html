@@ -1,0 +1,13 @@
+<h1>Hola a todas y todos</h1>
+
+<p>Esta es una prueba.</p>
+
+<p>Sus datos:</p>
+
+
+{% for persona in personas %}
+<ul>
+    <li>Nombre completo: {{ persona.nombre }} {{ persona.apellido }}</li>
+    <li>Edad: {{ persona.edad}} </li>
+</ul>
+{% endfor %}

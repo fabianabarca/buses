@@ -1,7 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 
-# Create your models here.
+# Create your models here. (Hola)
 
 class Empresa(models.Model):
     codigo = models.CharField(max_length=8)

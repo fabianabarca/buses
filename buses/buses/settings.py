@@ -30,9 +30,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'inicio.apps.InicioConfig',
     'rutas.apps.RutasConfig',
-    'noticias.apps.NoticiasConfig',
+    # 'noticias.apps.NoticiasConfig',
     'empresa.apps.EmpresaConfig',
-    'comunidades.apps.ComunidadesConfig',
+    # 'comunidades.apps.ComunidadesConfig',
     'contacto.apps.ContactoConfig',
     'django.contrib.admin',
     'django.contrib.auth',
