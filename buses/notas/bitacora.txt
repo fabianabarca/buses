@@ -32,13 +32,20 @@ Bitácora
 - Poner la cuenta regresiva de cada próximo bus
 - Dentro del horario de cada ruta, marcar (tipo badge) el próximo bus
 
+< 25 de febrero de 2021 >
+
+< 18 de febrero de 2021 >
+- Crear branch "minimo" con la versión para primer release
+- Ajustar base.html
+- Limpiar la página de inicio
+
 < 17 de febrero de 2021 >
 # Agregar desde_acosta como nueva trayectoria (shape)
 # Cambiar el template ruta.html para incluir esa posibilidad
 # Pasar la explicación de rutas para debajo de próximos buses
 # Poner "Lunes a viernes", "Sábado"... en <strong>
 # Crear modelo de Empresa y ajustar empresa.html (cambiar nombre)
-- Migrar contenido de "Acerca de nosotros" de página vieja
+# Migrar contenido de "Acerca de nosotros" de página vieja
 
 < 8 de diciembre de 2020 >
 # Cambiar la sugerencia de preguntas frecuentas a <ol class="fa-ul">

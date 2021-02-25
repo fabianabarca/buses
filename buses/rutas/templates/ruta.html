@@ -28,14 +28,14 @@
 
 {% block content %}
 
-<div class="text-center">
-    <div class="btn-group btn-group-sm text-center" role="group" aria-label="Basic example">
-        <a type="button" class="btn btn-info" href="#horario">Horario</a>
-        <a type="button" class="btn btn-info" href="#informacion">Información</a>
-        <a type="button" class="btn btn-info" href="#tarifas">Tarifas</a>
-        <a type="button" class="btn btn-info" href="#mapa">Mapa</a>
-        <a type="button" class="btn btn-info" href="#paradas">Paradas</a>
-    </div>
+<div class="text-center small">
+    <ul class="list-group list-group-horizontal text-center">
+        <li class="list-group-item"><a href="#horario">Horario</a></li>
+        <li class="list-group-item"><a href="#informacion">Información</a></li>
+        <li class="list-group-item"><a href="#tarifas">Tarifas</a></li>
+        <li class="list-group-item"><a href="#mapa">Mapa</a></li>
+        <li class="list-group-item"><a href="#paradas">Paradas</a></li>
+    </ul>
 </div>
 
 
@@ -216,21 +216,21 @@
     <p class="lead">{{ route.desc }}</p>
 
     <div class="card-deck text-center">
-        <div class="card">
+        <div class="card card-bordered">
           <div class="card-header">Tarifa completa</div>
           <div class="card-body">
             <h1 class="display-4">&cent; 990</h1>
             <a href="#tarifas" class="btn btn-primary">Tabla de tarifas</a>
           </div>
         </div>
-        <div class="card">
+        <div class="card card-bordered">
           <div class="card-header">Distancia total</div>
           <div class="card-body">
             <h1 class="display-4">27 km</h1>
             <a href="#mapa" class="btn btn-primary">Mapa de ruta</a>
           </div>
         </div>
-        <div class="card">
+        <div class="card card-bordered">
           <div class="card-header">Paradas autorizadas</div>
           <div class="card-body">
             <h1 class="display-4">23</h1>
@@ -279,7 +279,7 @@
     <hr>
     <h2>Paradas autorizadas</h2>
 
-    <div class="card mb-3 mx-auto" style="max-width: 620px;">
+    <div class="card card-bordered mb-3 mx-auto" style="max-width: 620px;">
         <div class="row no-gutters">
           <div class="col-md-4">
             <img src="{% static 'rutas/terminal.png' %}" class="card-img" alt="Foto de mapa">

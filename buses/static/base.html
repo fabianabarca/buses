@@ -8,19 +8,24 @@
   <head>
 
     <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Título de la pestaña del navegador -->
 
     <title>{% block page_title %}{% endblock %} - TSG</title>
     
-    <!-- Bootstrap -->
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    
-    <!-- FontAwesome -->
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{% static 'vendor/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/dzsparallaxer/dzsparallaxer.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/cubeportfolio/css/cubeportfolio.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/aos/dist/aos.css' %}">
 
-    <script src="https://kit.fontawesome.com/1ae7c4e024.js" crossorigin="anonymous"></script>
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
 
   </head>
   
@@ -28,75 +33,80 @@
     
     <!-- ENCABEZADO -->
 
-    <header>
-      
-      <!-- Barra superior de navegación (fija)  style="background-color: rgba(0, 0, 0, .85);"-->
-      
-      <section>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> 
-          <div class="container">
+    <header class="header" id="headerWithDropdown">
+      <div class="header-section">
+        <div class="container" id="logoAndNavWithDropdown">
+          <!-- Nav -->
+          <nav class="js-mega-menu navbar navbar-expand-lg">
             <!-- Logo -->
-            <a class="navbar-brand text-light" href="/">Transportes San Gabriel</a>
-            
-            <!-- Menú contraído -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="index.html" aria-label="Front">
+              <img src="{% static '/assets/svg/logos/logo.svg' %}" alt="Logo">
+            </a>
+            <!-- End Logo -->
+    
+            <!-- Responsive Toggle Button -->
+            <button type="button" class="navbar-toggler btn btn-icon btn-sm rounded-circle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="navBarWithDropdown"
+                    data-toggle="collapse"
+                    data-target="#navBarWithDropdown">
+              <span class="navbar-toggler-default">
+                <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M17.4,6.2H0.6C0.3,6.2,0,5.9,0,5.5V4.1c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,5.9,17.7,6.2,17.4,6.2z M17.4,14.1H0.6c-0.3,0-0.6-0.3-0.6-0.7V12c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,13.7,17.7,14.1,17.4,14.1z"/>
+                </svg>
+              </span>
+              <span class="navbar-toggler-toggled">
+                <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"/>
+                </svg>
+              </span>
             </button>
-            
-            <!-- Menú -->
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="/rutas" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rutas</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="/rutas/acosta">Acosta</a>
-                    <a class="dropdown-item" href="/rutas/sangabriel">San Gabriel</a>
+            <!-- End Responsive Toggle Button -->
+    
+            <!-- Navigation -->
+            <div id="navBarWithDropdown" class="collapse navbar-collapse">
+              <ul class="navbar-nav">
+                <li class="navbar-nav-item">
+                  <a class="nav-link" href="/">Inicio</a>
+                </li>
+    
+    
+                <!-- Dropdown -->
+                <li class="hs-has-sub-menu navbar-nav-item">
+                  <a id="dropdownMegaMenuWithDropdown" class="hs-mega-menu-invoker nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="dropdownSubMenuWithDropdown">Rutas</a>
+    
+                  <!-- Dropdown - Submenu -->
+                  <div id="dropdownSubMenuWithDropdown" class="hs-sub-menu dropdown-menu" aria-labelledby="dropdownMegaMenuWithDropdown" style="min-width: 230px;">
+                    <a class="dropdown-item" href="/acosta">Acosta</a>
+                    <a class="dropdown-item" href="/sangabriel">San Gabriel</a>
                   </div>
-                </li>                
-                <!-- <li class="nav-item"><a class="nav-link" href="/noticias">Noticias</a></li> -->
-                <!-- <li class="nav-item"><a class="nav-link" href="/comunidades">Comunidades</a></li> -->
-                <li class="nav-item"><a class="nav-link" href="/nosotros">Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
+                  <!-- End Dropdown - Submenu -->
+                </li>
+                <!-- End Dropdown -->
+    
+                <li class="navbar-nav-item">
+                  <a class="nav-link" href="#">Nosotros</a>
+                </li>
+    
+                <li class="navbar-nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+                </li>
+    
+                <!-- Button -->
+                <li class="nav-item navbar-nav-last-item">
+                  <a class="btn btn-sm btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
+                    Buy Now
+                  </a>
+                </li>
+                <!-- End Button -->
               </ul>
             </div>
-          </div>
-        </nav>
-
-        <div class="bg-dark py-4 mb-4">
-          <div class="container h-100">
-            <div class="row h-100 align-items-center">
-              <div class="col-lg-12">
-                <h1 class="text-white mt-5 mb-2">{% block titulo %}{% endblock %}</h1>
-                <p class="lead mb-5 text-white-50">{% block subtitulo %}{% endblock %}</p>
-              </div>
-            </div>
-          </div>
+            <!-- End Navigation -->
+          </nav>
+          <!-- End Nav -->
         </div>
-
-      </section>
-      
-      <!-- Portada 
-
-      <section> 
-        <div>
-          <h1>{% block h1 %}{% endblock %}</h1>
-        </div>
-      </section>-->
-
-      <!-- Barra de información de página actual 
-
-      <section>-->
-        <!-- Navegación ("breadcrumbs") 
-        <div>
-          
-        </div>-->
-        <!-- Redes sociales 
-        <div>
-          
-        </div>
-      </section>-->
-
+      </div>
     </header>
         
     <!-- CONTENIDO PRINCIPAL -->
@@ -111,55 +121,203 @@
        
     <!-- PIE DE PÁGINA -->
 
-    <footer class="bd-footer container py-5">
-      <div class="row">
-        <div class="col-12 col-md">
-          <strong>Transportes San Gabriel</strong> <!--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>-->
-          <small class="d-block mb-3 text-muted">&copy; 2020</small>
+    <footer class="bg-dark">
+      <div class="container">
+        <div class="space-top-2 space-bottom-1 space-bottom-lg-2">
+          <div class="row justify-content-lg-between">
+            <div class="col-lg-3 ml-lg-auto mb-5 mb-lg-0">
+              <!-- Logo -->
+              <div class="mb-4">
+                <a href="index.html" aria-label="Front">
+                  <img class="brand" src="{% static '/svg/logos/logo-white.svg' %}" alt="Logo">
+                </a>
+              </div>
+              <!-- End Logo -->
+
+              <!-- Nav Link -->
+              <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+                <li class="nav-item">
+                  <a class="nav-link media" href="https://ul.waze.com/ul?ll=9.92929648%2C-84.07635212&navigate=yes&zoom=17">
+                      <span class="media">
+                        <span class="fas fa-location-arrow mt-1 mr-2"></span>
+                        <span class="media-body">
+                          San Ignacio de Acosta <span class="fab fa-waze"></span>
+                        </span>
+                      </span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link media" href="tel:+506-2410-0330">
+                      <span class="media">
+                        <span class="fas fa-phone-alt mt-1 mr-2"></span>
+                        <span class="media-body">
+                          2410-0330
+                        </span>
+                      </span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link media" href="mailto:correo@tsgcr.com">
+                      <span class="media">
+                        <span class="fas fa-envelope mt-1 mr-2"></span>
+                        <span class="media-body">
+                          correo@tsgcr.com
+                        </span>
+                      </span>
+                  </a>
+                </li>
+              </ul>
+              <!-- End Nav Link -->
+            </div>
+
+            <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
+              <h5 class="text-white">Menú</h5>
+
+              <!-- Nav Link -->
+              <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+                <li class="nav-item"><a class="nav-link" href="/rutas/">Rutas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/nosotros/">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contacto/">Contacto</a></li>
+              </ul>
+              <!-- End Nav Link -->
+            </div>
+
+            <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
+              <h5 class="text-white">Acerca de</h5>
+
+              <!-- Nav Link -->
+              <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+                <li class="nav-item"><a class="nav-link" href="/nosotros/">Transportes San Gabriel</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.ctp.go.cr/">Consejo de Transporte Público</a></li>
+                <li class="nav-item"><a class="nav-link" href="/acerca/">Este sitio web</a></li>
+              </ul>
+              <!-- End Nav Link -->
+            </div>
+
+            <div class="col-6 col-md-3 col-lg">
+              <h5 class="text-white">Resources</h5>
+
+              <!-- Nav Link -->
+              <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <span class="media align-items-center">
+                        <i class="fa fa-info-circle mr-2"></i>
+                        <span class="media-body">Help</span>
+                      </span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <span class="media align-items-center">
+                        <i class="fa fa-user-circle mr-2"></i>
+                        <span class="media-body">Your Account</span>
+                      </span>
+                  </a>
+                </li>
+              </ul>
+              <!-- End Nav Link -->
+            </div>
+          </div>
         </div>
-        <div class="col-6 col-md">
-          <h5>Menú</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="/rutas/">Rutas</a></li>
-            <!-- <li><a class="text-muted" href="/noticias/">Noticias</a></li> -->
-            <!-- <li><a class="text-muted" href="/comunidades/">Comunidades</a></li> -->
-            <li><a class="text-muted" href="/nosotros/">Nosotros</a></li>
-            <li><a class="text-muted" href="/contacto/">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-md">
-          <h5>Contacto</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="tel:+506-2410-0330"><strong>Teléfono</strong> <br> 2410-0330</a></li>
-            <li><a class="text-muted" href="mailto:transgabriel@racsa.co.cr"><strong>Correo</strong> <br> transgabriel@racsa.co.cr</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-md">
-          <h5>Acerca de</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="/nosotros/">Transportes San Gabriel</a></li>
-            <li><a class="text-muted" href="https://www.ctp.go.cr/">Consejo de Transporte Público</a></li>
-            <li><a class="text-muted" href="/acerca/">Este sitio web</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-md">
-          <h5>GTFS</h5>
-          <p class="text-muted text-small">
-            Esta página utiliza GTFS, un estándar de datos abiertos de transporte público... <a href="/acerca/#GTFS">más</a>
-          </p>
+
+        <hr class="opacity-xs my-0">
+
+        <div class="space-1">
+          <div class="row align-items-md-center mb-7">
+            <div class="col-md-6 mb-4 mb-md-0">
+              <!-- Nav Link -->
+              <ul class="nav nav-sm nav-white nav-x-sm align-items-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="/acerca">Acerca de este sitio web</a>
+                </li>
+                <li class="nav-item opacity mx-3">&#47;</li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Acerca de GTFS</a>
+                </li>
+              </ul>
+              <!-- End Nav Link -->
+            </div>
+
+            <div class="col-md-6 text-md-right">
+              <ul class="list-inline mb-0">
+                <!-- Social Networks -->
+                <li class="list-inline-item">
+                  <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn btn-xs btn-icon btn-soft-light" href="https://github.com/fabianabarca/buses">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </li>
+                <!-- End Social Networks -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- Copyright -->
+          <div class="w-md-75 text-lg-center mx-lg-auto">
+            <p class="text-white opacity-sm">Esta página utiliza GTFS, un estándar de datos abiertos de transporte público.</p>
+            <p class="text-white opacity-sm small">&copy; Transportes San Gabriel, 2021. Todos los derechos reservados.</p>
+          </div>
+          <!-- End Copyright -->
         </div>
       </div>
     </footer>
+    
+    <!-- FINAL DE PIE DE PÁGINA -->
         
     <!-- Archivos de JavaScript -->
 
     <script src="{% static 'js/hora.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
     
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  
+      <!-- JS Global Compulsory  -->
+    <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery-migrate/dist/jquery-migrate.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script src="{% static 'vendor/hs-header/dist/hs-header.min.js' %}"></script>
+    <script src="{% static 'vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+    <script src="{% static 'vendor/hs-unfold/dist/hs-unfold.min.js' %}"></script>
+    <script src="{% static 'vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+    <script src="{% static 'vendor/hs-show-animation/dist/hs-show-animation.min.js' %}"></script>
+    <script src="{% static 'vendor/hs-sticky-block/dist/hs-sticky-block.min.js' %}"></script>
+    <script src="{% static 'vendor/hs-counter/dist/hs-counter.min.js' %}"></script>
+    <script src="{% static 'vendor/appear/dist/appear.min.js' %}"></script>
+    <script src="{% static 'vendor/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'vendor/dzsparallaxer/dzsparallaxer.js' %}"></script>
+    <script src="{% static 'vendor/typed.js/lib/typed.min.js' %}"></script>
+    <script src="{% static 'vendor/aos/dist/aos.js' %}"></script>
+
+    <!-- JS Front -->
+    <script src="{% static 'js/theme.min.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+    });
+
+    $(window).on('ready', function () {
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+    });
+    
+    $(document).on('ready', function () {
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+    });
+  </script>
+
   </body>
 
 </html>
