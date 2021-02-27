@@ -8,8 +8,8 @@ const ruta_app = Vue.createApp({
             hora: "--:-- --",
             tiempo_en_minutos: 0, // Con este elemento se recorren los arreglos de horarios
 
-            desde_sanjose: [], // Horas
-            hacia_sanjose: [],
+            desde_sanjose: ['-','-','-'], // Horas
+            hacia_sanjose: ['-','-','-'],
 
             desde_sanjose_ramal: [], // Ramales
             hacia_sanjose_ramal: [],
@@ -19,8 +19,10 @@ const ruta_app = Vue.createApp({
         setInterval(() => { // Lógica de la aplicación HORADIGITAL
             var time = new Date();
             this.tiempo_en_minutos = time.getMinutes() + time.getHours()*60;
-            this.hora = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+            this.hora = time.toLocaleString(
+                'en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
         }, 1000); // Cada segundo refresca
+
         setInterval(() => { // Lógica de proximobus
 
             var time = new Date();
@@ -53,25 +55,69 @@ const ruta_app = Vue.createApp({
 // Cargamos el template en la sección de hora para que sea usado por Vue3
 document.getElementById("DigitalCLOCK").innerText = "{{ hora }}";
 
-// Cargamos la App Vue, estática en el server, dinámica en frontend
-fetch('/static/ruta_vue_app_proximobus.html').then(
-    response => {
-        switch (response.status) {
-        case 200: // OK
-            response.text().then( data =>{
-                document.getElementById(
-                    "proximo_bus_tbody").innerHTML = data;
-                ruta_app.mount('#ruta_vue_app');
-            });
-            break;
-        case 404: // Not found
-            console.log('Not Found');
-            break;
-        }
-    }
-);
+// Template de la aplicación próximo bus
+document.getElementById(
+    "proximo_bus_tbody").innerHTML = `
+<!-- Primer fila -->
+<tr>
+    <td v-if="hacia_sanjose.length" class="font-weight-bold">
+        <span class="align-middle">{{ hacia_sanjose[0] }}</span>
+        <span v-if="hacia_sanjose_ramal[0] != 'SG'" :class="['small', 'badge',
+                    hacia_sanjose_ramal[0] == 'SL' ? 'badge-danger':'',
+                    hacia_sanjose_ramal[0] == 'TU' ? 'badge-warning':'',
+                    hacia_sanjose_ramal[0] == 'JO' ? 'badge-info':'',
+                    ]">{{ hacia_sanjose_ramal[0] }}</span>
+        <td v-else class="font-weight-bold">No hay más buses hoy</td>
+
+    <td v-if="desde_sanjose.length" class="font-weight-bold">
+        <span class="align-middle">{{ desde_sanjose[0] }}</span>
+        <span v-if="desde_sanjose_ramal[0] != 'SG'" :class="['small', 'badge',
+                    desde_sanjose_ramal[0] == 'SL' ? 'badge-danger':'',
+                    desde_sanjose_ramal[0] == 'TU' ? 'badge-warning':'',
+                    desde_sanjose_ramal[0] == 'JO' ? 'badge-info':'',
+                    ]">{{ desde_sanjose_ramal[0] }}</span>
+    <td v-else class="font-weight-bold">No hay más buses hoy</td>
+</tr>
+
+<!-- Segunda fila -->
+<tr>
+    <td><span class="align-middle">{{ hacia_sanjose[1] }}</span>
+        <span v-if="hacia_sanjose_ramal[1] != 'SG'" :class="['small', 'badge',
+                    hacia_sanjose_ramal[1] == 'SL' ? 'badge-danger':'',
+                    hacia_sanjose_ramal[1] == 'TU' ? 'badge-warning':'',
+                    hacia_sanjose_ramal[1] == 'JO' ? 'badge-info':'',
+                    ]">{{ hacia_sanjose_ramal[1] }}</span>
+
+        <td><span class="align-middle">{{ desde_sanjose[1] }}</span>
+        <span v-if="desde_sanjose_ramal[1] != 'SG'" :class="['small', 'badge',
+                    desde_sanjose_ramal[1] == 'SL' ? 'badge-danger':'',
+                    desde_sanjose_ramal[1] == 'TU' ? 'badge-warning':'',
+                    desde_sanjose_ramal[1] == 'JO' ? 'badge-info':'',
+                    ]">{{ desde_sanjose_ramal[1] }}</span>
+</tr>
+
+<!-- Tercer fila -->
+<tr>
+    <td><span class="align-middle">{{ hacia_sanjose[2] }}</span>
+        <span v-if="hacia_sanjose_ramal[2] != 'SG'" :class="['small', 'badge',
+                    hacia_sanjose_ramal[2] == 'SL' ? 'badge-danger':'',
+                    hacia_sanjose_ramal[2] == 'TU' ? 'badge-warning':'',
+                    hacia_sanjose_ramal[2] == 'JO' ? 'badge-info':'',
+                    ]">{{ hacia_sanjose_ramal[2] }}</span>
+
+        <td><span class="align-middle">{{ desde_sanjose[2] }}</span>
+        <span v-if="desde_sanjose_ramal[2] != 'SG'" :class="['small', 'badge',
+                    desde_sanjose_ramal[2] == 'SL' ? 'badge-danger':'',
+                    desde_sanjose_ramal[2] == 'TU' ? 'badge-warning':'',
+                    desde_sanjose_ramal[2] == 'JO' ? 'badge-info':'',
+                    ]">{{ desde_sanjose_ramal[2] }}</span>
+</tr>
+`;
+
+// Se incorpora la aplicación al sitio
+ruta_app.mount('#ruta_vue_app');
 
 // TODO:
 // Hora (listo)
-// Próximo bus (casi)
+// Próximo bus (listo)
 // Mapa
