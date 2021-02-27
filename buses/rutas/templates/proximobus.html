@@ -13,6 +13,30 @@
                             </tr>
                         </thead>
                         <tbody id="proximo_bus_tbody"> <!-- Aquí se inserta el template de frontend -->
+                        <!-- Primer fila -->
+                        <tr>
+                            <td v-if="hacia_sanjose.length" class="font-weight-bold">
+                                <span class="align-middle"> - </span>
+                            <td v-if="desde_sanjose.length" class="font-weight-bold">
+                                <span class="align-middle"> - </span>
+                        </tr>
+
+                        <!-- Segunda fila -->
+                        <tr>
+                            <td v-if="hacia_sanjose.length" class="font-weight-bold">
+                                <span class="align-middle"> - </span>
+                                <td v-if="desde_sanjose.length" class="font-weight-bold">
+                                    <span class="align-middle"> - </span>
+                        </tr>
+
+                        <!-- Tercer fila -->
+                        <tr>
+                            <td v-if="hacia_sanjose.length" class="font-weight-bold">
+                                <span class="align-middle"> - </span>
+                                <td v-if="desde_sanjose.length" class="font-weight-bold">
+                                    <span class="align-middle"> - </span>
+                        </tr>
+
                         </tbody>
                     </table>
                 </p>

@@ -1,38 +1,54 @@
-                            <tr>
-                                <td v-if="hacia_sanjose.length" class="font-weight-bold">
-                                    <span class="align-middle">{{ hacia_sanjose[0] }}</span>
-                                    <span v-if="hacia_sanjose_ramal[0] == 'desde_sanluis'" class="small badge badge-danger">SL</span>
-                                    <span v-else-if="hacia_sanjose_ramal[0] == 'desde_turrujal'" class="small badge badge-warning">TU</span>
-                                    <span v-else-if="hacia_sanjose_ramal[0] == 'desde_jorco'" class="small badge badge-info">JO</span></td>
-                                <td v-else class="font-weight-bold">No hay más buses hoy</td>
+<!-- Primer fila -->
+<tr>
+    <td v-if="hacia_sanjose.length" class="font-weight-bold">
+        <span class="align-middle">{{ hacia_sanjose[0] }}</span>
+        <span v-if="hacia_sanjose_ramal[0] != 'SG'" :class="['small', 'badge',
+                    hacia_sanjose_ramal[0] == 'SL' ? 'badge-danger':'',
+                    hacia_sanjose_ramal[0] == 'TU' ? 'badge-warning':'',
+                    hacia_sanjose_ramal[0] == 'JO' ? 'badge-info':'',
+                    ]">{{ hacia_sanjose_ramal[0] }}</span>
+        <td v-else class="font-weight-bold">No hay más buses hoy</td>
 
-                                <td v-if="desde_sanjose.length" class="font-weight-bold">
-                                    <span class="align-middle">{{ desde_sanjose[0] }}</span>
-                                    <span v-if="desde_sanjose_ramal[0] == 'hacia_sanluis'" class="small badge badge-danger">SL</span>
-                                    <span v-else-if="desde_sanjose_ramal[0] == 'hacia_turrujal'" class="small badge badge-warning">TU</span>
-                                    <span v-else-if="desde_sanjose_ramal[0] == 'hacia_jorco'" class="small badge badge-info">JO</span></td>
-                                <td v-else class="font-weight-bold">No hay más buses hoy</td>
-                            </tr>
+    <td v-if="desde_sanjose.length" class="font-weight-bold">
+        <span class="align-middle">{{ desde_sanjose[0] }}</span>
+        <span v-if="desde_sanjose_ramal[0] != 'SG'" :class="['small', 'badge',
+                    desde_sanjose_ramal[0] == 'SL' ? 'badge-danger':'',
+                    desde_sanjose_ramal[0] == 'TU' ? 'badge-warning':'',
+                    desde_sanjose_ramal[0] == 'JO' ? 'badge-info':'',
+                    ]">{{ desde_sanjose_ramal[0] }}</span>
+    <td v-else class="font-weight-bold">No hay más buses hoy</td>
+</tr>
 
-                            <tr>
-                                <td><span class="align-middle">{{ hacia_sanjose[1] }}</span>
-                                    <span v-if="hacia_sanjose_ramal[1] == 'desde_sanluis'" class="small badge badge-danger">SL</span>
-                                    <span v-else-if="hacia_sanjose_ramal[1] == 'desde_turrujal'" class="small badge badge-warning">TU</span>
-                                    <span v-else-if="hacia_sanjose_ramal[1] == 'desde_jorco'" class="small badge badge-info">JO</span></td>
-                                <td><span class="align-middle">{{ desde_sanjose[1] }}</span>
-                                    <span v-if="desde_sanjose_ramal[1] == 'hacia_sanluis'" class="small badge badge-danger">SL</span>
-                                    <span v-else-if="desde_sanjose_ramal[1] == 'hacia_turrujal'" class="small badge badge-warning">TU</span>
-                                    <span v-else-if="desde_sanjose_ramal[1] == 'hacia_jorco'" class="small badge badge-info">JO</span></td>
-                            </tr>
+<!-- Segunda fila -->
+<tr>
+    <td><span class="align-middle">{{ hacia_sanjose[1] }}</span>
+        <span v-if="hacia_sanjose_ramal[1] != 'SG'" :class="['small', 'badge',
+                    hacia_sanjose_ramal[1] == 'SL' ? 'badge-danger':'',
+                    hacia_sanjose_ramal[1] == 'TU' ? 'badge-warning':'',
+                    hacia_sanjose_ramal[1] == 'JO' ? 'badge-info':'',
+                    ]">{{ hacia_sanjose_ramal[1] }}</span>
 
-                            <tr>
-                                <td><span class="align-middle">{{ hacia_sanjose[2] }}</span>
-                                    <span v-if="hacia_sanjose_ramal[2] == 'desde_sanluis'" class="small badge badge-danger">SL</span>
-                                    <span v-else-if="hacia_sanjose_ramal[2] == 'desde_turrujal'" class="small badge badge-warning">TU</span>
-                                    <span v-else-if="hacia_sanjose_ramal[2] == 'desde_jorco'" class="small badge badge-info">JO</span></td>
+        <td><span class="align-middle">{{ desde_sanjose[1] }}</span>
+        <span v-if="desde_sanjose_ramal[1] != 'SG'" :class="['small', 'badge',
+                    desde_sanjose_ramal[1] == 'SL' ? 'badge-danger':'',
+                    desde_sanjose_ramal[1] == 'TU' ? 'badge-warning':'',
+                    desde_sanjose_ramal[1] == 'JO' ? 'badge-info':'',
+                    ]">{{ desde_sanjose_ramal[1] }}</span>
+</tr>
 
-                                <td><span class="align-middle">{{ desde_sanjose[2] }}</span>
-                                    <span v-if="desde_sanjose_ramal[2] == 'hacia_sanluis'" class="small badge badge-danger">SL</span>
-                                    <span v-else-if="desde_sanjose_ramal[2] == 'hacia_turrujal'" class="small badge badge-warning">TU</span>
-                                    <span v-else-if="desde_sanjose_ramal[2] == 'hacia_jorco'" class="small badge badge-info">JO</span></td>
-                            </tr>
+<!-- Tercer fila -->
+<tr>
+    <td><span class="align-middle">{{ hacia_sanjose[2] }}</span>
+        <span v-if="hacia_sanjose_ramal[2] != 'SG'" :class="['small', 'badge',
+                    hacia_sanjose_ramal[2] == 'SL' ? 'badge-danger':'',
+                    hacia_sanjose_ramal[2] == 'TU' ? 'badge-warning':'',
+                    hacia_sanjose_ramal[2] == 'JO' ? 'badge-info':'',
+                    ]">{{ hacia_sanjose_ramal[2] }}</span>
+
+        <td><span class="align-middle">{{ desde_sanjose[2] }}</span>
+        <span v-if="desde_sanjose_ramal[2] != 'SG'" :class="['small', 'badge',
+                    desde_sanjose_ramal[2] == 'SL' ? 'badge-danger':'',
+                    desde_sanjose_ramal[2] == 'TU' ? 'badge-warning':'',
+                    desde_sanjose_ramal[2] == 'JO' ? 'badge-info':'',
+                    ]">{{ desde_sanjose_ramal[2] }}</span>
+</tr>

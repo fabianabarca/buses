@@ -244,8 +244,27 @@ def ruta(request, url_ruta):
         ramales_1 = ramales_domingo_1
         horario_activo = ['', '', 'active', 'false', 'false', 'true', '', '', 'show active']
 
-    horario_js_hacia_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_0, ramales_0)]
-    horario_js_desde_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_1, ramales_1)]
+    ramales_0_acronimo = [
+        element.replace('desde_','')
+        .replace('hacia_','')
+        .replace('turrujal','TU')
+        .replace('sanluis','SL')
+        .replace('jorco','JO')
+        .replace('sangabriel','SG')
+        for element in ramales_0 ]
+
+    ramales_1_acronimo = [
+        element.replace('desde_','')
+        .replace('hacia_','')
+        .replace('turrujal','TU')
+        .replace('sanluis','SL')
+        .replace('jorco','JO')
+        .replace('sangabriel','SG')
+        for element in ramales_1 ]
+
+    # Tiempo en minutos, hora, minuto, acronimo del ramal
+    horario_js_hacia_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_0, ramales_0_acronimo)]
+    horario_js_desde_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_1, ramales_1_acronimo)]
 
     # Feriados
 
