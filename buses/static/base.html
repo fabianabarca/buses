@@ -27,6 +27,10 @@
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
 
+    {% block custom_header %}
+    <!-- Aquí el source del CSS específico de cada página -->
+    {% endblock %}
+
   </head>
 
   <body>
@@ -270,7 +274,7 @@
     <!-- FINAL DE PIE DE PÁGINA -->
 
     {% block custom_footer %}
-    <!-- Aquí el source del JS de cada página -->
+    <!-- Aquí el source del JS específico de cada página -->
     {% endblock %}
 
       <!-- JS Global Compulsory  -->

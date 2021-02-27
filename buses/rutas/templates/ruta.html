@@ -1,10 +1,10 @@
 {% extends 'base.html'%}
-
+{% load static %}
 {% block page_title %} Ruta de {{ route.short_name }} {% endblock %}
 
 {% block titulo %} Ruta de buses {{ route.long_name }} {% endblock %}
 
-{% block subtitulo %} 
+{% block subtitulo %}
 <!--
     <div class="container text-center">
         <a class="btn btn-light" href="#horario" role="button">Horario</a>
@@ -24,7 +24,12 @@
 -->
 {% endblock %}
 
-{% load static %}
+{% block custom_header %}
+<!-- Aquí el source del CSS específico de cada página -->
+<!-- Estilos necesarios para el mapa de leaflet -->
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+{% endblock %}
 
 {% block content %}
 
@@ -38,19 +43,14 @@
     </ul>
 </div>
 
-
-<!-- Estilos necesarios para el mapa de leaflet -->
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
-
 <!-- Hora actual -->
 
 <section>
     <p>
         <div class="text-center">
             <h1><span class="badge badge-dark" id="DigitalCLOCK" onload="showTime()"></span></h1>
-            <h5><span class="badge badge-light"><span class="text-capitalize">{{ fecha.0 }}</span> {{ fecha.1 }} de {{ fecha.2 }} de {{ fecha.3 }}</span></h5>           
-        </div>    
+            <h5><span class="badge badge-light"><span class="text-capitalize">{{ fecha.0 }}</span> {{ fecha.1 }} de {{ fecha.2 }} de {{ fecha.3 }}</span></h5>
+        </div>
     </p>
 </section>
 
@@ -59,7 +59,7 @@
 <section>
     {% include "proximobus.html" %}
 </section>
- 
+
 
 <!-- Tabla de horario -->
 
@@ -170,14 +170,14 @@
             </table>
         </div>
     </div>
-    
+
     <!-- "Datos de GTFS" -->
     <p>
         <div class="text-right">
             <small><i class="fas fa-database"></i> Datos de <a href="/acerca/#GTFS">GTFS</a></small>
         </div>
     </p>
-    
+
 
     <!-- Lista de feriados -->
     <div class="alert alert-info" role="alert">
@@ -212,7 +212,7 @@
 
     <hr>
     <h2>Información de la ruta {{ route.long_name }}</h2>
-    
+
     <p class="lead">{{ route.desc }}</p>
 
     <div class="card-deck text-center">
@@ -262,9 +262,6 @@
     <!-- div para el mapa -->
     <div id="map" class="map map-home" style="margin:auto; height:400px; max-width: 540px;"></div>
 
-    <!-- Scripts necesarios para el mapa de leaflet -->
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>	 
-
     <script type=”text/javscript”>
         let terminal_coordinates = “{{ terminal_coordinates }}”;
         let SJ_coordinates = “{{ SJ_coordinates }}”;
@@ -305,7 +302,7 @@
     <div class="collapse" id="listaparadas">
         <div class="card card-body">
             <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
-            
+
             <h5>De San Gabriel hacia Tarbaca</h5>
 
             <ol class="fa-ul">
@@ -333,4 +330,12 @@
 
 </section>
 
+{% endblock %}
+{% block custom_footer %}
+<!-- Scripts necesarios para el mapa de leaflet -->
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+<!-- Archivos de JavaScript -->
+<script src="{% static 'js/hora.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
 {% endblock %}
