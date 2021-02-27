@@ -336,6 +336,15 @@
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 
 <!-- Archivos de JavaScript -->
+<script>
+ horario_hacia_sanjose = [{% for element in horario_js_hacia_sanjose %}
+     [{{ element.0 }}, {{ element.1 }}, {{ element.2 }}, "{{ element.3 }}"],{% endfor %}
+ ];
+ horario_desde_sanjose = [{% for element in horario_js_desde_sanjose %}
+     [{{ element.0 }}, {{ element.1 }}, {{ element.2 }}, "{{ element.3 }}"],{% endfor %}
+ ];
+</script>
+
 <script src="{% static 'js/hora.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
 {% endblock %}

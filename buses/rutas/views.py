@@ -233,7 +233,7 @@ def ruta(request, url_ruta):
     ramales_sabado_1 = [i[1] for i in para_ordenar]
 
     horario_sabado = zip_longest(
-                        [i.strftime("%-I:%M %p") for i in horario_sabado_0], 
+                        [i.strftime("%-I:%M %p") for i in horario_sabado_0],
                         ramales_sabado_0,
                         [i.strftime("%-I:%M %p") for i in horario_sabado_1],
                         ramales_sabado_1,
@@ -295,6 +295,9 @@ def ruta(request, url_ruta):
         ramales_1 = ramales_domingo_1
         horario_activo = ['', '', 'active', 'false', 'false', 'true', '', '', 'show active']
 
+    horario_js_hacia_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_0, ramales_0)]
+    horario_js_desde_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_1, ramales_1)]
+
     proximos_hacia_sanjose = [[i[0].strftime("%-I:%M %p"), str(i[1])] for i in proximo_bus(horario_0, ramales_0, ahora)]
     proximos_desde_sanjose = [[i[0].strftime("%-I:%M %p"), str(i[1])] for i in proximo_bus(horario_1, ramales_1, ahora)]
 
@@ -311,6 +314,8 @@ def ruta(request, url_ruta):
         'horario_activo': horario_activo,
         'proximos_hacia_sanjose': proximos_hacia_sanjose,
         'proximos_desde_sanjose': proximos_desde_sanjose,
+        'horario_js_hacia_sanjose': horario_js_hacia_sanjose,
+        'horario_js_desde_sanjose': horario_js_desde_sanjose,
         'feriados': feriados,
     }
 
