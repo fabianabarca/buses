@@ -352,6 +352,9 @@
 <!-- Incluir el framework de Vue3 TODO: sustituir por la versión producción-->
 <script src="https://unpkg.com/vue@next"></script>
 
-<script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
+<!-- Aplicación principal escrita en Vue3 -->
 <script src="{% static 'js/ruta_main.js' %}" type="text/javascript"></script>
+
+<!-- El mapa se coloca luego de Vue para que el objeto no se pierda durante el render -->
+<script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
 {% endblock %}
