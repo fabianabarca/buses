@@ -3,6 +3,57 @@ from .models import Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate
 from datetime import datetime
 from itertools import zip_longest
 
+## Funciones utilitarias
+
+def proximo_bus(horario, ramales, ahora):
+    '''Utilitaria, regresa una lista (datetime) de las próximas tres horas
+    de salida a partir de ahora dado un horario específico
+    '''
+
+    # Inicializar lista de próximos buses (horas de salida)
+    proximos = []
+
+    salidas = iter(horario)     # horas de salidas iterables
+    next(salidas)               # primera hora de salida
+
+    # Recorrer cada hora de salida del horario
+    for i, salida in enumerate(horario):
+        proximo_1 = salida
+
+        if ahora.hour == salida.hour:
+            if ahora.minute < salida.minute:
+                proximos.append([proximo_1, ramales[i]])
+                try:
+                    proximo_2 = next(salidas)
+                    proximos.append([proximo_2, ramales[i+1]])
+
+                    proximo_3 = next(salidas)
+                    proximos.append([proximo_3, ramales[i+2]])
+                except:
+                    break
+                return proximos
+
+        elif ahora.hour <= salida.hour:
+            proximos.append([proximo_1, ramales[i]])
+            try:
+                proximo_2 = next(salidas)
+                proximos.append([proximo_2, ramales[i+1]])
+
+                proximo_3 = next(salidas)
+                proximos.append([proximo_3, ramales[i+2]])
+            except:
+                break
+            return proximos
+
+        try:
+            next(salidas)
+        except:
+            break
+
+    return proximos
+
+## Control vistas
+
 ''' CHUECA Function to execute when user goes to /rutas '''
 def rutas(request):
     # Get current time to pass it to nextBuses()
@@ -45,7 +96,7 @@ def rutas(request):
         next_bus_list_SG = (nextBuses(stop_times, now))
 
     # print(next_bus_list_SG)
-    
+
     # Fill the next 3 buses from Acosta to SJ
     for stop_times in stop_times_Aco:
         next_bus_list_Aco = (nextBuses(stop_times, now))
@@ -71,7 +122,7 @@ def rutas(request):
     dia = dias[ahora.weekday()]
     fecha = ahora.day
     mes = meses[ahora.month - 1]
-    ano = ahora.year
+    año = ahora.year
 
     context = {
         'routes': routes, # List of routes
@@ -82,7 +133,7 @@ def rutas(request):
         'dia': dia,
         'fecha': fecha,
         'mes': mes,
-        'ano': ano,        
+        'año': año,
     }
 
     return render(request, 'rutas.html', context)
@@ -98,15 +149,15 @@ def ruta(request, url_ruta):
 
     # Obtener la información de la ruta consultada
     ''' Valores:
-    route_id, agency, short_name, long_name, desc, 
+    route_id, agency, short_name, long_name, desc,
     route_type, url, color, text_color
     '''
     route = get_object_or_404(Route, url=url_ruta)
 
     # Extraer los viajes asociados con esta ruta para cada servicio y en cada dirección
     ''' Valores:
-    route, service,	trip_id, trip_headsign, trip_short_name, 
-    direction (0: hacia San José, 1: desde San José), shape, 
+    route, service,	trip_id, trip_headsign, trip_short_name,
+    direction (0: hacia San José, 1: desde San José), shape,
     wheelchair_accessible, bikes_allowed
     '''
     trips_entresemana_0 = Trip.objects.filter(
@@ -140,7 +191,7 @@ def ruta(request, url_ruta):
     for i in trips_entresemana_0:
         viaje = StopTime.objects.get(trip=i)
         para_ordenar.append([viaje.departure_time, str(i.shape)])
-    
+
     para_ordenar.sort()
     horario_entresemana_0 = [i[0] for i in para_ordenar]
     ramales_entresemana_0 = [i[1] for i in para_ordenar]
@@ -153,7 +204,7 @@ def ruta(request, url_ruta):
     para_ordenar.sort()
     horario_entresemana_1 = [i[0] for i in para_ordenar]
     ramales_entresemana_1 = [i[1] for i in para_ordenar]
-    
+
     horario_entresemana = zip_longest(
                           [i.strftime("%-I:%M %p") for i in horario_entresemana_0],
                           ramales_entresemana_0,
@@ -210,7 +261,7 @@ def ruta(request, url_ruta):
 
     horario_domingo = zip_longest(
                         [i.strftime("%-I:%M %p") for i in horario_domingo_0],
-                        ramales_domingo_0, 
+                        ramales_domingo_0,
                         [i.strftime("%-I:%M %p") for i in horario_domingo_1],
                         ramales_domingo_1,
                         fillvalue='-')
@@ -224,7 +275,7 @@ def ruta(request, url_ruta):
     fecha = [dias[ahora.weekday()], ahora.day, meses[ahora.month - 1], ahora.year]
 
     # Próximo bus
-    
+
     if ahora.weekday() <= 4:
         horario_0 = horario_entresemana_0
         ramales_0 = ramales_entresemana_0
@@ -252,7 +303,7 @@ def ruta(request, url_ruta):
     feriados = CalendarDate.objects.filter(exception_type='1')
 
     context = {
-        'route': route, 
+        'route': route,
         'fecha': fecha,
         'horario_entresemana': horario_entresemana,
         'horario_sabado': horario_sabado,
@@ -264,54 +315,3 @@ def ruta(request, url_ruta):
     }
 
     return render(request, 'ruta.html', context)
-
-def proximo_bus(horario, ramales, ahora):
-    '''Regresa una lista (datetime) de las próximas tres horas
-    de salida a partir de ahora dado un horario específico
-    '''
-    
-    # Inicializar lista de próximos buses (horas de salida)
-    proximos = []
-
-    salidas = iter(horario)     # horas de salidas iterables
-    next(salidas)               # primera hora de salida
-
-    # Recorrer cada hora de salida del horario
-    for i, salida in enumerate(horario):
-        proximo_1 = salida
-
-        if ahora.hour == salida.hour:
-            if ahora.minute < salida.minute:
-                proximos.append([proximo_1, ramales[i]])
-                try:
-                    proximo_2 = next(salidas)
-                    proximos.append([proximo_2, ramales[i+1]])
-
-                    proximo_3 = next(salidas)
-                    proximos.append([proximo_3, ramales[i+2]])
-                except:
-                    break
-                return proximos
-        
-        elif ahora.hour <= salida.hour:
-            proximos.append([proximo_1, ramales[i]])
-            try:
-                proximo_2 = next(salidas)
-                proximos.append([proximo_2, ramales[i+1]])
-
-                proximo_3 = next(salidas)
-                proximos.append([proximo_3, ramales[i+2]])
-            except:
-                break
-            return proximos
-        
-        try:
-            next(salidas)
-        except:
-            break
-    
-    return proximos
-
-def proximo_bus_widget(request, url_ruta):
-
-    return render(request, 'proximobus.html')

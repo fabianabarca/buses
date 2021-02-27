@@ -15,23 +15,48 @@
                         <tbody>
                             <tr>
                                 {% if proximos_hacia_sanjose %}
-                                <td class="font-weight-bold"><span class="align-middle">{{ proximos_hacia_sanjose.0.0 }}</span> {% if proximos_hacia_sanjose.0.1 == 'desde_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_hacia_sanjose.0.1 == 'desde_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_hacia_sanjose.0.1 == 'desde_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
+                                <td class="font-weight-bold"><span class="align-middle">{{ proximos_hacia_sanjose.0.0 }}</span>
+                                    {% if proximos_hacia_sanjose.0.1 == 'desde_sanluis' %}<span class="small badge badge-danger">SL</span>
+                                    {% elif proximos_hacia_sanjose.0.1 == 'desde_turrujal' %}<span class="small badge badge-warning">TU</span>
+                                    {% elif proximos_hacia_sanjose.0.1 == 'desde_jorco' %} <span class="small badge badge-info">JO</span>
+                                    {% else %} {% endif %}</td>
                                 {% else %}
                                 <td class="font-weight-bold">No hay más buses hoy</td>
                                 {% endif %}
                                 {% if proximos_desde_sanjose %}
-                                <td class="font-weight-bold"><span class="align-middle">{{ proximos_desde_sanjose.0.0 }}</span> {% if proximos_desde_sanjose.0.1 == 'hacia_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_desde_sanjose.0.1 == 'hacia_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_desde_sanjose.0.1 == 'hacia_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
+                                <td class="font-weight-bold">
+                                    <span class="align-middle">{{ proximos_desde_sanjose.0.0 }}</span>
+                                    {% if proximos_desde_sanjose.0.1 == 'hacia_sanluis' %}<span class="small badge badge-danger">SL</span>
+                                    {% elif proximos_desde_sanjose.0.1 == 'hacia_turrujal' %}<span class="small badge badge-warning">TU</span>
+                                    {% elif proximos_desde_sanjose.0.1 == 'hacia_jorco' %} <span class="small badge badge-info">JO</span>
+                                    {% else %} {% endif %}</td>
                                 {% else %}
                                 <td class="font-weight-bold">No hay más buses hoy</td>
                                 {% endif %}
                             </tr>
                             <tr>
-                                <td><span class="align-middle">{{ proximos_hacia_sanjose.1.0 }}</span> {% if proximos_hacia_sanjose.1.1 == 'desde_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_hacia_sanjose.1.1 == 'desde_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_hacia_sanjose.1.1 == 'desde_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
-                                <td><span class="align-middle">{{ proximos_desde_sanjose.1.0 }}</span> {% if proximos_desde_sanjose.1.1 == 'hacia_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_desde_sanjose.1.1 == 'hacia_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_desde_sanjose.1.1 == 'hacia_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
+                                <td><span class="align-middle">{{ proximos_hacia_sanjose.1.0 }}</span>
+                                    {% if proximos_hacia_sanjose.1.1 == 'desde_sanluis' %}<span class="small badge badge-danger">SL</span>
+                                    {% elif proximos_hacia_sanjose.1.1 == 'desde_turrujal' %}<span class="small badge badge-warning">TU</span>
+                                    {% elif proximos_hacia_sanjose.1.1 == 'desde_jorco' %}<span class="small badge badge-info">JO</span>
+                                    {% else %} {% endif %}</td>
+                                <td><span class="align-middle">{{ proximos_desde_sanjose.1.0 }}</span>
+                                    {% if proximos_desde_sanjose.1.1 == 'hacia_sanluis' %}<span class="small badge badge-danger">SL</span>
+                                    {% elif proximos_desde_sanjose.1.1 == 'hacia_turrujal' %}<span class="small badge badge-warning">TU</span>
+                                    {% elif proximos_desde_sanjose.1.1 == 'hacia_jorco' %} <span class="small badge badge-info">JO</span>
+                                    {% else %} {% endif %}</td>
                             </tr>
                             <tr>
-                                <td><span class="align-middle">{{ proximos_hacia_sanjose.2.0 }}</span> {% if proximos_hacia_sanjose.2.1 == 'desde_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_hacia_sanjose.2.1 == 'desde_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_hacia_sanjose.2.1 == 'desde_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
-                                <td><span class="align-middle">{{ proximos_desde_sanjose.2.0 }}</span> {% if proximos_desde_sanjose.2.1 == 'hacia_sanluis' %} <span class="small badge badge-danger">SL</span> {% elif proximos_desde_sanjose.2.1 == 'hacia_turrujal' %} <span class="small badge badge-warning">TU</span> {% elif proximos_desde_sanjose.2.1 == 'hacia_jorco' %} <span class="small badge badge-info">JO</span> {% else %} {% endif %}</td>
+                                <td><span class="align-middle">{{ proximos_hacia_sanjose.2.0 }}</span>
+                                    {% if proximos_hacia_sanjose.2.1 == 'desde_sanluis' %}<span class="small badge badge-danger">SL</span>
+                                    {% elif proximos_hacia_sanjose.2.1 == 'desde_turrujal' %}<span class="small badge badge-warning">TU</span>
+                                    {% elif proximos_hacia_sanjose.2.1 == 'desde_jorco' %} <span class="small badge badge-info">JO</span>
+                                    {% else %} {% endif %}</td>
+                                <td><span class="align-middle">{{ proximos_desde_sanjose.2.0 }}</span>
+                                    {% if proximos_desde_sanjose.2.1 == 'hacia_sanluis' %}<span class="small badge badge-danger">SL</span>
+                                    {% elif proximos_desde_sanjose.2.1 == 'hacia_turrujal' %}<span class="small badge badge-warning">TU</span>
+                                    {% elif proximos_desde_sanjose.2.1 == 'hacia_jorco' %} <span class="small badge badge-info">JO</span>
+                                    {% else %} {% endif %}</td>
                             </tr>
                         </tbody>
                     </table>
