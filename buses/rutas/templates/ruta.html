@@ -44,22 +44,22 @@
 </div>
 
 <!-- Hora actual -->
-
+<div id='ruta_vue_app'> <!-- BEGIN VUE APP -->
 <section>
     <p>
         <div class="text-center">
-            <h1><span class="badge badge-dark" id="DigitalCLOCK" onload="showTime()"></span></h1>
+            <h1><span class="badge badge-dark" id="DigitalCLOCK"></span></h1>
             <h5><span class="badge badge-light"><span class="text-capitalize">{{ fecha.0 }}</span> {{ fecha.1 }} de {{ fecha.2 }} de {{ fecha.3 }}</span></h5>
         </div>
     </p>
 </section>
 
-<!-- Próximo bus-->
-
+<!-- Próximo bus TODO: Sustituir el proximobus de backend con este para frontend -->
+<div id=proximo_bus_app>
+</div>
 <section>
     {% include "proximobus.html" %}
 </section>
-
 
 <!-- Tabla de horario -->
 
@@ -261,12 +261,6 @@
 
     <!-- div para el mapa -->
     <div id="map" class="map map-home" style="margin:auto; height:400px; max-width: 540px;"></div>
-
-    <script type=”text/javscript”>
-        let terminal_coordinates = “{{ terminal_coordinates }}”;
-        let SJ_coordinates = “{{ SJ_coordinates }}”;
-    </script>
-
 </section>
 
 <!-- Paradas autorizadas -->
@@ -330,12 +324,21 @@
 
 </section>
 
+</div> <!-- END VUE APP -->
+
 {% endblock %}
 {% block custom_footer %}
+<!-- Archivos de JavaScript
+     [NOTE: como una buena práctica los scripts se incluyen y ejecutan al final despues de cargar las vistas]-->
+
 <!-- Scripts necesarios para el mapa de leaflet -->
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 
-<!-- Archivos de JavaScript -->
+<script type=”text/javscript”>
+ let terminal_coordinates = “{{ terminal_coordinates }}”;
+ let SJ_coordinates = “{{ SJ_coordinates }}”;
+</script>
+
 <script>
  horario_hacia_sanjose = [{% for element in horario_js_hacia_sanjose %}
      [{{ element.0 }}, {{ element.1 }}, {{ element.2 }}, "{{ element.3 }}"],{% endfor %}
@@ -345,6 +348,9 @@
  ];
 </script>
 
-<script src="{% static 'js/hora.js' %}" type="text/javascript"></script>
+<!-- Incluir el framework de Vue3 TODO: sustituir por la versión producción-->
+<script src="https://unpkg.com/vue@next"></script>
+
+<script src="{% static 'js/ruta_main.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
 {% endblock %}
