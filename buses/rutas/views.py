@@ -3,57 +3,6 @@ from .models import Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate
 from datetime import datetime
 from itertools import zip_longest
 
-## Funciones utilitarias
-
-def proximo_bus(horario, ramales, ahora):
-    '''Utilitaria, regresa una lista (datetime) de las próximas tres horas
-    de salida a partir de ahora dado un horario específico
-    '''
-
-    # Inicializar lista de próximos buses (horas de salida)
-    proximos = []
-
-    salidas = iter(horario)     # horas de salidas iterables
-    next(salidas)               # primera hora de salida
-
-    # Recorrer cada hora de salida del horario
-    for i, salida in enumerate(horario):
-        proximo_1 = salida
-
-        if ahora.hour == salida.hour:
-            if ahora.minute < salida.minute:
-                proximos.append([proximo_1, ramales[i]])
-                try:
-                    proximo_2 = next(salidas)
-                    proximos.append([proximo_2, ramales[i+1]])
-
-                    proximo_3 = next(salidas)
-                    proximos.append([proximo_3, ramales[i+2]])
-                except:
-                    break
-                return proximos
-
-        elif ahora.hour <= salida.hour:
-            proximos.append([proximo_1, ramales[i]])
-            try:
-                proximo_2 = next(salidas)
-                proximos.append([proximo_2, ramales[i+1]])
-
-                proximo_3 = next(salidas)
-                proximos.append([proximo_3, ramales[i+2]])
-            except:
-                break
-            return proximos
-
-        try:
-            next(salidas)
-        except:
-            break
-
-    return proximos
-
-## Control vistas
-
 ''' CHUECA Function to execute when user goes to /rutas '''
 def rutas(request):
     # Get current time to pass it to nextBuses()
@@ -298,9 +247,6 @@ def ruta(request, url_ruta):
     horario_js_hacia_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_0, ramales_0)]
     horario_js_desde_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_1, ramales_1)]
 
-    proximos_hacia_sanjose = [[i[0].strftime("%-I:%M %p"), str(i[1])] for i in proximo_bus(horario_0, ramales_0, ahora)]
-    proximos_desde_sanjose = [[i[0].strftime("%-I:%M %p"), str(i[1])] for i in proximo_bus(horario_1, ramales_1, ahora)]
-
     # Feriados
 
     feriados = CalendarDate.objects.filter(exception_type='1')
@@ -312,8 +258,6 @@ def ruta(request, url_ruta):
         'horario_sabado': horario_sabado,
         'horario_domingo': horario_domingo,
         'horario_activo': horario_activo,
-        'proximos_hacia_sanjose': proximos_hacia_sanjose,
-        'proximos_desde_sanjose': proximos_desde_sanjose,
         'horario_js_hacia_sanjose': horario_js_hacia_sanjose,
         'horario_js_desde_sanjose': horario_js_desde_sanjose,
         'feriados': feriados,

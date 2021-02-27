@@ -59,7 +59,7 @@ const ruta_app = Vue.createApp({
                     );
                 });
             // END FIXME
-        }, 10000); // Cada 60 segundos refresca
+        }, 1000); // Cada ~60~ segundos refresca
     }
 });
 
