@@ -24,7 +24,7 @@ const ruta_app = Vue.createApp({
         }, 1000); // Cada segundo refresca
 
         setInterval(() => { // Lógica de proximobus
-
+            this.desde_sanjose = [];
             var time = new Date();
             horario_desde_sanjose.filter(
                 value => value[0] > this.tiempo_en_minutos ) // Mayores a la hora
@@ -37,6 +37,7 @@ const ruta_app = Vue.createApp({
                     this.desde_sanjose_ramal[index] = element[3]; // Ramal
                 });
 
+            this.hacia_sanjose = [];
             horario_hacia_sanjose.filter(
                 value => value[0] > this.tiempo_en_minutos ) // Mayores a la hora
                 .slice(0,3) // Los siguientes 3
