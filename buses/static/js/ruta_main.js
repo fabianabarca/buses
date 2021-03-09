@@ -1,4 +1,4 @@
-// Inicio de las apps de rutas
+// Inicioooo de las apps de rutas
 
 // // Main Vue app
 const ruta_app = Vue.createApp({
@@ -114,10 +114,6 @@ document.getElementById(
                     ]">{{ desde_sanjose_ramal[2] }}</span>
 </tr>
 `;
-
-// Se incorpora la aplicación al sitio
-ruta_app.mount('#ruta_vue_app');
-
 // TODO:
 // Hora (listo)
 // Próximo bus (listo)

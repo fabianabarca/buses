@@ -54,7 +54,7 @@
     </p>
 </section>
 
-<!-- Próximo bus TODO: Sustituir el proximobus de backend con este para frontend -->
+<!-- Próximo bus TODO: Sustituir el proximo bus de backend con este para frontend -->
 <div id=proximo_bus_app>
 </div>
 <section>
@@ -101,7 +101,11 @@
             {% endif %}
             (ver lista de <a href="#paradas">paradas autorizadas</a>).</li>
     </ol>
-
+    {% if route.short_name == 'Acosta' %}
+        <mapa-acosta></mapa-acosta>
+    {% else %}
+        <mapa-sangabriel></mapa-sangabriel>
+    {% endif %}
     <!-- Tabs con los horarios por día -->
     <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -253,16 +257,13 @@
 </section>
 
 <!-- Mapa de la ruta -->
-
 <section id="mapa">
-
     <hr>
     <h2>Mapa de la ruta</h2>
-
     <!-- div para el mapa -->
-    <div id="map" class="map map-home" style="margin:auto; height:400px; max-width: 540px;"></div>
-</section>
 
+    
+</section>
 <!-- Paradas autorizadas -->
 
 <section id="paradas">
@@ -323,7 +324,6 @@
     </div>
 
 </section>
-
 </div> <!-- END VUE APP -->
 
 {% endblock %}
@@ -355,6 +355,14 @@
 <!-- Aplicación principal escrita en Vue3 -->
 <script src="{% static 'js/ruta_main.js' %}" type="text/javascript"></script>
 
-<!-- El mapa se coloca luego de Vue para que el objeto no se pierda durante el render -->
-<script src="{% static 'js/map_main.js' %}" type="text/javascript"></script>
+<!-- Componente Mapa San Gabriel escrito en Vue3 -->
+<script src="{% static 'js/ruta_sangabriel.js' %}" type="text/javascript"></script>
+
+<!-- Componente Mapa Acosta escrito en Vue3 -->
+<script src="{% static 'js/ruta_acosta.js' %}" type="text/javascript"></script>
+
+<!-- Se incorpora la aplicación de Vue al sitio -->
+<script>
+    ruta_app.mount('#ruta_vue_app');
+</script>
 {% endblock %}
