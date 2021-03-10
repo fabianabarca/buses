@@ -112,30 +112,35 @@
 
 <!-- Preguntas frecuentes -->
 
-<section id="preguntas">
-  
-  <hr>
-  <h2 id="preguntas">Preguntas frecuentes</h2>
 
-  <div class="accordion" id="preguntas">
+
+<!-- Collapse Section -->
+<div class="container space-2">
+  <h2>Preguntas frecuentes</h2>
+
+  <!-- Basics Accordion -->
+  <div id="basicsAccordion">
     {% for pregunta in preguntas %}
-    <div class="card">
-      <div class="card-header" id="preg{{ pregunta.id }}">
-        <h2 class="mb-0">
-          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#resp{{ pregunta.id }}" aria-controls="resp{{ pregunta.id }}">
-            {{ pregunta.pregunta }}
-          </button>
-        </h2>
+    <div class="card shadow-none mb-3">
+      <div class="card-header card-collapse" id="preg{{ pregunta.id }}">
+        <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#resp{{ pregunta.id }}" aria-expanded="false" aria-controls="#resp{{ pregunta.id }}">
+          {{ pregunta.pregunta }}
+          <span class="card-btn-toggle">
+            <span class="card-btn-toggle-default">+</span>
+            <span class="card-btn-toggle-active">−</span>
+          </span>
+        </a>
       </div>
-      <div id="resp{{ pregunta.id }}" class="collapse" aria-labelledby="preg{{ pregunta.id }}" data-parent="#preguntas">
-        <div class="card-body">
-          {{ pregunta.respuesta }}
+      <div id="resp{{ pregunta.id }}" class="collapse" aria-labelledby="preg{{ pregunta.id }}" data-parent="#basicsAccordion">
+        <div class="card-body px-0">
+          <p>{{ pregunta.respuesta }}</p>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
-
-</section>
+  <!-- End Basics Accordion -->
+</div>
+<!-- End Collapse Section -->
 
 {% endblock %}

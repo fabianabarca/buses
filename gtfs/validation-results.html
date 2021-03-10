@@ -1,0 +1,179 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FeedValidator: GTFS.zip</title>
+<style>
+body {font-family: Georgia, serif; background-color: white}
+.path {color: gray}
+div.problem {max-width: 500px}
+table.dump td,th {background-color: khaki; padding: 2px; font-family:monospace}
+table.dump td.problem,th.problem {background-color: dc143c; color: white; padding: 2px; font-family:monospace}
+table.count_outside td {vertical-align: top}
+table.count_outside {border-spacing: 0px; }
+table {border-spacing: 5px 0px; margin-top: 3px}
+h3.issueHeader {padding-left: 0.5em}
+h4.issueHeader {padding-left: 1em}
+.pass {background-color: lightgreen}
+.fail {background-color: yellow}
+.notice {background-color: yellow}
+.pass, .fail {font-size: 16pt}
+.header {background-color: white; font-family: Georgia, serif; padding: 0px}
+th.header {text-align: right; font-weight: normal; color: gray}
+.footer {font-size: 10pt}
+</style>
+</head>
+<body>
+GTFS validation results for feed:<br>
+<code><span class="path"></span><b>GTFS.zip</b></code><br>
+FeedValidator extension used: None
+<br><br>
+<table>
+<tr><th class="header">Agencies:</th><td class="header"><a href="http://tsgcr.com/">Transportes San Gabriel</a></td></tr>
+<tr><th class="header">Routes:</th><td class="header">4</td></tr>
+<tr><th class="header">Stops:</th><td class="header">235</td></tr>
+<tr><th class="header">Trips:</th><td class="header">303</td></tr>
+<tr><th class="header">Shapes:</th><td class="header">12</td></tr>
+<tr><th class="header">Effective:</th><td class="header">January 01, 2020 to January 01, 2030</td></tr>
+</table>
+<br>
+During the upcoming service dates Wed Mar 03 to Sat May 01:
+<table>
+<tr><th class="header">Average trips per date:</th><td class="header">113</td></tr>
+<tr><th class="header">Most trips on a date:</th><td class="header">127, on 40 service dates (Wed Mar 03, Thu Mar 04, Fri Mar 05, ...)</td></tr>
+<tr><th class="header">Least trips on a date:</th><td class="header">74, on 11 service dates (Sun Mar 07, Sun Mar 14, Sun Mar 21, ...)</td></tr>
+</table>
+<br>
+<span class="fail">Found these problems:</span>
+<table class="count_outside">
+<tr><td><span class="fail">291 errors</span></td><td><span class="fail">575 warnings</span></td></tr>
+<tr><td>
+<table><tr><td>1</td><td><a href="#ErrorDuplicateID">Duplicate ID</a></td></tr>
+<tr><td>290</td><td><a href="#ErrorInvalidValue">Invalid Values</a></td></tr>
+</table>
+</td>
+<td>
+<table><tr><td>7</td><td><a href="#WarningInvalidValue">Invalid Values</a></td></tr>
+<tr><td>303</td><td><a href="#WarningOtherProblem">Other Problems</a></td></tr>
+<tr><td>25</td><td><a href="#WarningStopsTooClose">Stops Too Closes</a></td></tr>
+<tr><td>9</td><td><a href="#WarningUnrecognizedColumn">Unrecognized Columns</a></td></tr>
+<tr><td>231</td><td><a href="#WarningUnusedStop">Unused Stops</a></td></tr>
+</table>
+</td>
+</table>
+<br><br>
+<h3 class="issueHeader">Errors:</h3><h4 class="issueHeader"><a name="ErrorDuplicateID">Duplicate ID</a></h4><ul>
+<li><div class="problem">Duplicate ID desde_sangabriel_sabado_04:15:00 in column <code>trip_id</code></div>in line 38 of <code>trips.txt</code><br>
+<table class="dump"><tr><th>route_id</th><th>service_id</th><th class="problem">trip_id</th><th>trip_headsign</th><th>trip_short_name</th><th>direction_id</th><th>shape_id</th><th>wheelchair_accessible</th><th>bikes_allowed</th></tr>
+<tr><td>SGAB</td><td>sabado</td><td class="problem">desde_sangabriel_sabado_04:15:00</td><td>San Gabriel > San José</td><td></td><td>0</td><td>desde_sangabriel</td><td></td><td>1</td></tr></table>
+<br></li>
+</ul>
+<h4 class="issueHeader"><a name="ErrorInvalidValue">Invalid Value</a></h4><ul>
+<li><div class="problem">Invalid value -84,076267 in field <code>stop_lon</code></div>in line 50 of <code>stops.txt</code><br>
+<table class="dump"><tr><th>stop_id</th><th>stop_code</th><th>stop_name</th><th>tts_stop_name</th><th>stop_desc</th><th>stop_lat</th><th class="problem">stop_lon</th><th>zone_id</th><th>stop_url</th><th>location_type</th><th>parent_station</th><th>stop_timezone</th><th>wheelchair_boarding</th><th>level_id</th><th>platform_code</th></tr>
+<tr><td>SJ_0_48</td><td>SJ_0_48</td><td>Terminal AyA San José (calle 7 con avenidas 10 y 12)</td><td></td><td></td><td>9.928791</td><td class="problem">-84,076267</td><td></td><td></td><td>0</td><td></td><td></td><td></td><td></td><td></td></tr></table>
+<br></li>
+<li><div class="problem">Invalid value -84,076267 in field <code>stop_lon</code></div>in line 51 of <code>stops.txt</code><br>
+<table class="dump"><tr><th>stop_id</th><th>stop_code</th><th>stop_name</th><th>tts_stop_name</th><th>stop_desc</th><th>stop_lat</th><th class="problem">stop_lon</th><th>zone_id</th><th>stop_url</th><th>location_type</th><th>parent_station</th><th>stop_timezone</th><th>wheelchair_boarding</th><th>level_id</th><th>platform_code</th></tr>
+<tr><td>SJ_1_00</td><td>SJ_1_00</td><td>Terminal AyA San José (calle 7 con avenidas 10 y 12)</td><td></td><td></td><td>9.928791</td><td class="problem">-84,076267</td><td></td><td></td><td>0</td><td></td><td></td><td></td><td></td><td></td></tr></table>
+<br></li>
+<li><div class="problem">Invalid value acosta in field <code>route_url</code></div>in line 2 of <code>routes.txt</code><br>
+<table class="dump"><tr><th>route_id</th><th>agency_id</th><th>route_short_name</th><th>route_long_name</th><th>route_desc</th><th>route_type</th><th class="problem">route_url</th><th>route_color</th><th>route_text_color</th><th>route_sort_order</th></tr>
+<tr><td>ACOS</td><td>TSG</td><td>Acosta</td><td>Acosta - San José</td><td>Esta ruta conecta San Ignacio de Acosta con San José centro, pasando por Vuelta de Jorco, Tarbaca, Aserrí y Desamparados.</td><td>3</td><td class="problem">acosta</td><td>FFA500</td><td>000000</td><td>1</td></tr></table>
+<br></li>
+<li><div class="problem">Invalid value acosta in field <code>route_url</code></div>in line 3 of <code>routes.txt</code><br>
+<table class="dump"><tr><th>route_id</th><th>agency_id</th><th>route_short_name</th><th>route_long_name</th><th>route_desc</th><th>route_type</th><th class="problem">route_url</th><th>route_color</th><th>route_text_color</th><th>route_sort_order</th></tr>
+<tr><td>TURR</td><td>TSG</td><td>Turrujal</td><td>Turrujal - San José</td><td>Esta ruta conecta Turrujal de Acosta con San José centro, pasando por San Ignacio, Vuelta de Jorco, Tarbaca, Aserrí y Desamparados.</td><td>3</td><td class="problem">acosta</td><td>FFA500</td><td>000000</td><td>0</td></tr></table>
+<br></li>
+<li><div class="problem">Invalid value sangabriel in field <code>route_url</code></div>in line 4 of <code>routes.txt</code><br>
+<table class="dump"><tr><th>route_id</th><th>agency_id</th><th>route_short_name</th><th>route_long_name</th><th>route_desc</th><th>route_type</th><th class="problem">route_url</th><th>route_color</th><th>route_text_color</th><th>route_sort_order</th></tr>
+<tr><td>SGAB</td><td>TSG</td><td>San Gabriel</td><td>San Gabriel - San José</td><td>Esta ruta conecta San Gabriel de Aserrí con San José centro, pasando por La Fila del Rosario, Tarbaca, Aserrí y Desamparados.</td><td>3</td><td class="problem">sangabriel</td><td>36CE36</td><td>000000</td><td>2</td></tr></table>
+<br></li>
+<li>and 285 more of this type.</ul>
+<h3 class="issueHeader">Warnings:</h3><h4 class="issueHeader"><a name="WarningInvalidValue">Invalid Value</a></h4><ul>
+<li><div class="problem">Invalid value Acosta - San José in field <code>route_long_name</code><br>route_long_name shouldn't contain the route_short_name value, as both fields are often displayed side-by-side.</div>in line 2 of <code>routes.txt</code><br>
+<table class="dump"><tr><th>route_id</th><th>agency_id</th><th>route_short_name</th><th class="problem">route_long_name</th><th>route_desc</th><th>route_type</th><th>route_url</th><th>route_color</th><th>route_text_color</th><th>route_sort_order</th></tr>
+<tr><td>ACOS</td><td>TSG</td><td>Acosta</td><td class="problem">Acosta - San José</td><td>Esta ruta conecta San Ignacio de Acosta con San José centro, pasando por Vuelta de Jorco, Tarbaca, Aserrí y Desamparados.</td><td>3</td><td>acosta</td><td>FFA500</td><td>000000</td><td>1</td></tr></table>
+<br></li>
+<li><div class="problem">Invalid value Turrujal in field <code>route_short_name</code><br>This route_short_name is relatively long, which probably means that it contains a place name.  You should only use this field to hold a short code that riders use to identify a route.  If this route doesn't have such a code, it's OK to leave this field empty.</div>in line 3 of <code>routes.txt</code><br>
+<table class="dump"><tr><th>route_id</th><th>agency_id</th><th class="problem">route_short_name</th><th>route_long_name</th><th>route_desc</th><th>route_type</th><th>route_url</th><th>route_color</th><th>route_text_color</th><th>route_sort_order</th></tr>
+<tr><td>TURR</td><td>TSG</td><td class="problem">Turrujal</td><td>Turrujal - San José</td><td>Esta ruta conecta Turrujal de Acosta con San José centro, pasando por San Ignacio, Vuelta de Jorco, Tarbaca, Aserrí y Desamparados.</td><td>3</td><td>acosta</td><td>FFA500</td><td>000000</td><td>0</td></tr></table>
+<br></li>
+<li><div class="problem">Invalid value Turrujal - San José in field <code>route_long_name</code><br>route_long_name shouldn't contain the route_short_name value, as both fields are often displayed side-by-side.</div>in line 3 of <code>routes.txt</code><br>
+<table class="dump"><tr><th>route_id</th><th>agency_id</th><th>route_short_name</th><th class="problem">route_long_name</th><th>route_desc</th><th>route_type</th><th>route_url</th><th>route_color</th><th>route_text_color</th><th>route_sort_order</th></tr>
+<tr><td>TURR</td><td>TSG</td><td>Turrujal</td><td class="problem">Turrujal - San José</td><td>Esta ruta conecta Turrujal de Acosta con San José centro, pasando por San Ignacio, Vuelta de Jorco, Tarbaca, Aserrí y Desamparados.</td><td>3</td><td>acosta</td><td>FFA500</td><td>000000</td><td>0</td></tr></table>
+<br></li>
+<li><div class="problem">Invalid value San Gabriel in field <code>route_short_name</code><br>This route_short_name is relatively long, which probably means that it contains a place name.  You should only use this field to hold a short code that riders use to identify a route.  If this route doesn't have such a code, it's OK to leave this field empty.</div>in line 4 of <code>routes.txt</code><br>
+<table class="dump"><tr><th>route_id</th><th>agency_id</th><th class="problem">route_short_name</th><th>route_long_name</th><th>route_desc</th><th>route_type</th><th>route_url</th><th>route_color</th><th>route_text_color</th><th>route_sort_order</th></tr>
+<tr><td>SGAB</td><td>TSG</td><td class="problem">San Gabriel</td><td>San Gabriel - San José</td><td>Esta ruta conecta San Gabriel de Aserrí con San José centro, pasando por La Fila del Rosario, Tarbaca, Aserrí y Desamparados.</td><td>3</td><td>sangabriel</td><td>36CE36</td><td>000000</td><td>2</td></tr></table>
+<br></li>
+<li><div class="problem">Invalid value San Gabriel - San José in field <code>route_long_name</code><br>route_long_name shouldn't contain the route_short_name value, as both fields are often displayed side-by-side.</div>in line 4 of <code>routes.txt</code><br>
+<table class="dump"><tr><th>route_id</th><th>agency_id</th><th>route_short_name</th><th class="problem">route_long_name</th><th>route_desc</th><th>route_type</th><th>route_url</th><th>route_color</th><th>route_text_color</th><th>route_sort_order</th></tr>
+<tr><td>SGAB</td><td>TSG</td><td>San Gabriel</td><td class="problem">San Gabriel - San José</td><td>Esta ruta conecta San Gabriel de Aserrí con San José centro, pasando por La Fila del Rosario, Tarbaca, Aserrí y Desamparados.</td><td>3</td><td>sangabriel</td><td>36CE36</td><td>000000</td><td>2</td></tr></table>
+<br></li>
+<li>and 2 more of this type.</ul>
+<h4 class="issueHeader"><a name="WarningOtherProblem">Other Problem</a></h4><ul>
+<li><div class="problem">The trip with the trip_id "hacia_sanluis_sabado_10:00:00" only has one stop on it; it should have at least one more stop so that the riders can leave!</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">The trip with the trip_id "desde_acosta_entresemana_11:30:00" only has one stop on it; it should have at least one more stop so that the riders can leave!</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">The trip with the trip_id "hacia_sangabriel_domingo_18:30:00" only has one stop on it; it should have at least one more stop so that the riders can leave!</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">The trip with the trip_id "desde_sanluis_sabado_15:15:00" only has one stop on it; it should have at least one more stop so that the riders can leave!</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">The trip with the trip_id "hacia_turrujal_sabado_17:45:00" only has one stop on it; it should have at least one more stop so that the riders can leave!</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li>and 298 more of this type.</ul>
+<h4 class="issueHeader"><a name="WarningStopsTooClose">Stops Too Close</a></h4><ul>
+<li><div class="problem">The stops "Barrio San Martín" (ID LM_0_06) and "Barrio San Martín" (ID LM_1_01) are 0.00m apart and probably represent the same location.</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">The stops "Barrio San Martín (frente a Alcohólicos Anónimos)" (ID LM_0_07) and "Barrio San Martín (frente a Alcohólicos Anónimos)" (ID LM_1_00) are 0.00m apart and probably represent the same location.</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">The stops "La Cuadra (Beto Vargas)" (ID LM_0_05) and "La Cuadra (Beto Vargas)" (ID LM_1_02) are 0.00m apart and probably represent the same location.</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">The stops "San Luis centro (frente a Súper Mora)" (ID SL_0_00) and "San Luis centro (frente a Súper Mora)" (ID SL_1_05) are 0.00m apart and probably represent the same location.</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">The stops "Pulpería Corona" (ID SL_0_01) and "Pulpería Corona" (ID SL_1_04) are 0.00m apart and probably represent the same location.</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li>and 20 more of this type.</ul>
+<h4 class="issueHeader"><a name="WarningUnrecognizedColumn">Unrecognized Column</a></h4><ul>
+<li><div class="problem">Unrecognized column <code>holiday_name</code> in file <code>calendar_dates.txt</code>. This might be a misspelled column name (capitalization matters!). Or it could be extra information (such as a proposed feed extension) that the validator doesn't know about yet. Extra information is fine; this warning is here to catch misspelled optional column names.</div>in line 1 of <code>calendar_dates.txt</code><br>
+<table class="dump"><tr><th>service_id</th><th>date</th><th>exception_type</th><th class="problem">holiday_name</th></tr>
+<tr><td></td><td></td><td></td><td class="problem"></td></tr></table>
+<br></li>
+<li><div class="problem">Unrecognized column <code>tts_stop_name</code> in file <code>stops.txt</code>. This might be a misspelled column name (capitalization matters!). Or it could be extra information (such as a proposed feed extension) that the validator doesn't know about yet. Extra information is fine; this warning is here to catch misspelled optional column names.</div>in line 1 of <code>stops.txt</code><br>
+<table class="dump"><tr><th>stop_id</th><th>stop_code</th><th>stop_name</th><th class="problem">tts_stop_name</th><th>stop_desc</th><th>stop_lat</th><th>stop_lon</th><th>zone_id</th><th>stop_url</th><th>location_type</th><th>parent_station</th><th>stop_timezone</th><th>wheelchair_boarding</th><th>level_id</th><th>platform_code</th></tr>
+<tr><td></td><td></td><td></td><td class="problem"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+<br></li>
+<li><div class="problem">Unrecognized column <code>level_id</code> in file <code>stops.txt</code>. This might be a misspelled column name (capitalization matters!). Or it could be extra information (such as a proposed feed extension) that the validator doesn't know about yet. Extra information is fine; this warning is here to catch misspelled optional column names.</div>in line 1 of <code>stops.txt</code><br>
+<table class="dump"><tr><th>stop_id</th><th>stop_code</th><th>stop_name</th><th>tts_stop_name</th><th>stop_desc</th><th>stop_lat</th><th>stop_lon</th><th>zone_id</th><th>stop_url</th><th>location_type</th><th>parent_station</th><th>stop_timezone</th><th>wheelchair_boarding</th><th class="problem">level_id</th><th>platform_code</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="problem"></td><td></td></tr></table>
+<br></li>
+<li><div class="problem">Unrecognized column <code>platform_code</code> in file <code>stops.txt</code>. This might be a misspelled column name (capitalization matters!). Or it could be extra information (such as a proposed feed extension) that the validator doesn't know about yet. Extra information is fine; this warning is here to catch misspelled optional column names.</div>in line 1 of <code>stops.txt</code><br>
+<table class="dump"><tr><th>stop_id</th><th>stop_code</th><th>stop_name</th><th>tts_stop_name</th><th>stop_desc</th><th>stop_lat</th><th>stop_lon</th><th>zone_id</th><th>stop_url</th><th>location_type</th><th>parent_station</th><th>stop_timezone</th><th>wheelchair_boarding</th><th>level_id</th><th class="problem">platform_code</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="problem"></td></tr></table>
+<br></li>
+<li><div class="problem">Unrecognized column <code>route_sort_order</code> in file <code>routes.txt</code>. This might be a misspelled column name (capitalization matters!). Or it could be extra information (such as a proposed feed extension) that the validator doesn't know about yet. Extra information is fine; this warning is here to catch misspelled optional column names.</div>in line 1 of <code>routes.txt</code><br>
+<table class="dump"><tr><th>route_id</th><th>agency_id</th><th>route_short_name</th><th>route_long_name</th><th>route_desc</th><th>route_type</th><th>route_url</th><th>route_color</th><th>route_text_color</th><th class="problem">route_sort_order</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="problem"></td></tr></table>
+<br></li>
+<li>and 4 more of this type.</ul>
+<h4 class="issueHeader"><a name="WarningUnusedStop">Unused Stop</a></h4><ul>
+<li><div class="problem">Escuela de Tranquerillas (ID SG_0_12) isn't used in any trips</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">Escuela de Tranquerillas (arriba) (ID SG_0_13) isn't used in any trips</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">Entrada a Barrio Nazareth (ID SG_0_10) isn't used in any trips</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">Escuela de Tranquerillas (abajo) (ID SG_0_11) isn't used in any trips</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li><div class="problem">Barrio La Rita (arriba) (ID SG_0_16) isn't used in any trips</div>in line 305 of <code>stop_times.txt</code><br>
+<br></li>
+<li>and 226 more of this type.</ul>
+
+<div class="footer">
+Generated by <a href="https://github.com/google/transitfeed/wiki/FeedValidator">
+FeedValidator</a> version 1.2.16 on March 03, 2021 at 10:37 PM CST.
+</div>
+</body>
+</html>
