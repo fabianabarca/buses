@@ -6,13 +6,17 @@
 
 {% block h1 %} Lista del personal {% endblock %}
 
-<p>Información de un único funcionario</p>
+<h1>Información Personal</h1>
+<h2>{{ funcionario.nombre }}</h2>
 
 <img width="150" height="150" src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}"
-     class="attachment-thumbnail"
+class="img-thumbnail"
      alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}" /></a>
-
-<br>
+     <br>
+     <br>
 Mi nombre es {{ funcionario.nombre }} mi cargo es {{ funcionario.cargo }}
-
+<br>
+<br>
+<br>
+<br>
 {% endblock %}
