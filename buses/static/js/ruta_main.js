@@ -15,15 +15,9 @@ const ruta_app = Vue.createApp({
             hacia_sanjose_ramal: [],
         };
     },
-    mounted () { // Estos metodos ejecutan en todo momento
-        setInterval(() => { // Lógica de la aplicación HORADIGITAL
-            var time = new Date();
-            this.tiempo_en_minutos = time.getMinutes() + time.getHours()*60;
-            this.hora = time.toLocaleString(
-                'en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-        }, 1000); // Cada segundo refresca
-
-        setInterval(() => { // Lógica de proximobus
+    methods: {
+        updateProximoBus: function(){
+            // Lógica de proximobus
             this.desde_sanjose = [];
             var time = new Date();
             horario_desde_sanjose.filter(
@@ -47,8 +41,20 @@ const ruta_app = Vue.createApp({
                     this.hacia_sanjose[index] = time.toLocaleString(
                         'en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
                     this.hacia_sanjose_ramal[index] = element[3]; // Ramal
-                });
+                });    
+        }
+    },
+    mounted () { // Estos metodos ejecutan en todo momento
+        setInterval(() => { // Lógica de la aplicación HORADIGITAL
+            var time = new Date();
+            this.tiempo_en_minutos = time.getMinutes() + time.getHours()*60;
+            this.hora = time.toLocaleString(
+                'en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+            this.updateProximoBus();
         }, 1000); // Cada segundo refresca
+    },
+    created(){
+        this.updateProximoBus();
     }
 });
 

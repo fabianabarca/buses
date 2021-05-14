@@ -1880,9 +1880,11 @@ ruta_app.component('mapa-sangabriel', {
             if(this.currentRoute == this.fromSanGabrielToSanJoseRoute){
                 this.currentRoute = this.fromSanJoseToSanGabrielRoute;
             }
-            else{
+            else
+            {
                 this.currentRoute = this.fromSanGabrielToSanJoseRoute;
             }
+            
             this.polyline.setLatLngs(this.currentRoute);
 
             [this.fromRouteName, this.toRouteName] = [this.toRouteName, this.fromRouteName];
