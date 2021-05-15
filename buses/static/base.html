@@ -37,14 +37,19 @@
 
     <!-- ENCABEZADO -->
 
-    <header class="header" id="headerWithDropdown">
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="header header-box-shadow-on-scroll header-abs-top header-bg-transparent header-show-hide"
+    data-hs-header-options='{
+      "fixMoment": 1000,
+      "fixEffect": "slide"
+    }'>
       <div class="header-section">
-        <div class="container" id="logoAndNavWithDropdown">
+        <div id="logoAndNav" class="container">
           <!-- Nav -->
           <nav class="js-mega-menu navbar navbar-expand-lg">
             <!-- Logo -->
-            <a class="navbar-brand" href="index.html" aria-label="Front">
-              <img src="{% static '/assets/svg/logos/logo.svg' %}" alt="Logo">
+            <a class="navbar-brand" href="#" aria-label="Front">
+              <img src="{% static 'svg/logos/logo.svg' %}" alt="Logo">
             </a>
             <!-- End Logo -->
 
@@ -52,9 +57,9 @@
             <button type="button" class="navbar-toggler btn btn-icon btn-sm rounded-circle"
                     aria-label="Toggle navigation"
                     aria-expanded="false"
-                    aria-controls="navBarWithDropdown"
+                    aria-controls="navBar"
                     data-toggle="collapse"
-                    data-target="#navBarWithDropdown">
+                    data-target="#navBar">
               <span class="navbar-toggler-default">
                 <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                   <path fill="currentColor" d="M17.4,6.2H0.6C0.3,6.2,0,5.9,0,5.5V4.1c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,5.9,17.7,6.2,17.4,6.2z M17.4,14.1H0.6c-0.3,0-0.6-0.3-0.6-0.7V12c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,13.7,17.7,14.1,17.4,14.1z"/>
@@ -69,42 +74,86 @@
             <!-- End Responsive Toggle Button -->
 
             <!-- Navigation -->
-            <div id="navBarWithDropdown" class="collapse navbar-collapse">
-              <ul class="navbar-nav">
-                <li class="navbar-nav-item">
-                  <a class="nav-link" href="/">Inicio</a>
-                </li>
+            <div id="navBar" class="collapse navbar-collapse">
+              <div class="navbar-body header-sticky-top-inner">
+                <ul class="navbar-nav">
 
-
-                <!-- Dropdown -->
-                <li class="hs-has-sub-menu navbar-nav-item">
-                  <a id="dropdownMegaMenuWithDropdown" class="hs-mega-menu-invoker nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="dropdownSubMenuWithDropdown">Rutas</a>
-
-                  <!-- Dropdown - Submenu -->
-                  <div id="dropdownSubMenuWithDropdown" class="hs-sub-menu dropdown-menu" aria-labelledby="dropdownMegaMenuWithDropdown" style="min-width: 230px;">
-                    <a class="dropdown-item" href="/acosta">Acosta</a>
-                    <a class="dropdown-item" href="/sangabriel">San Gabriel</a>
-                  </div>
-                  <!-- End Dropdown - Submenu -->
-                </li>
-                <!-- End Dropdown -->
-
-                <li class="navbar-nav-item">
-                  <a class="nav-link" href="#">Nosotros</a>
-                </li>
-
-                <li class="navbar-nav-item">
-                  <a class="nav-link" href="#">Contacto</a>
-                </li>
-
-                <!-- Button -->
-                <li class="nav-item navbar-nav-last-item">
-                  <a class="btn btn-sm btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
-                    Buy Now
-                  </a>
-                </li>
-                <!-- End Button -->
-              </ul>
+                  <li><a href="/">Inicio</a></li>
+    
+                  <!-- Docs -->
+                  <li class="hs-has-mega-menu navbar-nav-item"
+                      data-hs-mega-menu-item-options='{
+                        "desktop": {
+                          "position": "right",
+                          "maxWidth": "260px"
+                        }
+                      }'>
+                    <a id="docsMegaMenu" class="hs-mega-menu-invoker nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Rutas</a>
+    
+                    <!-- Docs - Submenu -->
+                    <div class="hs-mega-menu dropdown-menu" aria-labelledby="docsMegaMenu" style="min-width: 330px;">
+                      <!-- Promo Item -->
+                      <div class="navbar-promo-item">
+                        <a class="navbar-promo-link" href="/rutas/acosta">
+                          <div class="media align-items-center">
+                            <img class="navbar-promo-icon" src="{% static 'svg/icons/icon-2.svg' %}" alt="SVG">
+                            <div class="media-body">
+                              <span class="navbar-promo-title">
+                                Acosta
+                                <span class="badge badge-primary badge-pill ml-1">v3.0</span>
+                              </span>
+                              <small class="navbar-promo-text">Development guides</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End Promo Item -->
+    
+                      <!-- Promo Item -->
+                      <div class="navbar-promo-item">
+                        <a class="navbar-promo-link" href="/rutas/sangabriel">
+                          <div class="media align-items-center">
+                            <img class="navbar-promo-icon" src="{% static 'svg/icons/icon-1.svg' %}" alt="SVG">
+                            <div class="media-body">
+                              <span class="navbar-promo-title">San Gabriel de Aserrí</span>
+                              <small class="navbar-promo-text">Start building</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End Promo Item -->
+    
+                      <div class="navbar-promo-footer">
+                        <!-- List -->
+                        <div class="row no-gutters">
+                          <div class="col-6">
+                            <div class="navbar-promo-footer-item">
+                              <span class="navbar-promo-footer-text">Check what's new</span>
+                              <a class="navbar-promo-footer-text" href="#">
+                                Changelog
+                              </a>
+                            </div>
+                          </div>
+                          <div class="col-6 navbar-promo-footer-ver-divider">
+                            <div class="navbar-promo-footer-item">
+                              <span class="navbar-promo-footer-text">Have a question?</span>
+                              <a class="navbar-promo-footer-text" href="#">
+                                Contact us
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End List -->
+                      </div>
+                    </div>
+                    <!-- End Docs - Submenu -->
+                  </li>
+                  <!-- End Docs -->
+                  
+                  <li><a href="/nosotros">Nosotros</a></li>
+                  <li><a href="/contacto">Contacto</a></li>
+                </ul>
+              </div>
             </div>
             <!-- End Navigation -->
           </nav>
@@ -112,10 +161,11 @@
         </div>
       </div>
     </header>
-
+    <!-- ========== END HEADER ========== -->
+        
     <!-- CONTENIDO PRINCIPAL -->
 
-    <main role="main" class="container">
+    <main role="main" class="container" id="content">
 
       {% block content %}
       <!-- Aquí el contenido de cada página -->
@@ -193,7 +243,7 @@
               <ul class="nav nav-sm nav-x-0 nav-white flex-column">
                 <li class="nav-item"><a class="nav-link" href="/nosotros/">Transportes San Gabriel</a></li>
                 <li class="nav-item"><a class="nav-link" href="https://www.ctp.go.cr/">Consejo de Transporte Público</a></li>
-                <li class="nav-item"><a class="nav-link" href="/acerca/">Este sitio web</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.mopt.go.cr/">Ministerio de Obras Públicas y Transportes</a></li>
               </ul>
               <!-- End Nav Link -->
             </div>
@@ -303,21 +353,14 @@
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
-      // INITIALIZATION OF UNFOLD
+      // INITIALIZATION OF HEADER
       // =======================================================
-      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
-    });
-
-    $(window).on('ready', function () {
+      var header = new HSHeader($('#header')).init();
+  
+  
       // INITIALIZATION OF MEGA MENU
       // =======================================================
       var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
-    });
-
-    $(document).on('ready', function () {
-      // INITIALIZATION OF UNFOLD
-      // =======================================================
-      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
     });
   </script>
 

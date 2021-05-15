@@ -1,5 +1,7 @@
 {% extends 'base.html'%}
 
+{% load static %}
+
 {% block page_title %} Rutas {% endblock %}
 
 {% block titulo %} Rutas {% endblock %}
@@ -8,136 +10,48 @@
 
 <!-- Alertas -->
 
-<section>
-
-    <!-- Alertas del formato GTFS Realtime -->
-    <hr>
-    <!-- if (no hay alertas) "no hay alertas" else: -->
-    <div class="alert alert-warning" role="alert">
-        A simple primary alert—check it out!
-    </div>
-
-</section>
 
 <!-- Hora actual -->
 
-<section>
-    <p>
-        <div class="row d-flex justify-content-center">
-            <div class="card text-center " style="width: 18rem;">
-                <div class="card-header">Hora actual</div>
-                <div class="card-body">
-                    <h3 id="DigitalCLOCK" onload="showTime()"></h3>
-                    <small class="text-uppercase"><strong>{{ dia }}</strong> {{ fecha }} <br> {{ mes }} {{ año }} </small>
-                </div>
-            </div>
-        </div>
-    </p>
-</section>
 
 <!-- Próximos buses -->
 
-<section class="row">
-
-    <div class="col-sm">
-    <!-- Tabla de próximos buses de Acosta -->
-        <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-            <div class="card-body">
-                <h3 class="card-title">San Ignacio de {{ routes.1.short_name }} <br> <span class="badge badge-primary">{{ routes.1.route_id }}</span></h3>
-                <h4 class="card-subtitle text-muted">Próximos buses</h4>
-                <p>
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th><i></i> {{ routes.1.short_name }}</th>
-                                <th><i></i> San José</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="lead font-weight-bold">{{ next_bus_list_Aco.0 }}</td>
-                                <td class="lead font-weight-bold">{{ next_bus_list_SJ_Aco.0 }}</td>
-                            </tr>
-                            <tr>
-                                <td>{{ next_bus_list_Aco.1 }}</td>
-                                <td>{{ next_bus_list_SJ_Aco.1 }}</td>
-                            </tr>
-                            <tr>
-                                <td>{{ next_bus_list_Aco.2 }}</td>
-                                <td>{{ next_bus_list_SJ_Aco.2 }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </p>
-                <a href="/rutas/acosta" class="btn btn-primary">Ver ruta de Acosta</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm">
-        <!-- Tabla de próximos buses de San Gabriel -->
-        <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-            <div class="card-body">
-                <h3 class="card-title">{{ routes.0.short_name }} de Aserrí <br> <span class="badge badge-success">{{ routes.0.route_id }}</span></h3>
-                <h4 class="card-subtitle text-muted">Próximos buses</h4>
-                <p>
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th><i></i> {{ routes.0.short_name }}</th>
-                                <th><i></i> San José</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="lead font-weight-bold">{{ next_bus_list_SG.0 }}</td>
-                                <td class="lead font-weight-bold">{{ next_bus_list_SJ_SG.0 }}</td>
-                            </tr>
-                            <tr>
-                                <td>{{ next_bus_list_SG.1 }}</td>
-                                <td>{{ next_bus_list_SJ_SG.1 }}</td>
-                            </tr>
-                            <tr>
-                                <td>{{ next_bus_list_SG.2 }}</td>
-                                <td>{{ next_bus_list_SJ_SG.2 }}</td>
-                            </tr>
-                        </tbody> 
-                    </table>
-                </p>
-                <a href="/rutas/sangabriel" class="btn btn-success">Ver ruta de San Gabriel</a>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-    <div class="card mb-3 mx-auto" style="max-width: 540px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="https://static01.nyt.com/images/2020/11/03/obituaries/29yang-virus-lost/29yang-virus-lost-threeByTwoMediumAt2X.jpg?quality=75&auto=webp&disable=upscale&width=600" class="card-img" style="object-fit: cover;">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Dirección en San José</h5>
-              <p class="card-text">
-                <ol class="fa-ul">
-                  <li><span class="fa-li"><i class="far fa-map"></i></span>Calle <strong>7</strong>, entre avenidas <strong>10</strong> y <strong>12.</strong></li>
-                  <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>200 metros sur de la esquina sureste del Parque de las Garantías Sociales.</li>
-                  <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll=9.92929648%2C-84.07635212&navigate=yes&zoom=17">Dirección en Waze</a></li>
-                </ol>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
 <!-- Tarifas -->
 
 <section>
 
     <hr>
-    <h2>Tarifas</h2>
+    <h2 id="tarifas">Tarifas</h2>
 
     Tablas de tarifas por ruta (desde el modelo de tarifas)
 </section>
+
+<!-- Terminal de buses en San José -->
+
+<section>
+
+    <hr>
+    <h2>Terminal en San José</h2>
+  
+    <div class="card card-bordered mb-3 mx-auto" style="max-width: 620px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{% static 'rutas/terminal.png' %}" class="card-img" alt="Foto de mapa">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Terminal en San José</h5>
+            <ol class="fa-ul">
+              <li><span class="fa-li"><i class="far fa-map"></i></span>Calle <strong>7</strong>, entre avenidas <strong>10</strong> y <strong>12.</strong></li>
+              <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>200 metros sur de la esquina sureste del Parque de las Garantías Sociales.</li>
+              <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll=9.92929648%2C-84.07635212&navigate=yes&zoom=17">Dirección en Waze</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  </section>
 
 {% endblock %}

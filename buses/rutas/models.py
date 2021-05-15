@@ -1,24 +1,5 @@
 from django.db import models
 
-# from django.contrib.gis.geos import LineString
-
-""" 
-Clases a crear 
-    - Agencia (agency)
-    - Paradas (stops)
-    - Rutas (routes)
-    - Viajes (trips)
-    - Horario (stop_times)
-    - Calendario (calendar)
-    - Feriados (calendar_dates)
-    *****
-    *****
-    - Zone  Para agregar tarifas - ForeignKey en Stop
-    - Fare  Para agregar tarifas
-    - Shape Se usa como ForeignKey en Trip
-
-Nota: todos deben tener el __str__()
-"""
 class Agency(models.Model):
     """One or more transit agencies that provide the data in this feed.
     Maps to agency.txt in the GTFS feed.
@@ -382,17 +363,17 @@ class Shape(models.Model):
     shape_id = models.CharField(
         primary_key=True,
         max_length=255, db_index=True,
-        help_text="Identificador único de una forma.")
+        help_text="Identificador único de una trayectoria.")
     pt_lat = models.DecimalField(
         max_digits=22,
         decimal_places=16,
-        help_text='Latitud WGS 84 de punto de la forma.')
+        help_text='Latitud WGS 84 de punto de la trayectoria.')
     pt_lon = models.DecimalField(
         max_digits=22,
         decimal_places=16,
-        help_text='Longitud WGS 84 de punto de la forma.')
+        help_text='Longitud WGS 84 de punto de la trayectoria.')
     pt_sequence = models.PositiveIntegerField(
-        help_text='Secuencia en la que los puntos de la forma se conectan para crear la forma')
+        help_text='Secuencia en la que los puntos de la trayectoria se conectan para crear la forma')
     
     def __str__(self):
         return self.shape_id
