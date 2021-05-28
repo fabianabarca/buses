@@ -1,67 +1,17 @@
 {% extends 'base.html'%}
-
+{% load static %}
 {% block page_title %} Personal {% endblock %}
+
+{% block custom_header %}
+<!-- Aquí el source del CSS específico de cada página -->
+<!-- Hoja de estilos de las cartas de presentación -->
+
+<link rel="stylesheet" href="{% static 'css/team_cards.css' %}">
+{% endblock %}
 
 {% block content %}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
- html {
-     box-sizing: border-box;
- }
-
- *, *:before, *:after {
-     box-sizing: inherit;
- }
-
- .column {
-     float: left;
-     width: 33.3%;
-     margin-bottom: 16px;
-     padding: 0 8px;
- }
-
- @media screen and (max-width: 650px) {
-     .column {
-         width: 100%;
-         display: block;
-     }
- }
-
- .card {
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
- }
-
- .container {
-     padding: 0 16px;
- }
-
- .container::after, .row::after {
-     content: "";
-     clear: both;
-     display: table;
- }
-
- .title {
-     color: grey;
- }
-
- .button {
-     border: none;
-     outline: 0;
-     display: inline-block;
-     padding: 8px;
-     color: white;
-     background-color: #000;
-     text-align: center;
-     cursor: pointer;
-     width: 100%;
- }
-
- .button:hover {
-     background-color: #555;
- }
-</style>
 
 <h1>Lista del personal responsive</h1>
 <p>Una lista cuadriculada de personal de la empresa, con foto, nombre y puesto</p>
@@ -71,7 +21,7 @@
     {% for funcionario in funcionarios %}
     <div class="column">
         <a href='/nosotros/funcionario_{{ funcionario.id }}'>
-            <div class="card">
+            <div class="card"><!-- FIXME: fetch del sitio estático de la empresa -->
             <img src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}"
                  alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}" style="width:100%">
             <div class="container">
@@ -86,6 +36,6 @@
     </div>
     {% endfor %}
 </div>
-                                                                                                                                                                        </div>
+</div>
 
 {% endblock %}
