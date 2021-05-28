@@ -1876,16 +1876,18 @@ ruta_app.component('mapa-sangabriel', {
                 accessToken: 'pk.eyJ1Ijoic2lsdmlvbnNreSIsImEiOiJja2tobmQzZnIwM2w1MnZtdW5tMDVmN3pxIn0.csMFD5YV9WSqD0kFTQQ6Uw'
             }).addTo(map);
 
-            this.polyline.setLatLngs(this.currentRoute).addTo(map);
-            map.fitBounds(this.polyline.getBounds());
+            this.polyline.setLatLngs(this.currentRoute).addTo(map);           
+            map.setMinZoom(11)
+            map.setMaxBounds([[9.766885, -84.219248], [9.971565, -84.013859]]);
+            
+            console.log(this.polyline.getBounds());
         },
 
         switchRoutes: function() {
             if(this.currentRoute == this.fromSanGabrielToSanJoseRoute){
                 this.currentRoute = this.fromSanJoseToSanGabrielRoute;
             }
-            else
-            {
+            else{
                 this.currentRoute = this.fromSanGabrielToSanJoseRoute;
             }
             

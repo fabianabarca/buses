@@ -88,7 +88,7 @@ ruta_app.component('mapa-acosta', {
                 accessToken: 'pk.eyJ1Ijoic2lsdmlvbnNreSIsImEiOiJja2tobmQzZnIwM2w1MnZtdW5tMDVmN3pxIn0.csMFD5YV9WSqD0kFTQQ6Uw'
             }).addTo(this.map);
             this.map.setMinZoom(11)
-            this.map.setMaxBounds(this.polyline.getBounds());
+            this.map.setMaxBounds([[9.766885, -84.219248], [9.971565, -84.013859]]);
 
             this.polyline.addTo(this.map);
         },
