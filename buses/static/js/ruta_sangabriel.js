@@ -7,13 +7,16 @@ ruta_app.component('mapa-sangabriel', {
                 <div class="row">
                     <div class="col-md-2">
                     </div>
-                    <div class="col-md-8  col-sm-12">
+                    <div class="col-sm-12">
                         <div class="row">
                             <div class="col-2">
-                                <h6>Desde</h6>
                             </div>
-                            <div class="col-3">
-                                <h6>{{fromRouteName}}</h6>
+                            <div class="col-3 text-center">
+                                <p>
+                                    <span class="badge badge-secondary">Desde</span>
+                                    <br/>
+                                    {{fromRouteName}}
+                                </p>
                             </div>
                             <div class="col-2">
                                 <button class="btn btn-success btn-xs text-center" v-on:click="switchRoutes">
@@ -22,11 +25,12 @@ ruta_app.component('mapa-sangabriel', {
                                     </svg>
                                 </button>
                             </div>
-                            <div class="col-2">
-                                <h6>Hacia</h6>
-                            </div>
-                            <div class="col-3">
-                                <h6>{{toRouteName}}</h6>
+                            <div class="col-3 text-central">
+                                <p>
+                                    <span class="badge badge-secondary">Hacia</span>
+                                    <br/>
+                                    {{toRouteName}}
+                                </p>
                             </div>
                         </div>
                     </div>
