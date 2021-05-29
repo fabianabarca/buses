@@ -5,23 +5,7 @@
 {% block titulo %} Ruta de buses {{ route.long_name }} {% endblock %}
 
 {% block subtitulo %}
-<!--
-    <div class="container text-center">
-        <a class="btn btn-light" href="#horario" role="button">Horario</a>
-        <a class="btn btn-light" href="#informacion" role="button">Información</a>
-        <a class="btn btn-light" href="#tarifas" role="button">Tarifas</a>
-        <a class="btn btn-light" href="#mapa" role="button">Mapa</a>
-        <a class="btn btn-light" href="#paradas" role="button">Paradas</a>
-    </div>
-    <div class="btn-group btn-group-sm text-center" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Horario</button>
-        <button type="button" class="btn btn-secondary">Información</button>
-        <button type="button" class="btn btn-secondary">Tarifas</button>
-        <button type="button" class="btn btn-secondary">Mapa</button>
-        <button type="button" class="btn btn-secondary">Paradas</button>
-    </div>
 
--->
 {% endblock %}
 
 {% block custom_header %}
@@ -32,16 +16,6 @@
 {% endblock %}
 
 {% block content %}
-
-<div class="text-center small">
-    <ul class="list-group list-group-horizontal text-center">
-        <li class="list-group-item"><a href="#horario">Horario</a></li>
-        <li class="list-group-item"><a href="#informacion">Información</a></li>
-        <li class="list-group-item"><a href="#tarifas">Tarifas</a></li>
-        <li class="list-group-item"><a href="#mapa">Mapa</a></li>
-        <li class="list-group-item"><a href="#paradas">Paradas</a></li>
-    </ul>
-</div>
 
 <!-- Hora actual -->
 <div id='ruta_vue_app'> <!-- BEGIN VUE APP -->
@@ -101,11 +75,7 @@
             {% endif %}
             (ver lista de <a href="#paradas">paradas autorizadas</a>).</li>
     </ol>
-    {% if route.short_name == 'Acosta' %}
-        <mapa-acosta></mapa-acosta>
-    {% else %}
-        <mapa-sangabriel></mapa-sangabriel>
-    {% endif %}
+    
     <!-- Tabs con los horarios por día -->
     <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -258,12 +228,18 @@
 
 <!-- Mapa de la ruta -->
 <section id="mapa">
+
     <hr>
     <h2>Mapa de la ruta</h2>
-    <!-- div para el mapa -->
-
     
+    {% if route.short_name == 'Acosta' %}
+    <mapa-acosta></mapa-acosta>
+    {% else %}
+    <mapa-sangabriel></mapa-sangabriel>
+    {% endif %}
+
 </section>
+
 <!-- Paradas autorizadas -->
 
 <section id="paradas">
@@ -327,6 +303,7 @@
 </div> <!-- END VUE APP -->
 
 {% endblock %}
+
 {% block custom_footer %}
 <!-- Archivos de JavaScript
      [NOTE: como una buena práctica los scripts se incluyen y ejecutan al final despues de cargar las vistas]-->

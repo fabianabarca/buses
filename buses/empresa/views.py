@@ -9,7 +9,7 @@ def empresa(request):
     context = {
         'empresa': empresa
     }
-    return render(request, 'nosotros.html', context)
+    return render(request, 'empresa.html', context)
 
 def personal(request):
     funcionarios = Funcionario.objects.all()

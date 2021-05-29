@@ -333,6 +333,8 @@ class Fare(models.Model):
         return self.fare_id
 
 class FareRule(models.Model):
+    """ A Fare Rule class """
+    
     fare_id = models.ForeignKey('Fare', on_delete=models.CASCADE)
     route_id = models.ForeignKey('Route', on_delete=models.CASCADE)
     origin_id = models.ForeignKey('Zone', 
