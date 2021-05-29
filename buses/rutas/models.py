@@ -43,9 +43,6 @@ class Stop(models.Model):
     name = models.CharField(
         max_length=255,
         help_text="Nombre de la parada.")
-    # tts_stop_name = models.CharField(
-    #     max_length=255,
-    #     help_text="Readable version of the name (no abbreviations).")
     desc = models.CharField(
         "description",
         max_length=255, blank=True,
@@ -81,7 +78,7 @@ class Stop(models.Model):
         help_text='¿Es posible subir al transporte en silla de ruedas?')
     
     def __str__(self):
-        return self.stop_id
+        return self.stop_id + ': ' + self.name
 
 class Route(models.Model):
     """A transit route
@@ -303,7 +300,7 @@ class CalendarDate(models.Model):
         return self.holiday_name
 
 class Fare(models.Model):
-    """A fare class"""
+    """A fare attribute class"""
 
     fare_id = models.CharField(
         primary_key=True,
@@ -327,6 +324,7 @@ class Fare(models.Model):
                  (2, 'Los pasajeros pueden transferir dos veces.'),
                  (None, 'Se pueden realizar transferencias ilimitadas.')),
         help_text="¿Se permiten las transferencias?")
+    agency_id = models.ForeignKey('Agency', on_delete=models.CASCADE)
     transfer_duration = models.IntegerField(
         null=True, blank=True,
         help_text="Tiempo en segundos hasta que un tiquete o transferencia expira.")
@@ -334,15 +332,40 @@ class Fare(models.Model):
     def __str__(self):
         return self.fare_id
 
+class FareRule(models.Model):
+    fare_id = models.ForeignKey('Fare', on_delete=models.CASCADE)
+    route_id = models.ForeignKey('Route', on_delete=models.CASCADE)
+    origin_id = models.ForeignKey('Zone', 
+                related_name='origin_id', 
+                on_delete=models.CASCADE)
+    destination_id = models.ForeignKey('Zone', 
+                related_name='destination_id', 
+                on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.origin_id + ' > ' + self.destination_id + ' = ' + self.fare_id
+
 class Zone(models.Model):
     """Represents a fare zone.
     This data is not represented as a file in the GTFS. It appears as an
-    identifier in the fare_rules and the stop tables.
+    identifier in the fare_rules and the stops tables.
     """
     zone_id = models.CharField(
         primary_key=True,
         max_length=63, db_index=True,
-        help_text="Identificador único de una zona.")
+        help_text="Identificador único de una zona.",
+        choices=(('SGAB_A', 'San Gabriel A'),
+                 ('SGAB_B', 'San Gabriel B'),
+                 ('SGAB_C', 'San Gabriel C'),
+                 ('SGAB_D', 'San Gabriel D'),
+                 ('ACOS_A', 'Acosta A'),
+                 ('ACOS_B', 'Acosta B'),
+                 ('ACOS_C', 'Acosta C'),
+                 ('ACOS_D', 'Acosta D'),
+                 ('RUTA_E', 'Ruta E'),
+                 ('RUTA_F', 'Ruta F'),
+                 ('RUTA_G', 'Ruta G'),),
+        )
 
     def __str__(self):
         return self.zone_id
