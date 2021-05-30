@@ -41,7 +41,7 @@ const ruta_app = Vue.createApp({
                     this.hacia_sanjose[index] = time.toLocaleString(
                         'en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
                     this.hacia_sanjose_ramal[index] = element[3]; // Ramal
-                });    
+                });
         }
     },
     mounted () { // Estos metodos ejecutan en todo momento
@@ -57,70 +57,3 @@ const ruta_app = Vue.createApp({
         this.updateProximoBus();
     }
 });
-
-// // Templates de frontend
-// Cargamos el template en la sección de hora para que sea usado por Vue3
-document.getElementById("DigitalCLOCK").innerText = "{{ hora }}";
-
-// Template de la aplicación próximo bus
-document.getElementById(
-    "proximo_bus_tbody").innerHTML = `
-<!-- Primer fila -->
-<tr>
-    <td v-if="hacia_sanjose.length" class="font-weight-bold">
-        <span class="align-middle">{{ hacia_sanjose[0] }}</span>
-        <span v-if="hacia_sanjose_ramal[0] != 'SG'" :class="['small', 'badge',
-                    hacia_sanjose_ramal[0] == 'SL' ? 'badge-danger':'',
-                    hacia_sanjose_ramal[0] == 'TU' ? 'badge-warning':'',
-                    hacia_sanjose_ramal[0] == 'JO' ? 'badge-info':'',
-                    ]">{{ hacia_sanjose_ramal[0] }}</span>
-        <td v-else class="font-weight-bold">No hay más buses hoy</td>
-
-    <td v-if="desde_sanjose.length" class="font-weight-bold">
-        <span class="align-middle">{{ desde_sanjose[0] }}</span>
-        <span v-if="desde_sanjose_ramal[0] != 'SG'" :class="['small', 'badge',
-                    desde_sanjose_ramal[0] == 'SL' ? 'badge-danger':'',
-                    desde_sanjose_ramal[0] == 'TU' ? 'badge-warning':'',
-                    desde_sanjose_ramal[0] == 'JO' ? 'badge-info':'',
-                    ]">{{ desde_sanjose_ramal[0] }}</span>
-    <td v-else class="font-weight-bold">No hay más buses hoy</td>
-</tr>
-
-<!-- Segunda fila -->
-<tr>
-    <td><span class="align-middle">{{ hacia_sanjose[1] }}</span>
-        <span v-if="hacia_sanjose_ramal[1] != 'SG'" :class="['small', 'badge',
-                    hacia_sanjose_ramal[1] == 'SL' ? 'badge-danger':'',
-                    hacia_sanjose_ramal[1] == 'TU' ? 'badge-warning':'',
-                    hacia_sanjose_ramal[1] == 'JO' ? 'badge-info':'',
-                    ]">{{ hacia_sanjose_ramal[1] }}</span>
-
-        <td><span class="align-middle">{{ desde_sanjose[1] }}</span>
-        <span v-if="desde_sanjose_ramal[1] != 'SG'" :class="['small', 'badge',
-                    desde_sanjose_ramal[1] == 'SL' ? 'badge-danger':'',
-                    desde_sanjose_ramal[1] == 'TU' ? 'badge-warning':'',
-                    desde_sanjose_ramal[1] == 'JO' ? 'badge-info':'',
-                    ]">{{ desde_sanjose_ramal[1] }}</span>
-</tr>
-
-<!-- Tercer fila -->
-<tr>
-    <td><span class="align-middle">{{ hacia_sanjose[2] }}</span>
-        <span v-if="hacia_sanjose_ramal[2] != 'SG'" :class="['small', 'badge',
-                    hacia_sanjose_ramal[2] == 'SL' ? 'badge-danger':'',
-                    hacia_sanjose_ramal[2] == 'TU' ? 'badge-warning':'',
-                    hacia_sanjose_ramal[2] == 'JO' ? 'badge-info':'',
-                    ]">{{ hacia_sanjose_ramal[2] }}</span>
-
-        <td><span class="align-middle">{{ desde_sanjose[2] }}</span>
-        <span v-if="desde_sanjose_ramal[2] != 'SG'" :class="['small', 'badge',
-                    desde_sanjose_ramal[2] == 'SL' ? 'badge-danger':'',
-                    desde_sanjose_ramal[2] == 'TU' ? 'badge-warning':'',
-                    desde_sanjose_ramal[2] == 'JO' ? 'badge-info':'',
-                    ]">{{ desde_sanjose_ramal[2] }}</span>
-</tr>
-`;
-// TODO:
-// Hora (listo)
-// Próximo bus (listo)
-// Mapa

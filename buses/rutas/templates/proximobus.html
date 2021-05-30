@@ -1,22 +1,126 @@
 <div class="row">
-    <div class="col-sm">
-        <div class="card text-center shadow p-3 mb-5 bg-white rounded mx-auto" style="max-width: 540px;">
-            <div class="card-body">
-                <h3 class="card-subtitle text-muted"><i class="fas fa-bus"></i> {{ route.short_name }}</h3>
-                <h2 class="card-title">Próximos buses</h2>
-                <p>
-                    <table class="table table-borderless">
-                        <thead class="table-secondary">
-                            <tr>
-                                <th>{{ route.short_name }} <i class="fas fa-arrow-circle-right"></i> San&nbsp;José</th>
-                                <th>San José <i class="fas fa-arrow-circle-right"></i> {{ route.short_name }}</th>
-                            </tr>
-                        </thead>
-                        <tbody id="proximo_bus_tbody"> <!-- Aquí se inserta el template de frontend -->
-                        </tbody>
-                    </table>
-                </p>
-            </div>
-        </div>
+  <div class="col-sm">
+    <div
+      class="card text-center shadow p-3 mb-5 bg-white rounded mx-auto"
+      style="max-width: 540px"
+    >
+      <div class="card-body">
+        <h3 class="card-subtitle text-muted">
+          <i class="fas fa-bus"></i> {{ route.short_name }}
+        </h3>
+        <h2 class="card-title">Próximos buses</h2>
+
+        <table class="table table-borderless">
+          <thead class="table-secondary">
+            <tr>
+              <th>
+                {{ route.short_name }}
+                <i class="fas fa-arrow-circle-right"></i> San&nbsp;José
+              </th>
+              <th>
+                San José <i class="fas fa-arrow-circle-right"></i>
+                {{ route.short_name }}
+              </th>
+            </tr>
+          </thead>
+          <tbody id="proximo_bus_tbody">
+            <!-- {% verbatim %} -->
+            <!-- Aquí se inserta el template de frontend -->
+            <!-- Primer fila -->
+            <tr>
+              <td v-if="hacia_sanjose.length" class="font-weight-bold">
+                <span class="align-middle">{{ hacia_sanjose[0] }}</span>
+                <span
+                  v-if="hacia_sanjose_ramal[0] != 'SG'"
+                  :class="['small', 'badge',
+                    hacia_sanjose_ramal[0] == 'SL' ? 'badge-danger':'',
+                    hacia_sanjose_ramal[0] == 'TU' ? 'badge-warning':'',
+                    hacia_sanjose_ramal[0] == 'JO' ? 'badge-info':'',
+                    ]"
+                  >{{ hacia_sanjose_ramal[0] }}</span
+                >
+              </td>
+
+              <td v-else class="font-weight-bold">No hay más buses hoy</td>
+
+              <td v-if="desde_sanjose.length" class="font-weight-bold">
+                <span class="align-middle">{{ desde_sanjose[0] }}</span>
+                <span
+                  v-if="desde_sanjose_ramal[0] != 'SG'"
+                  :class="['small', 'badge',
+                    desde_sanjose_ramal[0] == 'SL' ? 'badge-danger':'',
+                    desde_sanjose_ramal[0] == 'TU' ? 'badge-warning':'',
+                    desde_sanjose_ramal[0] == 'JO' ? 'badge-info':'',
+                    ]"
+                  >{{ desde_sanjose_ramal[0] }}</span
+                >
+              </td>
+
+              <td v-else class="font-weight-bold">No hay más buses hoy</td>
+            </tr>
+
+            <!-- Segunda fila -->
+            <tr>
+              <td>
+                <span class="align-middle">{{ hacia_sanjose[1] }}</span>
+                <span
+                  v-if="hacia_sanjose_ramal[1] != 'SG'"
+                  :class="['small', 'badge',
+                    hacia_sanjose_ramal[1] == 'SL' ? 'badge-danger':'',
+                    hacia_sanjose_ramal[1] == 'TU' ? 'badge-warning':'',
+                    hacia_sanjose_ramal[1] == 'JO' ? 'badge-info':'',
+                    ]"
+                  >{{ hacia_sanjose_ramal[1] }}</span
+                >
+              </td>
+
+              <td>
+                <span class="align-middle">{{ desde_sanjose[1] }}</span>
+                <span
+                  v-if="desde_sanjose_ramal[1] != 'SG'"
+                  :class="['small', 'badge',
+                    desde_sanjose_ramal[1] == 'SL' ? 'badge-danger':'',
+                    desde_sanjose_ramal[1] == 'TU' ? 'badge-warning':'',
+                    desde_sanjose_ramal[1] == 'JO' ? 'badge-info':'',
+                    ]"
+                  >{{ desde_sanjose_ramal[1] }}</span
+                >
+              </td>
+            </tr>
+
+            <!-- Tercer fila -->
+            <tr>
+              <td>
+                <span class="align-middle">{{ hacia_sanjose[2] }}</span>
+                <span
+                  v-if="hacia_sanjose_ramal[2] != 'SG'"
+                  :class="['small', 'badge',
+                    hacia_sanjose_ramal[2] == 'SL' ? 'badge-danger':'',
+                    hacia_sanjose_ramal[2] == 'TU' ? 'badge-warning':'',
+                    hacia_sanjose_ramal[2] == 'JO' ? 'badge-info':'',
+                    ]"
+                  >{{ hacia_sanjose_ramal[2] }}</span
+                >
+              </td>
+
+              <td>
+                <span class="align-middle">{{ desde_sanjose[2] }}</span>
+                <span
+                  v-if="desde_sanjose_ramal[2] != 'SG'"
+                  :class="['small', 'badge',
+                        desde_sanjose_ramal[2] == 'SL' ? 'badge-danger':'',
+                        desde_sanjose_ramal[2] == 'TU' ? 'badge-warning':'',
+                        desde_sanjose_ramal[2] == 'JO' ? 'badge-info':'',
+                        ]"
+                  >{{ desde_sanjose_ramal[2] }}</span
+                >
+              </td>
+            </tr>
+
+            <!-- {% endverbatim %} -->
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </div>
