@@ -1,0 +1,9 @@
+asgiref
+Django
+django-ckeditor
+django-js-asset
+pytz
+sqlparse
+pillow
+gunicorn
+shapeeditor
