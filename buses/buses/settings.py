@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'shapeeditor' ## Sí esta línea te falla haz "pip install shapeeditor" para instalar la dependencia faltante
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_PORT = 587
 # EMAIL_HOST_USER = ''
 # EMAIL_HOST_PASSWORD = ''
+
+## Shapeeditor
+SHAPEEDITOR_MAP_EXTENT_AREA = '[1,2,3,4]'
+SHAPEEDITOR_ROUTING_MACHINE_URL = 'example.com'
 
 ## Rutas section
 # Restricción del mapa a esta área
