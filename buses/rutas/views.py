@@ -2,10 +2,10 @@ from django.shortcuts import get_object_or_404, render
 from .models import Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate
 from datetime import datetime
 from itertools import zip_longest
+from django.conf import settings
 
 def rutas(request):
     rutas = Route.objects.all()
-    
     ahora = datetime.now()
     meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
     dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
@@ -202,6 +202,7 @@ def ruta(request, url_ruta):
     feriados = CalendarDate.objects.filter(exception_type='1')
 
     context = {
+        'maxBounds': settings.RUTAS_MAP_MAX_BOUNDS,
         'route': route,
         'fecha': fecha,
         'horario_entresemana': horario_entresemana,

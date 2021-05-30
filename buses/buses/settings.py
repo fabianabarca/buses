@@ -139,3 +139,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_PORT = 587
 # EMAIL_HOST_USER = ''
 # EMAIL_HOST_PASSWORD = ''
+
+## Rutas section
+# Restricción del mapa a esta área
+RUTAS_MAP_MAX_BOUNDS = "[[9.766885, -84.219248], [9.971565, -84.013859]]"
