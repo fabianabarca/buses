@@ -49,7 +49,7 @@
           <nav class="js-mega-menu navbar navbar-expand-lg">
             <!-- Logo -->
             <a class="navbar-brand" href="#" aria-label="Front">
-              <img src="{% static 'svg/logos/TSG.svg' %}" alt="Logo">
+              <img src="{% static 'svg/logos/TSG.svg' %}" alt="Logo"> &nbsp; <img class="dropdown-item-icon" src="{% static '/vendor/flag-icon-css/flags/4x3/cr.svg' %}" alt="Costa Rica">
             </a>
             <!-- End Logo -->
 
@@ -96,10 +96,10 @@
                       <div class="navbar-promo-item">
                         <a class="navbar-promo-link" href="/rutas/acosta">
                           <div class="media align-items-center">
-                            <img class="navbar-promo-icon" src="{% static 'svg/icons/icon-2.svg' %}" alt="SVG">
+                            <img class="navbar-promo-icon" src="{% static 'svg/icons/icon-56.svg' %}" alt="SVG">
                             <div class="media-body">
-                              <span class="navbar-promo-title">Acosta</span>
-                              <small class="navbar-promo-text">Ramales de San Luis y Turrujal</small>
+                              <span class="navbar-promo-title">San Ignacio de Acosta</span>
+                              <small class="navbar-promo-text">Por Tarbaca y Jorco hasta San&nbsp;Luis o Turrujal</small>
                             </div>
                           </div>
                         </a>
@@ -110,10 +110,10 @@
                       <div class="navbar-promo-item">
                         <a class="navbar-promo-link" href="/rutas/sangabriel">
                           <div class="media align-items-center">
-                            <img class="navbar-promo-icon" src="{% static 'svg/icons/icon-1.svg' %}" alt="SVG">
+                            <img class="navbar-promo-icon" src="{% static 'svg/icons/icon-45.svg' %}" alt="SVG">
                             <div class="media-body">
                               <span class="navbar-promo-title">San Gabriel de Aserrí</span>
-                              <small class="navbar-promo-text">Terminal en Los Mangos</small>
+                              <small class="navbar-promo-text">Por Tarbaca y La Fila hasta Los&nbsp;Mangos</small>
                             </div>
                           </div>
                         </a>
@@ -124,8 +124,8 @@
                   </li>
                   <!-- End Docs -->
                   
-                  <li><a href="/empresa">Empresa</a></li>
-                  <li><a href="/contacto">Contacto</a></li>
+                  <li class="navbar-nav-item"><a class="nav-link" href="/empresa">Empresa</a></li>
+                  <li class="navbar-nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
                 </ul>
               </div>
             </div>
@@ -169,7 +169,8 @@
                       <span class="media">
                         <span class="fas fa-location-arrow mt-1 mr-2"></span>
                         <span class="media-body">
-                          San Ignacio de Acosta <span class="fab fa-waze"></span>
+                          San Ignacio de Acosta &nbsp;
+                          <img class="dropdown-item-icon" src="{% static '/vendor/flag-icon-css/flags/4x3/cr.svg' %}" alt="Costa Rica">
                         </span>
                       </span>
                   </a>
@@ -212,7 +213,7 @@
             </div>
 
             <div class="col">
-              <h5 class="text-white">Acerca de</h5>
+              <h5 class="text-white">Links de interés</h5>
 
               <!-- Nav Link -->
               <ul class="nav nav-sm nav-x-0 nav-white flex-column">
@@ -265,7 +266,7 @@
 
           <!-- Copyright -->
           <div class="w-md-75 text-lg-center mx-lg-auto">
-            <p class="text-white opacity-sm">Esta página utiliza <a href="/acerca/">GTFS</a>, un estándar de datos abiertos de transporte público.</p>
+            <p class="text-white opacity-sm">Esta página utiliza <a href="/gtfs/">GTFS</a>, un estándar de datos abiertos de transporte público.</p>
             <p class="text-white opacity-sm small">&copy; Transportes San Gabriel, 2021. Todos los derechos reservados.</p>
           </div>
           <!-- End Copyright -->
