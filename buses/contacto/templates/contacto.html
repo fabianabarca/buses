@@ -54,28 +54,32 @@
   <div class="alert alert-light" role="alert">
     <p>
       <ol class="fa-ul">
-        <li><span class="fa-li"><i class="fas fa-question-circle"></i></span>En la sección de <a href="#preguntas">preguntas frecuentes</a> puede encontrar la respuesta a temas usuales.</li>
+          <li><span class="fa-li"><i class="fas fa-question-circle"></i></span>En la sección de <a href="#preguntas">preguntas frecuentes</a> puede encontrar la respuesta a temas usuales.</li>
       </ol>
     </p>
   </div>
 
-  <form>
-    <div class="form-group">
+  {% if enviado %}
+  {{ notificacion }}
+  {% else %}
+  <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
       <label for="formGroupExampleInput">Nombre completo</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre completo">
+      <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
     </div>
     <div class="form-group">
       <label for="formGroupExampleInput2">Teléfono</label>
-      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Teléfono">
+      <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Correo electrónico</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@dominio.com">
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="ejemplo@dominio.com">
       <small id="emailHelp" class="form-text text-muted">A este correo electrónico llega la respuesta.</small>
     </div>
     <div class="form-group">
       <label for="exampleFormControlSelect1">Motivo de contacto</label>
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="asunto">
         <option>Sugerencias de mejora</option>
         <option>Objetos perdidos</option>
         <option>Información general</option>
@@ -85,24 +89,11 @@
     </div>
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Explicación</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" id="mensaje" rows="3"></textarea>
     </div>
     <button class="btn btn-primary" type="submit">Enviar</button>
   </form>
-  
-    <!--
-    {% if enviado %}
-    {{ notificacion }}
-  
-    {% else %}
-    <form method="post">
-      {% csrf_token %}
-      {{ formulario.as_p }}
-      <div>
-        <button type="submit">Enviar</button>
-      </div>
-    </form>
-  {% endif %}-->
+{% endif %}
 
 </section>
 
