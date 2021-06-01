@@ -60,6 +60,21 @@ ALLOWED_HOSTS = ["10.20.30.40"]
 
 Es importante también colocar la constante _DEBUG_ en False para evitar logs e información que pueda vulnerar el sitio si este no se encuentra en una red protegida.
 
+### Habilitar el correo
+
+Para que el contact form del proyecto pueda recibir y enviar correos el mismo debe de registrarse ante algún servicio de correo, ya sea local o externo, en este caso a manera de ejemplo se puede configurar para que utilice una cuenta de Gmail colocando lo siguiente en la configuración del sitio, _settings.py_
+
+```python
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'cuenta@gmail.com'
+EMAIL_HOST_PASSWORD = 'clave'
+```
+
+Con esto a la hora de hacer un **POST** en la página de contacto se recibirá una confirmación por correo de que nuestro mensaje ha sido enviado a bandeja.
+
 ### Usar estilos de aplicaciones de Django y de terceros
 
 Tanto las aplicaciones de Django como las de terceros encapsulan su propio _/static/_ en el cual almacenan sus ficheros de JavaScript y CSS, estos se pueden ver correctamente cuando levantamos el servidor de desarrollo que viene con el framework, pero una vez que usamos el _WSGI_ en conjunto con _NGINX_ notaremos que las aplicaciones externas perderán sus estilos e interacciones de JavaScrip, esto sucede porque en producción no es sensato hacer peticiones de ficheros estáticos a través de un servición o rutina dinámica, por eso se espera que por parte del usuario se coloquen estos estilos y scripts en el directorio estático correspondiente al propio proyecto, este contenido será servido directamente por NGINX.
