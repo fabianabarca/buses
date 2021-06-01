@@ -45,7 +45,7 @@ El proyecto cuenta con un script de configuración que autogenera los ficheros d
 
 El script levantará el virtualenv y pondrá en el root del proyecto los dos ficheros necesarios para levantar el servidor
 
-Si ya teníamos una versión anterior del proyecto es necesario decirle al servidor que debe detener el servidor
+Si ya teníamos una versión anterior del proyecto es necesario decirle al servidor que debe detener el servicio de _NGINX_ y _GUNICORN_ (más adelante veremos como usando SysD)
 
 ### Configurar el proyecto para operar en red
 
@@ -63,9 +63,13 @@ Es importante también colocar la constante _DEBUG_ en False para evitar logs e 
 
 ### Usar estilos de aplicaciones de Django y de terceros
 
-TODO
+Tanto las aplicaciones de Django como las de terceros encapsulan su propio _/static/_ en el cual almacenan sus ficheros de JavaScript y CSS, estos se pueden ver correctamente cuando levantamos el servidor de desarrollo que viene con el framework, pero una vez que usamos el _WSGI_ en conjunto con _NGINX_ notaremos que las aplicaciones externas perderán sus estilos e interacciones de JavaScrip, esto sucede porque en producción no es sensato hacer peticiones de ficheros estáticos a través de un servición o rutina dinámica, por eso se espera que por parte del usuario se coloquen estos estilos y scripts en el directorio estático correspondiente al propio proyecto, este contenido será servido directamente por NGINX.
 
 ### Levantar el servicio
+
+Así como especificamos la IP permitida en el settings.py es necesario colocar el correcto **server\_name** en la configuración de Nginx, para esto editamos el fichero llamado _web-buses.nginx-config_ en el encontraremos dicha sección, ahí se colocará la URL del sitio o la IP en su defecto.
+
+Antes de posicionar los ficheros de configuración del proyecto en el sistema es necesario asegurarse de que procesos anteriores no estén ejecutando, para esto se utilizan comandos de SystemD para detener estos procesos
 
 ```bash
 sudo systemctl stop gunicorn.service
@@ -77,6 +81,8 @@ Ahora podemos colocar los nuevos ficheros de configuración en su lugar, para es
 ```bash
 sudo ./config install
 ```
+Una vez instalado los ficheros y habilidados los servicios es posible observar el sitio al introducir la IP del servidor en el navegador, de la siguiente forma, http://IP-DEl-SERVIDOR/ se debe utilizar http ya que el proyecto no cuenta con firma SSL.
 
+Cualquier problema con el procedimiento coméntelo con el equipo en el respectivo canal de discusión.
 
 ## Publicar este proyecto por interfaz gráfica (próximamente)
