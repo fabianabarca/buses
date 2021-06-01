@@ -12,12 +12,15 @@ fi
 if [[ "$1" == 'install' ]]
 then
     set -e
-    cp gnicorn.service /etc/systemd/system/gunicorn.service
+    cp gunicorn.service /etc/systemd/system/gunicorn.service
     cp web-buses.nginx-config /etc/nginx/sites-available/web-buses
 
     # Probar la configuración
     nginx -t
+    test -L /etc/nginx/sites-enabled/web-buses ||
     ln -s /etc/nginx/sites-available/web-buses /etc/nginx/sites-enabled
+
+    systemctl daemon-reload
 
     systemctl enable gunicorn.service
     systemctl start gunicorn.service
@@ -29,7 +32,7 @@ fi
 if [ "$VIRTUAL_ENV" ] && [ $USER != 'root' ]
 then
     # Configuración dentro del ambiente virtual de Python3
-    ./bash/dependencias.sh # Instalar Django y complementos
+    pip install -r requirements.txt # Instalar Django y complementos
 
     echo "[Unit]
 Description=Gunicorn daemon server:$PWD
@@ -95,7 +98,7 @@ else
     then
         :
     else
-        virtualenv venv_server
+        virtualenv venv_server --python=python3.7
         echo "
         Utilice el siguiente comando para acceder al ambiente virtual
         agregar el mismo al final de la configuración ~/.bashrc para
