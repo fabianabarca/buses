@@ -48,9 +48,9 @@
 
   <br/>
   <h2>Formulario de correo electrónico</h2>
-  
+
   <p>Estamos para servirle con sus consultas por correo electrónico, llenando este formulario.</p>
-  
+
   <div class="alert alert-light" role="alert">
     <p>
       <ol class="fa-ul">
@@ -59,41 +59,8 @@
     </p>
   </div>
 
-  {% if enviado %}
-  {{ notificacion }}
-  {% else %}
-  <form method="post">
-      {% csrf_token %}
-      <div class="form-group">
-      <label for="formGroupExampleInput">Nombre completo</label>
-      <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
-    </div>
-    <div class="form-group">
-      <label for="formGroupExampleInput2">Teléfono</label>
-      <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Correo electrónico</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="ejemplo@dominio.com">
-      <small id="emailHelp" class="form-text text-muted">A este correo electrónico llega la respuesta.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Motivo de contacto</label>
-      <select class="form-control" id="asunto">
-        <option>Sugerencias de mejora</option>
-        <option>Objetos perdidos</option>
-        <option>Información general</option>
-        <option>Reclamos por servicio</option>
-        <option>Otro</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Explicación</label>
-      <textarea class="form-control" id="mensaje" rows="3"></textarea>
-    </div>
-    <button class="btn btn-primary" type="submit">Enviar</button>
-  </form>
-{% endif %}
+{# incluir el formulario en estilo bootstrap #}
+{% include "./form.html" %}
 
 </section>
 

@@ -8,3 +8,6 @@ migrations*
 *.zip
 *.tar.*
 venv_server*
+
+# Nodejs:
+node_modules
