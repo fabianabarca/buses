@@ -5,44 +5,33 @@
 {% block titulo %} Contacto {% endblock %}
 
 {% block subtitulo %}
-<!--
-  <div class="container text-center">
-      <a class="btn btn-outline-light" href="#contacto" role="button">Datos</a>
-      <a class="btn btn-outline-light" href="#formulario" role="button">Formulario</a>
-      <a class="btn btn-outline-light" href="#preguntas" role="button">Preguntas</a>
-  </div>
--->  
+
 {% endblock %}
 
 {% block content %}
 
-<p>
-  <div class="text-center">
-    <div class="btn-group btn-group-sm text-center" role="group" aria-label="Basic example">
-      <a class="btn btn-info" href="#formulario" type="button">Formulario</a>
-      <a class="btn btn-info" href="#preguntas" type="button">Preguntas</a>
-    </div>
-  </div>
-</p>
+<br/>.<br/>.<br/>.<br/>.<br/>.
 
 <!-- Información general (estática) -->
+
+<h1>Contacto con Transportes&nbsp;San&nbsp;Gabriel</h1>
 
 <section id="contacto">
 
   <div class="card-deck">
-    <div class="card">
+    <div class="card bg-light">
       <div class="card-body">
         <h5 class="card-title"><i class="fas fa-phone"></i> Teléfono</h5>
         <h2 class="card-text text-center"><a href="tel:{{ empresa.phone }}">{{ empresa.phone }}</a></h2>
       </div>
     </div>
-    <div class="card">
+    <div class="card bg-light">
       <div class="card-body">
         <h5 class="card-title"><i class="fas fa-envelope"></i> Correo electrónico</h5>
-        <h4 class="card-text text-center"><a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a></h4>
+        <h3 class="card-text text-center"><a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a></h3>
       </div>
     </div>
-    <div class="card">
+    <div class="card bg-light">
       <div class="card-body">
         <h5 class="card-title"><i class="fas fa-map"></i> Dirección</h5>
         <p class="card-text"> <i class="fab fa-waze"></i> <a href="https://ul.waze.com/ul?ll=9.79478950%2C-84.16339517&navigate=yes&zoom=17">Barrio María Auxiliadora, San Luis de San Ignacio de Acosta</a></p>
@@ -56,13 +45,19 @@
 
 <section id="formulario">
 
-  <hr>
-  <h2>Formulario de contacto</h2>
+  <br/>
+  <h2>Formulario de correo electrónico</h2>
   
   <p>Estamos para servirle con sus consultas por correo electrónico, llenando este formulario.</p>
-  <ol class="fa-ul">
-    <li><span class="fa-li"><i class="fas fa-question-circle"></i></span>En la sección <a href="#preguntas">Preguntas frecuentes</a> puede encontrar la respuesta a temas usuales.</li>
-  </ol>
+  
+  <div class="alert alert-light" role="alert">
+    <p>
+      <ol class="fa-ul">
+        <li><span class="fa-li"><i class="fas fa-question-circle"></i></span>En la sección de <a href="#preguntas">preguntas frecuentes</a> puede encontrar la respuesta a temas usuales.</li>
+      </ol>
+    </p>
+  </div>
+
   <form>
     <div class="form-group">
       <label for="formGroupExampleInput">Nombre completo</label>
@@ -112,11 +107,12 @@
 
 <!-- Preguntas frecuentes -->
 
+<hr>
+<h2>Preguntas frecuentes</h2>
 
-
-<!-- Collapse Section -->
-<div class="container space-2">
-  <h2>Preguntas frecuentes</h2>
+<p>
+  Algunas de las preguntas más usuales sobre el servicio.
+</p>
 
   <!-- Basics Accordion -->
   <div id="basicsAccordion">
@@ -140,7 +136,5 @@
     {% endfor %}
   </div>
   <!-- End Basics Accordion -->
-</div>
-<!-- End Collapse Section -->
 
 {% endblock %}
