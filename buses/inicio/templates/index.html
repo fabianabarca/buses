@@ -108,16 +108,16 @@
 <section>
   <p>
       <div class="text-center">
-          <h1><span class="badge badge-dark" id="DigitalCLOCK" onload="showTime()"></span></h1>
-          <h5><span class="badge badge-light"><span class="text-capitalize">{{ fecha.0 }}</span> {{ fecha.1 }} de {{ fecha.2 }} de {{ fecha.3 }}</span></h5>           
-      </div>    
+          <h1><div class="badge badge-dark" id="index_digital_clock">--:-- --</div></h1>
+          <h5><span class="badge badge-light"><span class="text-capitalize">{{ fecha.0 }}</span> {{ fecha.1 }} de {{ fecha.2 }} de {{ fecha.3 }}</span></h5>
+      </div>
   </p>
 </section>
 
 <!-- Alertas -->
 
 <section>
-  
+
   <!-- Alertas del formato GTFS Realtime -->
 
 </section>
@@ -180,5 +180,15 @@
 <section>
 
 </section>
+
+{% endblock %}
+
+{% block custom_footer %}
+
+{# Llamada legacy para aquellos elementos de HTML que tengan en su interior un reloj #}
+<script src="{% static 'js/display_time_on.js' %}"></script>
+<script>
+    displayTimeOn("index_digital_clock"); // el parámetro es el ID del elemento en el cual se debe poner la hora
+</script>
 
 {% endblock %}
