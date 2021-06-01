@@ -8,13 +8,13 @@ ruta_app.component('mapa-acosta', {
                     <div class="col-sm-10">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-xs btn-success active">
-                            <input type="radio"  v-on:click="updateSelectedRoundTripRoute(0)" checked> SAN LUIS
+                            <input type="radio"  v-on:click="updateSelectedRoundTripRoute(0)" checked> San&nbsp;Luis
                             </label>
                             <label class="btn btn-xs btn-success">
-                            <input type="radio" v-on:click="updateSelectedRoundTripRoute(1)"> TURRUJAL
+                            <input type="radio" v-on:click="updateSelectedRoundTripRoute(1)"> Turrujal
                             </label>
                             <label class="btn btn-xs btn-success">
-                            <input type="radio" v-on:click="updateSelectedRoundTripRoute(2)"> JORCO
+                            <input type="radio" v-on:click="updateSelectedRoundTripRoute(2)"> Jorco
                             </label>
                         </div>
                     </div>
