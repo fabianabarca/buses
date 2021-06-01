@@ -26,6 +26,7 @@ def contacto(request):
                 nombre + '[' + email + ']'
             try: # FIXME: implementar correctamente la configuración de SMTP usando correo del administrador que está en base de datos
                 send_mail(asunto, mensaje, email, ['tsgdumbacc@gmail.com'])
+                send_mail("Mensaje recibido", "Agredecemos su aporte.", 'tsgdumbacc@gmail.com', [email])
             except BadHeaderError:
                 return HttpResponse('Configuración de correo inválida.')
             enviado = True
