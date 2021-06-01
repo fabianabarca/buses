@@ -1,0 +1,18 @@
+/*
+ * Fichero con las correcciones a estilos
+ * y estilos personalizados para la aplicacion
+ *
+ */
+
+.custom-sticky-top {
+    position: sticky;
+    top: 0px;
+}
+
+.custom-margin-top {
+    margin-top: 5ch;
+}
+
+.custom-vertical-space {
+    min-height: 10ch;
+}

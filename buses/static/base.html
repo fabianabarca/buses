@@ -27,6 +27,9 @@
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
 
+    <!-- Custom CSS general -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
     {% block custom_header %}
     <!-- Aquí el source del CSS específico de cada página -->
     {% endblock %}
@@ -139,7 +142,7 @@
         
     <!-- CONTENIDO PRINCIPAL -->
 
-    <main role="main" class="container" id="content">
+    <main role="main" class="container custom-margin-top" id="content">
 
       {% block content %}
       <!-- Aquí el contenido de cada página -->
