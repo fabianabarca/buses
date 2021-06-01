@@ -22,6 +22,9 @@ def index(request):
 def acerca(request):
     return render(request, 'acerca.html')
 
+def gtfs(request):
+    return render(request, 'gtfs.html')
+
 def prueba(request):
     personas = Prueba.objects.all()
     context = {

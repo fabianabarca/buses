@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+
+{% block page_title %} Acerca de GTFS {% endblock %}
+
+{% block titulo %} Acerca de GTFS {% endblock %}
+
+{% block content %}
+
+<br/>.<br/>.<br/>.<br/>.<br/>.
+
+<h1 id="GTFS">GTFS</h1>
+
+<p>
+    La especificación general de suministro de datos de transporte <a href="https://developers.google.com/transit/gtfs?hl=es">GTFS</a> (<i>General Transit Feed Specification</i>) es un estándar <i>de facto</i> a nivel global para la divulgación de datos abiertos de servicio de transporte público.
+</p>
+
+<p class="text-center">
+    <button type="button" class="btn btn-primary" href="/gtfs/gtfs.zip">Descargar información GTFS</button>
+    <br>
+    <small><i class="fas fa-file-archive"></i> Archivo comprimido <code>.zip</code> de documentos <code>.txt</code> con formato de datos <code>.csv</code>.</small>
+</p>
+
+<p>
+    GTFS permite la visualización de información en aplicaciones como <a href="https://www.google.com/maps/">Google Maps</a> y <a href="https://moovit.com/es/">Moovit</a>, entre otras.
+</p>
+
+<h2 id="GTFS">GTFS estático</h2>
+
+<p>
+    GTFS <i>Static</i> tiene la estructura de una base de datos relacional con información sobre la agencia de transportes, sus rutas, paradas y horarios, entre otros datos que aquí se muestran.
+</p>
+
+<h2 id="GTFS">GTFS en tiempo real</h2>
+
+<p>
+    GTFS <i>Realtime</i> tiene la estructura de una base de datos relacional con información sobre la agencia de transportes, sus rutas, paradas y horarios, entre otros datos que aquí se muestran.
+</p>
+
+{% endblock %}
