@@ -13,29 +13,36 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h1>Lista del personal responsive</h1>
-<p>Una lista cuadriculada de personal de la empresa, con foto, nombre y puesto</p>
+<h1>Lista del personal</h1>
+<p>Nuestro personal</p>
 <br>
 
 <div class="row">
     {% for funcionario in funcionarios %}
     <div class="column">
-        <a href='/nosotros/funcionario_{{ funcionario.id }}'>
-            <div class="card"><!-- FIXME: fetch del sitio estático de la empresa -->
-            <img src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}"
-                 alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}" style="width:100%">
-            <div class="container">
-                <h2>{{ funcionario.nombre }}</h2>
-                <p class="title">{{ funcionario.cargo }}</p>
-                <p>Lorem ipsum ipsum lorem.</p>
-                <p>ejemplo@tsgcr.com</p>
-                <p><button class="button">Contact</button></p>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}" class="rounded-circle"
+                 alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}" style="width:175px;height:175px;">
+                 <h2>{{ funcionario.nombre }}</h2>
+                 <p>{{ funcionario.cargo }}</p>
+              </div>
+              <div class="flip-card-back">
+               
+                <a href='/nosotros/funcionario_{{ funcionario.id }}'></a>
+                <h1>{{ funcionario.nombre }}</h1>
+                <p>Mi nombre es {{ funcionario.nombre }} mi cargo es {{ funcionario.cargo }}</p>
+                <a href='/nosotros/funcionario_{{ funcionario.id }}' class="btn btn-dark" role="button" aria-pressed="true">Contacto</a>
+              </div>
             </div>
-            </div>
-        </a>
+          </div>
+        
     </div>
     {% endfor %}
 </div>
 </div>
 
+
 {% endblock %}
+
