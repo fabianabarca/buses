@@ -2,12 +2,6 @@
 
 {% block page_title %} Empresa {% endblock %}
 
-{% block titulo %} Nuestra empresa {% endblock %}
-
-{% block subtitulo %}
-
-{% endblock %}
-
 {% block content %}
 
 {# esto coloca 5 líneas de espacio vertical #}
@@ -67,14 +61,14 @@
 <!-- Personal -->
 
 <section id="personal">
-    
+
     <hr>
     <h2>Nuestro personal</h2>
 
     <p></p>
 
-    <p><a href='/nosotros/personal' class="btn btn-dark" role="button" aria-pressed="true">Ver lista de Personal</a></p>
-    
+    <p><a href="{% url 'personal' %}" class="btn btn-dark" role="button" aria-pressed="true">Ver lista de Personal</a></p>
+
 </section>
 
 {% endblock %}
