@@ -63,14 +63,14 @@ class Stop(models.Model):
     location_type = models.CharField(
         max_length=1, blank=True, choices=(('0', 'Parada'), ('1', 'Estación')),
         help_text="¿Es una parada o una estación?")
-    parent_station = models.ForeignKey(
-        'Stop', null=True, blank=True, on_delete=models.SET_NULL,
+    parent_station = models.CharField(
+        max_length=255, null=True, blank=True,
         help_text="La estación asociada con la parada.")
     timezone = models.CharField(
-        max_length=255, blank=True,
+        max_length=255, null=True, blank=True,
         help_text="Zona horaria para la parada")
     wheelchair_boarding = models.CharField(
-        max_length=1, blank=True,
+        max_length=1, null=True, blank=True,
         choices=(
             ('0', 'No hay información.'),
             ('1', 'Abordaje parcial de silla de ruedas.'),
@@ -299,7 +299,7 @@ class CalendarDate(models.Model):
     def __str__(self):
         return self.holiday_name
 
-class Fare(models.Model):
+class FareAttribute(models.Model):
     """A fare attribute class"""
 
     fare_id = models.CharField(
@@ -324,7 +324,7 @@ class Fare(models.Model):
                  (2, 'Los pasajeros pueden transferir dos veces.'),
                  (None, 'Se pueden realizar transferencias ilimitadas.')),
         help_text="¿Se permiten las transferencias?")
-    agency_id = models.ForeignKey('Agency', on_delete=models.CASCADE)
+    agency = models.ForeignKey('Agency', on_delete=models.CASCADE)
     transfer_duration = models.IntegerField(
         null=True, blank=True,
         help_text="Tiempo en segundos hasta que un tiquete o transferencia expira.")
@@ -335,12 +335,12 @@ class Fare(models.Model):
 class FareRule(models.Model):
     """ A Fare Rule class """
     
-    fare_id = models.ForeignKey('Fare', on_delete=models.CASCADE)
-    route_id = models.ForeignKey('Route', on_delete=models.CASCADE)
-    origin_id = models.ForeignKey('Zone', 
+    fare = models.ForeignKey('FareAttribute', on_delete=models.CASCADE)
+    route = models.ForeignKey('Route', on_delete=models.CASCADE)
+    origin = models.ForeignKey('Zone', 
                 related_name='origin_id', 
                 on_delete=models.CASCADE)
-    destination_id = models.ForeignKey('Zone', 
+    destination = models.ForeignKey('Zone', 
                 related_name='destination_id', 
                 on_delete=models.CASCADE)
 
@@ -407,3 +407,14 @@ class Shape(models.Model):
 
     def __str__(self):
         return self.shape_id
+
+class FeedInfo(models.Model):
+    """ Información sobre los que hacen el GTFS """
+
+    feed_publisher_name = models.CharField(max_length=128,
+        help_text="Quiénes hicieron el GTFS.")
+    feed_publisher_url = models.URLField(
+        blank=True, help_text="URL de los que hicieron el GTFS.")
+    feed_lang = models.CharField(
+        max_length=2, blank=True,
+        help_text="Código ISO 639-1 de idioma primario.")

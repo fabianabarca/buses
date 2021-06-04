@@ -32,7 +32,12 @@ def ruta(request, url_ruta):
     route_id, agency, short_name, long_name, desc,
     route_type, url, color, text_color
     '''
-    route = get_object_or_404(Route, url=url_ruta)
+    if url_ruta == 'sangabriel':
+        route = get_object_or_404(Route, route_id='SGAB')
+        extra = ''
+    elif url_ruta == 'acosta':
+        route = get_object_or_404(Route, route_id='ACOS')
+        extra = get_object_or_404(Route, route_id='TURR')
 
     # Extraer los viajes asociados con esta ruta para cada servicio y en cada dirección
     ''' Valores:
@@ -41,27 +46,27 @@ def ruta(request, url_ruta):
     wheelchair_accessible, bikes_allowed
     '''
     trips_entresemana_0 = Trip.objects.filter(
-                route=route,
+                route__in=[route, extra],
                 service=Calendar.objects.get(service_id='entresemana'),
                 direction='0')
     trips_entresemana_1 = Trip.objects.filter(
-                route=route,
+                route__in=[route, extra],
                 service=Calendar.objects.get(service_id='entresemana'),
                 direction='1')
     trips_sabado_0 = Trip.objects.filter(
-                route=route,
+                route__in=[route, extra],
                 service=Calendar.objects.get(service_id='sabado'),
                 direction='0')
     trips_sabado_1 = Trip.objects.filter(
-                route=route,
+                route__in=[route, extra],
                 service=Calendar.objects.get(service_id='sabado'),
                 direction='1')
     trips_domingo_0 = Trip.objects.filter(
-                route=route,
+                route__in=[route, extra],
                 service=Calendar.objects.get(service_id='domingo'),
                 direction='0')
     trips_domingo_1 = Trip.objects.filter(
-                route=route,
+                route__in=[route, extra],
                 service=Calendar.objects.get(service_id='domingo'),
                 direction='1')
 
@@ -69,7 +74,7 @@ def ruta(request, url_ruta):
 
     para_ordenar = []
     for i in trips_entresemana_0:
-        viaje = StopTime.objects.get(trip=i)
+        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
         para_ordenar.append([viaje.departure_time, str(i.shape)])
 
     para_ordenar.sort()
@@ -78,7 +83,7 @@ def ruta(request, url_ruta):
 
     para_ordenar = []
     for i in trips_entresemana_1:
-        viaje = StopTime.objects.get(trip=i)
+        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
         para_ordenar.append([viaje.departure_time, str(i.shape)])
 
     para_ordenar.sort()
@@ -96,7 +101,7 @@ def ruta(request, url_ruta):
 
     para_ordenar = []
     for i in trips_sabado_0:
-        viaje = StopTime.objects.get(trip=i)
+        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
         para_ordenar.append([viaje.departure_time, str(i.shape)])
 
     para_ordenar.sort()
@@ -105,7 +110,7 @@ def ruta(request, url_ruta):
 
     para_ordenar = []
     for i in trips_sabado_1:
-        viaje = StopTime.objects.get(trip=i)
+        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
         para_ordenar.append([viaje.departure_time, str(i.shape)])
 
     para_ordenar.sort()
@@ -123,7 +128,7 @@ def ruta(request, url_ruta):
 
     para_ordenar = []
     for i in trips_domingo_0:
-        viaje = StopTime.objects.get(trip=i)
+        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
         para_ordenar.append([viaje.departure_time, str(i.shape)])
 
     para_ordenar.sort()
@@ -132,7 +137,7 @@ def ruta(request, url_ruta):
 
     para_ordenar = []
     for i in trips_domingo_1:
-        viaje = StopTime.objects.get(trip=i)
+        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
         para_ordenar.append([viaje.departure_time, str(i.shape)])
 
     para_ordenar.sort()
