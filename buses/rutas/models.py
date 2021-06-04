@@ -202,15 +202,15 @@ class StopTime(models.Model):
                  ('2', 'Debe llamar a la agencia para coordinar llegada.'),
                  ('3', 'Debe coordinar con el conductor para agendar la llegada.')),
         help_text="¿Cómo se deja a los pasajeros en su destino?")
-    # shape_dist_traveled = models.FloatField(
-    #     "shape distance traveled",
-    #     null=True, blank=True,
-    #     help_text='Distance of stop from start of shape')
-    # timepoint = models.CharField(
-    #     max_length=1, blank=True, default=0,
-    #     choices=(('0', 'Hora aproximada'),
-    #              ('1', 'Hora exacta')),
-    #     help_text="Exactitud de la hora de llegada y salida")
+    shape_dist_traveled = models.FloatField(
+        default=0.0,
+        null=True, blank=True,
+        help_text='Distance of stop from start of shape')
+    timepoint = models.CharField(
+        max_length=1, blank=True, default=0,
+        choices=(('0', 'Hora aproximada'),
+                 ('1', 'Hora exacta')),
+        help_text="Exactitud de la hora de llegada y salida.")
     
     def __str__(self):
         return str(self.trip)
