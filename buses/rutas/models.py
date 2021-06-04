@@ -63,14 +63,14 @@ class Stop(models.Model):
     location_type = models.CharField(
         max_length=1, blank=True, choices=(('0', 'Parada'), ('1', 'Estación')),
         help_text="¿Es una parada o una estación?")
-    parent_station = models.ForeignKey(
-        'Stop', null=True, blank=True, on_delete=models.SET_NULL,
+    parent_station = models.CharField(
+        max_length=255, null=True, blank=True,
         help_text="La estación asociada con la parada.")
     timezone = models.CharField(
-        max_length=255, blank=True,
+        max_length=255, null=True, blank=True,
         help_text="Zona horaria para la parada")
     wheelchair_boarding = models.CharField(
-        max_length=1, blank=True,
+        max_length=1, null=True, blank=True,
         choices=(
             ('0', 'No hay información.'),
             ('1', 'Abordaje parcial de silla de ruedas.'),
@@ -202,15 +202,15 @@ class StopTime(models.Model):
                  ('2', 'Debe llamar a la agencia para coordinar llegada.'),
                  ('3', 'Debe coordinar con el conductor para agendar la llegada.')),
         help_text="¿Cómo se deja a los pasajeros en su destino?")
-    # shape_dist_traveled = models.FloatField(
-    #     "shape distance traveled",
-    #     null=True, blank=True,
-    #     help_text='Distance of stop from start of shape')
-    # timepoint = models.CharField(
-    #     max_length=1, blank=True, default=0,
-    #     choices=(('0', 'Hora aproximada'),
-    #              ('1', 'Hora exacta')),
-    #     help_text="Exactitud de la hora de llegada y salida")
+    shape_dist_traveled = models.FloatField(
+        default=0.0,
+        null=True, blank=True,
+        help_text='Distance of stop from start of shape')
+    timepoint = models.CharField(
+        max_length=1, blank=True, default=0,
+        choices=(('0', 'Hora aproximada'),
+                 ('1', 'Hora exacta')),
+        help_text="Exactitud de la hora de llegada y salida.")
     
     def __str__(self):
         return str(self.trip)
@@ -299,7 +299,7 @@ class CalendarDate(models.Model):
     def __str__(self):
         return self.holiday_name
 
-class Fare(models.Model):
+class FareAttribute(models.Model):
     """A fare attribute class"""
 
     fare_id = models.CharField(
@@ -324,7 +324,7 @@ class Fare(models.Model):
                  (2, 'Los pasajeros pueden transferir dos veces.'),
                  (None, 'Se pueden realizar transferencias ilimitadas.')),
         help_text="¿Se permiten las transferencias?")
-    agency_id = models.ForeignKey('Agency', on_delete=models.CASCADE)
+    agency = models.ForeignKey('Agency', on_delete=models.CASCADE)
     transfer_duration = models.IntegerField(
         null=True, blank=True,
         help_text="Tiempo en segundos hasta que un tiquete o transferencia expira.")
@@ -335,12 +335,12 @@ class Fare(models.Model):
 class FareRule(models.Model):
     """ A Fare Rule class """
     
-    fare_id = models.ForeignKey('Fare', on_delete=models.CASCADE)
-    route_id = models.ForeignKey('Route', on_delete=models.CASCADE)
-    origin_id = models.ForeignKey('Zone', 
+    fare = models.ForeignKey('FareAttribute', on_delete=models.CASCADE)
+    route = models.ForeignKey('Route', on_delete=models.CASCADE)
+    origin = models.ForeignKey('Zone', 
                 related_name='origin_id', 
                 on_delete=models.CASCADE)
-    destination_id = models.ForeignKey('Zone', 
+    destination = models.ForeignKey('Zone', 
                 related_name='destination_id', 
                 on_delete=models.CASCADE)
 
@@ -399,6 +399,22 @@ class Shape(models.Model):
         help_text='Longitud WGS 84 de punto de la trayectoria.')
     pt_sequence = models.PositiveIntegerField(
         help_text='Secuencia en la que los puntos de la trayectoria se conectan para crear la forma')
-    
+    dist_traveled = models.DecimalField(default=0.0,
+        max_digits=6,
+        decimal_places=3, 
+        null=True, blank=True,
+        help_text="Precisión es en metros (0.001 km)")
+
     def __str__(self):
         return self.shape_id
+
+class FeedInfo(models.Model):
+    """ Información sobre los que hacen el GTFS """
+
+    feed_publisher_name = models.CharField(max_length=128,
+        help_text="Quiénes hicieron el GTFS.")
+    feed_publisher_url = models.URLField(
+        blank=True, help_text="URL de los que hicieron el GTFS.")
+    feed_lang = models.CharField(
+        max_length=2, blank=True,
+        help_text="Código ISO 639-1 de idioma primario.")

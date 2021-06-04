@@ -12,19 +12,19 @@
 <section id="contacto">
 
   <div class="card-deck">
-    <div class="card bg-light">
+    <div class="card bg-soft-secondary">
       <div class="card-body">
         <h5 class="card-title"><i class="fas fa-phone"></i> Teléfono</h5>
         <h2 class="card-text text-center"><a href="tel:{{ empresa.phone }}">{{ empresa.phone }}</a></h2>
       </div>
     </div>
-    <div class="card bg-light">
+    <div class="card bg-soft-secondary">
       <div class="card-body">
         <h5 class="card-title"><i class="fas fa-envelope"></i> Correo electrónico</h5>
         <h3 class="card-text text-center"><a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a></h3>
       </div>
     </div>
-    <div class="card bg-light">
+    <div class="card bg-soft-secondary">
       <div class="card-body">
         <h5 class="card-title"><i class="fas fa-map"></i> Dirección</h5>
         <p class="card-text"> <i class="fab fa-waze"></i> <a href="https://ul.waze.com/ul?ll=9.79478950%2C-84.16339517&navigate=yes&zoom=17">Barrio María Auxiliadora, San Luis de San Ignacio de Acosta</a></p>
@@ -39,11 +39,11 @@
 <section id="formulario">
 
   <br/>
-  <h2>Formulario de correo electrónico</h2>
-
+  <h2><i class="fas fa-envelope"></i> Formulario de correo electrónico</h2>
+  
   <p>Estamos para servirle con sus consultas por correo electrónico, llenando este formulario.</p>
-
-  <div class="alert alert-light" role="alert">
+  
+  <div class="alert alert-soft-secondary" role="alert">
     <p>
       <ol class="fa-ul">
           <li><span class="fa-li"><i class="fas fa-question-circle"></i></span>En la sección de <a href="#preguntas">preguntas frecuentes</a> puede encontrar la respuesta a temas usuales.</li>
@@ -59,33 +59,109 @@
 <!-- Preguntas frecuentes -->
 
 <hr>
-<h2>Preguntas frecuentes</h2>
+<h2><i class="fas fa-question-circle"></i> Preguntas frecuentes</h2>
 
 <p>
   Algunas de las preguntas más usuales sobre el servicio.
 </p>
 
-  <!-- Basics Accordion -->
-  <div id="basicsAccordion">
-    {% for pregunta in preguntas %}
-    <div class="card shadow-none mb-3">
-      <div class="card-header card-collapse" id="preg{{ pregunta.id }}">
-        <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#resp{{ pregunta.id }}" aria-expanded="false" aria-controls="#resp{{ pregunta.id }}">
-          {{ pregunta.pregunta }}
-          <span class="card-btn-toggle">
-            <span class="card-btn-toggle-default">+</span>
-            <span class="card-btn-toggle-active">−</span>
-          </span>
-        </a>
-      </div>
-      <div id="resp{{ pregunta.id }}" class="collapse" aria-labelledby="preg{{ pregunta.id }}" data-parent="#basicsAccordion">
-        <div class="card-body px-0">
-          <p>{{ pregunta.respuesta }}</p>
+  <div class="alert alert-soft-secondary" role="alert">
+    <i class="fas fa-backward"></i> &nbsp; <strong>Antes del viaje</strong>
+  </div>
+
+  <p>
+    <div class="card card-frame">
+      <div class="card-body">
+        <!-- Acordeón de preguntas -->
+        <div id="basicsAccordion">
+          {% for pregunta in preguntas %}
+          <div class="card shadow-none mb-3">
+            <div class="card-header card-collapse" id="preg{{ pregunta.id }}">
+              <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#resp{{ pregunta.id }}" aria-expanded="false" aria-controls="#resp{{ pregunta.id }}">
+                {{ pregunta.pregunta }}
+                <span class="card-btn-toggle">
+                  <span class="card-btn-toggle-default">+</span>
+                  <span class="card-btn-toggle-active">−</span>
+                </span>
+              </a>
+            </div>
+            <div id="resp{{ pregunta.id }}" class="collapse" aria-labelledby="preg{{ pregunta.id }}" data-parent="#basicsAccordion">
+              <div class="card-body px-0">
+                <p>{{ pregunta.respuesta }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
         </div>
+        <!-- Fin del acordeón de preguntas -->
       </div>
     </div>
-    {% endfor %}
-  </div>
-  <!-- End Basics Accordion -->
+  </p>
 
+  <div class="alert alert-soft-secondary" role="alert">
+    <i class="fas fa-play"></i> &nbsp; <strong>Durante el viaje</strong>
+  </div>
+  
+  <p>
+    <div class="card card-frame">
+      <div class="card-body">
+        <!-- Acordeón de preguntas -->
+        <div id="basicsAccordion">
+          {% for pregunta in preguntas %}
+          <div class="card shadow-none mb-3">
+            <div class="card-header card-collapse" id="preg{{ pregunta.id }}">
+              <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#resp{{ pregunta.id }}" aria-expanded="false" aria-controls="#resp{{ pregunta.id }}">
+                {{ pregunta.pregunta }}
+                <span class="card-btn-toggle">
+                  <span class="card-btn-toggle-default">+</span>
+                  <span class="card-btn-toggle-active">−</span>
+                </span>
+              </a>
+            </div>
+            <div id="resp{{ pregunta.id }}" class="collapse" aria-labelledby="preg{{ pregunta.id }}" data-parent="#basicsAccordion">
+              <div class="card-body px-0">
+                <p>{{ pregunta.respuesta }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <!-- Fin del acordeón de preguntas -->
+      </div>
+    </div>
+  </p>
+
+  <div class="alert alert-soft-secondary" role="alert">
+    <i class="fas fa-forward"></i> &nbsp; <strong>Después del viaje</strong>
+  </div>
+  
+  <p>
+    <div class="card card-frame">
+      <div class="card-body">
+        <!-- Acordeón de preguntas -->
+        <div id="basicsAccordion">
+          {% for pregunta in preguntas %}
+          <div class="card shadow-none mb-3">
+            <div class="card-header card-collapse" id="preg{{ pregunta.id }}">
+              <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#resp{{ pregunta.id }}" aria-expanded="false" aria-controls="#resp{{ pregunta.id }}">
+                {{ pregunta.pregunta }}
+                <span class="card-btn-toggle">
+                  <span class="card-btn-toggle-default">+</span>
+                  <span class="card-btn-toggle-active">−</span>
+                </span>
+              </a>
+            </div>
+            <div id="resp{{ pregunta.id }}" class="collapse" aria-labelledby="preg{{ pregunta.id }}" data-parent="#basicsAccordion">
+              <div class="card-body px-0">
+                <p>{{ pregunta.respuesta }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <!-- Fin del acordeón de preguntas -->
+      </div>
+    </div>
+  </p>
+ 
 {% endblock %}
