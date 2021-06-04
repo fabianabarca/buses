@@ -51,7 +51,7 @@
 
     <!-- Nota sobre los ramales de Acosta -->
     {% if route.short_name == 'Acosta' %}
-    <div class="alert alert-light" role="alert">
+    <div class="alert alert-soft-secondary" role="alert">
       <p>
         <ol class="fa-ul">
             <li><span class="fa-li"><i class="fas fa-info-circle"></i></span>La ruta de Acosta tiene las siguientes trayectorias (ver <a href="#mapa">mapa de la ruta</a>):</li>
@@ -82,7 +82,7 @@
     <h2><i class="fas fa-clock"></i> Horario</h2>
 
     <!-- Nota sobre el horario de salida -->
-    <div class="alert alert-light" role="alert">
+    <div class="alert alert-soft-secondary" role="alert">
         <p>
             <ol class="fa-ul">
                 <li><span class="fa-li"><i class="fas fa-info-circle"></i></span>La hora indicada del viaje hacia San José es en la parada de {{ route.short_name }} centro. 
@@ -181,12 +181,11 @@
         </div>
     </p>
 
-
     <!-- Lista de feriados -->
-    <div class="alert alert-secondary" role="alert">
+    <div class="alert alert-soft-secondary" role="alert">
         <div>
-            <button class="btn btn-light btn-sm" type="button" data-toggle="collapse" data-target="#listaferiados" aria-expanded="false" aria-controls="listaferiados">
-                <i class="fas fa-calendar-check"></i> Días feriados
+            <button class="btn btn-dark btn-sm" type="button" data-toggle="collapse" data-target="#listaferiados" aria-expanded="false" aria-controls="listaferiados">
+                <i class="fas fa-calendar-check"></i> &nbsp; Días feriados
             </button>
         </div>
 
