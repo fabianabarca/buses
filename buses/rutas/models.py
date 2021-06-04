@@ -399,6 +399,11 @@ class Shape(models.Model):
         help_text='Longitud WGS 84 de punto de la trayectoria.')
     pt_sequence = models.PositiveIntegerField(
         help_text='Secuencia en la que los puntos de la trayectoria se conectan para crear la forma')
-    
+    dist_traveled = models.DecimalField(default=0.0,
+        max_digits=6,
+        decimal_places=3, 
+        null=True, blank=True,
+        help_text="Precisión es en metros (0.001 km)")
+
     def __str__(self):
         return self.shape_id
