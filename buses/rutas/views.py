@@ -34,10 +34,10 @@ def ruta(request, url_ruta):
     '''
     if url_ruta == 'sangabriel':
         route = get_object_or_404(Route, route_id='SGAB')
-        extra = ''
+        route_id_array = ['SGAB']
     elif url_ruta == 'acosta':
         route = get_object_or_404(Route, route_id='ACOS')
-        extra = get_object_or_404(Route, route_id='TURR')
+        route_id_array = ['ACOS', 'TURR']
 
     # Extraer los viajes asociados con esta ruta para cada servicio y en cada dirección
     ''' Valores:
@@ -45,51 +45,39 @@ def ruta(request, url_ruta):
     direction (0: hacia San José, 1: desde San José), shape,
     wheelchair_accessible, bikes_allowed
     '''
-    trips_entresemana_0 = Trip.objects.filter(
-                route__in=[route, extra],
-                service=Calendar.objects.get(service_id='entresemana'),
-                direction='0')
-    trips_entresemana_1 = Trip.objects.filter(
-                route__in=[route, extra],
-                service=Calendar.objects.get(service_id='entresemana'),
-                direction='1')
-    trips_sabado_0 = Trip.objects.filter(
-                route__in=[route, extra],
-                service=Calendar.objects.get(service_id='sabado'),
-                direction='0')
-    trips_sabado_1 = Trip.objects.filter(
-                route__in=[route, extra],
-                service=Calendar.objects.get(service_id='sabado'),
-                direction='1')
-    trips_domingo_0 = Trip.objects.filter(
-                route__in=[route, extra],
-                service=Calendar.objects.get(service_id='domingo'),
-                direction='0')
-    trips_domingo_1 = Trip.objects.filter(
-                route__in=[route, extra],
-                service=Calendar.objects.get(service_id='domingo'),
-                direction='1')
+
+    horario_entresemana_0, ramales_entresemana_0 = Trip.objects.horario_y_ramales(
+        route_id_array=route_id_array,
+        service_id='entresemana',
+        direction='0')
+
+    horario_entresemana_1, ramales_entresemana_1 = Trip.objects.horario_y_ramales(
+        route_id_array=route_id_array,
+        service_id='entresemana',
+        direction='1')
+
+    horario_sabado_0, ramales_sabado_0 = Trip.objects.horario_y_ramales(
+        route_id_array=route_id_array,
+        service_id='sabado',
+        direction='0')
+
+    horario_sabado_1, ramales_sabado_1 = Trip.objects.horario_y_ramales(
+        route_id_array=route_id_array,
+        service_id='sabado',
+        direction='1')
+
+    horario_domingo_0, ramales_domingo_0 = Trip.objects.horario_y_ramales(
+        route_id_array=route_id_array,
+        service_id='domingo',
+        direction='0')
+
+    horario_domingo_1, ramales_domingo_1 = Trip.objects.horario_y_ramales(
+        route_id_array=route_id_array,
+        service_id='domingo',
+        direction='1')
+
 
     # Entre semana
-
-    para_ordenar = []
-    for i in trips_entresemana_0:
-        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
-        para_ordenar.append([viaje.departure_time, str(i.shape)])
-
-    para_ordenar.sort()
-    horario_entresemana_0 = [i[0] for i in para_ordenar]
-    ramales_entresemana_0 = [i[1] for i in para_ordenar]
-
-    para_ordenar = []
-    for i in trips_entresemana_1:
-        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
-        para_ordenar.append([viaje.departure_time, str(i.shape)])
-
-    para_ordenar.sort()
-    horario_entresemana_1 = [i[0] for i in para_ordenar]
-    ramales_entresemana_1 = [i[1] for i in para_ordenar]
-
     horario_entresemana = zip_longest(
                           [i.strftime("%-I:%M %p") for i in horario_entresemana_0],
                           ramales_entresemana_0,
@@ -98,25 +86,6 @@ def ruta(request, url_ruta):
                           fillvalue='-')
 
     # Sábado
-
-    para_ordenar = []
-    for i in trips_sabado_0:
-        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
-        para_ordenar.append([viaje.departure_time, str(i.shape)])
-
-    para_ordenar.sort()
-    horario_sabado_0 = [i[0] for i in para_ordenar]
-    ramales_sabado_0 = [i[1] for i in para_ordenar]
-
-    para_ordenar = []
-    for i in trips_sabado_1:
-        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
-        para_ordenar.append([viaje.departure_time, str(i.shape)])
-
-    para_ordenar.sort()
-    horario_sabado_1 = [i[0] for i in para_ordenar]
-    ramales_sabado_1 = [i[1] for i in para_ordenar]
-
     horario_sabado = zip_longest(
                         [i.strftime("%-I:%M %p") for i in horario_sabado_0],
                         ramales_sabado_0,
@@ -125,25 +94,6 @@ def ruta(request, url_ruta):
                         fillvalue='-')
 
    # Domingo
-
-    para_ordenar = []
-    for i in trips_domingo_0:
-        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
-        para_ordenar.append([viaje.departure_time, str(i.shape)])
-
-    para_ordenar.sort()
-    horario_domingo_0 = [i[0] for i in para_ordenar]
-    ramales_domingo_0 = [i[1] for i in para_ordenar]
-
-    para_ordenar = []
-    for i in trips_domingo_1:
-        viaje = StopTime.objects.get(trip=i, stop_sequence='0')
-        para_ordenar.append([viaje.departure_time, str(i.shape)])
-
-    para_ordenar.sort()
-    horario_domingo_1 = [i[0] for i in para_ordenar]
-    ramales_domingo_1 = [i[1] for i in para_ordenar]
-
     horario_domingo = zip_longest(
                         [i.strftime("%-I:%M %p") for i in horario_domingo_0],
                         ramales_domingo_0,
