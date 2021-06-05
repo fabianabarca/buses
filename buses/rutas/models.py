@@ -1,4 +1,27 @@
+from django.shortcuts import get_object_or_404
 from django.db import models
+
+## Managers
+
+class tripManager(models.Manager):
+    def horario_y_ramales(self, service_id='', route_id_array=[], direction=0):
+        trips = super().get_queryset().filter(
+            service=Calendar.objects.get(service_id=service_id),
+            route__in=[get_object_or_404(Route, route_id=x) for x in route_id_array],
+            direction=direction
+        )
+
+        para_ordenar = []
+        for i in trips:
+            viaje = StopTime.objects.get(trip=i, stop_sequence='0')
+            para_ordenar.append([viaje.departure_time, str(i.shape)])
+
+        para_ordenar.sort()
+        horario = [i[0] for i in para_ordenar]
+        ramales = [i[1] for i in para_ordenar]
+        return (horario, ramales)
+
+## Models
 
 class Agency(models.Model):
     """One or more transit agencies that provide the data in this feed.
@@ -130,6 +153,9 @@ class Trip(models.Model):
     """A trip along a route
     This implements trips.txt in the GTFS feed
     """
+
+    objects = tripManager(); # Custom manager with extra methods
+
     route = models.ForeignKey('Route', on_delete=models.CASCADE)
     service = models.ForeignKey(
         'Calendar', null=True, blank=True, on_delete=models.SET_NULL)
