@@ -6,8 +6,8 @@ from django.db import models
 class tripManager(models.Manager):
     def horario_y_ramales(self, service_id='', route_id_array=[], direction=0):
         trips = super().get_queryset().filter(
-            service=Calendar.objects.get(service_id=service_id),
-            route__in=[get_object_or_404(Route, route_id=x) for x in route_id_array],
+            service__service_id=service_id,
+            route__route_id__in = route_id_array,
             direction=direction
         )
 
