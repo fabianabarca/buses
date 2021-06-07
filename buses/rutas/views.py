@@ -4,11 +4,12 @@ from datetime import datetime
 from itertools import zip_longest
 from django.conf import settings
 
+
 def rutas(request):
     rutas = Route.objects.all()
     ahora = datetime.now()
-    meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
-    dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
+    meses = ('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre')
+    dias = ('lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo')
     fecha = [dias[ahora.weekday()], ahora.day, meses[ahora.month - 1], ahora.year]
 
     context = {
