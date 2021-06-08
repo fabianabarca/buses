@@ -217,20 +217,20 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
 
 <!-- Tarifas -->
 
-<section id="tarifas">
+<section>
 
     <hr>
-    <h2><i class="fas fa-ticket-alt"></i> Tarifas</h2>
+    <h2 id="tarifas"><i class="fas fa-ticket-alt"></i> Tarifas</h2>
 
     {% include "tarifas.html" %}
 
 </section>
 
 <!-- Mapa de la ruta -->
-<section id="mapa">
+<section>
 
     <hr>
-    <h2><i class="fas fa-map"></i> Mapa de la ruta</h2>
+    <h2 id="mapa"><i class="fas fa-map"></i> Mapa de la ruta</h2>
 
     {% if route.short_name == 'Acosta' %}
     <mapa-acosta></mapa-acosta>
@@ -257,6 +257,64 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
               </ol>
         </div>
     </div>
+
+    <!-- Step -->
+<ul class="step step-timeline-sm">
+    <li class="step-item">
+      <div class="step-content-wrapper">
+        <span class="step-icon step-icon-xs step-icon-soft-primary">1</span>
+        <div class="step-content">
+          <p class="step-text">San Gabriel centro</p>
+        </div>
+      </div>
+    </li>
+  
+    <li class="step-item">
+      <div class="step-content-wrapper">
+        <span class="step-icon step-icon-xs step-icon-soft-primary">2</span>
+        <div class="step-content">
+          <p class="step-text">La vuelta de Betty Camacho</p>
+        </div>
+      </div>
+    </li>
+  
+    <li class="step-item">
+      <div class="step-content-wrapper">
+        <span class="step-icon step-icon-xs step-icon-soft-primary">3</span>
+        <div class="step-content">
+          <p class="step-text">Barrio La Salle</p>
+        </div>
+      </div>
+    </li>
+    
+    <li class="step-item">
+    <div class="step-content-wrapper">
+        <span class="step-icon step-icon-xs step-icon-soft-primary">4</span>
+        <div class="step-content">
+        <p class="step-text">Barrio Nuevo</p>
+        </div>
+    </div>
+    </li>
+
+    <li class="step-item">
+    <div class="step-content-wrapper">
+        <span class="step-icon step-icon-xs step-icon-soft-primary">5</span>
+        <div class="step-content">
+        <p class="step-text">Barrio María Auxiliadora</p>
+        </div>
+    </div>
+    </li>
+
+    <li class="step-item">
+    <div class="step-content-wrapper">
+        <span class="step-icon step-icon-xs step-icon-soft-primary">6</span>
+        <div class="step-content">
+        <p class="step-text">La Fila (abajo)</p>
+        </div>
+    </div>
+    </li>
+  </ul>
+  <!-- End Step -->
 
     <p class="text-center">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#listaparadas" aria-expanded="false" aria-controls="listaparadas">

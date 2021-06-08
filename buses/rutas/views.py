@@ -154,7 +154,7 @@ def ruta(request, url_ruta):
     # Momento actual
 
     ahora = datetime.now()
-    # ahora = datetime(2020, 11, 21, 11, 32, 52, 978416)
+    # ahora = datetime(2020, 11, 21, 22, 32, 52, 978416)
     meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
     dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
     fecha = [dias[ahora.weekday()], ahora.day, meses[ahora.month - 1], ahora.year]
