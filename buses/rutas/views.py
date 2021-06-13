@@ -91,9 +91,9 @@ def ruta(request, url_ruta):
     ramales_entresemana_1 = [i[1] for i in para_ordenar]
 
     horario_entresemana = zip_longest(
-                          [i.strftime("%-I:%M %p") for i in horario_entresemana_0],
+                          [i.strftime("%I:%M %p") for i in horario_entresemana_0],
                           ramales_entresemana_0,
-                          [i.strftime("%-I:%M %p") for i in horario_entresemana_1],
+                          [i.strftime("%I:%M %p") for i in horario_entresemana_1],
                           ramales_entresemana_1,
                           fillvalue='-')
 
@@ -118,9 +118,9 @@ def ruta(request, url_ruta):
     ramales_sabado_1 = [i[1] for i in para_ordenar]
 
     horario_sabado = zip_longest(
-                        [i.strftime("%-I:%M %p") for i in horario_sabado_0],
+                        [i.strftime("%I:%M %p") for i in horario_sabado_0],
                         ramales_sabado_0,
-                        [i.strftime("%-I:%M %p") for i in horario_sabado_1],
+                        [i.strftime("%I:%M %p") for i in horario_sabado_1],
                         ramales_sabado_1,
                         fillvalue='-')
 
@@ -145,9 +145,9 @@ def ruta(request, url_ruta):
     ramales_domingo_1 = [i[1] for i in para_ordenar]
 
     horario_domingo = zip_longest(
-                        [i.strftime("%-I:%M %p") for i in horario_domingo_0],
+                        [i.strftime("%I:%M %p") for i in horario_domingo_0],
                         ramales_domingo_0,
-                        [i.strftime("%-I:%M %p") for i in horario_domingo_1],
+                        [i.strftime("%I:%M %p") for i in horario_domingo_1],
                         ramales_domingo_1,
                         fillvalue='-')
 
