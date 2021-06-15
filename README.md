@@ -137,6 +137,10 @@ Todas las páginas tienen dentro de *base.html*:
 - **Contacto**
     - *contacto.html*: información y formulario de contacto
 
+## Recursos
+
+Normas técnicas de accesibilidad: https://drive.google.com/drive/folders/1wUJ9ADHaZNMxUSJ3Sl0tc5g-T8ArNah8
+
 ## Notas mentales
 
 - Es posible importar modelos desde otras apps. Por ejemplo, para agregar un aviso en otra app, se puede hacer en `models.py` de rutas: `from noticias.modelos import Aviso` y utilizarlo ahí y dentro de `views.py`.
