@@ -1,0 +1,1682 @@
+[
+{
+    "model": "rutas.farerule",
+    "pk": 1,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_A",
+        "destination": "SGAB_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 2,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_A",
+        "destination": "SGAB_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 3,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_A",
+        "destination": "SGAB_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 4,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_A",
+        "destination": "SGAB_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 5,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "SGAB_A",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 6,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "SGAB_A",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 7,
+    "fields": {
+        "fare": "SGAB_completa",
+        "route": "SGAB",
+        "origin": "SGAB_A",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 8,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_B",
+        "destination": "SGAB_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 9,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_B",
+        "destination": "SGAB_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 10,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_B",
+        "destination": "SGAB_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 11,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "SGAB_B",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 12,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "SGAB_B",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 13,
+    "fields": {
+        "fare": "SGAB_completa",
+        "route": "SGAB",
+        "origin": "SGAB_B",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 14,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_C",
+        "destination": "SGAB_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 15,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_C",
+        "destination": "SGAB_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 16,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_C",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 17,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_C",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 18,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "SGAB_C",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 19,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_D",
+        "destination": "SGAB_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 20,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_D",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 21,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_D",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 22,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "SGAB_D",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 23,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "RUTA_E",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 24,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "RUTA_E",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 25,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_E",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 26,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "RUTA_F",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 27,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_F",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 28,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_G",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 29,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_A",
+        "destination": "SGAB_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 30,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_B",
+        "destination": "SGAB_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 31,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_C",
+        "destination": "SGAB_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 32,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_D",
+        "destination": "SGAB_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 33,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_E",
+        "destination": "SGAB_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 34,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_F",
+        "destination": "SGAB_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 35,
+    "fields": {
+        "fare": "SGAB_completa",
+        "route": "SGAB",
+        "origin": "RUTA_G",
+        "destination": "SGAB_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 36,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_B",
+        "destination": "SGAB_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 37,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_C",
+        "destination": "SGAB_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 38,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_D",
+        "destination": "SGAB_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 39,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_E",
+        "destination": "SGAB_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 40,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_F",
+        "destination": "SGAB_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 41,
+    "fields": {
+        "fare": "SGAB_completa",
+        "route": "SGAB",
+        "origin": "RUTA_G",
+        "destination": "SGAB_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 42,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_C",
+        "destination": "SGAB_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 43,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_D",
+        "destination": "SGAB_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 44,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "RUTA_E",
+        "destination": "SGAB_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 45,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "RUTA_F",
+        "destination": "SGAB_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 46,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_G",
+        "destination": "SGAB_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 47,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "SGAB_D",
+        "destination": "SGAB_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 48,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "RUTA_E",
+        "destination": "SGAB_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 49,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "RUTA_F",
+        "destination": "SGAB_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 50,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_G",
+        "destination": "SGAB_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 51,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "RUTA_E",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 52,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "RUTA_F",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 53,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_G",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 54,
+    "fields": {
+        "fare": "SGAB_minima",
+        "route": "SGAB",
+        "origin": "RUTA_F",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 55,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_G",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 56,
+    "fields": {
+        "fare": "SGAB_media",
+        "route": "SGAB",
+        "origin": "RUTA_G",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 57,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_A",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 58,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_A",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 59,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_A",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 60,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "ACOS_A",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 61,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "ACOS_A",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 62,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "ACOS_A",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 63,
+    "fields": {
+        "fare": "ACOS_completa",
+        "route": "ACOS",
+        "origin": "ACOS_A",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 64,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_B",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 65,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_B",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 66,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_B",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 67,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_B",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 68,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "ACOS_B",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 69,
+    "fields": {
+        "fare": "ACOS_completa",
+        "route": "ACOS",
+        "origin": "ACOS_B",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 70,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_C",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 71,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_C",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 72,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_C",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 73,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_C",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 74,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "ACOS_C",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 75,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_D",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 76,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_D",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 77,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_D",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 78,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "ACOS_D",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 79,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_E",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 80,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_E",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 81,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_E",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 82,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_F",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 83,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_F",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 84,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_G",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 85,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_A",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 86,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_B",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 87,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_C",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 88,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "ACOS_D",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 89,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_E",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 90,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_F",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 91,
+    "fields": {
+        "fare": "ACOS_completa",
+        "route": "ACOS",
+        "origin": "RUTA_G",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 92,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_B",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 93,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_C",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 94,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_D",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 95,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_E",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 96,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_F",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 97,
+    "fields": {
+        "fare": "ACOS_completa",
+        "route": "ACOS",
+        "origin": "RUTA_G",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 98,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_C",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 99,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_D",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 100,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_E",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 101,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_F",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 102,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_G",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 103,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "ACOS_D",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 104,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_E",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 105,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_F",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 106,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_G",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 107,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_E",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 108,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_F",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 109,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_G",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 110,
+    "fields": {
+        "fare": "ACOS_minima",
+        "route": "ACOS",
+        "origin": "RUTA_F",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 111,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_G",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 112,
+    "fields": {
+        "fare": "ACOS_media",
+        "route": "ACOS",
+        "origin": "RUTA_G",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 113,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_A",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 114,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_A",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 115,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_A",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 116,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_A",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 117,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_A",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 118,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_A",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 119,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_A",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 120,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_B",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 121,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_B",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 122,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_B",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 123,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_B",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 124,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_B",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 125,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_B",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 126,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_C",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 127,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_C",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 128,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_C",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 129,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_C",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 130,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_C",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 131,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_D",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 132,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_D",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 133,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_D",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 134,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_D",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 135,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_E",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 136,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_E",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 137,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_E",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 138,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_F",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 139,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_F",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 140,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_G",
+        "destination": "RUTA_G"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 141,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_A",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 142,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_B",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 143,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_C",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 144,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_D",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 145,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_E",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 146,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_F",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 147,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_G",
+        "destination": "ACOS_A"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 148,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_B",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 149,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_C",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 150,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_D",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 151,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_E",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 152,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_F",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 153,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_G",
+        "destination": "ACOS_B"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 154,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_C",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 155,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_D",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 156,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_E",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 157,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_F",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 158,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_G",
+        "destination": "ACOS_C"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 159,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "ACOS_D",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 160,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_E",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 161,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_F",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 162,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_G",
+        "destination": "ACOS_D"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 163,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_E",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 164,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_F",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 165,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_G",
+        "destination": "RUTA_E"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 166,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_F",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 167,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_G",
+        "destination": "RUTA_F"
+    }
+},
+{
+    "model": "rutas.farerule",
+    "pk": 168,
+    "fields": {
+        "fare": "TURR_completa",
+        "route": "TURR",
+        "origin": "RUTA_G",
+        "destination": "RUTA_G"
+    }
+}
+]

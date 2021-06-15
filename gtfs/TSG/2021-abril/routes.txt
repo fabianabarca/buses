@@ -1,4 +1,0 @@
-route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
-ACOS,TSG,Acosta,Acosta - San José,"Esta ruta conecta San Ignacio de Acosta con San José centro, pasando por Vuelta de Jorco, Tarbaca, Aserrí y Desamparados.",3,http://tsgcr.com/rutas/acosta,FFA500,000000
-TURR,TSG,Turrujal,Turrujal - San José,"Esta ruta conecta Turrujal de Acosta con San José centro, pasando por San Ignacio, Vuelta de Jorco, Tarbaca, Aserrí y Desamparados.",3,http://tsgcr.com/rutas/acosta,FFA500,000000
-SGAB,TSG,San Gabriel,San Gabriel - San José,"Esta ruta conecta San Gabriel de Aserrí con San José centro, pasando por La Fila del Rosario, Tarbaca, Aserrí y Desamparados.",3,http://tsgcr.com/rutas/sangabriel,36CE36,000000

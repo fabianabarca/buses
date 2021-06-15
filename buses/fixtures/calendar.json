@@ -1,0 +1,47 @@
+[
+{
+    "model": "rutas.calendar",
+    "pk": "entresemana",
+    "fields": {
+        "monday": "1",
+        "tuesday": "1",
+        "wednesday": "1",
+        "thursday": "1",
+        "friday": "1",
+        "saturday": "0",
+        "sunday": "0",
+        "start_date": "2020-01-01",
+        "end_date": "2030-01-01"
+    }
+},
+{
+    "model": "rutas.calendar",
+    "pk": "sabado",
+    "fields": {
+        "monday": "0",
+        "tuesday": "0",
+        "wednesday": "0",
+        "thursday": "0",
+        "friday": "0",
+        "saturday": "1",
+        "sunday": "0",
+        "start_date": "2020-01-01",
+        "end_date": "2030-01-01"
+    }
+},
+{
+    "model": "rutas.calendar",
+    "pk": "domingo",
+    "fields": {
+        "monday": "0",
+        "tuesday": "0",
+        "wednesday": "0",
+        "thursday": "0",
+        "friday": "0",
+        "saturday": "0",
+        "sunday": "1",
+        "start_date": "2020-01-01",
+        "end_date": "2030-01-01"
+    }
+}
+]

@@ -1,0 +1,79 @@
+[
+{
+    "model": "rutas.zone",
+    "pk": "SGAB_A",
+    "fields": {
+
+    }
+},
+{
+    "model": "rutas.zone",
+    "pk": "SGAB_B",
+    "fields": {
+
+    }
+},
+{
+    "model": "rutas.zone",
+    "pk": "SGAB_C",
+    "fields": {
+
+    }
+},
+{
+    "model": "rutas.zone",
+    "pk": "SGAB_D",
+    "fields": {
+
+    }
+},
+{
+    "model": "rutas.zone",
+    "pk": "ACOS_A",
+    "fields": {
+
+    }
+},
+{
+    "model": "rutas.zone",
+    "pk": "ACOS_B",
+    "fields": {
+
+    }
+},
+{
+    "model": "rutas.zone",
+    "pk": "ACOS_C",
+    "fields": {
+
+    }
+},
+{
+    "model": "rutas.zone",
+    "pk": "ACOS_D",
+    "fields": {
+
+    }
+},
+{
+    "model": "rutas.zone",
+    "pk": "RUTA_E",
+    "fields": {
+
+    }
+},
+{
+    "model": "rutas.zone",
+    "pk": "RUTA_F",
+    "fields": {
+
+    }
+},
+{
+    "model": "rutas.zone",
+    "pk": "RUTA_G",
+    "fields": {
+
+    }
+}
+]

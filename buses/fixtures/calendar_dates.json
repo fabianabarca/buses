@@ -1,0 +1,242 @@
+[
+{
+    "model": "rutas.calendardate",
+    "pk": 1,
+    "fields": {
+        "service": "entresemana",
+        "date": "2021-01-01",
+        "exception_type": "2",
+        "holiday_name": "A\u00f1o Nuevo"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 2,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-01-01",
+        "exception_type": "1",
+        "holiday_name": "A\u00f1o Nuevo"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 3,
+    "fields": {
+        "service": "entresemana",
+        "date": "2021-04-01",
+        "exception_type": "2",
+        "holiday_name": "Jueves Santo"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 4,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-04-01",
+        "exception_type": "1",
+        "holiday_name": "Jueves Santo"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 5,
+    "fields": {
+        "service": "entresemana",
+        "date": "2021-04-02",
+        "exception_type": "2",
+        "holiday_name": "Viernes Santo"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 6,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-04-02",
+        "exception_type": "1",
+        "holiday_name": "Viernes Santo"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 7,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-04-11",
+        "exception_type": "2",
+        "holiday_name": "D\u00eda de Juan Santamar\u00eda"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 8,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-04-11",
+        "exception_type": "1",
+        "holiday_name": "D\u00eda de Juan Santamar\u00eda"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 9,
+    "fields": {
+        "service": "entresemana",
+        "date": "2021-05-03",
+        "exception_type": "2",
+        "holiday_name": "D\u00eda del Trabajo"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 10,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-05-03",
+        "exception_type": "1",
+        "holiday_name": "D\u00eda del Trabajo"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 11,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-06-20",
+        "exception_type": "2",
+        "holiday_name": "D\u00eda del Padre"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 12,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-06-20",
+        "exception_type": "1",
+        "holiday_name": "D\u00eda del Padre"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 13,
+    "fields": {
+        "service": "entresemana",
+        "date": "2021-07-26",
+        "exception_type": "2",
+        "holiday_name": "Anexi\u00f3n del Partido de Nicoya"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 14,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-07-26",
+        "exception_type": "1",
+        "holiday_name": "Anexi\u00f3n del Partido de Nicoya"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 15,
+    "fields": {
+        "service": "entresemana",
+        "date": "2021-08-02",
+        "exception_type": "2",
+        "holiday_name": "D\u00eda de la Virgen de los \u00c1ngeles"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 16,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-08-02",
+        "exception_type": "1",
+        "holiday_name": "D\u00eda de la Virgen de los \u00c1ngeles"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 17,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-08-15",
+        "exception_type": "2",
+        "holiday_name": "D\u00eda de la Madre"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 18,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-08-15",
+        "exception_type": "1",
+        "holiday_name": "D\u00eda de la Madre"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 19,
+    "fields": {
+        "service": "entresemana",
+        "date": "2021-09-13",
+        "exception_type": "2",
+        "holiday_name": "D\u00eda de la Independencia"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 20,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-09-13",
+        "exception_type": "1",
+        "holiday_name": "D\u00eda de la Independencia"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 21,
+    "fields": {
+        "service": "entresemana",
+        "date": "2021-11-29",
+        "exception_type": "2",
+        "holiday_name": "Abolici\u00f3n del Ej\u00e9rcito"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 22,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-11-29",
+        "exception_type": "1",
+        "holiday_name": "Abolici\u00f3n del Ej\u00e9rcito"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 23,
+    "fields": {
+        "service": "sabado",
+        "date": "2021-12-25",
+        "exception_type": "2",
+        "holiday_name": "Navidad"
+    }
+},
+{
+    "model": "rutas.calendardate",
+    "pk": 24,
+    "fields": {
+        "service": "domingo",
+        "date": "2021-12-25",
+        "exception_type": "1",
+        "holiday_name": "Navidad"
+    }
+}
+]

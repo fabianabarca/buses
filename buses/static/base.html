@@ -41,7 +41,7 @@
     <!-- ENCABEZADO -->
 
     <!-- ========== HEADER ========== -->
-    <header id="header" class="header header-box-shadow-on-scroll header-abs-top header-bg-transparent header-show-hide header-white-nav-links-lg"
+    <header id="headerPrimary" class="header header-box-shadow-on-scroll header-abs-top header-bg-transparent header-show-hide header-white-nav-links-lg"
     data-hs-header-options='{
       "fixMoment": 1000,
       "fixEffect": "slide"
@@ -222,6 +222,7 @@
               <ul class="nav nav-sm nav-x-0 nav-white flex-column">
                 <li class="nav-item"><a class="nav-link" href="https://www.ctp.go.cr/">Consejo de Transporte Público</a></li>
                 <li class="nav-item"><a class="nav-link" href="https://www.mopt.go.cr/">Ministerio de Obras Públicas y Transportes</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://aresep.go.cr/autobus">Autoridad Reguladora de los Servicios Públicos</a></li>
               </ul>
               <!-- End Nav Link -->
             </div>
@@ -317,6 +318,17 @@
       // INITIALIZATION OF MEGA MENU
       // =======================================================
       var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+    });
+  </script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF COUNTER
+      // =======================================================
+      $('.js-counter').each(function() {
+        var counter = new HSCounter($(this)).init();
+      });
     });
   </script>
 

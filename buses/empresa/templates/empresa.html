@@ -1,49 +1,116 @@
 {% extends 'base.html'%}
 
+{% load static %}
+
 {% block page_title %} Empresa {% endblock %}
 
 {% block content %}
 
-{# esto coloca 5 líneas de espacio vertical #}
-<div class="custom-vertical-space"></div>
+<!-- Nuestra historia -->
 
-<div class="text-center">
-    <div class="btn-group btn-group-sm text-center" role="group" aria-label="Basic example">
-        <a class="btn btn-info" href="#datos" type="button">Datos</a>
-        <a class="btn btn-info" href="#resena" type="button">Reseña</a>    
-        <a class="btn btn-info" href="#personal" type="button">Personal</a>
+<section id="historia">
+
+<!-- Hero Section -->
+<div class="d-lg-flex position-relative">
+    <div class="container d-lg-flex align-items-lg-center space-top-2 space-lg-0 min-vh-lg-100">
+      <!-- Content -->
+      <div class="w-md-100">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="mb-5 mt-11">
+              <h1 class="display-4 mb-3">Transportes San&nbsp;Gabriel</h1>
+              <p class="lead">Transportes San Gabriel de Aserrí inició sus operaciones en setiembre del 2005 con 6 unidades y 9 colaboradores de la zona. Desde un inicio, con el objetivo de brindar un servicio de calidad, seguro, eficaz e innovador.</p>
+            </div>
+  
+            <a class="btn btn-primary btn-wide transition-3d-hover" href="/contacto"><i class="fas fa-envelope"></i> &nbsp; Contacto</a>
+            <a class="btn btn-link btn-wide" href="/contacto/#preguntas">Preguntas frecuentes <i class="fas fa-angle-right fa-sm ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- End Content -->
+  
+      <!-- SVG Shape -->
+      <figure class="col-lg-7 col-xl-6 d-none d-lg-block position-absolute top-0 right-0 pr-0 ie-main-hero" style="margin-top: 6.75rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1137.5 979.2">
+          <path fill="#F9FBFF" d="M565.5,957.4c81.1-7.4,155.5-49.3,202.4-115.7C840,739.8,857,570,510.7,348.3C-35.5-1.5-4.2,340.3,2.7,389
+            c0.7,4.7,1.2,9.5,1.7,14.2l29.3,321c14,154.2,150.6,267.8,304.9,253.8L565.5,957.4z"/>
+          <defs>
+            <path id="mainHeroSVG1" d="M1137.5,0H450.4l-278,279.7C22.4,430.6,24.3,675,176.8,823.5l0,0C316.9,960,537.7,968.7,688.2,843.6l449.3-373.4V0z"/>
+          </defs>
+          <clipPath id="mainHeroSVG2">
+            <use xlink:href="#mainHeroSVG1"/>
+          </clipPath>
+          <g transform="matrix(1 0 0 1 0 0)" clip-path="url(#mainHeroSVG2)">
+            <image width="750" height="750" xlink:href="{% static '/img/750x750/img2.jpg' %}" transform="matrix(1.4462 0 0 1.4448 52.8755 0)"></image>
+          </g>
+        </svg>
+      </figure>
+      <!-- End SVG Shape -->
     </div>
-</div>
+  </div>
+  <!-- End Hero Section -->
+
+</section>
+
 
 <!-- Datos generales -->
 
 <section id="datos">
 
-    <hr>
-    <h2>Datos generales</h2>
-
-    <table class="table table-borderless">
-        <tr>
-            <th class="text-right" scope="row">Colaboradores</th>
-            <td class="text-center"><i class="fas fa-users"></i></td>
-            <td>{{ empresa.colaboradores }}</td>
-        </tr>
-        <tr>
-            <th class="text-right" scope="row">Buses</th>
-            <td class="text-center"><i class="fas fa-bus"></i></td>
-            <td>{{ empresa.buses }}</td>
-        </tr>
-        <tr>
-            <th class="text-right" scope="row">Ubicación</th>
-            <td class="text-center"><i class="fas fa-map-marked-alt"></i></td>
-            <td>{{ empresa.direccion }}</td>
-        </tr>
-        <tr>
-            <th class="text-right" scope="row">Fundación</th>
-            <td class="text-center"><i class="fas fa-history"></i></td>
-            <td>{{ empresa.fundacion }}</td>
-        </tr>
-    </table>
+<!-- Features Section -->
+<div class="container space-2">
+    <div class="row justify-content-lg-between">
+      <div class="col-lg-5 order-lg-2 pl-lg-0">
+        <div class="bg-img-hero h-100 min-h-450rem rounded-lg" style="background-image: url({% static '/img/900x900/img19.jpg' %});"></div>
+      </div>
+  
+      <div class="col-lg-6 order-lg-1">
+        <div class="pt-8 pb-lg-8">
+          <!-- Title -->
+          <div class="mb-5 mb-md-7">
+            <h2 class="mb-3">Nuestra empresa en números</h2>
+            <p>Whether you're creating a subscription service, an on-demand marketplace, an e-commerce store, or a portfolio showcase, Front's unmatched functionality help you create the best possible product for your users.</p>
+          </div>
+          <!-- End Title -->
+  
+          <div class="row">
+            <div class="col-6 mb-3 mb-md-5">
+              <div class="pr-lg-4">
+                <span class="js-counter h2 text-primary">30</span>
+                <span class="h2 text-primary">+</span>
+                <p><b>Autobuses</b> de cómodos asientos y una capacidad media de 45 personas sentadas.</p>
+              </div>
+            </div>
+  
+            <div class="col-6 mb-3 mb-md-5">
+              <div class="pr-lg-4">
+                <span class="js-counter h2 text-primary">200</span>
+                <span class="h2 text-primary">+</span>
+                <p><b>Viajes semanales</b> hacia y desde San José en nuestras tres rutas.</p>
+              </div>
+            </div>
+  
+            <div class="col-6">
+              <div class="pr-lg-4">
+                <span class="js-counter h2 text-primary">40</span>
+                <span class="h2 text-primary">+</span>
+                <p><b>Colaboradores</b> en la parte administrativa, talleres, choferes.</p>
+              </div>
+            </div>
+  
+            <div class="col-6">
+              <div class="pr-lg-4">
+                <span class="js-counter h2 text-primary">62344</span>
+                <span class="h2 text-primary">+</span>
+                <p><b>Usuarios</b> mensuales.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Features Section -->
 
 </section>
 
@@ -57,6 +124,29 @@
     <p>{{ empresa.resena|safe }}</p>
 
 </section>
+
+<!-- Transparencia -->
+
+<section id="transparencia">
+
+    <hr>
+    <h2>Transparencia</h2>
+
+    <div class="card card-bordered">
+        <div class="card-body">
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-bus"></i></span>Sujetos a lo que solicita el Consejo de Transporte Público.</li>
+                <li><span class="fa-li"><i class="fas fa-wheelchair"></i></span>Cumplimos con la Ley 7600 y sus reformas.</li>
+                <li><span class="fa-li"><i class="fas fa-balance-scale"></i></span>Cumplimos con lo que establece la Asociación Reguladora de Servicios Públicos (ARESEP).</li>
+            </ol>
+
+            Para ello, contamos con asesorías externas que capacita a nuestro personal en materia operativa, legal, tarifario y de desarrollo humano que garantiza nuestra continua optimización de servicio.
+        </div>
+      </div">
+
+</section>
+
+<p>La empresa ha trabajado en satisfacer las necesidades de sus usuarios. Actualmente contamos con una flota de 38 unidades disponibles para las comunidades de San Gabriel, Tarbaca, Vuelta de Jorco, Monte Redondo y Acosta; de las cuales, el 40% están adaptadas con rampas para discapacitados en conformidad con la ley.</p>
 
 <!-- Personal -->
 

@@ -30,10 +30,10 @@
 
 
     <p class="text-center">
-        <a class="btn btn-sm btn-dark btn-icon transition-3d-hover" href="#horario"><i class="fas fa-clock"></i></a> &nbsp;
-        <a class="btn btn-sm btn-dark btn-icon transition-3d-hover" href="#tarifas"><i class="fas fa-ticket-alt"></i></a> &nbsp;
-        <a class="btn btn-sm btn-dark btn-icon transition-3d-hover" href="#mapa"><i class="fas fa-map"></i></a> &nbsp;
-        <a class="btn btn-sm btn-dark btn-icon transition-3d-hover" href="#paradas"><i class="fas fa-map-pin"></i></a>
+        <a class="btn btn-sm btn-secondary btn-icon transition-3d-hover" data-toggle="tooltip" data-placement="top" title="Horarios" href="#horario"><i class="fas fa-clock"></i></a> &nbsp;
+        <a class="btn btn-sm btn-secondary btn-icon transition-3d-hover" data-toggle="tooltip" data-placement="top" title="Tarifas" href="#tarifas"><i class="fas fa-ticket-alt"></i></a> &nbsp;
+        <a class="btn btn-sm btn-secondary btn-icon transition-3d-hover" data-toggle="tooltip" data-placement="top" title="Mapa" href="#mapa"><i class="fas fa-map"></i></a> &nbsp;
+        <a class="btn btn-sm btn-secondary btn-icon transition-3d-hover" data-toggle="tooltip" data-placement="top" title="Paradas" href="#paradas"><i class="fas fa-map-marker-alt"></i></a>
     </p>
 
 </section>
@@ -245,7 +245,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
 <section id="paradas">
 
     <hr>
-    <h2><i class="fas fa-map-pin"></i> Paradas autorizadas</h2>
+    <h2><i class="fas fa-map-marker-alt"></i> Paradas autorizadas</h2>
 
     <div class="card card-bordered mb-8 mx-auto" style="max-width: 540px;">
         <div class="card-body">
@@ -351,6 +351,17 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     </div>
 
 </section>
+
+<!-- Nota sobre la accesibilidad de las paradas -->
+<div class="alert alert-soft-secondary" role="alert">
+    <p>
+        <ol class="fa-ul">
+            <li><span class="fa-li"><i class="fas fa-wheelchair"></i></span>
+                El criterio de accesibilidad en las paradas de buses fue evaluado según la norma <a href="https://www.inteco.org/en_US/shop/inte-w15-2007-requisitos-tecnicos-para-la-construccion-de-las-paradas-de-los-vehiculos-de-transporte-publico-colectivo-1087" target="_blank">INTE W15:2007</a> "Requisitos técnicos para la construcción de las paradas de los vehículos de transporte público colectivo".
+            </li>
+        </ol>
+    </p>
+</div>
 
 </div> <!-- END VUE APP -->
 

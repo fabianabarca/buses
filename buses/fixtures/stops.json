@@ -1,0 +1,3512 @@
+[
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_00",
+    "fields": {
+        "name": "Cruce Vivero Tarbaquita",
+        "desc": "",
+        "lat": "9.814861",
+        "lon": "-84.112708",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_01",
+    "fields": {
+        "name": "Restaurante Donde Alcides",
+        "desc": "",
+        "lat": "9.818162",
+        "lon": "-84.112598",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_02",
+    "fields": {
+        "name": "Iglesia Cat\u00f3lica de Tarbaca",
+        "desc": "",
+        "lat": "9.819667",
+        "lon": "-84.110409",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_03",
+    "fields": {
+        "name": "Estaci\u00f3n terrena (antena) del ICE",
+        "desc": "",
+        "lat": "9.822590",
+        "lon": "-84.109629",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_04",
+    "fields": {
+        "name": "Entrada a Casa Candelaria",
+        "desc": "",
+        "lat": "9.825393",
+        "lon": "-84.110770",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_05",
+    "fields": {
+        "name": "Entrada a Hotel Alta Vista",
+        "desc": "",
+        "lat": "9.827857",
+        "lon": "-84.106332",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_06",
+    "fields": {
+        "name": "Calle Azulillos",
+        "desc": "",
+        "lat": "9.831590",
+        "lon": "-84.106125",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_07",
+    "fields": {
+        "name": "Antiguo Restaurante El Palenque",
+        "desc": "",
+        "lat": "9.832522",
+        "lon": "-84.104587",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_08",
+    "fields": {
+        "name": "La casa del Gringo (entrada a los Castro)",
+        "desc": "",
+        "lat": "9.835035",
+        "lon": "-84.101076",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_09",
+    "fields": {
+        "name": "Restaurante Ram Luna",
+        "desc": "",
+        "lat": "9.836953",
+        "lon": "-84.097896",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_10",
+    "fields": {
+        "name": "Antes de Mirador La Tranca",
+        "desc": "",
+        "lat": "9.840516",
+        "lon": "-84.098272",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_11",
+    "fields": {
+        "name": "Despu\u00e9s de Mirador La Tranca",
+        "desc": "",
+        "lat": "9.841315",
+        "lon": "-84.098909",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_12",
+    "fields": {
+        "name": "Restaurante El Llanero",
+        "desc": "",
+        "lat": "9.845008",
+        "lon": "-84.099944",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_13",
+    "fields": {
+        "name": "Mirador La Monta\u00f1a",
+        "desc": "",
+        "lat": "9.846365",
+        "lon": "-84.099249",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_14",
+    "fields": {
+        "name": "Barrio Lourdes (puente de S\u00e1urez)",
+        "desc": "",
+        "lat": "9.852299",
+        "lon": "-84.099798",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_15",
+    "fields": {
+        "name": "Acueducto Municipal de Aserr\u00ed (El Ranchito)",
+        "desc": "",
+        "lat": "9.854447",
+        "lon": "-84.096986",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_16",
+    "fields": {
+        "name": "Cinco Esquinas de Aserr\u00ed",
+        "desc": "",
+        "lat": "9.857445",
+        "lon": "-84.094438",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_17",
+    "fields": {
+        "name": "Antes de Pal\u00ed de Cinco Esquinas",
+        "desc": "",
+        "lat": "9.859533",
+        "lon": "-84.094183",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_18",
+    "fields": {
+        "name": "Detr\u00e1s de la Iglesia Cat\u00f3lica de Aserr\u00ed",
+        "desc": "",
+        "lat": "9.861510",
+        "lon": "-84.093206",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_19",
+    "fields": {
+        "name": "Antiguo Banco Nacional diagonal al Parque de Aserr\u00ed",
+        "desc": "",
+        "lat": "9.862880",
+        "lon": "-84.092079",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_20",
+    "fields": {
+        "name": "Chicharronera Cacique Acser\u00ed",
+        "desc": "",
+        "lat": "9.864110",
+        "lon": "-84.090751",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_21",
+    "fields": {
+        "name": "Dep\u00f3sito Las Gravilias",
+        "desc": "",
+        "lat": "9.865799",
+        "lon": "-84.088848",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_22",
+    "fields": {
+        "name": "Cementerio de Aserr\u00ed",
+        "desc": "",
+        "lat": "9.867528",
+        "lon": "-84.086822",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_23",
+    "fields": {
+        "name": "Super M\u00e1s y M\u00e1s (antigua f\u00e1brica Jockey)",
+        "desc": "",
+        "lat": "9.868665",
+        "lon": "-84.084543",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_24",
+    "fields": {
+        "name": "Licorera Alberto Fallas",
+        "desc": "",
+        "lat": "9.869805",
+        "lon": "-84.082230",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_25",
+    "fields": {
+        "name": "Panader\u00eda Trinidad",
+        "desc": "",
+        "lat": "9.871126",
+        "lon": "-84.080503",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_26",
+    "fields": {
+        "name": "C\u00e1rcel de mujeres El Buen Pastor",
+        "desc": "",
+        "lat": "9.874667",
+        "lon": "-84.077431",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_27",
+    "fields": {
+        "name": "Restaurante El Boyero",
+        "desc": "",
+        "lat": "9.877386",
+        "lon": "-84.075169",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_28",
+    "fields": {
+        "name": "Entrada a Barrio La Guaria",
+        "desc": "",
+        "lat": "9.879739",
+        "lon": "-84.073687",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_29",
+    "fields": {
+        "name": "La Guacamaya Desamparados",
+        "desc": "",
+        "lat": "9.881264",
+        "lon": "-84.071181",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_30",
+    "fields": {
+        "name": "Centro Comercial Expreso",
+        "desc": "",
+        "lat": "9.881992",
+        "lon": "-84.069623",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_31",
+    "fields": {
+        "name": "MaxiPal\u00ed cruce de San Miguel",
+        "desc": "",
+        "lat": "9.885498",
+        "lon": "-84.066535",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_32",
+    "fields": {
+        "name": "Empe\u00f1os La Cueva",
+        "desc": "",
+        "lat": "9.888166",
+        "lon": "-84.065026",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_33",
+    "fields": {
+        "name": "Megasuper Desamparados",
+        "desc": "",
+        "lat": "9.890720",
+        "lon": "-84.064263",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_34",
+    "fields": {
+        "name": "Cl\u00ednica Marcial Fallas",
+        "desc": "",
+        "lat": "9.893680",
+        "lon": "-84.064309",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_35",
+    "fields": {
+        "name": "Despu\u00e9s de Plaza Decosure",
+        "desc": "",
+        "lat": "9.895938",
+        "lon": "-84.064297",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_36",
+    "fields": {
+        "name": "Costado norte de Iglesia Cat\u00f3lica Desamparados",
+        "desc": "",
+        "lat": "9.898136",
+        "lon": "-84.064505",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_37",
+    "fields": {
+        "name": "Colegio Monse\u00f1or Rub\u00e9n Odio",
+        "desc": "",
+        "lat": "9.900217",
+        "lon": "-84.067632",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_38",
+    "fields": {
+        "name": "El Lagar Desamparados",
+        "desc": "",
+        "lat": "9.902454",
+        "lon": "-84.068704",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_39",
+    "fields": {
+        "name": "Cementerio de Desamparados",
+        "desc": "",
+        "lat": "9.904554",
+        "lon": "-84.069107",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_40",
+    "fields": {
+        "name": "Plaza Mercado",
+        "desc": "",
+        "lat": "9.908922",
+        "lon": "-84.068520",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_41",
+    "fields": {
+        "name": "Gasolinera Delta Santa Marta",
+        "desc": "",
+        "lat": "9.911636",
+        "lon": "-84.068739",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_42",
+    "fields": {
+        "name": "Burger King (Parque de la Paz)",
+        "desc": "",
+        "lat": "9.913686",
+        "lon": "-84.068890",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_43",
+    "fields": {
+        "name": "Gran Centro Comercial del Sur",
+        "desc": "",
+        "lat": "9.917186",
+        "lon": "-84.070277",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_44",
+    "fields": {
+        "name": "Antes de Plaza Gonz\u00e1lez V\u00edquez",
+        "desc": "",
+        "lat": "9.920156",
+        "lon": "-84.071635",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_45",
+    "fields": {
+        "name": "Plaza Gonz\u00e1lez V\u00edquez",
+        "desc": "",
+        "lat": "9.924265",
+        "lon": "-84.073506",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_46",
+    "fields": {
+        "name": "Despu\u00e9s de Plaza Gonz\u00e1lez V\u00edquez",
+        "desc": "",
+        "lat": "9.926494",
+        "lon": "-84.074245",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_47",
+    "fields": {
+        "name": "Barrio Chino (antigua Casa del Tornillo)",
+        "desc": "",
+        "lat": "9.930439",
+        "lon": "-84.074849",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_0_48",
+    "fields": {
+        "name": "Terminal AyA San Jos\u00e9 (calle 7 con avenidas 10 y 12)",
+        "desc": "",
+        "lat": "9.928791",
+        "lon": "-84.076267",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_00",
+    "fields": {
+        "name": "Terminal AyA San Jos\u00e9 (calle 7 con avenidas 10 y 12)",
+        "desc": "",
+        "lat": "9.928791",
+        "lon": "-84.076267",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_01",
+    "fields": {
+        "name": "MOPT (Plaza Gonz\u00e1lez V\u00edquez)",
+        "desc": "",
+        "lat": "9.925223",
+        "lon": "-84.074856",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_02",
+    "fields": {
+        "name": "Colegio Seminario (Barrio La Cruz)",
+        "desc": "",
+        "lat": "9.917694",
+        "lon": "-84.074772",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_03",
+    "fields": {
+        "name": "Costado norte de Gran Centro Comercial del Sur",
+        "desc": "",
+        "lat": "9.917997",
+        "lon": "-84.070812",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_04",
+    "fields": {
+        "name": "Parque de la Paz",
+        "desc": "",
+        "lat": "9.913375",
+        "lon": "-84.068945",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_05",
+    "fields": {
+        "name": "Antiguo Jor\u00f3n",
+        "desc": "",
+        "lat": "9.910593",
+        "lon": "-84.068744",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_06",
+    "fields": {
+        "name": "Antiguo Radio Reloj",
+        "desc": "",
+        "lat": "9.908103",
+        "lon": "-84.068548",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_07",
+    "fields": {
+        "name": "Cementerio de Desamparados",
+        "desc": "",
+        "lat": "9.904405",
+        "lon": "-84.069289",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_08",
+    "fields": {
+        "name": "El Lagar",
+        "desc": "",
+        "lat": "9.902576",
+        "lon": "-84.068917",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_09",
+    "fields": {
+        "name": "Multicentro Desamparados",
+        "desc": "",
+        "lat": "9.899697",
+        "lon": "-84.067437",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_10",
+    "fields": {
+        "name": "Centro Comercial La Villa",
+        "desc": "",
+        "lat": "9.896133",
+        "lon": "-84.065260",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_11",
+    "fields": {
+        "name": "Cl\u00ednica Marcial Fallas",
+        "desc": "",
+        "lat": "9.893524",
+        "lon": "-84.064358",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_12",
+    "fields": {
+        "name": "Tienda Ekono",
+        "desc": "",
+        "lat": "9.891566",
+        "lon": "-84.064265",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_13",
+    "fields": {
+        "name": "Iglesia Kabod",
+        "desc": "",
+        "lat": "9.888456",
+        "lon": "-84.065000",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_14",
+    "fields": {
+        "name": "Maxipal\u00ed (cruce de San Miguel)",
+        "desc": "",
+        "lat": "9.885570",
+        "lon": "-84.066641",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_15",
+    "fields": {
+        "name": "Centro Comercial Expreso",
+        "desc": "",
+        "lat": "9.883950",
+        "lon": "-84.068529",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_16",
+    "fields": {
+        "name": "Escuela de Capacitaci\u00f3n de la Polic\u00eda de Tr\u00e1nsito",
+        "desc": "",
+        "lat": "9.881039",
+        "lon": "-84.072158",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_17",
+    "fields": {
+        "name": "Entrada a Barrio La Guaria",
+        "desc": "",
+        "lat": "9.880308",
+        "lon": "-84.073407",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_18",
+    "fields": {
+        "name": "Restaurante El Boyero",
+        "desc": "",
+        "lat": "9.878021",
+        "lon": "-84.074882",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_19",
+    "fields": {
+        "name": "C\u00e1rcel de mujeres El Buen Pastor",
+        "desc": "",
+        "lat": "9.874851",
+        "lon": "-84.077401",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_20",
+    "fields": {
+        "name": "Panader\u00eda La Trinidad",
+        "desc": "",
+        "lat": "9.871457",
+        "lon": "-84.080371",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_21",
+    "fields": {
+        "name": "Licorera Alberto Fallas",
+        "desc": "",
+        "lat": "9.869869",
+        "lon": "-84.082253",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_22",
+    "fields": {
+        "name": "Super M\u00e1s y M\u00e1s (antigua f\u00e1brica Jockey)",
+        "desc": "",
+        "lat": "9.868627",
+        "lon": "-84.084798",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_23",
+    "fields": {
+        "name": "Cementerio de Aserr\u00ed",
+        "desc": "",
+        "lat": "9.867525",
+        "lon": "-84.087069",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_24",
+    "fields": {
+        "name": "Dep\u00f3sito Las Gravilias",
+        "desc": "",
+        "lat": "9.866122",
+        "lon": "-84.088673",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_25",
+    "fields": {
+        "name": "Chicharronera Cacique Acser\u00ed",
+        "desc": "",
+        "lat": "9.864344",
+        "lon": "-84.090606",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_26",
+    "fields": {
+        "name": "Palacio Municipal de Aserr\u00ed",
+        "desc": "",
+        "lat": "9.862677",
+        "lon": "-84.093092",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_27",
+    "fields": {
+        "name": "Banco Nacional de Aserr\u00ed",
+        "desc": "",
+        "lat": "9.861305",
+        "lon": "-84.094247",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_28",
+    "fields": {
+        "name": "Cinco Esquinas de Aserr\u00ed",
+        "desc": "",
+        "lat": "9.858330",
+        "lon": "-84.094594",
+        "zone": "RUTA_G",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_29",
+    "fields": {
+        "name": "Acueducto Municipal de Aserr\u00ed (El Ranchito)",
+        "desc": "",
+        "lat": "9.854757",
+        "lon": "-84.096859",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_30",
+    "fields": {
+        "name": "Barrio Lourdes (abajo)",
+        "desc": "",
+        "lat": "9.852812",
+        "lon": "-84.099429",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_31",
+    "fields": {
+        "name": "Barrio Lourdes (puente de S\u00e1urez)",
+        "desc": "",
+        "lat": "9.849975",
+        "lon": "-84.099151",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_32",
+    "fields": {
+        "name": "Mirador La Monta\u00f1a",
+        "desc": "",
+        "lat": "9.846356",
+        "lon": "-84.099368",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_33",
+    "fields": {
+        "name": "Restaurante El Llanero",
+        "desc": "",
+        "lat": "9.845077",
+        "lon": "-84.100046",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_34",
+    "fields": {
+        "name": "Mirador La Tranca (abajo)",
+        "desc": "",
+        "lat": "9.841875",
+        "lon": "-84.099058",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_35",
+    "fields": {
+        "name": "Mirador La Tranca (arriba)",
+        "desc": "",
+        "lat": "9.840546",
+        "lon": "-84.098472",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_36",
+    "fields": {
+        "name": "Mirador Ram Luna",
+        "desc": "",
+        "lat": "9.836978",
+        "lon": "-84.098075",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_37",
+    "fields": {
+        "name": "La casa del Gringo (entrada a los Castro)",
+        "desc": "",
+        "lat": "9.835128",
+        "lon": "-84.100362",
+        "zone": "RUTA_F",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_38",
+    "fields": {
+        "name": "Antes del antiguo El Palenque",
+        "desc": "",
+        "lat": "9.836163",
+        "lon": "-84.104031",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_39",
+    "fields": {
+        "name": "Antiguo Restaurante El Palenque",
+        "desc": "",
+        "lat": "9.832603",
+        "lon": "-84.104394",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_40",
+    "fields": {
+        "name": "Restaurante Las Do\u00f1itas",
+        "desc": "",
+        "lat": "9.831433",
+        "lon": "-84.106346",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_41",
+    "fields": {
+        "name": "Entrada a Hotel Alta Vista",
+        "desc": "",
+        "lat": "9.828080",
+        "lon": "-84.106081",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_42",
+    "fields": {
+        "name": "Entrada a Casa Candelaria",
+        "desc": "",
+        "lat": "9.825499",
+        "lon": "-84.110825",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_43",
+    "fields": {
+        "name": "Estaci\u00f3n terrena (antena) del ICE",
+        "desc": "",
+        "lat": "9.822049",
+        "lon": "-84.109666",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_44",
+    "fields": {
+        "name": "Iglesia Cat\u00f3lica de Tarbaca",
+        "desc": "",
+        "lat": "9.819796",
+        "lon": "-84.110462",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_45",
+    "fields": {
+        "name": "Restaurante Donde Alcides",
+        "desc": "",
+        "lat": "9.818559",
+        "lon": "-84.112539",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SJ_1_46",
+    "fields": {
+        "name": "Antes del cruce de San Gabriel y Acosta en Tarbaca",
+        "desc": "",
+        "lat": "9.815473",
+        "lon": "-84.113221",
+        "zone": "RUTA_E",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_0_00",
+    "fields": {
+        "name": "Terminal Los Mangos",
+        "desc": "",
+        "lat": "9.797259",
+        "lon": "-84.121426",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_0_01",
+    "fields": {
+        "name": "Los Mangos",
+        "desc": "",
+        "lat": "9.796260",
+        "lon": "-84.119896",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_0_02",
+    "fields": {
+        "name": "Cruce de Limonal",
+        "desc": "",
+        "lat": "9.794082",
+        "lon": "-84.117708",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_0_03",
+    "fields": {
+        "name": "Salitral (frente a Balneario La Reina del Sol)",
+        "desc": "",
+        "lat": "9.792898",
+        "lon": "-84.115921",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_0_04",
+    "fields": {
+        "name": "La cuesta de Salitral",
+        "desc": "",
+        "lat": "9.792100",
+        "lon": "-84.112805",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_0_05",
+    "fields": {
+        "name": "La Cuadra (Beto Vargas)",
+        "desc": "",
+        "lat": "9.790826",
+        "lon": " -84.110660",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_0_06",
+    "fields": {
+        "name": "Barrio San Mart\u00edn",
+        "desc": "",
+        "lat": "9.789611",
+        "lon": "-84.108189",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_0_07",
+    "fields": {
+        "name": "Barrio San Mart\u00edn (frente a Alcoh\u00f3licos An\u00f3nimos)",
+        "desc": "",
+        "lat": "9.789513",
+        "lon": "-84.106844",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_1_00",
+    "fields": {
+        "name": "Barrio San Mart\u00edn (frente a Alcoh\u00f3licos An\u00f3nimos)",
+        "desc": "",
+        "lat": "9.789621",
+        "lon": "-84.106991",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_1_01",
+    "fields": {
+        "name": "Barrio San Mart\u00edn",
+        "desc": "",
+        "lat": "9.789780",
+        "lon": "-84.108140",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_1_02",
+    "fields": {
+        "name": "La Cuadra (Beto Vargas)",
+        "desc": "",
+        "lat": "9.790804",
+        "lon": "-84.110393",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_1_03",
+    "fields": {
+        "name": "La cuesta de Salitral",
+        "desc": "",
+        "lat": "9.792075",
+        "lon": "-84.112430",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_1_04",
+    "fields": {
+        "name": "Salitral (frente a Balneario La Reina del Sol)",
+        "desc": "",
+        "lat": "9.793200",
+        "lon": "-84.116253",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_1_05",
+    "fields": {
+        "name": "Cruce de Limonal",
+        "desc": "",
+        "lat": "9.794291",
+        "lon": "-84.117717",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_1_06",
+    "fields": {
+        "name": "Los Mangos (frente a Rudy el zapatero)",
+        "desc": "",
+        "lat": "9.795933",
+        "lon": "-84.118035",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "LM_1_07",
+    "fields": {
+        "name": "Terminal Los Mangos",
+        "desc": "",
+        "lat": "9.797259",
+        "lon": "-84.121426",
+        "zone": "SGAB_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_00",
+    "fields": {
+        "name": "San Gabriel centro (frente a El Gato Negro)",
+        "desc": "",
+        "lat": "9.787128",
+        "lon": "-84.106230",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_01",
+    "fields": {
+        "name": "Entrada a Barrio El Alto (la vuelta de Betty Camacho)",
+        "desc": "",
+        "lat": "9.786021",
+        "lon": "-84.104787",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_02",
+    "fields": {
+        "name": "Entrada al Liceo San Gabriel (Mini S\u00faper Padilla)",
+        "desc": "",
+        "lat": "9.786942",
+        "lon": "-84.103978",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_03",
+    "fields": {
+        "name": "Bar El Yugo",
+        "desc": "",
+        "lat": "9.789205",
+        "lon": "-84.103085",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_04",
+    "fields": {
+        "name": "S\u00faper M\u00edo Cid",
+        "desc": "",
+        "lat": "9.791810",
+        "lon": "-84.100593",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_05",
+    "fields": {
+        "name": "Entrada a Barrio Los Corella",
+        "desc": "",
+        "lat": "9.789967",
+        "lon": "-84.098342",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_06",
+    "fields": {
+        "name": "Despu\u00e9s de Bar La Curvita",
+        "desc": "",
+        "lat": "9.789765",
+        "lon": "-84.097486",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_07",
+    "fields": {
+        "name": "La Fila",
+        "desc": "",
+        "lat": "9.791524",
+        "lon": "-84.096316",
+        "zone": "SGAB_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_08",
+    "fields": {
+        "name": "Importadora Monge La Fila",
+        "desc": "",
+        "lat": "9.792853",
+        "lon": "-84.096171",
+        "zone": "SGAB_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_09",
+    "fields": {
+        "name": "Barrio San Buenaventura (contiguo a la chatarrera)",
+        "desc": "",
+        "lat": "9.794581",
+        "lon": "-84.095011",
+        "zone": "SGAB_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_10",
+    "fields": {
+        "name": "Entrada a Barrio Nazareth",
+        "desc": "",
+        "lat": "9.796641",
+        "lon": "-84.095823",
+        "zone": "SGAB_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_11",
+    "fields": {
+        "name": "Escuela de Tranquerillas (abajo)",
+        "desc": "",
+        "lat": "9.798433",
+        "lon": "-84.096553",
+        "zone": "SGAB_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_12",
+    "fields": {
+        "name": "Escuela de Tranquerillas",
+        "desc": "",
+        "lat": "9.801098",
+        "lon": "-84.099677",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_13",
+    "fields": {
+        "name": "Escuela de Tranquerillas (arriba)",
+        "desc": "",
+        "lat": "9.803117",
+        "lon": "-84.101770",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_14",
+    "fields": {
+        "name": "Entrada a El Tigre",
+        "desc": "",
+        "lat": "9.807158",
+        "lon": "-84.102808",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_15",
+    "fields": {
+        "name": "Barrio La Rita (abajo)",
+        "desc": "",
+        "lat": "9.807209",
+        "lon": "-84.103515",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_16",
+    "fields": {
+        "name": "Barrio La Rita (arriba)",
+        "desc": "",
+        "lat": "9.807773",
+        "lon": "-84.10441",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_0_17",
+    "fields": {
+        "name": "Antes del cruce de San Gabriel y Acosta en Tarbaca",
+        "desc": "",
+        "lat": "9.812960",
+        "lon": "-84.109534",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_00",
+    "fields": {
+        "name": "Despu\u00e9s del cruce de Tarbaca (hacia Tranquerillas)",
+        "desc": "",
+        "lat": "9.813549",
+        "lon": "-84.110168",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_01",
+    "fields": {
+        "name": "Barrio La Rita (arriba)",
+        "desc": "",
+        "lat": "9.808562",
+        "lon": "-84.104809",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_02",
+    "fields": {
+        "name": "Barrio La Rita (abajo)",
+        "desc": "",
+        "lat": "9.807360",
+        "lon": "-84.103510",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_03",
+    "fields": {
+        "name": "Entrada a El Tigre",
+        "desc": "",
+        "lat": "9.807098",
+        "lon": "-84.102952",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_04",
+    "fields": {
+        "name": "Escuela de Tranquerillas (arriba)",
+        "desc": "",
+        "lat": "9.803429",
+        "lon": "-84.102061",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_05",
+    "fields": {
+        "name": "Escuela de Tranquerillas",
+        "desc": "",
+        "lat": "9.801211",
+        "lon": "-84.100577",
+        "zone": "SGAB_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_06",
+    "fields": {
+        "name": "Escuela de Tranquerillas (abajo)",
+        "desc": "",
+        "lat": "9.799045",
+        "lon": "-84.097353",
+        "zone": "SGAB_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_07",
+    "fields": {
+        "name": "Entrada a Barrio Nazareth",
+        "desc": "",
+        "lat": "9.796521",
+        "lon": "-84.095886",
+        "zone": "SGAB_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_08",
+    "fields": {
+        "name": "Barrio San Buenaventura (contiguo a la chatarrera)",
+        "desc": "",
+        "lat": "9.794459",
+        "lon": "-84.095260",
+        "zone": "SGAB_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_09",
+    "fields": {
+        "name": "Importadora Monge La Fila",
+        "desc": "",
+        "lat": "9.792786",
+        "lon": "-84.096351",
+        "zone": "SGAB_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_10",
+    "fields": {
+        "name": "Cruce de La Trinidad, Monterrey y La Legua",
+        "desc": "",
+        "lat": "9.790600",
+        "lon": "-84.096497",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_11",
+    "fields": {
+        "name": "Antes de Bar La Curvita",
+        "desc": "",
+        "lat": "9.790424",
+        "lon": "-84.098213",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_12",
+    "fields": {
+        "name": "S\u00faper M\u00edo Cid",
+        "desc": "",
+        "lat": "9.791916",
+        "lon": "-84.100558",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_13",
+    "fields": {
+        "name": "Bar El Yugo",
+        "desc": "",
+        "lat": "9.789081",
+        "lon": "-84.103180",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_14",
+    "fields": {
+        "name": "Entrada a Barrio El Alto",
+        "desc": "",
+        "lat": "9.786288",
+        "lon": "-84.104235",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_15",
+    "fields": {
+        "name": "San Gabriel centro (frente a la ASADA)",
+        "desc": "",
+        "lat": "9.787123",
+        "lon": "-84.105576",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SG_1_16",
+    "fields": {
+        "name": "San Gabriel centro (entre la iglesia y la plaza)",
+        "desc": "",
+        "lat": "9.787820",
+        "lon": "-84.106822",
+        "zone": "SGAB_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_00",
+    "fields": {
+        "name": "San Ignacio centro (costado norte de la iglesia)",
+        "desc": "",
+        "lat": "9.798795",
+        "lon": "-84.161557",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_01",
+    "fields": {
+        "name": "Antes de la Delegaci\u00f3n de Polic\u00eda",
+        "desc": "",
+        "lat": "9.798238",
+        "lon": "-84.158749",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_02",
+    "fields": {
+        "name": "Despu\u00e9s de la Delegaci\u00f3n de Polic\u00eda",
+        "desc": "",
+        "lat": "9.797755",
+        "lon": "-84.157363",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_03",
+    "fields": {
+        "name": "La Ortiga",
+        "desc": "",
+        "lat": "9.795890",
+        "lon": "-84.154694",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_04",
+    "fields": {
+        "name": "La Esperanza",
+        "desc": "",
+        "lat": "9.796285",
+        "lon": "-84.151873",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_05",
+    "fields": {
+        "name": "Taller Cuyo",
+        "desc": "",
+        "lat": "9.795553",
+        "lon": "-84.150407",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_06",
+    "fields": {
+        "name": "Antes de Escuela La Esperanza",
+        "desc": "",
+        "lat": "9.795079",
+        "lon": "-84.148808",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_07",
+    "fields": {
+        "name": "Escuela La Esperanza",
+        "desc": "",
+        "lat": "9.795114",
+        "lon": "-84.146556",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_08",
+    "fields": {
+        "name": "Despu\u00e9s de Escuela La Esperanza",
+        "desc": "",
+        "lat": "9.795638",
+        "lon": "-84.145205",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_09",
+    "fields": {
+        "name": "Plaza de deportes de La Esperanza",
+        "desc": "",
+        "lat": "9.795706",
+        "lon": "-84.143681",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_10",
+    "fields": {
+        "name": "Lubricentro La Esperanza",
+        "desc": "",
+        "lat": "9.795214",
+        "lon": "-84.141359",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_0_11",
+    "fields": {
+        "name": "El Colono Agropecuario",
+        "desc": "",
+        "lat": "9.796764",
+        "lon": "-84.135691",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_00",
+    "fields": {
+        "name": "El Colono Agropecuario",
+        "desc": "",
+        "lat": "9.796764",
+        "lon": "-84.135691",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_01",
+    "fields": {
+        "name": "Lubricentro La Esperanza",
+        "desc": "",
+        "lat": "9.795214",
+        "lon": "-84.141359",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_02",
+    "fields": {
+        "name": "Plaza de deportes de La Esperanza",
+        "desc": "",
+        "lat": "9.795806",
+        "lon": "-84.143681",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_03",
+    "fields": {
+        "name": "Antes de Escuela La Esperanza",
+        "desc": "",
+        "lat": "9.795638",
+        "lon": "-84.145205",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_04",
+    "fields": {
+        "name": "Escuela La Esperanza",
+        "desc": "",
+        "lat": "9.795114",
+        "lon": "-84.146556",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_05",
+    "fields": {
+        "name": "Despu\u00e9s de Escuela La Esperanza",
+        "desc": "",
+        "lat": "9.795079",
+        "lon": "-84.148808",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_06",
+    "fields": {
+        "name": "Taller Cuyo",
+        "desc": "",
+        "lat": "9.795553",
+        "lon": "-84.150407",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_07",
+    "fields": {
+        "name": "La Esperanza",
+        "desc": "",
+        "lat": "9.796285",
+        "lon": "-84.151873",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_08",
+    "fields": {
+        "name": "La Ortiga",
+        "desc": "",
+        "lat": "9.795890",
+        "lon": "-84.154694",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_09",
+    "fields": {
+        "name": "Antes de la Delegaci\u00f3n de Polic\u00eda",
+        "desc": "",
+        "lat": "9.797755",
+        "lon": "-84.157363",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_10",
+    "fields": {
+        "name": "Despu\u00e9s de la Delegaci\u00f3n de Polic\u00eda",
+        "desc": "",
+        "lat": "9.798238",
+        "lon": "-84.158749",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SI_1_11",
+    "fields": {
+        "name": "San Ignacio centro (costado norte de la iglesia)",
+        "desc": "",
+        "lat": "9.798795",
+        "lon": "-84.161557",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_0_00",
+    "fields": {
+        "name": "San Luis centro (frente a S\u00faper Mora)",
+        "desc": "",
+        "lat": "9.791485",
+        "lon": "-84.167676",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_0_01",
+    "fields": {
+        "name": "Pulper\u00eda Corona",
+        "desc": "",
+        "lat": "9.792326",
+        "lon": "-84.165593",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_0_02",
+    "fields": {
+        "name": "Iglesia Evang\u00e9lica",
+        "desc": "",
+        "lat": "9.793056",
+        "lon": "-84.163389",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_0_03",
+    "fields": {
+        "name": "Licorera San Luis",
+        "desc": "",
+        "lat": "9.793673",
+        "lon": "-84.162370",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_0_04",
+    "fields": {
+        "name": "Cruce de Los Pozos",
+        "desc": "",
+        "lat": "9.794732",
+        "lon": "-84.159696",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_0_05",
+    "fields": {
+        "name": "Entrada a Barrio Abarca",
+        "desc": "",
+        "lat": "9.796572",
+        "lon": "-84.160275",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_1_00",
+    "fields": {
+        "name": "Entrada a Barrio Abarca",
+        "desc": "",
+        "lat": "9.796572",
+        "lon": "-84.160275",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_1_01",
+    "fields": {
+        "name": "Cruce de Los Pozos",
+        "desc": "",
+        "lat": "9.794732",
+        "lon": "-84.159696",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_1_02",
+    "fields": {
+        "name": "Licorera San Luis",
+        "desc": "",
+        "lat": "9.793673",
+        "lon": "-84.162370",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_1_03",
+    "fields": {
+        "name": "Iglesia Evang\u00e9lica",
+        "desc": "",
+        "lat": "9.793056",
+        "lon": "-84.163389",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_1_04",
+    "fields": {
+        "name": "Pulper\u00eda Corona",
+        "desc": "",
+        "lat": "9.792326",
+        "lon": "-84.165593",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "SL_1_05",
+    "fields": {
+        "name": "San Luis centro (frente a S\u00faper Mora)",
+        "desc": "",
+        "lat": "9.791485",
+        "lon": "-84.167676",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_0_00",
+    "fields": {
+        "name": "Terminal Rancho J\u00e1cara",
+        "desc": "",
+        "lat": "9.799001",
+        "lon": "-84.174466",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_0_01",
+    "fields": {
+        "name": "El Yoyo",
+        "desc": "",
+        "lat": "9.798104",
+        "lon": "-84.173245",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_0_02",
+    "fields": {
+        "name": "K\u00ednder de Turrujal",
+        "desc": "",
+        "lat": "9.798459",
+        "lon": "-84.171852",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_0_03",
+    "fields": {
+        "name": "Super Plaza",
+        "desc": "",
+        "lat": "9.798387",
+        "lon": "-84.170456",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_0_04",
+    "fields": {
+        "name": "Abastecedor Alberto",
+        "desc": "",
+        "lat": "9.797457",
+        "lon": "-84.169271",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_0_05",
+    "fields": {
+        "name": "El Torno",
+        "desc": "",
+        "lat": "9.797328",
+        "lon": "-84.168146",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_0_06",
+    "fields": {
+        "name": "La Cuesta",
+        "desc": "",
+        "lat": "9.797309",
+        "lon": "-84.166626",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_0_07",
+    "fields": {
+        "name": "Entrada al Colegio T\u00e9cnico Profesional",
+        "desc": "",
+        "lat": "9.796947",
+        "lon": "-84.163140",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_0_08",
+    "fields": {
+        "name": "Cl\u00ednica de Acosta",
+        "desc": "",
+        "lat": "9.797470",
+        "lon": "-84.161646",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_1_00",
+    "fields": {
+        "name": "Cl\u00ednica de Acosta",
+        "desc": "",
+        "lat": "9.796911",
+        "lon": "-84.163399",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_1_01",
+    "fields": {
+        "name": "Entrada al Colegio T\u00e9cnico Profesional",
+        "desc": "",
+        "lat": "9.797701",
+        "lon": "-84.166321",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_1_02",
+    "fields": {
+        "name": "La Cuesta",
+        "desc": "",
+        "lat": "9.797138",
+        "lon": "-84.166584",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_1_03",
+    "fields": {
+        "name": "El Torno",
+        "desc": "",
+        "lat": "9.797166",
+        "lon": "-84.168238",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_1_04",
+    "fields": {
+        "name": "Abastecedor Alberto",
+        "desc": "",
+        "lat": "9.797544",
+        "lon": "-84.169716",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_1_05",
+    "fields": {
+        "name": "Super Plaza",
+        "desc": "",
+        "lat": "9.798359",
+        "lon": "-84.170695",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_1_06",
+    "fields": {
+        "name": "K\u00ednder de Turrujal",
+        "desc": "",
+        "lat": "9.798401",
+        "lon": "-84.171896",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_1_07",
+    "fields": {
+        "name": "El Yoyo",
+        "desc": "",
+        "lat": "9.798048",
+        "lon": "-84.173558",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "TU_1_08",
+    "fields": {
+        "name": "Terminal Rancho J\u00e1cara",
+        "desc": "",
+        "lat": "9.798820",
+        "lon": "-84.174639",
+        "zone": "ACOS_A",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_00",
+    "fields": {
+        "name": "Pal\u00ed de Jorco",
+        "desc": "",
+        "lat": "9.797028",
+        "lon": "-84.132640",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_01",
+    "fields": {
+        "name": "Iglesia Cat\u00f3lica de Vuelta de Jorco",
+        "desc": "",
+        "lat": "9.796470",
+        "lon": "-84.129450",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_02",
+    "fields": {
+        "name": "Entrada a Los Mangos",
+        "desc": "",
+        "lat": "9.796584",
+        "lon": "-84.127694",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_03",
+    "fields": {
+        "name": "Bar La Viagra",
+        "desc": "",
+        "lat": "9.798275",
+        "lon": "-84.125554",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_04",
+    "fields": {
+        "name": "Ojo de Agua",
+        "desc": "",
+        "lat": "9.802922",
+        "lon": "-84.124317",
+        "zone": "ACOS_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_05",
+    "fields": {
+        "name": "Tanque de Ojo de Agua",
+        "desc": "",
+        "lat": "9.802967",
+        "lon": "-84.120125",
+        "zone": "ACOS_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_06",
+    "fields": {
+        "name": "Barrio El Carmen",
+        "desc": "",
+        "lat": "9.805500",
+        "lon": "-84.118204",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_07",
+    "fields": {
+        "name": "Los Camiones",
+        "desc": "",
+        "lat": "9.808094",
+        "lon": "-84.118258",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_08",
+    "fields": {
+        "name": "La Vuelta Hundida",
+        "desc": "",
+        "lat": "9.808154",
+        "lon": "-84.116361",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_09",
+    "fields": {
+        "name": "Despu\u00e9s de La Vuelta Hundida",
+        "desc": "",
+        "lat": "9.809168",
+        "lon": "-84.114793",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_10",
+    "fields": {
+        "name": "Barrio San Rafael (abajo)",
+        "desc": "",
+        "lat": "9.809127",
+        "lon": "-84.116268",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_11",
+    "fields": {
+        "name": "Barrio San Rafael (arriba)",
+        "desc": "",
+        "lat": "9.810118",
+        "lon": "-84.117185",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_12",
+    "fields": {
+        "name": "Barrio San Rafael (centro)",
+        "desc": "",
+        "lat": "9.810586",
+        "lon": "-84.118665",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_13",
+    "fields": {
+        "name": "Antes de Restaurante Kamakiri",
+        "desc": "",
+        "lat": "9.811754",
+        "lon": "-84.116944",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_14",
+    "fields": {
+        "name": "Plaza de deportes de Tarbaca",
+        "desc": "",
+        "lat": "9.812381",
+        "lon": "-84.114682",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_15",
+    "fields": {
+        "name": "El Cipresal",
+        "desc": "",
+        "lat": "9.814018",
+        "lon": "-84.113474",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_0_16",
+    "fields": {
+        "name": "Antes del cruce de San Gabriel y Acosta en Tarbaca",
+        "desc": "",
+        "lat": "9.813110",
+        "lon": "-84.110899",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_00",
+    "fields": {
+        "name": "Despu\u00e9s del cruce de San Gabriel y Acosta en Tarbaca",
+        "desc": "",
+        "lat": "9.813110",
+        "lon": "-84.110899",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_01",
+    "fields": {
+        "name": "El Cipresal",
+        "desc": "",
+        "lat": "9.814212",
+        "lon": "-84.113622",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_02",
+    "fields": {
+        "name": "Plaza de deportes de Tarbaca",
+        "desc": "",
+        "lat": "9.812777",
+        "lon": "-84.114998",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_03",
+    "fields": {
+        "name": "Barrio San Rafael",
+        "desc": "",
+        "lat": "9.812194",
+        "lon": "-84.116742",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_04",
+    "fields": {
+        "name": "Barrio San Rafael (centro)",
+        "desc": "",
+        "lat": "9.810881",
+        "lon": "-84.118306",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_05",
+    "fields": {
+        "name": "Barrio San Rafael (arriba)",
+        "desc": "",
+        "lat": "9.809733",
+        "lon": "-84.117772",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_06",
+    "fields": {
+        "name": "Barrio San Rafael (abajo)",
+        "desc": "",
+        "lat": "9.809320",
+        "lon": "-84.116751",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_07",
+    "fields": {
+        "name": "Antes de La Vuelta Hundida",
+        "desc": "",
+        "lat": "9.808513",
+        "lon": "-84.115637",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_08",
+    "fields": {
+        "name": "Los Camiones",
+        "desc": "",
+        "lat": "9.808188",
+        "lon": "-84.118156",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_09",
+    "fields": {
+        "name": "Barrio El Carmen",
+        "desc": "",
+        "lat": "9.805878",
+        "lon": "-84.118354",
+        "zone": "ACOS_D",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_10",
+    "fields": {
+        "name": "Tanque de Ojo de Agua",
+        "desc": "",
+        "lat": "9.803332",
+        "lon": "-84.120421",
+        "zone": "ACOS_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_11",
+    "fields": {
+        "name": "Ojo de Agua",
+        "desc": "",
+        "lat": "9.802647",
+        "lon": "-84.124595",
+        "zone": "ACOS_C",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_12",
+    "fields": {
+        "name": "Bar La Viagra",
+        "desc": "",
+        "lat": "9.798629",
+        "lon": "-84.125554",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_13",
+    "fields": {
+        "name": "Funeraria Vuelta de Jorco",
+        "desc": "",
+        "lat": "9.796556",
+        "lon": "-84.128099",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_14",
+    "fields": {
+        "name": "Escuela de Jorco",
+        "desc": "",
+        "lat": "9.796828",
+        "lon": "-84.130158",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+},
+{
+    "model": "rutas.stop",
+    "pk": "JO_1_15",
+    "fields": {
+        "name": "Pal\u00ed de Jorco",
+        "desc": "",
+        "lat": "9.797298",
+        "lon": "-84.132901",
+        "zone": "ACOS_B",
+        "url": "",
+        "location_type": "0",
+        "parent_station": "",
+        "wheelchair_boarding": ""
+    }
+}
+]

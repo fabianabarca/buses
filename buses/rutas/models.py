@@ -405,10 +405,22 @@ class Shape(models.Model):
 class FeedInfo(models.Model):
     """ Información sobre los que hacen el GTFS """
 
-    feed_publisher_name = models.CharField(max_length=128,
+    publisher_name = models.CharField(max_length=128,
         help_text="Quiénes hicieron el GTFS.")
-    feed_publisher_url = models.URLField(
+    publisher_url = models.URLField(
         blank=True, help_text="URL de los que hicieron el GTFS.")
-    feed_lang = models.CharField(
+    lang = models.CharField(
         max_length=2, blank=True,
-        help_text="Código ISO 639-1 de idioma primario.")
+        help_text="Código ISO 639-1 de idioma del suministro.")
+    start_date = models.DateField(
+        blank=True, null=True,
+        help_text='Fecha en inicia la validez del suministro GTFS.')
+    end_date = models.DateField(
+        blank=True, null=True,
+        help_text='Fecha en termina la validez del suministro GTFS.')
+    version = models.CharField(max_length=32)
+    contact_email = models.EmailField(max_length=128,  
+        blank=True, help_text="Correo electrónico de contacto sobre GTFS.")
+
+    def __str__(self):
+        return self.publisher_name
