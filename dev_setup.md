@@ -110,16 +110,19 @@ source ./venv/bin/activate
 ### Windows
 
 En el caso de PowerShell
+
 ```powershell
-venv\\Scripts\Activate.ps1
+venv\Scripts\Activate.ps1
 ```
 
 En el símbolo del sistema (cmd):
+
 ```cmd
-venv\\Scripts\\activate.bat
+venv\Scripts\activate.bat
 ```
 
 En git-bash:
+
 ```bash
 source ./venv/bin/activate
 ```
