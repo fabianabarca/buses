@@ -1,5 +1,9 @@
 # web-buses: estructura de la página web
 
+Como comenzar a programar:
+[Developer setup](./dev_setup.md)
+(Comparte cualquier duda para mejorar la documentación)
+
 Todas las páginas tienen dentro de *base.html*:
 
 - Encabezado: logo, íconos de las rutas, menú plegado
