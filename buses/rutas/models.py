@@ -37,9 +37,6 @@ class Stop(models.Model):
         primary_key=True,
         max_length=255, db_index=True,
         help_text="Identificador único de una parada o estación.")
-    code = models.CharField(
-        max_length=255, blank=True,
-        help_text="Identificador único (texto corto o número) de pasajeros.")
     name = models.CharField(
         max_length=255,
         help_text="Nombre de la parada.")
@@ -66,9 +63,6 @@ class Stop(models.Model):
     parent_station = models.CharField(
         max_length=255, null=True, blank=True,
         help_text="La estación asociada con la parada.")
-    timezone = models.CharField(
-        max_length=255, null=True, blank=True,
-        help_text="Zona horaria para la parada")
     wheelchair_boarding = models.CharField(
         max_length=1, null=True, blank=True,
         choices=(
