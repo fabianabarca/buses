@@ -1,0 +1,86 @@
+[
+{
+    "model": "rutas.fareattribute",
+    "pk": "SGAB_minima",
+    "fields": {
+        "price": "510",
+        "currency_type": "CRC",
+        "payment_method": "0",
+        "transfers": "0",
+        "agency": "TSG",
+        "transfer_duration": null
+    }
+},
+{
+    "model": "rutas.fareattribute",
+    "pk": "SGAB_media",
+    "fields": {
+        "price": "875",
+        "currency_type": "CRC",
+        "payment_method": "0",
+        "transfers": "0",
+        "agency": "TSG",
+        "transfer_duration": null
+    }
+},
+{
+    "model": "rutas.fareattribute",
+    "pk": "SGAB_completa",
+    "fields": {
+        "price": "990",
+        "currency_type": "CRC",
+        "payment_method": "0",
+        "transfers": "0",
+        "agency": "TSG",
+        "transfer_duration": null
+    }
+},
+{
+    "model": "rutas.fareattribute",
+    "pk": "ACOS_minima",
+    "fields": {
+        "price": "550",
+        "currency_type": "CRC",
+        "payment_method": "0",
+        "transfers": "0",
+        "agency": "TSG",
+        "transfer_duration": null
+    }
+},
+{
+    "model": "rutas.fareattribute",
+    "pk": "ACOS_media",
+    "fields": {
+        "price": "920",
+        "currency_type": "CRC",
+        "payment_method": "0",
+        "transfers": "0",
+        "agency": "TSG",
+        "transfer_duration": null
+    }
+},
+{
+    "model": "rutas.fareattribute",
+    "pk": "ACOS_completa",
+    "fields": {
+        "price": "1085",
+        "currency_type": "CRC",
+        "payment_method": "0",
+        "transfers": "0",
+        "agency": "TSG",
+        "transfer_duration": null
+    }
+},
+{
+    "model": "rutas.fareattribute",
+    "pk": "TURR_completa",
+    "fields": {
+        "price": "905",
+        "currency_type": "CRC",
+        "payment_method": "0",
+        "transfers": "0",
+        "agency": "TSG",
+        "transfer_duration": null
+    }
+}
+]

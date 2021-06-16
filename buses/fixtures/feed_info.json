@@ -1,0 +1,15 @@
+[
+{
+    "model": "rutas.feedinfo",
+    "pk": 1,
+    "fields": {
+        "publisher_name": "TCU Tropicalizaci\u00f3n de la Tecnolog\u00eda",
+        "publisher_url": "https://eie.ucr.ac.cr/proyectos/TC-691",
+        "lang": "es",
+        "start_date": "2021-06-15",
+        "end_date": "2021-12-31",
+        "version": "v.2021.06.a",
+        "contact_email": "fabian.abarca@ucr.ac.cr"
+    }
+}
+]

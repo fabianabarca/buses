@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate
+from .models import Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate, FeedInfo
 from datetime import datetime
 from itertools import zip_longest
 from django.conf import settings
@@ -157,6 +157,10 @@ def ruta(request, url_ruta):
 
     feriados = CalendarDate.objects.filter(exception_type='1')
 
+    # Actualización de información del suministro
+
+    informacion = FeedInfo.objects.get(pk=1)
+
     context = {
         'maxBounds': settings.RUTAS_MAP_MAX_BOUNDS,
         'route': route,
@@ -168,6 +172,7 @@ def ruta(request, url_ruta):
         'horario_js_hacia_sanjose': horario_js_hacia_sanjose,
         'horario_js_desde_sanjose': horario_js_desde_sanjose,
         'feriados': feriados,
+        'informacion': informacion,
     }
 
     return render(request, 'ruta.html', context)

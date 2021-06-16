@@ -64,9 +64,6 @@ class Stop(models.Model):
         primary_key=True,
         max_length=255, db_index=True,
         help_text="Identificador único de una parada o estación.")
-    code = models.CharField(
-        max_length=255, blank=True,
-        help_text="Identificador único (texto corto o número) de pasajeros.")
     name = models.CharField(
         max_length=255,
         help_text="Nombre de la parada.")
@@ -93,9 +90,6 @@ class Stop(models.Model):
     parent_station = models.CharField(
         max_length=255, null=True, blank=True,
         help_text="La estación asociada con la parada.")
-    timezone = models.CharField(
-        max_length=255, null=True, blank=True,
-        help_text="Zona horaria para la parada")
     wheelchair_boarding = models.CharField(
         max_length=1, null=True, blank=True,
         choices=(
@@ -480,14 +474,26 @@ class Shape(models.Model):
 class FeedInfo(models.Model):
     """ Información sobre los que hacen el GTFS """
 
-    feed_publisher_name = models.CharField(max_length=128,
+    publisher_name = models.CharField(max_length=128,
         help_text="Quiénes hicieron el GTFS.")
-    feed_publisher_url = models.URLField(
+    publisher_url = models.URLField(
         blank=True, help_text="URL de los que hicieron el GTFS.")
-    feed_lang = models.CharField(
+    lang = models.CharField(
         max_length=2, blank=True,
-        help_text="Código ISO 639-1 de idioma primario.")
-
+        help_text="Código ISO 639-1 de idioma del suministro.")
+    start_date = models.DateField(
+        blank=True, null=True,
+        help_text='Fecha en inicia la validez del suministro GTFS.')
+    end_date = models.DateField(
+        blank=True, null=True,
+        help_text='Fecha en termina la validez del suministro GTFS.')
+    version = models.CharField(max_length=32)
+    contact_email = models.EmailField(max_length=128,  
+        blank=True, help_text="Correo electrónico de contacto sobre GTFS.")
+    
     class Meta:
         verbose_name = "feed info"
         verbose_name_plural = "feed info objects"
+
+    def __str__(self):
+        return self.publisher_name

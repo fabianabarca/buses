@@ -1,0 +1,6159 @@
+[
+  {
+    "model": "inicio.prueba",
+    "pk": 1,
+    "fields": {
+      "nombre": "María",
+      "apellido": "Rodríguez Vargas",
+      "edad": 23
+    }
+  },
+  {
+    "model": "inicio.prueba",
+    "pk": 2,
+    "fields": {
+      "nombre": "José",
+      "apellido": "Castro Mora",
+      "edad": 19
+    }
+  },
+  {
+    "model": "inicio.prueba",
+    "pk": 3,
+    "fields": {
+      "nombre": "Gabriel",
+      "apellido": "Rodríguez Calderón",
+      "edad": 23
+    }
+  },
+  {
+    "model": "rutas.agency",
+    "pk": "TSG",
+    "fields": {
+      "name": "Transportes San Gabriel",
+      "url": "http://tsgcr.com/",
+      "timezone": "America/Costa_Rica",
+      "lang": "es",
+      "phone": "+506 2410 0330",
+      "fare_url": "http://tsgcr.com/rutas/#tarifas",
+      "email": "transgabriel@ice.co.cr"
+    }
+  },
+  {
+    "model": "rutas.calendar",
+    "pk": "domingo",
+    "fields": {
+      "monday": "0",
+      "tuesday": "0",
+      "wednesday": "0",
+      "thursday": "0",
+      "friday": "0",
+      "saturday": "0",
+      "sunday": "1",
+      "start_date": "2020-01-01",
+      "end_date": "2030-01-01"
+    }
+  },
+  {
+    "model": "rutas.calendar",
+    "pk": "entresemana",
+    "fields": {
+      "monday": "1",
+      "tuesday": "1",
+      "wednesday": "1",
+      "thursday": "1",
+      "friday": "1",
+      "saturday": "0",
+      "sunday": "0",
+      "start_date": "2020-01-01",
+      "end_date": "2030-01-01"
+    }
+  },
+  {
+    "model": "rutas.calendar",
+    "pk": "sabado",
+    "fields": {
+      "monday": "0",
+      "tuesday": "0",
+      "wednesday": "0",
+      "thursday": "0",
+      "friday": "0",
+      "saturday": "1",
+      "sunday": "0",
+      "start_date": "2020-01-01",
+      "end_date": "2030-01-01"
+    }
+  },
+  {
+    "model": "rutas.fareattribute",
+    "pk": "ACOS_completa",
+    "fields": {
+      "price": "1085.0000",
+      "currency_type": "CRC",
+      "payment_method": 0,
+      "transfers": 0,
+      "agency": "TSG",
+      "transfer_duration": null
+    }
+  },
+  {
+    "model": "rutas.fareattribute",
+    "pk": "ACOS_media",
+    "fields": {
+      "price": "920.0000",
+      "currency_type": "CRC",
+      "payment_method": 0,
+      "transfers": 0,
+      "agency": "TSG",
+      "transfer_duration": null
+    }
+  },
+  {
+    "model": "rutas.fareattribute",
+    "pk": "ACOS_minima",
+    "fields": {
+      "price": "550.0000",
+      "currency_type": "CRC",
+      "payment_method": 0,
+      "transfers": 0,
+      "agency": "TSG",
+      "transfer_duration": null
+    }
+  },
+  {
+    "model": "rutas.fareattribute",
+    "pk": "SGAB_completa",
+    "fields": {
+      "price": "990.0000",
+      "currency_type": "CRC",
+      "payment_method": 0,
+      "transfers": 0,
+      "agency": "TSG",
+      "transfer_duration": null
+    }
+  },
+  {
+    "model": "rutas.fareattribute",
+    "pk": "SGAB_media",
+    "fields": {
+      "price": "875.0000",
+      "currency_type": "CRC",
+      "payment_method": 0,
+      "transfers": 0,
+      "agency": "TSG",
+      "transfer_duration": null
+    }
+  },
+  {
+    "model": "rutas.fareattribute",
+    "pk": "SGAB_minima",
+    "fields": {
+      "price": "510.0000",
+      "currency_type": "CRC",
+      "payment_method": 0,
+      "transfers": 0,
+      "agency": "TSG",
+      "transfer_duration": null
+    }
+  },
+  {
+    "model": "rutas.fareattribute",
+    "pk": "TURR_completa",
+    "fields": {
+      "price": "905.0000",
+      "currency_type": "CRC",
+      "payment_method": 0,
+      "transfers": 0,
+      "agency": "TSG",
+      "transfer_duration": null
+    }
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "ACOS_A",
+    "fields": {}
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "ACOS_B",
+    "fields": {}
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "ACOS_C",
+    "fields": {}
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "ACOS_D",
+    "fields": {}
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "RUTA_E",
+    "fields": {}
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "RUTA_F",
+    "fields": {}
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "RUTA_G",
+    "fields": {}
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "SGAB_A",
+    "fields": {}
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "SGAB_B",
+    "fields": {}
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "SGAB_C",
+    "fields": {}
+  },
+  {
+    "model": "rutas.zone",
+    "pk": "SGAB_D",
+    "fields": {}
+  },
+  {
+    "model": "rutas.feedinfo",
+    "pk": 1,
+    "fields": {
+      "feed_publisher_name": "TCU Tropicalización de la Tecnología",
+      "feed_publisher_url": "https://eie.ucr.ac.cr/proyectos/TC-691",
+      "feed_lang": "es"
+    }
+  },
+  {
+    "model": "empresa.empresa",
+    "pk": 1,
+    "fields": {
+      "codigo": "TSG",
+      "nombre": "Transportes San Gabriel",
+      "resena": "<p>Transportes San Gabriel de Aserr&iacute; inici&oacute; sus operaciones en setiembre del 2005. En aquel entonces comenz&oacute; con 6 unidades y con 9 colaboradores de la zona.</p>\r\n\r\n<p>Desde un inicio, con el objetivo de brindar un servicio de calidad, seguro , eficaz e innovador, &nbsp;la empresa se ha empe&ntilde;ado en satisfacer las necesidades de sus usuarios. Actualmente contamos con una flota de 38 unidades disponibles para las comunidades de San Gabriel, Tarbaca, jorco, Monte Redondo y Acosta; de las cuales, el 40% est&aacute;n adaptadas con rampas para discapacitados en conformidad con la ley.</p>\r\n\r\n<p>Estamos sujetos a lo que solicita el Consejo de Transporte P&uacute;blico, cumplimos con la Ley 7600 y todas sus reformas, y con lo que establece la Asociaci&oacute;n Reguladora de Servicios P&uacute;blicos (ARESEP). Nuestra visi&oacute;n nos encamina a estar formando una estructura s&oacute;lida, &nbsp;programas de calidad y mejoras continuas.</p>\r\n\r\n<p>Para ello, contamos con asesor&iacute;as externas que capacita a nuestro personal en materia operativa, legal, tarifario y de desarrollo humano que garantiza nuestra continua optimizaci&oacute;n de servicio.</p>\r\n\r\n<p>A parte de ofrecer un servicio seguro con choferes debidamente preparados, contamos con personal calificado en nuestra estructura organizativa.</p>\r\n\r\n<p>Estamos compuestos por un Gerente General y un subgerente que tambi&eacute;n tiene control sobre el &aacute;rea administrativa, operaci&oacute;n, los sistemas de control y el &aacute;rea de taller.</p>\r\n\r\n<p>En el &aacute;rea de operaci&oacute;n hay un coordinador que se responsabiliza de operar la flotilla de acuerdo a los horarios establecidos; siempre con el apoyo de dem&aacute;s personal en caso de ausencia.</p>\r\n\r\n<p>En el taller hay un jefe encargado de la planificaci&oacute;n del Mantenimiento preventivo y correctivo de las unidades en operaci&oacute;n. De igual forma, hay un encargado del &Aacute;rea de Sistemas y Barras, y una encargada de la parte administrativa y del personal.</p>\r\n\r\n<p>Nuestra consigna es mejorar d&iacute;a con d&iacute;a, apoyando el progreso comunal en conjunto con las Asociaciones de Desarrollo.</p>",
+      "colaboradores": 34,
+      "buses": 38,
+      "fundacion": 2000,
+      "direccion": "María Auxiliadora"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 1,
+    "fields": {
+      "identificacion": 1040,
+      "url_site": "Andres-Alfaro-Analista-150x150.jpg",
+      "nombre": "Andres Alfaro",
+      "cargo": "Analista"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 2,
+    "fields": {
+      "identificacion": 1041,
+      "url_site": "Arianny-Gamboa-Asistente-de-Operaciones-150x150.jpg",
+      "nombre": "Arianny Gamboa",
+      "cargo": "AsistentedeOperaciones"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 3,
+    "fields": {
+      "identificacion": 1042,
+      "url_site": "Grethel-Castro-Asistente-Administrativa-150x150.jpg",
+      "nombre": "Grethel Castro",
+      "cargo": "AsistentedeGerencia"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 4,
+    "fields": {
+      "identificacion": 1043,
+      "url_site": "Vinicio-Zuñiga-Jefe-Departamento-de-Operaciones-150x150.jpg",
+      "nombre": "Vinicio Zuñiga",
+      "cargo": "JefeDepartamentodeOperaciones"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 5,
+    "fields": {
+      "identificacion": 406,
+      "url_site": "Luis-Mora-Ureña-Lavador-150x150.jpg",
+      "nombre": "Luis Mora Ureña",
+      "cargo": "Lavador"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 6,
+    "fields": {
+      "identificacion": 405,
+      "url_site": "Luis-García-Lobo-Chofer-150x150.jpg",
+      "nombre": "Luis García Lobo",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 7,
+    "fields": {
+      "identificacion": 402,
+      "url_site": "José-Piedra-Arias-Chofer-150x150.jpg",
+      "nombre": "José Piedra Arias",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 8,
+    "fields": {
+      "identificacion": 394,
+      "url_site": "Heyner-Villalobos-Bodeguero-150x150.jpg",
+      "nombre": "Heyner Villa lobos",
+      "cargo": "Bodeguero"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 9,
+    "fields": {
+      "identificacion": 389,
+      "url_site": "Guillermo-Segura-Arias-Chofer-150x150.jpg",
+      "nombre": "Guillermo Segura Arias",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 10,
+    "fields": {
+      "identificacion": 385,
+      "url_site": "Enrique-Díaz-Monge-Mecánico-150x150.jpg",
+      "nombre": "Enrique Díaz Monge",
+      "cargo": "Mecánico"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 11,
+    "fields": {
+      "identificacion": 382,
+      "url_site": "Elberth-Solano-Gamboa-Chofer-150x150.jpg",
+      "nombre": "Elberth Solano Gamboa",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 12,
+    "fields": {
+      "identificacion": 379,
+      "url_site": "Edgar-Madrigal-Méndez-Chofer-150x150.jpg",
+      "nombre": "Edgar Madrigal Méndez",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 13,
+    "fields": {
+      "identificacion": 373,
+      "url_site": "Benjamín-Mora-Ortega-Despachador-150x150.jpg",
+      "nombre": "Benjamín Mora Ortega",
+      "cargo": "Despachador"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 14,
+    "fields": {
+      "identificacion": 371,
+      "url_site": "Andrey-Masís-Monge-Chofer-150x150.jpg",
+      "nombre": "Andrey Masís Monge",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 15,
+    "fields": {
+      "identificacion": 369,
+      "url_site": "Alexis-Vindas-Ureña-Recaudador-150x150.jpg",
+      "nombre": "Alexis Vindas Ureña",
+      "cargo": "Recaudador"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 16,
+    "fields": {
+      "identificacion": 429,
+      "url_site": "Wilberth-Mora-Hidalgo-Chofer-150x150.jpg",
+      "nombre": "Wilberth Mora Hidalgo",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 17,
+    "fields": {
+      "identificacion": 418,
+      "url_site": "Roberto-Aguero-Santana-Chofer-150x150.jpg",
+      "nombre": "Roberto Aguero Santana",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 18,
+    "fields": {
+      "identificacion": 413,
+      "url_site": "Nelson-Portilla-Calvo-Despachador-150x150.jpg",
+      "nombre": "Nelson Portilla Calvo",
+      "cargo": "Despachador"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 19,
+    "fields": {
+      "identificacion": 409,
+      "url_site": "Mario-Castro-Durán-Chofer-150x150.jpg",
+      "nombre": "Mario Castro Durán",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 20,
+    "fields": {
+      "identificacion": 803,
+      "url_site": "Alexander-Cardenas-Chinchilla-150x150.jpg",
+      "nombre": "Alexander Cardenas Chinchilla",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 21,
+    "fields": {
+      "identificacion": 896,
+      "url_site": "Carlos-Alpízar-Rodríguez-150x150.jpg",
+      "nombre": "Carlos Alpízar Rodríguez",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 22,
+    "fields": {
+      "identificacion": 897,
+      "url_site": "Carlos-Vargas-Alpízar1-150x150.jpg",
+      "nombre": "Carlos Vargas Alpízar",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 23,
+    "fields": {
+      "identificacion": 1018,
+      "url_site": "José-Alfredo-Salazar-e1497903453169-150x150.jpg",
+      "nombre": "José Alfredo Salazar",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 24,
+    "fields": {
+      "identificacion": 1019,
+      "url_site": "Randall-Carrión-e1497903487241-150x150.jpg",
+      "nombre": "Randall Carrión",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 25,
+    "fields": {
+      "identificacion": 1023,
+      "url_site": "Felix-Salazar-e1497974224902-150x150.jpg",
+      "nombre": "Felix Salazar",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 26,
+    "fields": {
+      "identificacion": 1024,
+      "url_site": "Osvaldo-López-e1497974291560-150x150.jpg",
+      "nombre": "Osvaldo López",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 27,
+    "fields": {
+      "identificacion": 1026,
+      "url_site": "Ronald-Brenes-e1497989310138-150x150.jpg",
+      "nombre": "Ronald Brenes",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 28,
+    "fields": {
+      "identificacion": 1032,
+      "url_site": "Martín-Alvarado-Chofer-e1498058340543-150x150.jpg",
+      "nombre": "Martín Alvarado",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 29,
+    "fields": {
+      "identificacion": 1031,
+      "url_site": "Luis-Naranjo-Chofer-e1498058299882-150x150.jpg",
+      "nombre": "Luis Naranjo",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 30,
+    "fields": {
+      "identificacion": 1028,
+      "url_site": "José-Alfredo-Masís-Chofer-e1498058131292-150x150.jpg",
+      "nombre": "José Alfredo Masís",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 31,
+    "fields": {
+      "identificacion": 1034,
+      "url_site": "Luis-Hernandez-Chofer-e1498070105895-150x150.jpg",
+      "nombre": "Luis Hernandez",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 32,
+    "fields": {
+      "identificacion": 1039,
+      "url_site": "Minor-Cárdenas-Chofer-e1498076453441-150x150.jpg",
+      "nombre": "Minor Cárdenas",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 33,
+    "fields": {
+      "identificacion": 1038,
+      "url_site": "Oscar-Castro-Chofer-e1498076478986-150x150.jpg",
+      "nombre": "Oscar Castro",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 34,
+    "fields": {
+      "identificacion": 1037,
+      "url_site": "Harold-Vargas-Chofer-e1498076500231-150x150.jpg",
+      "nombre": "Harold Vargas",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 35,
+    "fields": {
+      "identificacion": 1080,
+      "url_site": "Melvin-Castro-Chofer-e1498253380446-150x150.jpg",
+      "nombre": "Melvin Castro",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 36,
+    "fields": {
+      "identificacion": 1075,
+      "url_site": "Victor-Valverde-Chofer-e1498253172743-150x150.jpg",
+      "nombre": "Victor Valverde",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 37,
+    "fields": {
+      "identificacion": 1074,
+      "url_site": "Wilberth-Zuñiga-Chofer-e1498253139146-150x150.jpg",
+      "nombre": "Wilberth Zuñiga",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 38,
+    "fields": {
+      "identificacion": 1073,
+      "url_site": "Javier-Mora-Chofer-150x150.jpg",
+      "nombre": "Javier Mora",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 39,
+    "fields": {
+      "identificacion": 1072,
+      "url_site": "German-Mora-Chaneador-e1498253105765-150x150.jpg",
+      "nombre": "German Mora",
+      "cargo": "Chaneador"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 40,
+    "fields": {
+      "identificacion": 1070,
+      "url_site": "Edgar-Barboza-Chofer-e1498253072711-150x150.jpg",
+      "nombre": "Edgar Barboza",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 41,
+    "fields": {
+      "identificacion": 1069,
+      "url_site": "César-Garro-Guarda-de-Seguridad1-e1498252956432-150x150.jpg",
+      "nombre": "César Garro",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 42,
+    "fields": {
+      "identificacion": 1067,
+      "url_site": "Carlos-Luis-Mora-Chofer-e1498252995902-150x150.jpg",
+      "nombre": "Carlos Luis Mora",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 43,
+    "fields": {
+      "identificacion": 1066,
+      "url_site": "Alexander-Duran-Mecánico-e1498252892926-150x150.jpg",
+      "nombre": "Alexander Duran",
+      "cargo": "Mecánico"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 44,
+    "fields": {
+      "identificacion": 1102,
+      "url_site": "Carlos-Cárdenas-Chofer-e1498755480948-150x150.jpg",
+      "nombre": "Carlos Cárdenas",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 45,
+    "fields": {
+      "identificacion": 1104,
+      "url_site": "Mario-Padilla-Mecánico-e1498759622597-150x150.jpg",
+      "nombre": "Mario Padilla",
+      "cargo": "Mecánico"
+    }
+  },
+  {
+    "model": "empresa.funcionario",
+    "pk": 46,
+    "fields": {
+      "identificacion": 1105,
+      "url_site": "Ronald-Zuñiga-Chofer-150x150.jpg",
+      "nombre": "Ronald Zuñiga",
+      "cargo": "Chofer"
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 1,
+    "fields": {
+      "pregunta": "Hola, buenos días",
+      "respuesta": "Saludos cordiales",
+      "categoria": ""
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 2,
+    "fields": {
+      "pregunta": "En un lugar de La Mancha",
+      "respuesta": "De cuyo nombre no quiero acordarme",
+      "categoria": ""
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 3,
+    "fields": {
+      "pregunta": "Esta es una pregunta de ejemplo",
+      "respuesta": "Esta es una respuesta de ejemplo",
+      "categoria": ""
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 4,
+    "fields": {
+      "pregunta": "¿Oye cómo va?",
+      "respuesta": "Mi ritmo.",
+      "categoria": ""
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 5,
+    "fields": {
+      "pregunta": "¿Bueno pa' gozar?",
+      "respuesta": "Mulata.",
+      "categoria": 0
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2020-12-04T05:18:19.004Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "SJ",
+      "object_repr": "SJ",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2020-12-04T05:20:56.359Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "124",
+      "object_repr": "San Gabriel - San José",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2020-12-04T05:29:08.164Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "157",
+      "object_repr": "Acosta - San José",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2020-12-04T18:27:01.580Z",
+      "user": 1,
+      "content_type": 1,
+      "object_id": "TSG",
+      "object_repr": "Transportes San Gabriel",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Phone\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2020-12-04T20:07:40.751Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "1",
+      "object_repr": "Hola, buenos días",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2020-12-04T20:07:54.207Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "2",
+      "object_repr": "En un lugar de La Mancha",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2020-12-04T20:34:29.352Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "3",
+      "object_repr": "Esta es una pregunta de ejemplo",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2020-12-04T20:53:45.404Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "1",
+      "object_repr": "San Gabriel de Aserrí",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2020-12-04T21:12:15.686Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "2",
+      "object_repr": "Vuelta de Jorco de Aserrí",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2020-12-04T21:58:14.937Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "3",
+      "object_repr": "Tarbaca de Aserrí",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2020-12-04T21:58:54.379Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "4",
+      "object_repr": "San Ignacio de Acosta",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2020-12-04T22:12:18.530Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "4",
+      "object_repr": "San Ignacio de Acosta",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2020-12-04T22:20:08.153Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "4",
+      "object_repr": "San Ignacio de Acosta",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Descripcion\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2020-12-04T22:20:13.352Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "3",
+      "object_repr": "Tarbaca de Aserrí",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Descripcion\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2020-12-04T22:20:18.169Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "2",
+      "object_repr": "Vuelta de Jorco de Aserrí",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Descripcion\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2020-12-04T22:20:22.078Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "1",
+      "object_repr": "San Gabriel de Aserrí",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Descripcion\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2020-12-06T17:05:15.480Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "157",
+      "object_repr": "Acosta - San José",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2020-12-06T17:05:18.803Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "124",
+      "object_repr": "San Gabriel - San José",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2020-12-08T03:26:30.496Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "157",
+      "object_repr": "Acosta - San José",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2020-12-09T00:24:57.056Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "desde_turrujal_entresemana_19:30:00",
+      "object_repr": "desde_turrujal_entresemana_19:30:00",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Direction\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2021-02-17T15:29:31.861Z",
+      "user": 1,
+      "content_type": 23,
+      "object_id": "1",
+      "object_repr": "Transportes San Gabriel",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2021-02-17T15:35:18.473Z",
+      "user": 1,
+      "content_type": 23,
+      "object_id": "1",
+      "object_repr": "Transportes San Gabriel",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2021-02-17T15:47:42.257Z",
+      "user": 1,
+      "content_type": 23,
+      "object_id": "1",
+      "object_repr": "Transportes San Gabriel",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Buses\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2021-02-18T20:30:50.242Z",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "1",
+      "object_repr": "Prueba object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2021-02-18T20:37:21.388Z",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "2",
+      "object_repr": "José",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2021-02-19T01:02:52.730Z",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "3",
+      "object_repr": "Gabriel",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2021-03-11T20:17:15.788Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "4",
+      "object_repr": "¿Oye cómo va?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2021-06-04T00:30:12.356Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "5",
+      "object_repr": "¿Qué sigue en la secuencia 0, 1, 1, 2, 3, 5, 8...?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2021-06-04T00:39:05.208Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "5",
+      "object_repr": "¿Bueno pa' gozar?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Pregunta\", \"Respuesta\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2021-06-04T03:20:56.001Z",
+      "user": 1,
+      "content_type": 26,
+      "object_id": "Hola",
+      "object_repr": "Hola",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2021-06-04T23:27:38.603Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU",
+      "object_repr": "TU: Terminal de Turrujal",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2021-06-04T23:28:12.784Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ",
+      "object_repr": "SJ: Terminal San José",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2021-06-04T23:28:12.787Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG",
+      "object_repr": "SG: San Gabriel",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+      "action_time": "2021-06-04T23:28:34.888Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM",
+      "object_repr": "LM: Terminal Los Mangos",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+      "action_time": "2021-06-04T23:28:34.891Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "...",
+      "object_repr": "...: ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+      "action_time": "2021-06-09T23:25:44.442Z",
+      "user": 1,
+      "content_type": 23,
+      "object_id": "1",
+      "object_repr": "Transportes San Gabriel",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Fundacion\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.499Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "24",
+      "object_repr": "Navidad",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.503Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "23",
+      "object_repr": "Navidad",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.505Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "22",
+      "object_repr": "Abolición del Ejército",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.506Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "21",
+      "object_repr": "Abolición del Ejército",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.508Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "20",
+      "object_repr": "Día de la Independencia",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.509Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "19",
+      "object_repr": "Día de la Independencia",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.511Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "18",
+      "object_repr": "Día de la Madre",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.512Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "17",
+      "object_repr": "Día de la Madre",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.514Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "16",
+      "object_repr": "Día de la Virgen de los Ángeles",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.517Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "15",
+      "object_repr": "Día de la Virgen de los Ángeles",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.519Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "14",
+      "object_repr": "Anexión del Partido de Nicoya",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.520Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "13",
+      "object_repr": "Anexión del Partido de Nicoya",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.522Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "12",
+      "object_repr": "Día del Padre",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.523Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "11",
+      "object_repr": "Día del Padre",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.525Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "10",
+      "object_repr": "Día del Trabajo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.526Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "9",
+      "object_repr": "Día del Trabajo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.528Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "8",
+      "object_repr": "Día de Juan Santamaría",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.529Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "7",
+      "object_repr": "Día de Juan Santamaría",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.531Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "6",
+      "object_repr": "Viernes Santo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.532Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "5",
+      "object_repr": "Viernes Santo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.534Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "Jueves Santo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.536Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "3",
+      "object_repr": "Jueves Santo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.537Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "Año Nuevo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+      "action_time": "2021-06-11T22:43:44.538Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Año Nuevo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+      "action_time": "2021-06-11T22:44:01.297Z",
+      "user": 1,
+      "content_type": 26,
+      "object_id": "Hola",
+      "object_repr": "Hola",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+      "action_time": "2021-06-11T22:44:39.416Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "TURR",
+      "object_repr": "Turrujal - San José",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+      "action_time": "2021-06-11T22:44:39.419Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "SGAB",
+      "object_repr": "San Gabriel - San José",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+      "action_time": "2021-06-11T22:44:39.420Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "ACOS",
+      "object_repr": "Acosta - San José",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+      "action_time": "2021-06-11T22:44:39.422Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "157",
+      "object_repr": "Acosta - San José",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+      "action_time": "2021-06-11T22:44:39.424Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "124",
+      "object_repr": "San Gabriel - San José",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+      "action_time": "2021-06-11T22:44:52.899Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "hacia_turrujal",
+      "object_repr": "hacia_turrujal",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+      "action_time": "2021-06-11T22:44:52.902Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "hacia_sanluis",
+      "object_repr": "hacia_sanluis",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+      "action_time": "2021-06-11T22:44:52.903Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "hacia_sangabriel",
+      "object_repr": "hacia_sangabriel",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+      "action_time": "2021-06-11T22:44:52.905Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "hacia_jorco",
+      "object_repr": "hacia_jorco",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+      "action_time": "2021-06-11T22:44:52.906Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "desde_turrujal",
+      "object_repr": "desde_turrujal",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+      "action_time": "2021-06-11T22:44:52.908Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "desde_sanluis",
+      "object_repr": "desde_sanluis",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+      "action_time": "2021-06-11T22:44:52.909Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "desde_sangabriel",
+      "object_repr": "desde_sangabriel",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+      "action_time": "2021-06-11T22:44:52.911Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "desde_jorco",
+      "object_repr": "desde_jorco",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+      "action_time": "2021-06-11T22:44:52.913Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "desde_acosta",
+      "object_repr": "desde_acosta",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.919Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_1_08",
+      "object_repr": "TU_1_08: Terminal Rancho Jácara",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.922Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_1_07",
+      "object_repr": "TU_1_07: El Yoyo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.923Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_1_06",
+      "object_repr": "TU_1_06: Kínder de Turrujal",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.925Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_1_05",
+      "object_repr": "TU_1_05: Super Plaza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.926Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_1_04",
+      "object_repr": "TU_1_04: Abastecedor Alberto",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.928Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_1_03",
+      "object_repr": "TU_1_03: El Torno",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.930Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_1_02",
+      "object_repr": "TU_1_02: La Cuesta",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.931Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_1_01",
+      "object_repr": "TU_1_01: Entrada al Colegio Técnico Profesional",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.933Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_1_00",
+      "object_repr": "TU_1_00: Clínica de Acosta",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.934Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_0_08",
+      "object_repr": "TU_0_08: Clínica de Acosta",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.936Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_0_07",
+      "object_repr": "TU_0_07: Entrada al Colegio Técnico Profesional",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.937Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_0_06",
+      "object_repr": "TU_0_06: La Cuesta",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.938Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_0_05",
+      "object_repr": "TU_0_05: El Torno",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.940Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_0_04",
+      "object_repr": "TU_0_04: Abastecedor Alberto",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.941Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_0_03",
+      "object_repr": "TU_0_03: Super Plaza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.943Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_0_02",
+      "object_repr": "TU_0_02: Kínder de Turrujal",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.945Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_0_01",
+      "object_repr": "TU_0_01: El Yoyo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.947Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "TU_0_00",
+      "object_repr": "TU_0_00: Terminal Rancho Jácara",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.948Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_1_05",
+      "object_repr": "SL_1_05: San Luis centro (frente a Súper Mora)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.950Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_1_04",
+      "object_repr": "SL_1_04: Pulpería Corona",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.952Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_1_03",
+      "object_repr": "SL_1_03: Iglesia Evangélica",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.953Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_1_02",
+      "object_repr": "SL_1_02: Licorera San Luis",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.955Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_1_01",
+      "object_repr": "SL_1_01: Cruce de Los Pozos",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.957Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_1_00",
+      "object_repr": "SL_1_00: Entrada a Barrio Abarca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.958Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_0_05",
+      "object_repr": "SL_0_05: Entrada a Barrio Abarca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.960Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_0_04",
+      "object_repr": "SL_0_04: Cruce de Los Pozos",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.962Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_0_03",
+      "object_repr": "SL_0_03: Licorera San Luis",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.964Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_0_02",
+      "object_repr": "SL_0_02: Iglesia Evangélica",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.966Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_0_01",
+      "object_repr": "SL_0_01: Pulpería Corona",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.967Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL_0_00",
+      "object_repr": "SL_0_00: San Luis centro (frente a Súper Mora)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.969Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SL",
+      "object_repr": "SL: Terminal de Transportes San Gabriel",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.970Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_46",
+      "object_repr": "SJ_1_46: Antes del cruce de San Gabriel y Acosta en Tarbaca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.971Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_45",
+      "object_repr": "SJ_1_45: Restaurante Donde Alcides",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.973Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_44",
+      "object_repr": "SJ_1_44: Iglesia Católica de Tarbaca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 110,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.974Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_43",
+      "object_repr": "SJ_1_43: Estación terrena (antena) del ICE",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 111,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.976Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_42",
+      "object_repr": "SJ_1_42: Entrada a Casa Candelaria",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 112,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.977Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_41",
+      "object_repr": "SJ_1_41: Entrada a Hotel Alta Vista",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 113,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.979Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_40",
+      "object_repr": "SJ_1_40: Restaurante Las Doñitas",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 114,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.981Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_39",
+      "object_repr": "SJ_1_39: Antiguo Restaurante El Palenque",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 115,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.983Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_38",
+      "object_repr": "SJ_1_38: Antes del antiguo El Palenque",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 116,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.984Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_37",
+      "object_repr": "SJ_1_37: La casa del Gringo (entrada a los Castro)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 117,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.986Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_36",
+      "object_repr": "SJ_1_36: Mirador Ram Luna",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 118,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.987Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_35",
+      "object_repr": "SJ_1_35: Mirador La Tranca (arriba)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 119,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.989Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_34",
+      "object_repr": "SJ_1_34: Mirador La Tranca (abajo)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 120,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.990Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_33",
+      "object_repr": "SJ_1_33: Restaurante El Llanero",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 121,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.992Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_32",
+      "object_repr": "SJ_1_32: Mirador La Montaña",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 122,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.993Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_31",
+      "object_repr": "SJ_1_31: Barrio Lourdes (puente de Sáurez)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 123,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.995Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_30",
+      "object_repr": "SJ_1_30: Barrio Lourdes (abajo)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 124,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.997Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_29",
+      "object_repr": "SJ_1_29: Acueducto Municipal de Aserrí (El Ranchito)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 125,
+    "fields": {
+      "action_time": "2021-06-11T22:45:11.999Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_28",
+      "object_repr": "SJ_1_28: Cinco Esquinas de Aserrí",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 126,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.000Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_27",
+      "object_repr": "SJ_1_27: Banco Nacional de Aserrí",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 127,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.002Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_26",
+      "object_repr": "SJ_1_26: Palacio Municipal de Aserrí",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 128,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.003Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_25",
+      "object_repr": "SJ_1_25: Chicharronera Cacique Acserí",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 129,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.005Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_24",
+      "object_repr": "SJ_1_24: Depósito Las Gravilias",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 130,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.006Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_23",
+      "object_repr": "SJ_1_23: Cementerio de Aserrí",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 131,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.008Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_22",
+      "object_repr": "SJ_1_22: Super Más y Más (antigua fábrica Jockey)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 132,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.009Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_21",
+      "object_repr": "SJ_1_21: Licorera Alberto Fallas",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 133,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.011Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_20",
+      "object_repr": "SJ_1_20: Panadería La Trinidad",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 134,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.013Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_19",
+      "object_repr": "SJ_1_19: Cárcel de mujeres El Buen Pastor",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 135,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.015Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_18",
+      "object_repr": "SJ_1_18: Restaurante El Boyero",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 136,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.016Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_17",
+      "object_repr": "SJ_1_17: Entrada a Barrio La Guaria",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 137,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.018Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_16",
+      "object_repr": "SJ_1_16: Escuela de Capacitación de la Policía de Tránsito",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 138,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.019Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_15",
+      "object_repr": "SJ_1_15: Centro Comercial Expreso",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 139,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.021Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_14",
+      "object_repr": "SJ_1_14: Maxipalí (cruce de San Miguel)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 140,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.022Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_13",
+      "object_repr": "SJ_1_13: Iglesia Kabod",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 141,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.023Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_12",
+      "object_repr": "SJ_1_12: Tienda Ekono",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 142,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.025Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_11",
+      "object_repr": "SJ_1_11: Clínica Marcial Fallas",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 143,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.026Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_10",
+      "object_repr": "SJ_1_10: Centro Comercial La Villa",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 144,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.028Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_09",
+      "object_repr": "SJ_1_09: Multicentro Desamparados",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 145,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.030Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_08",
+      "object_repr": "SJ_1_08: El Lagar",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 146,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.031Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_07",
+      "object_repr": "SJ_1_07: Cementerio de Desamparados",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 147,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.033Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_06",
+      "object_repr": "SJ_1_06: Antiguo Radio Reloj",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 148,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.034Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_05",
+      "object_repr": "SJ_1_05: Antiguo Jorón",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 149,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.036Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_04",
+      "object_repr": "SJ_1_04: Parque de la Paz",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 150,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.037Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_03",
+      "object_repr": "SJ_1_03: Costado norte de Gran Centro Comercial del Sur",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 151,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.039Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_02",
+      "object_repr": "SJ_1_02: Colegio Seminario (Barrio La Cruz)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 152,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.040Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_01",
+      "object_repr": "SJ_1_01: MOPT (Plaza González Víquez)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 153,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.042Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_1_00",
+      "object_repr": "SJ_1_00: Terminal AyA San José (calle 7 con avenidas 10 y 12)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 154,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.044Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_48",
+      "object_repr": "SJ_0_48: Terminal AyA San José (calle 7 con avenidas 10 y 12)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 155,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.046Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_47",
+      "object_repr": "SJ_0_47: Barrio Chino (antigua Casa del Tornillo)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 156,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.047Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_46",
+      "object_repr": "SJ_0_46: Después de Plaza González Víquez",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 157,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.049Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_45",
+      "object_repr": "SJ_0_45: Plaza González Víquez",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 158,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.050Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_44",
+      "object_repr": "SJ_0_44: Antes de Plaza González Víquez",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 159,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.051Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_43",
+      "object_repr": "SJ_0_43: Gran Centro Comercial del Sur",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 160,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.053Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_42",
+      "object_repr": "SJ_0_42: Burger King (Parque de la Paz)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 161,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.054Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_41",
+      "object_repr": "SJ_0_41: Gasolinera Delta Santa Marta",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 162,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.055Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_40",
+      "object_repr": "SJ_0_40: Plaza Mercado",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 163,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.056Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_39",
+      "object_repr": "SJ_0_39: Cementerio de Desamparados",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 164,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.058Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_38",
+      "object_repr": "SJ_0_38: El Lagar Desamparados",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 165,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.059Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_37",
+      "object_repr": "SJ_0_37: Colegio Monseñor Rubén Odio",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 166,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.061Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_36",
+      "object_repr": "SJ_0_36: Costado norte de Iglesia Católica Desamparados",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 167,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.062Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_35",
+      "object_repr": "SJ_0_35: Después de Plaza Decosure",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 168,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.063Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_34",
+      "object_repr": "SJ_0_34: Clínica Marcial Fallas",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 169,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.065Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_33",
+      "object_repr": "SJ_0_33: Megasuper Desamparados",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 170,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.066Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_32",
+      "object_repr": "SJ_0_32: Empeños La Cueva",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 171,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.067Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_31",
+      "object_repr": "SJ_0_31: MaxiPalí cruce de San Miguel",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 172,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.069Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_30",
+      "object_repr": "SJ_0_30: Centro Comercial Expreso",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 173,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.070Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_29",
+      "object_repr": "SJ_0_29: La Guacamaya Desamparados",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 174,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.071Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_28",
+      "object_repr": "SJ_0_28: Entrada a Barrio La Guaria",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 175,
+    "fields": {
+      "action_time": "2021-06-11T22:45:12.073Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_27",
+      "object_repr": "SJ_0_27: Restaurante El Boyero",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 176,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.677Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_26",
+      "object_repr": "SJ_0_26: Cárcel de mujeres El Buen Pastor",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 177,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.679Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_25",
+      "object_repr": "SJ_0_25: Panadería Trinidad",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 178,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.681Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_24",
+      "object_repr": "SJ_0_24: Licorera Alberto Fallas",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 179,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.682Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_23",
+      "object_repr": "SJ_0_23: Super Más y Más (antigua fábrica Jockey)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 180,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.684Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_22",
+      "object_repr": "SJ_0_22: Cementerio de Aserrí",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 181,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.686Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_21",
+      "object_repr": "SJ_0_21: Depósito Las Gravilias",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 182,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.687Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_20",
+      "object_repr": "SJ_0_20: Chicharronera Cacique Acserí",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 183,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.689Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_19",
+      "object_repr": "SJ_0_19: Antiguo Banco Nacional diagonal al Parque de Aserrí",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 184,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.691Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_18",
+      "object_repr": "SJ_0_18: Detrás de la Iglesia Católica de Aserrí",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 185,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.692Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_17",
+      "object_repr": "SJ_0_17: Antes de Palí de Cinco Esquinas",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 186,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.696Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_16",
+      "object_repr": "SJ_0_16: Cinco Esquinas de Aserrí",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 187,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.698Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_15",
+      "object_repr": "SJ_0_15: Acueducto Municipal de Aserrí (El Ranchito)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 188,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.699Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_14",
+      "object_repr": "SJ_0_14: Barrio Lourdes (puente de Sáurez)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 189,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.701Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_13",
+      "object_repr": "SJ_0_13: Mirador La Montaña",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 190,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.702Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_12",
+      "object_repr": "SJ_0_12: Restaurante El Llanero",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 191,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.704Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_11",
+      "object_repr": "SJ_0_11: Después de Mirador La Tranca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 192,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.705Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_10",
+      "object_repr": "SJ_0_10: Antes de Mirador La Tranca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 193,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.707Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_09",
+      "object_repr": "SJ_0_09: Restaurante Ram Luna",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 194,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.708Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_08",
+      "object_repr": "SJ_0_08: La casa del Gringo (entrada a los Castro)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 195,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.710Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_07",
+      "object_repr": "SJ_0_07: Antiguo Restaurante El Palenque",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 196,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.711Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_06",
+      "object_repr": "SJ_0_06: Calle Azulillos",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 197,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.713Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_05",
+      "object_repr": "SJ_0_05: Entrada a Hotel Alta Vista",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 198,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.715Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_04",
+      "object_repr": "SJ_0_04: Entrada a Casa Candelaria",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 199,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.716Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_03",
+      "object_repr": "SJ_0_03: Estación terrena (antena) del ICE",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 200,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.717Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_02",
+      "object_repr": "SJ_0_02: Iglesia Católica de Tarbaca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 201,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.719Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_01",
+      "object_repr": "SJ_0_01: Restaurante Donde Alcides",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 202,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.720Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SJ_0_00",
+      "object_repr": "SJ_0_00: Cruce Vivero Tarbaquita",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 203,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.722Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_11",
+      "object_repr": "SI_1_11: San Ignacio centro (costado norte de la iglesia)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 204,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.723Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_10",
+      "object_repr": "SI_1_10: Después de la Delegación de Policía",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 205,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.724Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_09",
+      "object_repr": "SI_1_09: Antes de la Delegación de Policía",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 206,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.726Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_08",
+      "object_repr": "SI_1_08: La Ortiga",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 207,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.728Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_07",
+      "object_repr": "SI_1_07: La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 208,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.729Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_06",
+      "object_repr": "SI_1_06: Taller Cuyo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 209,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.731Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_05",
+      "object_repr": "SI_1_05: Después de Escuela La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 210,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.732Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_04",
+      "object_repr": "SI_1_04: Escuela La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 211,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.734Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_03",
+      "object_repr": "SI_1_03: Antes de Escuela La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 212,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.735Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_02",
+      "object_repr": "SI_1_02: Plaza de deportes de La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 213,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.737Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_01",
+      "object_repr": "SI_1_01: Lubricentro La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 214,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.738Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_1_00",
+      "object_repr": "SI_1_00: El Colono Agropecuario",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 215,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.740Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_11",
+      "object_repr": "SI_0_11: El Colono Agropecuario",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 216,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.741Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_10",
+      "object_repr": "SI_0_10: Lubricentro La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 217,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.743Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_09",
+      "object_repr": "SI_0_09: Plaza de deportes de La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 218,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.745Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_08",
+      "object_repr": "SI_0_08: Después de Escuela La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 219,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.747Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_07",
+      "object_repr": "SI_0_07: Escuela La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 220,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.748Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_06",
+      "object_repr": "SI_0_06: Antes de Escuela La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 221,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.750Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_05",
+      "object_repr": "SI_0_05: Taller Cuyo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 222,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.751Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_04",
+      "object_repr": "SI_0_04: La Esperanza",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 223,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.753Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_03",
+      "object_repr": "SI_0_03: La Ortiga",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 224,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.754Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_02",
+      "object_repr": "SI_0_02: Después de la Delegación de Policía",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 225,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.756Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_01",
+      "object_repr": "SI_0_01: Antes de la Delegación de Policía",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 226,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.757Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI_0_00",
+      "object_repr": "SI_0_00: San Ignacio centro (costado norte de la iglesia)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 227,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.759Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SI",
+      "object_repr": "SI: San Ignacio de Acosta centro",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 228,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.760Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_16",
+      "object_repr": "SG_1_16: San Gabriel centro (entre la iglesia y la plaza)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 229,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.762Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_15",
+      "object_repr": "SG_1_15: San Gabriel centro (frente a la ASADA)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 230,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.763Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_14",
+      "object_repr": "SG_1_14: Entrada a Barrio El Alto",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 231,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.765Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_13",
+      "object_repr": "SG_1_13: Bar El Yugo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 232,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.766Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_12",
+      "object_repr": "SG_1_12: Súper Mío Cid",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 233,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.768Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_11",
+      "object_repr": "SG_1_11: Antes de Bar La Curvita",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 234,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.770Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_10",
+      "object_repr": "SG_1_10: Cruce de La Trinidad, Monterrey y La Legua",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 235,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.771Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_09",
+      "object_repr": "SG_1_09: Importadora Monge La Fila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 236,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.773Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_08",
+      "object_repr": "SG_1_08: Barrio San Buenaventura (contiguo a la chatarrera)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 237,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.774Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_07",
+      "object_repr": "SG_1_07: Entrada a Barrio Nazareth",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 238,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.776Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_06",
+      "object_repr": "SG_1_06: Escuela de Tranquerillas (abajo)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 239,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.778Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_05",
+      "object_repr": "SG_1_05: Escuela de Tranquerillas",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 240,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.779Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_04",
+      "object_repr": "SG_1_04: Escuela de Tranquerillas (arriba)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 241,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.781Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_03",
+      "object_repr": "SG_1_03: Entrada a El Tigre",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 242,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.782Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_02",
+      "object_repr": "SG_1_02: Barrio La Rita (abajo)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 243,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.783Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_01",
+      "object_repr": "SG_1_01: Barrio La Rita (arriba)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 244,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.785Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_1_00",
+      "object_repr": "SG_1_00: Después del cruce de Tarbaca (hacia Tranquerillas)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 245,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.786Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_17",
+      "object_repr": "SG_0_17: Antes del cruce de San Gabriel y Acosta en Tarbaca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 246,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.788Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_16",
+      "object_repr": "SG_0_16: Barrio La Rita (arriba)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 247,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.790Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_15",
+      "object_repr": "SG_0_15: Barrio La Rita (abajo)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 248,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.791Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_14",
+      "object_repr": "SG_0_14: Entrada a El Tigre",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 249,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.793Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_13",
+      "object_repr": "SG_0_13: Escuela de Tranquerillas (arriba)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 250,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.794Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_12",
+      "object_repr": "SG_0_12: Escuela de Tranquerillas",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 251,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.796Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_11",
+      "object_repr": "SG_0_11: Escuela de Tranquerillas (abajo)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 252,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.798Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_10",
+      "object_repr": "SG_0_10: Entrada a Barrio Nazareth",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 253,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.799Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_09",
+      "object_repr": "SG_0_09: Barrio San Buenaventura (contiguo a la chatarrera)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 254,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.801Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_08",
+      "object_repr": "SG_0_08: Importadora Monge La Fila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 255,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.803Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_07",
+      "object_repr": "SG_0_07: La Fila",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 256,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.805Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_06",
+      "object_repr": "SG_0_06: Después de Bar La Curvita",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 257,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.807Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_05",
+      "object_repr": "SG_0_05: Entrada a Barrio Los Corella",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 258,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.809Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_04",
+      "object_repr": "SG_0_04: Súper Mío Cid",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 259,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.811Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_03",
+      "object_repr": "SG_0_03: Bar El Yugo",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 260,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.813Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_02",
+      "object_repr": "SG_0_02: Entrada al Liceo San Gabriel (Mini Súper Padilla)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 261,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.815Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_01",
+      "object_repr": "SG_0_01: Entrada a Barrio El Alto (la vuelta de Betty Camacho)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 262,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.817Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "SG_0_00",
+      "object_repr": "SG_0_00: San Gabriel centro (frente a El Gato Negro)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 263,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.818Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_1_07",
+      "object_repr": "LM_1_07: Terminal Los Mangos",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 264,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.820Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_1_06",
+      "object_repr": "LM_1_06: Los Mangos (frente a Rudy el zapatero)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 265,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.821Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_1_05",
+      "object_repr": "LM_1_05: Cruce de Limonal",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 266,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.823Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_1_04",
+      "object_repr": "LM_1_04: Salitral (frente a Balneario La Reina del Sol)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 267,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.825Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_1_03",
+      "object_repr": "LM_1_03: La cuesta de Salitral",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 268,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.827Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_1_02",
+      "object_repr": "LM_1_02: La Cuadra (Beto Vargas)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 269,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.829Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_1_01",
+      "object_repr": "LM_1_01: Barrio San Martín",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 270,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.831Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_1_00",
+      "object_repr": "LM_1_00: Barrio San Martín (frente a Alcohólicos Anónimos)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 271,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.833Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_0_07",
+      "object_repr": "LM_0_07: Barrio San Martín (frente a Alcohólicos Anónimos)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 272,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.835Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_0_06",
+      "object_repr": "LM_0_06: Barrio San Martín",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 273,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.837Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_0_05",
+      "object_repr": "LM_0_05: La Cuadra (Beto Vargas)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 274,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.838Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_0_04",
+      "object_repr": "LM_0_04: La cuesta de Salitral",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 275,
+    "fields": {
+      "action_time": "2021-06-11T22:45:18.840Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_0_03",
+      "object_repr": "LM_0_03: Salitral (frente a Balneario La Reina del Sol)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 276,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.377Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_0_02",
+      "object_repr": "LM_0_02: Cruce de Limonal",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 277,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.379Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_0_01",
+      "object_repr": "LM_0_01: Los Mangos",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 278,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.381Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "LM_0_00",
+      "object_repr": "LM_0_00: Terminal Los Mangos",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 279,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.383Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_15",
+      "object_repr": "JO_1_15: Palí de Jorco",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 280,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.384Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_14",
+      "object_repr": "JO_1_14: Escuela de Jorco",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 281,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.386Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_13",
+      "object_repr": "JO_1_13: Funeraria Vuelta de Jorco",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 282,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.387Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_12",
+      "object_repr": "JO_1_12: Bar La Viagra",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 283,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.389Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_11",
+      "object_repr": "JO_1_11: Ojo de Agua",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 284,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.391Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_10",
+      "object_repr": "JO_1_10: Tanque de Ojo de Agua",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 285,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.393Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_09",
+      "object_repr": "JO_1_09: Barrio El Carmen",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 286,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.394Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_08",
+      "object_repr": "JO_1_08: Los Camiones",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 287,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.396Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_07",
+      "object_repr": "JO_1_07: Antes de La Vuelta Hundida",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 288,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.398Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_06",
+      "object_repr": "JO_1_06: Barrio San Rafael (abajo)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 289,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.399Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_05",
+      "object_repr": "JO_1_05: Barrio San Rafael (arriba)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 290,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.401Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_04",
+      "object_repr": "JO_1_04: Barrio San Rafael (centro)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 291,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.402Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_03",
+      "object_repr": "JO_1_03: Barrio San Rafael",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 292,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.403Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_02",
+      "object_repr": "JO_1_02: Plaza de deportes de Tarbaca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 293,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.405Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_01",
+      "object_repr": "JO_1_01: El Cipresal",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 294,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.406Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_1_00",
+      "object_repr": "JO_1_00: Después del cruce de San Gabriel y Acosta en Tarbaca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 295,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.408Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_16",
+      "object_repr": "JO_0_16: Antes del cruce de San Gabriel y Acosta en Tarbaca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 296,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.409Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_15",
+      "object_repr": "JO_0_15: El Cipresal",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 297,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.411Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_14",
+      "object_repr": "JO_0_14: Plaza de deportes de Tarbaca",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 298,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.413Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_13",
+      "object_repr": "JO_0_13: Antes de Restaurante Kamakiri",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 299,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.414Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_12",
+      "object_repr": "JO_0_12: Barrio San Rafael (centro)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 300,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.415Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_11",
+      "object_repr": "JO_0_11: Barrio San Rafael (arriba)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 301,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.417Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_10",
+      "object_repr": "JO_0_10: Barrio San Rafael (abajo)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 302,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.419Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_09",
+      "object_repr": "JO_0_09: Después de La Vuelta Hundida",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 303,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.420Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_08",
+      "object_repr": "JO_0_08: La Vuelta Hundida",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 304,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.422Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_07",
+      "object_repr": "JO_0_07: Los Camiones",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 305,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.424Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_06",
+      "object_repr": "JO_0_06: Barrio El Carmen",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 306,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.425Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_05",
+      "object_repr": "JO_0_05: Tanque de Ojo de Agua",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 307,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.426Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_04",
+      "object_repr": "JO_0_04: Ojo de Agua",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 308,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.428Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_03",
+      "object_repr": "JO_0_03: Bar La Viagra",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 309,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.430Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_02",
+      "object_repr": "JO_0_02: Entrada a Los Mangos",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 310,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.431Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_01",
+      "object_repr": "JO_0_01: Iglesia Católica de Vuelta de Jorco",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 311,
+    "fields": {
+      "action_time": "2021-06-11T22:45:25.433Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "JO_0_00",
+      "object_repr": "JO_0_00: Palí de Jorco",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 312,
+    "fields": {
+      "action_time": "2021-06-11T22:45:40.408Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "SJ",
+      "object_repr": "SJ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add agency",
+      "content_type": 1,
+      "codename": "add_agency"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change agency",
+      "content_type": 1,
+      "codename": "change_agency"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete agency",
+      "content_type": 1,
+      "codename": "delete_agency"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view agency",
+      "content_type": 1,
+      "codename": "view_agency"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add calendar",
+      "content_type": 2,
+      "codename": "add_calendar"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change calendar",
+      "content_type": 2,
+      "codename": "change_calendar"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete calendar",
+      "content_type": 2,
+      "codename": "delete_calendar"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view calendar",
+      "content_type": 2,
+      "codename": "view_calendar"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add fare",
+      "content_type": 3,
+      "codename": "add_fare"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change fare",
+      "content_type": 3,
+      "codename": "change_fare"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete fare",
+      "content_type": 3,
+      "codename": "delete_fare"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view fare",
+      "content_type": 3,
+      "codename": "view_fare"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add route",
+      "content_type": 4,
+      "codename": "add_route"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change route",
+      "content_type": 4,
+      "codename": "change_route"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete route",
+      "content_type": 4,
+      "codename": "delete_route"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view route",
+      "content_type": 4,
+      "codename": "view_route"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add shape",
+      "content_type": 5,
+      "codename": "add_shape"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change shape",
+      "content_type": 5,
+      "codename": "change_shape"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete shape",
+      "content_type": 5,
+      "codename": "delete_shape"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view shape",
+      "content_type": 5,
+      "codename": "view_shape"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add stop",
+      "content_type": 6,
+      "codename": "add_stop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change stop",
+      "content_type": 6,
+      "codename": "change_stop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete stop",
+      "content_type": 6,
+      "codename": "delete_stop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view stop",
+      "content_type": 6,
+      "codename": "view_stop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add zone",
+      "content_type": 7,
+      "codename": "add_zone"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change zone",
+      "content_type": 7,
+      "codename": "change_zone"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete zone",
+      "content_type": 7,
+      "codename": "delete_zone"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view zone",
+      "content_type": 7,
+      "codename": "view_zone"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add trip",
+      "content_type": 8,
+      "codename": "add_trip"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change trip",
+      "content_type": 8,
+      "codename": "change_trip"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete trip",
+      "content_type": 8,
+      "codename": "delete_trip"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view trip",
+      "content_type": 8,
+      "codename": "view_trip"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add stop time",
+      "content_type": 9,
+      "codename": "add_stoptime"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change stop time",
+      "content_type": 9,
+      "codename": "change_stoptime"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete stop time",
+      "content_type": 9,
+      "codename": "delete_stoptime"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view stop time",
+      "content_type": 9,
+      "codename": "view_stoptime"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add calendar date",
+      "content_type": 10,
+      "codename": "add_calendardate"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change calendar date",
+      "content_type": 10,
+      "codename": "change_calendardate"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete calendar date",
+      "content_type": 10,
+      "codename": "delete_calendardate"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view calendar date",
+      "content_type": 10,
+      "codename": "view_calendardate"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add noticia",
+      "content_type": 11,
+      "codename": "add_noticia"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change noticia",
+      "content_type": 11,
+      "codename": "change_noticia"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete noticia",
+      "content_type": 11,
+      "codename": "delete_noticia"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view noticia",
+      "content_type": 11,
+      "codename": "view_noticia"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add aviso",
+      "content_type": 12,
+      "codename": "add_aviso"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change aviso",
+      "content_type": 12,
+      "codename": "change_aviso"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete aviso",
+      "content_type": 12,
+      "codename": "delete_aviso"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view aviso",
+      "content_type": 12,
+      "codename": "view_aviso"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add nota",
+      "content_type": 13,
+      "codename": "add_nota"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change nota",
+      "content_type": 13,
+      "codename": "change_nota"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete nota",
+      "content_type": 13,
+      "codename": "delete_nota"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view nota",
+      "content_type": 13,
+      "codename": "view_nota"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can add funcionario",
+      "content_type": 14,
+      "codename": "add_funcionario"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can change funcionario",
+      "content_type": 14,
+      "codename": "change_funcionario"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can delete funcionario",
+      "content_type": 14,
+      "codename": "delete_funcionario"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can view funcionario",
+      "content_type": 14,
+      "codename": "view_funcionario"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+      "name": "Can add comunidad",
+      "content_type": 15,
+      "codename": "add_comunidad"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+      "name": "Can change comunidad",
+      "content_type": 15,
+      "codename": "change_comunidad"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+      "name": "Can delete comunidad",
+      "content_type": 15,
+      "codename": "delete_comunidad"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+      "name": "Can view comunidad",
+      "content_type": 15,
+      "codename": "view_comunidad"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+      "name": "Can add pregunta",
+      "content_type": 16,
+      "codename": "add_pregunta"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+      "name": "Can change pregunta",
+      "content_type": 16,
+      "codename": "change_pregunta"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+      "name": "Can delete pregunta",
+      "content_type": 16,
+      "codename": "delete_pregunta"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+      "name": "Can view pregunta",
+      "content_type": 16,
+      "codename": "view_pregunta"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 17,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 17,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 17,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 17,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 18,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 18,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 18,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 18,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 19,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 19,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 19,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 19,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 20,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 20,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 20,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 20,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 21,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 21,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 21,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 21,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 22,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 22,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 22,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 22,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+      "name": "Can add empresa",
+      "content_type": 23,
+      "codename": "add_empresa"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+      "name": "Can change empresa",
+      "content_type": 23,
+      "codename": "change_empresa"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+      "name": "Can delete empresa",
+      "content_type": 23,
+      "codename": "delete_empresa"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+      "name": "Can view empresa",
+      "content_type": 23,
+      "codename": "view_empresa"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 93,
+    "fields": {
+      "name": "Can add prueba",
+      "content_type": 24,
+      "codename": "add_prueba"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 94,
+    "fields": {
+      "name": "Can change prueba",
+      "content_type": 24,
+      "codename": "change_prueba"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 95,
+    "fields": {
+      "name": "Can delete prueba",
+      "content_type": 24,
+      "codename": "delete_prueba"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 96,
+    "fields": {
+      "name": "Can view prueba",
+      "content_type": 24,
+      "codename": "view_prueba"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 97,
+    "fields": {
+      "name": "Can add fare rule",
+      "content_type": 25,
+      "codename": "add_farerule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 98,
+    "fields": {
+      "name": "Can change fare rule",
+      "content_type": 25,
+      "codename": "change_farerule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 99,
+    "fields": {
+      "name": "Can delete fare rule",
+      "content_type": 25,
+      "codename": "delete_farerule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 100,
+    "fields": {
+      "name": "Can view fare rule",
+      "content_type": 25,
+      "codename": "view_farerule"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 101,
+    "fields": {
+      "name": "Can add fare attribute",
+      "content_type": 26,
+      "codename": "add_fareattribute"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 102,
+    "fields": {
+      "name": "Can change fare attribute",
+      "content_type": 26,
+      "codename": "change_fareattribute"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 103,
+    "fields": {
+      "name": "Can delete fare attribute",
+      "content_type": 26,
+      "codename": "delete_fareattribute"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 104,
+    "fields": {
+      "name": "Can view fare attribute",
+      "content_type": 26,
+      "codename": "view_fareattribute"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 105,
+    "fields": {
+      "name": "Can add feed info",
+      "content_type": 27,
+      "codename": "add_feedinfo"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 106,
+    "fields": {
+      "name": "Can change feed info",
+      "content_type": 27,
+      "codename": "change_feedinfo"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 107,
+    "fields": {
+      "name": "Can delete feed info",
+      "content_type": 27,
+      "codename": "delete_feedinfo"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 108,
+    "fields": {
+      "name": "Can view feed info",
+      "content_type": 27,
+      "codename": "view_feedinfo"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 109,
+    "fields": {
+      "name": "Can add shape",
+      "content_type": 28,
+      "codename": "add_shape"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 110,
+    "fields": {
+      "name": "Can change shape",
+      "content_type": 28,
+      "codename": "change_shape"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 111,
+    "fields": {
+      "name": "Can delete shape",
+      "content_type": 28,
+      "codename": "delete_shape"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 112,
+    "fields": {
+      "name": "Can view shape",
+      "content_type": 28,
+      "codename": "view_shape"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 113,
+    "fields": {
+      "name": "Can add stop",
+      "content_type": 29,
+      "codename": "add_stop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 114,
+    "fields": {
+      "name": "Can change stop",
+      "content_type": 29,
+      "codename": "change_stop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 115,
+    "fields": {
+      "name": "Can delete stop",
+      "content_type": 29,
+      "codename": "delete_stop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 116,
+    "fields": {
+      "name": "Can view stop",
+      "content_type": 29,
+      "codename": "view_stop"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$sfDbLu5a0BVj$cNNM6t6yyIr2UEgE9PAx/2gqFSEdt3F51ZXaynVEWLw=",
+      "last_login": "2021-06-04T22:31:09.597Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2020-12-04T05:16:55.097Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "rutas",
+      "model": "agency"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "rutas",
+      "model": "calendar"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "rutas",
+      "model": "fare"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "rutas",
+      "model": "route"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "rutas",
+      "model": "shape"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "rutas",
+      "model": "stop"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "rutas",
+      "model": "zone"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "rutas",
+      "model": "trip"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "rutas",
+      "model": "stoptime"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "rutas",
+      "model": "calendardate"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "noticias",
+      "model": "noticia"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "noticias",
+      "model": "aviso"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "empresa",
+      "model": "nota"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+      "app_label": "empresa",
+      "model": "funcionario"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+      "app_label": "comunidades",
+      "model": "comunidad"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+      "app_label": "contacto",
+      "model": "pregunta"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 23,
+    "fields": {
+      "app_label": "empresa",
+      "model": "empresa"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 24,
+    "fields": {
+      "app_label": "inicio",
+      "model": "prueba"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 25,
+    "fields": {
+      "app_label": "rutas",
+      "model": "farerule"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 26,
+    "fields": {
+      "app_label": "rutas",
+      "model": "fareattribute"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 27,
+    "fields": {
+      "app_label": "rutas",
+      "model": "feedinfo"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 28,
+    "fields": {
+      "app_label": "shapeeditor",
+      "model": "shape"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 29,
+    "fields": {
+      "app_label": "shapeeditor",
+      "model": "stop"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "1275as0w0fibyscyjz82h1oows54kfc5",
+    "fields": {
+      "session_data": "ZDcwMjNmMWY2MWQzZjkzZmUyZDA4YTFiZjNkOGRhNzVmMmZiYzBkNDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0MWRiNTFiYmMyNTlmMGZkNjRhOGMxNzMxM2U5MGY4ZDAxZjFiODhhIn0=",
+      "expire_date": "2020-12-18T05:17:03.713Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "4wla4zb0icqgafqu8w7hm92pvneidx7l",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGlnxD68p6XMGa71r4wBypDipEHeHSCmgfTPzXiLitta49bzEicVFKHH63RLSI7cd8B3bbZY0t3WZktwVedAux5nz83q4fwcVe_3WGRWwNSYYbywoH4gHXxy4ohz4EhIMxWptURsqKVNQGRQDn4m8hqDF-wPHDjdi:1lCNPB:pyE7zXGAOS5fMgIONvLfvmnvUFWBrSP16-q6J6YVQhw",
+      "expire_date": "2021-03-03T14:02:13.019Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "ag4axgedyc8647mu5hqr9w0ll59b7wdx",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGlnxD68p6XMGa71r4wBypDipEHeHSCmgfTPzXiLitta49bzEicVFKHH63RLSI7cd8B3bbZY0t3WZktwVedAux5nz83q4fwcVe_3WGRWwNSYYbywoH4gHXxy4ohz4EhIMxWptURsqKVNQGRQDn4m8hqDF-wPHDjdi:1lkBdv:rElCDPd_w825A-EEH-g4I3L1KyRPa_CC0mMx9DVmOXA",
+      "expire_date": "2021-06-04T20:21:11.348Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "dupdnuenc2mgt9g000r5f1qzay712m0t",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGlnxD68p6XMGa71r4wBypDipEHeHSCmgfTPzXiLitta49bzEicVFKHH63RLSI7cd8B3bbZY0t3WZktwVedAux5nz83q4fwcVe_3WGRWwNSYYbywoH4gHXxy4ohz4EhIMxWptURsqKVNQGRQDn4m8hqDF-wPHDjdi:1lpILN:sbbp7nsPWrD6g-yjQLvSRExv0AgQghsqciHkAnAMxas",
+      "expire_date": "2021-06-18T22:31:09.599Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "ev372cbyjri2e7fwo48h5mc7tl60t9ug",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGlnxD68p6XMGa71r4wBypDipEHeHSCmgfTPzXiLitta49bzEicVFKHH63RLSI7cd8B3bbZY0t3WZktwVedAux5nz83q4fwcVe_3WGRWwNSYYbywoH4gHXxy4ohz4EhIMxWptURsqKVNQGRQDn4m8hqDF-wPHDjdi:1leirF:hq1net6ac1RlzsaHYIgZYqOvSbd0kkQhWgqYEoOP_64",
+      "expire_date": "2021-05-20T18:36:21.302Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "rytnzlzzapvhbode8dfjgglf1eclw25k",
+    "fields": {
+      "session_data": "ZDcwMjNmMWY2MWQzZjkzZmUyZDA4YTFiZjNkOGRhNzVmMmZiYzBkNDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0MWRiNTFiYmMyNTlmMGZkNjRhOGMxNzMxM2U5MGY4ZDAxZjFiODhhIn0=",
+      "expire_date": "2021-02-17T15:36:16.549Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "tvet8x9xo9mlif5qyu724i3804r3q4zm",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGlnxD68p6XMGa71r4wBypDipEHeHSCmgfTPzXiLitta49bzEicVFKHH63RLSI7cd8B3bbZY0t3WZktwVedAux5nz83q4fwcVe_3WGRWwNSYYbywoH4gHXxy4ohz4EhIMxWptURsqKVNQGRQDn4m8hqDF-wPHDjdi:1lHLXa:NJ4O2P9-rBQoLgthC_PXJJa7oMTLjIA2GCSO53B5rWk",
+      "expire_date": "2021-03-17T07:03:26.339Z"
+    }
+  }
+]

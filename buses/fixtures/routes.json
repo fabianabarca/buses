@@ -1,0 +1,44 @@
+[
+{
+    "model": "rutas.route",
+    "pk": "ACOS",
+    "fields": {
+        "agency": "TSG",
+        "short_name": "Acosta",
+        "long_name": "Acosta - San Jos\u00e9",
+        "desc": "Esta ruta conecta San Ignacio de Acosta con San Jos\u00e9 centro, pasando por Vuelta de Jorco, Tarbaca, Aserr\u00ed y Desamparados.",
+        "route_type": "3",
+        "url": "http://tsgcr.com/rutas/acosta",
+        "color": "FFA500",
+        "text_color": "000000"
+    }
+},
+{
+    "model": "rutas.route",
+    "pk": "TURR",
+    "fields": {
+        "agency": "TSG",
+        "short_name": "Turrujal",
+        "long_name": "Turrujal - San Jos\u00e9",
+        "desc": "Esta ruta conecta Turrujal de Acosta con San Jos\u00e9 centro, pasando por San Ignacio, Vuelta de Jorco, Tarbaca, Aserr\u00ed y Desamparados.",
+        "route_type": "3",
+        "url": "http://tsgcr.com/rutas/acosta",
+        "color": "FF4500",
+        "text_color": "FFFFFF"
+    }
+},
+{
+    "model": "rutas.route",
+    "pk": "SGAB",
+    "fields": {
+        "agency": "TSG",
+        "short_name": "San Gabriel",
+        "long_name": "San Gabriel - San Jos\u00e9",
+        "desc": "Esta ruta conecta San Gabriel de Aserr\u00ed con San Jos\u00e9 centro, pasando por La Fila del Rosario, Tarbaca, Aserr\u00ed y Desamparados.",
+        "route_type": "3",
+        "url": "http://tsgcr.com/rutas/sangabriel",
+        "color": "008000",
+        "text_color": "FFFFFF"
+    }
+}
+]

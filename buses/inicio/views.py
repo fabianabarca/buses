@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from rutas.models import Route
+from rutas.models import Route, FeedInfo
 from .models import Prueba
 from datetime import datetime
 
@@ -23,7 +23,14 @@ def acerca(request):
     return render(request, 'acerca.html')
 
 def gtfs(request):
-    return render(request, 'gtfs.html')
+
+    informacion = FeedInfo.objects.get(pk=1)
+
+    context = {
+        'informacion': informacion
+    }
+
+    return render(request, 'gtfs.html', context)
 
 def prueba(request):
     personas = Prueba.objects.all()

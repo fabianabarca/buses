@@ -1,0 +1,15 @@
+[
+{
+    "model": "rutas.agency",
+    "pk": "TSG",
+    "fields": {
+        "name": "Transportes San Gabriel",
+        "url": "http://tsgcr.com/",
+        "timezone": "America/Costa_Rica",
+        "lang": "es",
+        "phone": "+506 2410 0330",
+        "fare_url": "http://tsgcr.com/rutas/#tarifas",
+        "email": "transgabriel@ice.co.cr"
+    }
+}
+]
