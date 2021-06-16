@@ -79,6 +79,10 @@ Con esto a la hora de hacer un **POST** en la página de contacto se recibirá u
 
 Tanto las aplicaciones de Django como las de terceros encapsulan su propio _/static/_ en el cual almacenan sus ficheros de JavaScript y CSS, estos se pueden ver correctamente cuando levantamos el servidor de desarrollo que viene con el framework, pero una vez que usamos el _WSGI_ en conjunto con _NGINX_ notaremos que las aplicaciones externas perderán sus estilos e interacciones de JavaScrip, esto sucede porque en producción no es sensato hacer peticiones de ficheros estáticos a través de un servición o rutina dinámica, por eso se espera que por parte del usuario se coloquen estos estilos y scripts en el directorio estático correspondiente al propio proyecto, este contenido será servido directamente por NGINX.
 
+### Servidor de imagenes procesadas
+
+En ocasiones es necesario tener un set de imágenes de diversas resoluciones, en sitios estáticos no hay muchas alternativas, se usa colocar un directorio para las imágenes y por cada una de las resoluciones se dimensiona la misma imagen, pero conforme el sitio crece esta tarea se vuelve cada vez más tediosa, además de que los casos nunca son suficientes para suplir satisfactoriamente todos los posibles dispositivos escenario de un request de contenido. Para casos en los que se necesita que la imagen se adapte a la resolución indicada NGINX ya poseé un mod, libnginx-mod-http-image-filter, el cual permite redimensionar la imagen así como otras transformaciones en tiempo de petición, de esta manera la imagen existe solo una vez y es este módulo el que la recorta y la envía al cliente en la resolución solicitada, a su vez este mod puede trabajar con un caché, de esta manera aquellas imagenes ya procesadas antes se almacenan en RAM por si se diera el caso en que se vuelve a solicitar esta figura no tener que procesarla una segunda vez, esto ahorra muchos recursos en el servidor.
+
 ### Levantar el servicio 
 
 <img src="http://161.35.54.122:10066/nginx.png" height="70">

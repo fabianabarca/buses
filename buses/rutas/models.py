@@ -1,4 +1,27 @@
+from django.shortcuts import get_object_or_404
 from django.db import models
+
+## Managers
+
+class tripManager(models.Manager):
+    def horario_y_ramales(self, service_id='', route_id_array=[], direction=0):
+        trips = super().get_queryset().filter(
+            service__service_id=service_id,
+            route__route_id__in = route_id_array,
+            direction=direction
+        )
+
+        para_ordenar = []
+        for i in trips:
+            viaje = StopTime.objects.get(trip=i, stop_sequence='0')
+            para_ordenar.append([viaje.departure_time, str(i.shape)])
+
+        para_ordenar.sort()
+        horario = [i[0] for i in para_ordenar]
+        ramales = [i[1] for i in para_ordenar]
+        return (horario, ramales)
+
+## Models
 
 class Agency(models.Model):
     """One or more transit agencies that provide the data in this feed.
@@ -26,13 +49,17 @@ class Agency(models.Model):
         blank=True, help_text="URL para la compra de tiquetes en línea.")
     email = models.EmailField(max_length=254,  blank=True, help_text="Correo electrónico de servicio al cliente.")
 
+    class Meta:
+        verbose_name = "agency"
+        verbose_name_plural = "agencies"
+
     def __str__(self):
         return self.name
 
 class Stop(models.Model):
     """A stop or station
     Maps to stops.txt in the GTFS feed.
-    """    
+    """
     stop_id = models.CharField(
         primary_key=True,
         max_length=255, db_index=True,
@@ -70,7 +97,11 @@ class Stop(models.Model):
             ('1', 'Abordaje parcial de silla de ruedas.'),
             ('2', 'Las sillas de ruedas no pueden subir.')),
         help_text='¿Es posible subir al transporte en silla de ruedas?')
-    
+
+    class Meta:
+        verbose_name = "stop"
+        verbose_name_plural = "stops"
+
     def __str__(self):
         return self.stop_id + ': ' + self.name
 
@@ -116,7 +147,11 @@ class Route(models.Model):
     text_color = models.CharField(
         max_length=6, blank=True,
         help_text="Color del texto de ruta en código hexadecimal.")
-    
+
+    class Meta:
+        verbose_name = "route"
+        verbose_name_plural = "routes"
+
     def __str__(self):
         return self.long_name
 
@@ -124,6 +159,9 @@ class Trip(models.Model):
     """A trip along a route
     This implements trips.txt in the GTFS feed
     """
+
+    objects = tripManager(); # Custom manager with extra methods
+
     route = models.ForeignKey('Route', on_delete=models.CASCADE)
     service = models.ForeignKey(
         'Calendar', null=True, blank=True, on_delete=models.SET_NULL)
@@ -161,7 +199,11 @@ class Trip(models.Model):
             ('1', 'Hay espacio para el transporte de bicicletas.'),
             ('2', 'No hay espacio para el transporte de bicicletas.')),
         help_text='¿Hay espacio para el transporte de bicicletas?')
-    
+
+    class Meta:
+        verbose_name = "trip"
+        verbose_name_plural = "trips"
+
     def __str__(self):
         return self.trip_id
 
@@ -205,7 +247,11 @@ class StopTime(models.Model):
         choices=(('0', 'Hora aproximada'),
                  ('1', 'Hora exacta')),
         help_text="Exactitud de la hora de llegada y salida.")
-    
+
+    class Meta:
+        verbose_name = "stop time"
+        verbose_name_plural = "stop times"
+
     def __str__(self):
         return str(self.trip)
 
@@ -267,7 +313,11 @@ class Calendar(models.Model):
         auto_now=False, auto_now_add=False,
         default=None,
         help_text='Fin de la vigencia del horario.')
-    
+
+    class Meta:
+        verbose_name = "calendar"
+        verbose_name_plural = "calendars"
+
     def __str__(self):
         return self.service_id
 
@@ -289,6 +339,10 @@ class CalendarDate(models.Model):
     holiday_name = models.CharField(
         max_length=64,
         help_text="Nombre oficial del feriado.")
+
+    class Meta:
+        verbose_name = "calendar date"
+        verbose_name_plural = "calendar dates"
 
     def __str__(self):
         return self.holiday_name
@@ -323,12 +377,16 @@ class FareAttribute(models.Model):
         null=True, blank=True,
         help_text="Tiempo en segundos hasta que un tiquete o transferencia expira.")
 
+    class Meta:
+        verbose_name = "fare attribute"
+        verbose_name_plural = "fare attributes"
+
     def __str__(self):
         return self.fare_id
 
 class FareRule(models.Model):
     """ A Fare Rule class """
-    
+
     fare = models.ForeignKey('FareAttribute', on_delete=models.CASCADE)
     route = models.ForeignKey('Route', on_delete=models.CASCADE)
     origin = models.ForeignKey('Zone', 
@@ -337,6 +395,9 @@ class FareRule(models.Model):
     destination = models.ForeignKey('Zone', 
                 related_name='destination_id', 
                 on_delete=models.CASCADE)
+    class Meta:
+        verbose_name = "fare rule"
+        verbose_name_plural = "fare rules"
 
     def __str__(self):
         return self.origin_id + ' > ' + self.destination_id + ' = ' + self.fare_id
@@ -362,6 +423,10 @@ class Zone(models.Model):
                  ('RUTA_F', 'Ruta F'),
                  ('RUTA_G', 'Ruta G'),),
         )
+
+    class Meta:
+        verbose_name = "zone"
+        verbose_name_plural = "zones"
 
     def __str__(self):
         return self.zone_id
@@ -399,6 +464,10 @@ class Shape(models.Model):
         null=True, blank=True,
         help_text="Precisión es en metros (0.001 km)")
 
+    class Meta:
+        verbose_name = "shape"
+        verbose_name_plural = "shapes"
+
     def __str__(self):
         return self.shape_id
 
@@ -421,6 +490,10 @@ class FeedInfo(models.Model):
     version = models.CharField(max_length=32)
     contact_email = models.EmailField(max_length=128,  
         blank=True, help_text="Correo electrónico de contacto sobre GTFS.")
+    
+    class Meta:
+        verbose_name = "feed info"
+        verbose_name_plural = "feed info objects"
 
     def __str__(self):
         return self.publisher_name
