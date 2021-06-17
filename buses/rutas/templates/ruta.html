@@ -108,13 +108,13 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
         <p>
             <ul class="nav nav-segment nav-pills" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                <a class="nav-link {{ horario_activo.0 }}" id="entresemana-tab" data-toggle="tab" href="#entresemana" role="tab" aria-controls="entresemana" aria-selected="{{ horario_activo.3 }}"><strong>Lunes a viernes</strong></a>
+                <a @click="table_on_select='entresemana_table'" class="nav-link {{ horario_activo.0 }}" id="entresemana-tab" data-toggle="tab" href="#entresemana" role="tab" aria-controls="entresemana" aria-selected="{{ horario_activo.3 }}"><strong>Lunes a viernes</strong></a>
                 </li>
                 <li class="nav-item" role="presentation">
-                <a class="nav-link {{ horario_activo.1 }}" id="sabado-tab" data-toggle="tab" href="#sabado" role="tab" aria-controls="sabado" aria-selected="{{ horario_activo.4 }}"><strong>Sábado</strong></a>
+                    <a @click="table_on_select='sabado_table'" class="nav-link {{ horario_activo.1 }}" id="sabado-tab" data-toggle="tab" href="#sabado" role="tab" aria-controls="sabado" aria-selected="{{ horario_activo.4 }}"><strong>Sábado</strong></a>
                 </li>
                 <li class="nav-item" role="presentation">
-                <a class="nav-link {{ horario_activo.2 }}" id="domingo-tab" data-toggle="tab" href="#domingo" role="tab" aria-controls="domingo" aria-selected="{{ horario_activo.5 }}"><strong>Domingo</strong></a>
+                    <a @click="table_on_select='domingo_table'" class="nav-link {{ horario_activo.2 }}" id="domingo-tab" data-toggle="tab" href="#domingo" role="tab" aria-controls="domingo" aria-selected="{{ horario_activo.5 }}"><strong>Domingo</strong></a>
                 </li>
             </ul>
         </p>
@@ -123,7 +123,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     <!-- Tablas con los horarios por día -->
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade {{ horario_activo.6 }}" id="entresemana" role="tabpanel" aria-labelledby="entresemana-tab">
-            <table class="table table-striped table-borderless text-center">
+            <table id="entresemana_table" class="table table-striped table-borderless text-center" style="background: white;">
                 <thead>
                     <tr>
                         <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down text-danger"></i> <br> San&nbsp;José</th>
@@ -141,7 +141,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
             </table>
         </div>
         <div class="tab-pane fade {{ horario_activo.7 }}" id="sabado" role="tabpanel" aria-labelledby="sabado-tab">
-            <table class="table table-striped table-borderless text-center">
+            <table id="sabado_table" class="table table-striped table-borderless text-center" style="background: white;">
                 <thead>
                     <tr>
                         <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down text-danger"></i> <br> San&nbsp;José</th>
@@ -159,7 +159,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
             </table>
         </div>
         <div class="tab-pane fade {{ horario_activo.8 }}" id="domingo" role="tabpanel" aria-labelledby="domingo-tab">
-            <table class="table table-striped table-borderless text-center">
+            <table id="domingo_table" class="table table-striped table-borderless text-center" style="background: white;">
                 <thead>
                     <tr>
                         <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down text-danger"></i> <br> San&nbsp;José</th>
@@ -176,6 +176,12 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <div class="container float-left">
+        <button class="btn btn-secondary" @click="downloadTableAsImage()">
+            Descargar horario
+        </button>
     </div>
 
     <!-- Datos de GTFS y Google Maps -->
@@ -394,6 +400,9 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
 <script>
  const RUTAS_MAP_MAX_BOUNDS = {{ maxBounds }}
 </script>
+
+<!-- funcion para descargar las tablas de horario como una imagen -->
+<script src="https://github.com/niklasvh/html2canvas/releases/download/0.5.0-alpha1/html2canvas.js"></script>
 
 <!-- Incluir el framework de Vue3 TODO: sustituir por la versión producción-->
 <script src="https://unpkg.com/vue@next"></script>

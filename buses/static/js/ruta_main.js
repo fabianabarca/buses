@@ -13,9 +13,31 @@ const ruta_app = Vue.createApp({
 
             desde_sanjose_ramal: [], // Ramales
             hacia_sanjose_ramal: [],
+
+            // Download tables as images:
+            table_on_select: 'entresemana_table' // TODO get initial state from document
         };
     },
     methods: {
+        downloadTableAsImage() {
+            var my_table_id = this.table_on_select; // FIXME
+
+            html2canvas(document.getElementById(my_table_id)).then(
+                canvas => {
+
+                    var a = document.createElement("a");
+                    a.download = 'horario_'+this.table_on_select+'.jpeg';
+                    a.href = canvas.toDataURL("image/jpeg");
+                    a.dataset.downloadurl = ["image/jpeg", a.download, a.href].join(":");
+                    a.style.display = "none";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    setTimeout(function () {
+                        URL.revokeObjectURL(a.href);
+                    }, 1500);
+                });
+        },
         updateProximoBus: function(){
             // Lógica de proximobus
             this.desde_sanjose = [];
