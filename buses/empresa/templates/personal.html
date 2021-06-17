@@ -12,32 +12,29 @@
 {% block content %}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<br>
+<br>
+<br>
+<br>
 <h1>Lista del personal</h1>
 <p>Nuestro personal</p>
 <br>
 
-<div class="row">
+<div class="row mx-n2 mb-5">
     {% for funcionario in funcionarios %}
-    <div class="column">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}" class="rounded-circle"
-                 alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}" style="width:175px;height:175px;">
-                 <h2>{{ funcionario.nombre }}</h2>
-                 <p>{{ funcionario.cargo }}</p>
-              </div>
-              <div class="flip-card-back">
-               
-                <a href='/nosotros/funcionario_{{ funcionario.id }}'></a>
-                <h1>{{ funcionario.nombre }}</h1>
-                <p>Mi nombre es {{ funcionario.nombre }} mi cargo es {{ funcionario.cargo }}</p>
-                <a href='/nosotros/funcionario_{{ funcionario.id }}' class="btn btn-dark" role="button" aria-pressed="true">Contacto</a>
-              </div>
-            </div>
-          </div>
-        
+    <div class="col-sm-6 col-lg-3 px-2 mb-3">
+          <!-- Team -->
+    <div class="card h-100 transition-3d-hover">
+      <div class="card-body">
+        <div class="avatar avatar-lg avatar-circle mb-4">
+          <img class="avatar-img" src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}" alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}">
+        </div>
+
+        <span class="d-block small font-weight-bold text-cap mb-1">{{ funcionario.cargo }}</span>
+        <h4 class="text-lh-sm">{{ funcionario.nombre }}</h4>
+        <!--<p class="font-size-1">Mi nombre es {{ funcionario.nombre }} mi cargo es {{ funcionario.cargo }}</p> -->
+      </div>
+    </div>
     </div>
     {% endfor %}
 </div>
