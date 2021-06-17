@@ -16,3 +16,7 @@
 .custom-vertical-space {
     min-height: 10ch;
 }
+
+.custom-badge {
+    min-width: 4.2ch;
+}
