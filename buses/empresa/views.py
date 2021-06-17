@@ -6,8 +6,10 @@ from .models import Funcionario
 
 def empresa(request):
     empresa = get_object_or_404(Empresa, codigo='TSG')
+    funcionarios = Funcionario.objects.all()
     context = {
-        'empresa': empresa
+        'empresa': empresa,
+        'funcionarios': funcionarios
     }
     return render(request, 'empresa.html', context)
 
