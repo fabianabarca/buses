@@ -39,5 +39,12 @@ const ruta_app = Vue.createApp({
                 'en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
         }, 1000); // Cada segundo refresca
 
+        // Encontrar que tabla se está mostrando // FIXME HACK
+        if (String(document.getElementById('entresemana-tab').classList[1]) == 'active')
+            this.table_on_select = "entresemana_table" ;
+        else if (String(document.getElementById('sabado-tab').classList[1]) == 'active')
+            this.table_on_select = "sabado_table" ;
+        else if (String(document.getElementById('domingo-tab').classList[1]) == 'active')
+            this.table_on_select = "domingo_table" ;
     },
 });
