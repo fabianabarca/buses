@@ -1,50 +1,51 @@
 ruta_app.component('mapa-sangabriel', {
     template:/*html*/ 
             `
-            <div id="mapId" class="map map-home" style="margin:auto; height:400px; max-width: 540px;"></div>
-                <br/>
             <div class="container text-center">
-                <div class="row">
-                    <div class="col-md-2">
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-2">
-                            </div>
-                            <div class="col-3 text-center">
-                                <p>
-                                    <span class="badge badge-secondary">Desde</span>
-                                    <br/>
-                                    {{fromRouteName}}
-                                </p>
-                            </div>
-                            <div class="col-2">
-                                <button class="btn btn-success btn-xs text-center" v-on:click="switchRoutes">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 -2 100% 100%">
-                                        <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="col-3 text-central">
-                                <p>
-                                    <span class="badge badge-secondary">Hacia</span>
-                                    <br/>
-                                    {{toRouteName}}
-                                </p>
-                            </div>
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-2">
+                        </div>
+                        <div class="col-3 text-center">
+                            <p>
+                                <span class="badge badge-secondary">Desde</span>
+                                <br/>
+                                {{fromRouteName}}
+                            </p>
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-primary btn-xs text-center" v-on:click="switchRoutes">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 -2 100% 100%">
+                                    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="col-3 text-central">
+                            <p>
+                                <span class="badge badge-secondary">Hacia</span>
+                                <br/>
+                                {{toRouteName}}
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                    </div>
+                </div>
+                <div class="col-md-2">
                 </div>
             </div>
+        </div>
+            <div id="mapId" class="map map-home" style="margin:auto; height:400px; max-width: 540px;"></div>
+                <br/>
+
             <br/>`,
     data() {
         return {
             center: [45.51, -122.68],
             zoom: 5,
-            fromRouteName: "SAN GABRIEL",
-            toRouteName: "SAN JOSE",
+            fromRouteName: "San Gabriel",
+            toRouteName: "San Jose",
             fromSanGabrielToSanJoseRoute: [
                 [ 9.797196027424874 ,  -84.12137635571112 ] ,
                 [ 9.797183895764604 ,  -84.12132095529377 ] ,
