@@ -21,22 +21,18 @@ ruta_app.component('proximobus', {
 <tr>
     <td v-if="hacia_sanjose[0]" class="font-weight-bold">
         <span class="align-middle">{{ hacia_sanjose[0] }}</span>&nbsp;
-        <span :class="['badge', 'custom-badge',
-            hacia_sanjose_ramal[0] == 'AC' ? 'badge-secondary':'',
-            hacia_sanjose_ramal[0] == 'SL' ? 'badge-danger':'',
-            hacia_sanjose_ramal[0] == 'TU' ? 'badge-warning':'',
-            hacia_sanjose_ramal[0] == 'JO' ? 'badge-info':'',
+        <span v-if="is_badge_visible(hacia_sanjose_ramal[0])"
+            :class="['badge', 'custom-badge',
+            filter_badge(hacia_sanjose_ramal[0])
             ]">{{ hacia_sanjose_ramal[0] }}</span>
     </td>
     <td v-else class="font-weight-bold">No hay más buses hoy</td>
 
     <td v-if="desde_sanjose[0]" class="font-weight-bold">
         <span class="align-middle">{{ desde_sanjose[0] }}</span>&nbsp;
-        <span :class="['badge', 'custom-badge',
-            desde_sanjose_ramal[0] == 'AC' ? 'badge-secondary':'',
-            desde_sanjose_ramal[0] == 'SL' ? 'badge-danger':'',
-            desde_sanjose_ramal[0] == 'TU' ? 'badge-warning':'',
-            desde_sanjose_ramal[0] == 'JO' ? 'badge-info':'',
+        <span v-if="is_badge_visible(desde_sanjose_ramal[0])"
+            :class="['badge', 'custom-badge',
+            filter_badge(desde_sanjose_ramal[0])
             ]">{{ desde_sanjose_ramal[0] }}</span>
     </td>
     <td v-else class="font-weight-bold">No hay más buses hoy</td>
@@ -46,21 +42,17 @@ ruta_app.component('proximobus', {
 <tr>
     <td class="font-weight-bold">
         <span v-if="hacia_sanjose[1]" class="align-middle">{{ hacia_sanjose[1] }}</span>&nbsp;
-        <span v-if="hacia_sanjose[1]" :class="['badge', 'custom-badge',
-            hacia_sanjose_ramal[1] == 'AC' ? 'badge-secondary':'',
-            hacia_sanjose_ramal[1] == 'SL' ? 'badge-danger':'',
-            hacia_sanjose_ramal[1] == 'TU' ? 'badge-warning':'',
-            hacia_sanjose_ramal[1] == 'JO' ? 'badge-info':'',
-            ]">{{ desde_sanjose_ramal[1] }}</span>
+        <span v-if="is_badge_visible(hacia_sanjose_ramal[1])"
+            :class="['badge', 'custom-badge',
+            filter_badge(hacia_sanjose_ramal[1])
+            ]">{{ hacia_sanjose_ramal[1] }}</span>
     </td>
 
     <td class="font-weight-bold">
         <span v-if="desde_sanjose[1]" class="align-middle">{{ desde_sanjose[1] }}</span>&nbsp;
-        <span v-if="desde_sanjose[1]" :class="['badge', 'custom-badge',
-            desde_sanjose_ramal[1] == 'AC' ? 'badge-secondary':'',
-            desde_sanjose_ramal[1] == 'SL' ? 'badge-danger':'',
-            desde_sanjose_ramal[1] == 'TU' ? 'badge-warning':'',
-            desde_sanjose_ramal[1] == 'JO' ? 'badge-info':'',
+        <span v-if="is_badge_visible(desde_sanjose_ramal[1])"
+            :class="['badge', 'custom-badge',
+            filter_badge(desde_sanjose_ramal[1])
             ]">{{ desde_sanjose_ramal[1] }}</span>
     </td>
 </tr>
@@ -69,21 +61,17 @@ ruta_app.component('proximobus', {
 <tr>
     <td class="font-weight-bold">
         <span v-if="hacia_sanjose[2]" class="align-middle">{{ hacia_sanjose[2] }}</span>&nbsp;
-        <span v-if="hacia_sanjose[2]" :class="['badge', 'custom-badge',
-            hacia_sanjose_ramal[2] == 'AC' ? 'badge-secondary':'',
-            hacia_sanjose_ramal[2] == 'SL' ? 'badge-danger':'',
-            hacia_sanjose_ramal[2] == 'TU' ? 'badge-warning':'',
-            hacia_sanjose_ramal[2] == 'JO' ? 'badge-info':'',
-            ]">{{ desde_sanjose_ramal[2] }}</span>
+        <span v-if="is_badge_visible(hacia_sanjose_ramal[2])"
+            :class="['badge', 'custom-badge',
+            filter_badge(hacia_sanjose_ramal[2])
+            ]">{{ hacia_sanjose_ramal[2] }}</span>
     </td>
 
     <td class="font-weight-bold">
         <span v-if="desde_sanjose[2]" class="align-middle">{{ desde_sanjose[2] }}</span>&nbsp;
-        <span v-if="desde_sanjose[2]" :class="['badge', 'custom-badge',
-            desde_sanjose_ramal[2] == 'AC' ? 'badge-secondary':'',
-            desde_sanjose_ramal[2] == 'SL' ? 'badge-danger':'',
-            desde_sanjose_ramal[2] == 'TU' ? 'badge-warning':'',
-            desde_sanjose_ramal[2] == 'JO' ? 'badge-info':'',
+        <span v-if="is_badge_visible(desde_sanjose_ramal[2])"
+            :class="['badge', 'custom-badge',
+            filter_badge(desde_sanjose_ramal[2])
             ]">{{ desde_sanjose_ramal[2] }}</span>
     </td>
 </tr>
@@ -103,6 +91,19 @@ ruta_app.component('proximobus', {
         };
     },
     methods: {
+        is_badge_visible(ramal){
+            // Si tiene length y no es SG
+            if ( ramal && ( ramal != 'SG' ))  return true;
+            return false;
+        },
+        filter_badge (ramal){
+            if (ramal == 'SG') return 'invisible';
+            if (ramal == 'AC') return 'badge-secondary';
+            if (ramal == 'SL') return 'badge-danger';
+            if (ramal == 'TU') return 'badge-warning';
+            if (ramal == 'JO') return 'badge-info';
+            return '';
+        },
         updateProximoBus: function(){
             // Lógica de proximobus
             this.desde_sanjose = [];
