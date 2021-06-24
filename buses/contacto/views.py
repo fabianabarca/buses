@@ -30,15 +30,24 @@ def contacto(request):
             except BadHeaderError:
                 return HttpResponse('Configuración de correo inválida.')
             enviado = True
-
-    empresa = get_object_or_404(Agency, agency_id='TSG')
-    preguntas = Pregunta.objects.all()
+    
     notificacion = "¡Listo! gracias por su mensaje" # FIXME: agregar mensaje de confirmación
+    
+    empresa = get_object_or_404(Agency, agency_id='TSG')
+    
+    preguntas = Pregunta.objects.all()
+    antes = preguntas.filter(categoria = -1)
+    durante = preguntas.filter(categoria = 0)
+    despues = preguntas.filter(categoria = 1)
+
     contexto = {
         'empresa': empresa,
-        'preguntas': preguntas,
+        'antes': antes,
+        'durante': durante,
+        'despues': despues,
         'formulario': formulario,
         'enviado': enviado,
         'notificacion': notificacion,
     }
+    
     return render(request, 'contacto.html', contexto)

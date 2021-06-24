@@ -74,7 +74,7 @@
       <div class="card-body">
         <!-- Acordeón de preguntas -->
         <div id="basicsAccordion">
-          {% for pregunta in preguntas %}
+          {% for pregunta in antes %}
           <div class="card shadow-none mb-3">
             <div class="card-header card-collapse" id="preg{{ pregunta.id }}">
               <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#resp{{ pregunta.id }}" aria-expanded="false" aria-controls="#resp{{ pregunta.id }}">
@@ -107,7 +107,7 @@
       <div class="card-body">
         <!-- Acordeón de preguntas -->
         <div id="basicsAccordion">
-          {% for pregunta in preguntas %}
+          {% for pregunta in durante %}
           <div class="card shadow-none mb-3">
             <div class="card-header card-collapse" id="preg{{ pregunta.id }}">
               <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#resp{{ pregunta.id }}" aria-expanded="false" aria-controls="#resp{{ pregunta.id }}">
@@ -140,7 +140,7 @@
       <div class="card-body">
         <!-- Acordeón de preguntas -->
         <div id="basicsAccordion">
-          {% for pregunta in preguntas %}
+          {% for pregunta in despues %}
           <div class="card shadow-none mb-3">
             <div class="card-header card-collapse" id="preg{{ pregunta.id }}">
               <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#resp{{ pregunta.id }}" aria-expanded="false" aria-controls="#resp{{ pregunta.id }}">

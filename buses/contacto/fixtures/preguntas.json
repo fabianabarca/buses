@@ -1,0 +1,110 @@
+[
+  {
+    "model": "contacto.pregunta",
+    "pk": 1,
+    "fields": {
+      "pregunta": "¿Dónde están ubicadas las estaciones de salida y llegada de estas rutas?",
+      "respuesta": "Ver sección \"Paradas autorizadas\" en la página de cada ruta.",
+      "categoria": -1
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 2,
+    "fields": {
+      "pregunta": "¿Puedo hacer una reserva de viaje en línea o únicamente puedo comprar el tiquete abordo?",
+      "respuesta": "No se puede reservar el espacio. Cuando se llega a la terminal o parada se paga el pasaje completo al conductor del autobús.",
+      "categoria": -1
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 3,
+    "fields": {
+      "pregunta": "¿Cuáles son las medidas de acatamiento debido a la pandemia del COVID-19?",
+      "respuesta": "Se debe cumplir con el uso obligatorio de la mascarilla a lo largo de todo el viaje. También, el conductor cuenta con alcohol en gel en caso de ser solicitado. Se debe respetar el distanciamiento marcado en el pasillo en caso de ir de pie.",
+      "categoria": 0
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 4,
+    "fields": {
+      "pregunta": "¿Qué tanto equipaje puedo llevar en el autobús?",
+      "respuesta": "El servicio que se brinda es transporte remunerado de personas, no de carga, por lo cual el espacio es limitado en los compartimentos sobre los asientos y en el maletero a un costado del bus. La persona es responsable si lleva alguna maleta o equipaje en el maletero de ingresarlo y retirarlo y de estar al pendiente.",
+      "categoria": 0
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 5,
+    "fields": {
+      "pregunta": "¿Puedo llevar comida en el autobús?",
+      "respuesta": "Actualmente, por disposición del Ministerio de Salud y debido a la pandemia de COVID-19, no se pueden ingerir alimentos dentro de la unidad. Bajo ninguna circunstancia se permite la ingesta de bebidas alcohólicas dentro del transporte.",
+      "categoria": 0
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 6,
+    "fields": {
+      "pregunta": "¿Puedo llevar mi bicicleta en el autobús?",
+      "respuesta": "No, no se permite llevar bicicletas ni dentro de la cabina de pasajeros ni en el compartimiento de carga.",
+      "categoria": 0
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 7,
+    "fields": {
+      "pregunta": "¿Todos los niños pagan el pasaje?",
+      "respuesta": "Todos los niños mayores de 3 años deben pagar el pasaje correspondiente.",
+      "categoria": 0
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 8,
+    "fields": {
+      "pregunta": "¿Pueden viajar animales conmigo en el autobús?",
+      "respuesta": "Solamente pueden viajar animales de servicio debidamente documentados y con su respectivo arnés.",
+      "categoria": 0
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 9,
+    "fields": {
+      "pregunta": "¿Hay descuentos para personas adultas mayores?",
+      "respuesta": "Las personas adultas mayores mayores de 65 años pagan una tarifa especial mostrando su cédula. Puede consultar las tarifas actualizadas en la página de cada ruta.",
+      "categoria": 0
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 10,
+    "fields": {
+      "pregunta": "¿Los autobuses son inclusivos en el abordaje de personas con discapacidades físicas?",
+      "respuesta": "Sí, todos los autobuses cuentan con rampas para sillas de ruedas y con agarraderas a lo largo de las escaleras, además de asientos de preferencia.",
+      "categoria": 0
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 11,
+    "fields": {
+      "pregunta": "Perdí un artículo en el autobús, ¿cómo puedo recuperarlo?",
+      "respuesta": "En la sección \"Formulario de correo electrónico\" puede llenar la información solicitada seleccionando el motivo como “Objetos perdidos” y brindando además el número de placa, número de unidad o el viaje (hora y dirección) en la que se dio el evento, si es posible. O bien, puede llamar al número 2410-0330.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "contacto.pregunta",
+    "pk": 12,
+    "fields": {
+      "pregunta": "Quiero hacer un comentario sobre el servicio brindado, ¿cómo puedo hacerlo?",
+      "respuesta": "Para nosotros es importante conocer su criterio. Todo el trato que tenga con los choferes, su permanencia durante el viaje, su interacción con otros usuarios y su confort durante el viaje nos interesa a nosotros. Háganos saber su experiencia como usuario de nuestro servicio para garantizar nuestra mejora continua. En esta misma página puede llenar el formulario con la información solicitada seleccionando el motivo como “Sugerencias de mejora” o “Reclamos por el servicio” y brindando además el número de placa, número de unidad o viaje (hora y dirección) en la que se dio el evento, si es posible. O bien, puede llamar al número 2410-0330.",
+      "categoria": 1
+    }
+  }
+]
