@@ -15,7 +15,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_entresemana_04:30:00",
+    "pk": "desde_sangabriel_entresemana_04:40:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -29,21 +29,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_entresemana_05:00:00",
-    "fields": {
-        "route": "SGAB",
-        "service": "entresemana",
-        "headsign": "San Gabriel > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_sangabriel",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_sangabriel_entresemana_05:20:00",
+    "pk": "desde_sangabriel_entresemana_05:10:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -71,7 +57,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_entresemana_06:00:00",
+    "pk": "desde_sangabriel_entresemana_06:15:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -85,7 +71,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_entresemana_06:30:00",
+    "pk": "desde_sangabriel_entresemana_06:50:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -99,7 +85,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_entresemana_07:00:00",
+    "pk": "desde_sangabriel_entresemana_07:30:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -113,7 +99,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_entresemana_08:00:00",
+    "pk": "desde_sangabriel_entresemana_08:30:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -127,35 +113,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_entresemana_09:00:00",
-    "fields": {
-        "route": "SGAB",
-        "service": "entresemana",
-        "headsign": "San Gabriel > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_sangabriel",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_sangabriel_entresemana_10:00:00",
-    "fields": {
-        "route": "SGAB",
-        "service": "entresemana",
-        "headsign": "San Gabriel > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_sangabriel",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_sangabriel_entresemana_11:00:00",
+    "pk": "desde_sangabriel_entresemana_10:30:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -239,20 +197,6 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_05:30:00",
-    "fields": {
-        "route": "SGAB",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Gabriel",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sangabriel",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
     "pk": "hacia_sangabriel_entresemana_06:30:00",
     "fields": {
         "route": "SGAB",
@@ -267,7 +211,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_08:30:00",
+    "pk": "hacia_sangabriel_entresemana_07:30:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -281,7 +225,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_10:30:00",
+    "pk": "hacia_sangabriel_entresemana_09:30:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -295,7 +239,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_12:30:00",
+    "pk": "hacia_sangabriel_entresemana_11:00:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -309,7 +253,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_13:30:00",
+    "pk": "hacia_sangabriel_entresemana_13:00:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -337,20 +281,6 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_15:15:00",
-    "fields": {
-        "route": "SGAB",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Gabriel",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sangabriel",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
     "pk": "hacia_sangabriel_entresemana_15:45:00",
     "fields": {
         "route": "SGAB",
@@ -365,7 +295,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_16:20:00",
+    "pk": "hacia_sangabriel_entresemana_16:45:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -379,7 +309,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_16:50:00",
+    "pk": "hacia_sangabriel_entresemana_17:10:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -393,7 +323,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_17:15:00",
+    "pk": "hacia_sangabriel_entresemana_17:45:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -407,7 +337,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_17:50:00",
+    "pk": "hacia_sangabriel_entresemana_18:15:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -421,21 +351,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_18:10:00",
-    "fields": {
-        "route": "SGAB",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Gabriel",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sangabriel",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sangabriel_entresemana_18:40:00",
+    "pk": "hacia_sangabriel_entresemana_18:50:00",
     "fields": {
         "route": "SGAB",
         "service": "entresemana",
@@ -561,7 +477,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_sabado_10:00:00",
+    "pk": "desde_sangabriel_sabado_10:15:00",
     "fields": {
         "route": "SGAB",
         "service": "sabado",
@@ -617,21 +533,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_sabado_17:00:00",
-    "fields": {
-        "route": "SGAB",
-        "service": "sabado",
-        "headsign": "San Gabriel > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_sangabriel",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_sangabriel_sabado_18:30:00",
+    "pk": "desde_sangabriel_sabado_18:00:00",
     "fields": {
         "route": "SGAB",
         "service": "sabado",
@@ -687,7 +589,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_sabado_10:30:00",
+    "pk": "hacia_sangabriel_sabado_11:00:00",
     "fields": {
         "route": "SGAB",
         "service": "sabado",
@@ -701,21 +603,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_sabado_12:30:00",
-    "fields": {
-        "route": "SGAB",
-        "service": "sabado",
-        "headsign": "San Jos\u00e9 > San Gabriel",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sangabriel",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sangabriel_sabado_13:30:00",
+    "pk": "hacia_sangabriel_sabado_13:00:00",
     "fields": {
         "route": "SGAB",
         "service": "sabado",
@@ -869,21 +757,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_domingo_09:00:00",
-    "fields": {
-        "route": "SGAB",
-        "service": "domingo",
-        "headsign": "San Gabriel > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_sangabriel",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_sangabriel_domingo_10:00:00",
+    "pk": "desde_sangabriel_domingo_09:45:00",
     "fields": {
         "route": "SGAB",
         "service": "domingo",
@@ -911,7 +785,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_domingo_12:00:00",
+    "pk": "desde_sangabriel_domingo_12:30:00",
     "fields": {
         "route": "SGAB",
         "service": "domingo",
@@ -939,7 +813,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sangabriel_domingo_16:00:00",
+    "pk": "desde_sangabriel_domingo_16:15:00",
     "fields": {
         "route": "SGAB",
         "service": "domingo",
@@ -995,7 +869,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_domingo_08:30:00",
+    "pk": "hacia_sangabriel_domingo_09:00:00",
     "fields": {
         "route": "SGAB",
         "service": "domingo",
@@ -1009,7 +883,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_domingo_10:30:00",
+    "pk": "hacia_sangabriel_domingo_11:00:00",
     "fields": {
         "route": "SGAB",
         "service": "domingo",
@@ -1023,7 +897,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_domingo_12:30:00",
+    "pk": "hacia_sangabriel_domingo_13:00:00",
     "fields": {
         "route": "SGAB",
         "service": "domingo",
@@ -1051,7 +925,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_domingo_16:00:00",
+    "pk": "hacia_sangabriel_domingo_15:45:00",
     "fields": {
         "route": "SGAB",
         "service": "domingo",
@@ -1065,7 +939,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sangabriel_domingo_17:30:00",
+    "pk": "hacia_sangabriel_domingo_17:00:00",
     "fields": {
         "route": "SGAB",
         "service": "domingo",
@@ -1163,20 +1037,6 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sanluis_entresemana_05:30:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Luis > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
     "pk": "desde_sanluis_entresemana_05:45:00",
     "fields": {
         "route": "ACOS",
@@ -1191,7 +1051,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sanluis_entresemana_06:40:00",
+    "pk": "desde_sanluis_entresemana_06:30:00",
     "fields": {
         "route": "ACOS",
         "service": "entresemana",
@@ -1261,7 +1121,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sanluis_entresemana_14:00:00",
+    "pk": "desde_sanluis_entresemana_14:15:00",
     "fields": {
         "route": "ACOS",
         "service": "entresemana",
@@ -1275,7 +1135,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sanluis_entresemana_16:00:00",
+    "pk": "desde_sanluis_entresemana_16:15:00",
     "fields": {
         "route": "ACOS",
         "service": "entresemana",
@@ -1345,20 +1205,6 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_06:00:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
     "pk": "hacia_sanluis_entresemana_07:30:00",
     "fields": {
         "route": "ACOS",
@@ -1401,34 +1247,6 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_12:00:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_13:00:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
     "pk": "hacia_sanluis_entresemana_13:30:00",
     "fields": {
         "route": "ACOS",
@@ -1443,77 +1261,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_14:00:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_14:20:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_15:00:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_15:20:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_15:45:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_16:00:00",
+    "pk": "hacia_sanluis_entresemana_15:30:00",
     "fields": {
         "route": "ACOS",
         "service": "entresemana",
@@ -1541,21 +1289,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_16:45:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_17:00:00",
+    "pk": "hacia_sanluis_entresemana_16:55:00",
     "fields": {
         "route": "ACOS",
         "service": "entresemana",
@@ -1583,21 +1317,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_17:45:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_18:00:00",
+    "pk": "hacia_sanluis_entresemana_17:55:00",
     "fields": {
         "route": "ACOS",
         "service": "entresemana",
@@ -1625,21 +1345,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_18:45:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > San Luis",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_sanluis_entresemana_19:00:00",
+    "pk": "hacia_sanluis_entresemana_18:55:00",
     "fields": {
         "route": "ACOS",
         "service": "entresemana",
@@ -1807,21 +1513,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_sanluis_sabado_15:30:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "sabado",
-        "headsign": "San Luis > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_sanluis",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_sanluis_sabado_16:30:00",
+    "pk": "desde_sanluis_sabado_16:00:00",
     "fields": {
         "route": "ACOS",
         "service": "sabado",
@@ -2283,91 +1975,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_acosta_entresemana_04:45:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "Acosta > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_acosta",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_acosta_entresemana_06:20:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "Acosta > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_acosta",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_acosta_entresemana_08:30:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "Acosta > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_acosta",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_acosta_entresemana_09:30:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "Acosta > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_acosta",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_acosta_entresemana_10:30:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "Acosta > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_acosta",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_acosta_entresemana_11:30:00",
-    "fields": {
-        "route": "ACOS",
-        "service": "entresemana",
-        "headsign": "Acosta > San Jos\u00e9",
-        "short_name": "",
-        "direction": "0",
-        "shape": "desde_acosta",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "desde_turrujal_entresemana_04:30:00",
+    "pk": "desde_turrujal_entresemana_04:35:00",
     "fields": {
         "route": "TURR",
         "service": "entresemana",
@@ -2381,7 +1989,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_turrujal_entresemana_05:25:00",
+    "pk": "desde_turrujal_entresemana_05:30:00",
     "fields": {
         "route": "TURR",
         "service": "entresemana",
@@ -2451,7 +2059,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_turrujal_entresemana_13:00:00",
+    "pk": "desde_turrujal_entresemana_13:15:00",
     "fields": {
         "route": "TURR",
         "service": "entresemana",
@@ -2465,7 +2073,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_turrujal_entresemana_15:00:00",
+    "pk": "desde_turrujal_entresemana_15:15:00",
     "fields": {
         "route": "TURR",
         "service": "entresemana",
@@ -2499,7 +2107,7 @@
         "service": "entresemana",
         "headsign": "San Jos\u00e9 > Turrujal",
         "short_name": "",
-        "direction": "1",
+        "direction": "0",
         "shape": "desde_turrujal",
         "wheelchair_accessible": "",
         "bikes_allowed": "1"
@@ -2563,7 +2171,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_turrujal_entresemana_14:40:00",
+    "pk": "hacia_turrujal_entresemana_14:30:00",
     "fields": {
         "route": "TURR",
         "service": "entresemana",
@@ -2577,7 +2185,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_turrujal_entresemana_15:40:00",
+    "pk": "hacia_turrujal_entresemana_16:35:00",
     "fields": {
         "route": "TURR",
         "service": "entresemana",
@@ -2591,7 +2199,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_turrujal_entresemana_16:30:00",
+    "pk": "hacia_turrujal_entresemana_17:35:00",
     "fields": {
         "route": "TURR",
         "service": "entresemana",
@@ -2605,21 +2213,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "hacia_turrujal_entresemana_17:30:00",
-    "fields": {
-        "route": "TURR",
-        "service": "entresemana",
-        "headsign": "San Jos\u00e9 > Turrujal",
-        "short_name": "",
-        "direction": "1",
-        "shape": "hacia_turrujal",
-        "wheelchair_accessible": "",
-        "bikes_allowed": "1"
-    }
-},
-{
-    "model": "rutas.trip",
-    "pk": "hacia_turrujal_entresemana_18:30:00",
+    "pk": "hacia_turrujal_entresemana_18:35:00",
     "fields": {
         "route": "TURR",
         "service": "entresemana",
@@ -2745,7 +2339,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_turrujal_sabado_14:30:00",
+    "pk": "desde_turrujal_sabado_15:00:00",
     "fields": {
         "route": "TURR",
         "service": "sabado",
@@ -2759,7 +2353,7 @@
 },
 {
     "model": "rutas.trip",
-    "pk": "desde_turrujal_sabado_17:30:00",
+    "pk": "desde_turrujal_sabado_17:00:00",
     "fields": {
         "route": "TURR",
         "service": "sabado",
