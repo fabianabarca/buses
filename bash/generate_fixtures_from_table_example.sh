@@ -1,11 +1,6 @@
 #!/bin/bash
-
-# Introduce la tabla de empresa_funcionarios en la DB (dragon ball)
-# es un script porque multiples veces se ha escrito y multiples veces se ha borrado de la DB
-# de esta forma cuando las energías se alineen se introduce la info en la versión final
-
-set -e
-./manage.py migrate --run-syncdb
+{
+echo -n "["
 
 { cat <<EOF
 1,1040,Andres-Alfaro-Analista-150x150.jpg,"Andres Alfaro",Analista
@@ -55,11 +50,27 @@ set -e
 45,1104,"Mario-Padilla-Mecánico-e1498759622597-150x150.jpg","Mario Padilla","Mecánico"
 46,1105,"Ronald-Zuñiga-Chofer-150x150.jpg","Ronald Zuñiga",Chofer
 EOF
-} > /tmp/table_funcionarios.csv
+} |  while read LINE
+do
+    echo ','
+    echo '{'
 
-sqlite3 ./db.sqlite3 <<< ".mode csv empresa_funcionario
-.import /tmp/table_funcionarios.csv empresa_funcionario
-.quit
-"
+    echo '    "model": "empresa.funcionario",'
+    echo '    "pk": "'$( cut -f 1 --delimiter=',' <<< "$LINE" )'",'
+    echo '    "fields": {'
+
+    ## Fields
+    echo '        "identificacion": "'$( cut -f 2 --delimiter=',' <<< "$LINE" )'",'
+    echo '        "url_site": "'$( cut -f 3 --delimiter=',' <<< "$LINE" )'",'
+    echo '        "nombre": "'$( cut -f 4 --delimiter=',' <<< "$LINE" )'",'
+    echo '        "cargo": "'$( cut -f 5 --delimiter=',' <<< "$LINE" )'"'
+
+    echo -e '    }'
+    echo -n '}'
+done
+
+echo "]"
+
+} | sed 's|\[,|[|;s|""|"|g'
 
 exit 0

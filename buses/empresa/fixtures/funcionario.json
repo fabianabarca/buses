@@ -1,0 +1,461 @@
+[
+{
+    "model": "empresa.funcionario",
+    "pk": "1",
+    "fields": {
+        "identificacion": "1040",
+        "url_site": "Andres-Alfaro-Analista-150x150.jpg",
+        "nombre": "Andres Alfaro",
+        "cargo": "Analista"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "2",
+    "fields": {
+        "identificacion": "1041",
+        "url_site": "Arianny-Gamboa-Asistente-de-Operaciones-150x150.jpg",
+        "nombre": "Arianny Gamboa",
+        "cargo": "AsistentedeOperaciones"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "3",
+    "fields": {
+        "identificacion": "1042",
+        "url_site": "Grethel-Castro-Asistente-Administrativa-150x150.jpg",
+        "nombre": "Grethel Castro",
+        "cargo": "AsistentedeGerencia"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "4",
+    "fields": {
+        "identificacion": "1043",
+        "url_site": "Vinicio-Zuñiga-Jefe-Departamento-de-Operaciones-150x150.jpg",
+        "nombre": "Vinicio Zuñiga",
+        "cargo": "JefeDepartamentodeOperaciones"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "5",
+    "fields": {
+        "identificacion": "406",
+        "url_site": "Luis-Mora-Ureña-Lavador-150x150.jpg",
+        "nombre": "Luis Mora Ureña",
+        "cargo": "Lavador"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "6",
+    "fields": {
+        "identificacion": "405",
+        "url_site": "Luis-García-Lobo-Chofer-150x150.jpg",
+        "nombre": "Luis García Lobo",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "7",
+    "fields": {
+        "identificacion": "402",
+        "url_site": "José-Piedra-Arias-Chofer-150x150.jpg",
+        "nombre": "José Piedra Arias",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "8",
+    "fields": {
+        "identificacion": "394",
+        "url_site": "Heyner-Villalobos-Bodeguero-150x150.jpg",
+        "nombre": "Heyner Villa lobos",
+        "cargo": "Bodeguero"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "9",
+    "fields": {
+        "identificacion": "389",
+        "url_site": "Guillermo-Segura-Arias-Chofer-150x150.jpg",
+        "nombre": "Guillermo Segura Arias",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "10",
+    "fields": {
+        "identificacion": "385",
+        "url_site": "Enrique-Díaz-Monge-Mecánico-150x150.jpg",
+        "nombre": "Enrique Díaz Monge",
+        "cargo": "Mecánico"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "11",
+    "fields": {
+        "identificacion": "382",
+        "url_site": "Elberth-Solano-Gamboa-Chofer-150x150.jpg",
+        "nombre": "Elberth Solano Gamboa",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "12",
+    "fields": {
+        "identificacion": "379",
+        "url_site": "Edgar-Madrigal-Méndez-Chofer-150x150.jpg",
+        "nombre": "Edgar Madrigal Méndez",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "13",
+    "fields": {
+        "identificacion": "373",
+        "url_site": "Benjamín-Mora-Ortega-Despachador-150x150.jpg",
+        "nombre": "Benjamín Mora Ortega",
+        "cargo": "Despachador"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "14",
+    "fields": {
+        "identificacion": "371",
+        "url_site": "Andrey-Masís-Monge-Chofer-150x150.jpg",
+        "nombre": "Andrey Masís Monge",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "15",
+    "fields": {
+        "identificacion": "369",
+        "url_site": "Alexis-Vindas-Ureña-Recaudador-150x150.jpg",
+        "nombre": "Alexis Vindas Ureña",
+        "cargo": "Recaudador"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "16",
+    "fields": {
+        "identificacion": "429",
+        "url_site": "Wilberth-Mora-Hidalgo-Chofer-150x150.jpg",
+        "nombre": "Wilberth Mora Hidalgo",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "17",
+    "fields": {
+        "identificacion": "418",
+        "url_site": "Roberto-Aguero-Santana-Chofer-150x150.jpg",
+        "nombre": "Roberto Aguero Santana",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "18",
+    "fields": {
+        "identificacion": "413",
+        "url_site": "Nelson-Portilla-Calvo-Despachador-150x150.jpg",
+        "nombre": "Nelson Portilla Calvo",
+        "cargo": "Despachador"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "19",
+    "fields": {
+        "identificacion": "409",
+        "url_site": "Mario-Castro-Durán-Chofer-150x150.jpg",
+        "nombre": "Mario Castro Durán",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "20",
+    "fields": {
+        "identificacion": "803",
+        "url_site": "Alexander-Cardenas-Chinchilla-150x150.jpg",
+        "nombre": "Alexander Cardenas Chinchilla",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "21",
+    "fields": {
+        "identificacion": "896",
+        "url_site": "Carlos-Alpízar-Rodríguez-150x150.jpg",
+        "nombre": "Carlos Alpízar Rodríguez",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "22",
+    "fields": {
+        "identificacion": "897",
+        "url_site": "Carlos-Vargas-Alpízar1-150x150.jpg",
+        "nombre": "Carlos Vargas Alpízar",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "23",
+    "fields": {
+        "identificacion": "1018",
+        "url_site": "José-Alfredo-Salazar-e1497903453169-150x150.jpg",
+        "nombre": "José Alfredo Salazar",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "24",
+    "fields": {
+        "identificacion": "1019",
+        "url_site": "Randall-Carrión-e1497903487241-150x150.jpg",
+        "nombre": "Randall Carrión",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "25",
+    "fields": {
+        "identificacion": "1023",
+        "url_site": "Felix-Salazar-e1497974224902-150x150.jpg",
+        "nombre": "Felix Salazar",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "26",
+    "fields": {
+        "identificacion": "1024",
+        "url_site": "Osvaldo-López-e1497974291560-150x150.jpg",
+        "nombre": "Osvaldo López",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "27",
+    "fields": {
+        "identificacion": "1026",
+        "url_site": "Ronald-Brenes-e1497989310138-150x150.jpg",
+        "nombre": "Ronald Brenes",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "28",
+    "fields": {
+        "identificacion": "1032",
+        "url_site": "Martín-Alvarado-Chofer-e1498058340543-150x150.jpg",
+        "nombre": "Martín Alvarado",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "29",
+    "fields": {
+        "identificacion": "1031",
+        "url_site": "Luis-Naranjo-Chofer-e1498058299882-150x150.jpg",
+        "nombre": "Luis Naranjo",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "30",
+    "fields": {
+        "identificacion": "1028",
+        "url_site": "José-Alfredo-Masís-Chofer-e1498058131292-150x150.jpg",
+        "nombre": "José Alfredo Masís",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "31",
+    "fields": {
+        "identificacion": "1034",
+        "url_site": "Luis-Hernandez-Chofer-e1498070105895-150x150.jpg",
+        "nombre": "Luis Hernandez",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "32",
+    "fields": {
+        "identificacion": "1039",
+        "url_site": "Minor-Cárdenas-Chofer-e1498076453441-150x150.jpg",
+        "nombre": "Minor Cárdenas",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "33",
+    "fields": {
+        "identificacion": "1038",
+        "url_site": "Oscar-Castro-Chofer-e1498076478986-150x150.jpg",
+        "nombre": "Oscar Castro",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "34",
+    "fields": {
+        "identificacion": "1037",
+        "url_site": "Harold-Vargas-Chofer-e1498076500231-150x150.jpg",
+        "nombre": "Harold Vargas",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "35",
+    "fields": {
+        "identificacion": "1080",
+        "url_site": "Melvin-Castro-Chofer-e1498253380446-150x150.jpg",
+        "nombre": "Melvin Castro",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "36",
+    "fields": {
+        "identificacion": "1075",
+        "url_site": "Victor-Valverde-Chofer-e1498253172743-150x150.jpg",
+        "nombre": "Victor Valverde",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "37",
+    "fields": {
+        "identificacion": "1074",
+        "url_site": "Wilberth-Zuñiga-Chofer-e1498253139146-150x150.jpg",
+        "nombre": "Wilberth Zuñiga",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "38",
+    "fields": {
+        "identificacion": "1073",
+        "url_site": "Javier-Mora-Chofer-150x150.jpg",
+        "nombre": "Javier Mora",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "39",
+    "fields": {
+        "identificacion": "1072",
+        "url_site": "German-Mora-Chaneador-e1498253105765-150x150.jpg",
+        "nombre": "German Mora",
+        "cargo": "Chaneador"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "40",
+    "fields": {
+        "identificacion": "1070",
+        "url_site": "Edgar-Barboza-Chofer-e1498253072711-150x150.jpg",
+        "nombre": "Edgar Barboza",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "41",
+    "fields": {
+        "identificacion": "1069",
+        "url_site": "César-Garro-Guarda-de-Seguridad1-e1498252956432-150x150.jpg",
+        "nombre": "César Garro",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "42",
+    "fields": {
+        "identificacion": "1067",
+        "url_site": "Carlos-Luis-Mora-Chofer-e1498252995902-150x150.jpg",
+        "nombre": "Carlos Luis Mora",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "43",
+    "fields": {
+        "identificacion": "1066",
+        "url_site": "Alexander-Duran-Mecánico-e1498252892926-150x150.jpg",
+        "nombre": "Alexander Duran",
+        "cargo": "Mecánico"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "44",
+    "fields": {
+        "identificacion": "1102",
+        "url_site": "Carlos-Cárdenas-Chofer-e1498755480948-150x150.jpg",
+        "nombre": "Carlos Cárdenas",
+        "cargo": "Chofer"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "45",
+    "fields": {
+        "identificacion": "1104",
+        "url_site": "Mario-Padilla-Mecánico-e1498759622597-150x150.jpg",
+        "nombre": "Mario Padilla",
+        "cargo": "Mecánico"
+    }
+},
+{
+    "model": "empresa.funcionario",
+    "pk": "46",
+    "fields": {
+        "identificacion": "1105",
+        "url_site": "Ronald-Zuñiga-Chofer-150x150.jpg",
+        "nombre": "Ronald Zuñiga",
+        "cargo": "Chofer"
+    }
+}]
