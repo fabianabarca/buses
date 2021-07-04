@@ -138,6 +138,7 @@ def ruta(request, url_ruta):
         .replace('sanluis','SL')
         .replace('jorco','JO')
         .replace('sangabriel','SG')
+        .replace('acosta','AC')
         for element in ramales_0 ]
 
     ramales_1_acronimo = [
@@ -147,6 +148,7 @@ def ruta(request, url_ruta):
         .replace('sanluis','SL')
         .replace('jorco','JO')
         .replace('sangabriel','SG')
+        .replace('acosta','AC')
         for element in ramales_1 ]
 
     # Tiempo en minutos, hora, minuto, acronimo del ramal
