@@ -1,5 +1,7 @@
 {% extends 'base.html'%}
 
+{% load static %}
+
 {% block page_title %} Acerca de GTFS {% endblock %}
 
 {% block content %}
@@ -50,10 +52,66 @@
     GTFS <i>Static</i> tiene la estructura de una base de datos relacional con información sobre la agencia de transportes, sus rutas, paradas y horarios, entre otros datos que aquí se muestran.
 </p>
 
+<p>
+    Estándar de datos abiertos creado para organizar información de servicios de transporte. Consiste en una base de datos relacional, organizada mediante la utilización de archivos de texto (<code>.txt</code>) en formato CSV. Consiste en feeds proporcionados por las empresas de transporte con datos relacionados a la información geográfica y horarios de servicio, de tal manera que puedan ser utilizados para crear aplicaciones. Los <i>feeds</i> (o suministros) son organizados de la siguiente manera:
+</p>
+
+
+
+<figure>
+    <img src="{% static '/img/gtfs/estructura.svg' %}" style="width:100%">
+    <figcaption class="text-center small" style="width:540px">Tablas de la base de datos relacional de GTFS, donde los cuadros azules representan los <i>feeds</i> requeridos para su implementación, mientras que los grises son opcionales. Fuente: <a href="https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping">Banco Mundial</a>.</figcaption>
+</figure>
+
+<p>
+    El siguiente diagrama muestra la información contenida en las tablas (<i>feeds</i>) obligatorias.
+</p>
+
+<figure class="text-center">
+    <img src="{% static '/img/gtfs/tablas.svg' %}" style="width:540px">
+    <figcaption class="text-center small" style="width:540px">Información dentro de las tablas obligatorias. Fuente: <a href="https://developers.google.com/transit/gtfs/examples/gtfs-feed">Google Developers</a>.</figcaption>
+</figure>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Ventajas</th>
+        <th>Desventajas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Se acopla a las necesidades de cada país: puede ser adaptado para servicios formales o informales.</td>
+        <td>La recolección de datos puede ser complicada y laboriosa.</td>
+      </tr>
+      <tr>
+        <td>No se encuentran regulado bajo ninguna legislación.</td>
+        <td>Desinterés de algunos servicios de transporte en querer cooperar.</td>
+      </tr>
+      <tr>
+        <td>Es de código abierto, por lo que se encuentra en constante mejora.</td>
+        <td>No provee actualizaciones en tiempo real (el GTFS Realtime sí).</td>
+      </tr>
+    </tbody>
+    </table>
+
 <h2 id="GTFS">GTFS en tiempo real</h2>
 
 <p>
-    GTFS <i>Realtime</i> tiene la estructura de una base de datos relacional con información sobre la agencia de transportes, sus rutas, paradas y horarios, entre otros datos que aquí se muestran.
+    Estándar de transporte público en tiempo real para comunicarse con otros, creado por Google para optimizar el método de planeación de viajes. Basado en la obtención de datos mediante el uso de GPS, variando conforme los vehículos se movilizan a lo largo de su ruta.
 </p>
+
+<p>
+    Brinda información adicional al usuario como alertas de estado y actualizaciones de viajes y constituye una opción complementaria a la configuración GTFS estándar. Debido a que en las grandes ciudades se presentaron atrasos por muchas condiciones, puede ser muy útil para la comunicación con las personas. 
+</p>
+
+<p>
+    Puede ser implementado en distintos tipos de aplicaciones tales como planificadores de viajes, sistemas de datos predictivos o herramientas de gestión e investigación; dependiendo de los feeds utilizados.
+</p>
+
+<figure class="text-center">
+    <img src="{% static '/img/gtfs/realtime.svg' %}" width="200px">
+    <p class="text-center small" style="width:540px">Estructura básica de flujo de información en GTFS Realtime. Fuente: <a href="https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping">Banco Mundial</a>.</p>
+</figure>
 
 {% endblock %}
