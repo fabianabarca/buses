@@ -81,8 +81,6 @@ ruta_app.component('proximobus', {
 `,
     data: function () {
         return {
-            tiempo_en_minutos: 0, // Con este elemento se recorren los arreglos de horarios
-
             desde_sanjose: ['-','-','-'], // Horas
             hacia_sanjose: ['-','-','-'],
 
@@ -108,8 +106,9 @@ ruta_app.component('proximobus', {
             // Lógica de proximobus
             this.desde_sanjose = [];
             var time = new Date();
+            var time_to_minutes = time.getMinutes() + time.getHours()*60;
             horario_desde_sanjose.filter(
-                value => value[0] > this.tiempo_en_minutos ) // Mayores a la hora
+                value => value[0] > time_to_minutes ) // Mayores a la hora
                 .slice(0,3) // Los siguientes 3
                 .forEach((element, index) => {
                     time.setHours(element[1]);
@@ -121,7 +120,7 @@ ruta_app.component('proximobus', {
 
             this.hacia_sanjose = [];
             horario_hacia_sanjose.filter(
-                value => value[0] > this.tiempo_en_minutos ) // Mayores a la hora
+                value => value[0] > time_to_minutes ) // Mayores a la hora
                 .slice(0,3) // Los siguientes 3
                 .forEach((element, index) => {
                     time.setHours(element[1]);
