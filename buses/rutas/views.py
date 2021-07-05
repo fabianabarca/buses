@@ -1,8 +1,9 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate, FeedInfo
+from .models import FareAttribute, Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate, FeedInfo
 from datetime import datetime
 from itertools import zip_longest
 from django.conf import settings
+from django.db.models import Q
 
 
 def rutas(request):
@@ -35,7 +36,7 @@ def ruta(request, url_ruta):
     '''
     if url_ruta == 'sangabriel':
         route = get_object_or_404(Route, route_id='SGAB')
-        route_id_array = ['SGAB']
+        route_id_array = ['SGAB', 'SGAB']
     elif url_ruta == 'acosta':
         route = get_object_or_404(Route, route_id='ACOS')
         route_id_array = ['ACOS', 'TURR']
@@ -163,6 +164,32 @@ def ruta(request, url_ruta):
 
     informacion = FeedInfo.objects.get(pk=1)
 
+    # Tarifas
+
+    tarifas = FareAttribute.objects.filter(fare_id__startswith=route_id_array[0]).union(FareAttribute.objects.filter(fare_id__startswith=route_id_array[1])).order_by('-price')
+
+    # Paradas de buses
+
+    if url_ruta == 'sangabriel':
+        desde = ['LM_0', 'SG_0', 'SJ_0']
+        hacia = ['SJ_1', 'SG_1', 'LM_1']        
+    elif url_ruta == 'acosta':
+        desde = ['SI_0', 'JO_0', 'SJ_0']
+        hacia = ['SJ_1', 'JO_1', 'SI_1']
+    
+    #paradas_desde = Stop.objects.filter(stop_id__startswith=desde[0]).union(Stop.objects.filter(stop_id__startswith=desde[1])).union(Stop.objects.filter(stop_id__startswith=desde[2]))
+    #paradas_desde = Stop.objects.filter(Q(stop_id__startswith=desde[0]) | Q(stop_id__startswith=desde[1]) | Q(stop_id__startswith=desde[2]))
+    #paradas_hacia = Stop.objects.filter(stop_id__startswith=hacia[0]).union(Stop.objects.filter(stop_id__startswith=hacia[1])).union(Stop.objects.filter(stop_id__startswith=hacia[2]))
+    #paradas_hacia = Stop.objects.filter(Q(stop_id__startswith=hacia[0]) | Q(stop_id__startswith=hacia[1]) | Q(stop_id__startswith=hacia[2])).order_by('pk')
+    
+    # Solución horrible (terrible, terrible)
+    paradas_desde_0 = Stop.objects.filter(stop_id__startswith=desde[0])
+    paradas_desde_1 = Stop.objects.filter(stop_id__startswith=desde[1])
+    paradas_desde_2 = Stop.objects.filter(stop_id__startswith=desde[2])
+    paradas_hacia_0 = Stop.objects.filter(stop_id__startswith=hacia[0])
+    paradas_hacia_1 = Stop.objects.filter(stop_id__startswith=hacia[1])
+    paradas_hacia_2 = Stop.objects.filter(stop_id__startswith=hacia[2])
+
     context = {
         'maxBounds': settings.RUTAS_MAP_MAX_BOUNDS,
         'route': route,
@@ -175,6 +202,14 @@ def ruta(request, url_ruta):
         'horario_js_desde_sanjose': horario_js_desde_sanjose,
         'feriados': feriados,
         'informacion': informacion,
+        'tarifas': tarifas,
+        # Parte de la solución horrible
+        'paradas_desde_0': paradas_desde_0,
+        'paradas_desde_1': paradas_desde_1,
+        'paradas_desde_2': paradas_desde_2,
+        'paradas_hacia_0': paradas_hacia_0,
+        'paradas_hacia_1': paradas_hacia_1,
+        'paradas_hacia_2': paradas_hacia_2,
     }
 
     return render(request, 'ruta.html', context)

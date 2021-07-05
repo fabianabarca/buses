@@ -12,8 +12,9 @@ class tripManager(models.Manager):
         )
 
         para_ordenar = []
+        terminales = ['SJ_1_00', 'SG_0_00', 'SI_0_00']
         for i in trips:
-            viaje = StopTime.objects.get(trip=i, stop_sequence='0')
+            viaje = StopTime.objects.get(trip=i, stop__in=terminales)
             para_ordenar.append([viaje.departure_time, str(i.shape)])
 
         para_ordenar.sort()
@@ -354,8 +355,7 @@ class FareAttribute(models.Model):
         primary_key=True,
         max_length=255, db_index=True,
         help_text="Identificador único de la clase de tarifa.")
-    price = models.DecimalField(
-        max_digits=17, decimal_places=4,
+    price = models.IntegerField(
         help_text="Precio de tarifa, en unidades especificadas en currency_type")
     currency_type = models.CharField(
         max_length=3,

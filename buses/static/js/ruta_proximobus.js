@@ -2,7 +2,7 @@ ruta_app.component('proximobus', {
     props: ['route_short_name'],
     template: `
         <table class="table table-borderless">
-          <thead class="table-light">
+          <thead class="table-secondary">
             <tr>
               <th>
                 {{ route_short_name }}
@@ -17,9 +17,9 @@ ruta_app.component('proximobus', {
 
 <tbody>
 
-<!-- Primer fila -->
+<!-- Primera fila -->
 <tr>
-    <td v-if="hacia_sanjose[0]" class="font-weight-bold">
+    <td v-if="hacia_sanjose[0]" class="font-weight-bold lead">
         <span class="align-middle">{{ hacia_sanjose[0] }}</span>&nbsp;
         <span v-if="is_badge_visible(hacia_sanjose_ramal[0])"
             :class="['badge', 'custom-badge',
@@ -28,7 +28,7 @@ ruta_app.component('proximobus', {
     </td>
     <td v-else class="font-weight-bold">No hay más buses hoy</td>
 
-    <td v-if="desde_sanjose[0]" class="font-weight-bold">
+    <td v-if="desde_sanjose[0]" class="font-weight-bold lead">
         <span class="align-middle">{{ desde_sanjose[0] }}</span>&nbsp;
         <span v-if="is_badge_visible(desde_sanjose_ramal[0])"
             :class="['badge', 'custom-badge',
@@ -99,9 +99,9 @@ ruta_app.component('proximobus', {
         filter_badge (ramal){
             if (ramal == 'SG') return 'invisible';
             if (ramal == 'AC') return 'badge-secondary';
-            if (ramal == 'SL') return 'badge-danger';
-            if (ramal == 'TU') return 'badge-warning';
-            if (ramal == 'JO') return 'badge-info';
+            if (ramal == 'SL') return 'fondo-color-sanluis';
+            if (ramal == 'TU') return 'fondo-color-turrujal';
+            if (ramal == 'JO') return 'badge-secondary';
             return '';
         },
         updateProximoBus: function(){

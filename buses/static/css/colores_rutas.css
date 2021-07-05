@@ -1,0 +1,24 @@
+.color-ruta {
+    color: #{{ route.color }};
+}
+.fondo-color-ruta {
+    background-color: #{{ route.color }};
+    color: #{{ route.text_color }};
+}
+.borde-color-ruta {
+    border-color: #{{ route.color }};
+}
+.color-sanluis {
+    color: #FFA500;
+}
+.color-turrujal {
+    color: #FF4500;
+}
+.fondo-color-sanluis {
+    background-color: #FFA500;
+    color: black;
+}
+.fondo-color-turrujal {
+    background-color: #FF4500;
+    color: white;
+}

@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-sm">
-    <div class="card text-center shadow p-3 mb-5 bg-dark rounded mx-auto" style="max-width: 540px">
+    <div class="card text-center p-3 mb-5 mx-auto borde-color-ruta" style="max-width: 540px">
       <div class="card-body">
           <div class="text-center">
-          <h2><span class="badge badge-success" id="DigitalCLOCK">{% verbatim %}{{ hora }}{% endverbatim %}</span></h2>
-          <h5><span class="badge badge-light"><span class="text-capitalize">{{ fecha.0 }}</span> {{ fecha.1 }} de {{ fecha.2 }} de {{ fecha.3 }}</span></h5>
+          <h2><span class="badge badge-dark" id="DigitalCLOCK">{% verbatim %}{{ hora }}{% endverbatim %}</span></h2>
+          <h5><span class="badge badge-secondary"><span class="text-capitalize">{{ fecha.0 }}</span> {{ fecha.1 }} de {{ fecha.2 }} de {{ fecha.3 }}</span></h5>
       </div>
-      <h3 class="card-title text-white">Próximos buses</h3>
-      <h3 class="card-subtitle text-white"><i class="fas fa-bus"></i> {{ route.short_name }}</h3>
+      <h3 class="card-title">Próximos buses</h3>
+      <h2 class="card-subtitle color-ruta"><i class="fas fa-bus"></i> {{ route.short_name }}</h2>
       <proximobus route_short_name="{{ route.short_name }}"></proximobus>
       </div>
     </div>

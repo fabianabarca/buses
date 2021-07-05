@@ -1,44 +1,68 @@
 {% extends 'base.html'%}
+
 {% load static %}
+
 {% block page_title %} Buses de {{ route.short_name }} {% endblock %}
 
 {% block custom_header %}
-<!-- Aquí el source del CSS específico de cada página -->
-<!-- Estilos necesarios para el mapa de leaflet -->
+{# Aquí el source del CSS específico de cada página. Estilos necesarios para el mapa de Leaflet #}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+    <style>
+        .color-ruta {
+            color: #{{ route.color }};
+        }
+        .fondo-color-ruta {
+            background-color: #{{ route.color }};
+            color: #{{ route.text_color }};
+        }
+        .borde-color-ruta {
+            border-color: #{{ route.color }};
+            border-width: 1px;
+        }
+        .color-sanluis {
+            color: #FFA500;
+        }
+        .color-turrujal {
+            color: #FF4500;
+        }
+        .fondo-color-sanluis {
+            background-color: #FFA500;
+            color: black;
+        }
+        .fondo-color-turrujal {
+            background-color: #FF4500;
+            color: white;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
 
-{# esto coloca 5 líneas de espacio vertical #}
 <div class="custom-vertical-space"></div>
 
 <!-- Información de la ruta -->
 
 <section id="informacion">
 
-    <h1>{{ route.short_name }} &nbsp; <i class="fas fa-bus"></i> &nbsp; San José</h1>
+    <h1>{{ route.short_name }} &nbsp; <i class="fas fa-bus" style="color:#{{ route.color }};"></i> &nbsp; San José </h1>
 
     <p>
-        <div class="card card-bordered">
+        <div class="card borde-color-ruta">
             <div class="card-body lead">
                 {{ route.desc }}
             </div>
         </div>
     </p>
 
-
     <p class="text-center">
-        <a class="btn btn-sm btn-secondary btn-icon transition-3d-hover" data-toggle="tooltip" data-placement="top" title="Horarios" href="#horario"><i class="fas fa-clock"></i></a> &nbsp;
-        <a class="btn btn-sm btn-secondary btn-icon transition-3d-hover" data-toggle="tooltip" data-placement="top" title="Tarifas" href="#tarifas"><i class="fas fa-ticket-alt"></i></a> &nbsp;
-        <a class="btn btn-sm btn-secondary btn-icon transition-3d-hover" data-toggle="tooltip" data-placement="top" title="Mapa" href="#mapa"><i class="fas fa-map"></i></a> &nbsp;
-        <a class="btn btn-sm btn-secondary btn-icon transition-3d-hover" data-toggle="tooltip" data-placement="top" title="Paradas" href="#paradas"><i class="fas fa-map-marker-alt"></i></a>
+        <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Horarios" href="#horario"><i class="fas fa-clock"></i></a> &nbsp;
+        <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Tarifas" href="#tarifas"><i class="fas fa-ticket-alt"></i></a> &nbsp;
+        <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Mapa" href="#mapa"><i class="fas fa-map"></i></a> &nbsp;
+        <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Paradas" href="#paradas"><i class="fas fa-map-marker-alt"></i></a>
     </p>
 
 </section>
-
-
 
 {% comment %}
 El siguiente DIV corresponde a la división en la cual se va a montar la aplicación de VUE en frontend,
@@ -48,36 +72,35 @@ del div con id ruta_vue_app ya que fuera de este div la sintaxis será ignorada
 
 NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistentemente, tomando solo lo necesario
 {% endcomment %}
+
+<!-- Aplicación "próximo bus" -->
 <div id='ruta_vue_app'> <!-- APP VUE -->
-    <section>
-        {% include "proximobus.html" %}
-    </section>
+{% include "proximobus.html" %}
 
     <!-- /div> FIXME -->
 
-    <!-- Nota sobre los ramales de Acosta -->
+    {# Nota sobre los ramales de Acosta #}
     {% if route.short_name == 'Acosta' %}
     <div class="alert alert-soft-secondary" role="alert">
-      <p>
-        <ol class="fa-ul">
-            <li><span class="fa-li"><i class="fas fa-info-circle"></i></span>La ruta de Acosta tiene las siguientes trayectorias (ver <a href="#mapa">mapa de la ruta</a>):</li>
-        </ol>
-        <dl class="small">
-            <dt><span class="badge badge-secondary align-middle">AC</span> <span class="text-secondary text-uppercase font-weight-bold align-middle">Acosta</span></dt>
-            <dd>Sale desde el centro de San Ignacio de Acosta.</dd>
+        <p>
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-info-circle"></i></span>La ruta de Acosta tiene las siguientes trayectorias (ver <a href="#mapa">mapa de la ruta</a>):</li>
+            </ol>
+            <dl class="small">
+                <dt><span class="badge fondo-color-sanluis align-middle">SL</span> <span class="color-sanluis text-uppercase font-weight-bold align-middle">San Luis</span></dt>
+                <dd><strong>Sale desde</strong> o <strong>va hacia</strong> San Luis y pasa por el centro de San Ignacio de Acosta.</dd>
 
-            <dt><span class="badge badge-danger align-middle">SL</span> <span class="text-danger text-uppercase font-weight-bold align-middle">San Luis</span></dt>
-            <dd>Sale desde o va hacia San Luis de Acosta y pasa por el centro de San Ignacio.</dd>
+                <dt><span class="badge fondo-color-turrujal align-middle">TU</span> <span class="color-turrujal text-uppercase font-weight-bold align-middle">Turrujal</span></dt>
+                <dd><strong>Sale desde</strong> o <strong>va hacia</strong> Turrujal y pasa por el centro de San Ignacio de Acosta.</dd>
 
-            <dt><span class="badge badge-warning align-middle">TU</span> <span class="text-warning text-uppercase font-weight-bold align-middle">Turrujal</span></dt>
-            <dd>Sale desde o va hacia Turrujal de Acosta y pasa por el centro de San Ignacio.</dd>
+                <dt><span class="badge badge-secondary align-middle">AC</span> <span class="text-secondary text-uppercase font-weight-bold align-middle">Acosta</span></dt>
+                <dd><strong>Sale desde</strong> el centro de San Ignacio de Acosta hacia San José.</dd>
 
-            <dt><span class="badge badge-info align-middle">JO</span> <span class="text-info text-uppercase font-weight-bold align-middle">Jorco</span></dt>
-            <dd>Sale desde Vuelta de Jorco de Aserrí hacia San José y <strong>no</strong> pasa por el centro de San Ignacio.</dd>
-        </dl>
-    </p>  
+                <dt><span class="badge badge-secondary align-middle">JO</span> <span class="text-secondary text-uppercase font-weight-bold align-middle">Jorco</span></dt>
+                <dd><strong>Sale desde</strong> Vuelta de Jorco de Aserrí hacia San José y <strong>no</strong> pasa por el centro de San Ignacio de Acosta.</dd>
+            </dl>
+        </p>  
     </div>
-    
     {% endif %}
 
 <!-- Tabla de horario -->
@@ -85,7 +108,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
 <section id="horario">
 
     <hr>
-    <h2><i class="fas fa-clock"></i> Horario</h2>
+    <h2><i class="fas fa-clock color-ruta"></i> Horario</h2>
 
     <!-- Nota sobre el horario de salida -->
     <div class="alert alert-soft-secondary" role="alert">
@@ -126,15 +149,15 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
             <table id="entresemana_table" class="table table-striped table-borderless text-center" style="background: white;">
                 <thead>
                     <tr>
-                        <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down text-danger"></i> <br> San&nbsp;José</th>
-                        <th><a class="text-dark lead">San&nbsp;José</a> <br> <i class="fas fa-arrow-circle-down text-danger"></i> <br> {{ route.short_name }}</th>
+                        <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> San&nbsp;José</th>
+                        <th><a class="text-dark lead">San&nbsp;José</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> {{ route.short_name }}</th>
                    </tr>
                 </thead>
                 <tbody>
                     {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_entresemana %}
                     <tr>
-                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_0 == 'desde_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
-                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_1 == 'hacia_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small color-sanluis text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small color-turrujal text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_0 == 'desde_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small color-sanluis text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small color-turrujal text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_1 == 'hacia_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -144,15 +167,15 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
             <table id="sabado_table" class="table table-striped table-borderless text-center" style="background: white;">
                 <thead>
                     <tr>
-                        <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down text-danger"></i> <br> San&nbsp;José</th>
-                        <th><a class="text-dark lead">San&nbsp;José</a> <br> <i class="fas fa-arrow-circle-down text-danger"></i> <br> {{ route.short_name }}</th>
+                        <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> San&nbsp;José</th>
+                        <th><a class="text-dark lead">San&nbsp;José</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> {{ route.short_name }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_sabado %}
                     <tr>
-                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_0 == 'desde_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
-                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_1 == 'hacia_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small color-sanluis text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small color-turrujal text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_0 == 'desde_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small color-sanluis text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small color-turrujal text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_1 == 'hacia_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -162,15 +185,15 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
             <table id="domingo_table" class="table table-striped table-borderless text-center" style="background: white;">
                 <thead>
                     <tr>
-                        <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down text-danger"></i> <br> San&nbsp;José</th>
-                        <th><a class="text-dark lead">San&nbsp;José</a> <br> <i class="fas fa-arrow-circle-down text-danger"></i> <br> {{ route.short_name }}</th>
+                        <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> San&nbsp;José</th>
+                        <th><a class="text-dark lead">San&nbsp;José</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> {{ route.short_name }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_domingo %}
                     <tr>
-                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_0 == 'desde_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
-                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small text-danger text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small text-warning text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_1 == 'hacia_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ hacia_sanjose }} {% if ramal_0 == 'desde_sanluis' %} <span class="small color-sanluis text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_0 == 'desde_turrujal' %} <span class="small color-turrujal text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_0 == 'desde_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_0 == 'desde_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
+                        <td scope="row">{{ desde_sanjose }} {% if ramal_1 == 'hacia_sanluis' %} <span class="small color-sanluis text-uppercase font-weight-bold">San&nbsp;Luis</span> {% elif ramal_1 == 'hacia_turrujal' %} <span class="small color-turrujal text-uppercase font-weight-bold">Turrujal</span> {% elif ramal_1 == 'hacia_jorco' %} <span class="small text-info text-uppercase font-weight-bold">Jorco</span> {% elif ramal_1 == 'hacia_acosta' %} <span class="small text-secondary text-uppercase font-weight-bold">Acosta</span> {% else %} {% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -178,20 +201,22 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
         </div>
     </div>
 
-    <div class="container float-left">
-        <button class="btn btn-secondary" @click="downloadTableAsImage()">
-            Descargar horario
+    <!-- Botón de descarga de horario como imagen -->
+    <div class="text-center">
+        <button class="btn btn-outline-secondary btn-pill btn-xs" @click="downloadTableAsImage()">
+            <i class="fas fa-image"></i>
+            Descargar horario actual como imagen
         </button>
     </div>
 
-    <!-- Datos de GTFS y Google Maps -->
+    <!-- Datos de GTFS, Google Maps y última actualización -->
     <p>
-        <div class="text-right">
-            <small><i class="fas fa-database"></i> Datos de <a href="/gtfs/">GTFS</a></small> 
-            <br/>
-            <small><i class="fab fa-google"></i> Ver en <a href="https://www.google.com/maps/@9.7985547,-84.1334907,14.81z">Google Maps</a></small>
-            <br/>
-            <small><i class="fas fa-calendar-check"></i> Última actualización: {{ informacion.start_date }}</small>
+        <div class="small">
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-database"></i></span>Datos de <a href="/gtfs/">GTFS</a> ({{ informacion.version }})</li>
+                <li><span class="fa-li"><i class="fab fa-google"></i></span>Ver en <a href="https://www.google.com/maps/@9.7985547,-84.1334907,14.81z">Google Maps</a></li>
+                <li><span class="fa-li"><i class="fas fa-calendar-check"></i></span>Última actualización: {{ informacion.start_date }}</li>
+            </ol>
         </div>
     </p>
 
@@ -209,12 +234,12 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 <ol class="fa-ul">
                     <li>
                         <span class="fa-li"><i class="fas fa-info-circle"></i></span>
-                        Los feriados tienen horario de servicio de <strong>domingo</strong>.
+                        Los feriados tienen horario de servicio de <strong>domingo</strong>. El disfrute de algunos feriados se traslada de día, según indicaciones del <a href="https://www.mtss.go.cr/temas-laborales/feriados/feriados_calendario_2021.pdf" target="_blank">MTSS</a>.
                     </li>
                 </ol>
                 <dl>
                     {% for feriado in feriados %}
-                    <dt><strong>{{ feriado.holiday_name }}</strong></dt> <dd>Feriado el <span class="text-lowercase">{{ feriado.date }}</span></dd>
+                    <dt><strong>{{ feriado.holiday_name }}</strong></dt> <dd>Es feriado el <span class="text-lowercase">{{ feriado.date }}</span></dd>
                     {% endfor %}
                 </dl>
             </p>
@@ -225,21 +250,21 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
 
 <!-- Tarifas -->
 
-<section>
+<section id="tarifas">
 
     <hr>
-    <h2 id="tarifas"><i class="fas fa-ticket-alt"></i> Tarifas</h2>
+    <h2><i class="fas fa-ticket-alt color-ruta"></i> Tarifas</h2>
 
+    <p>Tarifas autorizadas por <a href="https://aresep.go.cr/autobus/tarifas" target="_blank">ARESEP</a>.</p>
     {% include "tarifas.html" %}
 
 </section>
 
 <!-- Mapa de la ruta -->
-<section>
+<section id="mapa">
 
     <hr>
-    <h2 id="mapa"><i class="fas fa-map"></i> Mapa de la ruta</h2>
-
+    <h2><i class="fas fa-map color-ruta"></i> Mapa de la ruta</h2>
     {% if route.short_name == 'Acosta' %}
     <mapa-acosta></mapa-acosta>
     {% else %}
@@ -252,9 +277,10 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
 
 <section id="paradas">
 
-    <hr>
-    <h2><i class="fas fa-map-marker-alt"></i> Paradas autorizadas</h2>
+    <hr class="color-ruta">
+    <h2><i class="fas fa-map-marker-alt color-ruta"></i> Paradas autorizadas</h2>
 
+    <!-- Información de la terminal en San José -->
     <div class="card card-bordered mb-8 mx-auto" style="max-width: 540px;">
         <div class="card-body">
             <h5 class="card-title">Terminal en San&nbsp;José</h5>
@@ -266,101 +292,98 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
         </div>
     </div>
 
-    <!-- Step -->
-<ul class="step step-timeline-sm">
-    <li class="step-item">
-      <div class="step-content-wrapper">
-        <span class="step-icon step-icon-xs step-icon-soft-primary">1</span>
-        <div class="step-content">
-          <p class="step-text">San Gabriel centro</p>
-        </div>
-      </div>
-    </li>
+    <!-- Selección de paradas, desde o hacia -->
+    <div class="text-center">
+        <ul class="nav nav-pills mb-7" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="paradas-desde-tab" data-toggle="pill" href="#paradas-desde" role="tab" aria-controls="paradas-desde" aria-selected="true">{{ route.short_name }} <i class="fas fa-arrow-circle-right"></i> San José</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="paradas-hacia-tab" data-toggle="pill" href="#paradas-hacia" role="tab" aria-controls="paradas-hacia" aria-selected="false">San José <i class="fas fa-arrow-circle-right"></i> {{ route.short_name }}</a>
+            </li>
+        </ul>
+    </div>
   
-    <li class="step-item">
-      <div class="step-content-wrapper">
-        <span class="step-icon step-icon-xs step-icon-soft-primary">2</span>
-        <div class="step-content">
-          <p class="step-text">La vuelta de Betty Camacho</p>
+    <!-- Contenido de las paradas -->
+    <div class="tab-content">
+        
+        <!-- Lista de paradas "desde" -->
+        <div class="tab-pane fade show active" id="paradas-desde" role="tabpanel" aria-labelledby="paradas-desde">
+            <ul class="step step-timeline-sm step-border-last-0">
+                {% for parada in paradas_desde_0 %}
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
+                        <div class="step-content">
+                            <p class="step-text">{{ parada.name }}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+                {% for parada in paradas_desde_1 %}
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
+                        <div class="step-content">
+                            <p class="step-text">{{ parada.name }}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+                {% for parada in paradas_desde_2 %}
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
+                        <div class="step-content">
+                            <p class="step-text">{{ parada.name }}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-      </div>
-    </li>
-  
-    <li class="step-item">
-      <div class="step-content-wrapper">
-        <span class="step-icon step-icon-xs step-icon-soft-primary">3</span>
-        <div class="step-content">
-          <p class="step-text">Barrio La Salle</p>
+        
+        <!-- Lista de paradas "hacia" -->
+        <div class="tab-pane fade" id="paradas-hacia" role="tabpanel" aria-labelledby="paradas-hacia">
+            <ul class="step step-timeline-sm step-border-last-0">
+                {% for parada in paradas_hacia_0 %}
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
+                        <div class="step-content">
+                            <p class="step-text">{{ parada.name }}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+                {% for parada in paradas_hacia_1 %}
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
+                        <div class="step-content">
+                            <p class="step-text">{{ parada.name }}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+                {% for parada in paradas_hacia_2 %}
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
+                        <div class="step-content">
+                            <p class="step-text">{{ parada.name }}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-      </div>
-    </li>
     
-    <li class="step-item">
-    <div class="step-content-wrapper">
-        <span class="step-icon step-icon-xs step-icon-soft-primary">4</span>
-        <div class="step-content">
-        <p class="step-text">Barrio Nuevo</p>
-        </div>
-    </div>
-    </li>
-
-    <li class="step-item">
-    <div class="step-content-wrapper">
-        <span class="step-icon step-icon-xs step-icon-soft-primary">5</span>
-        <div class="step-content">
-        <p class="step-text">Barrio María Auxiliadora</p>
-        </div>
-    </div>
-    </li>
-
-    <li class="step-item">
-    <div class="step-content-wrapper">
-        <span class="step-icon step-icon-xs step-icon-soft-primary">6</span>
-        <div class="step-content">
-        <p class="step-text">La Fila (abajo)</p>
-        </div>
-    </div>
-    </li>
-  </ul>
-  <!-- End Step -->
-
-    <p class="text-center">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#listaparadas" aria-expanded="false" aria-controls="listaparadas">
-          Mostrar todas las paradas
-        </button>
-    </p>
-    <div class="collapse" id="listaparadas">
-        <div class="card card-body">
-            <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
-
-            <h5>De San Gabriel hacia Tarbaca</h5>
-
-            <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>Centro de San Gabriel</li>
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>La vuelta de Betty Camacho</li>
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>Abastecedor Padilla</li>
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>Barrio Nuevo</li>
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>Barrio María Auxiliadora</li>
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>Barrio Los Corella</li>
-            </ol>
-
-            <h5>De Tarbaca hacia San&nbsp;José</h5>
-
-            <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>Centro de San Gabriel</li>
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>La vuelta de Betty Camacho</li>
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>Abastecedor Padilla</li>
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>Barrio Nuevo</li>
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>Barrio María Auxiliadora</li>
-                <li><span class="fa-li"><i class="fas fa-plus-circle"></i></span>Barrio Los Corella</li>
-            </ol>
-
-        </div>
     </div>
 
 </section>
 
-<!-- Nota sobre la accesibilidad de las paradas -->
+<!-- Nota sobre la accesibilidad de las paradas 
 <div class="alert alert-soft-secondary" role="alert">
     <p>
         <ol class="fa-ul">
@@ -370,6 +393,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
         </ol>
     </p>
 </div>
+-->
 
 </div> <!-- END VUE APP -->
 

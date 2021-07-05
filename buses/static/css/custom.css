@@ -14,9 +14,17 @@
 }
 
 .custom-vertical-space {
-    min-height: 10ch;
+    min-height: 8ch;
 }
 
 .custom-badge {
     min-width: 4.2ch;
+}
+
+#content-desktop {display: block;}
+#content-mobile {display: none;}
+
+@media screen and (max-width: 768px) {
+    #content-desktop {display: none;}
+    #content-mobile {display: block;}
 }

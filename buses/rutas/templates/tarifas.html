@@ -3,114 +3,103 @@
 <div class="row">
       
   <div class="col-sm mb-6">
-    <!-- Card -->
     <div class="card card-bordered shadow-none h-100">
       <div class="card-body">
           <h6 class="font-weight-normal mb-1"> <strong>Acosta</strong> <br> tarifa completa</h6>
-          <h3 class="card-title">&#162; 1085</h3>
+          <h3 class="card-title">&#162; {{ tarifas.0.price }}</h3>
       </div>
     </div>
-    <!-- End Card -->
   </div>
 
   <div class="col-sm mb-6">
-    <!-- Card -->
     <div class="card card-bordered shadow-none h-100">
       <div class="card-body">
           <h6 class="font-weight-normal mb-1"> <strong>Acosta</strong> <br> tarifa media</h6>
-          <h3 class="card-title">&#162; 920</h3>
+          <h3 class="card-title">&#162; {{ tarifas.1.price }}</h3>
       </div>
     </div>
-    <!-- End Card -->
   </div>
 
   <div class="col-sm mb-6">
-      <!-- Card -->
       <div class="card card-bordered shadow-none h-100">
         <div class="card-body">
           <h6 class="font-weight-normal mb-1"> <strong>Acosta</strong> <br> tarifa mínima</h6>
-          <h3 class="card-title">&#162; 550</h3>
+          <h3 class="card-title">&#162; {{ tarifas.3.price }}</h3>
         </div>
       </div>
-      <!-- End Card -->
   </div>
 
   <div class="col-sm mb-6">
-      <!-- Card -->
       <div class="card card-bordered shadow-none h-100">
         <div class="card-body">
           <h6 class="font-weight-normal mb-1"> <strong>Turrujal</strong> <br> tarifa única</h6>
-          <h3 class="card-title">&#162; 905</h3>
+          <h3 class="card-title">&#162; {{ tarifas.2.price }}</h3>
         </div>
       </div>
-      <!-- End Card -->
+
   </div>
 
   <div class="col-sm mb-6">
-      <!-- Card -->
-      <div class="card card-bordered shadow-none h-100">
-        <div class="card-body">
-          <h6 class="font-weight-normal mb-1"><strong>Adulto(a) mayor</strong></h6>
-          <h4 class="card-title"><small>Acosta</small> &#162; 545</h4>
-          <h4 class="card-title"><small>Turrujal</small> &#162; 455</h4>
-        </div>
+    <div class="card card-bordered shadow-none h-100">
+      <div class="card-body">
+        <h6 class="font-weight-normal mb-1"> <strong>Acosta</strong> <br> Persona adulta mayor</h6>
+        <h3 class="card-title">&#162; {{ tarifas.4.price }}</h3>
       </div>
-      <!-- End Card -->
     </div>
+  </div>
+
+  <div class="col-sm mb-6">
+    <div class="card card-bordered shadow-none h-100">
+      <div class="card-body">
+        <h6 class="font-weight-normal mb-1"> <strong>Turrujal</strong> <br> Persona adulta mayor</h6>
+        <h3 class="card-title">&#162; {{ tarifas.5.price }}</h3>
+      </div>
+    </div>
+  </div>
 
 </div>
-<!-- End Row -->
 
 {% else %}
 
 <div class="row">
       
   <div class="col-sm mb-6">
-    <!-- Card -->
     <div class="card card-bordered shadow-none h-100">
       <div class="card-body">
           <h6 class="font-weight-normal mb-1"> <strong>San Gabriel</strong> <br> tarifa completa</h6>
-          <h3 class="card-title">&#162; 990</h3>
+          <h3 class="card-title">&#162; {{ tarifas.0.price }}</h3>
       </div>
     </div>
-    <!-- End Card -->
   </div>
 
   <div class="col-sm mb-6">
-    <!-- Card -->
     <div class="card card-bordered shadow-none h-100">
       <div class="card-body">
           <h6 class="font-weight-normal mb-1"> <strong>San Gabriel</strong> <br> tarifa media</h6>
-          <h3 class="card-title">&#162; 875</h3>
+          <h3 class="card-title">&#162; {{ tarifas.1.price }}</h3>
       </div>
     </div>
-    <!-- End Card -->
   </div>
 
   <div class="col-sm mb-6">
-      <!-- Card -->
       <div class="card card-bordered shadow-none h-100">
         <div class="card-body">
           <h6 class="font-weight-normal mb-1"> <strong>San Gabriel</strong> <br> tarifa mínima</h6>
-          <h3 class="card-title">&#162; 510</h3>
+          <h3 class="card-title">&#162; {{ tarifas.2.price }}</h3>
         </div>
       </div>
-      <!-- End Card -->
   </div>
 
   <div class="col-sm mb-6">
-      <!-- Card -->
       <div class="card card-bordered shadow-none h-100">
         <div class="card-body">
-          <h6 class="font-weight-normal mb-1"> <strong>Persona</strong> <br> adulta mayor</h6>
-          <h3 class="card-title">&#162; 495</h3>
+          <h6 class="font-weight-normal mb-1"> <strong>San Gabriel</strong> <br> Persona adulta mayor</h6>
+          <h3 class="card-title">&#162; {{ tarifas.3.price }}</h3>
         </div>
       </div>
-      <!-- End Card -->
     </div>
 
 </div>
-<!-- End Row -->
 
 {% endif %}
 
