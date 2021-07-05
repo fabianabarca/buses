@@ -6,10 +6,10 @@ ruta_app.component('proximobus', {
             <tr>
               <th>
                 {{ route_short_name }}
-                <i class="fas fa-arrow-circle-right"></i> San&nbsp;José
+                <i class="fas fa-arrow-circle-right color-ruta"></i> San&nbsp;José
               </th>
               <th>
-                  San José <i class="fas fa-arrow-circle-right"></i>
+                  San José <i class="fas fa-arrow-circle-right color-ruta"></i>
                   {{ route_short_name }}
               </th>
             </tr>
