@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block page_title %} Buses de {{ route.short_name }} {% endblock %}
+{% block page_title %} Autobuses de {{ route.short_name }} {% endblock %}
 
 {% block custom_header %}
 {# Aquí el source del CSS específico de cada página. Estilos necesarios para el mapa de Leaflet #}
@@ -44,6 +44,10 @@
 <!-- Información de la ruta -->
 
 <section id="informacion">
+
+    <span class="small text-cap text-secondary">
+        Ruta de autobuses | Costa Rica
+    </span>
 
     <h1>{{ route.short_name }} &nbsp; <i class="fas fa-bus" style="color:#{{ route.color }};"></i> &nbsp; San José </h1>
 
@@ -149,9 +153,9 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
             <table id="entresemana_table" class="table table-striped table-borderless text-center" style="background: white;">
                 <thead>
                     <tr>
-                        <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> San&nbsp;José</th>
-                        <th><a class="text-dark lead">San&nbsp;José</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> {{ route.short_name }}</th>
-                   </tr>
+                        <th><span class="lead">{{ route.short_name }}</span> <br> <i class="fas fa-arrow-circle-down color-ruta"></i> <br> San&nbsp;José</th>
+                        <th><span class="lead">San&nbsp;José</span> <br> <i class="fas fa-arrow-circle-down color-ruta"></i> <br> {{ route.short_name }}</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {% for hacia_sanjose, ramal_0, desde_sanjose, ramal_1 in horario_entresemana %}
@@ -167,8 +171,8 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
             <table id="sabado_table" class="table table-striped table-borderless text-center" style="background: white;">
                 <thead>
                     <tr>
-                        <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> San&nbsp;José</th>
-                        <th><a class="text-dark lead">San&nbsp;José</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> {{ route.short_name }}</th>
+                        <th><span class="lead">{{ route.short_name }}</span> <br> <i class="fas fa-arrow-circle-down color-ruta"></i> <br> San&nbsp;José</th>
+                        <th><span class="lead">San&nbsp;José</span> <br> <i class="fas fa-arrow-circle-down color-ruta"></i> <br> {{ route.short_name }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -185,8 +189,8 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
             <table id="domingo_table" class="table table-striped table-borderless text-center" style="background: white;">
                 <thead>
                     <tr>
-                        <th><a class="text-dark lead">{{ route.short_name }}</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> San&nbsp;José</th>
-                        <th><a class="text-dark lead">San&nbsp;José</a> <br> <i class="fas fa-arrow-circle-down"></i> <br> {{ route.short_name }}</th>
+                        <th><span class="lead">{{ route.short_name }}</span> <br> <i class="fas fa-arrow-circle-down color-ruta"></i> <br> San&nbsp;José</th>
+                        <th><span class="lead">San&nbsp;José</span> <br> <i class="fas fa-arrow-circle-down color-ruta"></i> <br> {{ route.short_name }}</th>
                     </tr>
                 </thead>
                 <tbody>
