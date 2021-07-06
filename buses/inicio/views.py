@@ -1,6 +1,5 @@
 from django.shortcuts import get_object_or_404, render
 from rutas.models import Route, FeedInfo
-from .models import Prueba
 from datetime import datetime
 
 # Create your views here.
@@ -32,9 +31,6 @@ def gtfs(request):
 
     return render(request, 'gtfs.html', context)
 
-def prueba(request):
-    personas = Prueba.objects.all()
-    context = {
-        'personas': personas,
-    }
-    return render(request, 'prueba.html', context)
+def presentacion(request):
+
+    return render(request, 'presentacion.html')
