@@ -227,7 +227,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     <!-- Lista de feriados -->
     <div class="alert alert-soft-secondary" role="alert">
         <div>
-            <button class="btn btn-dark btn-sm" type="button" data-toggle="collapse" data-target="#listaferiados" aria-expanded="false" aria-controls="listaferiados">
+            <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#listaferiados" aria-expanded="false" aria-controls="listaferiados">
                 <i class="fas fa-calendar-check"></i> &nbsp; Días feriados
             </button>
         </div>
@@ -259,7 +259,8 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     <hr>
     <h2><i class="fas fa-ticket-alt color-ruta"></i> Tarifas</h2>
 
-    <p>Tarifas autorizadas por <a href="https://aresep.go.cr/autobus/tarifas" target="_blank">ARESEP</a>.</p>
+    <p>Precios autorizados por <a href="https://aresep.go.cr/autobus/tarifas" target="_blank">ARESEP</a>.</p>
+    
     {% include "tarifas.html" %}
 
 </section>
@@ -298,12 +299,12 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
 
     <!-- Selección de paradas, desde o hacia -->
     <div class="text-center">
-        <ul class="nav nav-pills mb-7" role="tablist">
+        <ul class="nav nav-classic nav-fill mb-7" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="paradas-desde-tab" data-toggle="pill" href="#paradas-desde" role="tab" aria-controls="paradas-desde" aria-selected="true">{{ route.short_name }} <i class="fas fa-arrow-circle-right"></i> San José</a>
+                <a class="nav-link active" id="paradas-desde-tab" data-toggle="pill" href="#paradas-desde" role="tab" aria-controls="paradas-desde" aria-selected="true">Desde {{ route.short_name }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="paradas-hacia-tab" data-toggle="pill" href="#paradas-hacia" role="tab" aria-controls="paradas-hacia" aria-selected="false">San José <i class="fas fa-arrow-circle-right"></i> {{ route.short_name }}</a>
+                <a class="nav-link" id="paradas-hacia-tab" data-toggle="pill" href="#paradas-hacia" role="tab" aria-controls="paradas-hacia" aria-selected="false">Desde San José</a>
             </li>
         </ul>
     </div>
