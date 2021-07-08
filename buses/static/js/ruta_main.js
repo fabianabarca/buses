@@ -5,6 +5,7 @@ const ruta_app = Vue.createApp({
     data () {
         return {
             hora: "--:-- --",
+            day: dayjs().day(), // 0 dom; 1-5 lun,mar,mie,jue,vie; 6 sab
 
             // Download tables as images:
             table_on_select: 'entresemana_table',
@@ -33,18 +34,17 @@ const ruta_app = Vue.createApp({
     },
     mounted () {
         setInterval(() => { // Lógica de la aplicación HORADIGITAL
-            var time = new Date();
-            this.tiempo_en_minutos = time.getMinutes() + time.getHours()*60;
-            this.hora = time.toLocaleString(
-                'en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+            var time = dayjs();
+            this.tiempo_en_minutos = time.minute() + time.hour()*60;
+            this.hora = time.format('h:mm:ss A');
         }, 1000); // Cada segundo refresca
 
-        // Encontrar que tabla se está mostrando // FIXME HACK
-        if (String(document.getElementById('entresemana-tab').classList[1]) == 'active')
-            this.table_on_select = "entresemana_table" ;
-        else if (String(document.getElementById('sabado-tab').classList[1]) == 'active')
-            this.table_on_select = "sabado_table" ;
-        else if (String(document.getElementById('domingo-tab').classList[1]) == 'active')
+        // El horario activo según el día de la semana
+        if (!dayjs().day())
             this.table_on_select = "domingo_table" ;
+        else if (dayjs().day() == 6)
+            this.table_on_select = "sabado_table" ;
+        else
+            this.table_on_select = "entresemana_table" ;
     },
 });

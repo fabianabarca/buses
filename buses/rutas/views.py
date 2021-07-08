@@ -118,19 +118,16 @@ def ruta(request, url_ruta):
         ramales_0 = ramales_entresemana_0
         horario_1 = horario_entresemana_1
         ramales_1 = ramales_entresemana_1
-        horario_activo = ['active', '', '', 'true', 'false', 'false', 'show active', '', '']
     elif ahora.weekday() == 5:
         horario_0 = horario_sabado_0
         ramales_0 = ramales_sabado_0
         horario_1 = horario_sabado_1
         ramales_1 = ramales_sabado_1
-        horario_activo = ['', 'active', '', 'false', 'true', 'false', '', 'show active', '']
     else:
         horario_0 = horario_domingo_0
         ramales_0 = ramales_domingo_0
         horario_1 = horario_domingo_1
         ramales_1 = ramales_domingo_1
-        horario_activo = ['', '', 'active', 'false', 'false', 'true', '', '', 'show active']
 
     ramales_0_acronimo = [
         element.replace('desde_','')
@@ -197,7 +194,6 @@ def ruta(request, url_ruta):
         'horario_entresemana': horario_entresemana,
         'horario_sabado': horario_sabado,
         'horario_domingo': horario_domingo,
-        'horario_activo': horario_activo,
         'horario_js_hacia_sanjose': horario_js_hacia_sanjose,
         'horario_js_desde_sanjose': horario_js_desde_sanjose,
         'feriados': feriados,
