@@ -57,7 +57,7 @@ ruta_app.component('proximobus', {
     </td>
 </tr>
 
-<!-- Tercer fila -->
+<!-- Tercera fila -->
 <tr>
     <td class="font-weight-bold">
         <span v-if="hacia_sanjose[2]" class="align-middle">{{ hacia_sanjose[2] }}</span>&nbsp;
