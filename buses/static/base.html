@@ -302,10 +302,7 @@
       // =======================================================
       var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
     });
-  </script>
 
-  <!-- JS Plugins Init. -->
-  <script>
     $(document).on('ready', function () {
       // INITIALIZATION OF COUNTER
       // =======================================================
@@ -313,9 +310,7 @@
         var counter = new HSCounter($(this)).init();
       });
     });
-  </script>
 
-  <script>
     $(document).on('ready', function () {
       // INITIALIZATION OF SCROLL NAV
       // =======================================================
@@ -323,6 +318,14 @@
         var scrollNav = new HSScrollNav($(this)).init();
       });
     });
+
+    $(document).on('ready', function () {
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });    
   </script>
 
   </body>
