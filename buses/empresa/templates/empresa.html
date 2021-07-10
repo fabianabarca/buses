@@ -184,7 +184,25 @@
 
     </div>
 
-
 </section>
+
+<!-- Botón "Go To" para subir al principio -->
+<a class="js-go-to go-to position-fixed" href="#" style="visibility: hidden;"
+    data-hs-go-to-options='{
+     "offsetTop": 700,
+     "position": {
+       "init": {
+         "right": 15
+       },
+       "show": {
+         "bottom": 15
+       },
+       "hide": {
+         "bottom": -15
+       }
+     }
+   }'>
+  <i class="fas fa-arrow-up"></i>
+</a>
 
 {% endblock %}
