@@ -19,7 +19,7 @@
           <div class="col-lg-5">
             <div class="mb-5 mt-11">
               <h1 class="display-4 mb-3">Transportes San&nbsp;Gabriel</h1>
-              <p class="lead">Transportes San Gabriel de Aserrí inició sus operaciones en setiembre del 2005 con 6 unidades y 9 colaboradores de la zona. Desde un inicio, con el objetivo de brindar un servicio de calidad, seguro, eficaz e innovador.</p>
+              <p class="lead">Transportes San Gabriel de Aserrí opera en la región Caraigres desde setiembre del 2005, con el objetivo de brindar un servicio de calidad, seguro, eficaz e innovador.</p>
             </div>
   
             <a class="btn btn-primary btn-wide transition-3d-hover" href="/contacto"><i class="fas fa-envelope"></i> &nbsp; Contacto</a>
@@ -69,7 +69,7 @@
           <!-- Title -->
           <div class="mb-5 mb-md-7">
             <h2 class="mb-3">Nuestra empresa en números</h2>
-            <p>Whether you're creating a subscription service, an on-demand marketplace, an e-commerce store, or a portfolio showcase, Front's unmatched functionality help you create the best possible product for your users.</p>
+            <p>Iniciamos nuestras operaciones con 6 unidades y 9 colaboradores de la zona. Hoy en día tenemos un gran equipo comprometido con la calidad del servicio a la comunidad.</p>
           </div>
           <!-- End Title -->
   
@@ -133,18 +133,16 @@
     <hr>
     <h2>Transparencia</h2>
 
-    <div class="card card-bordered">
-        <div class="card-body">
-            <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-bus"></i></span>Sujetos a lo que solicita el Consejo de Transporte Público.</li>
-                <li><span class="fa-li"><i class="fas fa-wheelchair"></i></span>Cumplimos con la Ley 7600 y sus reformas.</li>
-                <li><span class="fa-li"><i class="fas fa-balance-scale"></i></span>Cumplimos con lo que establece la Asociación Reguladora de Servicios Públicos (ARESEP).</li>
-                <li><span class="fa-li"><i class="fas fa-school"></i></span>Apoyamos el progreso comunal en conjunto con las Asociaciones de Desarrollo Integral.</li> 
-            </ol>
+<ol class="fa-ul">
+    <li><span class="fa-li"><i class="fas fa-bus"></i></span>Sujetos a lo que solicita el Consejo de Transporte Público.</li>
+    <li><span class="fa-li"><i class="fas fa-wheelchair"></i></span>Cumplimos con la Ley 7600 y sus reformas.</li>
+    <li><span class="fa-li"><i class="fas fa-balance-scale"></i></span>Cumplimos con lo que establece la Asociación Reguladora de Servicios Públicos (ARESEP).</li>
+    <li><span class="fa-li"><i class="fas fa-school"></i></span>Apoyamos el progreso comunal en conjunto con las Asociaciones de Desarrollo Integral.</li> 
+</ol>
 
-            Para ello, contamos con asesorías externas que capacita a nuestro personal en materia operativa, legal, tarifario y de desarrollo humano que garantiza nuestra continua optimización de servicio.
-        </div>
-      </div">
+<p>
+  Para ello, contamos con asesorías externas que capacita a nuestro personal en materia operativa, legal, tarifario y de desarrollo humano que garantiza nuestra continua optimización de servicio.
+</p>
 
 </section>
 
@@ -155,29 +153,36 @@
     <hr>
     <h2>Nuestro personal</h2>
 
-    <p></p>
+    <p>Iniciamos nuestras operaciones con 6 unidades y 9 colaboradores de la zona. Hoy en día tenemos un gran equipo comprometido con la calidad del servicio a la comunidad.</p>
 
-    <br>
+    <p>
+      <a class="btn btn-primary" data-toggle="collapse" href="#funcionarios" role="button" aria-expanded="false" aria-controls="funcionarios">
+        Mostrar personal
+      </a>
+    </p>
+    
+    <div class="collapse" id="funcionarios">
 
+      <div class="row mx-n2 mb-5">
+        {% for funcionario in funcionarios %}
+        <div class="col-sm-6 col-lg-3 px-2 mb-3">
+        <!-- Team -->
+        <div class="card h-100 transition-3d-hover">
+          <div class="card-body">
+            <div class="avatar avatar-lg avatar-circle mb-4">
+              <img class="avatar-img" src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}" alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}">
+            </div>
 
-<div class="row mx-n2 mb-5">
-    {% for funcionario in funcionarios %}
-    <div class="col-sm-6 col-lg-3 px-2 mb-3">
-          <!-- Team -->
-    <div class="card h-100 transition-3d-hover">
-      <div class="card-body">
-        <div class="avatar avatar-lg avatar-circle mb-4">
-          <img class="avatar-img" src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}" alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}">
+            <span class="d-block small font-weight-bold text-cap mb-1">{{ funcionario.cargo }}</span>
+            <h4 class="text-lh-sm">{{ funcionario.nombre }}</h4>
+            <!--<p class="font-size-1">Mi nombre es {{ funcionario.nombre }} mi cargo es {{ funcionario.cargo }}</p> -->
+          </div>
         </div>
-
-        <span class="d-block small font-weight-bold text-cap mb-1">{{ funcionario.cargo }}</span>
-        <h4 class="text-lh-sm">{{ funcionario.nombre }}</h4>
-        <!--<p class="font-size-1">Mi nombre es {{ funcionario.nombre }} mi cargo es {{ funcionario.cargo }}</p> -->
+        </div>
+        {% endfor %}
       </div>
+
     </div>
-    </div>
-    {% endfor %}
-</div>
 
 
 </section>

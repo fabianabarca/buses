@@ -5,7 +5,7 @@
     "fields": {
         "identificacion": "1040",
         "url_site": "Andres-Alfaro-Analista-150x150.jpg",
-        "nombre": "Andres Alfaro",
+        "nombre": "Andrés Alfaro",
         "cargo": "Analista"
     }
 },
@@ -16,7 +16,7 @@
         "identificacion": "1041",
         "url_site": "Arianny-Gamboa-Asistente-de-Operaciones-150x150.jpg",
         "nombre": "Arianny Gamboa",
-        "cargo": "AsistentedeOperaciones"
+        "cargo": "Asistente de Operaciones"
     }
 },
 {
@@ -26,7 +26,7 @@
         "identificacion": "1042",
         "url_site": "Grethel-Castro-Asistente-Administrativa-150x150.jpg",
         "nombre": "Grethel Castro",
-        "cargo": "AsistentedeGerencia"
+        "cargo": "Asistente de Gerencia"
     }
 },
 {
@@ -35,8 +35,8 @@
     "fields": {
         "identificacion": "1043",
         "url_site": "Vinicio-Zuñiga-Jefe-Departamento-de-Operaciones-150x150.jpg",
-        "nombre": "Vinicio Zuñiga",
-        "cargo": "JefeDepartamentodeOperaciones"
+        "nombre": "Vinicio Zúñiga",
+        "cargo": "Jefe Departamento de Operaciones"
     }
 },
 {
@@ -75,7 +75,7 @@
     "fields": {
         "identificacion": "394",
         "url_site": "Heyner-Villalobos-Bodeguero-150x150.jpg",
-        "nombre": "Heyner Villa lobos",
+        "nombre": "Heyner Villalobos",
         "cargo": "Bodeguero"
     }
 },
@@ -165,7 +165,7 @@
     "fields": {
         "identificacion": "418",
         "url_site": "Roberto-Aguero-Santana-Chofer-150x150.jpg",
-        "nombre": "Roberto Aguero Santana",
+        "nombre": "Roberto Agüero Santana",
         "cargo": "Chofer"
     }
 },
@@ -195,7 +195,7 @@
     "fields": {
         "identificacion": "803",
         "url_site": "Alexander-Cardenas-Chinchilla-150x150.jpg",
-        "nombre": "Alexander Cardenas Chinchilla",
+        "nombre": "Alexander Cárdenas Chinchilla",
         "cargo": "Chofer"
     }
 },
@@ -245,7 +245,7 @@
     "fields": {
         "identificacion": "1023",
         "url_site": "Felix-Salazar-e1497974224902-150x150.jpg",
-        "nombre": "Felix Salazar",
+        "nombre": "Félix Salazar",
         "cargo": "Chofer"
     }
 },
@@ -355,7 +355,7 @@
     "fields": {
         "identificacion": "1075",
         "url_site": "Victor-Valverde-Chofer-e1498253172743-150x150.jpg",
-        "nombre": "Victor Valverde",
+        "nombre": "Víctor Valverde",
         "cargo": "Chofer"
     }
 },
@@ -365,7 +365,7 @@
     "fields": {
         "identificacion": "1074",
         "url_site": "Wilberth-Zuñiga-Chofer-e1498253139146-150x150.jpg",
-        "nombre": "Wilberth Zuñiga",
+        "nombre": "Wilberth Zúñiga",
         "cargo": "Chofer"
     }
 },
@@ -395,7 +395,7 @@
     "fields": {
         "identificacion": "1070",
         "url_site": "Edgar-Barboza-Chofer-e1498253072711-150x150.jpg",
-        "nombre": "Edgar Barboza",
+        "nombre": "Édgar Barboza",
         "cargo": "Chofer"
     }
 },
@@ -455,7 +455,7 @@
     "fields": {
         "identificacion": "1105",
         "url_site": "Ronald-Zuñiga-Chofer-150x150.jpg",
-        "nombre": "Ronald Zuñiga",
+        "nombre": "Ronald Zúñiga",
         "cargo": "Chofer"
     }
 }]
