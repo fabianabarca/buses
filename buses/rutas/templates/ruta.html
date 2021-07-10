@@ -59,11 +59,13 @@
         </div>
     </p>
 
-    <p class="text-center">
-        <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Horarios" href="#horario"><i class="fas fa-clock"></i></a> &nbsp;
-        <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Tarifas" href="#tarifas"><i class="fas fa-ticket-alt"></i></a> &nbsp;
-        <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Mapa" href="#mapa"><i class="fas fa-map"></i></a> &nbsp;
-        <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Paradas" href="#paradas"><i class="fas fa-map-marker-alt"></i></a>
+    <p>
+        <nav class="js-scroll-nav text-center">
+            <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Horarios" href="#horario"><i class="fas fa-clock"></i></a> &nbsp;
+            <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Tarifas" href="#tarifas"><i class="fas fa-ticket-alt"></i></a> &nbsp;
+            <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Mapa" href="#mapa"><i class="fas fa-map"></i></a> &nbsp;
+            <a class="btn btn-sm btn-icon transition-3d-hover fondo-color-ruta" data-toggle="tooltip" data-placement="top" title="Paradas" href="#paradas"><i class="fas fa-map-marker-alt"></i></a>
+        </nav>
     </p>
 
 </section>
@@ -278,7 +280,18 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     <h2><i class="fas fa-ticket-alt color-ruta"></i> Tarifas</h2>
 
     <p>Precios autorizados por <a href="https://aresep.go.cr/autobus/tarifas" target="_blank">ARESEP</a>.</p>
-    
+
+    <!-- Nota sobre "solo efectivo" -->
+    <div class="alert alert-soft-secondary" role="alert">
+        <p>
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-money-bill-wave"></i></span>
+                    Únicamente son posibles los pagos <strong>en efectivo</strong> abordo del autobús. En este momento no es posible utilizar pago electrónico, lamentamos los inconvenientes.
+                </li>
+            </ol>
+        </p>
+    </div>
+
     {% include "tarifas.html" %}
 
 </section>
@@ -326,7 +339,9 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
             </li>
         </ul>
     </div>
-  
+
+    <p>
+    <div class="card card-bordered pre-scrollable">
     <!-- Contenido de las paradas -->
     <div class="tab-content">
         
@@ -403,6 +418,8 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
         </div>
     
     </div>
+    </div>
+    </p>
 
 </section>
 

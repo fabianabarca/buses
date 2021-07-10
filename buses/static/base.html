@@ -285,6 +285,7 @@
     <script src="{% static 'vendor/dzsparallaxer/dzsparallaxer.js' %}"></script>
     <script src="{% static 'vendor/typed.js/lib/typed.min.js' %}"></script>
     <script src="{% static 'vendor/aos/dist/aos.js' %}"></script>
+    <script src="{% static 'vendor/hs-scroll-nav/dist/hs-scroll-nav.min.js' %}"></script>
 
     <!-- JS Front -->
     <script src="{% static 'js/theme.min.js' %}"></script>
@@ -310,6 +311,16 @@
       // =======================================================
       $('.js-counter').each(function() {
         var counter = new HSCounter($(this)).init();
+      });
+    });
+  </script>
+
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF SCROLL NAV
+      // =======================================================
+      $('.js-scroll-nav').each(function () {
+        var scrollNav = new HSScrollNav($(this)).init();
       });
     });
   </script>
