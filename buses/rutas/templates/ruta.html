@@ -116,6 +116,15 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     </div>
     {% endif %}
 
+    <!-- Alerta sobre COVID-19 -->
+    <div class="alert alert-soft-danger" role="alert">
+        <p>
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-virus"></i></span>Hay restricciones sanitarias vigentes para el uso del transporte público por la emergencia de COVID-19. Más información <a href="/covid19">aquí</a>.</li>
+            </ol>
+        </p>  
+    </div>
+
 <!-- Tabla de horario -->
 
 <section id="horario">
@@ -127,7 +136,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     <div class="alert alert-soft-secondary" role="alert">
         <p>
             <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-info-circle"></i></span>La hora indicada del viaje hacia San José es en la parada de {{ route.short_name }} centro.
+                <li><span class="fa-li"><i class="fas fa-info-circle"></i></span>La hora del viaje hacia San José es en la parada de {{ route.short_name }} centro.
                     Los buses salen 15 minutos antes desde
                     {% if route.short_name == 'Acosta' %}
                         San Luis o Turrujal, según se indica
