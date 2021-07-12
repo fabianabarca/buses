@@ -8,6 +8,7 @@ migrations*
 *.zip
 *.tar.*
 venv_server*
+secrets.py
 
 # Nodejs:
 node_modules
