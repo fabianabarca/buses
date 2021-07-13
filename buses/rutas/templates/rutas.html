@@ -8,6 +8,12 @@
 
 {% block content %}
 
+<!-- Estilos necesarios para el Diagrama de paradas -->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'js/DiagramaParadas.js' %}" type="text/javascript"></script>
+<link rel="stylesheet" href="{% static 'css/EstiloDiagramaParadas.css' %}">
+
 <!-- Alertas -->
 
 
@@ -53,5 +59,60 @@
   </div>
 
   </section>
+
+<!-- Diagrama de Ruta -->
+
+<div class="subway-map"  data-columns="18" data-rows="17" data-cellSize="45" data-legendId="legend" data-textClass="text" data-gridNumbers="false" data-grid="false" data-lineWidth="10">
+
+    <ul data-color="#ff8000" data-label="Ruta San José - Turrujal" data-shiftCoords="-1,0">
+        <li data-coords="13.8,1" data-marker="interchange" data-labelPos="W" data-markerInfo="h2"><a>San José</a></li>
+        <li data-coords="13.8,2.5" data-marker="interchange" data-labelPos="W" data-markerInfo="h2"><a href="#accordionTarSJ" target="_parent"><button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Paradas San José - Tarbaca</button></a>
+        <li data-coords="13.8,4"  data-marker="interchange" data-labelPos="W" data-markerInfo="h2"><a>Tarbaca</a></li>
+        <li data-coords="13.1,4.7" data-dir="S"></li>
+        <li data-coords="12,6" data-dir="W"></li>
+        <li data-coords="11.8,6" data-marker="interchange" data-labelPos="W" data-markerInfo="h2"><a href="http://jqueryui.com/demos/droppable/">Paradas: Tarbaca/Jorco</a></li>
+        <li data-coords="11.8,8" data-marker="interchange" data-labelPos="W" data-markerInfo="h2"><a>Vuelta de Jorco</a></li>
+        <li data-coords="11.8,10" data-marker="interchange" data-labelPos="W" data-markerInfo="h2"><a href="http://jqueryui.com/demos/selectable/">Paradas: Jorco/San Ignacio</a></li>
+        <li data-coords="11.8,12" data-marker="interchange" data-labelPos="W" data-markerInfo="h2"><a>San Ignacio</a></li>
+        <li data-coords="11,13" data-dir="S"></li>
+        <li data-coords="10,14" data-dir="W"></li>
+        <li data-coords="9.8,14" data-marker="interchange" data-labelPos="W"><a href="http://jqueryui.com/demos/draggable/">Paradas: San Ignacio/Turrujal</a></li>
+        <li data-coords="9.8,16" data-marker="interchange" data-labelPos="W"><a>Turrujal</a></li>
+    </ul>
+
+    <ul data-color="#FFC300" data-label="Ruta San José - San Luis">
+        <li data-coords="14,1"></li>
+        <li data-coords="14,4"></li>
+        <li data-coords="13,5" data-dir="S"></li>
+        <li data-coords="12.2,6" data-dir="W"></li>
+        <li data-coords="12.2,6"></li>
+        <li data-coords="12.2,12"></li>
+        <li data-coords="13,13" data-dir="S"></li>
+        <li data-coords="14,14" data-dir="E"></li>
+        <li data-coords="14,14" data-marker="interchange" data-labelPos="W"><a href="http://jqueryui.com/demos/draggable/">Paradas: San Ignacio/San Luis</a></li>
+        <li data-coords="14,16" data-marker="interchange" data-labelPos="W"><a>San Luis</a></li>
+    </ul>
+
+    <ul data-color="#2ECC71" data-label="Ruta San José - Los Mangos" data-shiftCoords="1,0">
+        <li data-coords="14,1"></li>
+        <li data-coords="14,4"></li>
+        <li data-coords="15,5" data-dir="S"></li>
+        <li data-coords="16,5" data-dir="S"></li>
+        <li data-coords="17,6" data-dir="E"></li>
+        <li data-coords="17.2,7" data-marker="interchange" data-labelPos="E"><a href="http://jqueryui.com/demos/droppable/">Paradas: Tarbaca/San Gabriel</a></li>
+        <li data-coords="17.2,10" data-marker="interchange" data-labelPos="E"><a>San Gabriel</a></li>
+        <li data-coords="17.2,13" data-marker="interchange" data-labelPos="E"><a href="http://jqueryui.com/demos/droppable/">Paradas: San Gabriel/Los Mangos</a></li>
+        <li data-coords="17.2,16" data-marker="interchange" data-labelPos="E"><a>Los Mangos</a></li>
+    </ul>
+
+</div>
+<div id="legend"></div>
+
+<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+
+<script type="text/javascript">
+   $(".subway-map").subwayMap({ debug: true });
+</script>
 
 {% endblock %}
