@@ -1,6 +1,6 @@
 # web-buses: estructura de la página web
 
-Como comenzar a programar:
+Cómo comenzar a programar:
 [Developer setup](./dev_setup.md)
 (Comparte cualquier duda para mejorar la documentación)
 
