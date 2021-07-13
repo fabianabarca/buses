@@ -77,11 +77,11 @@
 
                               <div class="collapse" id="InfoSJTar">
                                 <ol class="fa-ul">
-                                    {% for paradas, coord1, coord2 in MatInfoSJTar %}
-								<li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                    {% for paradas in ParadasSJTar %}
+								<li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
 										<ul class="fa-ul">
-											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
 										</ul>
                                     {% endfor %}
@@ -101,11 +101,11 @@
 
                                     <div class="collapse" id="InfoTarJor">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoTarJor %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasTarJor %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -125,11 +125,11 @@
 
                                     <div class="collapse" id="InfoJorSI">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoJorSI %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasJorSI %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -149,11 +149,11 @@
 
                                     <div class="collapse" id="InfoSITur">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoSITur %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasSITur %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -174,7 +174,7 @@
               <div aria-labelledby="Tab2SJTur" class="tab-pane fade p-4" id="InfoTab2SJTur" role="tabpanel">
                 <p>
 
-                    <!-- Step -->
+                                        <!-- Step -->
                     <ul class="step">
                       <li class="step-item">
                           <div class="step-content-wrapper">
@@ -186,11 +186,11 @@
 
                                     <div class="collapse" id="InfoTurSI">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoTurSI %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasTurSI %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -210,11 +210,11 @@
 
                                     <div class="collapse" id="InfoSIJor">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoSIJor %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasSIJor %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -234,11 +234,11 @@
 
                                     <div class="collapse" id="InfoJorTar">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoJorTar %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasJorTar %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -258,11 +258,11 @@
 
                                     <div class="collapse" id="InfoTarSJ">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoTarSJ %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasTarSJ %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -347,11 +347,11 @@
 
                               <div class="collapse" id="InfoSJTar2">
                                 <ol class="fa-ul">
-                                    {% for paradas, coord1, coord2 in MatInfoSJTar2 %}
-								    <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                    {% for paradas in ParadasSJTar %}
+								<li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
 										<ul class="fa-ul">
-											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
 										</ul>
                                     {% endfor %}
@@ -371,11 +371,11 @@
 
                                     <div class="collapse" id="InfoTarJor2">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoTarJor2 %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasTarJor %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -395,11 +395,11 @@
 
                                     <div class="collapse" id="InfoJorSI2">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoJorSI2 %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasJorSI %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -419,11 +419,11 @@
 
                                     <div class="collapse" id="InfoSISL">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoSISL %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasSISL %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -456,11 +456,11 @@
 
                                     <div class="collapse" id="InfoSLSI">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoSLSI %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasSLSI %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -480,11 +480,11 @@
 
                                     <div class="collapse" id="InfoSIJor2">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoSIJor2 %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasSIJor %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -504,11 +504,11 @@
 
                                     <div class="collapse" id="InfoJorTar2">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoJorTar2 %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasJorTar %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -528,11 +528,11 @@
 
                                     <div class="collapse" id="InfoTarSJ2">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoTarSJ2 %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasTarSJ %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -618,11 +618,11 @@
 
                               <div class="collapse" id="InfoSJTar3">
                                 <ol class="fa-ul">
-                                    {% for paradas, coord1, coord2 in MatInfoSJTar3 %}
-								<li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                    {% for paradas in ParadasSJTar %}
+								<li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
 										<ul class="fa-ul">
-											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
 										</ul>
                                     {% endfor %}
@@ -642,11 +642,11 @@
 
                                     <div class="collapse" id="InfoTarSG">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoTarSG %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasTarSG %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -666,11 +666,11 @@
 
                                     <div class="collapse" id="InfoSGLM">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoSGLM %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasSGLM %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -702,11 +702,11 @@
 
                               <div class="collapse" id="InfoLMSG">
                                 <ol class="fa-ul">
-                                    {% for paradas, coord1, coord2 in MatInfoLMSG %}
-								<li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                    {% for paradas in ParadasLMSG %}
+								<li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
 										<ul class="fa-ul">
-											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
 										</ul>
                                     {% endfor %}
@@ -726,11 +726,11 @@
 
                                     <div class="collapse" id="InfoSGTar">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoSGTar %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasSGTar %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
@@ -750,11 +750,11 @@
 
                                     <div class="collapse" id="InfoTarSJ3">
                                     <ol class="fa-ul">
-                                        {% for paradas, coord1, coord2 in MatInfoTarSJ3 %}
-                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        {% for paradas in ParadasTarSJ %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas.name }}</li>
                                         <ul class="fa-ul">
-                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
-                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{paradas.lat|stringformat:'.6f'}},{{paradas.lon|stringformat:'.6f'}}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{paradas.lat|stringformat:'.6f'}}%2C{{paradas.lon|stringformat:'.6f'}}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
                                             <br/>
                                         </ul>
                                         {% endfor %}
