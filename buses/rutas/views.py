@@ -167,25 +167,399 @@ def ruta(request, url_ruta):
 
     # Paradas de buses
 
-    if url_ruta == 'sangabriel':
-        desde = ['LM_0', 'SG_0', 'SJ_0']
-        hacia = ['SJ_1', 'SG_1', 'LM_1']        
-    elif url_ruta == 'acosta':
-        desde = ['SI_0', 'JO_0', 'SJ_0']
-        hacia = ['SJ_1', 'JO_1', 'SI_1']
-    
-    #paradas_desde = Stop.objects.filter(stop_id__startswith=desde[0]).union(Stop.objects.filter(stop_id__startswith=desde[1])).union(Stop.objects.filter(stop_id__startswith=desde[2]))
-    #paradas_desde = Stop.objects.filter(Q(stop_id__startswith=desde[0]) | Q(stop_id__startswith=desde[1]) | Q(stop_id__startswith=desde[2]))
-    #paradas_hacia = Stop.objects.filter(stop_id__startswith=hacia[0]).union(Stop.objects.filter(stop_id__startswith=hacia[1])).union(Stop.objects.filter(stop_id__startswith=hacia[2]))
-    #paradas_hacia = Stop.objects.filter(Q(stop_id__startswith=hacia[0]) | Q(stop_id__startswith=hacia[1]) | Q(stop_id__startswith=hacia[2])).order_by('pk')
-    
-    # Solución horrible (terrible, terrible)
-    paradas_desde_0 = Stop.objects.filter(stop_id__startswith=desde[0])
-    paradas_desde_1 = Stop.objects.filter(stop_id__startswith=desde[1])
-    paradas_desde_2 = Stop.objects.filter(stop_id__startswith=desde[2])
-    paradas_hacia_0 = Stop.objects.filter(stop_id__startswith=hacia[0])
-    paradas_hacia_1 = Stop.objects.filter(stop_id__startswith=hacia[1])
-    paradas_hacia_2 = Stop.objects.filter(stop_id__startswith=hacia[2])
+    stops_from_SJ = {}
+    stops_to_SJ = {}
+    Coord1_to_SJ = {}
+    Coord1_from_SJ = {}
+    Coord2_to_SJ = {}
+    Coord2_from_SJ = {}
+
+    # 0
+    stops_to_SJ['SanJose'] = []
+    stops_to_SJ['Jorco'] = []
+    stops_to_SJ['Mangos'] = []
+    stops_to_SJ['SanGabriel'] = []
+    stops_to_SJ['SanIgnacio'] = []
+    stops_to_SJ['SanLuis'] = []
+    stops_to_SJ['Turrujal'] = []
+
+    # 1
+    stops_from_SJ['SanJose'] = []
+    stops_from_SJ['Jorco'] = []
+    stops_from_SJ['Mangos'] = []
+    stops_from_SJ['SanGabriel'] = []
+    stops_from_SJ['SanIgnacio'] = []
+    stops_from_SJ['SanLuis'] = []
+    stops_from_SJ['Turrujal'] = []
+    stops_from_SJ['Orphans'] = []
+
+    #######################################
+    # 0
+    Coord1_to_SJ['SanJose'] = []
+    Coord1_to_SJ['Jorco'] = []
+    Coord1_to_SJ['Mangos'] = []
+    Coord1_to_SJ['SanGabriel'] = []
+    Coord1_to_SJ['SanIgnacio'] = []
+    Coord1_to_SJ['SanLuis'] = []
+    Coord1_to_SJ['Turrujal'] = []
+
+    # 1
+    Coord1_from_SJ['SanJose'] = []
+    Coord1_from_SJ['Jorco'] = []
+    Coord1_from_SJ['Mangos'] = []
+    Coord1_from_SJ['SanGabriel'] = []
+    Coord1_from_SJ['SanIgnacio'] = []
+    Coord1_from_SJ['SanLuis'] = []
+    Coord1_from_SJ['Turrujal'] = []
+
+    #######################################
+
+    # 0
+    Coord2_to_SJ['SanJose'] = []
+    Coord2_to_SJ['Jorco'] = []
+    Coord2_to_SJ['Mangos'] = []
+    Coord2_to_SJ['SanGabriel'] = []
+    Coord2_to_SJ['SanIgnacio'] = []
+    Coord2_to_SJ['SanLuis'] = []
+    Coord2_to_SJ['Turrujal'] = []
+    Coord2_to_SJ['Orphans'] = []
+    # 1
+    Coord2_from_SJ['SanJose'] = []
+    Coord2_from_SJ['Jorco'] = []
+    Coord2_from_SJ['Mangos'] = []
+    Coord2_from_SJ['SanGabriel'] = []
+    Coord2_from_SJ['SanIgnacio'] = []
+    Coord2_from_SJ['SanLuis'] = []
+    Coord2_from_SJ['Turrujal'] = []
+    Coord2_from_SJ['Orphans'] = []
+
+    #####################################################################################
+
+    for stop in Stop.objects.all():
+
+        if stop.stop_id.find("SJ_0") != -1:
+            Coord1_to_SJ['SanJose'].append(stop.lat)
+        elif stop.stop_id.find("SJ_1") != -1:
+            Coord1_from_SJ['SanJose'].append(stop.lat)
+
+        elif stop.stop_id.find("LM_0") != -1:
+            Coord1_to_SJ['Mangos'].append(stop.lat)
+        elif stop.stop_id.find("LM_1") != -1:
+            Coord1_from_SJ['Mangos'].append(stop.lat)
+
+        elif stop.stop_id.find("SG_0") != -1:
+            Coord1_to_SJ['SanGabriel'].append(stop.lat)
+        elif stop.stop_id.find("SG_1") != -1:
+            Coord1_from_SJ['SanGabriel'].append(stop.lat)
+
+        elif stop.stop_id.find("SI_0") != -1:
+            Coord1_to_SJ['SanIgnacio'].append(stop.lat)
+        elif stop.stop_id.find("SI_1") != -1:
+            Coord1_from_SJ['SanIgnacio'].append(stop.lat)
+
+        elif stop.stop_id.find("SL_0") != -1:
+            Coord1_to_SJ['SanLuis'].append(stop.lat)
+        elif stop.stop_id.find("SL_1") != -1:
+            Coord1_from_SJ['SanLuis'].append(stop.lat)
+
+        elif stop.stop_id.find("TU_0") != -1:
+            Coord1_to_SJ['Turrujal'].append(stop.lat)
+        elif stop.stop_id.find("TU_1") != -1:
+            Coord1_from_SJ['Turrujal'].append(stop.lat)
+
+        elif stop.stop_id.find("JO_0") != -1:
+            Coord1_to_SJ['Jorco'].append(stop.lat)
+        elif stop.stop_id.find("JO_1") != -1:
+            Coord1_from_SJ['Jorco'].append(stop.lat)
+
+        else:
+            Coord2_from_SJ['Orphans'].append(stop.lat)
+
+    #####################################################################################
+
+    for stop in Stop.objects.all():
+
+        if stop.stop_id.find("SJ_0") != -1:
+            Coord2_to_SJ['SanJose'].append(stop.lon)
+        elif stop.stop_id.find("SJ_1") != -1:
+            Coord2_from_SJ['SanJose'].append(stop.lon)
+
+        elif stop.stop_id.find("LM_0") != -1:
+            Coord2_to_SJ['Mangos'].append(stop.lon)
+        elif stop.stop_id.find("LM_1") != -1:
+            Coord2_from_SJ['Mangos'].append(stop.lon)
+
+        elif stop.stop_id.find("SG_0") != -1:
+            Coord2_to_SJ['SanGabriel'].append(stop.lon)
+        elif stop.stop_id.find("SG_1") != -1:
+            Coord2_from_SJ['SanGabriel'].append(stop.lon)
+
+        elif stop.stop_id.find("SI_0") != -1:
+            Coord2_to_SJ['SanIgnacio'].append(stop.lon)
+        elif stop.stop_id.find("SI_1") != -1:
+            Coord2_from_SJ['SanIgnacio'].append(stop.lon)
+
+        elif stop.stop_id.find("SL_0") != -1:
+            Coord2_to_SJ['SanLuis'].append(stop.lon)
+        elif stop.stop_id.find("SL_1") != -1:
+            Coord2_from_SJ['SanLuis'].append(stop.lon)
+
+        elif stop.stop_id.find("TU_0") != -1:
+            Coord2_to_SJ['Turrujal'].append(stop.lon)
+        elif stop.stop_id.find("TU_1") != -1:
+            Coord2_from_SJ['Turrujal'].append(stop.lon)
+
+        elif stop.stop_id.find("JO_0") != -1:
+            Coord2_to_SJ['Jorco'].append(stop.lon)
+        elif stop.stop_id.find("JO_1") != -1:
+            Coord2_from_SJ['Jorco'].append(stop.lon)
+
+        else:
+            Coord2_from_SJ['Orphans'].append(stop.lon)
+
+    #####################################################################################
+
+    for stop in Stop.objects.all():
+
+        if stop.stop_id.find("SJ_0") != -1:
+            stops_to_SJ['SanJose'].append(stop.name)
+        elif stop.stop_id.find("SJ_1") != -1:
+            stops_from_SJ['SanJose'].append(stop.name)
+
+        elif stop.stop_id.find("LM_0") != -1:
+            stops_to_SJ['Mangos'].append(stop.name)
+        elif stop.stop_id.find("LM_1") != -1:
+            stops_from_SJ['Mangos'].append(stop.name)
+
+        elif stop.stop_id.find("SG_0") != -1:
+            stops_to_SJ['SanGabriel'].append(stop.name)
+        elif stop.stop_id.find("SG_1") != -1:
+            stops_from_SJ['SanGabriel'].append(stop.name)
+
+        elif stop.stop_id.find("SI_0") != -1:
+            stops_to_SJ['SanIgnacio'].append(stop.name)
+        elif stop.stop_id.find("SI_1") != -1:
+            stops_from_SJ['SanIgnacio'].append(stop.name)
+
+        elif stop.stop_id.find("SL_0") != -1:
+            stops_to_SJ['SanLuis'].append(stop.name)
+        elif stop.stop_id.find("SL_1") != -1:
+            stops_from_SJ['SanLuis'].append(stop.name)
+
+        elif stop.stop_id.find("TU_0") != -1:
+            stops_to_SJ['Turrujal'].append(stop.name)
+        elif stop.stop_id.find("TU_1") != -1:
+            stops_from_SJ['Turrujal'].append(stop.name)
+
+        elif stop.stop_id.find("JO_0") != -1:
+            stops_to_SJ['Jorco'].append(stop.name)
+        elif stop.stop_id.find("JO_1") != -1:
+            stops_from_SJ['Jorco'].append(stop.name)
+
+        else:
+            stops_from_SJ['Orphans'].append(stop.name)
+
+    #####################################################################################
+
+    stops = Stop.objects.all()
+
+    ParadasSJTar = stops_from_SJ['SanJose']
+    ParadasTarSJ = stops_to_SJ['SanJose']
+    ParadasTarJor = stops_from_SJ['Jorco']
+    ParadasJorTar = stops_to_SJ['Jorco']
+    ParadasJorSI = stops_from_SJ['SanIgnacio']
+    ParadasSIJor = stops_to_SJ['SanIgnacio']
+    ParadasSITur = stops_from_SJ['Turrujal']
+    ParadasTurSI = stops_to_SJ['Turrujal']
+    ParadasSISL = stops_from_SJ['SanLuis']
+    ParadasSLSI = stops_to_SJ['SanLuis']
+    ParadasTarSG = stops_from_SJ['SanGabriel']
+    ParadasSGTar = stops_to_SJ['SanGabriel']
+    ParadasSGLM = stops_from_SJ['Mangos']
+    ParadasLMSG = stops_to_SJ['Mangos']
+
+    Coord1SJTar = Coord1_from_SJ['SanJose']
+    Coord1TarSJ = Coord1_to_SJ['SanJose']
+    Coord1TarJor = Coord1_from_SJ['Jorco']
+    Coord1JorTar = Coord1_to_SJ['Jorco']
+    Coord1JorSI = Coord1_from_SJ['SanIgnacio']
+    Coord1SIJor = Coord1_to_SJ['SanIgnacio']
+    Coord1SITur = Coord1_from_SJ['Turrujal']
+    Coord1TurSI = Coord1_to_SJ['Turrujal']
+    Coord1SISL = Coord1_from_SJ['SanLuis']
+    Coord1SLSI = Coord1_to_SJ['SanLuis']
+    Coord1TarSG = Coord1_from_SJ['SanGabriel']
+    Coord1SGTar = Coord1_to_SJ['SanGabriel']
+    Coord1SGLM = Coord1_from_SJ['Mangos']
+    Coord1LMSG = Coord1_to_SJ['Mangos']
+
+    Coord2SJTar = Coord2_from_SJ['SanJose']
+    Coord2TarSJ = Coord2_to_SJ['SanJose']
+    Coord2TarJor = Coord2_from_SJ['Jorco']
+    Coord2JorTar = Coord2_to_SJ['Jorco']
+    Coord2JorSI = Coord2_from_SJ['SanIgnacio']
+    Coord2SIJor = Coord2_to_SJ['SanIgnacio']
+    Coord2SITur = Coord2_from_SJ['Turrujal']
+    Coord2TurSI = Coord2_to_SJ['Turrujal']
+    Coord2SISL = Coord2_from_SJ['SanLuis']
+    Coord2SLSI = Coord2_to_SJ['SanLuis']
+    Coord2TarSG = Coord2_from_SJ['SanGabriel']
+    Coord2SGTar = Coord2_to_SJ['SanGabriel']
+    Coord2SGLM = Coord2_from_SJ['Mangos']
+    Coord2LMSG = Coord2_to_SJ['Mangos']
+
+    ######################################################
+
+    for i in range(0, len(Coord1SJTar)):
+        Coord1SJTar[i] = str(Coord1SJTar[i])
+
+    for i in range(0, len(Coord2SJTar)):
+        Coord2SJTar[i] = str(Coord2SJTar[i])
+
+    Coord1SJTar = [w.replace(',', '.') for w in Coord1SJTar]
+    Coord2SJTar = [w.replace(',', '.') for w in Coord2SJTar]
+
+    for i in range(0, len(Coord1TarSJ)):
+        Coord1TarSJ[i] = str(Coord1TarSJ[i])
+
+    for i in range(0, len(Coord2TarSJ)):
+        Coord2TarSJ[i] = str(Coord2TarSJ[i])
+
+    Coord1TarSJ = [w.replace(',', '.') for w in Coord1TarSJ]
+    Coord2TarSJ = [w.replace(',', '.') for w in Coord2TarSJ]
+
+    for i in range(0, len(Coord1TarJor)):
+        Coord1TarJor[i] = str(Coord1TarJor[i])
+
+    for i in range(0, len(Coord2TarJor)):
+        Coord2TarJor[i] = str(Coord2TarJor[i])
+
+    Coord1TarJor = [w.replace(',', '.') for w in Coord1TarJor]
+    Coord2TarJor = [w.replace(',', '.') for w in Coord2TarJor]
+
+    for i in range(0, len(Coord1JorTar)):
+        Coord1JorTar[i] = str(Coord1JorTar[i])
+
+    for i in range(0, len(Coord2JorTar)):
+        Coord2JorTar[i] = str(Coord2JorTar[i])
+
+    Coord1JorTar = [w.replace(',', '.') for w in Coord1JorTar]
+    Coord2JorTar = [w.replace(',', '.') for w in Coord2JorTar]
+
+    for i in range(0, len(Coord1JorSI)):
+        Coord1JorSI[i] = str(Coord1JorSI[i])
+
+    for i in range(0, len(Coord2JorSI)):
+        Coord2JorSI[i] = str(Coord2JorSI[i])
+
+    Coord1JorSI = [w.replace(',', '.') for w in Coord1JorSI]
+    Coord2JorSI = [w.replace(',', '.') for w in Coord1JorSI]
+
+    for i in range(0, len(Coord1SIJor)):
+        Coord1SIJor[i] = str(Coord1SIJor[i])
+
+    for i in range(0, len(Coord2SIJor)):
+        Coord2SIJor[i] = str(Coord2SIJor[i])
+
+    Coord1SIJor = [w.replace(',', '.') for w in Coord1SIJor]
+    Coord2SIJor = [w.replace(',', '.') for w in Coord2SIJor]
+
+    for i in range(0, len(Coord1SITur)):
+        Coord1SITur[i] = str(Coord1SITur[i])
+
+    for i in range(0, len(Coord2SITur)):
+        Coord2SITur[i] = str(Coord2SITur[i])
+
+    Coord1SITur = [w.replace(',', '.') for w in Coord1SITur]
+    Coord2SITur = [w.replace(',', '.') for w in Coord2SITur]
+
+    for i in range(0, len(Coord1TurSI)):
+        Coord1TurSI[i] = str(Coord1TurSI[i])
+
+    for i in range(0, len(Coord2TurSI)):
+        Coord2TurSI[i] = str(Coord2TurSI[i])
+
+    Coord1TurSI = [w.replace(',', '.') for w in Coord1TurSI]
+    Coord2TurSI = [w.replace(',', '.') for w in Coord2TurSI]
+
+    for i in range(0, len(Coord1SISL)):
+        Coord1SISL[i] = str(Coord1SISL[i])
+
+    for i in range(0, len(Coord2SISL)):
+        Coord2SISL[i] = str(Coord2SISL[i])
+
+    Coord1SISL = [w.replace(',', '.') for w in Coord1SISL]
+    Coord2SISL = [w.replace(',', '.') for w in Coord2SISL]
+
+    for i in range(0, len(Coord1SLSI)):
+        Coord1SLSI[i] = str(Coord1SLSI[i])
+
+    for i in range(0, len(Coord2SLSI)):
+        Coord2SLSI[i] = str(Coord2SLSI[i])
+
+    Coord1SLSI = [w.replace(',', '.') for w in Coord1SLSI]
+    Coord2SLSI = [w.replace(',', '.') for w in Coord2SLSI]
+
+    for i in range(0, len(Coord1TarSG)):
+        Coord1TarSG[i] = str(Coord1TarSG[i])
+
+    for i in range(0, len(Coord2TarSG)):
+        Coord2TarSG[i] = str(Coord2TarSG[i])
+
+    Coord1TarSG = [w.replace(',', '.') for w in Coord1TarSG]
+    Coord2TarSG = [w.replace(',', '.') for w in Coord2TarSG]
+
+    for i in range(0, len(Coord1SGTar)):
+        Coord1SGTar[i] = str(Coord1SGTar[i])
+
+    for i in range(0, len(Coord2SGTar)):
+        Coord2SGTar[i] = str(Coord2SGTar[i])
+
+    Coord1SGTar = [w.replace(',', '.') for w in Coord1SGTar]
+    Coord2SGTar = [w.replace(',', '.') for w in Coord2SGTar]
+
+    for i in range(0, len(Coord1SGLM)):
+        Coord1SGLM[i] = str(Coord1SGLM[i])
+
+    for i in range(0, len(Coord2SGLM)):
+        Coord2SGLM[i] = str(Coord2SGLM[i])
+
+    Coord1SGLM = [w.replace(',', '.') for w in Coord1SGLM]
+    Coord2SGLM = [w.replace(',', '.') for w in Coord2SGLM]
+
+    for i in range(0, len(Coord1LMSG)):
+        Coord1LMSG[i] = str(Coord1LMSG[i])
+
+    for i in range(0, len(Coord2LMSG)):
+        Coord2LMSG[i] = str(Coord2LMSG[i])
+
+    Coord1LMSG = [w.replace(',', '.') for w in Coord1LMSG]
+    Coord2LMSG = [w.replace(',', '.') for w in Coord2LMSG]
+
+    ######################################################
+
+    MatInfoSJTar = zip(ParadasSJTar, Coord1SJTar, Coord2SJTar)
+    MatInfoSJTar2 = zip(ParadasSJTar, Coord1SJTar, Coord2SJTar)
+    MatInfoSJTar3 = zip(ParadasSJTar, Coord1SJTar, Coord2SJTar)
+    MatInfoTarSJ = zip(ParadasTarSJ, Coord1TarSJ, Coord2TarSJ)
+    MatInfoTarSJ2 = zip(ParadasTarSJ, Coord1TarSJ, Coord2TarSJ)
+    MatInfoTarSJ3 = zip(ParadasTarSJ, Coord1TarSJ, Coord2TarSJ)
+    MatInfoTarJor = zip(ParadasTarJor, Coord1TarJor, Coord2TarJor)
+    MatInfoTarJor2 = zip(ParadasTarJor, Coord1TarJor, Coord2TarJor)
+    MatInfoJorTar = zip(ParadasJorTar, Coord1JorTar, Coord2JorTar)
+    MatInfoJorTar2 = zip(ParadasJorTar, Coord1JorTar, Coord2JorTar)
+    MatInfoJorSI = zip(ParadasJorSI, Coord1JorSI, Coord2JorSI)
+    MatInfoJorSI2 = zip(ParadasJorSI, Coord1JorSI, Coord2JorSI)
+    MatInfoSIJor = zip(ParadasSIJor, Coord1SIJor, Coord2SIJor)
+    MatInfoSIJor2 = zip(ParadasSIJor, Coord1SIJor, Coord2SIJor)
+    MatInfoSITur = zip(ParadasSITur, Coord1SITur, Coord2SITur)
+    MatInfoTurSI = zip(ParadasTurSI, Coord1TurSI, Coord2TurSI)
+    MatInfoSISL = zip(ParadasSISL, Coord1SISL, Coord2SISL)
+    MatInfoSLSI = zip(ParadasSLSI, Coord1SLSI, Coord2SLSI)
+    MatInfoTarSG = zip(ParadasTarSG, Coord1TarSG, Coord2TarSG)
+    MatInfoSGTar = zip(ParadasSGTar, Coord1SGTar, Coord2SGTar)
+    MatInfoSGLM = zip(ParadasSGLM, Coord1SGLM, Coord2SGLM)
+    MatInfoLMSG = zip(ParadasLMSG, Coord1LMSG, Coord2LMSG)
 
     context = {
         'maxBounds': settings.RUTAS_MAP_MAX_BOUNDS,
@@ -200,12 +574,31 @@ def ruta(request, url_ruta):
         'informacion': informacion,
         'tarifas': tarifas,
         # Parte de la solución horrible
-        'paradas_desde_0': paradas_desde_0,
-        'paradas_desde_1': paradas_desde_1,
-        'paradas_desde_2': paradas_desde_2,
-        'paradas_hacia_0': paradas_hacia_0,
-        'paradas_hacia_1': paradas_hacia_1,
-        'paradas_hacia_2': paradas_hacia_2,
+        'stops_from_SJ' : stops_from_SJ,
+        'stops_to_SJ' : stops_to_SJ,
+
+        'MatInfoSJTar' : MatInfoSJTar,
+        'MatInfoSJTar2': MatInfoSJTar2,
+        'MatInfoSJTar3': MatInfoSJTar3,
+        'MatInfoTarSJ' : MatInfoTarSJ,
+        'MatInfoTarSJ2': MatInfoTarSJ2,
+        'MatInfoTarSJ3': MatInfoTarSJ3,
+        'MatInfoTarJor' : MatInfoTarJor,
+        'MatInfoTarJor2': MatInfoTarJor2,
+        'MatInfoJorTar' : MatInfoJorTar,
+        'MatInfoJorTar2': MatInfoJorTar2,
+        'MatInfoJorSI' : MatInfoJorSI,
+        'MatInfoJorSI2': MatInfoJorSI2,
+        'MatInfoSIJor' : MatInfoSIJor,
+        'MatInfoSIJor2': MatInfoSIJor2,
+        'MatInfoSITur' : MatInfoSITur,
+        'MatInfoTurSI' : MatInfoTurSI,
+        'MatInfoSISL' : MatInfoSISL,
+        'MatInfoSLSI' : MatInfoSLSI,
+        'MatInfoTarSG' : MatInfoTarSG,
+        'MatInfoSGTar' : MatInfoSGTar,
+        'MatInfoSGLM' : MatInfoSGLM,
+        'MatInfoLMSG' : MatInfoLMSG,
     }
 
     return render(request, 'ruta.html', context)

@@ -1,0 +1,782 @@
+{% load static %}
+
+<!-- Nav -->
+<div class="text-center">
+  <ul class="nav nav-segment nav-pills scrollbar-horizontal mb-7" role="tablist">
+    <li class="nav-item">
+      <a aria-controls="pills-one-code-features-example1" aria-selected="true" class="nav-link active" data-toggle="pill" href="#pills-one-code-features-example1" id="pills-one-code-features-example1-tab" role="tab">Ruta San José - Turrujal</a>
+    </li>
+    <li class="nav-item">
+      <a aria-controls="pills-two-code-features-example1" aria-selected="false" class="nav-link" data-toggle="pill" href="#pills-two-code-features-example1" id="pills-two-code-features-example1-tab" role="tab">Ruta San José - San Luis</a>
+    </li>
+    <li class="nav-item">
+      <a aria-controls="pills-three-code-features-example1" aria-selected="false" class="nav-link" data-toggle="pill" href="#pills-three-code-features-example1" id="pills-three-code-features-example1-tab" role="tab">Ruta San José - Los Mangos</a>
+    </li>
+  </ul>
+</div>
+<!-- End Nav -->
+
+<!---------------------------------------------------------------Paradas San Jose Turrujal----------------------------------------------------->
+<!-- Tab1a Content -->
+<div class="tab-content">
+  <div aria-labelledby="pills-one-code-features-example1-tab" class="tab-pane fade show active" id="pills-one-code-features-example1" role="tabpanel">
+    <p>
+      <div class="row">
+          <div class="col-lg-5 mb-7 mb-lg-0">
+            <!-- Nav -->
+            <ul class="nav nav-box" role="tablist">
+              <li class="nav-item w-100 mx-0 mb-3">
+                <a aria-controls="InfoTab1SJTur" aria-selected="true" class="nav-link p-4 active" data-toggle="pill" href="#InfoTab1SJTur" id="Tab1SJTur" role="tab">
+                  <div class="media align-items-center align-items-lg-start">
+                    <figure class="w-100 max-w-6rem mt-2 mr-4">
+                      <img alt="SVG" class="img-fluid" src="{% static 'svg\icons\icon-56.svg' %}">
+                    </figure>
+                    <div class="media-body">
+                      <h4 class="mb-0">Salida desde San José</h4>
+                      <div class="d-none d-lg-block mt-2">
+                        <p class="text-body mb-0">Llegada a Turrujal.</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="nav-item w-100 mx-0 mb-3">
+                <a aria-controls="InfoTab2SJTur" aria-selected="false" class="nav-link p-4" data-toggle="pill" href="#InfoTab2SJTur" id="Tab2SJTur" role="tab">
+                  <div class="media align-items-center align-items-lg-start">
+                    <figure class="w-100 max-w-6rem mt-2 mr-4">
+                      <img alt="SVG" class="img-fluid" src="{% static 'svg\icons\icon-8.svg' %}">
+                    </figure>
+                    <div class="media-body">
+                      <h4 class="mb-0">Salida desde Turrujal</h4>
+                      <div class="d-none d-lg-block mt-2">
+                        <p class="text-body mb-0">Llegada a San José</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        <!-- End Nav -->
+          <div class="col-lg-7">
+            <!-- Tab1b Content -->
+            <div class="tab-content">
+              <div aria-labelledby="Tab1SJTur" class="tab-pane fade p-4 show active" id="InfoTab1SJTur" role="tabpanel">
+                <p>
+
+                    <!-- Step -->
+                    <ul class="step">
+                      <li class="step-item">
+                        <div class="step-content-wrapper">
+                          <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoSJTar" aria-expanded="false" class="btn1" data-target="#InfoSJTar" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                          <div class="step-content" id="tabSJTar0">
+                              <h5>Paradas desde San Jose hacia Tarbaca</h5>
+
+                              <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                              <div class="collapse" id="InfoSJTar">
+                                <ol class="fa-ul">
+                                    {% for paradas, coord1, coord2 in MatInfoSJTar %}
+								<li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+										<ul class="fa-ul">
+											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+										</ul>
+                                    {% endfor %}
+                                </ol>
+                              </div>
+                          </div>
+                        </div>
+                    </li>
+
+                      <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoTarJor" aria-expanded="false" class="btn1" data-target="#InfoTarJor" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Tarbaca hacia Jorco</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoTarJor">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoTarJor %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                        </div>
+                                </div>
+                          </div>
+                      </li>
+
+                    <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoJorSI" aria-expanded="false" class="btn1" data-target="#InfoJorSI" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Jorco hacia San Ignacio</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoJorSI">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoJorSI %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+                  <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoSITur" aria-expanded="false" class="btn1" data-target="#InfoSITur" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde San Ignacio hacia Turrujal</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoSITur">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoSITur %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+              </ul>
+
+
+                    <!-- End Step -->
+
+                </p>
+              </div>
+
+              <div aria-labelledby="Tab2SJTur" class="tab-pane fade p-4" id="InfoTab2SJTur" role="tabpanel">
+                <p>
+
+                    <!-- Step -->
+                    <ul class="step">
+                      <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoTurSI" aria-expanded="false" class="btn1" data-target="#InfoTurSI" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Turrujal hacia San Ignacio</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoTurSI">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoTurSI %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+                  <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoSIJor" aria-expanded="false" class="btn1" data-target="#InfoSIJor" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde San Ignacio hacia Jorco</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoSIJor">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoSIJor %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+                  <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoJorTar" aria-expanded="false" class="btn1" data-target="#InfoJorTar" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Jorco hacia Tarbaca</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoJorTar">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoJorTar %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+                  <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoTarSJ" aria-expanded="false" class="btn1" data-target="#InfoTarSJ" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Tarbaca hacia San José</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoTarSJ">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoTarSJ %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+                    </ul>
+                    <!-- End Step -->
+
+                </p>
+              </div>
+            </div>
+            <!-- End Tab1b Content -->
+          </div>
+        </div>
+    </p>
+  </div>
+
+<!-- End Tab1a Content -->
+
+<!---------------------------------------------------------------Paradas San Jose - San Luis----------------------------------------------------->
+
+  <div aria-labelledby="pills-two-code-features-example1-tab" class="tab-pane fade" id="pills-two-code-features-example1" role="tabpanel">
+    <p>
+
+      <div class="row">
+          <div class="col-lg-5 mb-7 mb-lg-0">
+            <!-- Nav -->
+            <ul class="nav nav-box" role="tablist">
+              <li class="nav-item w-100 mx-0 mb-3">
+                <a aria-controls="InfoTab1SJSL" aria-selected="true" class="nav-link p-4 active" data-toggle="pill" href="#InfoTab1SJSL" id="Tab1SJSL" role="tab">
+                  <div class="media align-items-center align-items-lg-start">
+                    <figure class="w-100 max-w-6rem mt-2 mr-4">
+                      <img alt="SVG" class="img-fluid" src="{% static 'svg\icons\icon-56.svg' %}">
+                    </figure>
+                    <div class="media-body">
+                      <h4 class="mb-0">Salida desde San José</h4>
+                      <div class="d-none d-lg-block mt-2">
+                        <p class="text-body mb-0">Llegada a San Luis.</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="nav-item w-100 mx-0 mb-3">
+                <a aria-controls="InfoTab2SJSL" aria-selected="false" class="nav-link p-4" data-toggle="pill" href="#InfoTab2SJSL" id="Tab2SJSL" role="tab">
+                  <div class="media align-items-center align-items-lg-start">
+                    <figure class="w-100 max-w-6rem mt-2 mr-4">
+                      <img alt="SVG" class="img-fluid" src="{% static 'svg\icons\icon-8.svg' %}">
+                    </figure>
+                    <div class="media-body">
+                      <h4 class="mb-0">Salida desde San Luis</h4>
+                      <div class="d-none d-lg-block mt-2">
+                        <p class="text-body mb-0">Llegada a San José</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        <!-- End Nav -->
+          <div class="col-lg-7">
+            <!-- Tab1b Content -->
+            <div class="tab-content">
+              <div aria-labelledby="Tab1SJSL" class="tab-pane fade p-4 show active" id="InfoTab1SJSL" role="tabpanel">
+                <p>
+
+                    <!-- Step -->
+                    <ul class="step">
+                      <li class="step-item">
+                        <div class="step-content-wrapper">
+                          <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoSJTar2" aria-expanded="false" class="btn1" data-target="#InfoSJTar2" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                          <div class="step-content" id="tabSJTar2">
+                              <h5>Paradas desde San Jose hacia Tarbaca</h5>
+
+                              <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                              <div class="collapse" id="InfoSJTar2">
+                                <ol class="fa-ul">
+                                    {% for paradas, coord1, coord2 in MatInfoSJTar2 %}
+								    <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+										<ul class="fa-ul">
+											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+										</ul>
+                                    {% endfor %}
+                                </ol>
+                              </div>
+                          </div>
+                        </div>
+                    </li>
+
+                      <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoTarJor2" aria-expanded="false" class="btn1" data-target="#InfoTarJor2" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Tarbaca hacia Jorco</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoTarJor2">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoTarJor2 %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                        </div>
+                                </div>
+                          </div>
+                      </li>
+
+                    <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoJorSI2" aria-expanded="false" class="btn1" data-target="#InfoJorSI2" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Jorco hacia San Ignacio</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoJorSI2">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoJorSI2 %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+                  <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoSISL" aria-expanded="false" class="btn1" data-target="#InfoSISL" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde San Ignacio hacia San Luis</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoSISL">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoSISL %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+              </ul>
+
+
+                  <!-- End Step -->
+
+                </p>
+              </div>
+
+              <div aria-labelledby="Tab2SJSL" class="tab-pane fade p-4" id="InfoTab2SJSL" role="tabpanel">
+                <p>
+
+                    <!-- Step -->
+                    <ul class="step">
+                      <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoSLSI" aria-expanded="false" class="btn1" data-target="#InfoSLSI" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde San Luis hacia San Ignacio</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoSLSI">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoSLSI %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+                  <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoSIJor2" aria-expanded="false" class="btn1" data-target="#InfoSIJor2" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde San Ignacio hacia Jorco</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoSIJor2">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoSIJor2 %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+                  <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoJorTar2" aria-expanded="false" class="btn1" data-target="#InfoJorTar2" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Jorco hacia Tarbaca</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoJorTar2">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoJorTar2 %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+                  <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoTarSJ2" aria-expanded="false" class="btn1" data-target="#InfoTarSJ2" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Tarbaca hacia San José</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoTarSJ2">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoTarSJ2 %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+                    </ul>
+                    <!-- End Step -->
+
+                </p>
+              </div>
+            </div>
+            <!-- End Tab1b Content -->
+          </div>
+        </div>
+
+    </p>
+  </div>
+
+<!-- End Tab1 Content -->
+
+<!---------------------------------------------------------------Paradas San Jose - Los Mangos----------------------------------------------------->
+
+  <div aria-labelledby="pills-three-code-features-example1-tab" class="tab-pane fade" id="pills-three-code-features-example1" role="tabpanel">
+    <p>
+
+      <div class="row">
+          <div class="col-lg-5 mb-7 mb-lg-0">
+            <!-- Nav -->
+            <ul class="nav nav-box" role="tablist">
+              <li class="nav-item w-100 mx-0 mb-3">
+                <a aria-controls="InfoTab1SJLM" aria-selected="true" class="nav-link p-4 active" data-toggle="pill" href="#InfoTab1SJLM" id="Tab1SJLM" role="tab">
+                  <div class="media align-items-center align-items-lg-start">
+                    <figure class="w-100 max-w-6rem mt-2 mr-4">
+                      <img alt="SVG" class="img-fluid" src="{% static 'svg\icons\icon-56.svg' %}">
+                    </figure>
+                    <div class="media-body">
+                      <h4 class="mb-0">Salida desde San José</h4>
+                      <div class="d-none d-lg-block mt-2">
+                        <p class="text-body mb-0">Llegada a Los Mangos.</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="nav-item w-100 mx-0 mb-3">
+                <a aria-controls="InfoTab2SJLM" aria-selected="false" class="nav-link p-4" data-toggle="pill" href="#InfoTab2SJLM" id="Tab2SJLM" role="tab">
+                  <div class="media align-items-center align-items-lg-start">
+                    <figure class="w-100 max-w-6rem mt-2 mr-4">
+                      <img alt="SVG" class="img-fluid" src="{% static 'svg\icons\icon-8.svg' %}">
+                    </figure>
+                    <div class="media-body">
+                      <h4 class="mb-0">Salida desde Los Mangos</h4>
+                      <div class="d-none d-lg-block mt-2">
+                        <p class="text-body mb-0">Llegada a San José</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        <!-- End Nav -->
+          <div class="col-lg-7">
+            <!-- Tab1b Content -->
+            <div class="tab-content">
+              <div aria-labelledby="Tab1SJLM" class="tab-pane fade p-4 show active" id="InfoTab1SJLM" role="tabpanel">
+                <p>
+
+                                        <!-- Step -->
+                    <ul class="step">
+                      <li class="step-item">
+                        <div class="step-content-wrapper">
+                          <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoSJTar3" aria-expanded="false" class="btn1" data-target="#InfoSJTar3" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                          <div class="step-content" id="tabSJTar3">
+                              <h5>Paradas desde San Jose hacia Tarbaca</h5>
+
+                              <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                              <div class="collapse" id="InfoSJTar3">
+                                <ol class="fa-ul">
+                                    {% for paradas, coord1, coord2 in MatInfoSJTar3 %}
+								<li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+										<ul class="fa-ul">
+											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+										</ul>
+                                    {% endfor %}
+                                </ol>
+                              </div>
+                          </div>
+                        </div>
+                    </li>
+
+                      <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoTarSG" aria-expanded="false" class="btn1" data-target="#InfoTarSG" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Tarbaca hacia San Gabriel</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoTarSG">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoTarSG %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                        </div>
+                                </div>
+                          </div>
+                      </li>
+
+                    <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoSGLM" aria-expanded="false" class="btn1" data-target="#InfoSGLM" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde San Gabriel hacia Los Mangos</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoSGLM">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoSGLM %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+              </ul>
+
+
+                  <!-- End Step -->
+
+                </p>
+              </div>
+
+              <div aria-labelledby="Tab2SJLM" class="tab-pane fade p-4" id="InfoTab2SJLM" role="tabpanel">
+                <p>
+
+                                        <!-- Step -->
+                    <ul class="step">
+                      <li class="step-item">
+                        <div class="step-content-wrapper">
+                          <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoLMSG" aria-expanded="false" class="btn1" data-target="#InfoLMSG" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                          <div class="step-content" id="tabSJTar2">
+                              <h5>Paradas desde Los Mangos hacia San Gabriel</h5>
+
+                              <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                              <div class="collapse" id="InfoLMSG">
+                                <ol class="fa-ul">
+                                    {% for paradas, coord1, coord2 in MatInfoLMSG %}
+								<li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+										<ul class="fa-ul">
+											<li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+											<li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+										</ul>
+                                    {% endfor %}
+                                </ol>
+                              </div>
+                          </div>
+                        </div>
+                    </li>
+
+                      <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoSGTar" aria-expanded="false" class="btn1" data-target="#InfoSGTar" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde San Gabriel hacia Tarbaca</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoSGTar">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoSGTar %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                        </div>
+                                </div>
+                          </div>
+                      </li>
+
+                    <li class="step-item">
+                          <div class="step-content-wrapper">
+                              <span class="step-icon step-icon-soft-primary"><button aria-controls="InfoTarSJ3" aria-expanded="false" class="btn1" data-target="#InfoTarSJ3" data-toggle="collapse" type="button"><i class="fas fa-plus-circle"></button></i></span>
+                                <div class="step-content">
+                                  <h5>Paradas desde Tarbaca hacia San José</h5>
+
+                                    <p class="lead">Presione <i class="fas fa-plus-circle"></i> para más información.</p>
+
+                                    <div class="collapse" id="InfoTarSJ3">
+                                    <ol class="fa-ul">
+                                        {% for paradas, coord1, coord2 in MatInfoTarSJ3 %}
+                                        <li><span class="fa-li"><i class="fas fa-bus"></i></i></i></i></span>{{ paradas }}</li>
+                                        <ul class="fa-ul">
+                                            <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>Coordenadas: {{ coord1 }},{{ coord2 }}</li>
+                                            <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ coord1 }}%2C{{ coord2 }}&navigate=yes&zoom=17" target="_blank">Dirección en Waze</a></li>
+                                            <br/>
+                                        </ul>
+                                        {% endfor %}
+                                    </ol>
+                                    </div>
+                                </div>
+                          </div>
+                      </li>
+
+              </ul>
+
+
+                  <!-- End Step -->
+
+                </p>
+              </div>
+            </div>
+            <!-- End Tab1b Content -->
+          </div>
+        </div>
+
+    </p>
+  </div>
+</div>
+<!-- End Tab1 Content -->
