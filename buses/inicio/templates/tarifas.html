@@ -52,8 +52,22 @@
   Precios autorizados por <a href="https://aresep.go.cr/autobus/tarifas" target="_blank">ARESEP</a>.
 </p>
 
+<!-- Nota sobre "solo efectivo" -->
+<div class="alert alert-soft-secondary" role="alert">
+  <p>
+      <ol class="fa-ul">
+          <li><span class="fa-li"><i class="fas fa-money-bill-wave"></i></span>
+              Únicamente son posibles los pagos <strong>en efectivo</strong> abordo del autobús. En este momento no es posible utilizar pago electrónico, lamentamos los inconvenientes.
+          </li>
+      </ol>
+  </p>
+</div>
+
+<!-- Acosta -->
 <hr>
 <h2><i class="fas fa-bus color-sanluis"></i> Ruta de Acosta</h2>
+
+<p class="small text-uppercase"><a href="/rutas/acosta" class="color-sanluis"><i class="fas fa-link"></i> Ir a página de la ruta</a></p>
 
 <p>Existen dos ramales: Acosta (San Luis) y Turrujal.</p>
 
@@ -87,22 +101,21 @@
   </div>
 
   <div class="col-sm mb-6">
-      <div class="card card-bordered shadow-none h-100 borde-color-turrujal">
-        <div class="card-body">
-          <h6 class="font-weight-normal mb-1"> <strong>Turrujal</strong> <br> tarifa única</h6>
-          <h3 class="card-title">&#162; {{ tarifas_TURR.0.price }}</h3>
-        </div>
-      </div>
-
-  </div>
-
-  <div class="col-sm mb-6">
     <div class="card card-bordered shadow-none h-100 borde-color-sanluis">
       <div class="card-body">
         <h6 class="font-weight-normal mb-1"> <strong>Acosta</strong> <br> Persona adulta mayor</h6>
         <h3 class="card-title">&#162; {{ tarifas_ACOS.3.price }}</h3>
       </div>
     </div>
+  </div>
+
+  <div class="col-sm mb-6">
+      <div class="card card-bordered shadow-none h-100 borde-color-turrujal">
+        <div class="card-body">
+          <h6 class="font-weight-normal mb-1"> <strong>Turrujal</strong> <br> tarifa única</h6>
+          <h3 class="card-title">&#162; {{ tarifas_TURR.0.price }}</h3>
+        </div>
+      </div>
   </div>
 
   <div class="col-sm mb-6">
@@ -116,8 +129,11 @@
 
 </div>
 
+<!-- San Gabriel -->
 <hr>
 <h2><i class="fas fa-bus color-sangabriel"></i> Ruta de San Gabriel</h2>
+
+<p class="small text-uppercase"><a href="/rutas/sangabriel" class="color-sangabriel"><i class="fas fa-link"></i> Ir a página de la ruta</a></p>
 
 <div class="row">
       
