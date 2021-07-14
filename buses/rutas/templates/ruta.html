@@ -41,6 +41,16 @@
             background-color: #008000;
             color: white;
         }
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        .btn1{
+            border:0;
+            background: none;
+            outline:0px;
+        }
     </style>
 {% endblock %}
 
@@ -336,99 +346,9 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     </div>
 
     <!-- Selección de paradas, desde o hacia -->
-    <div class="text-center">
-        <ul class="nav nav-classic nav-fill mb-7" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="paradas-desde-tab" data-toggle="pill" href="#paradas-desde" role="tab" aria-controls="paradas-desde" aria-selected="true">Desde {{ route.short_name }}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="paradas-hacia-tab" data-toggle="pill" href="#paradas-hacia" role="tab" aria-controls="paradas-hacia" aria-selected="false">Desde San José</a>
-            </li>
-        </ul>
-    </div>
 
-    <p>
-    <div class="card card-bordered">
-    <div class="card-body pre-scrollable">
-    <!-- Contenido de las paradas -->
-    <div class="tab-content">
-        
-        <!-- Lista de paradas "desde" -->
-        <div class="tab-pane fade show active" id="paradas-desde" role="tabpanel" aria-labelledby="paradas-desde">
-            <ul class="step step-timeline-sm step-border-last-0">
-                {% for parada in paradas_desde_0 %}
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
-                        <div class="step-content">
-                            <p class="step-text">{{ parada.name }}</p>
-                        </div>
-                    </div>
-                </li>
-                {% endfor %}
-                {% for parada in paradas_desde_1 %}
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
-                        <div class="step-content">
-                            <p class="step-text">{{ parada.name }}</p>
-                        </div>
-                    </div>
-                </li>
-                {% endfor %}
-                {% for parada in paradas_desde_2 %}
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
-                        <div class="step-content">
-                            <p class="step-text">{{ parada.name }}</p>
-                        </div>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        
-        <!-- Lista de paradas "hacia" -->
-        <div class="tab-pane fade" id="paradas-hacia" role="tabpanel" aria-labelledby="paradas-hacia">
-            <ul class="step step-timeline-sm step-border-last-0">
-                {% for parada in paradas_hacia_0 %}
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
-                        <div class="step-content">
-                            <p class="step-text">{{ parada.name }}</p>
-                        </div>
-                    </div>
-                </li>
-                {% endfor %}
-                {% for parada in paradas_hacia_1 %}
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
-                        <div class="step-content">
-                            <p class="step-text">{{ parada.name }}</p>
-                        </div>
-                    </div>
-                </li>
-                {% endfor %}
-                {% for parada in paradas_hacia_2 %}
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-angle-right"></i></span>
-                        <div class="step-content">
-                            <p class="step-text">{{ parada.name }}</p>
-                        </div>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
     
-    </div>
-    </div>    
-    </div>
-    </p>
+    {% include "Paradas.html" %}
 
 </section>
 
@@ -444,18 +364,6 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
 </div>
 -->
 
-<p>
-    <div class="card borde-color-ruta">
-        <div class="card-body text-center">
-            Esta ruta se identifica en los rótulos de los autobuses y en mapas con el color
-            {% if route.short_name == 'Acosta' %}
-            <strong class="color-sanluis">naranja criolla</strong> (San Luis) y <strong class="color-turrujal">mandarina</strong> (Turrujal).
-            {% else %}
-            <strong class="color-sangabriel">verde jocote</strong>.
-            {% endif %}
-        </div>
-    </div>
-</p>
 
 <!-- Botón "Go To" para subir al principio -->
 <a class="js-go-to go-to position-fixed" href="#" style="visibility: hidden;"

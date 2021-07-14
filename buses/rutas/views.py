@@ -167,25 +167,70 @@ def ruta(request, url_ruta):
 
     # Paradas de buses
 
-    if url_ruta == 'sangabriel':
-        desde = ['LM_0', 'SG_0', 'SJ_0']
-        hacia = ['SJ_1', 'SG_1', 'LM_1']        
-    elif url_ruta == 'acosta':
-        desde = ['SI_0', 'JO_0', 'SJ_0']
-        hacia = ['SJ_1', 'JO_1', 'SI_1']
-    
-    #paradas_desde = Stop.objects.filter(stop_id__startswith=desde[0]).union(Stop.objects.filter(stop_id__startswith=desde[1])).union(Stop.objects.filter(stop_id__startswith=desde[2]))
-    #paradas_desde = Stop.objects.filter(Q(stop_id__startswith=desde[0]) | Q(stop_id__startswith=desde[1]) | Q(stop_id__startswith=desde[2]))
-    #paradas_hacia = Stop.objects.filter(stop_id__startswith=hacia[0]).union(Stop.objects.filter(stop_id__startswith=hacia[1])).union(Stop.objects.filter(stop_id__startswith=hacia[2]))
-    #paradas_hacia = Stop.objects.filter(Q(stop_id__startswith=hacia[0]) | Q(stop_id__startswith=hacia[1]) | Q(stop_id__startswith=hacia[2])).order_by('pk')
-    
-    # Solución horrible (terrible, terrible)
-    paradas_desde_0 = Stop.objects.filter(stop_id__startswith=desde[0])
-    paradas_desde_1 = Stop.objects.filter(stop_id__startswith=desde[1])
-    paradas_desde_2 = Stop.objects.filter(stop_id__startswith=desde[2])
-    paradas_hacia_0 = Stop.objects.filter(stop_id__startswith=hacia[0])
-    paradas_hacia_1 = Stop.objects.filter(stop_id__startswith=hacia[1])
-    paradas_hacia_2 = Stop.objects.filter(stop_id__startswith=hacia[2])
+    # Paradas
+    stops_from_SJ = {}
+    stops_to_SJ = {}
+
+    # 0
+    stops_to_SJ['SanJose'] = []
+    stops_to_SJ['Jorco'] = []
+    stops_to_SJ['Mangos'] = []
+    stops_to_SJ['SanGabriel'] = []
+    stops_to_SJ['SanIgnacio'] = []
+    stops_to_SJ['SanLuis'] = []
+    stops_to_SJ['Turrujal'] = []
+
+    # 1
+    stops_from_SJ['SanJose'] = []
+    stops_from_SJ['Jorco'] = []
+    stops_from_SJ['Mangos'] = []
+    stops_from_SJ['SanGabriel'] = []
+    stops_from_SJ['SanIgnacio'] = []
+    stops_from_SJ['SanLuis'] = []
+    stops_from_SJ['Turrujal'] = []
+    stops_from_SJ['Orphans'] = []
+
+    for stop in Stop.objects.all():
+
+        if stop.stop_id.find("SJ_0") != -1:
+            stops_to_SJ['SanJose'].append(stop)
+        elif stop.stop_id.find("SJ_1") != -1:
+            stops_from_SJ['SanJose'].append(stop)
+
+        elif stop.stop_id.find("LM_0") != -1:
+            stops_to_SJ['Mangos'].append(stop)
+        elif stop.stop_id.find("LM_1") != -1:
+            stops_from_SJ['Mangos'].append(stop)
+
+        elif stop.stop_id.find("SG_0") != -1:
+            stops_to_SJ['SanGabriel'].append(stop)
+        elif stop.stop_id.find("SG_1") != -1:
+            stops_from_SJ['SanGabriel'].append(stop)
+
+        elif stop.stop_id.find("SI_0") != -1:
+            stops_to_SJ['SanIgnacio'].append(stop)
+        elif stop.stop_id.find("SI_1") != -1:
+            stops_from_SJ['SanIgnacio'].append(stop)
+
+        elif stop.stop_id.find("SL_0") != -1:
+            stops_to_SJ['SanLuis'].append(stop)
+        elif stop.stop_id.find("SL_1") != -1:
+            stops_from_SJ['SanLuis'].append(stop)
+
+        elif stop.stop_id.find("TU_0") != -1:
+            stops_to_SJ['Turrujal'].append(stop)
+        elif stop.stop_id.find("TU_1") != -1:
+            stops_from_SJ['Turrujal'].append(stop)
+
+        elif stop.stop_id.find("JO_0") != -1:
+            stops_to_SJ['Jorco'].append(stop)
+        elif stop.stop_id.find("JO_1") != -1:
+            stops_from_SJ['Jorco'].append(stop)
+
+        else:
+            stops_from_SJ['Orphans'].append(stop)
+
+    stops = Stop.objects.all()
 
     context = {
         'maxBounds': settings.RUTAS_MAP_MAX_BOUNDS,
@@ -200,12 +245,22 @@ def ruta(request, url_ruta):
         'informacion': informacion,
         'tarifas': tarifas,
         # Parte de la solución horrible
-        'paradas_desde_0': paradas_desde_0,
-        'paradas_desde_1': paradas_desde_1,
-        'paradas_desde_2': paradas_desde_2,
-        'paradas_hacia_0': paradas_hacia_0,
-        'paradas_hacia_1': paradas_hacia_1,
-        'paradas_hacia_2': paradas_hacia_2,
+        'stops_from_SJ': stops_from_SJ,
+        'stops_to_SJ': stops_to_SJ,
+        'ParadasSJTar': stops_from_SJ['SanJose'],
+        'ParadasTarSJ': stops_to_SJ['SanJose'],
+        'ParadasTarJor': stops_from_SJ['Jorco'],
+        'ParadasJorTar': stops_to_SJ['Jorco'],
+        'ParadasJorSI': stops_from_SJ['SanIgnacio'],
+        'ParadasSIJor': stops_to_SJ['SanIgnacio'],
+        'ParadasSITur': stops_from_SJ['Turrujal'],
+        'ParadasTurSI': stops_to_SJ['Turrujal'],
+        'ParadasSISL': stops_from_SJ['SanLuis'],
+        'ParadasSLSI': stops_to_SJ['SanLuis'],
+        'ParadasTarSG': stops_from_SJ['SanGabriel'],
+        'ParadasSGTar': stops_to_SJ['SanGabriel'],
+        'ParadasSGLM': stops_from_SJ['Mangos'],
+        'ParadasLMSG': stops_to_SJ['Mangos'],
     }
 
     return render(request, 'ruta.html', context)
