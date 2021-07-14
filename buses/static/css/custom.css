@@ -4,6 +4,13 @@
  *
  */
 
+.proxbus-card-body {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .proxbus-container {
     padding: 0;
 }
@@ -15,8 +22,8 @@
 
 .proxbus-emph-row {
     /* Emphasis column*/
-    margin-left: 0.6ch;
-    margin-right: 0.6ch;
+    margin-left: 18px;
+    margin-right: 18px;
     background-color: #d7dde4
 }
 
