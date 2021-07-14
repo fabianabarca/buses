@@ -1,21 +1,20 @@
 ruta_app.component('proximobus', {
     props: ['route_short_name'],
     template: `
-<div class="container">
-<div class="row">
+<div class="container proxbus-container">
+
+<div class="row proxbus-row proxbus-emph-row">
 <div class="col">
-                {{ route_short_name }}
-                <i class="fas fa-arrow-circle-right color-ruta"></i> San&nbsp;José
+                {{ route_short_name }} <i class="fas fa-arrow-circle-right color-ruta"></i> San&nbsp;José
 </div>
 <div class="col">
-                  San José <i class="fas fa-arrow-circle-right color-ruta"></i>
-                  {{ route_short_name }}
+                  San José <i class="fas fa-arrow-circle-right color-ruta"></i> {{ route_short_name }}
 </div>
 </div>
 
 <!-- Primera fila -->
-<div class="row font-weight-bold">
-    <div class="col" v-if="hacia_sanjose[0]" style="font-size: 1.25rem;">
+<div class="row proxbus-row font-weight-bold">
+    <div class="col proxbus-emph-col" v-if="hacia_sanjose[0]">
         <span class="align-middle">{{ hacia_sanjose[0] }}</span>&nbsp;
         <span v-if="is_badge_visible(hacia_sanjose_ramal[0])"
             :class="['badge', 'custom-badge',
@@ -24,7 +23,7 @@ ruta_app.component('proximobus', {
     </div>
     <div class="col" v-else>No hay más buses hoy</div>
 
-    <div class="col" v-if="desde_sanjose[0]" style="font-size: 1.25rem;">
+    <div class="col proxbus-emph-col" v-if="desde_sanjose[0]">
         <span class="align-middle">{{ desde_sanjose[0] }}</span>&nbsp;
         <span v-if="is_badge_visible(desde_sanjose_ramal[0])"
             :class="['badge', 'custom-badge',
@@ -35,7 +34,7 @@ ruta_app.component('proximobus', {
 </div>
 
 <!-- Segunda fila -->
-<div class="row font-weight-bold">
+<div class="row proxbus-row font-weight-bold">
 <div class="col">
         <span v-if="hacia_sanjose[1]" class="align-middle">{{ hacia_sanjose[1] }}</span>&nbsp;
         <span v-if="is_badge_visible(hacia_sanjose_ramal[1])"
@@ -53,7 +52,7 @@ ruta_app.component('proximobus', {
 </div>
 
 <!-- Tercera fila -->
-<div class="row font-weight-bold">
+<div class="row proxbus-row font-weight-bold">
     <div class="col">
         <span v-if="hacia_sanjose[2]" class="align-middle">{{ hacia_sanjose[2] }}</span>&nbsp;
         <span v-if="is_badge_visible(hacia_sanjose_ramal[2])"
