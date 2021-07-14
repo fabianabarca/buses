@@ -15,40 +15,39 @@ ruta_app.component('proximobus', {
             </tr>
           </thead>
 
-<tbody>
+<tbody class="font-weight-bold">
 
 <!-- Primera fila -->
 <tr>
-    <td v-if="hacia_sanjose[0]" class="font-weight-bold lead">
+    <td v-if="hacia_sanjose[0]" style="font-size: 1.25rem;">
         <span class="align-middle">{{ hacia_sanjose[0] }}</span>&nbsp;
         <span v-if="is_badge_visible(hacia_sanjose_ramal[0])"
             :class="['badge', 'custom-badge',
             filter_badge(hacia_sanjose_ramal[0])
             ]">{{ hacia_sanjose_ramal[0] }}</span>
     </td>
-    <td v-else class="font-weight-bold">No hay más buses hoy</td>
+    <td v-else>No hay más buses hoy</td>
 
-    <td v-if="desde_sanjose[0]" class="font-weight-bold lead">
+    <td v-if="desde_sanjose[0]" style="font-size: 1.25rem;">
         <span class="align-middle">{{ desde_sanjose[0] }}</span>&nbsp;
         <span v-if="is_badge_visible(desde_sanjose_ramal[0])"
             :class="['badge', 'custom-badge',
             filter_badge(desde_sanjose_ramal[0])
             ]">{{ desde_sanjose_ramal[0] }}</span>
     </td>
-    <td v-else class="font-weight-bold">No hay más buses hoy</td>
+    <td v-else>No hay más buses hoy</td>
 </tr>
 
 <!-- Segunda fila -->
 <tr>
-    <td class="font-weight-bold">
+    <td>
         <span v-if="hacia_sanjose[1]" class="align-middle">{{ hacia_sanjose[1] }}</span>&nbsp;
         <span v-if="is_badge_visible(hacia_sanjose_ramal[1])"
             :class="['badge', 'custom-badge',
             filter_badge(hacia_sanjose_ramal[1])
             ]">{{ hacia_sanjose_ramal[1] }}</span>
     </td>
-
-    <td class="font-weight-bold">
+    <td>
         <span v-if="desde_sanjose[1]" class="align-middle">{{ desde_sanjose[1] }}</span>&nbsp;
         <span v-if="is_badge_visible(desde_sanjose_ramal[1])"
             :class="['badge', 'custom-badge',
@@ -59,15 +58,14 @@ ruta_app.component('proximobus', {
 
 <!-- Tercera fila -->
 <tr>
-    <td class="font-weight-bold">
+    <td>
         <span v-if="hacia_sanjose[2]" class="align-middle">{{ hacia_sanjose[2] }}</span>&nbsp;
         <span v-if="is_badge_visible(hacia_sanjose_ramal[2])"
             :class="['badge', 'custom-badge',
             filter_badge(hacia_sanjose_ramal[2])
             ]">{{ hacia_sanjose_ramal[2] }}</span>
     </td>
-
-    <td class="font-weight-bold">
+    <td>
         <span v-if="desde_sanjose[2]" class="align-middle">{{ desde_sanjose[2] }}</span>&nbsp;
         <span v-if="is_badge_visible(desde_sanjose_ramal[2])"
             :class="['badge', 'custom-badge',
