@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from rutas.models import Route, FeedInfo
+from rutas.models import Route, FeedInfo, FareAttribute
 from datetime import datetime
 
 # Create your views here.
@@ -15,6 +15,17 @@ def index(request):
         'fecha': fecha,    
     }
     return render(request, 'index.html', context)
+
+def tarifas(request):
+    tarifas_ACOS = FareAttribute.objects.filter(fare_id__startswith='ACOS').order_by('-price')
+    tarifas_TURR = FareAttribute.objects.filter(fare_id__startswith='TURR').order_by('-price')
+    tarifas_SGAB = FareAttribute.objects.filter(fare_id__startswith='SGAB').order_by('-price')
+    context = {
+        'tarifas_ACOS': tarifas_ACOS,
+        'tarifas_TURR': tarifas_TURR,
+        'tarifas_SGAB': tarifas_SGAB,
+    }
+    return render(request, 'tarifas.html', context)
 
 def acerca(request):
     return render(request, 'acerca.html')

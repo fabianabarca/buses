@@ -1,0 +1,162 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block page_title %} Tarifas {% endblock %}
+
+{% block custom_header %}
+<style>
+    .color-sanluis {
+        color: #FFA500;
+    }
+    .color-turrujal {
+        color: #FF4500;
+    }
+    .color-sangabriel {
+        color: #008000;
+    }
+    .fondo-color-sanluis {
+        background-color: #FFA500;
+        color: black;
+    }
+    .fondo-color-turrujal {
+        background-color: #FF4500;
+        color: white;
+    }
+    .fondo-color-sangabriel {
+        background-color: #008000;
+        color: white;
+    }
+    .borde-color-sanluis {
+        border-color: #FFA500;
+        border-width: 1px;
+    }
+    .borde-color-turrujal {
+        border-color: #FF4500;
+        border-width: 1px;
+    }
+    .borde-color-sangabriel {
+        border-color: #008000;
+        border-width: 1px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="custom-vertical-space"></div>
+
+<h1>Tarifas autorizadas</h1>
+
+<p>
+  Precios autorizados por <a href="https://aresep.go.cr/autobus/tarifas" target="_blank">ARESEP</a>.
+</p>
+
+<hr>
+<h2><i class="fas fa-bus color-sanluis"></i> Ruta de Acosta</h2>
+
+<p>Existen dos ramales: Acosta (San Luis) y Turrujal.</p>
+
+<div class="row">
+      
+  <div class="col-sm mb-6">
+    <div class="card card-bordered shadow-none h-100 borde-color-sanluis">
+      <div class="card-body">
+          <h6 class="font-weight-normal mb-1"> <strong>Acosta</strong> <br> tarifa completa</h6>
+          <h3 class="card-title">&#162; {{ tarifas_ACOS.0.price }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm mb-6">
+    <div class="card card-bordered shadow-none h-100 borde-color-sanluis">
+      <div class="card-body">
+          <h6 class="font-weight-normal mb-1"> <strong>Acosta</strong> <br> tarifa media</h6>
+          <h3 class="card-title">&#162; {{ tarifas_ACOS.1.price }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm mb-6">
+      <div class="card card-bordered shadow-none h-100 borde-color-sanluis">
+        <div class="card-body">
+          <h6 class="font-weight-normal mb-1"> <strong>Acosta</strong> <br> tarifa mínima</h6>
+          <h3 class="card-title">&#162; {{ tarifas_ACOS.2.price }}</h3>
+        </div>
+      </div>
+  </div>
+
+  <div class="col-sm mb-6">
+      <div class="card card-bordered shadow-none h-100 borde-color-turrujal">
+        <div class="card-body">
+          <h6 class="font-weight-normal mb-1"> <strong>Turrujal</strong> <br> tarifa única</h6>
+          <h3 class="card-title">&#162; {{ tarifas_TURR.0.price }}</h3>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="col-sm mb-6">
+    <div class="card card-bordered shadow-none h-100 borde-color-sanluis">
+      <div class="card-body">
+        <h6 class="font-weight-normal mb-1"> <strong>Acosta</strong> <br> Persona adulta mayor</h6>
+        <h3 class="card-title">&#162; {{ tarifas_ACOS.3.price }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm mb-6">
+    <div class="card card-bordered shadow-none h-100 borde-color-turrujal">
+      <div class="card-body">
+        <h6 class="font-weight-normal mb-1"> <strong>Turrujal</strong> <br> Persona adulta mayor</h6>
+        <h3 class="card-title">&#162; {{ tarifas_TURR.1.price }}</h3>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+<h2><i class="fas fa-bus color-sangabriel"></i> Ruta de San Gabriel</h2>
+
+<div class="row">
+      
+  <div class="col-sm mb-6">
+    <div class="card card-bordered shadow-none h-100 borde-color-sangabriel">
+      <div class="card-body">
+          <h6 class="font-weight-normal mb-1"> <strong>San Gabriel</strong> <br> tarifa completa</h6>
+          <h3 class="card-title">&#162; {{ tarifas_SGAB.0.price }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm mb-6">
+    <div class="card card-bordered shadow-none h-100 borde-color-sangabriel">
+      <div class="card-body">
+          <h6 class="font-weight-normal mb-1"> <strong>San Gabriel</strong> <br> tarifa media</h6>
+          <h3 class="card-title">&#162; {{ tarifas_SGAB.1.price }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm mb-6">
+      <div class="card card-bordered shadow-none h-100 borde-color-sangabriel">
+        <div class="card-body">
+          <h6 class="font-weight-normal mb-1"> <strong>San Gabriel</strong> <br> tarifa mínima</h6>
+          <h3 class="card-title">&#162; {{ tarifas_SGAB.2.price }}</h3>
+        </div>
+      </div>
+  </div>
+
+  <div class="col-sm mb-6">
+      <div class="card card-bordered shadow-none h-100 borde-color-sangabriel">
+        <div class="card-body">
+          <h6 class="font-weight-normal mb-1"> <strong>San Gabriel</strong> <br> Persona adulta mayor</h6>
+          <h3 class="card-title">&#162; {{ tarifas_SGAB.3.price }}</h3>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+{% endblock %}
