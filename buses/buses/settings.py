@@ -131,15 +131,8 @@ MEDIA_URL = '/media/'
 # Url donde buscar los archivos multimedia
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Email configuration:
-
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# Email basic configuration:
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_USE_TLS = True
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = ''
-# EMAIL_HOST_PASSWORD = ''
 
 ## Shapeeditor
 LOGIN_URL='/admin/login/'
@@ -164,3 +157,8 @@ SHAPEEDITOR_ROUTING_MACHINE_URL = "http://161.35.54.122:5000/route/v1/driving/" 
 ## Rutas section
 # Restricción del mapa a esta área
 RUTAS_MAP_MAX_BOUNDS = "[[9.766885, -84.219248], [9.971565, -84.013859]]"
+
+## Load secrets
+if os.path.exists(os.path.join(BASE_DIR, 'buses/secrets.py')):
+    print ("There is a secrets file")
+    from buses.secrets import *
