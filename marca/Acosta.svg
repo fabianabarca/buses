@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="500"
+   inkscape:export-xdpi="500"
+   inkscape:export-filename="/Users/Fabian/Dropbox/web-buses/web-buses/marca/Acosta.png"
+   sodipodi:docname="Acosta.svg"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 105.64601 39.378835"
+   height="111.62505pt"
+   width="299.46899pt">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     fit-margin-bottom="32"
+     fit-margin-right="32"
+     fit-margin-left="32"
+     fit-margin-top="32"
+     units="pt"
+     lock-margins="true"
+     inkscape:window-maximized="0"
+     inkscape:window-y="123"
+     inkscape:window-x="0"
+     inkscape:window-height="759"
+     inkscape:window-width="1252"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="312.93754"
+     inkscape:cx="319.43779"
+     inkscape:zoom="0.5"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-61.143496,-146.57789)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <rect
+       rx="0.52916664"
+       ry="34.131256"
+       y="127.8476"
+       x="35.622231"
+       height="80.433342"
+       width="240.77081"
+       id="rect855"
+       style="fill:#ffa500;fill-opacity:1;stroke:none;stroke-width:10.471;stroke-miterlimit:10;stroke-opacity:0.992157;paint-order:stroke fill markers" />
+    <text
+       id="text835"
+       y="174.28198"
+       x="72.167801"
+       style="font-style:normal;font-weight:normal;font-size:22.5778px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.566514"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.5778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.566514"
+         y="174.28198"
+         x="72.167801"
+         id="tspan833"
+         sodipodi:role="line">Acosta</tspan></text>
+  </g>
+</svg>

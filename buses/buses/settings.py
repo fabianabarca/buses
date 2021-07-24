@@ -22,7 +22,7 @@ SECRET_KEY = 'ncvn$%5pvewazmo)m&6xck96ek!gq79d404=$ej#j457*$x@6_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['143.244.189.162']
 
 
 # Application definition
