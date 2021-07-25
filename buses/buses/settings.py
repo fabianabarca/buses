@@ -22,7 +22,7 @@ SECRET_KEY = 'ncvn$%5pvewazmo)m&6xck96ek!gq79d404=$ej#j457*$x@6_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['143.244.189.162', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['143.198.233.186', '161.35.54.122', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -122,10 +122,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Email configuration:
