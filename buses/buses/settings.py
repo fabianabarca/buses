@@ -22,7 +22,7 @@ SECRET_KEY = 'ncvn$%5pvewazmo)m&6xck96ek!gq79d404=$ej#j457*$x@6_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['transportessangabriel.com', '143.198.233.186', '161.35.54.122', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['transportessangabriel.com', 'www.transportessangabriel.com', '143.198.233.186', '161.35.54.122', '127.0.0.1', 'localhost']
 
 
 # Application definition
