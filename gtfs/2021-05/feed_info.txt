@@ -1,2 +1,0 @@
-feed_publisher_name,feed_publisher_url,feed_lang
-TCU Tropicalización de la Tecnología,https://eie.ucr.ac.cr/proyectos/TC-691,es

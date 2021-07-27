@@ -1,0 +1,4 @@
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+entresemana,1,1,1,1,1,0,0,20200101,20300101
+sabado,0,0,0,0,0,1,0,20200101,20300101
+domingo,0,0,0,0,0,0,1,20200101,20300101

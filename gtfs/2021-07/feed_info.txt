@@ -1,2 +1,0 @@
-feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date,feed_version,feed_contact_email
-TCU Tropicalización de la Tecnología,https://eie.ucr.ac.cr/proyectos/TC-691,es,20210705,20211231,v.2021.07.a,fabian.abarca@ucr.ac.cr
