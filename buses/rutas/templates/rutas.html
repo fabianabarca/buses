@@ -8,50 +8,53 @@
 
 {% block content %}
 
-<!-- Alertas -->
-
-
-<!-- Hora actual -->
-
-
-<!-- Próximos buses -->
-
-
-<!-- Tarifas -->
-
-<section>
-
-    <hr>
-    <h2 id="tarifas">Tarifas</h2>
-
-    Tablas de tarifas por ruta (desde el modelo de tarifas)
-</section>
-
-<!-- Terminal de buses en San José -->
-
-<section>
-
-    <hr>
-    <h2>Terminal en San José</h2>
-
-    <div class="card card-bordered mb-3 mx-auto" style="max-width: 620px;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="{% static 'rutas/terminal.png' %}" class="card-img" alt="Foto de mapa">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Terminal en San José</h5>
-            <ol class="fa-ul">
-              <li><span class="fa-li"><i class="far fa-map"></i></span>Calle <strong>7</strong>, entre avenidas <strong>10</strong> y <strong>12.</strong></li>
-              <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>200 metros sur de la esquina sureste del Parque de las Garantías Sociales.</li>
-              <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll=9.92929648%2C-84.07635212&navigate=yes&zoom=17">Dirección en Waze</a></li>
-            </ol>
-          </div>
-        </div>
+<div class="position-relative">
+  <div class="bg-img-hero">
+    <div class="container space-top-3 space-bottom-3 position-relative z-index-2">
+      <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-5 mb-md-9">
+        <h1>Transportes San&nbsp;Gabriel</h1>
+        <p><div class="alert alert-soft-secondary" role="alert">Servimos a comunidades de la región Caraigres en los cantones de <br> Acosta y Aserrí en San José, Costa Rica</div></p> 
       </div>
-  </div>
 
-  </section>
+      <div class="row justify-content-center">
+        
+        <div class="col-md-4 mb-3 mb-md-0 mb-md-n11">
+          <!-- Card -->
+          <a class="card h-100 transition-3d-hover borde-color-sanluis" href="/rutas/acosta/">
+            <div class="card-body p-lg-5">
+              <figure class="max-w-8rem w-100 mx-auto mb-4">
+                <i class="fas fa-bus fa-3x color-sanluis"></i>
+              </figure>
+              <h3 class="h3 text-center">San Ignacio de Acosta</h3>
+              <p class="text-body mb-0">Esta ruta conecta a <strong class="color-sanluis">San Luis</strong> o <strong class="color-turrujal">Turrujal</strong> vía San Ignacio de Acosta con San José centro, pasando por Vuelta de Jorco, Tarbaca, Aserrí y Desamparados.</p>
+            </div>
+            <div class="card-footer py-3 px-lg-5 text-white text-uppercase small fondo-color-sanluis">
+              <i class="fas fa-plus-circle"></i> Horarios, tarifas, mapas y paradas
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0 mb-md-n11">
+          <!-- Card -->
+          <a class="card h-100 transition-3d-hover borde-color-sangabriel" href="/rutas/sangabriel/">
+            <div class="card-body p-lg-5">
+              <figure class="max-w-8rem w-100 mx-auto mb-4">
+                <i class="fas fa-bus fa-3x color-sangabriel"></i>
+              </figure>
+              <h3 class="h3 text-center">San Gabriel de Aserrí</h3>
+              <p class="text-body mb-0">Esta ruta conecta a <strong class="color-sangabriel">San Gabriel</strong> de Aserrí con San José centro, pasando por La Fila del Rosario, Tarbaca, Aserrí y Desamparados.</p>
+            </div>
+            <div class="card-footer py-3 px-lg-5 text-white text-uppercase small fondo-color-sangabriel">
+              <i class="fas fa-plus-circle"></i> Horarios, tarifas, mapas y paradas
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
