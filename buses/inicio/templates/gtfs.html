@@ -11,9 +11,11 @@
 
 <h1 id="GTFS">GTFS</h1>
 
-<p>
-    La especificación general de suministro de datos de transporte <a href="https://developers.google.com/transit/gtfs?hl=es">GTFS</a> (<i>General Transit Feed Specification</i>) es un estándar <i>de facto</i> a nivel global para la divulgación de datos abiertos de servicio de transporte público.
-</p>
+<div class="card card-bordered">
+    <div class="card-body lead">
+        La especificación general de suministro de datos de transporte <a href="https://developers.google.com/transit/gtfs?hl=es">GTFS</a> (<i>General Transit Feed Specification</i>) es un estándar <i>de facto</i> a nivel global para la divulgación de datos abiertos de servicio de transporte público.
+    </div>
+</div>
 
 <!--
 <table class="table">
@@ -36,8 +38,31 @@
 </table>
 -->
 
+<br>
+
 <p>
-    GTFS permite la visualización de información en aplicaciones como <a href="https://www.google.com/maps/">Google Maps</a> y <a href="https://moovit.com/es/">Moovit</a>, entre otras.
+    GTFS permite la visualización de información en aplicaciones como <a href="https://www.google.com/maps/">Google Maps</a> y <a href="https://moovit.com/es/">Moovit</a>, y otras, desarrolladas por terceros. 
+    Además, permite el análisis del sistema de transportes por parte de organizaciones o instituciones dedicadas a su estudio.
+</p>
+
+<h5>Ventajas</h5>
+
+<ul>
+    <li>Centraliza la información y la hace compatible con muchos servicios.</li>
+    <li>Acumula la experiencia de cientos de agencias alrededor del mundo.</li>
+    <li>Se adapta a las necesidades de cada país.</li>
+    <li>Es de código abierto y se encuentra en constante mejora.</li>
+</ul>
+
+<h5>Desventajas</h5>
+
+<ul>
+    <li>La recolección de datos puede ser complicada y laboriosa.</li>
+    <li>No existen todavía soluciones abiertas de edición simplificada de los datos.</li>
+</ul>
+
+<p>
+    Para más información sobre GTFS, contactar al profesor Fabián Abarca Calderón, <a href="mailto:fabian.abarca@ucr.ac.cr">fabian.abarca@ucr.ac.cr</a>.
 </p>
 
 <h2 id="GTFS-Static">GTFS estático</h2>
@@ -45,11 +70,6 @@
 <p>
     GTFS <i>Static</i> tiene la estructura de una base de datos relacional con información sobre la agencia de transportes, sus rutas, paradas y horarios, entre muchos otros datos.
 </p>
-
-<dl>
-    <dt>Más información sobre GTFS</dt>
-    <dd>Contacto: Ing. Fabián Abarca Calderón, M.Sc., <a href="mailto:fabian.abarca@ucr.ac.cr">fabian.abarca@ucr.ac.cr</a></dd>
-</dl>
 
 <p class="text-center">
     <a class="btn btn-primary" href="{% static '/gtfs/TSG_GTFS.zip' %}" download>Descargar GTFS</a>
@@ -82,29 +102,6 @@
     <img src="{% static '/img/gtfs/tablas.svg' %}" style="width: 100%; max-width: 540px;">
     <!--<figcaption class="text-center small" style="width:540px">Información dentro de las tablas obligatorias. Fuente: <a href="https://developers.google.com/transit/gtfs/examples/gtfs-feed">Google Developers</a>.</figcaption>-->
 </figure>
-
-<table class="table">
-    <thead>
-      <tr>
-        <th>Ventajas</th>
-        <th>Desventajas</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Se acopla a las necesidades de cada país: puede ser adaptado para servicios formales o informales.</td>
-        <td>La recolección de datos puede ser complicada y laboriosa.</td>
-      </tr>
-      <tr>
-        <td>No se encuentran regulado bajo ninguna legislación.</td>
-        <td>Desinterés de algunos servicios de transporte en querer cooperar.</td>
-      </tr>
-      <tr>
-        <td>Es de código abierto, por lo que se encuentra en constante mejora.</td>
-        <td>No provee actualizaciones en tiempo real (GTFS Realtime sí).</td>
-      </tr>
-    </tbody>
-    </table>
 
 <h2 id="GTFS-Realtime">GTFS en tiempo real</h2>
 
