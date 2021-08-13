@@ -1,12 +1,18 @@
+# Directories
 __pycache__*
 __init__.py
 migrations*
+
+# Files
 *.png
 *.o
 *.pyc
 *.jpg
 *.zip
 *.tar.*
+
+# Environments
+.env
 venv_server*
 
 # Nodejs:
