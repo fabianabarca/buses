@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block page_title %} Página no encontrada {% endblock %}
+
+{% block content %}
+
+{# esto coloca 5 líneas de espacio vertical #}
+<div class="custom-vertical-space"></div>
+
+<h1>Error 404: página no encontrada</h1>
+
+<p class="lead">Mejor tomemos otra ruta:</p>
+
+<ol class="fa-ul">
+    <li><a href="/"><span class="fa-li"><i class="fas fa-home"></i></span> Inicio</a></li>
+    <li><a href="rutas"><span class="fa-li"><i class="fas fa-bus"></i></span> Rutas</a></li>
+    <li><a href="empresa"><span class="fa-li"><i class="fas fa-users"></i></span> Empresa</a></li>
+    <li><a href="contacto"><span class="fa-li"><i class="fas fa-envelope"></i></span> Contacto</a></li>
+</ol>
+
+{% endblock %}
