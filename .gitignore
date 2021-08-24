@@ -1,10 +1,10 @@
 __pycache__*
 __init__.py
 migrations*
-*.png
+
+# Files
 *.o
 *.pyc
-*.jpg
 *.zip
 *.tar.*
 venv_server*
