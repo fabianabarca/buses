@@ -171,8 +171,8 @@
         <!-- Team -->
         <div class="card h-100 transition-3d-hover">
           <div class="card-body">
-            <div class="avatar avatar-lg avatar-circle mb-4">
-              <img class="avatar-img" src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}" alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}">
+              <div class="avatar avatar-lg avatar-circle mb-4">
+                  <img class="avatar-img" src="{% static '/img/personal/' %}{{ funcionario.url_site }}" alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}">
             </div>
 
             <span class="d-block small font-weight-bold text-cap mb-1">{{ funcionario.cargo }}</span>
