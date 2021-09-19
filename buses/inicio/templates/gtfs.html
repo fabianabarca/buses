@@ -11,15 +11,11 @@
 
 <h1 id="GTFS">GTFS</h1>
 
-<p>
-    La especificación general de suministro de datos de transporte <a href="https://developers.google.com/transit/gtfs?hl=es">GTFS</a> (<i>General Transit Feed Specification</i>) es un estándar <i>de facto</i> a nivel global para la divulgación de datos abiertos de servicio de transporte público.
-</p>
-
-<p class="text-center">
-    <button type="button" class="btn btn-primary" href="/gtfs/gtfs.zip">Descargar información GTFS</button>
-    <br>
-    <small><i class="fas fa-file-archive"></i> Archivo comprimido <code>.zip</code> de documentos <code>.txt</code> con formato de datos <code>.csv</code>.</small>
-</p>
+<div class="card card-bordered">
+    <div class="card-body lead">
+        La especificación general de suministro de datos de transporte <a href="https://developers.google.com/transit/gtfs?hl=es">GTFS</a> (<i>General Transit Feed Specification</i>) es un estándar <i>de facto</i> a nivel global para la divulgación de datos abiertos de servicio de transporte público.
+    </div>
+</div>
 
 <!--
 <table class="table">
@@ -42,16 +38,50 @@
 </table>
 -->
 
-<p>
-    GTFS permite la visualización de información en aplicaciones como <a href="https://www.google.com/maps/">Google Maps</a> y <a href="https://moovit.com/es/">Moovit</a>, entre otras.
-</p>
-
-<h2 id="GTFS">GTFS estático</h2>
+<br>
 
 <p>
-    GTFS <i>Static</i> tiene la estructura de una base de datos relacional con información sobre la agencia de transportes, sus rutas, paradas y horarios, entre otros datos que aquí se muestran.
+    GTFS permite la visualización de información en aplicaciones como <a href="https://www.google.com/maps/">Google Maps</a> y <a href="https://moovit.com/es/">Moovit</a>, y otras, desarrolladas por terceros. 
+    Además, permite el análisis del sistema de transportes por parte de organizaciones o instituciones dedicadas a su estudio.
 </p>
 
+<h5>Ventajas</h5>
+
+<ul>
+    <li>Centraliza la información y la hace compatible con muchos servicios.</li>
+    <li>Acumula la experiencia de cientos de agencias alrededor del mundo.</li>
+    <li>Se adapta a las necesidades de cada país.</li>
+    <li>Es de código abierto y se encuentra en constante mejora.</li>
+</ul>
+
+<h5>Desventajas</h5>
+
+<ul>
+    <li>La recolección de datos puede ser complicada y laboriosa.</li>
+    <li>No existen todavía soluciones abiertas de edición simplificada de los datos.</li>
+</ul>
+
+<p>
+    Para más información sobre GTFS, contactar al profesor Fabián Abarca Calderón, <a href="mailto:fabian.abarca@ucr.ac.cr">fabian.abarca@ucr.ac.cr</a>.
+</p>
+
+<h2 id="GTFS-Static">GTFS estático</h2>
+
+<p>
+    GTFS <i>Static</i> tiene la estructura de una base de datos relacional con información sobre la agencia de transportes, sus rutas, paradas y horarios, entre muchos otros datos.
+</p>
+
+<p class="text-center">
+    <a class="btn btn-primary" href="{% static '/gtfs/TSG_GTFS.zip' %}" download>Descargar GTFS</a>
+    <br>
+    <small><i class="fas fa-file-archive"></i> Archivo comprimido <code>.zip</code> de documentos <code>.txt</code> con&nbsp;formato de datos <code>.csv</code>.</small>
+</p>
+
+<p>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRV3dmBCxQh9l5kvNHA39i2dE7_2M7qg7v13alFgPrpVeIcNj-FnH_Vjg8SciC_wrPONYq5ZThJeL5v/pubhtml?widget=true&amp;headers=false" style=" width: 100%; border: 0;" height="250"></iframe>
+</p>
+
+<!--
 <p>
     Estándar de datos abiertos creado para organizar información de servicios de transporte. Consiste en una base de datos relacional, organizada mediante la utilización de archivos de texto (<code>.txt</code>) en formato CSV. Consiste en feeds proporcionados por las empresas de transporte con datos relacionados a la información geográfica y horarios de servicio, de tal manera que puedan ser utilizados para crear aplicaciones. Los <i>feeds</i> (o suministros) son organizados de la siguiente manera:
 </p>
@@ -62,56 +92,38 @@
     <img src="{% static '/img/gtfs/estructura.svg' %}" style="width:100%">
     <figcaption class="text-center small" style="width:540px">Tablas de la base de datos relacional de GTFS, donde los cuadros azules representan los <i>feeds</i> requeridos para su implementación, mientras que los grises son opcionales. Fuente: <a href="https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping">Banco Mundial</a>.</figcaption>
 </figure>
+-->
 
 <p>
-    El siguiente diagrama muestra la información contenida en las tablas (<i>feeds</i>) obligatorias.
+    El siguiente diagrama muestra la información contenida en las tablas (<i>feeds</i>) obligatorias (fuente: <a href="https://developers.google.com/transit/gtfs/examples/gtfs-feed">Google Developers</a>):
 </p>
 
 <figure class="text-center">
-    <img src="{% static '/img/gtfs/tablas.svg' %}" style="width:540px">
-    <figcaption class="text-center small" style="width:540px">Información dentro de las tablas obligatorias. Fuente: <a href="https://developers.google.com/transit/gtfs/examples/gtfs-feed">Google Developers</a>.</figcaption>
+    <img src="{% static '/img/gtfs/tablas.svg' %}" style="width: 100%; max-width: 540px;">
+    <!--<figcaption class="text-center small" style="width:540px">Información dentro de las tablas obligatorias. Fuente: <a href="https://developers.google.com/transit/gtfs/examples/gtfs-feed">Google Developers</a>.</figcaption>-->
 </figure>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th>Ventajas</th>
-        <th>Desventajas</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Se acopla a las necesidades de cada país: puede ser adaptado para servicios formales o informales.</td>
-        <td>La recolección de datos puede ser complicada y laboriosa.</td>
-      </tr>
-      <tr>
-        <td>No se encuentran regulado bajo ninguna legislación.</td>
-        <td>Desinterés de algunos servicios de transporte en querer cooperar.</td>
-      </tr>
-      <tr>
-        <td>Es de código abierto, por lo que se encuentra en constante mejora.</td>
-        <td>No provee actualizaciones en tiempo real (el GTFS Realtime sí).</td>
-      </tr>
-    </tbody>
-    </table>
+<h2 id="GTFS-Realtime">GTFS en tiempo real</h2>
 
-<h2 id="GTFS">GTFS en tiempo real</h2>
-
+<!--
 <p>
     Estándar de transporte público en tiempo real para comunicarse con otros, creado por Google para optimizar el método de planeación de viajes. Basado en la obtención de datos mediante el uso de GPS, variando conforme los vehículos se movilizan a lo largo de su ruta.
 </p>
+-->
 
 <p>
-    Brinda información adicional al usuario como alertas de estado y actualizaciones de viajes y constituye una opción complementaria a la configuración GTFS estándar. Debido a que en las grandes ciudades se presentaron atrasos por muchas condiciones, puede ser muy útil para la comunicación con las personas. 
+    Brinda información adicional al usuario como alertas de estado y actualizaciones de viajes y constituye una opción complementaria a la configuración GTFS estándar. 
 </p>
 
 <p>
-    Puede ser implementado en distintos tipos de aplicaciones tales como planificadores de viajes, sistemas de datos predictivos o herramientas de gestión e investigación; dependiendo de los feeds utilizados.
+    Puede ser implementado en distintos tipos de aplicaciones tales como planificadores de viajes, sistemas de datos predictivos o herramientas de gestión e investigación. Su flujo de datos es mostrado a continuación (fuente: <a href="https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping">Banco Mundial</a>):
 </p>
 
 <figure class="text-center">
     <img src="{% static '/img/gtfs/realtime.svg' %}" width="200px">
-    <p class="text-center small" style="width:540px">Estructura básica de flujo de información en GTFS Realtime. Fuente: <a href="https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping">Banco Mundial</a>.</p>
+    <!--<p class="text-center small" style="width:540px">Estructura básica de flujo de información en GTFS Realtime. Fuente: <a href="https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping">Banco Mundial</a>.</p>-->
 </figure>
+
+<br>
 
 {% endblock %}
