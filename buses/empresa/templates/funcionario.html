@@ -9,8 +9,8 @@
 <h1>Información Personal</h1>
 <h2>{{ funcionario.nombre }}</h2>
 
-<img width="150" height="150" src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}"
-class="img-thumbnail"
+<img width="150" height="150" src="{% static '/img/personal/' %}{{ funcionario.url_site }}"
+     class="img-thumbnail"
      alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}" /></a>
      <br>
      <br>
