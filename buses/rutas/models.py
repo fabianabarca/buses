@@ -14,7 +14,10 @@ class tripManager(models.Manager):
         para_ordenar = []
         terminales = ['SJ_1_00', 'SG_0_00', 'SI_0_00']
         for i in trips:
-            viaje = StopTime.objects.get(trip=i, stop__in=terminales)
+            if str(i.shape) == 'desde_jorco':
+                viaje = StopTime.objects.get(trip=i, stop='JO_0_00')
+            else:
+                viaje = StopTime.objects.get(trip=i, stop__in=terminales)
             para_ordenar.append([viaje.departure_time, str(i.shape)])
 
         para_ordenar.sort()
@@ -140,7 +143,7 @@ class Route(models.Model):
                  (7, 'Funicular.')),
         help_text='Medio de transporte usado en la ruta.')
     url = models.CharField(
-        max_length=32,
+        max_length=64,
         blank=True, help_text="Página web de la ruta.")
     color = models.CharField(
         max_length=6, blank=True,

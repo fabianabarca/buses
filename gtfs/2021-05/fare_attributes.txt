@@ -1,8 +1,0 @@
-fare_id,price,currency_type,payment_method,transfers,agency_id,transfer_duration
-SGAB_minima,510,CRC,0,0,TSG,
-SGAB_media,875,CRC,0,0,TSG,
-SGAB_completa,990,CRC,0,0,TSG,
-ACOS_minima,550,CRC,0,0,TSG,
-ACOS_media,920,CRC,0,0,TSG,
-ACOS_completa,1085,CRC,0,0,TSG,
-TURR_completa,905,CRC,0,0,TSG,

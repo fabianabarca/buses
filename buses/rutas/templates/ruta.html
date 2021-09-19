@@ -40,6 +40,7 @@
 
     <h1>{{ route.short_name }} &nbsp; <i class="fas fa-bus" style="color:#{{ route.color }};"></i> &nbsp; San José </h1>
 
+    <p> {% if route.short_name == 'Acosta' %} <span class="badge fondo-color-sanluis">Acosta</span> <span class="badge fondo-color-turrujal">Turrujal</span> {% else %} <span class="badge fondo-color-sangabriel">San Gabriel</span> {% endif %} </p>
     <p>
         <div class="card borde-color-ruta">
             <div class="card-body lead">
@@ -91,7 +92,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 <dt><span class="badge badge-secondary align-middle">AC</span> <span class="text-secondary text-uppercase font-weight-bold align-middle">Acosta</span></dt>
                 <dd><strong>Sale desde</strong> el centro de San Ignacio de Acosta hacia San José.</dd>
 
-                <dt><span class="badge badge-secondary align-middle">JO</span> <span class="text-secondary text-uppercase font-weight-bold align-middle">Jorco</span></dt>
+                <dt><span class="badge badge-info align-middle">JO</span> <span class="text-info text-uppercase font-weight-bold align-middle">Jorco</span></dt>
                 <dd><strong>Sale desde</strong> Vuelta de Jorco de Aserrí hacia San José y <strong>no</strong> pasa por el centro de San Ignacio de Acosta.</dd>
             </dl>
         </p>  
@@ -126,6 +127,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                         Los Mangos
                     {% endif %}
                     (ver lista de <a href="#paradas">paradas autorizadas</a>).</li>
+                    <li><span class="fa-li"><i class="fas fa-calendar-check"></i></span>Horario actualizado el <span class="text-lowercase font-weight-bold">{{ informacion.start_date }}</span>.</li>
             </ol>
         </p>
     </div>
@@ -235,9 +237,8 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     <p>
         <div class="small">
             <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-database"></i></span>Datos de <a href="/gtfs/">GTFS</a> ({{ informacion.version }})</li>
+                <li><span class="fa-li"><i class="fas fa-database"></i></span>Datos de <a href="/gtfs/">GTFS</a></li>
                 <li><span class="fa-li"><i class="fab fa-google"></i></span>Ver en <a href="https://www.google.com/maps/@9.7985547,-84.1334907,14.81z">Google Maps</a></li>
-                <li><span class="fa-li"><i class="fas fa-calendar-check"></i></span>Última actualización: <span class="text-lowercase">{{ informacion.start_date }}</span></li>
             </ol>
         </div>
     </p>
@@ -277,7 +278,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     <hr>
     <h2><i class="fas fa-ticket-alt color-ruta"></i> Tarifas</h2>
 
-    <p>Precios autorizados por <a href="https://aresep.go.cr/autobus/tarifas" target="_blank">ARESEP</a>.</p>
+    <p>Precios autorizados por <a href="https://aresep.go.cr/autobus/tarifas" target="_blank">ARESEP</a>. Más información <a href="/tarifas">aquí</a>.</p>
 
     <!-- Nota sobre "solo efectivo" -->
     <div class="alert alert-soft-secondary" role="alert">
