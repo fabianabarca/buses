@@ -22,7 +22,7 @@ SECRET_KEY = 'ncvn$%5pvewazmo)m&6xck96ek!gq79d404=$ej#j457*$x@6_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['transportessangabriel.com', 'www.transportessangabriel.com', '143.198.233.186', '161.35.54.122', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'shapeeditor' ## Sí esta línea te falla haz "pip install shapeeditor" para instalar la dependencia faltante
+    'shapeeditor' ## Si esta línea falla, hacer "pip install shapeeditor" para instalar la dependencia faltante
 ]
 
 MIDDLEWARE = [
@@ -122,13 +122,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-# Url pública donde se almacenan las imágenes de noticias
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
-
-# Url donde buscar los archivos multimedia
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Email basic configuration:

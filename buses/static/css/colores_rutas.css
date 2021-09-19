@@ -1,18 +1,11 @@
-.color-ruta {
-    color: #{{ route.color }};
-}
-.fondo-color-ruta {
-    background-color: #{{ route.color }};
-    color: #{{ route.text_color }};
-}
-.borde-color-ruta {
-    border-color: #{{ route.color }};
-}
 .color-sanluis {
     color: #FFA500;
 }
 .color-turrujal {
     color: #FF4500;
+}
+.color-sangabriel {
+    color: #008000;
 }
 .fondo-color-sanluis {
     background-color: #FFA500;
@@ -21,4 +14,20 @@
 .fondo-color-turrujal {
     background-color: #FF4500;
     color: white;
+}
+.fondo-color-sangabriel {
+    background-color: #008000;
+    color: white;
+}
+.borde-color-sanluis {
+    border-color: #FFA500;
+    border-width: 1px;
+}
+.borde-color-turrujal {
+    border-color: #FF4500;
+    border-width: 1px;
+}
+.borde-color-sangabriel {
+    border-color: #008000;
+    border-width: 1px;
 }

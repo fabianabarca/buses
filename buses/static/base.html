@@ -32,6 +32,7 @@
 
     <!-- Custom CSS general -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/colores_rutas.css' %}">
 
     {% block custom_header %}
     <!-- Aquí el source del CSS específico de cada página -->
@@ -136,7 +137,7 @@
 
     <!-- PIE DE PÁGINA -->
 
-    <footer class="bg-dark">
+    <footer class="bg-secondary">
       <div class="container">
         <div class="space-top-2 space-bottom-1 space-bottom-lg-2">
           <div class="row justify-content-lg-between">
@@ -263,7 +264,7 @@
 
           <!-- Copyright -->
           <div class="w-md-75 text-lg-center mx-lg-auto">
-            <p class="text-white opacity-sm">Esta página utiliza <a class="font-weight-bold" href="/gtfs/">GTFS</a>, un estándar de datos abiertos para el transporte público.</p>
+            <p class="text-white opacity-sm">Esta página utiliza <a class="font-weight-bold text-white" href="/gtfs/">GTFS</a>, un estándar de datos abiertos para el transporte público.</p>
             <p class="text-white opacity-sm small">&copy; Transportes San Gabriel, 2021. Todos los derechos reservados.</p>
           </div>
           <!-- End Copyright -->
