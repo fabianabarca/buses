@@ -43,7 +43,7 @@ echo -n "["
 38,1073,Javier-Mora-Chofer-150x150.jpg,"Javier Mora",Chofer
 39,1072,German-Mora-Chaneador-e1498253105765-150x150.jpg,"German Mora",Chaneador
 40,1070,Edgar-Barboza-Chofer-e1498253072711-150x150.jpg,"Edgar Barboza",Chofer
-41,1069,"César-Garro-Guarda-de-Seguridad1-e1498252956432-150x150.jpg","César Garro",Chofer
+41,1069,"César-Garro-Guarda-de-Seguridad1-e1498252956432-150x150.jpg","César Garro",Guarda de Seguridad
 42,1067,Carlos-Luis-Mora-Chofer-e1498252995902-150x150.jpg,"Carlos Luis Mora",Chofer
 43,1066,"Alexander-Duran-Mecánico-e1498252892926-150x150.jpg","Alexánder Durán","Mecánico"
 44,1102,"Carlos-Cárdenas-Chofer-e1498755480948-150x150.jpg","Carlos Cárdenas",Chofer
