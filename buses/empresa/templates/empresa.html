@@ -122,7 +122,21 @@
   </small></p>
 </section>
 
-<!-- Reseña histórica 
+{# Esta sección es solo visible cumpleañeros tiene elementos #}
+{% if cumpleaneros %}
+<!-- Cumpleañeros -->
+<section id="cumpleaneros">
+
+    <hr>
+    <h2>Cumpleañeros del mes</h2>
+
+    {% for cumpleanero in cumpleaneros %}
+    <p>{{ cumpleanero }} {{ cumpleanero.fecha_nacimiento }} muchas felicidades!!</p>
+    {% endfor %}
+</section>
+{% endif %}
+
+<!-- Reseña histórica
 
 <section id="resena">
 
