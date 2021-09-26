@@ -31,6 +31,30 @@ const ruta_app = Vue.createApp({
                     }, 1500);
                 });
         },
+        showHideStopInfo(stop_id, event){
+
+            // Definir si se hizo click sobre la flecha o el contenedor circular
+            let target = event.target;
+            if (event.target.childElementCount) target = event.target.childNodes[0];
+
+            // Cambiar la dirección de la flecha
+            if ( target.classList.contains('fa-arrow-down')){
+                target.classList.add("fa-arrow-right");
+                target.classList.remove("fa-arrow-down");
+            } else {
+                target.classList.add("fa-arrow-down");
+                target.classList.remove("fa-arrow-right");
+            }
+
+            // Mostrar u ocultar la ficha informativa según el caso
+            if (document.getElementById('short_name_stop_id_'+stop_id).hidden){
+                document.getElementById('short_name_stop_id_'+stop_id).hidden = false;
+                document.getElementById('info_stop_id_'+stop_id).hidden = true;
+            }else {
+                document.getElementById('short_name_stop_id_'+stop_id).hidden = true;
+                document.getElementById('info_stop_id_'+stop_id).hidden = false;
+            }
+        },
     },
     mounted () {
         setInterval(() => { // Lógica de la aplicación HORADIGITAL
