@@ -1,4 +1,4 @@
-ruta_app.component('mapa-sangabriel', {
+exports.sangabriel_config = {
     template:/*html*/ 
             `
             <div class="container text-center">
@@ -1900,4 +1900,4 @@ ruta_app.component('mapa-sangabriel', {
     mounted() {
         this.setUpMap();
     }
-})
+};

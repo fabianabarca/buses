@@ -1,4 +1,4 @@
-ruta_app.component("mapa-acosta", {
+exports.acosta_config = {
   /*html*/
   template: `
             <div class="container text-center">
@@ -5526,4 +5526,4 @@ ruta_app.component("mapa-acosta", {
   mounted() {
     this.setUpMap();
   },
-});
+};

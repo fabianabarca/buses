@@ -1,4 +1,8 @@
 // Inicioooo de las apps de rutas
+const Vue = require('vue')
+const { proximo_bus_config } = require('./ruta_proximobus.js')
+const { sangabriel_config } = require('./ruta_sangabriel.js')
+const { acosta_config } = require('./ruta_acosta.js')
 
 // // Main Vue app
 const ruta_app = Vue.createApp({
@@ -48,3 +52,9 @@ const ruta_app = Vue.createApp({
             this.table_on_select = "entresemana_table" ;
     },
 });
+
+ruta_app.component('proximobus', proximo_bus_config);
+ruta_app.component('mapa-sangabriel', sangabriel_config);
+ruta_app.component('mapa-acosta', acosta_config);
+
+ruta_app.mount('#ruta_vue_app');

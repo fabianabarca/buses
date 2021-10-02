@@ -1,4 +1,4 @@
-ruta_app.component('proximobus', {
+exports.proximo_bus_config = {
     props: ['route_short_name'],
     template: `
 <div class="container proxbus-container">
@@ -130,4 +130,4 @@ ruta_app.component('proximobus', {
     created: function (){
         this.updateProximoBus();
     },
-});
+};
