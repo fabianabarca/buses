@@ -1859,7 +1859,7 @@ exports.sangabriel_config = {
                 [9.79675121109483, -84.12106748939065],
                 [9.797040337751, -84.12123990653505],
                 [9.797183895764604, -84.12132095529377],
-                [9.797196027424874, -84.12137635571112]
+                [9.797196027424874, -84.12137635571112],
             ]
         };
     },
@@ -1895,9 +1895,9 @@ exports.sangabriel_config = {
             this.polyline.setLatLngs(this.currentRoute);
 
             [this.fromRouteName, this.toRouteName] = [this.toRouteName, this.fromRouteName];
-        }
+        },
     },
     mounted() {
         this.setUpMap();
-    }
+    },
 };

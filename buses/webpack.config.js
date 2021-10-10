@@ -1,3 +1,4 @@
+
 const path = require('path');
 
 module.exports = {
@@ -6,5 +7,6 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'static/js/'),
     },
+    target: 'web',
     mode: 'production',
 };

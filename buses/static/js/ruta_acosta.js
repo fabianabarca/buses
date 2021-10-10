@@ -1,6 +1,5 @@
 exports.acosta_config = {
-  /*html*/
-  template: `
+  template: /*html*/`
             <div class="container text-center">
                 
                 <div class="row">
@@ -61,9 +60,7 @@ exports.acosta_config = {
                     </div>
                 </div>
                 <br/>
-
-            </div>
-            <br/>`,
+            </div>`,
   data() {
     return {
       center: [45.51, -122.68],
