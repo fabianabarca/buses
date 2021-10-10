@@ -9,14 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.1.1",
+    "bootstrap": "4.5.3",
+    "jquery": "3.5.1",
     "vue": "^3.2.19"
   },
   "devDependencies": {
+    "expose-loader": "^3.0.0",
     "webpack": "^5.57.1",
     "webpack-cli": "^4.8.0"
   },
   "browser": {
-    "vue": "vue/dist/vue.esm-browser.js"
+    "vue": "vue/dist/vue.esm-browser.prod.js"
   }
 }
