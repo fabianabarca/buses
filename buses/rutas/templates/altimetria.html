@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+
+{% block page_title %} Altimetria {% endblock %}
+
+{% block scripts %}
+{% endblock scripts %}
+
+
+{% block content %}
+
+{# esto coloca 5 líneas de espacio vertical #}
+<div class="custom-vertical-space"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+
+<h1> Chart </h1>
+<body>
+  <div style="width: 90%"; class="container">
+    <canvas id="myChart"> </canvas>
+  </div>
+
+  <script id="Trips" type="application/json">{{trips_chart}}</script>
+  <script id="Routes" type="application/json">{{routes_chart}}</script>
+  <script id="Stops" type="application/json">{{stops_chart}}</script>
+  <script id="Shapes" type="application/json">{{shapes_chart}}</script>
+  <script id="Labels" type="application/json">{{labels_config}}</script>
+  <script id=chartjsElevation src="../../static/js/elevationChart.js">
+      //ElevationChart();
+  </script>
+
+  <label for="routes">Choose a route:</label>
+    <select name="routes" id="selector_routes" onchange="ChangeRoute()">
+      <option value="" selected disabled hidden>Seleccione una ruta</option>
+      <option value="desde_sangabriel|Sangabriel a San José" >Sangabriel a San José</option>
+      <option value="hacia_sangabriel|San José a San Gabriel">San José a San Gabriel</option>
+      <option value="desde_sanluis|Acosta a San José">Acosta a San José</option>
+      <option value="hacia_sanluis|San José a Acosta">San José a Acosta</option>
+      <!--option value="desde_turrujal">Turrujal a San José</option-->
+      <!--option value="hacia_turrujal">San José a Turrujal</option-->
+      <!--option value="hacia_sanluis">San José a San Luis</option-->
+      <!--option value="desde_sanluis">San Luis a San José</option-->
+  </select>
+</body>
+
+<!-- Preguntas frecuentes -->
+{% endblock %}

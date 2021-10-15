@@ -85,7 +85,7 @@ class Stop(models.Model):
         help_text='Longitud WGS 84 de la parada o estación.')
     zone = models.ForeignKey(
         'Zone', null=True, blank=True, on_delete=models.SET_NULL,
-        help_text="Zona tarifaria para esta parada.") 
+        help_text="Zona tarifaria para esta parada.")
     url = models.URLField(
         blank=True, help_text="URL de la parada.")
     location_type = models.CharField(
@@ -186,8 +186,9 @@ class Trip(models.Model):
     # block = models.ForeignKey(
     #     'Block', null=True, blank=True, on_delete=models.SET_NULL,
     #     help_text="Block of sequential trips that this trip belongs to.")
-    shape = models.ForeignKey(
-        'Shape', null=True, blank=True, on_delete=models.SET_NULL,
+    shape = models.CharField(
+        max_length=32,
+        null=True, blank=True,
         help_text="Forma de la ruta.")
     wheelchair_accessible = models.CharField(
         max_length=1, blank=True,
@@ -220,7 +221,7 @@ class StopTime(models.Model):
     arrival_time = models.TimeField(
         default=None, null=True, blank=True,
         help_text="Hora de llegada. Debe configurarse para las últimas paradas del viaje.")
-    departure_time = models.TimeField(  
+    departure_time = models.TimeField(
         auto_now=False, auto_now_add=False,
         default=None, null=True, blank=True,
         help_text='Hora de salida. Debe configurarse para las últimas paradas del viaje.')
@@ -260,7 +261,7 @@ class StopTime(models.Model):
         return str(self.trip)
 
 class Calendar(models.Model):
-    """Calendar with service disponibility for one or more routes 
+    """Calendar with service disponibility for one or more routes
     This implements trips.txt in the GTFS feed
     """
     service_id = models.CharField(
@@ -284,7 +285,7 @@ class Calendar(models.Model):
         choices=(
             ('1', 'El servicio sí está disponible los miércoles incluidos en este período.'),
             ('0', 'El servcio no está disponible los miércoles incluidos en este período.')),
-        help_text='¿El servicio está disponible los miércoles?')    
+        help_text='¿El servicio está disponible los miércoles?')
     thursday = models.CharField(
         max_length=1,
         choices=(
@@ -326,7 +327,7 @@ class Calendar(models.Model):
         return self.service_id
 
 class CalendarDate(models.Model):
-    """Calendar without service disponibility for one or more routes 
+    """Calendar without service disponibility for one or more routes
     This implements calendar_dates.txt in the GTFS feed
     """
     service = models.ForeignKey('Calendar', on_delete=models.CASCADE)
@@ -392,11 +393,11 @@ class FareRule(models.Model):
 
     fare = models.ForeignKey('FareAttribute', on_delete=models.CASCADE)
     route = models.ForeignKey('Route', on_delete=models.CASCADE)
-    origin = models.ForeignKey('Zone', 
-                related_name='origin_id', 
+    origin = models.ForeignKey('Zone',
+                related_name='origin_id',
                 on_delete=models.CASCADE)
-    destination = models.ForeignKey('Zone', 
-                related_name='destination_id', 
+    destination = models.ForeignKey('Zone',
+                related_name='destination_id',
                 on_delete=models.CASCADE)
     class Meta:
         verbose_name = "fare rule"
@@ -448,7 +449,6 @@ class Shape(models.Model):
     """The path the vehicle takes along the route.
     Implements shapes.txt."""
     shape_id = models.CharField(
-        primary_key=True,
         max_length=255, db_index=True,
         help_text="Identificador único de una trayectoria.")
     pt_lat = models.DecimalField(
@@ -459,11 +459,15 @@ class Shape(models.Model):
         max_digits=22,
         decimal_places=16,
         help_text='Longitud WGS 84 de punto de la trayectoria.')
+    pt_alt = models.DecimalField(
+        max_digits=22,
+        decimal_places=16,
+        help_text='Elevacion punto de la trayectoria.')
     pt_sequence = models.PositiveIntegerField(
         help_text='Secuencia en la que los puntos de la trayectoria se conectan para crear la forma')
     dist_traveled = models.DecimalField(default=0.0,
         max_digits=6,
-        decimal_places=3, 
+        decimal_places=3,
         null=True, blank=True,
         help_text="Precisión es en metros (0.001 km)")
 
@@ -473,7 +477,20 @@ class Shape(models.Model):
 
     def __str__(self):
         return self.shape_id
+class LabelsConfig(models.Model):
+    """Labels associated with a specific route_id
+    """
+    shape_id = models.CharField(
+        max_length=255, db_index=True,
+        help_text="Identificador único de una ruta.")
+    towns = models.JSONField(
+        help_text="Nombre de la parada en relacion a un identificador unico de ruta")
+    class Meta:
+        verbose_name = "labelsconfig"
+        verbose_name_plural = "labelsConfigs"
 
+    def __str__(self):
+        return self.shape_id
 class FeedInfo(models.Model):
     """ Información sobre los que hacen el GTFS """
 
@@ -491,9 +508,9 @@ class FeedInfo(models.Model):
         blank=True, null=True,
         help_text='Fecha en termina la validez del suministro GTFS.')
     version = models.CharField(max_length=32)
-    contact_email = models.EmailField(max_length=128,  
+    contact_email = models.EmailField(max_length=128,
         blank=True, help_text="Correo electrónico de contacto sobre GTFS.")
-    
+
     class Meta:
         verbose_name = "feed info"
         verbose_name_plural = "feed info objects"

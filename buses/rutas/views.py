@@ -1,9 +1,19 @@
 from django.shortcuts import get_object_or_404, render
-from .models import FareAttribute, Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate, FeedInfo
+from .models import FareAttribute, Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate, FeedInfo, LabelsConfig
+from django.core import serializers
+
+
 from datetime import datetime
 from itertools import zip_longest
 from django.conf import settings
 from django.db.models import Q
+import os
+import json
+import pandas as pd
+import inspect
+
+from .ManageDatabaseModels import HandleShapes, HandleStops, HandleRoutes, HandleTrips, HandleLabelsConfig
+
 
 
 def rutas(request):
@@ -21,6 +31,32 @@ def rutas(request):
     return render(request, 'rutas.html', context)
 
 # Esta sí es
+def altimetria(request, url_ruta):
+    '''
+    Función para graficar elevaciones de la ruta
+    '''
+    routes_table = Route.objects.all()
+    shapes_table = Shape.objects.all()
+    stops_table = Stop.objects.all()
+    trips_table = Trip.objects.all()
+    labelsConfig_table = LabelsConfig.objects.all()
+
+    trip_chart = HandleTrips(trips_table)
+    shape_chart=HandleShapes(shapes_table)
+    stop_chart = HandleStops(stops_table)
+    route_chart = HandleRoutes(routes_table)
+    labels_chart = HandleLabelsConfig(labelsConfig_table)
+
+    context = {
+    'labels_config':labels_chart,
+    'routes_chart':route_chart,
+    'shapes_chart':shape_chart,
+    'stops_chart':stop_chart,
+    'trips_chart':trip_chart
+    }
+
+    return render(request, 'altimetria.html', context)
+
 
 def ruta(request, url_ruta):
     ''' Función para mostrar la información de cada ruta.
@@ -169,16 +205,16 @@ def ruta(request, url_ruta):
 
     if url_ruta == 'sangabriel':
         desde = ['LM_0', 'SG_0', 'SJ_0']
-        hacia = ['SJ_1', 'SG_1', 'LM_1']        
+        hacia = ['SJ_1', 'SG_1', 'LM_1']
     elif url_ruta == 'acosta':
         desde = ['SI_0', 'JO_0', 'SJ_0']
         hacia = ['SJ_1', 'JO_1', 'SI_1']
-    
+
     #paradas_desde = Stop.objects.filter(stop_id__startswith=desde[0]).union(Stop.objects.filter(stop_id__startswith=desde[1])).union(Stop.objects.filter(stop_id__startswith=desde[2]))
     #paradas_desde = Stop.objects.filter(Q(stop_id__startswith=desde[0]) | Q(stop_id__startswith=desde[1]) | Q(stop_id__startswith=desde[2]))
     #paradas_hacia = Stop.objects.filter(stop_id__startswith=hacia[0]).union(Stop.objects.filter(stop_id__startswith=hacia[1])).union(Stop.objects.filter(stop_id__startswith=hacia[2]))
     #paradas_hacia = Stop.objects.filter(Q(stop_id__startswith=hacia[0]) | Q(stop_id__startswith=hacia[1]) | Q(stop_id__startswith=hacia[2])).order_by('pk')
-    
+
     # Solución horrible (terrible, terrible)
     paradas_desde_0 = Stop.objects.filter(stop_id__startswith=desde[0])
     paradas_desde_1 = Stop.objects.filter(stop_id__startswith=desde[1])
