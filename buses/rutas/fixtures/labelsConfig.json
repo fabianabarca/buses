@@ -1,0 +1,67 @@
+[
+  {
+    "model":"rutas.labelsconfig",
+    "pk": 1,
+    "fields": {
+        "shape_id":"desde_sangabriel",
+        "towns":{"LM_0_00":"Los Mangos",
+                "SG_0_00":"San Gabriel",
+                "SG_0_07":"La Fila",
+                "SG_0_12":"Tranquerillas",
+                "SJ_0_02":"Tarbaca",
+                "SJ_0_19":"Aserrí",
+                "SJ_0_36":"Desamparados",
+                "SJ_0_48":"San José"
+             }
+    }
+  },
+  {
+    "model":"rutas.labelsconfig",
+    "pk": 2,
+    "fields": {
+        "shape_id":"hacia_sangabriel",
+        "towns":{"SJ_0_48":"San José",
+                "SJ_0_36":"Desamparados",
+                "SJ_0_19":"Aserrí",
+                "SJ_0_02":"Tarbaca",
+                "SG_0_12":"Tranquerillas",
+                "SG_0_07":"La Fila",
+                "SG_0_00":"San Gabriel",
+                "LM_0_00":"Los Mangos"
+             }
+    }
+  },
+  {
+    "model":"rutas.labelsconfig",
+    "pk": 3,
+    "fields": {
+        "shape_id":"desde_sanluis",
+        "towns":{"SI_0_00":"San Ignacio de Acosta",
+               "SI_0_07":"La Esperanza",
+               "JO_0_01":"Vuelta de Jorco",
+               "JO_0_04":"Ojo de Agua",
+               "SJ_0_02":"Tarbaca",
+               "SJ_0_19":"Aserrí",
+               "SJ_0_36":"Desamparados",
+               "SJ_0_42":"Parque de La Paz",
+               "SJ_0_48":"San José"
+             }
+    }
+  },
+  {
+    "model":"rutas.labelsconfig",
+    "pk": 4,
+    "fields": {
+      "shape_id":"hacia_sanluis",
+      "towns":{"SJ_1_00":"San José",
+               "SJ_1_09":"Desamparados",
+               "SJ_1_26":"Aserrí",
+               "SJ_1_44":"Tarbaca",
+               "JO_1_11":"Ojo de Agua",
+               "JO_1_14":"Vuelta de Jorco",
+               "SI_1_04":"La Esperanza",
+               "SI_1_11":"San Ignacio de Acosta"
+             }
+    }
+  }
+]
