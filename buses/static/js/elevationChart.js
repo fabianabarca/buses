@@ -101,6 +101,7 @@ function InitializeData(){
   color = SetColor(current_route, tripsData.route_shape_id_relation, routesData);
 }
 function ChangeRoute(){
+
   InitializeData()
   elevationChart.data.labels = shapesData.shape_pt_town
   elevationChart.data.datasets[0].data = MovingAvg(shapesData.shape_pt_alt, 25, function(val){return val != 0; })
@@ -110,9 +111,21 @@ function ChangeRoute(){
 
   elevationChart.update();
 }
+/**
+ * Add two numbers together
+ * @param  {Object} data Objeto Json
+ * @return {Object} out Objeto Json, formato.
+ */
 function RemoveSingleQuotes(data){
+
   return out = data.replace(/&quot;/g,'"');
 }
+/**
+ * Funcion para manipular datos relacionados al json correspondiente a shapes.
+ * @param  {Obj} data Json correspondientea shapes
+ * @param  {String} current_route shape_id de la ruta que se desea graficar
+ * @return {Obj}      Objeto compuesto de las columnas de shapes relacionados a la ruta
+ */
 function HandleShapes(data, current_route){
   let shape_pt_alt = []
   let shape_dist_traveled = []
@@ -140,6 +153,11 @@ return {
   shape_pt_lon
 };
 }
+/**
+ * Funcion para manipular datos relacionados al json correspondiente a rutas.
+ * @param  {Obj} data Json correspondientea shapes
+ * @return {Obj}      Objeto compuesto de las columnas de routes relacionados a la ruta
+ */
 function HandleRoutes(data){
   let route_id = []
   let route_short_name = []
@@ -160,6 +178,11 @@ return {
   route_color
 };
 }
+/**
+ * Funcion para manipular datos relacionados al json correspondiente a trips.
+ * @param  {Obj} data Json correspondiente trips
+ * @return {Obj}      Objeto compuesto de las columnas de trips relacionados a la ruta
+ */
 function HandleTrips(data){
   let route_shape_id_relation = {};
   let headsign_shape_id_relation = {};
@@ -193,6 +216,11 @@ function HandleTrips(data){
     headsign_shape_id_relation
   }
 }
+/**
+ * Funcion para manipular datos relacionados al json correspondiente a stops.
+ * @param  {Obj} data Json correspondiente stops
+ * @return {Obj}      Objeto compuesto de las columnas de stops relacionados a la ruta
+ */
 function HandleStops(data){
   let stop_id = []
   let stop_name = []
@@ -214,6 +242,14 @@ function HandleStops(data){
     stop_lon
   };
 }
+/**
+ * Genera datos del eje de labels(x).
+ * @param  {String} current_route Json correspondiente trips
+ * @param  {Obj} labelsConfig Json con datos de los pueblos y paradas en la ruta
+ * @param  {Obj} stopsData Objeto con datos de paradas
+ * @param  {Obj} shapesData Objeto con datos de la ruta a viajar
+ * @return {Array}      Array con datos del eje x(labels)
+ */
 function SetLabels(current_route, labelsConfig, stopsData, shapesData){
   shapesData.shape_pt_town=new Array(shapesData.shape_pt_lat.length).fill("");
   if((stopsData.stop_id.length !== 0)&&(typeof(labelsConfig.shape_id[current_route])!== 'undefined')){
@@ -263,12 +299,26 @@ function SetLabels(current_route, labelsConfig, stopsData, shapesData){
   };
   return shapesData;
 }
+/**
+ * Genera datos del eje de labels(x).
+ * @param  {String} current_route Json correspondiente trips
+ * @param  {Obj} tripsData Json con datos de trips
+ * @param  {String} current_headsign Nombre de la ruta
+ * @return {String}      label de la ruta
+ */
 function SetLabel(current_route, tripsData, current_headsign=null){
 
   let label = null;
   //return label = tripsData.headsign_shape_id_relation[current_route]
   return label = current_headsign
 }
+/**
+ * Genera datos del color para la ruta dependiendo de la informacion proveniente del gtfs
+ * @param  {String} current_route Json correspondiente trips
+ * @param  {Obj} tripsData Json con datos de trips
+ * @param  {ObJ} routesData objeto con informacion de la ruta
+ * @return {Obj}      Datos del color de la grafica
+ */
 function SetColor(current_route, tripsData, routesData){
   var hexColor=null
   var index = null
@@ -321,6 +371,14 @@ function SetColor(current_route, tripsData, routesData){
             borderColor
            }
 }
+/**
+ * Calcula distancia entre 2 puntos por medio de sus coordenadas geograficas.
+ * @param  {float} lat_start latitud del punto 1
+ * @param  {float} lat_sec latitud del punto 2
+ * @param  {float} lon_start longitud del punto 1
+ * @param  {float} lat_sec longitud del punto 2
+ * @return {float}      distancia entre 2 coordenadas geograficas
+ */
 function Haversine(lat_start, lon_start, lat_sec, lon_sec){
   let dlat = lat_start - lat_sec
   let dlon = lon_start - lon_sec
@@ -330,6 +388,11 @@ function Haversine(lat_start, lon_start, lat_sec, lon_sec){
   let dist = 6367 * c
   return dist
 }
+/**
+ * Convierte un valor de color hexadecimal a tupla rgb
+ * @param  {String} color valor hexadecimal del color
+ * @return {Array}      Array rgb del color
+ */
 function Hex2Rgb(color){
   //console.log(color)
   if(color.length !== 6){
@@ -345,6 +408,13 @@ function Hex2Rgb(color){
     //console.log(aRgb)
     return aRgb;
 }
+/**
+ * Funcion de promedios moviles para suavizacion de curvas.
+ * @param  {Array} Array JArreglo de datos que se desean suavizar
+ * @param  {int} count cantidad de valores a promediar
+ * @param  {String} qualifier funcion para validar promedio
+ * @return {Array}      Arreglo de datos promediados.
+ */
 function MovingAvg(array, count, qualifier){
     // calculate average for subarray
     var avg = function(array, qualifier){
