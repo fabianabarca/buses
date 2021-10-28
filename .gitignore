@@ -15,3 +15,8 @@ venv_server*
 
 # Nodejs:
 node_modules
+
+# Junk data
+back_up*
+backup/
+*backup*
