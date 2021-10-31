@@ -1,6 +1,13 @@
 {% extends 'base.html'%}
 
+{% load static %}
+
 {% block page_title %} Contacto {% endblock %}
+
+{% block custom_header %}
+{# Aquí los estilos propios de la página de contacto#}
+
+{% endblock %}
 
 {% block content %}
 
@@ -181,7 +188,7 @@
             </div>
             <div id="resp{{ pregunta.id }}" class="collapse" aria-labelledby="preg{{ pregunta.id }}" data-parent="#basicsAccordion">
               <div class="card-body px-0">
-                <p>{{ pregunta.respuesta }}</p>
+                  <p>{{ pregunta.respuesta }}</p>
               </div>
             </div>
           </div>
@@ -191,5 +198,13 @@
       </div>
     </div>
   </p>
- 
-{% endblock %}
+  
+  {% endblock %}
+
+  {% block custom_footer %}
+  {# Aquí el código JS exclusivo de la página de contactos #}
+
+  <!-- Main contacto -->
+  <script src="{% static 'contacto/js/main_contacto.js' %}" type="text/javascript"></script>
+
+  {% endblock %}
