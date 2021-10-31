@@ -1,36 +1,60 @@
-  {% if enviado %}
-  {{ notificacion }}
-  {% else %}
-  <form method="post">
-      {% csrf_token %}
-    <div class="form-group">
-      <label for="id_nombre">Nombre completo</label>
-      <input type="text" class="form-control" id="id_nombre" name="nombre" placeholder="Nombre completo" required>
-    </div>
-    <div class="form-group">
-        <label for="id_telefono">Teléfono</label>
-        <input type="text" class="form-control" id="id_telefono" name="telefono" placeholder="Teléfono (opcional)">
-    </div>
-    <div class="form-group">
-      <label for="id_email">Correo electrónico</label>
-      <input type="email" class="form-control" id="id_email" name="email" aria-describedby="emailHelp" placeholder="ejemplo@dominio.com (opcional)" required>
-      <small id="emailHelp" class="form-text text-muted">A este correo electrónico llega la respuesta.</small>
-    </div>
-    <div class="form-group">
-      <label for="id_asunto">Motivo de contacto</label>
-      <select class="form-control" id="id_asunto" name="asunto">
-        <option>Sugerencias de mejora</option>
-        <option>Objetos perdidos</option>
-        <option>Información general</option>
-        <option>Reclamos por servicio</option>
-        <option>Sugerencias para la página web</option>
-        <option>Otro</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="id_mensaje">Explicación</label>
-      <textarea class="form-control" id="id_mensaje" name="mensaje" rows="3"></textarea>
-    </div>
-    <button class="btn btn-primary" type="submit">Enviar</button>
-  </form>
-  {% endif %}
+<form method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="id_nombre">Nombre completo</label>
+    <input
+      type="text"
+      class="form-control"
+      id="id_nombre"
+      name="nombre"
+      placeholder="Nombre completo"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="id_telefono">Teléfono</label>
+    <input
+      type="text"
+      class="form-control"
+      id="id_telefono"
+      name="telefono"
+      placeholder="Teléfono (opcional)"
+    />
+  </div>
+  <div class="form-group">
+    <label for="id_email">Correo electrónico</label>
+    <input
+      type="email"
+      class="form-control"
+      id="id_email"
+      name="email"
+      aria-describedby="emailHelp"
+      placeholder="ejemplo@dominio.com (opcional)"
+      required
+    />
+    <small id="emailHelp" class="form-text text-muted"
+      >A este correo electrónico llega la respuesta.</small
+    >
+  </div>
+  <div class="form-group">
+    <label for="id_asunto">Motivo de contacto</label>
+    <select class="form-control" id="id_asunto" name="asunto">
+      <option>Sugerencias de mejora</option>
+      <option>Objetos perdidos</option>
+      <option>Información general</option>
+      <option>Reclamos por servicio</option>
+      <option>Sugerencias para la página web</option>
+      <option>Otro</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="id_mensaje">Explicación</label>
+    <textarea
+      class="form-control"
+      id="id_mensaje"
+      name="mensaje"
+      rows="3"
+    ></textarea>
+  </div>
+  <button class="btn btn-primary" type="submit">Enviar</button>
+</form>
