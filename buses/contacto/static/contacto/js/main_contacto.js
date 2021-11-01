@@ -109,9 +109,13 @@ formulario.addEventListener(
         if (! form_nombre.value.length )
             form_nombre.classList.add("is-invalid");
 
+        // Validar el contenido del input de teléfono
+        validarInputTelefono(form_telefono);
         // if (! form_telefono.value.length ) // Opcional
         //     form_telefono.classList.add("is-invalid");
 
+        // Validar el correo y invalidar si está vacío
+        validarInputCorreo(form_email);
         if (! form_email.value.length )
             form_email.classList.add("is-invalid");
 
