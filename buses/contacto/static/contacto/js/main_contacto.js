@@ -26,7 +26,23 @@ let validarInputTelefono = element => {
         element.classList.remove("is-valid");
         element.classList.add("is-invalid");
     }
-}
+};
+
+let validarInputCorreo = element => {
+    if ( ! element.value.length ){
+        element.classList.remove("is-valid");
+        element.classList.remove("is-invalid");
+    } else if ( // Si el correo tiene un @
+        (element.value.split("@").length == 2) &&
+        (element.value.split("@")[1].split(".").length == 2)
+    ){
+        element.classList.remove("is-invalid");
+        element.classList.add("is-valid");
+    } else { // Si el correo no tiene @
+        element.classList.remove("is-valid");
+        element.classList.add("is-invalid");
+    }
+};
 
 let formularioValidarDato = event => {
     // Al introducir cosas en el Form se ocultan las alertas del formulario
@@ -51,7 +67,7 @@ let formularioValidarDato = event => {
         }
         break;
     case "email":
-        console.log(event.target.value);
+        validarInputCorreo(event.target);
         break;
     case "mensaje":
         // Verificar que no exceda los 500 characters
