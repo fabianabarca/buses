@@ -6,6 +6,28 @@ const form_alerts = formulario.getElementsByClassName("form_alerts")[0]; // .chi
 
 // TODO agregar listener a cada input para validar los datos por aparte con JS
 
+let validarInputTelefono = element => {
+    if ( ! element.value.length ){
+        element.classList.remove("is-valid");
+        element.classList.remove("is-invalid");
+    } else if ( // Si no tiene un + el número se observa si es un entero
+        (element.value.split("+").length == 1) &&
+            ( Number.isInteger(Number(element.value.replace(/[- ]/g, ""))) )
+    ){
+        element.classList.remove("is-invalid");
+        element.classList.add("is-valid");
+    } else if ( // Si tiene un + se toma unicamente el número se observa si es un entero
+        (element.value.split("+").length == 2) &&
+            ( Number.isInteger(Number(element.value.split("+")[1].replace(/[- ]/g, ""))) )
+    ){
+        element.classList.remove("is-invalid");
+        element.classList.add("is-valid");
+    } else { // Si no es un número entero entonces es inválido
+        element.classList.remove("is-valid");
+        element.classList.add("is-invalid");
+    }
+}
+
 let formularioValidarDato = event => {
     // Al introducir cosas en el Form se ocultan las alertas del formulario
     form_alerts.classList.add("form_alerts_hide");
@@ -13,8 +35,7 @@ let formularioValidarDato = event => {
 
     switch (event.target.name) { // Validación dependiendo el input
     case "telefono":
-        console.log(event.target.value);
-        
+        validarInputTelefono(event.target);
         break;
     case "nombre":
         // Verificar un tamaño mínimo
@@ -53,7 +74,7 @@ let formularioValidarDato = event => {
 
 
 formulario.addEventListener(
-    'change',
+    'input',
     formularioValidarDato
 );
 
