@@ -12,6 +12,34 @@ formulario.addEventListener(
         // Al introducir cosas en el Form se ocultan las alertas del formulario
         form_alerts.classList.add("form_alerts_hide");
         form_alerts.querySelector("DIV").classList.remove("alert-success");
+
+        switch (event.target.name) { // Validación dependiendo el input
+        case "telefono":
+
+            break;
+        case "nombre":
+
+            break;
+        case "email":
+
+            break;
+        case "mensaje":
+            // Verificar que no exceda los 500 characters
+            if ( ! event.target.value.length ){
+                event.target.classList.remove("is-valid");
+                event.target.classList.remove("is-invalid");
+            } else if ( event.target.value.length > 500 ){
+                event.target.classList.add("is-invalid");
+                event.target.classList.remove("is-valid");
+            } else {
+                event.target.classList.add("is-valid");
+                event.target.classList.remove("is-invalid");
+            }
+            break;
+        default:
+            // No se hace nada
+            break;
+        }
     }
 );
 
@@ -59,6 +87,9 @@ formulario.addEventListener(
     'reset',
     event => {
         // Al ejecutar un reset se ocultan las alertas del formulario
+        formulario.querySelectorAll(".is-valid").forEach(element => element.classList.remove("is-valid"));
+        formulario.querySelectorAll(".is-invalid").forEach(element => element.classList.remove("is-invalid"));
+
         form_alerts.classList.add("form_alerts_hide");
         form_alerts.querySelector("DIV").classList.remove("alert-success");
     }
