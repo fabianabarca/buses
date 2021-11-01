@@ -22,10 +22,12 @@ def post_contact_form (request):
 
         try: # FIXME: implementar correctamente la configuración de SMTP usando correo del administrador que está en base de datos
             send_mail(asunto, mensaje, email, ['tsgdumbacc@gmail.com'])
-            send_mail("Mensaje recibido", "Agredecemos su aporte.", 'tsgdumbacc@gmail.com', [email])
+            # send_mail("Mensaje recibido", "Agredecemos su aporte.", 'tsgdumbacc@gmail.com', [email]) # TODO remove
+
         except BadHeaderError:
-            return JsonResponse(status=500, data={"message": "An error occurred"})
-    return JsonResponse(status=200, data={"message": "Web post successful"})
+            return JsonResponse(status=500, data={"message": "Ha ocurrido un error, por favor intente más tarde, gracias."})
+
+    return JsonResponse(status=200, data={"message": '<i class="fas fa-info-circle"></i> Formulario <strong>enviado</strong> correctamente! Gracias!'})
 
 @require_GET
 def contacto(request):

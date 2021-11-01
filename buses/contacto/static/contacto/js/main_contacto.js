@@ -1,8 +1,8 @@
 // Contact form page JS, type="module", private scope, vanilla JS
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////// Elementos del formulario a utilizar //////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////// Elementos del formulario a utilizar /////////
+////////////////////////////////////////////////////////////////
 
 // Se hace query del formulario
 let formulario = document.querySelector("form");
@@ -12,9 +12,9 @@ let form_telefono = document.getElementById("id_telefono");
 let form_mensaje = document.getElementById("id_mensaje");
 let form_email = document.getElementById("id_email");
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////// Definir los métodos para cada evento /////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////// Definir los métodos para cada evento ////////
+////////////////////////////////////////////////////////////////
 
 let validarInputNombre = (event) => {
   // Verificar un tamaño mínimo
@@ -32,7 +32,6 @@ let validarInputNombre = (event) => {
 
 let validarInputTelefono = (event) => {
   let element = event.target;
-  console.log("validar input telefono");
   if (!element.value.length) {
     element.classList.remove("is-valid");
     element.classList.remove("is-invalid");
@@ -120,36 +119,41 @@ let formularioOnSubmit = (event) => {
     formulario.querySelectorAll(".is-invalid").length // Si hay inputs inválidos
   ) {
     // Ya fue enviado el formulario o hay inputs inválidos, no hacer nada
-  } else {
-    // Enviar el formulario por primera vez
-    fetch("post_form", {
-      method: "POST",
-      body: new FormData(event.target),
-    })
-      .then((response) => response.json())
-      .then((data) => {
+  }
+  // Enviar el formulario por primera vez
+  else
+    (async () => {
+      try {
+        let response = await fetch("post_form", {
+          method: "POST",
+          body: new FormData(event.target),
+        });
+        let data = await response.json();
+
         // Notificar correcto POST
-        console.log(data.message);
-
-        // Success banner
-        form_alerts.classList.remove("form_alerts_hide");
-        form_alerts.querySelector("DIV").classList.remove("alert-danger");
-        form_alerts.querySelector("DIV").classList.add("alert-success");
-        form_alerts.querySelector("DIV").innerHTML =
-          '<i class="fas fa-info-circle"></i> Formulario <strong>enviado</strong> correctamente! Gracias!';
-
-        // TODO presentar cuando hay errores del lado del servidor (5xx)
-      })
-      .catch((error) => {
-        // Notificar POST erróneo
-        console.error("Error:", error);
+        if (response.ok) {
+          // Success banner
+          form_alerts.classList.remove("form_alerts_hide");
+          form_alerts.querySelector("DIV").classList.remove("alert-danger");
+          form_alerts.querySelector("DIV").classList.add("alert-success");
+          form_alerts.querySelector("DIV").innerHTML = data.message;
+        } else {
+          // Notificar POST erróneo server-side
+          form_alerts.classList.remove("form_alerts_hide");
+          form_alerts.querySelector("DIV").classList.remove("alert-success");
+          form_alerts.querySelector("DIV").classList.add("alert-danger");
+          form_alerts.querySelector("DIV").innerHTML = data.message;
+        }
+      } catch (error) {
+        // Notificar POST erróneo por conectividad
+        console.error("Error: ", error);
         form_alerts.classList.remove("form_alerts_hide");
         form_alerts.querySelector("DIV").classList.remove("alert-success");
         form_alerts.querySelector("DIV").classList.add("alert-danger");
         form_alerts.querySelector("DIV").innerHTML =
           "Formulario <strong>no enviado</strong> debido a error de conectividad.";
-      });
-  }
+      }
+    })();
 };
 
 let formularioOnReset = (event) => {
@@ -165,9 +169,9 @@ let formularioOnReset = (event) => {
   form_alerts.querySelector("DIV").classList.remove("alert-success");
 };
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////// Agregar los listener ////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////// Agregar los listener ////////////
+////////////////////////////////////////////////////////////
 
 form_nombre.addEventListener("input", validarInputNombre);
 
