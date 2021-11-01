@@ -6,41 +6,55 @@ const form_alerts = formulario.getElementsByClassName("form_alerts")[0]; // .chi
 
 // TODO agregar listener a cada input para validar los datos por aparte con JS
 
+let formularioValidarDato = event => {
+    // Al introducir cosas en el Form se ocultan las alertas del formulario
+    form_alerts.classList.add("form_alerts_hide");
+    form_alerts.querySelector("DIV").classList.remove("alert-success");
+
+    switch (event.target.name) { // Validación dependiendo el input
+    case "telefono":
+        console.log(event.target.value);
+        
+        break;
+    case "nombre":
+        // Verificar un tamaño mínimo
+        if ( ! event.target.value.length ){
+            event.target.classList.remove("is-valid");
+            event.target.classList.remove("is-invalid");
+        } else if ( event.target.value.length < 2 ){
+            event.target.classList.add("is-invalid");
+            event.target.classList.remove("is-valid");
+        } else {
+            event.target.classList.add("is-valid");
+            event.target.classList.remove("is-invalid");
+        }
+        break;
+    case "email":
+        console.log(event.target.value);
+        break;
+    case "mensaje":
+        // Verificar que no exceda los 500 characters
+        if ( ! event.target.value.length ){
+            event.target.classList.remove("is-valid");
+            event.target.classList.remove("is-invalid");
+        } else if ( event.target.value.length > 500 ){
+            event.target.classList.add("is-invalid");
+            event.target.classList.remove("is-valid");
+        } else {
+            event.target.classList.add("is-valid");
+            event.target.classList.remove("is-invalid");
+        }
+        break;
+    default:
+        // No se hace nada
+        break;
+    }
+};
+
+
 formulario.addEventListener(
     'change',
-    event => {
-        // Al introducir cosas en el Form se ocultan las alertas del formulario
-        form_alerts.classList.add("form_alerts_hide");
-        form_alerts.querySelector("DIV").classList.remove("alert-success");
-
-        switch (event.target.name) { // Validación dependiendo el input
-        case "telefono":
-
-            break;
-        case "nombre":
-
-            break;
-        case "email":
-
-            break;
-        case "mensaje":
-            // Verificar que no exceda los 500 characters
-            if ( ! event.target.value.length ){
-                event.target.classList.remove("is-valid");
-                event.target.classList.remove("is-invalid");
-            } else if ( event.target.value.length > 500 ){
-                event.target.classList.add("is-invalid");
-                event.target.classList.remove("is-valid");
-            } else {
-                event.target.classList.add("is-valid");
-                event.target.classList.remove("is-invalid");
-            }
-            break;
-        default:
-            // No se hace nada
-            break;
-        }
-    }
+    formularioValidarDato
 );
 
 formulario.addEventListener(
@@ -50,8 +64,11 @@ formulario.addEventListener(
         event.preventDefault();
 
         // Hacemos el post a través de fetch
-        if (form_alerts.querySelector("DIV").classList.contains("alert-success")){
-            // Ya fue enviado el formulario, no hacer nada
+        if (
+            (form_alerts.querySelector("DIV").classList.contains("alert-success")) ||
+            (formulario.querySelectorAll(".is-invalid").length) // Si hay inputs inválidos
+        ){
+            // Ya fue enviado el formulario o hay inputs inválidos, no hacer nada
         } else {
             // Enviar el formulario por primera vez
             fetch("post_form", {
