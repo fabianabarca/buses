@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.views.decorators.http import require_GET, require_POST
 
 # Create your views here.
@@ -24,11 +24,8 @@ def post_contact_form (request):
             send_mail(asunto, mensaje, email, ['tsgdumbacc@gmail.com'])
             send_mail("Mensaje recibido", "Agredecemos su aporte.", 'tsgdumbacc@gmail.com', [email])
         except BadHeaderError:
-            return HttpResponse('Configuración de correo inválida.')
-    else:
-        pass
-
-    return render(request, 'contacto.html')
+            return JsonResponse(status=500, data={"message": "An error occurred"})
+    return JsonResponse(status=200, data={"message": "Web post successful"})
 
 @require_GET
 def contacto(request):
