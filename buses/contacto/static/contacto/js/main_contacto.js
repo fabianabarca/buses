@@ -1,8 +1,13 @@
 // Contact form page JS
 
 // Se hace query del formulario
-const formulario = document.querySelector('form');
-const form_alerts = formulario.getElementsByClassName("form_alerts")[0]; // .childNodes[1];
+let formulario = document.querySelector('form');
+let form_alerts = formulario.getElementsByClassName("form_alerts")[0]; // .childNodes[1];
+let form_nombre = document.getElementById("id_nombre");
+let form_telefono = document.getElementById("id_telefono");
+let form_mensaje = document.getElementById("id_mensaje");
+let form_email = document.getElementById("id_email");
+
 
 // TODO agregar listener a cada input para validar los datos por aparte con JS
 
@@ -99,6 +104,19 @@ formulario.addEventListener(
     event => {
         // Se cancela el refresh
         event.preventDefault();
+
+        // Validar que todos los espacios están completos:
+        if (! form_nombre.value.length )
+            form_nombre.classList.add("is-invalid");
+
+        // if (! form_telefono.value.length ) // Opcional
+        //     form_telefono.classList.add("is-invalid");
+
+        if (! form_email.value.length )
+            form_email.classList.add("is-invalid");
+
+        if (! form_mensaje.value.length )
+            form_mensaje.classList.add("is-invalid");
 
         // Hacemos el post a través de fetch
         if (
