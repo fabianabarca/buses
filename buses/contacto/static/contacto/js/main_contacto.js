@@ -11,6 +11,7 @@ formulario.addEventListener(
     event => {
         // Al introducir cosas en el Form se ocultan las alertas del formulario
         form_alerts.classList.add("form_alerts_hide");
+        form_alerts.querySelector("DIV").classList.remove("alert-success");
     }
 );
 
@@ -21,7 +22,11 @@ formulario.addEventListener(
         event.preventDefault();
 
         // Hacemos el post a través de fetch
-        fetch("post_form", {
+        if (form_alerts.querySelector("DIV").classList.contains("alert-success")){
+            // Ya fue enviado el formulario, no hacer nada
+        } else {
+            // Enviar el formulario por primera vez
+            fetch("post_form", {
             method: "POST",
             body: new FormData(event.target)
         })
@@ -29,13 +34,12 @@ formulario.addEventListener(
             .then(data => {
                 // Notificar correcto POST
                 console.log(data.message);
-                formulario.reset();
 
                 // Success banner
                 form_alerts.classList.remove("form_alerts_hide");
                 form_alerts.querySelector("DIV").classList.remove("alert-danger");
                 form_alerts.querySelector("DIV").classList.add("alert-success");
-                form_alerts.querySelector("DIV").innerHTML="Formulario <strong>enviado</strong> correctamente! Gracias!";
+                form_alerts.querySelector("DIV").innerHTML='<i class="fas fa-info-circle"></i> Formulario <strong>enviado</strong> correctamente! Gracias!';
 
                 // TODO presentar cuando hay errores del lado del servidor (5xx)
             })
@@ -47,5 +51,15 @@ formulario.addEventListener(
                 form_alerts.querySelector("DIV").classList.add("alert-danger");
                 form_alerts.querySelector("DIV").innerHTML="Formulario <strong>no enviado</strong> debido a error de conectividad.";
             });
+        }
+    }
+);
+
+formulario.addEventListener(
+    'reset',
+    event => {
+        // Al ejecutar un reset se ocultan las alertas del formulario
+        form_alerts.classList.add("form_alerts_hide");
+        form_alerts.querySelector("DIV").classList.remove("alert-success");
     }
 );

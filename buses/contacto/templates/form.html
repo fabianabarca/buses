@@ -1,6 +1,8 @@
 <form
     method="post"
     action="/post_form"
+    class="needs-validation"
+    novalidate
 >
   {% csrf_token %}
   <div class="form-group">
@@ -13,6 +15,12 @@
       placeholder="Nombre completo"
       required
     />
+    <div class="valid-feedback">
+        Luce muy bien
+    </div>
+    <div class="invalid-feedback">
+        Uhmm... algo no está bien :(
+    </div>
   </div>
   <div class="form-group">
     <label for="id_telefono">Teléfono</label>
@@ -23,6 +31,12 @@
       name="telefono"
       placeholder="Teléfono (opcional)"
     />
+    <div class="valid-feedback">
+        Excelente!
+    </div>
+    <div class="invalid-feedback">
+        El número solo lleva números espacios/guiones y/o un único <strong>+</strong>
+    </div>
   </div>
   <div class="form-group">
     <label for="id_email">Correo electrónico</label>
@@ -35,6 +49,12 @@
       placeholder="ejemplo@dominio.com (opcional)"
       required
     />
+    <div class="valid-feedback">
+        Buen correo!
+    </div>
+    <div class="invalid-feedback">
+        Este correo no parece válido :T
+    </div>
     <small id="emailHelp" class="form-text text-muted"
       >A este correo electrónico llega la respuesta.</small
     >
@@ -58,11 +78,18 @@
       name="mensaje"
       rows="3"
     ></textarea>
+    <div class="valid-feedback">
+        Gracias!
+    </div>
+    <div class="invalid-feedback">
+        Por favor reducir el tamaño del mensaje a lo más importante, gracias.
+    </div>
   </div>
-  <button class="btn btn-primary" type="submit">Enviar</button>
-
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-danger" type="reset">Limpiar</button>
+    <button class="btn btn-primary" type="submit">Enviar</button>
+  </div>
   <div class="form_alerts form_alerts_hide">
-      <div class="alert alert-success" role="alert"></div>
+      <div class="alert" role="alert"></div>
   </div>
-
 </form>
