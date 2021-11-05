@@ -1,0 +1,91 @@
+.time-badge-turrujal,
+.time-badge-sanluis,
+.time-badge-acosta,
+.time-badge-jorco,
+.time-badge-sangabriel {
+    min-width: 12ch;
+    display: inline-block;
+    vertical-align: middle !important;
+}
+
+.time-badge-turrujal::after, .time-badge-turrujal::before,
+.time-badge-sanluis::after, .time-badge-sanluis::before,
+.time-badge-acosta::after, .time-badge-acosta::before,
+.time-badge-jorco::after, .time-badge-jorco::before,
+.time-badge-sangabriel::after, .time-badge-sangabriel::before {
+    display: inline-block;
+    margin-left: 1.7ch;
+    margin-right: 1.7ch;
+	  padding: .275rem .5em;
+	  font-size: 75%;
+	  font-weight: 600;
+	  line-height: 1;
+	  text-align: center;
+	  white-space: nowrap;
+	  vertical-align: baseline;
+	  border-radius: .3125rem;
+	  transition: all .2s ease-in-out;
+	  width: 4.2ch;
+}
+
+
+.prox_derecha .time-badge-turrujal::after,
+.prox_izquierda .time-badge-turrujal::after {
+    content: 'TU';
+	  background-color: #FF4500;
+	  color: white;
+}
+
+.prox_derecha .time-badge-sanluis::after,
+.prox_izquierda .time-badge-sanluis::after {
+    content: 'SL';
+	  background-color: #FFA500;
+	  color: black;
+}
+
+.prox_derecha .time-badge-acosta::after,
+.prox_izquierda .time-badge-acosta::after {
+    content: 'AC';
+	  color: #fff;
+	  background-color: #71869d;
+}
+
+.prox_derecha .time-badge-jorco::after,
+.prox_izquierda .time-badge-jorco::after {
+    content: 'JO';
+	  color: #fff;
+	  background-color: #71869d;
+}
+
+.prox_derecha .time-badge-sangabriel::after,
+.prox_izquierda .time-badge-sangabriel::after {
+    /* content: 'SG'; */
+	  background-color: #FF4500;
+	  color: white;
+}
+
+.prox_izquierda {
+    display: inline-grid;
+    justify-content: center;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-right: 0;
+    padding-left: 0;
+
+    border-right-width: 1px;
+	  border-right-style: solid;
+    border-right-color: #d7dde4;
+}
+
+.prox_derecha {
+    display: inline-grid;
+    justify-content: center;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-right: 0;
+    padding-left: 0;
+
+    border-left-width: 1px;
+	  border-left-style: solid;
+    border-left-color: #d7dde4;
+}

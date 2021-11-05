@@ -15,11 +15,6 @@
     padding: 0;
 }
 
-.proxbus-row {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-}
-
 .proxbus-emph-row {
     /* Emphasis column*/
     margin-left: 18px;
@@ -29,8 +24,6 @@
 
 .proxbus-emph-col {
     /* Emphasis column*/
-    padding-left: 0;
-    padding-right: 0;
     font-size: 1.25rem;
 }
 
@@ -45,10 +38,6 @@
 
 .custom-vertical-space {
     min-height: 10ch;
-}
-
-.custom-badge {
-    min-width: 4.2ch;
 }
 
 #content-desktop {display: block;}
