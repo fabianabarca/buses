@@ -157,5 +157,4 @@ RUTAS_MAP_MAX_BOUNDS = "[[9.766885, -84.219248], [9.971565, -84.013859]]"
 
 ## Load secrets
 if os.path.exists(os.path.join(BASE_DIR, 'buses/secrets.py')):
-    print ("There is a secrets file")
     from buses.secrets import *
