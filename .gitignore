@@ -13,6 +13,7 @@ migrations*
 .env
 venv_server*
 secrets.py
+staticfiles
 
 # Nodejs:
 node_modules
