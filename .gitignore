@@ -17,3 +17,8 @@ staticfiles
 
 # Nodejs:
 node_modules
+
+# Junk data
+back_up*
+backup/
+*backup*
