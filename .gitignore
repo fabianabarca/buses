@@ -12,6 +12,7 @@ migrations*
 # Environments
 .env
 venv_server*
+secrets.py
 
 # Nodejs:
 node_modules
