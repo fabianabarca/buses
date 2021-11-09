@@ -49,8 +49,8 @@ WantedBy=multi-user.target
 " > gunicorn.service
 
     echo "server {
-    listen 80;
-    server_name 161.35.54.122;
+    listen 443;
+    server_name transportessangabriel.com www.transportessangabriel.com 143.198.233.186;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
@@ -98,7 +98,15 @@ else
     then
         :
     else
-        virtualenv venv_server --python=python3.7
+        { which python3.9 &&
+            virtualenv venv_server --python=python3.9
+        } || {
+        which python3.8 &&
+            virtualenv venv_server --python=python3.8
+        } || {
+        which python3.7 &&
+            virtualenv venv_server --python=python3.7
+        }
         echo "
         Utilice el siguiente comando para acceder al ambiente virtual
         agregar el mismo al final de la configuración ~/.bashrc para
