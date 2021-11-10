@@ -23,21 +23,35 @@ def post_contact_form (request):
     nombre = formulario.cleaned_data['nombre']
     email = formulario.cleaned_data['email']
     asunto = formulario.cleaned_data['asunto']
+    telefono = formulario.cleaned_data['telefono']
     mensaje = formulario.cleaned_data['mensaje']
-    mensaje = mensaje + "\n\nEnviado por el usuario: " +\
-        nombre + "\nCorreo: " + '[' + email + ']'
+
+    if telefono:
+        mensaje = "{}\n\nEnviado por el usuario: {}\nCorreo: [{}]\nTeléfono: {}"\
+        .format(mensaje, nombre, email, telefono)
+    else:
+        mensaje = "{}\n\nEnviado por el usuario: {}\nCorreo: [{}]"\
+        .format(mensaje, nombre, email)
 
     try:
         telegram_token = settings.TELEGRAM_BOT_TOKEN
         telegram_chat_id = settings.TELEGRAM_ADMIN_GROUP
-        res = requests.get('https://api.telegram.org/bot' + str(telegram_token) + '/getMe')
+
+        res = requests.get(
+            "https://api.telegram.org/bot{}/getMe" \
+            .format(telegram_token)
+        )
+
         response = json.loads(res.text)
 
         # Comprobar que es el bot de tsg
         assert (response['result']['username'] == "tsgBusesBot")
-        res = requests.get('https://api.telegram.org/bot' + str(telegram_token) +
-                           '/sendMessage?chat_id='+str(telegram_chat_id)+
-                           '&text='+str(asunto)+"\n\n"+str(mensaje))
+
+        res = requests.get(
+            "https://api.telegram.org/bot{}/sendMessage?chat_id={}&text={}\n\n{}" \
+            .format(telegram_token, telegram_chat_id, asunto, mensaje)
+        )
+
         response = json.loads(res.text)
         print(response)
 
