@@ -23,9 +23,15 @@ def post_contact_form (request):
     nombre = formulario.cleaned_data['nombre']
     email = formulario.cleaned_data['email']
     asunto = formulario.cleaned_data['asunto']
+    telefono = formulario.cleaned_data['telefono']
     mensaje = formulario.cleaned_data['mensaje']
-    mensaje = mensaje + "\n\nEnviado por el usuario: " +\
-        nombre + "\nCorreo: " + '[' + email + ']'
+
+    if telefono:
+        mensaje = "{}\n\nEnviado por el usuario: {}\nCorreo: [{}]\nTeléfono: {}"\
+        .format(mensaje, nombre, email, telefono)
+    else:
+        mensaje = "{}\n\nEnviado por el usuario: {}\nCorreo: [{}]"\
+        .format(mensaje, nombre, email)
 
     try:
         telegram_token = settings.TELEGRAM_BOT_TOKEN
