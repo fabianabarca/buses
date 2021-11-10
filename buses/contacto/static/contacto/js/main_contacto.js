@@ -64,7 +64,7 @@ let validarInputCorreo = (event) => {
   } else if (
     // Si el correo tiene un @
     element.value.split("@").length == 2 &&
-    element.value.split("@")[1].split(".").length > 2
+    element.value.split("@")[1].split(".").length > 1
   ) {
     element.classList.remove("is-invalid");
     element.classList.add("is-valid");
