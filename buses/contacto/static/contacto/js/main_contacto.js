@@ -32,6 +32,10 @@ let validarInputNombre = (event) => {
 
 let validarInputTelefono = (event) => {
   let element = event.target;
+
+  // Delete multiple spaces keep only one
+  element.value = element.value.replace(/ * /g, ' ');
+
   if (!element.value.length) {
     element.classList.remove("is-valid");
     element.classList.remove("is-invalid");
@@ -58,13 +62,19 @@ let validarInputTelefono = (event) => {
 
 let validarInputCorreo = (event) => {
   let element = event.target;
+
+  // Delete spaces at the end
+  element.value = element.value.replace(/ *$/, '');
+
   if (!element.value.length) {
     element.classList.remove("is-valid");
     element.classList.remove("is-invalid");
   } else if (
     // Si el correo tiene un @
-    element.value.split("@").length == 2 &&
-    element.value.split("@")[1].split(".").length > 1
+    element.value.split(" ").length == 1 && // no spaces in text
+    element.value.split("@").length == 2 && // no more than one @
+    element.value.split("@")[1].split(".").length > 1 && // at least one dot
+    element.value.length < 60 // Max email length
   ) {
     element.classList.remove("is-invalid");
     element.classList.add("is-valid");
