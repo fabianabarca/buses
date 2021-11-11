@@ -12,6 +12,12 @@ let form_telefono = document.getElementById("id_telefono");
 let form_mensaje = document.getElementById("id_mensaje");
 let form_email = document.getElementById("id_email");
 
+// Clear form on browser refresh
+form_nombre.value = '';
+form_telefono.value = '';
+form_mensaje.value = '';
+form_email.value = '';
+
 ////////////////////////////////////////////////////////////////
 ////////////////// Definir los métodos para cada evento ////////
 ////////////////////////////////////////////////////////////////
