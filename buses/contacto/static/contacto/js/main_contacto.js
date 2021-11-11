@@ -22,86 +22,86 @@ form_email.value = '';
 ////////////////// Definir los métodos para cada evento ////////
 ////////////////////////////////////////////////////////////////
 
-let validarInputNombre = (event) => {
+let validarInputNombre = ({target}) => {
   // Verificar un tamaño mínimo
-  if (!event.target.value.length) {
-    event.target.classList.remove("is-valid");
-    event.target.classList.remove("is-invalid");
-  } else if (event.target.value.length < 2) {
-    event.target.classList.add("is-invalid");
-    event.target.classList.remove("is-valid");
-  } else {
-    event.target.classList.add("is-valid");
-    event.target.classList.remove("is-invalid");
-  }
-};
-
-let validarInputTelefono = (event) => {
-  let element = event.target;
 
   // Delete multiple spaces keep only one
-  element.value = element.value.replace(/ * /g, ' ');
+  target.value = target.value.replace(/ * /g, ' ');
 
-  if (!element.value.length) {
-    element.classList.remove("is-valid");
-    element.classList.remove("is-invalid");
+  if (!target.value.length) {
+    target.classList.remove("is-valid");
+    target.classList.remove("is-invalid");
+  } else if (target.value.length < 2) {
+    target.classList.add("is-invalid");
+    target.classList.remove("is-valid");
+  } else {
+    target.classList.add("is-valid");
+    target.classList.remove("is-invalid");
+  }
+};
+
+let validarInputTelefono = ({target}) => {
+  // Delete multiple spaces keep only one
+  target.value = target.value.replace(/ * /g, ' ');
+
+  if (!target.value.length) {
+    target.classList.remove("is-valid");
+    target.classList.remove("is-invalid");
   } else if (
     // Si no tiene un + el número se observa si es un entero
-    element.value.split("+").length == 1 &&
-    Number.isInteger(Number(element.value.replace(/[- ]/g, "")))
+    target.value.split("+").length == 1 &&
+    Number.isInteger(Number(target.value.replace(/[- ]/g, "")))
   ) {
-    element.classList.remove("is-invalid");
-    element.classList.add("is-valid");
+    target.classList.remove("is-invalid");
+    target.classList.add("is-valid");
   } else if (
     // Si tiene un + se toma unicamente el número se observa si es un entero
-    element.value.split("+").length == 2 &&
-    Number.isInteger(Number(element.value.split("+")[1].replace(/[- ]/g, "")))
+    target.value.split("+").length == 2 &&
+    Number.isInteger(Number(target.value.split("+")[1].replace(/[- ]/g, "")))
   ) {
-    element.classList.remove("is-invalid");
-    element.classList.add("is-valid");
+    target.classList.remove("is-invalid");
+    target.classList.add("is-valid");
   } else {
     // Si no es un número entero entonces es inválido
-    element.classList.remove("is-valid");
-    element.classList.add("is-invalid");
+    target.classList.remove("is-valid");
+    target.classList.add("is-invalid");
   }
 };
 
-let validarInputCorreo = (event) => {
-  let element = event.target;
-
+let validarInputCorreo = ({target}) => {
   // Delete spaces at the end
-  element.value = element.value.replace(/ *$/, '');
+  target.value = target.value.replace(/ *$/, '');
 
-  if (!element.value.length) {
-    element.classList.remove("is-valid");
-    element.classList.remove("is-invalid");
+  if (!target.value.length) {
+    target.classList.remove("is-valid");
+    target.classList.remove("is-invalid");
   } else if (
     // Si el correo tiene un @
-    element.value.split(" ").length == 1 && // no spaces in text
-    element.value.split("@").length == 2 && // no more than one @
-    element.value.split("@")[1].split(".").length > 1 && // at least one dot
-    element.value.length < 60 // Max email length
+    target.value.split(" ").length == 1 && // no spaces in text
+    target.value.split("@").length == 2 && // no more than one @
+    target.value.split("@")[1].split(".").length > 1 && // at least one dot
+    target.value.length < 60 // Max email length
   ) {
-    element.classList.remove("is-invalid");
-    element.classList.add("is-valid");
+    target.classList.remove("is-invalid");
+    target.classList.add("is-valid");
   } else {
     // Si el correo no tiene @
-    element.classList.remove("is-valid");
-    element.classList.add("is-invalid");
+    target.classList.remove("is-valid");
+    target.classList.add("is-invalid");
   }
 };
 
-let validarInputMensaje = (event) => {
+let validarInputMensaje = ({target}) => {
   // Verificar que no exceda los 500 characters
-  if (!event.target.value.length) {
-    event.target.classList.remove("is-valid");
-    event.target.classList.remove("is-invalid");
-  } else if (event.target.value.length > 500) {
-    event.target.classList.add("is-invalid");
-    event.target.classList.remove("is-valid");
+  if (!target.value.length) {
+    target.classList.remove("is-valid");
+    target.classList.remove("is-invalid");
+  } else if (target.value.length > 500) {
+    target.classList.add("is-invalid");
+    target.classList.remove("is-valid");
   } else {
-    event.target.classList.add("is-valid");
-    event.target.classList.remove("is-invalid");
+    target.classList.add("is-valid");
+    target.classList.remove("is-invalid");
   }
 };
 
