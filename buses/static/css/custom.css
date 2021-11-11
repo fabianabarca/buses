@@ -4,6 +4,36 @@
  *
  */
 
+.proxbus-card-body {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.proxbus-container {
+    padding: 0;
+}
+
+.proxbus-row {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.proxbus-emph-row {
+    /* Emphasis column*/
+    margin-left: 18px;
+    margin-right: 18px;
+    background-color: #d7dde4
+}
+
+.proxbus-emph-col {
+    /* Emphasis column*/
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.25rem;
+}
+
 .custom-sticky-top {
     position: sticky;
     top: 0px;
