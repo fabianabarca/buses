@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import get_object_or_404, render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -20,9 +21,14 @@ def post_contact_form (request):
         mensaje = mensaje + "\nEnviado por el usuario: " +\
             nombre + '[' + email + ']'
 
-        try: # FIXME: implementar correctamente la configuración de SMTP usando correo del administrador que está en base de datos
-            send_mail(asunto, mensaje, email, ['tsgdumbacc@gmail.com'])
-            # send_mail("Mensaje recibido", "Agredecemos su aporte.", 'tsgdumbacc@gmail.com', [email]) # TODO remove
+        try: # TODO agregar la cuenta oficial como CC
+            assert settings.EMAIL_HOST_USER
+            send_mail(asunto, mensaje, email, [settings.EMAIL_HOST_USER])
+            send_mail("Mensaje recibido", "Agredecemos su aporte.", settings.EMAIL_HOST_USER, [email])
+
+        except AssertionError:
+            # TODO notificar por medio de el BotTelegram
+            return JsonResponse(status=500, data={"message": "Error de configuración, lo sentimos, trabajamos en resolverlo."})
 
         except BadHeaderError:
             return JsonResponse(status=500, data={"message": "Ha ocurrido un error, por favor intente más tarde, gracias."})
