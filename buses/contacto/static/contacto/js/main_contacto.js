@@ -43,6 +43,7 @@ let validarInputNombre = ({target}) => {
 let validarInputTelefono = ({target}) => {
   // Delete multiple spaces keep only one
   target.value = target.value.replace(/ * /g, ' ');
+  target.value = target.value.replace(/-*-/g, '-');
 
   if (!target.value.length) {
     target.classList.remove("is-valid");
