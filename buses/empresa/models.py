@@ -19,7 +19,7 @@ class Funcionario(models.Model):
     identificacion = models.IntegerField()
 
     # Prueba
-    url_site = models.CharField(max_length=256)
+    url_site = models.SlugField(max_length=256)
 
     nombre = models.CharField(max_length=256)
     # apellido_a = models.CharField(max_length=256)
