@@ -7,3 +7,4 @@ sqlparse
 pillow
 gunicorn
 shapeeditor
+requests
