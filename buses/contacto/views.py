@@ -62,7 +62,6 @@ def post_contact_form (request):
     try: # TODO agregar la cuenta oficial como CC
         assert settings.EMAIL_HOST_USER
         send_mail(asunto, mensaje, email, [settings.EMAIL_HOST_USER, "transgabriel@ice.co.cr"])
-        send_mail("Mensaje recibido", "Agredecemos su aporte.", settings.EMAIL_HOST_USER, [email])
 
     except AssertionError:
         # TODO notificar por medio del BotTelegram
