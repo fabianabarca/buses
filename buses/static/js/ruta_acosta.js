@@ -78,19 +78,9 @@ ruta_app.component("mapa-acosta", {
       (this.currentRoundTripRoute = this.roundTripRoutes[0]),
         (this.polyline = L.polyline(this.currentRoundTripRoute.fromRoute));
       this.map = L.map("mapId").setView(this.center, this.zoom);
-      L.tileLayer(
-        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-        {
-          attribution:
-            'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-          maxZoom: 18,
-          id: "mapbox/streets-v11",
-          tileSize: 512,
-          zoomOffset: -1,
-          accessToken:
-            "pk.eyJ1Ijoic2lsdmlvbnNreSIsImEiOiJja2tobmQzZnIwM2w1MnZtdW5tMDVmN3pxIn0.csMFD5YV9WSqD0kFTQQ6Uw",
-        }
-      ).addTo(this.map);
+      var layer = new L.StamenTileLayer("terrain");
+      this.map.addLayer(layer);
+      
       this.map.setMinZoom(11);
       this.map.setMaxBounds([
         [9.766885, -84.219248],
