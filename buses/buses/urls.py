@@ -24,7 +24,7 @@ urlpatterns = [
     path('rutas/', include('rutas.urls')),
     # path('noticias/', include('noticias.urls')),
     path('empresa/', include('empresa.urls')),
-    # path('comunidades/', include('comunidades.urls')),
+    path('comunidades/', include('comunidades.urls')),
     path('contacto/', include('contacto.urls')),
     path('admin/', admin.site.urls),
     path('shapeeditor/', include('shapeeditor.urls')),

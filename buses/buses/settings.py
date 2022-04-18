@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'rutas.apps.RutasConfig',
     # 'noticias.apps.NoticiasConfig',
     'empresa.apps.EmpresaConfig',
-    # 'comunidades.apps.ComunidadesConfig',
+    'comunidades.apps.ComunidadesConfig',
     'contacto.apps.ContactoConfig',
     'django.contrib.admin',
     'django.contrib.auth',
