@@ -160,9 +160,6 @@
 
     <hr>
     <h2>Nuestro personal</h2>
-
-    <p class="badge badge-warning small"><i class="fas fa-exclamation-triangle"></i> En construcción</p>
-
     <p>Iniciamos nuestras operaciones con 6 unidades y 9 colaboradores de la zona. Hoy en día tenemos un equipo comprometido con la calidad del servicio a la comunidad.</p>
 
     <p>
@@ -170,7 +167,7 @@
         Mostrar personal
       </a>
     </p>
-    
+
     <div class="collapse" id="funcionarios">
 
       <div class="row mx-n2 mb-5">
@@ -179,8 +176,8 @@
         <!-- Team -->
         <div class="card h-100 transition-3d-hover">
           <div class="card-body">
-            <div class="avatar avatar-lg avatar-circle mb-4">
-              <img class="avatar-img" src="http://161.35.54.122:10066/perfil/imagenes/{{ funcionario.url_site }}" alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}">
+              <div class="avatar avatar-lg avatar-circle mb-4">
+                  <img class="avatar-img" src="{% static '/img/personal/' %}{{ funcionario.url_site }}" alt="{{ funcionario.nombre }} - {{ funcionario.cargo }}">
             </div>
 
             <span class="d-block small font-weight-bold text-cap mb-1">{{ funcionario.cargo }}</span>

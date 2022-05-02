@@ -4,16 +4,21 @@ __init__.py
 migrations*
 
 # Files
-*.png
 *.o
 *.pyc
-*.jpg
 *.zip
 *.tar.*
 
 # Environments
 .env
 venv_server*
+secrets.py
+staticfiles
 
 # Nodejs:
 node_modules
+
+# Junk data
+back_up*
+backup/
+*backup*

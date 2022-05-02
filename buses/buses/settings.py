@@ -8,7 +8,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -18,17 +17,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'ncvn$%5pvewazmo)m&6xck96ek!gq79d404=$ej#j457*$x@6_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['transportessangabriel.com', 
-                 'www.transportessangabriel.com', 
-                 '143.198.233.186', 
-                 '161.35.54.122', 
-                 '127.0.0.1', 
-                 'localhost']
+# En desarollo no hay ALLOWED_HOST, estos solo se definen en secrets.py para producción
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -46,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'shapeeditor' ## Si esta línea falla, hacer "pip install shapeeditor" para instalar la dependencia faltante
+    'shapeeditor'
 ]
 
 MIDDLEWARE = [
@@ -133,15 +128,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Email configuration:
-
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# Email basic configuration:
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_USE_TLS = True
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = ''
-# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 ## Shapeeditor
 LOGIN_URL='/admin/login/'
@@ -166,3 +154,7 @@ SHAPEEDITOR_ROUTING_MACHINE_URL = "http://161.35.54.122:5000/route/v1/driving/" 
 ## Rutas section
 # Restricción del mapa a esta área
 RUTAS_MAP_MAX_BOUNDS = "[[9.766885, -84.219248], [9.971565, -84.013859]]"
+
+## Load secrets
+if os.path.exists(os.path.join(BASE_DIR, 'buses/secrets.py')):
+    from buses.secrets import *

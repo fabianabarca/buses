@@ -1,0 +1,9 @@
+.form_alerts {
+    margin-top: 1.2ch;
+    transition-duration: 0.3s;
+}
+
+.form_alerts_hide {
+    overflow-x: hidden;
+    height: 0;
+}
