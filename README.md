@@ -1,7 +1,7 @@
 # web-buses: estructura de la página web
 
 Cómo comenzar a programar:
-[Developer setup](./dev_setup.md)
+[Developer setup](./docs/dev_setup.md)
 (Comparte cualquier duda para mejorar la documentación)
 
 Todas las páginas tienen dentro de *base.html*:
