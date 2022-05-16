@@ -8,3 +8,4 @@ pillow
 gunicorn
 shapeeditor
 requests
+django-cors-headers

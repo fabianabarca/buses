@@ -42,12 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'shapeeditor' ## Si esta línea falla, hacer "pip install shapeeditor" para instalar la dependencia faltante
+    'shapeeditor', ## Si esta línea falla, hacer "pip install shapeeditor" para instalar la dependencia faltante
+    'django-cors-headers' # Needed for CORS when routing machine is not in the same domine
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -154,6 +156,19 @@ SHAPEEDITOR_ROUTING_MACHINE_URL = "http://transportessangabriel.com:5000/route/v
 ## Rutas section
 # Restricción del mapa a esta área
 RUTAS_MAP_MAX_BOUNDS = "[[9.766885, -84.219248], [9.971565, -84.013859]]"
+
+## CORS config:
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = [
+    "http://transportessangabriel.com:5000"
+]
+
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+]
+
 
 ## Load secrets
 if os.path.exists(os.path.join(BASE_DIR, 'buses/secrets.py')):
