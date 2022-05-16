@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'shapeeditor', ## Si esta línea falla, hacer "pip install shapeeditor" para instalar la dependencia faltante
-    'django-cors-headers' # Needed for CORS when routing machine is not in the same domine
+    'corsheaders' # Needed for CORS when routing machine is not in the same domine
 ]
 
 MIDDLEWARE = [
