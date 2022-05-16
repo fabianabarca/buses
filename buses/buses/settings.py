@@ -151,7 +151,7 @@ LOGIN_URL='/admin/login/'
 SHAPEEDITOR_MAP_EXTENT_AREA = [[-84.43669241118701, 9.726525930153954],[-83.72894500499169, 9.99625455768836]]
 
 SHAPEEDITOR_MAP_CENTER = [-84.1027104, 9.865107]
-SHAPEEDITOR_ROUTING_MACHINE_URL = "http://transportessangabriel.com:5000/route/v1/driving/" # costa rica
+SHAPEEDITOR_ROUTING_MACHINE_URL = "https://transportessangabriel.com/route/v1/driving/" # costa rica
 
 ## Rutas section
 # Restricción del mapa a esta área
@@ -160,9 +160,7 @@ RUTAS_MAP_MAX_BOUNDS = "[[9.766885, -84.219248], [9.971565, -84.013859]]"
 ## CORS config:
 CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ORIGIN_WHITELIST = [
-    "http://transportessangabriel.com:5000"
-]
+CORS_ORIGIN_WHITELIST = []
 
 CORS_ALLOW_METHODS = [
     "GET",
