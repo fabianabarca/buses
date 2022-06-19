@@ -35,6 +35,16 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'css/colores_rutas.css' %}">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB0MQM5B40"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NB0MQM5B40');
+    </script>
+
     {% block custom_header %}
     <!-- Aquí el source del CSS específico de cada página -->
     {% endblock %}
