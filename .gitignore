@@ -2,8 +2,13 @@
 __pycache__*
 __init__.py
 migrations*
+marca*
+gtfs*
+horarios*
 
 # Files
+.DS_Store
+buses/package-lock.json
 *.o
 *.pyc
 *.zip
