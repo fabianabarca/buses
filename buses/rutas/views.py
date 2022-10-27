@@ -6,22 +6,27 @@ from django.conf import settings
 from django.db.models import Q
 
 '''
+@param: ninguno
+@description: funcion auxiliar para obtener contexto de tiempo
+@returns: objeto fecha con contexto temporal
+'''
+def obtenerFecha():
+    ahora = datetime.now()
+    meses = ('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre')
+    dias = ('lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo')
+    return [dias[ahora.weekday()], ahora.day, meses[ahora.month - 1], ahora.year]
+
+'''
 @param: http request
 @description: define contexto de tiempo y rutas para pagina html de rutas
 @returns: html render del request
 '''
 def rutas(request):
     rutas = Route.objects.all()
-    ahora = datetime.now()
-    meses = ('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre')
-    dias = ('lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo')
-    fecha = [dias[ahora.weekday()], ahora.day, meses[ahora.month - 1], ahora.year]
-
     context = {
         'rutas': rutas,
-        'fecha': fecha
+        'fecha': obtenerFecha()
     }
-
     return render(request, 'rutas.html', context)
 
 
