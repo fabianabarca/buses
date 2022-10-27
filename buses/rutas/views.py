@@ -5,7 +5,11 @@ from itertools import zip_longest
 from django.conf import settings
 from django.db.models import Q
 
-
+'''
+@param: http request
+@description: define contexto de tiempo y rutas para pagina html de rutas
+@returns: html render del request
+'''
 def rutas(request):
     rutas = Route.objects.all()
     ahora = datetime.now()
@@ -14,21 +18,19 @@ def rutas(request):
     fecha = [dias[ahora.weekday()], ahora.day, meses[ahora.month - 1], ahora.year]
 
     context = {
-        'rutas': rutas, # Lista de rutas
+        'rutas': rutas,
         'fecha': fecha
     }
 
     return render(request, 'rutas.html', context)
 
-# Esta sí es
 
+'''
+@param: http request, url de la ruta
+@description: muestra la informacion de cada ruta, san gabriel o acosta-ramales
+@returns: render de la pagina con las rutas obtenidas
+'''
 def ruta(request, url_ruta):
-    ''' Función para mostrar la información de cada ruta.
-    Opciones:
-    - San Gabriel
-    - Acosta con sus diferentes ramales
-    '''
-
     # Obtener la información de la ruta consultada
     ''' Valores:
     route_id, agency, short_name, long_name, desc,
