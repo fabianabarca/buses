@@ -31,6 +31,20 @@ def rutas(request):
 
 
 '''
+@param: recibe url con el id de la ruta, 'sangabriel' o 'acosta'
+@description: escoje la ruta basado en el url y devuelve valores de ambiente
+@returns: arreglo con los códigos de las rutas y objeto ruta
+'''
+def setRouteIdArray(url_ruta):
+    if url_ruta == 'sangabriel':
+        route = get_object_or_404(Route, route_id='SGAB')
+        route_id_array = ['SGAB', 'SGAB']
+    elif url_ruta == 'acosta':
+        route = get_object_or_404(Route, route_id='ACOS')
+        route_id_array = ['ACOS', 'TURR']
+    return route_id_array, route
+
+'''
 @param: http request, url de la ruta
 @description: muestra la informacion de cada ruta, san gabriel o acosta-ramales
 @returns: render de la pagina con las rutas obtenidas
@@ -41,12 +55,7 @@ def ruta(request, url_ruta):
     route_id, agency, short_name, long_name, desc,
     route_type, url, color, text_color
     '''
-    if url_ruta == 'sangabriel':
-        route = get_object_or_404(Route, route_id='SGAB')
-        route_id_array = ['SGAB', 'SGAB']
-    elif url_ruta == 'acosta':
-        route = get_object_or_404(Route, route_id='ACOS')
-        route_id_array = ['ACOS', 'TURR']
+    route_id_array, route = setRouteIdArray(url_ruta)
 
     # Extraer los viajes asociados con esta ruta para cada servicio y en cada dirección
     ''' Valores:
