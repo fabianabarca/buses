@@ -33,9 +33,12 @@ def rutas(request):
 '''
 @param: recibe url con el id de la ruta, 'sangabriel' o 'acosta'
 @description: escoje la ruta basado en el url y devuelve valores de ambiente
+Valores: (documentación previa)
+route_id, agency, short_name, long_name, desc,
+route_type, url, color, text_color
 @returns: arreglo con los códigos de las rutas y objeto ruta
 '''
-def setRouteIdArray(url_ruta):
+def obtenerInfoRuta(url_ruta):
     if url_ruta == 'sangabriel':
         route = get_object_or_404(Route, route_id='SGAB')
         route_id_array = ['SGAB', 'SGAB']
@@ -45,27 +48,29 @@ def setRouteIdArray(url_ruta):
     return route_id_array, route
 
 '''
+@param: arreglo con los ids de la ruta
+@description: obtiene de GTFS el trip en formato .txt
+@returns: horarios de las rutas entre semana
+'''
+def obtenerViajesEntreSemana(route_id_array):
+    horario_entresemana_0, ramales_entresemana_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='entresemana',direction='0')
+    horario_entresemana_1, ramales_entresemana_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='entresemana',direction='1')
+    return horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_1
+
+'''
 @param: http request, url de la ruta
 @description: muestra la informacion de cada ruta, san gabriel o acosta-ramales
 @returns: render de la pagina con las rutas obtenidas
 '''
 def ruta(request, url_ruta):
-    # Obtener la información de la ruta consultada
-    ''' Valores:
-    route_id, agency, short_name, long_name, desc,
-    route_type, url, color, text_color
-    '''
-    route_id_array, route = setRouteIdArray(url_ruta)
-
+    route_id_array, route = obtenerInfoRuta(url_ruta)
     # Extraer los viajes asociados con esta ruta para cada servicio y en cada dirección
     ''' Valores:
     route, service,	trip_id, trip_headsign, trip_short_name,
     direction (0: hacia San José, 1: desde San José), shape,
     wheelchair_accessible, bikes_allowed
     '''
-
-    horario_entresemana_0, ramales_entresemana_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='entresemana',direction='0')
-    horario_entresemana_1, ramales_entresemana_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='entresemana',direction='1')
+    horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_1 = obtenerViajesEntreSemana(route_id_array)
     horario_sabado_0, ramales_sabado_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='sabado',direction='0')
     horario_sabado_1, ramales_sabado_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='sabado',direction='1')
     horario_domingo_0, ramales_domingo_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='domingo',direction='0')
