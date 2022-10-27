@@ -64,35 +64,12 @@ def ruta(request, url_ruta):
     wheelchair_accessible, bikes_allowed
     '''
 
-    horario_entresemana_0, ramales_entresemana_0 = Trip.objects.horario_y_ramales(
-        route_id_array=route_id_array,
-        service_id='entresemana',
-        direction='0')
-
-    horario_entresemana_1, ramales_entresemana_1 = Trip.objects.horario_y_ramales(
-        route_id_array=route_id_array,
-        service_id='entresemana',
-        direction='1')
-
-    horario_sabado_0, ramales_sabado_0 = Trip.objects.horario_y_ramales(
-        route_id_array=route_id_array,
-        service_id='sabado',
-        direction='0')
-
-    horario_sabado_1, ramales_sabado_1 = Trip.objects.horario_y_ramales(
-        route_id_array=route_id_array,
-        service_id='sabado',
-        direction='1')
-
-    horario_domingo_0, ramales_domingo_0 = Trip.objects.horario_y_ramales(
-        route_id_array=route_id_array,
-        service_id='domingo',
-        direction='0')
-
-    horario_domingo_1, ramales_domingo_1 = Trip.objects.horario_y_ramales(
-        route_id_array=route_id_array,
-        service_id='domingo',
-        direction='1')
+    horario_entresemana_0, ramales_entresemana_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='entresemana',direction='0')
+    horario_entresemana_1, ramales_entresemana_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='entresemana',direction='1')
+    horario_sabado_0, ramales_sabado_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='sabado',direction='0')
+    horario_sabado_1, ramales_sabado_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='sabado',direction='1')
+    horario_domingo_0, ramales_domingo_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='domingo',direction='0')
+    horario_domingo_1, ramales_domingo_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='domingo',direction='1')
 
 
     # Entre semana
@@ -120,12 +97,8 @@ def ruta(request, url_ruta):
                         fillvalue='-')
 
     # Momento actual
-
     ahora = datetime.now()
-    # ahora = datetime(2020, 11, 21, 22, 32, 52, 978416)
-    meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
-    dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
-    fecha = [dias[ahora.weekday()], ahora.day, meses[ahora.month - 1], ahora.year]
+    fecha = obtenerFecha() 
 
     # Próximo bus
 
