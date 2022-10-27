@@ -14,59 +14,35 @@ ruta_app.component('proximobus', {
 
 <!-- Primera fila -->
 <div class="row proxbus-row font-weight-bold">
-    <div class="col proxbus-emph-col" v-if="hacia_sanjose[0]">
-        <span class="align-middle">{{ hacia_sanjose[0] }}</span>&nbsp;
-        <span v-if="is_badge_visible(hacia_sanjose_ramal[0])"
-            :class="['badge', 'custom-badge',
-            filter_badge(hacia_sanjose_ramal[0])
-            ]">{{ hacia_sanjose_ramal[0] }}</span>
+    <div class="col proxbus-emph-col prox_izquierda" v-if="hacia_sanjose[0]">
+      <div v-show="hacia_sanjose[0]" :class="[filter_badge(hacia_sanjose_ramal[0])]">{{ hacia_sanjose[0] }}</div>
     </div>
-    <div class="col" v-else>No hay más buses hoy</div>
+    <div class="col prox_izquierda" v-else>No hay más buses hoy</div>
 
-    <div class="col proxbus-emph-col" v-if="desde_sanjose[0]">
-        <span class="align-middle">{{ desde_sanjose[0] }}</span>&nbsp;
-        <span v-if="is_badge_visible(desde_sanjose_ramal[0])"
-            :class="['badge', 'custom-badge',
-            filter_badge(desde_sanjose_ramal[0])
-            ]">{{ desde_sanjose_ramal[0] }}</span>
+    <div class="col proxbus-emph-col prox_derecha" v-if="desde_sanjose[0]">
+      <div v-show="desde_sanjose[0]" :class="[filter_badge(desde_sanjose_ramal[0])]">{{ desde_sanjose[0] }}</div>
     </div>
-    <div class="col" v-else>No hay más buses hoy</div>
+    <div class="col prox_derecha" v-else>No hay más buses hoy</div>
 </div>
 
 <!-- Segunda fila -->
-<div class="row proxbus-row font-weight-bold">
-<div class="col">
-        <span v-if="hacia_sanjose[1]" class="align-middle">{{ hacia_sanjose[1] }}</span>&nbsp;
-        <span v-if="is_badge_visible(hacia_sanjose_ramal[1])"
-            :class="['badge', 'custom-badge',
-            filter_badge(hacia_sanjose_ramal[1])
-            ]">{{ hacia_sanjose_ramal[1] }}</span>
-    </div>
-    <div class="col">
-        <span v-if="desde_sanjose[1]" class="align-middle">{{ desde_sanjose[1] }}</span>&nbsp;
-        <span v-if="is_badge_visible(desde_sanjose_ramal[1])"
-            :class="['badge', 'custom-badge',
-            filter_badge(desde_sanjose_ramal[1])
-            ]">{{ desde_sanjose_ramal[1] }}</span>
-    </div>
+<div v-show="hacia_sanjose[1] || desde_sanjose[1]" class="row proxbus-row font-weight-bold">
+  <div class='col prox_izquierda'>
+    <div v-show="hacia_sanjose[1]" :class="[filter_badge(hacia_sanjose_ramal[1])]">{{ hacia_sanjose[1] }}</div>
+  </div>
+  <div class='col prox_derecha'>
+    <div v-show="desde_sanjose[1]" :class="[filter_badge(desde_sanjose_ramal[1])]">{{ desde_sanjose[1] }}</div>
+  </div>
 </div>
 
 <!-- Tercera fila -->
-<div class="row proxbus-row font-weight-bold">
-    <div class="col">
-        <span v-if="hacia_sanjose[2]" class="align-middle">{{ hacia_sanjose[2] }}</span>&nbsp;
-        <span v-if="is_badge_visible(hacia_sanjose_ramal[2])"
-            :class="['badge', 'custom-badge',
-            filter_badge(hacia_sanjose_ramal[2])
-            ]">{{ hacia_sanjose_ramal[2] }}</span>
-    </div>
-    <div class="col">
-        <span v-if="desde_sanjose[2]" class="align-middle">{{ desde_sanjose[2] }}</span>&nbsp;
-        <span v-if="is_badge_visible(desde_sanjose_ramal[2])"
-            :class="['badge', 'custom-badge',
-            filter_badge(desde_sanjose_ramal[2])
-            ]">{{ desde_sanjose_ramal[2] }}</span>
-    </div>
+<div v-show="hacia_sanjose[2] || desde_sanjose[2]" class="row proxbus-row font-weight-bold">
+  <div class='col prox_izquierda'>
+    <div v-show="hacia_sanjose[2]" :class="[filter_badge(hacia_sanjose_ramal[2])]">{{ hacia_sanjose[2] }}</div>
+  </div>
+  <div class='col prox_derecha'>
+    <div v-show="desde_sanjose[2]" :class="[filter_badge(desde_sanjose_ramal[2])]">{{ desde_sanjose[2] }}</div>
+  </div>
 </div>
 </div>
 `,
@@ -86,11 +62,11 @@ ruta_app.component('proximobus', {
             return false;
         },
         filter_badge (ramal){
-            if (ramal == 'SG') return 'invisible';
-            if (ramal == 'AC') return 'badge-secondary';
-            if (ramal == 'SL') return 'fondo-color-sanluis';
-            if (ramal == 'TU') return 'fondo-color-turrujal';
-            if (ramal == 'JO') return 'badge-secondary';
+            if (ramal == 'SG') return 'time-badge-sangabriel';
+            if (ramal == 'AC') return 'time-badge-acosta';
+            if (ramal == 'SL') return 'time-badge-sanluis';
+            if (ramal == 'TU') return 'time-badge-turrujal';
+            if (ramal == 'JO') return 'time-badge-jorco';
             return '';
         },
         updateProximoBus: function(){
