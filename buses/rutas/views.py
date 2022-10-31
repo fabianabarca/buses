@@ -57,7 +57,17 @@ def obtenerViajesEntreSemana(route_id_array):
     horario_entresemana_1, ramales_entresemana_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='entresemana',direction='1')
     return horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_1
 
-'''
+def obtenerViajesSabado(route_id_array):
+    horario_sabado_0, ramales_sabado_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='sabado',direction='0')
+    horario_sabado_1, ramales_sabado_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='sabado',direction='1')
+    return horario_sabado_0, ramales_sabado_0, horario_sabado_1, ramales_sabado_1
+
+def obtenerViajesDomingo(route_id_array):
+    horario_domingo_0, ramales_domingo_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='domingo',direction='0')
+    horario_domingo_1, ramales_domingo_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='domingo',direction='1')
+    return horario_domingo_0, ramales_domingo_0, horario_domingo_1, ramales_domingo_1
+
+'''s
 @param: http request, url de la ruta
 @description: muestra la informacion de cada ruta, san gabriel o acosta-ramales
 @returns: render de la pagina con las rutas obtenidas
@@ -71,12 +81,9 @@ def ruta(request, url_ruta):
     wheelchair_accessible, bikes_allowed
     '''
     horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_1 = obtenerViajesEntreSemana(route_id_array)
-    horario_sabado_0, ramales_sabado_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='sabado',direction='0')
-    horario_sabado_1, ramales_sabado_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='sabado',direction='1')
-    horario_domingo_0, ramales_domingo_0 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='domingo',direction='0')
-    horario_domingo_1, ramales_domingo_1 = Trip.objects.horario_y_ramales(route_id_array=route_id_array,service_id='domingo',direction='1')
-
-
+    horario_sabado_0, ramales_sabado_0, horario_sabado_1, ramales_sabado_1 = obtenerViajesSabado(route_id_array)
+    horario_domingo_0, ramales_domingo_0, horario_domingo_1, ramales_domingo_1 = obtenerViajesDomingo(route_id_array)
+    
     # Entre semana
     horario_entresemana = zip_longest(
                           [i.strftime("%I:%M %p") for i in horario_entresemana_0],
