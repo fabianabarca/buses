@@ -78,6 +78,15 @@ def obtenerViajesDomingo(route_id_array):
     return horario_domingo_0, ramales_domingo_0, horario_domingo_1, ramales_domingo_1
 
 '''
+@param: horarios de ida (0) y vuelta (1) regulares y de ramales
+@description: obtiene arreglo de horarios respectivos
+@returns: arreglo de horarios
+'''
+def obtenerHorarios(horario_0, ramales_0, horario_1, ramales_1):
+    return zip_longest([i.strftime("%I:%M %p") for i in horario_0],ramales_0,[i.strftime("%I:%M %p") for i in horario_1],ramales_1,fillvalue='-')
+
+
+'''
 @param: http request, url de la ruta
 @description: muestra la informacion de cada ruta, san gabriel o acosta-ramales
 @returns: render de la pagina con las rutas obtenidas
@@ -93,35 +102,12 @@ def ruta(request, url_ruta):
     horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_1 = obtenerViajesEntreSemana(route_id_array)
     horario_sabado_0, ramales_sabado_0, horario_sabado_1, ramales_sabado_1 = obtenerViajesSabado(route_id_array)
     horario_domingo_0, ramales_domingo_0, horario_domingo_1, ramales_domingo_1 = obtenerViajesDomingo(route_id_array)
-    
-    # Entre semana
-    horario_entresemana = zip_longest(
-                          [i.strftime("%I:%M %p") for i in horario_entresemana_0],
-                          ramales_entresemana_0,
-                          [i.strftime("%I:%M %p") for i in horario_entresemana_1],
-                          ramales_entresemana_1,
-                          fillvalue='-')
-
-    # Sábado
-    horario_sabado = zip_longest(
-                        [i.strftime("%I:%M %p") for i in horario_sabado_0],
-                        ramales_sabado_0,
-                        [i.strftime("%I:%M %p") for i in horario_sabado_1],
-                        ramales_sabado_1,
-                        fillvalue='-')
-
-   # Domingo
-    horario_domingo = zip_longest(
-                        [i.strftime("%I:%M %p") for i in horario_domingo_0],
-                        ramales_domingo_0,
-                        [i.strftime("%I:%M %p") for i in horario_domingo_1],
-                        ramales_domingo_1,
-                        fillvalue='-')
-
+    horario_entresemana = obtenerHorarios(horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_1)
+    horario_sabado = obtenerHorarios(horario_sabado_0, ramales_sabado_0, horario_sabado_1, ramales_sabado_1)
+    horario_domingo = obtenerHorarios(horario_domingo_0, ramales_domingo_0, horario_domingo_1, ramales_domingo_1)
     # Momento actual
     ahora = datetime.now()
     fecha = obtenerFecha() 
-
     # Próximo bus
 
     if ahora.weekday() <= 4:
