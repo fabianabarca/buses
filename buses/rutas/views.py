@@ -88,15 +88,25 @@ def obtenerHorarios(horario_0, ramales_0, horario_1, ramales_1):
 
 
 def seleccionarHorarios(_weekday):
-
     pass
 
+
+'''
+@param: horario y acronimo de ramales
+@description: obtiene el tiempo de ida y vuelta de cada ruta
+@returns: arreglo con tiempos de ida y vuelta
+'''
 def obtenerTiempoIdaYVuelta(horario, ramales_acronimo):
     return [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario, ramales_acronimo)]
 
+'''
+@param: horarios y acronimos de ramales
+@description: obtiene tiempos de ida y vuelta a san jose
+@returns: horario desde y hacia sanjose
+'''
 def obtenerTiempoIdaYVueltaRamales(horario_0, ramales_0_acronimo, horario_1, ramales_1_acronimo):
-    horario_js_hacia_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_0, ramales_0_acronimo)]
-    horario_js_desde_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_1, ramales_1_acronimo)]
+    horario_js_hacia_sanjose = obtenerTiempoIdaYVuelta(horario_0, ramales_0_acronimo)
+    horario_js_desde_sanjose = obtenerTiempoIdaYVuelta(horario_1, ramales_1_acronimo)
     return horario_js_hacia_sanjose, horario_js_desde_sanjose
 
 '''
@@ -161,8 +171,7 @@ def ruta(request, url_ruta):
 
 
     # Tiempo en minutos, hora, minuto, acronimo del ramal
-    horario_js_hacia_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_0, ramales_0_acronimo)]
-    horario_js_desde_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_1, ramales_1_acronimo)]
+    horario_js_hacia_sanjose, horario_js_desde_sanjose = obtenerTiempoIdaYVueltaRamales(horario_0, ramales_0_acronimo, horario_1, ramales_1_acronimo)
 
     # Feriados
 
