@@ -1,3 +1,4 @@
+from calendar import weekday
 from django.shortcuts import get_object_or_404, render
 from .models import FareAttribute, Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate, FeedInfo
 from datetime import datetime
@@ -86,6 +87,18 @@ def obtenerHorarios(horario_0, ramales_0, horario_1, ramales_1):
     return zip_longest([i.strftime("%I:%M %p") for i in horario_0],ramales_0,[i.strftime("%I:%M %p") for i in horario_1],ramales_1,fillvalue='-')
 
 
+def seleccionarHorarios(_weekday):
+
+    pass
+
+def obtenerTiempoIdaYVuelta(horario, ramales_acronimo):
+    return [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario, ramales_acronimo)]
+
+def obtenerTiempoIdaYVueltaRamales(horario_0, ramales_0_acronimo, horario_1, ramales_1_acronimo):
+    horario_js_hacia_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_0, ramales_0_acronimo)]
+    horario_js_desde_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_1, ramales_1_acronimo)]
+    return horario_js_hacia_sanjose, horario_js_desde_sanjose
+
 '''
 @param: http request, url de la ruta
 @description: muestra la informacion de cada ruta, san gabriel o acosta-ramales
@@ -145,6 +158,7 @@ def ruta(request, url_ruta):
         .replace('sangabriel','SG')
         .replace('acosta','AC')
         for element in ramales_1 ]
+
 
     # Tiempo en minutos, hora, minuto, acronimo del ramal
     horario_js_hacia_sanjose = [[i.hour *60 + i.minute, i.hour, i.minute, j] for i,j in zip(horario_0, ramales_0_acronimo)]
