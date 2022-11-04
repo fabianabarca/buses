@@ -109,6 +109,21 @@ def obtenerTiempoIdaYVueltaRamales(horario_0, ramales_0_acronimo, horario_1, ram
     horario_js_desde_sanjose = obtenerTiempoIdaYVuelta(horario_1, ramales_1_acronimo)
     return horario_js_hacia_sanjose, horario_js_desde_sanjose
 
+
+'''
+@param: url de la ruta
+@description: define las paradas de buses
+@returns: paradas desde y hacia
+'''
+def obtenerParadasDeBus(url_ruta):
+    if url_ruta == 'sangabriel':
+        desde = ['LM_0', 'SG_0', 'SJ_0']
+        hacia = ['SJ_1', 'SG_1', 'LM_1']        
+    elif url_ruta == 'acosta':
+        desde = ['SI_0', 'JO_0', 'SJ_0']
+        hacia = ['SJ_1', 'JO_1', 'SI_1']
+    return desde, hacia
+
 '''
 @param: http request, url de la ruta
 @description: muestra la informacion de cada ruta, san gabriel o acosta-ramales
@@ -169,30 +184,16 @@ def ruta(request, url_ruta):
         .replace('acosta','AC')
         for element in ramales_1 ]
 
-
     # Tiempo en minutos, hora, minuto, acronimo del ramal
     horario_js_hacia_sanjose, horario_js_desde_sanjose = obtenerTiempoIdaYVueltaRamales(horario_0, ramales_0_acronimo, horario_1, ramales_1_acronimo)
-
     # Feriados
-
     feriados = CalendarDate.objects.filter(exception_type='1')
-
     # Actualización de información del suministro
-
     informacion = FeedInfo.objects.get(pk=1)
-
     # Tarifas
-
     tarifas = FareAttribute.objects.filter(fare_id__startswith=route_id_array[0]).union(FareAttribute.objects.filter(fare_id__startswith=route_id_array[1])).order_by('-price')
-
     # Paradas de buses
-
-    if url_ruta == 'sangabriel':
-        desde = ['LM_0', 'SG_0', 'SJ_0']
-        hacia = ['SJ_1', 'SG_1', 'LM_1']        
-    elif url_ruta == 'acosta':
-        desde = ['SI_0', 'JO_0', 'SJ_0']
-        hacia = ['SJ_1', 'JO_1', 'SI_1']
+    desde, hacia = obtenerParadasDeBus(url_ruta)
     
     #paradas_desde = Stop.objects.filter(stop_id__startswith=desde[0]).union(Stop.objects.filter(stop_id__startswith=desde[1])).union(Stop.objects.filter(stop_id__startswith=desde[2]))
     #paradas_desde = Stop.objects.filter(Q(stop_id__startswith=desde[0]) | Q(stop_id__startswith=desde[1]) | Q(stop_id__startswith=desde[2]))
