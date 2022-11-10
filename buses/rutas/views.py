@@ -110,6 +110,14 @@ def obtenerTiempoIdaYVueltaRamales(horario_0, ramales_0_acronimo, horario_1, ram
     return horario_js_hacia_sanjose, horario_js_desde_sanjose
 
 
+def asignarHorariosEntreSemana(horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_!):
+    horario_0 = horario_entresemana_0
+    ramales_0 = ramales_entresemana_0
+    horario_1 = horario_entresemana_1
+    ramales_1 = ramales_entresemana_1
+    return horario_0, ramales_0, horario_1, ramales_1
+
+
 '''
 @param: url de la ruta
 @description: define las paradas de buses
@@ -146,14 +154,12 @@ def ruta(request, url_ruta):
     # Momento actual
     ahora = datetime.now()
     fecha = obtenerFecha() 
+    dia = ahora.weekday()
     # Próximo bus
 
-    if ahora.weekday() <= 4:
-        horario_0 = horario_entresemana_0
-        ramales_0 = ramales_entresemana_0
-        horario_1 = horario_entresemana_1
-        ramales_1 = ramales_entresemana_1
-    elif ahora.weekday() == 5:
+    if dia <= 4:
+        horario_0, ramales_0, horario_1, ramales_1 = asignarHorariosEntreSemana(horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_!)
+    elif dia == 5:
         horario_0 = horario_sabado_0
         ramales_0 = ramales_sabado_0
         horario_1 = horario_sabado_1
