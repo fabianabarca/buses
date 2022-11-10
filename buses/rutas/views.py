@@ -109,7 +109,11 @@ def obtenerTiempoIdaYVueltaRamales(horario_0, ramales_0_acronimo, horario_1, ram
     horario_js_desde_sanjose = obtenerTiempoIdaYVuelta(horario_1, ramales_1_acronimo)
     return horario_js_hacia_sanjose, horario_js_desde_sanjose
 
-
+'''
+@param: horarios entresemana de ramales y regulares
+@description: asigna y retorna horarios para las rutas entre semana
+@returns: horarios de las rutas entresemana
+'''
 def asignarHorariosEntreSemana(horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_1):
     horario_0 = horario_entresemana_0
     ramales_0 = ramales_entresemana_0
@@ -117,6 +121,11 @@ def asignarHorariosEntreSemana(horario_entresemana_0, ramales_entresemana_0, hor
     ramales_1 = ramales_entresemana_1
     return horario_0, ramales_0, horario_1, ramales_1
 
+'''
+@param: horarios los sabados de ramales y regulares
+@description: asigna y retorna horarios para las rutas los sabados
+@returns: horarios de las rutas los sabados
+'''
 def asignarHorariosSabado(horario_sabado_0,ramales_sabado_0,horario_sabado_1,ramales_sabado_1):
     horario_0 = horario_sabado_0
     ramales_0 = ramales_sabado_0
@@ -124,6 +133,11 @@ def asignarHorariosSabado(horario_sabado_0,ramales_sabado_0,horario_sabado_1,ram
     ramales_1 = ramales_sabado_1
     return horario_0, ramales_0, horario_1, ramales_1
 
+'''
+@param: horarios los domingos de ramales y regulares
+@description: asigna y retorna horarios para las rutas los domingos
+@returns: horarios de las rutas los domingos
+'''
 def asignarHorariosDomingo(horario_domingo_0,ramales_domingo_0,horario_domingo_1,ramales_domingo_1):
     horario_0 = horario_domingo_0
     ramales_0 = ramales_domingo_0
@@ -170,7 +184,6 @@ def ruta(request, url_ruta):
     fecha = obtenerFecha() 
     dia = ahora.weekday()
     # Próximo bus
-
     if dia <= 4:
         horario_0, ramales_0, horario_1, ramales_1 = asignarHorariosEntreSemana(horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_1)
     elif dia == 5:

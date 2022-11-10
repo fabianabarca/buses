@@ -1,0 +1,18 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "python",
+      "interpreter": "(default)",
+      "interpreterArguments": "",
+      "scriptArguments": "runserver",
+      "env": {},
+      "nativeDebug": false,
+      "webBrowserUrl": "",
+      "project": "buses\\manage.py",
+      "projectTarget": "",
+      "name": "manage.py"
+    }
+  ]
+}

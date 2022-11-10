@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-manage",
+      "appliesTo": "buses/manage.py",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-manage",
+      "appliesTo": "buses/manage.py",
+      "type": "launch"
+    }
+  ]
+}
