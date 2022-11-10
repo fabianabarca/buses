@@ -124,6 +124,14 @@ def asignarHorariosSabado(horario_sabado_0,ramales_sabado_0,horario_sabado_1,ram
     ramales_1 = ramales_sabado_1
     return horario_0, ramales_0, horario_1, ramales_1
 
+def asignarHorariosDomingo(horario_domingo_0,ramales_domingo_0,horario_domingo_1,ramales_domingo_1):
+    horario_0 = horario_domingo_0
+    ramales_0 = ramales_domingo_0
+    horario_1 = horario_domingo_1
+    ramales_1 = ramales_domingo_1
+    return horario_0, ramales_0, horario_1, ramales_1
+
+
 '''
 @param: url de la ruta
 @description: define las paradas de buses
@@ -164,14 +172,11 @@ def ruta(request, url_ruta):
     # Próximo bus
 
     if dia <= 4:
-        horario_0, ramales_0, horario_1, ramales_1 = asignarHorariosEntreSemana(horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_!)
+        horario_0, ramales_0, horario_1, ramales_1 = asignarHorariosEntreSemana(horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_1)
     elif dia == 5:
-        
+        horario_0, ramales_0, horario_1, ramales_1 = asignarHorariosSabado(horario_sabado_0, ramales_sabado_0, horario_sabado_1, ramales_sabado_1)
     else:
-        horario_0 = horario_domingo_0
-        ramales_0 = ramales_domingo_0
-        horario_1 = horario_domingo_1
-        ramales_1 = ramales_domingo_1
+        horario_0, ramales_0, horario_1, ramales_1 = asignarHorariosDomingo(horario_domingo_0,ramales_domingo_0,horario_domingo_1,ramales_domingo_1)
 
     ramales_0_acronimo = [
         element.replace('desde_','')
