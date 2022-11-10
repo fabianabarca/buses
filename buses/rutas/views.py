@@ -110,13 +110,19 @@ def obtenerTiempoIdaYVueltaRamales(horario_0, ramales_0_acronimo, horario_1, ram
     return horario_js_hacia_sanjose, horario_js_desde_sanjose
 
 
-def asignarHorariosEntreSemana(horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_!):
+def asignarHorariosEntreSemana(horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_1):
     horario_0 = horario_entresemana_0
     ramales_0 = ramales_entresemana_0
     horario_1 = horario_entresemana_1
     ramales_1 = ramales_entresemana_1
     return horario_0, ramales_0, horario_1, ramales_1
 
+def asignarHorariosSabado(horario_sabado_0,ramales_sabado_0,horario_sabado_1,ramales_sabado_1):
+    horario_0 = horario_sabado_0
+    ramales_0 = ramales_sabado_0
+    horario_1 = horario_sabado_1
+    ramales_1 = ramales_sabado_1
+    return horario_0, ramales_0, horario_1, ramales_1
 
 '''
 @param: url de la ruta
@@ -160,10 +166,7 @@ def ruta(request, url_ruta):
     if dia <= 4:
         horario_0, ramales_0, horario_1, ramales_1 = asignarHorariosEntreSemana(horario_entresemana_0, ramales_entresemana_0, horario_entresemana_1, ramales_entresemana_!)
     elif dia == 5:
-        horario_0 = horario_sabado_0
-        ramales_0 = ramales_sabado_0
-        horario_1 = horario_sabado_1
-        ramales_1 = ramales_sabado_1
+        
     else:
         horario_0 = horario_domingo_0
         ramales_0 = ramales_domingo_0
