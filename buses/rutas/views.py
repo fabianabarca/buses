@@ -161,6 +161,35 @@ def obtenerParadasDeBus(url_ruta):
     return desde, hacia
 
 '''
+@param: acronimos de ramales ida y vuelta
+@description: asigna los acronimos
+@returns: rutas con acronimos asignados
+'''
+def asignarDireccionRamales(ramales_0, ramales_1):
+    ramales_0_acronimo = [
+        element.replace('desde_','')
+        .replace('hacia_','')
+        .replace('turrujal','TU')
+        .replace('sanluis','SL')
+        .replace('jorco','JO')
+        .replace('sangabriel','SG')
+        .replace('acosta','AC')
+        for element in ramales_0 ]
+
+    ramales_1_acronimo = [
+        element.replace('desde_','')
+        .replace('hacia_','')
+        .replace('turrujal','TU')
+        .replace('sanluis','SL')
+        .replace('jorco','JO')
+        .replace('sangabriel','SG')
+        .replace('acosta','AC')
+        for element in ramales_1 ]
+    return ramales_0_acronimo, ramales_1_acronimo
+
+
+
+'''
 @param: http request, url de la ruta
 @description: muestra la informacion de cada ruta, san gabriel o acosta-ramales
 @returns: render de la pagina con las rutas obtenidas
@@ -191,25 +220,8 @@ def ruta(request, url_ruta):
     else:
         horario_0, ramales_0, horario_1, ramales_1 = asignarHorariosDomingo(horario_domingo_0,ramales_domingo_0,horario_domingo_1,ramales_domingo_1)
 
-    ramales_0_acronimo = [
-        element.replace('desde_','')
-        .replace('hacia_','')
-        .replace('turrujal','TU')
-        .replace('sanluis','SL')
-        .replace('jorco','JO')
-        .replace('sangabriel','SG')
-        .replace('acosta','AC')
-        for element in ramales_0 ]
+    ramales_0_acronimo, ramales_1_acronimo = asignarDireccionRamales(ramales_0,ramales_1)
 
-    ramales_1_acronimo = [
-        element.replace('desde_','')
-        .replace('hacia_','')
-        .replace('turrujal','TU')
-        .replace('sanluis','SL')
-        .replace('jorco','JO')
-        .replace('sangabriel','SG')
-        .replace('acosta','AC')
-        for element in ramales_1 ]
 
     # Tiempo en minutos, hora, minuto, acronimo del ramal
     horario_js_hacia_sanjose, horario_js_desde_sanjose = obtenerTiempoIdaYVueltaRamales(horario_0, ramales_0_acronimo, horario_1, ramales_1_acronimo)
