@@ -246,19 +246,7 @@ def ruta(request, url_ruta):
     tarifas = FareAttribute.objects.filter(fare_id__startswith=route_id_array[0]).union(FareAttribute.objects.filter(fare_id__startswith=route_id_array[1])).order_by('-price')
     # Paradas de buses
     desde, hacia = obtenerParadasDeBus(url_ruta)
-    
-    #paradas_desde = Stop.objects.filter(stop_id__startswith=desde[0]).union(Stop.objects.filter(stop_id__startswith=desde[1])).union(Stop.objects.filter(stop_id__startswith=desde[2]))
-    #paradas_desde = Stop.objects.filter(Q(stop_id__startswith=desde[0]) | Q(stop_id__startswith=desde[1]) | Q(stop_id__startswith=desde[2]))
-    #paradas_hacia = Stop.objects.filter(stop_id__startswith=hacia[0]).union(Stop.objects.filter(stop_id__startswith=hacia[1])).union(Stop.objects.filter(stop_id__startswith=hacia[2]))
-    #paradas_hacia = Stop.objects.filter(Q(stop_id__startswith=hacia[0]) | Q(stop_id__startswith=hacia[1]) | Q(stop_id__startswith=hacia[2])).order_by('pk')
-    
-    # Solución horrible (terrible, terrible)
-    paradas_desde_0 = Stop.objects.filter(stop_id__startswith=desde[0])
-    paradas_desde_1 = Stop.objects.filter(stop_id__startswith=desde[1])
-    paradas_desde_2 = Stop.objects.filter(stop_id__startswith=desde[2])
-    paradas_hacia_0 = Stop.objects.filter(stop_id__startswith=hacia[0])
-    paradas_hacia_1 = Stop.objects.filter(stop_id__startswith=hacia[1])
-    paradas_hacia_2 = Stop.objects.filter(stop_id__startswith=hacia[2])
+    paradas_desde, paradas_hacia = asignarParadas(desde,hacia)
 
     context = {
         'maxBounds': settings.RUTAS_MAP_MAX_BOUNDS,
@@ -272,13 +260,12 @@ def ruta(request, url_ruta):
         'feriados': feriados,
         'informacion': informacion,
         'tarifas': tarifas,
-        # Parte de la solución horrible
-        'paradas_desde_0': paradas_desde_0,
-        'paradas_desde_1': paradas_desde_1,
-        'paradas_desde_2': paradas_desde_2,
-        'paradas_hacia_0': paradas_hacia_0,
-        'paradas_hacia_1': paradas_hacia_1,
-        'paradas_hacia_2': paradas_hacia_2,
+        'paradas_desde_0': paradas_desde.paradas_desde_0,
+        'paradas_desde_1': paradas_desde.paradas_desde_1,
+        'paradas_desde_2': paradas_desde.paradas_desde_2,
+        'paradas_hacia_0': paradas_hacia.paradas_hacia_0,
+        'paradas_hacia_1': paradas_hacia.paradas_hacia_1,
+        'paradas_hacia_2': paradas_hacia.paradas_hacia_2,
     }
 
     return render(request, 'ruta.html', context)
