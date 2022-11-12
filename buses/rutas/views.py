@@ -188,6 +188,19 @@ def asignarDireccionRamales(ramales_0, ramales_1):
     return ramales_0_acronimo, ramales_1_acronimo
 
 
+def asignarParadas(desde,hacia):
+    paradas_desde = []
+    paradas_hacia = []
+    paradas_desde_0 = Stop.objects.filter(stop_id__startswith=desde[0])
+    paradas_desde_1 = Stop.objects.filter(stop_id__startswith=desde[1])
+    paradas_desde_2 = Stop.objects.filter(stop_id__startswith=desde[2])
+    paradas_hacia_0 = Stop.objects.filter(stop_id__startswith=hacia[0])
+    paradas_hacia_1 = Stop.objects.filter(stop_id__startswith=hacia[1])
+    paradas_hacia_2 = Stop.objects.filter(stop_id__startswith=hacia[2])
+    paradas_desde.append(paradas_desde_0, paradas_desde_1, paradas_desde_2)
+    paradas_hacia.append(paradas_hacia_0, paradas_hacia_1, paradas_hacia_2)
+    return paradas_desde, paradas_hacia
+
 
 '''
 @param: http request, url de la ruta
