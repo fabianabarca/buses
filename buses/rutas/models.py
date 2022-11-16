@@ -2,7 +2,11 @@ from django.shortcuts import get_object_or_404
 from django.db import models
 
 ## Managers
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class tripManager(models.Manager):
     def horario_y_ramales(self, service_id='', route_id_array=[], direction=0):
         trips = super().get_queryset().filter(
@@ -26,7 +30,11 @@ class tripManager(models.Manager):
         return (horario, ramales)
 
 ## Models
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class Agency(models.Model):
     """One or more transit agencies that provide the data in this feed.
     Maps to agency.txt in the GTFS feed.
@@ -59,7 +67,11 @@ class Agency(models.Model):
 
     def __str__(self):
         return self.name
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class Stop(models.Model):
     """A stop or station
     Maps to stops.txt in the GTFS feed.
@@ -108,7 +120,11 @@ class Stop(models.Model):
 
     def __str__(self):
         return self.stop_id + ': ' + self.name
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class Route(models.Model):
     """A transit route
     Maps to route.txt in the GTFS feed.
@@ -158,7 +174,11 @@ class Route(models.Model):
 
     def __str__(self):
         return self.long_name
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class Trip(models.Model):
     """A trip along a route
     This implements trips.txt in the GTFS feed
@@ -210,7 +230,11 @@ class Trip(models.Model):
 
     def __str__(self):
         return self.trip_id
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class StopTime(models.Model):
     """A specific stop on a route on a trip.
     This implements stop_times.txt in the GTFS feed
@@ -258,7 +282,11 @@ class StopTime(models.Model):
 
     def __str__(self):
         return str(self.trip)
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class Calendar(models.Model):
     """Calendar with service disponibility for one or more routes 
     This implements trips.txt in the GTFS feed
@@ -324,7 +352,11 @@ class Calendar(models.Model):
 
     def __str__(self):
         return self.service_id
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class CalendarDate(models.Model):
     """Calendar without service disponibility for one or more routes 
     This implements calendar_dates.txt in the GTFS feed
@@ -350,7 +382,11 @@ class CalendarDate(models.Model):
 
     def __str__(self):
         return self.holiday_name
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class FareAttribute(models.Model):
     """A fare attribute class"""
 
@@ -386,7 +422,11 @@ class FareAttribute(models.Model):
 
     def __str__(self):
         return self.fare_id
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class FareRule(models.Model):
     """ A Fare Rule class """
 
@@ -404,7 +444,11 @@ class FareRule(models.Model):
 
     def __str__(self):
         return self.origin_id + ' > ' + self.destination_id + ' = ' + self.fare_id
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class Zone(models.Model):
     """Represents a fare zone.
     This data is not represented as a file in the GTFS. It appears as an
@@ -443,7 +487,11 @@ class Zone(models.Model):
 #     geometry = models.LineStringField(
 #         null=True, blank=True,
 #         help_text='Geometry cache of ShapePoints')
-
+'''
+@param: 
+@description: 
+@returns: 
+'''
 class Shape(models.Model):
     """The path the vehicle takes along the route.
     Implements shapes.txt."""
@@ -473,10 +521,11 @@ class Shape(models.Model):
 
     def __str__(self):
         return self.shape_id
-
+'''
+@param: modelo
+@description: Información sobre los que hacen el GTFS 
+'''
 class FeedInfo(models.Model):
-    """ Información sobre los que hacen el GTFS """
-
     publisher_name = models.CharField(max_length=128,
         help_text="Quiénes hicieron el GTFS.")
     publisher_url = models.URLField(
@@ -498,5 +547,10 @@ class FeedInfo(models.Model):
         verbose_name = "feed info"
         verbose_name_plural = "feed info objects"
 
+    '''
+    @param: objeto self
+    @description: retorna nombre del publisher del objeto
+    @returns: nombre del publisher del objeto
+    '''
     def __str__(self):
         return self.publisher_name
