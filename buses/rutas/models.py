@@ -3,9 +3,9 @@ from django.db import models
 
 ## Managers
 '''
-@param: 
-@description: 
-@returns: 
+@param: Objeto administrador de modelos
+@description: Contiene una funcion que ordena los horarios obtenidos desde GTFS
+@returns: Retorna dos arreglos ordenados con los horarios regulares y de ramales
 '''
 class tripManager(models.Manager):
     def horario_y_ramales(self, service_id='', route_id_array=[], direction=0):
@@ -183,9 +183,8 @@ class Trip(models.Model):
     """A trip along a route
     This implements trips.txt in the GTFS feed
     """
-
     objects = tripManager(); # Custom manager with extra methods
-
+    trip_departure_time = models.TimeField()
     route = models.ForeignKey('Route', on_delete=models.CASCADE)
     service = models.ForeignKey(
         'Calendar', null=True, blank=True, on_delete=models.SET_NULL)
