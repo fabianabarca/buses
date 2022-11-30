@@ -31,14 +31,11 @@ class tripManager(models.Manager):
 
 ## Models
 '''
-@param: 
-@description: 
-@returns: 
+@param: Modelo 
+@description: Una o mas agencias de transito que proveen los datos al feed. Mapea a agencia.txt en GTFS
+@returns: atributos de la clase
 '''
 class Agency(models.Model):
-    """One or more transit agencies that provide the data in this feed.
-    Maps to agency.txt in the GTFS feed.
-    """
     agency_id = models.CharField(
         primary_key=True,
         max_length=255, blank=True, db_index=True,
