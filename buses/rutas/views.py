@@ -187,7 +187,11 @@ def asignarDireccionRamales(ramales_0, ramales_1):
         for element in ramales_1 ]
     return ramales_0_acronimo, ramales_1_acronimo
 
-
+'''
+@param: arreglos con direcciones de ida y vuelta de las rutas
+@description: asigna manualmente las paradas de acuerdo al codigo 0,1,2  (stop id)
+@returns: retorna las paradas asignadas
+'''
 def asignarParadas(desde,hacia):
     paradas_desde = []
     paradas_hacia = []
