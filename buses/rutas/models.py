@@ -227,9 +227,9 @@ class Trip(models.Model):
     def __str__(self):
         return self.trip_id
 '''
-@param: 
-@description: 
-@returns: 
+@param: Modelo base de tiempo de parada
+@description: Implementa una parada específica en un viaje, asigna los atributos y sus tipos de datos
+@returns: Modelo con atributos asignados
 '''
 class StopTime(models.Model):
     """A specific stop on a route on a trip.
