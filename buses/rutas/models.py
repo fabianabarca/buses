@@ -172,9 +172,9 @@ class Route(models.Model):
     def __str__(self):
         return self.long_name
 '''
-@param: 
-@description: 
-@returns: 
+@param: Modelo del Trip GTFS
+@description: Obtiene los atributos del modelo que sera enviado en views
+@returns: Trip con atributos seteados
 '''
 class Trip(models.Model):
     """A trip along a route
