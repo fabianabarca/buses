@@ -360,9 +360,22 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 {% for parada in paradas_desde_0 %}
                 <li class="step-item">
                     <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-arrow-right"></i></span>
+                        <span @click="showHideStopInfo('{{parada.stop_id}}', $event)" class="step-icon step-icon-xs step-icon-soft-secondary"><i :class="['fas', 'fa-arrow-right']"></i></span>
                         <div class="step-content">
-                            <p class="step-text">{{ parada.name }}</p>
+
+                            <p class="step-text" id="short_name_stop_id_{{parada.stop_id}}">{{ parada.name }}</p>
+{# begin stop card #}
+                            <div class="card card-bordered mx-auto" id="info_stop_id_{{parada.stop_id}}" style="max-width: 540px;" hidden>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ parada.name }}</h5>
+                                    <ol class="fa-ul">
+                                        <!-- <li><span class="fa-li"><i class="far fa-map"></i></span>{{ parada.lon }} {{ parada.lat }}</li> --> {# FIXME la descripción no está para todas las paradas #}
+                                        <!-- <li><span class="fa-li"><i class="fas fa-location-arrow"></i></span>{{ parada.desc }}.</li> --> {# FIXME la descripción no está para todas las paradas#}
+                                        <li><span class="fa-li"><i class="fab fa-waze"></i></span><a href="https://ul.waze.com/ul?ll={{ parada.lat|safe }}%2C{{ parada.lon|safe }}&navigate=yes&zoom=17">Dirección en Waze</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+{# end stop card #}
                         </div>
                     </div>
                 </li>
