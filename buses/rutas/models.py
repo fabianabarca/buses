@@ -173,6 +173,12 @@ class Trip(models.Model):
         primary_key=True,
         max_length=255, db_index=True,
         help_text="Indentificador único de viaje.")
+    trip_departure_time = models.TimeField(
+        null=True, blank=True,
+        help_text="Hora de salida del viaje.")
+    trip_arrival_time = models.TimeField(
+        null=True, blank=True,
+        help_text="Hora de llegada del viaje.")
     headsign = models.CharField(
         max_length=255, blank=True,
         help_text="Identificación de destino para pasajeros.")
