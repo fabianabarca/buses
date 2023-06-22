@@ -14,11 +14,13 @@ class tripManager(models.Manager):
         para_ordenar = []
         terminales = ['SJ_1_00', 'SG_0_00', 'SI_0_00']
         for i in trips:
+            """
             if str(i.shape) == 'desde_jorco':
                 viaje = StopTime.objects.get(trip=i, stop='JO_0_00')
             else:
                 viaje = StopTime.objects.get(trip=i, stop__in=terminales)
-            para_ordenar.append([viaje.departure_time, str(i.shape)])
+            """
+            para_ordenar.append([i.departure_time, str(i.shape)])
 
         para_ordenar.sort()
         horario = [i[0] for i in para_ordenar]
@@ -173,17 +175,17 @@ class Trip(models.Model):
         primary_key=True,
         max_length=255, db_index=True,
         help_text="Indentificador único de viaje.")
-    trip_departure_time = models.TimeField(
+    departure_time = models.TimeField(
         null=True, blank=True,
         help_text="Hora de salida del viaje.")
-    trip_arrival_time = models.TimeField(
+    arrival_time = models.TimeField(
         null=True, blank=True,
         help_text="Hora de llegada del viaje.")
     headsign = models.CharField(
         max_length=255, blank=True,
         help_text="Identificación de destino para pasajeros.")
     short_name = models.CharField(
-        max_length=63, blank=True,
+        max_length=63, blank=True, null=True,
         help_text="Nombre corto utilizado en horarios y letreros.")
     direction = models.CharField(
         max_length=1, blank=True,
@@ -355,7 +357,7 @@ class CalendarDate(models.Model):
         verbose_name_plural = "calendar dates"
 
     def __str__(self):
-        return self.holiday_name
+        return f'{self.holiday_name} {self.date.year}'
 
 class FareAttribute(models.Model):
     """A fare attribute class"""
@@ -506,3 +508,27 @@ class FeedInfo(models.Model):
 
     def __str__(self):
         return self.publisher_name
+
+
+class Fecha(models.Model):
+    """ Fechas de modificación de horarios o tarifas """
+    titulo = models.CharField(max_length=255)
+    horarios = models.CharField(max_length=127, blank=True, null=True)
+    tarifas = models.CharField(max_length=127, blank=True, null=True)
+    ruta = models.ManyToManyField('Route')
+
+    def __str__(self):
+        return self.titulo
+    
+
+class Anuncio(models.Model):
+    """ Anuncios de la agencia """
+    titulo = models.CharField(max_length=255)
+    descripcion = models.TextField()
+    fecha_inicio = models.DateField(blank=True, null=True)
+    fecha_fin = models.DateField(blank=True, null=True)
+    ruta = models.ManyToManyField('Route')
+    fecha_modificacion = models.DateField(blank=True, null=True, auto_now_add=True)
+
+    def __str__(self):
+        return self.titulo

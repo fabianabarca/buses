@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'shapeeditor', ## Si esta línea falla, hacer "pip install shapeeditor" para instalar la dependencia faltante
-    'corsheaders' # Needed for CORS when routing machine is not in the same domine
 ]
 
 MIDDLEWARE = [
@@ -133,25 +131,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Email basic configuration:
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-## Shapeeditor
-LOGIN_URL='/admin/login/'
-
-#//       +++++++++
-#//       +       +
-#//       +  Map  +
-#//       +       +
-#// --->  @++++++++
-
-#// ++++++++@ <---
-#// +       +
-#// +  Map  +
-#// +       +
-#// +++++++++
-SHAPEEDITOR_MAP_EXTENT_AREA = [[-84.43669241118701, 9.726525930153954],[-83.72894500499169, 9.99625455768836]]
-
-SHAPEEDITOR_MAP_CENTER = [-84.1027104, 9.865107]
-SHAPEEDITOR_ROUTING_MACHINE_URL = "https://transportessangabriel.com/route/v1/driving/" # costa rica
 
 ## Rutas section
 # Restricción del mapa a esta área

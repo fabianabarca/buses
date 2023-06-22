@@ -69,6 +69,8 @@ del div con id ruta_vue_app ya que fuera de este div la sintaxis será ignorada
 NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistentemente, tomando solo lo necesario
 {% endcomment %}
 
+<!-- Horario especial de Semana Santa -->
+
 <!-- Aplicación "próximo bus" -->
 <div id='ruta_vue_app'> <!-- APP VUE -->
 {% include "proximobus.html" %}
@@ -92,12 +94,32 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 <dt><span class="badge badge-secondary align-middle">AC</span> <span class="text-secondary text-uppercase font-weight-bold align-middle">Acosta</span></dt>
                 <dd><strong>Sale desde</strong> el centro de San Ignacio de Acosta hacia San José.</dd>
 
-                <dt><span class="badge badge-secondary align-middle">JO</span> <span class="text-secondary text-uppercase font-weight-bold align-middle">Jorco</span></dt>
+                <dt><span class="badge badge-info align-middle">JO</span> <span class="text-secondary text-uppercase font-weight-bold align-middle">Jorco</span></dt>
                 <dd><strong>Sale desde</strong> Vuelta de Jorco de Aserrí hacia San José y <strong>no</strong> pasa por el centro de San Ignacio de Acosta.</dd>
             </dl>
         </p>  
     </div>
     {% endif %}
+
+<!-- Anuncios -->
+
+{% if anuncios %}
+<section id="anuncios">
+
+    <div class="alert alert-light" role="alert">
+        <h3 class="alert-heading"><i class="fas fa-bell"></i> Anuncios</h3>
+        <dl>
+            {% for anuncio in anuncios %}
+            <dt>{{ anuncio.titulo }}</dt>
+            <dd>{{ anuncio.descripcion }}</dd>
+            {% endfor %}
+        </dl>
+        <hr>
+        <p class="mb-0">Contacto: <a href="{% url 'contacto' %}">Transportes San Gabriel</a></p>
+    </div>
+
+</section>
+{% endif %}
 
 <!-- Tabla de horario -->
 
@@ -107,17 +129,24 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     <h2><i class="fas fa-clock color-ruta"></i> Horarios</h2>
 
     <!-- Nota sobre el horario de salida -->
-    <div class="alert alert-soft-secondary" role="alert">
+    <div class="alert alert-secondary" role="alert">
         <p>
             <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-info-circle"></i></span>La hora del viaje hacia San José es en la parada de <strong>{{ route.short_name }} centro</strong>.
+                <li>
+                    <span class="fa-li"><i class="fas fa-info-circle"></i></span>
+                    La hora del viaje hacia San José es en la parada de
+                    {% if route.short_name == 'Acosta' %}
+                        <strong>Acosta centro</strong>
+                    {% else %}
+                        <strong>San Gabriel centro.</strong>
+                    {% endif %}                  
                     Los buses salen <strong>15 minutos antes</strong> desde
                     {% if route.short_name == 'Acosta' %}
-                        San Luis o Turrujal, según se indica
+                        San Luis o Turrujal, según se indica. Los viajes desde Jorco no pasan por Acosta centro.
                     {% else %}
-                        Los Mangos
-                    {% endif %}
-                    (ver lista de <a href="#paradas">paradas autorizadas</a>).</li>
+                        Los Mangos.
+                    {% endif %}    
+                </li>
             </ol>
         </p>
     </div>
@@ -236,7 +265,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     <p>
         <div class="small">
             <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-calendar-check"></i></span>Último cambio de horarios el <span class="text-lowercase font-weight-bold">{{ informacion.start_date }}</span></li>
+                <li><span class="fa-li"><i class="fas fa-calendar-check"></i></span>Último cambio de horarios el <span class="font-weight-bold">{% for fecha in fechas %}{{ fecha.horarios }}{% endfor %}</span></li>
                 <li><span class="fa-li"><i class="fas fa-database"></i></span>Datos de <a href="/gtfs/">GTFS</a></li>
                 <li><span class="fa-li"><i class="fab fa-google"></i></span>Ver en <a href="https://www.google.com/maps/@9.7985547,-84.1334907,14.81z" target="_blank">Google Maps</a></li>
             </ol>
@@ -244,6 +273,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     </p>
 
     <!-- Lista de feriados -->
+    {% if feriados %}
     <div class="alert alert-soft-secondary" role="alert">
         <div>
             <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#listaferiados" aria-expanded="false" aria-controls="listaferiados">
@@ -268,6 +298,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
             </p>
         </div>
     </div>
+    {% endif %}
 
 </section>
 
@@ -295,7 +326,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
     <p>
         <div class="small">
             <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-calendar-check"></i></span>Último cambio de tarifas el <strong>8 de marzo de 2022</strong></li>
+                <li><span class="fa-li"><i class="fas fa-calendar-check"></i></span>Último cambio de tarifas el <strong>{% for fecha in fechas %}{{ fecha.tarifas }}{% endfor %}</strong></li>
                 <li><span class="fa-li"><i class="fas fa-balance-scale"></i></span>Precios autorizados por <a href="https://aresep.go.cr/autobus/tarifas" target="_blank">ARESEP</a></li>
              </ol>
         </div>
@@ -360,7 +391,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 {% for parada in paradas_desde_0 %}
                 <li class="step-item">
                     <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-arrow-right"></i></span>
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-bus"></i></span>
                         <div class="step-content">
                             <p class="step-text">{{ parada.name }}</p>
                         </div>
@@ -370,7 +401,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 {% for parada in paradas_desde_1 %}
                 <li class="step-item">
                     <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-arrow-right"></i></i></span>
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-bus"></i></span>
                         <div class="step-content">
                             <p class="step-text">{{ parada.name }}</p>
                         </div>
@@ -380,7 +411,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 {% for parada in paradas_desde_2 %}
                 <li class="step-item">
                     <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-arrow-right"></i></i></span>
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-bus"></i></span>
                         <div class="step-content">
                             <p class="step-text">{{ parada.name }}</p>
                         </div>
@@ -396,7 +427,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 {% for parada in paradas_hacia_0 %}
                 <li class="step-item">
                     <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-arrow-left"></i></span>
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-bus"></i></span>
                         <div class="step-content">
                             <p class="step-text">{{ parada.name }}</p>
                         </div>
@@ -406,7 +437,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 {% for parada in paradas_hacia_1 %}
                 <li class="step-item">
                     <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-arrow-left"></i></span>
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-bus"></i></span>
                         <div class="step-content">
                             <p class="step-text">{{ parada.name }}</p>
                         </div>
@@ -416,7 +447,7 @@ NOTA: TODO: Este div no tiene terminación, hay que hacer que cierre consistente
                 {% for parada in paradas_hacia_2 %}
                 <li class="step-item">
                     <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-arrow-left"></i></span>
+                        <span class="step-icon step-icon-xs step-icon-soft-secondary"><i class="fas fa-bus"></i></span>
                         <div class="step-content">
                             <p class="step-text">{{ parada.name }}</p>
                         </div>

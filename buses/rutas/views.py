@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from .models import FareAttribute, Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate, FeedInfo
+from .models import FareAttribute, Route, Shape, Calendar, Trip, Stop, StopTime, CalendarDate, FeedInfo, Anuncio, Fecha
 from datetime import datetime
 from itertools import zip_longest
 from django.conf import settings
@@ -34,19 +34,18 @@ def ruta(request, url_ruta):
     route_id, agency, short_name, long_name, desc,
     route_type, url, color, text_color
     '''
+    ahora = datetime.now()
+
     if url_ruta == 'sangabriel':
         route = get_object_or_404(Route, route_id='SGAB')
         route_id_array = ['SGAB', 'SGAB']
+        fechas = Fecha.objects.filter(ruta='SGAB')
+        anuncios = Anuncio.objects.filter(ruta='SGAB')
     elif url_ruta == 'acosta':
         route = get_object_or_404(Route, route_id='ACOS')
         route_id_array = ['ACOS', 'TURR']
-
-    # Extraer los viajes asociados con esta ruta para cada servicio y en cada dirección
-    ''' Valores:
-    route, service,	trip_id, trip_headsign, trip_short_name,
-    direction (0: hacia San José, 1: desde San José), shape,
-    wheelchair_accessible, bikes_allowed
-    '''
+        fechas = Fecha.objects.filter(ruta='ACOS')
+        anuncios = Anuncio.objects.filter(ruta='ACOS').union(Anuncio.objects.filter(ruta='TURR'))
 
     horario_entresemana_0, ramales_entresemana_0 = Trip.objects.horario_y_ramales(
         route_id_array=route_id_array,
@@ -105,7 +104,6 @@ def ruta(request, url_ruta):
 
     # Momento actual
 
-    ahora = datetime.now()
     # ahora = datetime(2020, 11, 21, 22, 32, 52, 978416)
     meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
     dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
@@ -199,6 +197,8 @@ def ruta(request, url_ruta):
         'feriados': feriados,
         'informacion': informacion,
         'tarifas': tarifas,
+        'fechas': fechas,
+        'anuncios': anuncios,
         # Parte de la solución horrible
         'paradas_desde_0': paradas_desde_0,
         'paradas_desde_1': paradas_desde_1,

@@ -24,9 +24,8 @@ urlpatterns = [
     # path('noticias/', include('noticias.urls')),
     path('empresa/', include('empresa.urls')),
     path('comunidades/', include('comunidades.urls')),
-    path('contacto/', include('contacto.urls')),
+    path('contacto/', include('contacto.urls'), name='contacto'),
     path('admin/', admin.site.urls),
-    path('shapeeditor/', include('shapeeditor.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
